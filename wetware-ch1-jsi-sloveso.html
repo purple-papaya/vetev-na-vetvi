@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WETWARE · Kapitola první — Jsi sloveso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#F4EFE1; --panel:#EDE6D4; --panel-2:#E6DDC6;
+    --ink:#26211A; --ink-soft:#524A3B;
+    --forest:#2F5D46; --forest-deep:#1E4634; --sage:#5E8570;
+    --terra:#BF6A3F; --terra-deep:#9E5230;
+    --rule:#DED5BE; --gold:#C69A46; --code-bg:#E9E2CF;
+    --flame-hot:#E8A13C; --flame-mid:#D9773A; --flame-core:#F3D08A;
+    --font-serif:'Merriweather', Georgia, 'Times New Roman', serif;
+    --font-sans:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono:'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --measure:42rem; --breakout:56rem;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    margin:0; background:var(--canvas); color:var(--ink);
+    font-family:var(--font-serif); font-size:1.075rem; line-height:1.78;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(47,93,70,0.028) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(191,106,63,0.03) 0, transparent 40%),
+      radial-gradient(circle at 76% 92%, rgba(47,93,70,0.025) 0, transparent 45%);
+    background-attachment:fixed;
+  }
+  .page{padding:0 1.25rem 6rem;}
+  .measure{max-width:var(--measure); margin-inline:auto;}
+  .breakout{max-width:var(--breakout); margin-inline:auto;}
+  section.chapter{padding:3.2rem 0 1.4rem;}
+  .topbar{
+    position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:.7rem 1.25rem; background:color-mix(in srgb, var(--canvas) 86%, transparent);
+    backdrop-filter:saturate(120%) blur(8px); border-bottom:1px solid var(--rule);
+  }
+  .brandmark{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:inherit;}
+  .brandmark .wm{font-family:var(--font-sans); font-weight:700; letter-spacing:.16em; font-size:.82rem; text-transform:uppercase; color:var(--forest-deep);}
+  .brandmark .wm b{color:var(--terra-deep);}
+  .topbar .chaptag{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em;}
+  .progress-rail{position:absolute; left:0; right:0; bottom:-1px; height:2px; background:transparent;}
+  .progress-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--forest),var(--terra)); transition:width .12s linear;}
+  .hero{padding:4.4rem 0 1.2rem;}
+  .kicker{font-family:var(--font-sans); text-transform:uppercase; letter-spacing:.28em; font-size:.72rem; font-weight:600; color:var(--terra-deep); display:flex; align-items:center; gap:.8rem; margin-bottom:1.4rem;}
+  .kicker::after{content:""; height:1px; flex:1; background:var(--rule);}
+  .hero h1{font-family:var(--font-serif); font-weight:900; font-size:clamp(2.9rem,8vw,5.2rem); line-height:.98; letter-spacing:-.015em; margin:.2rem 0 .1rem; color:var(--ink);}
+  .hero h1 .em{color:var(--forest); font-style:italic; font-weight:900;}
+  .hero .dek{font-size:clamp(1.1rem,2.4vw,1.35rem); color:var(--ink-soft); font-style:italic; margin:1.4rem 0 0; max-width:34rem;}
+  .hero .meta{font-family:var(--font-mono); font-size:.76rem; color:var(--ink-soft); margin-top:2rem; display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; letter-spacing:.02em;}
+  .hero .meta span{display:inline-flex; align-items:center; gap:.45rem;}
+  .hero .meta .dot{width:6px;height:6px;border-radius:50%;background:var(--terra);}
+  .hero-logo{margin:2.6rem 0 .4rem;}
+  .epigraph{max-width:var(--measure); margin:2.6rem auto 0; padding:1.2rem 0 0; border-top:1px solid var(--rule); font-style:italic; color:var(--ink-soft); font-size:1.02rem;}
+  .epigraph .attr{display:block; font-style:normal; font-family:var(--font-sans); font-size:.74rem; letter-spacing:.06em; text-transform:uppercase; color:var(--forest); margin-top:.7rem;}
+  .eyebrow{font-family:var(--font-sans); text-transform:uppercase; letter-spacing:.24em; font-size:.7rem; font-weight:700; color:var(--terra-deep); margin:0 0 .5rem; display:flex; align-items:center; gap:.6rem;}
+  .eyebrow .n{font-family:var(--font-mono); color:var(--sage); font-weight:600;}
+  h2.head{font-family:var(--font-serif); font-weight:900; font-size:clamp(1.7rem,4.2vw,2.5rem); line-height:1.08; letter-spacing:-.01em; margin:.1rem 0 1.1rem; color:var(--forest-deep); max-width:var(--measure);}
+  h3.sub{font-family:var(--font-serif); font-weight:700; font-size:1.25rem; color:var(--ink); margin:2.2rem 0 .6rem;}
+  p{margin:0 0 1.25rem;}
+  .lead{font-size:1.2rem; line-height:1.7;}
+  .lead::first-letter{font-weight:900; font-size:3.6rem; float:left; line-height:.72; padding:.32rem .5rem 0 0; color:var(--terra); font-family:var(--font-serif);}
+  a{color:var(--forest-deep); text-underline-offset:3px; text-decoration-thickness:1px;}
+  a:hover{color:var(--terra-deep);}
+  strong{font-weight:700;} em{font-style:italic;}
+  .kw{color:var(--forest-deep); font-weight:700;}
+  .term{font-variant:small-caps; letter-spacing:.02em; font-weight:700; color:var(--terra-deep);}
+  .divider{display:flex; justify-content:center; padding:2.6rem 0 1.4rem;}
+  .divider svg{width:min(320px,72%); height:auto; opacity:.9;}
+  aside.simile{max-width:var(--measure); margin:1.9rem auto; border-left:3px solid var(--terra); background:linear-gradient(90deg, rgba(191,106,63,.07), rgba(191,106,63,0)); padding:1rem 1.2rem 1rem 1.3rem; border-radius:0 8px 8px 0;}
+  aside.simile .tag{font-family:var(--font-sans); font-size:.66rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--terra-deep); display:block; margin-bottom:.35rem;}
+  aside.simile p{margin:0; font-size:1rem;}
+  aside.codenote{max-width:var(--measure); margin:1.9rem auto; background:var(--code-bg); border:1px solid var(--rule); border-radius:10px; overflow:hidden;}
+  aside.codenote .bar{display:flex; align-items:center; gap:.5rem; padding:.5rem .9rem; border-bottom:1px solid var(--rule); background:color-mix(in srgb,var(--code-bg) 70%, var(--panel-2));}
+  aside.codenote .bar .lbl{font-family:var(--font-sans); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--forest);}
+  aside.codenote .bar .dots{display:flex; gap:.35rem; margin-left:auto;}
+  aside.codenote .bar .dots i{width:9px;height:9px;border-radius:50%;display:block;}
+  aside.codenote pre{margin:0; padding:.95rem 1.1rem; overflow-x:auto;}
+  aside.codenote code{font-family:var(--font-mono); font-size:.86rem; line-height:1.65; color:var(--ink);}
+  .c-key{color:var(--terra-deep); font-weight:600;} .c-fn{color:var(--forest-deep); font-weight:600;}
+  .c-com{color:var(--sage); font-style:italic;} .c-str{color:var(--gold);}
+  .pullstat{max-width:var(--breakout); margin:2.4rem auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:12px; overflow:hidden;}
+  .pullstat .cell{background:var(--panel); padding:1.2rem 1.1rem;}
+  .pullstat .big{font-family:var(--font-mono); font-weight:600; font-size:1.9rem; color:var(--forest-deep); line-height:1;}
+  .pullstat .cap{font-family:var(--font-sans); font-size:.74rem; color:var(--ink-soft); margin-top:.5rem; line-height:1.35;}
+  figure.sim{max-width:var(--breakout); margin:2.8rem auto; padding:0; background:var(--panel); border:1px solid var(--rule); border-radius:14px; box-shadow:0 1px 0 rgba(38,33,26,.03), 0 18px 40px -30px rgba(30,70,52,.5); overflow:hidden;}
+  figure.sim .sim-tab{display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; padding:.75rem 1.1rem; border-bottom:1px solid var(--rule); background:linear-gradient(90deg, color-mix(in srgb,var(--forest) 12%, var(--panel)), var(--panel));}
+  figure.sim .sim-tab .id{font-family:var(--font-mono); font-size:.7rem; font-weight:600; letter-spacing:.06em; color:#fff; background:var(--terra); padding:.22rem .55rem; border-radius:5px;}
+  figure.sim .sim-tab .name{font-family:var(--font-sans); font-weight:700; font-size:.86rem; letter-spacing:.02em; color:var(--forest-deep); text-transform:uppercase;}
+  .sim-body{padding:1.1rem 1.1rem 1.2rem;}
+  .sim-canvas-wrap{position:relative; width:100%; border-radius:10px; overflow:hidden; background:var(--panel-2); border:1px solid var(--rule);}
+  canvas{display:block; width:100%; height:auto;}
+  .sim-controls{display:flex; flex-wrap:wrap; gap:.55rem; align-items:center; margin-top:.9rem;}
+  .sim-readout{font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); display:flex; flex-wrap:wrap; gap:.35rem 1.3rem; margin-top:.85rem; padding-top:.7rem; border-top:1px dashed var(--rule);}
+  .sim-readout b{color:var(--forest-deep); font-weight:600;}
+  figcaption{font-family:var(--font-sans); font-size:.82rem; color:var(--ink-soft); line-height:1.5; margin-top:.9rem; padding-top:.8rem; border-top:1px solid var(--rule);}
+  figcaption b{color:var(--ink);}
+  button.btn{font-family:var(--font-sans); font-weight:600; font-size:.82rem; border:1px solid var(--forest); color:var(--forest-deep); background:transparent; padding:.5rem .9rem; border-radius:7px; cursor:pointer; transition:all .15s ease; letter-spacing:.01em;}
+  button.btn:hover{background:var(--forest); color:#fff;}
+  button.btn.primary{background:var(--terra); border-color:var(--terra); color:#fff;}
+  button.btn.primary:hover{background:var(--terra-deep); border-color:var(--terra-deep);}
+  button.btn.ghost{border-color:var(--rule); color:var(--ink-soft);}
+  button.btn.ghost:hover{background:var(--panel-2); color:var(--ink);}
+  button.btn[aria-pressed="true"]{background:var(--forest-deep); color:#fff; border-color:var(--forest-deep);}
+  .seg{display:inline-flex; border:1px solid var(--rule); border-radius:8px; overflow:hidden; background:var(--panel-2);}
+  .seg button{border:none; background:transparent; font-family:var(--font-sans); font-weight:600; font-size:.8rem; color:var(--ink-soft); padding:.48rem .85rem; cursor:pointer;}
+  .seg button[aria-pressed="true"]{background:var(--forest); color:#fff;}
+  :focus-visible{outline:3px solid var(--terra); outline-offset:2px; border-radius:4px;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+  .moves{max-width:var(--breakout); margin:2.4rem auto;}
+  .moves-tabs{display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem;}
+  .moves-tabs button{font-family:var(--font-sans); font-weight:600; font-size:.82rem; cursor:pointer; border:1px solid var(--rule); background:var(--panel); color:var(--ink-soft); padding:.5rem .8rem; border-radius:999px; transition:all .15s;}
+  .moves-tabs button[aria-selected="true"]{background:var(--forest); border-color:var(--forest); color:#fff;}
+  .moves-panel{background:var(--panel); border:1px solid var(--rule); border-radius:12px; padding:1.3rem 1.3rem; min-height:9.5rem;}
+  .moves-panel .mv-name{font-family:var(--font-serif); font-weight:700; font-size:1.2rem; color:var(--forest-deep); margin-bottom:.3rem;}
+  .moves-panel .mv-eq{font-family:var(--font-mono); font-size:.9rem; color:var(--terra-deep); background:var(--code-bg); border:1px solid var(--rule); border-radius:7px; padding:.5rem .7rem; display:inline-block; margin:.4rem 0 .8rem;}
+  .moves-panel .mv-say{font-size:1rem; color:var(--ink);}
+  .moves-panel .mv-say .g{color:var(--sage); font-family:var(--font-sans); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; font-weight:700; display:block; margin-bottom:.2rem;}
+  .hourglass{max-width:var(--breakout); margin:2.4rem auto;}
+  .hourglass svg{width:100%; height:auto;}
+  .faq{max-width:var(--measure); margin:1.4rem auto 0;}
+  details.q{border-bottom:1px solid var(--rule); padding:.2rem 0;}
+  details.q summary{list-style:none; cursor:pointer; padding:1.05rem 2rem 1.05rem 0; position:relative; font-family:var(--font-serif); font-weight:700; font-size:1.12rem; color:var(--forest-deep); line-height:1.4;}
+  details.q summary::-webkit-details-marker{display:none;}
+  details.q summary::after{content:"+"; position:absolute; right:.1rem; top:1rem; font-family:var(--font-mono); font-size:1.35rem; color:var(--terra); transition:transform .2s; line-height:1;}
+  details.q[open] summary::after{content:"\2013";}
+  details.q .a{padding:0 0 1.3rem; color:var(--ink); font-size:1.02rem;}
+  details.q .a .src{font-family:var(--font-sans); font-size:.74rem; color:var(--sage); letter-spacing:.02em; margin-top:.5rem; display:block;}
+  .q-mini{font-family:var(--font-sans); text-transform:uppercase; letter-spacing:.2em; font-size:.68rem; font-weight:700; color:var(--terra-deep); margin:0 0 .3rem;}
+  .coda{max-width:var(--measure); margin:0 auto; padding:2.2rem 0 0; border-top:2px solid var(--forest);}
+  .coda p{font-size:1.12rem;}
+  .coda .signoff{font-family:var(--font-mono); font-size:.78rem; color:var(--ink-soft); margin-top:1.6rem; letter-spacing:.02em;}
+  .nextup{max-width:var(--measure); margin:2.4rem auto 0; padding:1.2rem 1.3rem; background:var(--panel); border:1px solid var(--rule); border-left:3px solid var(--sage); border-radius:0 10px 10px 0;}
+  .nextup .k{font-family:var(--font-sans); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--sage); display:block; margin-bottom:.35rem;}
+  .nextup .t{font-family:var(--font-serif); font-weight:700; font-size:1.15rem; color:var(--forest-deep);}
+  footer.foot{max-width:var(--breakout); margin:4rem auto 0; padding-top:1.4rem; border-top:1px solid var(--rule); font-family:var(--font-sans); font-size:.76rem; color:var(--ink-soft); line-height:1.6;}
+  footer.foot .srcs{margin-top:.8rem;}
+  footer.foot a{color:var(--forest);}
+  ::selection{background:rgba(191,106,63,.22);}
+  @media (max-width:640px){
+    body{font-size:1.02rem; line-height:1.72;}
+    .page{padding:0 1rem 4rem;}
+    .lead::first-letter{font-size:3rem;}
+    figure.sim{border-radius:12px;} .sim-body{padding:.85rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brandmark" href="#top" aria-label="WETWARE — začátek kapitoly">
+    <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+      <g fill="none" stroke="#2F5D46" stroke-width="1.8" stroke-linecap="round">
+        <path d="M16 30 L16 17"/><path d="M16 22 C16 22 11 20 9 15"/>
+        <path d="M16 19 C16 19 22 18 24 12"/><path d="M16 17 C16 17 16 11 20 8"/>
+      </g>
+      <g fill="#2F5D46"><circle cx="9" cy="15" r="2.4"/><circle cx="24" cy="12" r="2.4"/></g>
+      <circle cx="20" cy="8" r="2.6" fill="#BF6A3F"/><circle cx="16" cy="30" r="1.6" fill="#5E8570"/>
+    </svg>
+    <span class="wm">WET<b>WARE</b></span>
+  </a>
+  <span class="chaptag">kap.01 &middot; metabolismus</span>
+  <div class="progress-rail"><div class="progress-fill" id="progress"></div></div>
+</div>
+
+<div class="page" id="top">
+
+  <header class="hero measure">
+    <div class="kicker">Terénní průvodce programy uvnitř tebe &middot; Kapitola první</div>
+    <h1>Jsi<br><span class="em">sloveso</span></h1>
+    <p class="dek">Vnitřní logika metabolismu &mdash; a jak ji číst: ne jako věc, ale jako program, pomalý oheň a stojatou vlnu v řece, všechno naráz. Protože přesně tím jsi.</p>
+
+    <div class="hero-logo" aria-hidden="true">
+      <svg width="150" height="46" viewBox="0 0 150 46">
+        <g fill="none" stroke="#5E8570" stroke-width="1.6" stroke-linecap="round">
+          <path d="M4 40 C 40 40, 46 24, 74 24 C 104 24, 110 40, 146 40"/>
+          <path d="M74 24 C 74 24, 74 10, 62 6"/><path d="M74 24 C 74 24, 88 20, 98 10"/>
+        </g>
+        <circle cx="62" cy="6" r="3.4" fill="#BF6A3F"/><circle cx="98" cy="10" r="3" fill="#2F5D46"/>
+        <circle cx="4" cy="40" r="2.6" fill="#2F5D46"/><circle cx="146" cy="40" r="2.6" fill="#2F5D46"/>
+        <circle cx="74" cy="24" r="3.6" fill="#F4EFE1" stroke="#2F5D46" stroke-width="1.6"/>
+      </svg>
+    </div>
+
+    <div class="meta">
+      <span><span class="dot"></span>Spojené zdroje: Nelson &amp; Cox, <em>Lehninger</em> 8. vyd. &middot; Voet &amp; Voet 4. vyd.</span>
+      <span><span class="dot"></span>3 živé simulace</span>
+      <span><span class="dot"></span>~22 min čtení</span>
+    </div>
+
+    <blockquote class="epigraph">
+      Ze všech chemických soustav ve vesmíru je ta živá jediná, která se tvrdošíjně odmítá uklidnit. Pro všechno ostatní je rovnováha jen tichý konec příběhu. Pro tebe má rovnováha kratší a znepokojivější jméno. Říká se jí <em>smrt</em>.
+      <span class="attr">&mdash; Domácí pravidlo tohoto průvodce</span>
+    </blockquote>
+  </header>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">01</span> Omyl, kterého se všichni dopouštíme</p>
+      <h2 class="head">Myslíš si, že jsi podstatné jméno. Nejsi.</h2>
+
+      <p class="lead">Začněme, v duchu Alana Wattse, tím, že odklidíme kus nábytku, na kterém celý život sedíš, aniž to tušíš. Věříš, že jsi věc. Pevný předmět. Podstatné jméno. Něco, co bylo kdysi vyrobeno, co přetrvává léta jako lžíce přetrvává v šuplíku a co se jednoho dne opotřebuje. Je to ta nejpřirozenější víra na světě &mdash; a je téměř úplně mylná.</p>
+
+      <p>A právě v tom je ta potíž. Natáhni ruku a dotkni se vlastní paže. Atomy pod tvými prsty &mdash; uhlík, dusík a kyslík vetkané do těch svalů &mdash; z větší části nejsou tytéž atomy, které tam byly před rokem. Ve třicátých letech dával chemik Rudolf Schoenheimer zvířatům molekuly, které označil těžkými izotopy, aby mohl sledovat jednotlivé atomy tělem jako barvivo řekou. Čekal, že najde stabilní strukturu, kterou potrava jen doplňuje &mdash; tak jako doplňuješ nádrž benzinem. Místo toho našel dokonale zamaskovaný chaos. Označené atomy se hrnuly do tkání, které všichni pokládali za hotové a netečné &mdash; a jiné atomy, k nerozeznání až na tu značku, se hrnuly ven. Tkáň těla se bez ustání bourala a znovu stavěla, všude a naráz, i u zvířete, jehož hmotnost se nezměnila ani o gram. Nazval to, docela krásně, <em>dynamickým stavem tělesných složek</em>.</p>
+
+      <p>A teď sleduj, protože právě v tom je celý ten trik. Jestliže látka, která tě tvoří, tebou protéká a průběžně se vyměňuje, pak ta látka nemůže být tím, co jsi ty. Co přetrvává, není materiál. Co přetrvává, je <em>vzorec</em> &mdash; uspořádání, neustávající děj, tvar, který proud pořád znovu vytváří, jak jím prochází. Nejsi voda ve fontáně. Jsi <em>tvar té fontány</em> &mdash; a fontána má tvar jen tak dlouho, dokud se voda pohybuje.</p>
+
+      <p>Tohle není mystika. Je to ten nejstřízlivější možný výklad chemie &mdash; a právě tady musí veškeré studium metabolismu začít. <span class="term">Metabolismus</span> &mdash; z řeckého slova pro „změnu", „přehazování" &mdash; je prostě jméno, které dáváme celkové činnosti toho proudu: každé reakci, jež uvnitř tebe rozebírá molekuly a skládá nové, tisícům reakcí, které probíhají právě teď, tiše, zatímco čteš tuhle větu. Nejsi struktura, která <em>má</em> metabolismus. Jsi metabolismus, který na sebe dočasně vzal strukturu.</p>
+    </div>
+
+    <figure class="sim" id="sim-flame">
+      <div class="sim-tab"><span class="id">SIM 01</span><span class="name">Stojatá vlna</span></div>
+      <div class="sim-body">
+        <div class="sim-canvas-wrap">
+          <canvas id="flameCanvas" role="img" aria-label="Plamen svíčky složený z tisíců stoupajících částic. Plamen si drží tvar, přestože každá částice, která jím projde, je jiná. Tlačítko odřízne palivo; tvar se pak rozplyne, což ukazuje, že forma je ten proud, ne hmota."></canvas>
+        </div>
+        <div class="sim-controls">
+          <button class="btn primary" id="flameToggle" aria-pressed="false">Odřízni palivo</button>
+          <button class="btn ghost" id="flameReset">Reset</button>
+        </div>
+        <div class="sim-readout">
+          <span>stav: <b id="flameState">proudí</b></span>
+          <span>protečených částic: <b id="flameCount">0</b></span>
+          <span>tvar: <b id="flameShape">drží</b></span>
+        </div>
+        <figcaption>Plamen svíčky má určitý tvar. Přesto v něm nezůstane jediná částice &mdash; plyn se plamenem řítí vzhůru a v okamžiku je pryč, vystřídán dalším a dalším. Plamen <b>je to hoření</b>, ne to shořelé. Odřízni palivo a nikde se neschovává žádný „plamen", který by čekal; vzorec se prostě přestane vytvářet. <b>Jsi předmět téhož druhu.</b> Velmi pomalý, velmi chladný a velmi dobře organizovaný oheň, který hoří ode dne tvého početí.</figcaption>
+      </div>
+    </figure>
+
+    <aside class="codenote">
+      <div class="bar"><span class="lbl">wetware // hlavní smyčka</span><span class="dots"><i style="background:#BF6A3F"></i><i style="background:#C69A46"></i><i style="background:#2F5D46"></i></span></div>
+<pre><code><span class="c-com"># Skrz kámen neběží žádný proces. Skrz tebe běží přesně jeden, bez přestávky:</span>
+<span class="c-key">while</span> <span class="c-fn">alive</span>:
+    fuel   = <span class="c-fn">eat</span>()            <span class="c-com"># importuj řád ze světa</span>
+    energy = <span class="c-fn">break_down</span>(fuel)  <span class="c-com"># katabolismus -- uvolni volnou energii</span>
+    <span class="c-fn">rebuild</span>(self, energy)   <span class="c-com"># anabolismus -- utrať ji na znovuvytváření sebe</span>
+    <span class="c-fn">export</span>(heat, disorder)  <span class="c-com"># zaplať vesmíru jeho daň (viz oddíl 02)</span>
+<span class="c-com"># Ta smyčka *jsi* ty. Zastaví se jen jednou. Tomu říkáme konec programu.</span></code></pre>
+    </aside>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">02</span> Jediné pravidlo, které vesmír bez ustání vymáhá</p>
+      <h2 class="head">Všechno se rozpadá. Ty se rozpadáš schválně &mdash; a ještě za to bereš plat.</h2>
+
+      <p>Vesmír má přesně jeden zákon, jehož vymáhání nikdy neustane, a vyplatí se ho říct natvrdo, protože všechno ostatní v téhle knize z něj plyne. <span class="kw">Druhý zákon termodynamiky</span> říká, že jako celek mají věci sklon se rozprostírat, chladnout, mísit se a být čím dál neuspořádanější. Řád je drahý; nepořádek je zadarmo a děje se sám. Horká káva vychladne; sama od sebe se nikdy znovu neohřeje. Parfém opustí lahvičku; nikdy se do ní nevplíží zpátky. Odborné slovo pro tu neuspořádanost je <span class="term">entropie</span> a zákon říká, že entropie vesmíru vždycky jen <em>roste</em>.</p>
+
+      <p>A tím vyvstává nepříjemná otázka. Ty jsi v tuhle chvíli nehorázný akt řádu. Jeho tichá vřava. Biliony molekul uspořádané s přesností, jaké by se nevyrovnala žádná továrna &mdash; a nejen jednou uspořádané, ale v tom uspořádání udržované, okamžik za okamžikem, proti neúprosnému tahu z kopce směrem k rozbředlé kaši. Jak ti to proboha prochází?</p>
+
+      <p>Tady je ten kejklířský trik &mdash; a je naprosto legální. Nejsi zavřená sklenice. Jsi <em>otevřený systém</em> &mdash; vír. Představ si na chvíli vír v řece. Je to skutečná, trvalá, uspořádaná struktura; můžeš ji vyfotit, pojmenovat, přijít zítra a najít ji na témže místě. A přesto netvoří žádný řád z ničeho. Existuje <em>proto</em>, že řeka padá z kopce. Vír je malá kapsa místního uspořádání, vyhloubená a zaplacená mnohem větší neuspořádaností všeho toho, jak se voda valí k moři. Zastav řeku a vír v tu ránu zmizí.</p>
+
+      <p>A přesně to jsi ty. Svůj nádherný vnitřní řád udržuješ tím, že sedíš uprostřed mnohem většího toku z kopce &mdash; toku energie z koncentrované potravy a kyslíku, dolů skrz tvou chemii, ven do rozptýleného tepla a prostého odpadu. Neporušuješ druhý zákon. Ty se jím <em>živíš</em>. Každý kousek řádu uvnitř tebe je vykoupen tím, že do okolí vysypeš ještě větší kus neuspořádanosti &mdash; převážně jako teplo. Proto z tebe sálá teplo. Není to vedlejší účinek; je to účtenka. Je to daň z entropie, jak odchází z budovy.</p>
+
+      <p>A teď jemný bod, o který zakopne skoro každý a na kterém si obě naše učebnice dávají záležet. Tvé buňky nemohou běžet na teplo. Parní stroj funguje tak, že nechá teplo přejít z něčeho horkého do něčeho studeného a cestou si ukrojí kus práce &mdash; jenže to jde jedině tehdy, když máš k dispozici teplotní <em>rozdíl</em>. Tvé buňky mají v podstatě všechny stejnou teplotu. Jsou, řečeno odborně, <span class="term">izotermické</span>. Teplo, které z tebe proudí, je tedy vskutku odpad; uvnitř tebe už žádnou další práci vykonat nedokáže. Jediný druh energie, který buňka opravdu umí utratit, je ten uložený ve způsobu, jakým jsou molekuly svázané dohromady a nachystané zareagovat &mdash; to, čemu chemici po vzoru Willarda Gibbse říkají <span class="kw">volná energie</span>. Ne teplo. Ne teplota. Chemická ochota reakce proběhnout.</p>
+
+      <aside class="simile">
+        <span class="tag">Přirovnání ze života</span>
+        <p>Vodní mlýn nepoženeš teplem rybníka, ať se ten rybník rozehřeje sebevíc. Poženeš ho jedině vodou, která opravdu <em>padá</em> &mdash; výškou, spádem, tou nachystanou ochotou klesnout. Teplo je ten teplý rybník. Volná energie je vodopád. Buňka smí vždycky použít jedině ten vodopád.</p>
+      </aside>
+
+      <p>Hluboká logika metabolismu tedy nezní „spal potravu kvůli teplu". Je jemnější a mnohem zajímavější: <strong>zachyť volnou energii, která se uvolňuje, když věci padají z kopce, a použij ji &mdash; dřív než se znehodnotí na neužitečné teplo &mdash; k pohonu té dřiny do kopce: zůstat naživu.</strong> Což nás přivádí ke strojovému vybavení, které to zachytávání obstarává &mdash; a k vůbec nejčastěji nepochopené molekule ve tvém těle.</p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">03</span> Měna &mdash; a proč jsi schválně bez peněz</p>
+      <h2 class="head">ATP není baterie. Jsou to hotové peníze &mdash; a skoro všechny je utratíš v okamžiku, kdy je vyrobíš.</h2>
+
+      <p>Nejspíš ti někdo řekl, že ATP &mdash; adenosintrifosfát &mdash; je „energetická měna buňky". Pravda, jenže ta metafora se obvykle chápe špatně, a to nepochopení zakrývá celou pointu. Lidé si ATP představují jako <em>baterii</em>: zásobu, rezervu, něco, co nabiješ a schováš na později. Nic takového. ATP není spořicí účet. ATP jsou <em>mince v kapse</em> &mdash; a protékají ti mezi prsty tempem, které tě upřímně překvapí.</p>
+
+      <p>Vezmi si ta čísla. V kterýkoli okamžik obsahuje tvé tělo jen asi <strong>50 gramů</strong> ATP. Pár polévkových lžic. Ale během jednoho běžného dne, v klidu i v pohybu, ho vyrobíš a utratíš zhruba tolik, kolik vážíš &mdash; desítky kilogramů, protočené tou nepatrnou padesátigramovou zásobou znovu a znovu, každá molekula nabitá a vybitá snad tisíckrát, než den skončí. Nehromadíš energii v podobě ATP. Provozuješ naprosto zběsilou hotovostní ekonomiku &mdash; razíš mince a utrácíš je jedním dechem.</p>
+
+      <div class="pullstat" role="group" aria-label="ATP v číslech">
+        <div class="cell"><div class="big">~50 g</div><div class="cap">ATP v těle v každém okamžiku &mdash; celá pokladna</div></div>
+        <div class="cell"><div class="big">~tvá váha</div><div class="cap">ATP vyrobené a utracené za den &mdash; denní obrat</div></div>
+        <div class="cell"><div class="big">~1000&times;</div><div class="cap">kolikrát se každá molekula ATP za den znovu nabije a použije</div></div>
+      </div>
+
+      <p>Proč stavět ekonomiku zrovna takhle? Proč prostě neuložit jednu velkou nabitou baterii a nečerpat z ní? Protože dobrá měna musí být <em>utratitelná</em> &mdash; a být utratitelná znamená být nachystaná, nikdy tak úplně v klidu. Tady je chemie elegantní. Molekuly řadíme podle jejich <span class="term">potenciálu přenosu fosforylové skupiny</span>: zhruba podle toho, jak moc „touží" fosfátovou skupinu předat a kolik volné energie přitom uvolní. Některé molekuly, třeba fosfoenolpyruvát, sedí na téhle stupnici hodně vysoko &mdash; zoufale chtějí darovat. Jiné, třeba glukóza-6-fosfát, sedí nízko &mdash; zdráhavě. ATP sedí záměrně a chytře <em>uprostřed</em>.</p>
+
+      <p>A právě uprostřed univerzální měna patří. Protože ATP sedí uprostřed stupnice, může být <em>nabito</em> těmi opravdu vysokoenergetickými molekulami, které vyrábí katabolismus, a může se pak otočit a <em>vyplatit</em> mnoha níže položeným úkolům, které je třeba udělat. Je to prostředník, směnárník, společná jednotka, na kterou a ze které lze všechno ostatní převádět. Velká bankovka je užitečná právě proto, že má větší hodnotu než káva a menší než auto; umí přijmout drobné shora a vydat drobné dolů. ATP je velká bankovka buňky.</p>
+
+      <aside class="simile">
+        <span class="tag">Přirovnání ze života</span>
+        <p>ATP je žeton v herně, ne plyšová výhra na polici. Žetony si neschováváš; cpeš je do jednoho automatu za druhým tak rychle, jak ti je směnárenské okénko stíhá vydávat. Výhry &mdash; dlouhodobé zásoby energie &mdash; jsou z něčeho úplně jiného: tuk a glykogen, spořicí účet. ATP jsou vždycky jen ty drobné, co lítají přes pult.</p>
+      </aside>
+
+      <p>A poslední nádherný detail, protože odpovídá na otázku, o které ani nevíš, že ji máš: když ATP tolik touží zbavit se svého fosfátu, proč se prostě nerozpadne v teplém vodnatém nitru buňky? Odpověď zní, že ATP je <em>termodynamicky</em> nestabilní, ale <em>kineticky</em> stabilní. Polopatě: strašně chce zareagovat, jenže v cestě stojí vysoká zeď, takže nemůže &mdash; ne samo od sebe. Je to past na myši, natažená a nabitá, která může neškodně ležet na poličce, jak dlouho chceš. Své cvaknutí energie uvolní teprve tehdy, když přijde enzym a záměrně spustí spoušť &mdash; přesně na tom místě a v tom okamžiku, kdy chce buňka energii dodat. Nachystané, ale pod kontrolou. Ta kombinace &mdash; natažená pružina, pojistka, záměrná spoušť &mdash; je tajemství každého řízeného děje v tobě, a za chvíli ho potkáme znovu ve velkolepějším měřítku.</p>
+
+      <figure class="sim" id="sim-atp">
+        <div class="sim-tab"><span class="id">SIM 02</span><span class="name">Ekonomika ATP</span></div>
+        <div class="sim-body">
+          <div class="sim-canvas-wrap">
+            <canvas id="atpCanvas" role="img" aria-label="Malá zásoba žetonů ATP je vlevo vyčerpávána nárokem a vpravo dobíjena katabolismem, přičemž obíhá dokola. Jak přepínáš z klidu na sprint, žetony létají rychleji a počítadlo protečeného množství se řítí vzhůru, ale velikost zásoby se sotva mění, což ukazuje obrovský obrat skrz nepatrnou, téměř stálou rezervu."></canvas>
+          </div>
+          <div class="sim-controls">
+            <span class="seg" role="group" aria-label="Nárok na energii">
+              <button id="atpRest" aria-pressed="true">Klid</button>
+              <button id="atpWalk" aria-pressed="false">Chůze</button>
+              <button id="atpSprint" aria-pressed="false">Sprint</button>
+            </span>
+            <button class="btn ghost" id="atpReset">Vynulovat počítadlo</button>
+          </div>
+          <div class="sim-readout">
+            <span>nárok: <b id="atpDemand">klid</b></span>
+            <span>stálá zásoba: <b id="atpPool">~50 g</b> (sotva se hne)</span>
+            <span>protečeno od začátku: <b id="atpCycled">0.00 kg</b></span>
+          </div>
+          <figcaption>Sleduj, jak zásoba zůstává <b>skoro dokonale vyrovnaná</b>, zatímco průtok exploduje. To je homeostáza: nabídka honí poptávku tak rychle, že rezerva nikdy nevyschne ani nepřeteče. Přepni na <b>sprint</b> a mince se rozmažou &mdash; obrat vyskočí, a pokladna přesto drží. Poučka, kterou se tvé tělo řídí: <b>energii neskladuj, nech ji proudit.</b></figcaption>
+        </div>
+      </figure>
+
+      <h3 class="sub">Poznámka pod čarou o druhé měně</h3>
+      <p>ATP přenáší <em>fosfát</em> a pohání reakce. Jenže stavba těla vyžaduje i <em>elektrony</em> &mdash; surovou redukční sílu, kterou se prosté oxidované úlomky sešívají do složitých, energeticky bohatých molekul, jako jsou tuky. Ten úkol připadá dvojici téměř dvojčat mezi přenašeči &mdash; <span class="kw">NADH</span> a <span class="kw">NADPH</span>. Chemicky jsou jejich pracovní konce totožné; jediný rozdíl je jedna fosfátová skupina navíc, pověšená stranou na NADPH, kde na samotné reakci nemění nic a na účetnictví všechno. Ten osamělý fosfát je <em>vodoznak</em>. Umožňuje buňce vést přes jinak tutéž bankovku dva oddělené účty: NADH se drží „prázdné", hladové <em>přijímat</em> elektrony z paliva, které se rozkládá (provozní účet, katabolismus); NADPH se drží „plné", připravené <em>darovat</em> elektrony do věcí, které se staví (investiční fond, anabolismus). Táž bankovka, jiná barva inkoustu &mdash; a buňka si ani jednou nesplete peníze, které utrácí za svícení, s penězi, které utrácí za stavbu přístavby.</p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">04</span> Proč nevybuchneš</p>
+      <h2 class="head">Schodiště, ne útes.</h2>
+
+      <p>Tady je něco, na co stojí za to zírat. Poleno na topení, termodynamicky vzato, přímo <em>prosí</em>, aby se mohlo spojit s kyslíkem ve vzduchu. Ta reakce chce proběhnout; uvolnila by velkou hromadu volné energie; produkty (oxid uhličitý a voda) jsou mnohem stabilnější a spokojenější než poleno. Podle logiky druhého zákona nemá to poleno co pohledávat, aby si jen tak leželo v kůlně. A přesto tam leží beze změny celé roky.</p>
+
+      <p>Proč? Protože mezi polenem a jeho osudem stojí zeď &mdash; bariéra <span class="term">aktivační energie</span>. Aby reakce začala, musíš molekuly nejdřív přestrčit přes hrb &mdash; a při pokojové teplotě na to prostě nemají sílu. Ale škrtni zápalkou a ten první postrk dodáš; reakce se rozběhne, vychrlí teplo, a to teplo dodá postrk dalšímu kousku dřeva, a dalšímu &mdash; samo se udržuje, mimo kontrolu. Za pár burácejících minut se celá zásoba volné energie, kterou strom desítky let hromadil, vymrští do vzduchu jako chaotický výbuch tepla a světla. Skoro nic se nezachytí. Prostě to&hellip; odejde.</p>
+
+      <p>A teď to hluboké o tobě: jsi ze stejné hmoty jako to dříví na topení &mdash; uhlík a vodík, redukované a energeticky bohaté &mdash; a sedíš v tomtéž kyslíku. Glukóza ve tvé krvi chce hořet úplně stejně jako to poleno. A tvé buňky ji vskutku spojí s kyslíkem a skončí u naprosto stejného cíle: oxid uhličitý a voda. Jenže odmítají, absolutně odmítají, udělat to způsobem té zápalky.</p>
+
+      <p>Místo toho tvé buňky dělají dvě věci, které oheň nedokáže. Za prvé: místo aby přisadily teplo a dostaly se přes aktivační zeď, enzymy skrz ni provrtají <em>tunel</em> &mdash; sníží bariéru, aby reakce mohla mírně probíhat při tělesné teplotě, bez jediného plamínku. A za druhé: neberou glukózu dolů jedním katastrofálním pádem, ale jako dlouhé trpělivé <span class="kw">schodiště</span> &mdash; pár desítek malých, enzymy řízených schodů, které uvolňují volnou energii ve skromných splátkách. A na mnoha z těch schodů se trocha uvolněné energie sebere na ražbu ATP nebo na naložení elektronů na ony přenašeče NADH, které pak kaskádou sestupují posledním sešupem &mdash; <span class="kw">dýchacím řetězcem</span> &mdash; a předávají energii po stupních, až se docela dole spotřebované elektrony vysypou na kyslík.</p>
+
+      <aside class="simile">
+        <span class="tag">Přirovnání ze života</span>
+        <p>Vodopád a přehrada s elektrárnou berou tutéž řeku, ze stejné výšky, na totéž dno údolí. Vodopád všechnu tu padající energii rozhází jako tříšť a hluk. Přehrada pošle vodu při každém spádu skrz turbínu a tím, co vodopád promrhal, rozsvítí město. Táž voda. Táž výška. Spalování je ten vodopád. Ty jsi ta přehrada.</p>
+      </aside>
+
+      <figure class="sim" id="sim-stair">
+        <div class="sim-tab"><span class="id">SIM 03</span><span class="name">Spalování vs. schodiště</span></div>
+        <div class="sim-body">
+          <div class="sim-canvas-wrap">
+            <canvas id="stairCanvas" role="img" aria-label="Dva způsoby, jak uvolnit energii z jedné molekuly glukózy, vedle sebe. Vlevo škrtnutí zápalkou uvolní všechnu energii naráz jako neužitečný záblesk tepla a nezachytí skoro nic. Vpravo buněčné schodiště spouští energii po stupních, na několika schodech razí mince ATP a dole předává elektrony kyslíku, čímž zachytí zhruba třetinu energie v použitelné podobě. Přepínač odebere kyslík, což schodiště blízko dna zasekne a výtěžek ATP se zhroutí."></canvas>
+          </div>
+          <div class="sim-controls">
+            <button class="btn primary" id="stairFire">Škrtni zápalkou &#9656; vlevo</button>
+            <button class="btn primary" id="stairRun">Spusť dráhu &#9656; vpravo</button>
+            <button class="btn" id="stairO2" aria-pressed="false">Kyslík: ZAP</button>
+            <button class="btn ghost" id="stairReset">Reset</button>
+          </div>
+          <div class="sim-readout">
+            <span>palivo: <b>1 glukóza &middot; ~2 870 kJ/mol</b></span>
+            <span>zápalka &mdash; zachyceno: <b id="fireCap">&mdash;</b></span>
+            <span>schodiště &mdash; ATP: <b id="stairAtp">0</b> &middot; zachyceno: <b id="stairCap">&mdash;</b></span>
+          </div>
+          <figcaption>Táž molekula, táž celková energie, dva osudy. Zápalka v podstatě všechnu promrhá jako teplo za zlomek vteřiny. Schodiště zachytí zhruba třetinu v podobě ATP &mdash; zbytek stejně odejde jako teplo, protože žádný stroj není dokonalý (to je zase ta tvá daň z entropie). Teď přepni kyslík na <b>VYP</b> a spusť dráhu: dýchací řetězec se zadrhne, elektrony nemají kam jít, celé schodiště se ucpe a výtěžek ATP se zhroutí na tu trošku, kterou zvládne samotná glykolýza. A přesně k tomu kyslík slouží &mdash; viz terénní poznámky níže.</figcaption>
+        </div>
+      </figure>
+
+      <p>Důvod, proč můžeš být plná hořlavého paliva, koupat se v kyslíku a přesto nevzplanout, je tedy ten, že metabolismus je <em>řízené spalování, popíjené po co nejmenších doušcích</em>. Ten oheň je skutečný. Jen byl rozlámán na tisíc drobných, hlídaných kousků, z nichž každý se vymačká na trochu použitelné energie, než začne další. To je rozdíl mezi tělem a vatrou.</p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">05</span> Tvar celé té věci</p>
+      <h2 class="head">Nálevka, pak fontána. Všechno se zúží do jednoho pasu a pak rozkvete.</h2>
+
+      <p>Jestli ti někdy padla do oka ta velká nástěnná mapa metabolismu &mdash; ta s tisícem šipek a řeckých jmen, která se křižují jako schéma zapojení menšího města &mdash; nejspíš tě přepadlo zoufalství. Nemusí. Ta mapa je trik měřítka. Skoro všechno na ní je detail, a základní tvar je dost jednoduchý na to, aby se vešel do dlaně.</p>
+
+      <p>Ten tvar jsou přesýpací hodiny. Cestou dolů &mdash; <span class="term">katabolismus</span>, to rozebírání &mdash; se nahoře nasype ohromná rozmanitost potravin: bílkoviny, tuky, sacharidy, celá ta všehochuť jídla. A krok za krokem se všechny svádějí do nálevky a zjednodušují, mnohé se hroutí do mála, až skoro všechny dorazí do téhož úzkého pasu: k pokornému dvouuhlíkovému úlomku nesenému na molekule zvané <span class="kw">acetyl-CoA</span>. Ať bylo tvé jídlo jakékoli &mdash; steak, jablko nebo olivový olej &mdash; velká část toho se sbíhá právě sem, do tohohle jediného univerzálního přepravního kontejnerku. To je genialita katabolismu: nepotřebuje tisíc oddělených cest k likvidaci, protože sežene tisíc výchozích látek dolů k hrstce společných meziproduktů.</p>
+
+      <p>A pak se přesýpací hodiny zase rozevřou. Cestou nahoru &mdash; <span class="term">anabolismus</span>, to stavění &mdash; se z malé sady těchto ústředních meziproduktů rozvějíří závratná rozmanitost věcí, ze kterých jsi: membrány, sval, hormony, všechno možné. Málo věcí dovnitř; všechno ven. Sbíhání, pak rozbíhání. Nálevka, pak fontána.</p>
+    </div>
+
+    <div class="hourglass">
+      <svg viewBox="0 0 720 360" role="img" aria-label="Diagram metabolismu ve tvaru přesýpacích hodin. Nahoře se bílkoviny, sacharidy a tuky svádějí nálevkou přes aminokyseliny, cukry a mastné kyseliny a sbíhají se do jediného pasu označeného acetyl-CoA. Pod pasem se tvar zase rozevírá, jak anabolismus rozvějíří acetyl-CoA a příbuzné meziprodukty do mnoha molekul, které tělo staví.">
+        <defs>
+          <linearGradient id="funnelDown" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BF6A3F" stop-opacity="0.14"/><stop offset="1" stop-color="#BF6A3F" stop-opacity="0.03"/></linearGradient>
+          <linearGradient id="funnelUp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F5D46" stop-opacity="0.04"/><stop offset="1" stop-color="#2F5D46" stop-opacity="0.14"/></linearGradient>
+          <marker id="ah" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0 L6 4 L0 8 z" fill="#BF6A3F"/></marker>
+          <marker id="ag" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0 L6 4 L0 8 z" fill="#2F5D46"/></marker>
+        </defs>
+        <path d="M70 34 L650 34 L392 176 L328 176 Z" fill="url(#funnelDown)" stroke="#DED5BE"/>
+        <path d="M328 184 L392 184 L650 326 L70 326 Z" fill="url(#funnelUp)" stroke="#DED5BE"/>
+        <g font-family="Inter, sans-serif" font-weight="700" font-size="15" fill="#9E5230" text-anchor="middle">
+          <text x="160" y="26">BÍLKOVINY</text><text x="360" y="26">SACHARIDY</text><text x="560" y="26">TUKY</text>
+        </g>
+        <g font-family="Fira Code, monospace" font-size="12.5" fill="#524A3B" text-anchor="middle">
+          <text x="160" y="92">aminokyseliny</text><text x="360" y="92">cukry &#8594; pyruvát</text><text x="560" y="92">mastné kyseliny</text>
+        </g>
+        <g stroke="#BF6A3F" stroke-width="1.6" fill="none" opacity="0.8">
+          <path d="M160 104 C 220 140, 300 150, 350 168" marker-end="url(#ah)"/>
+          <path d="M360 104 L360 166" marker-end="url(#ah)"/>
+          <path d="M560 104 C 500 140, 420 150, 370 168" marker-end="url(#ah)"/>
+        </g>
+        <rect x="286" y="168" width="148" height="24" rx="12" fill="#26211A"/>
+        <text x="360" y="184" font-family="Fira Code, monospace" font-weight="600" font-size="13" fill="#F4EFE1" text-anchor="middle">acetyl-CoA</text>
+        <g stroke="#2F5D46" stroke-width="1.6" fill="none" opacity="0.8">
+          <path d="M330 194 C 260 214, 200 226, 150 246" marker-end="url(#ag)"/>
+          <path d="M360 194 L360 250" marker-end="url(#ag)"/>
+          <path d="M390 194 C 460 214, 520 226, 570 246" marker-end="url(#ag)"/>
+        </g>
+        <g font-family="Fira Code, monospace" font-size="12.5" fill="#524A3B" text-anchor="middle">
+          <text x="150" y="266">lipidy &middot; membrány</text><text x="360" y="266">aminokyseliny &middot; hem</text><text x="560" y="266">cholesterol &middot; steroidy</text>
+        </g>
+        <g font-family="Inter, sans-serif" font-weight="700" font-size="15" fill="#2F5D46" text-anchor="middle">
+          <text x="360" y="316">VŠE, Z ČEHO JSI</text>
+        </g>
+        <text x="46" y="110" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#9E5230" transform="rotate(-90 46 110)" text-anchor="middle" letter-spacing="2">KATABOLISMUS &#8595;</text>
+        <text x="46" y="252" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#2F5D46" transform="rotate(-90 46 252)" text-anchor="middle" letter-spacing="2">ANABOLISMUS &#8593;</text>
+      </svg>
+    </div>
+
+    <div class="measure">
+      <p>V těch přesýpacích hodinách se skrývá ještě jedna věc &mdash; a je to jeden z tichých mistrovských tahů biochemie. Cesta <em>dolů</em> a cesta <em>nahoru</em> nikdy nevedou tak úplně po téže silnici. I tam, kde se molekula rozebere a později zase složí, chodí demoliční parta a stavební parta <em>jinými ulicemi</em> &mdash; jinými enzymy, často jinými oddíly buňky. Vypadá to jako plýtvání. Je to naopak. Kdyby stavba a bourání sdílely jednu obousměrnou silnici, nešlo by dělat jedno bez ohrožení druhého, a rozhodně by je nešlo ovládat nezávisle. Tím, že buňka drží oba směry oddělené, nasadí na každý z nich ventil &mdash; a může poslat stavební partu do nejvyšších obrátek, zatímco demoliční četa jede naprázdno, nebo naopak, přesně podle toho, co ta chvíle žádá. Což je naše příští téma, ale nejdřív: co vlastně všechny ty tisíce reakcí chemicky <em>dělají</em>? Míň, než by se zdálo.</p>
+    </div>
+
+    <div class="moves" id="moves">
+      <p class="eyebrow" style="max-width:none"><span class="n">05&middot;b</span> Celá gramatika buňky</p>
+      <p class="measure" style="margin-inline:0;">Živá buňka umí provozovat tisíce různých reakcí. Ale &mdash; a tohle je ta odměna za to, že čtenáře nepodceňujeme, to, co promění zeď jmen v jazyk &mdash; skoro každá z nich je jen obměnou pouhých <strong>pěti základních tahů</strong>. Nauč se těch pět tahů a nástěnná mapa přestane být hrozbou a začne být větami. Klikni na každý z nich:</p>
+      <div class="moves-tabs" role="tablist" aria-label="Pět typů reakcí">
+        <button role="tab" aria-selected="true" data-mv="0">1 &middot; Tvorba/štěpení vazeb C&ndash;C</button>
+        <button role="tab" aria-selected="false" data-mv="1">2 &middot; Přesmyky</button>
+        <button role="tab" aria-selected="false" data-mv="2">3 &middot; Radikálové</button>
+        <button role="tab" aria-selected="false" data-mv="3">4 &middot; Přenosy skupin</button>
+        <button role="tab" aria-selected="false" data-mv="4">5 &middot; Redox</button>
+      </div>
+      <div class="moves-panel" id="movesPanel" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">06</span> Ekonomika se řídí sama</p>
+      <h2 class="head">Nikdo nevelí. A právě o to jde.</h2>
+
+      <p>Možná si říkáš, že tak spletitý systém musí mít manažera &mdash; nějakou ústřednu, která čte poptávku a vydává rozkazy. Žádná taková ústředna neexistuje. Metabolismus se reguluje sám, tak jako trh, skrz tisíce nepatrných místních zpětných vazeb &mdash; a pochopit <em>jak</em> je poslední dílek té vnitřní logiky.</p>
+
+      <p>Ten trik se jmenuje <span class="kw">zpětnovazebná inhibice</span> a znáš ho z termostatu na zdi. Termostat v žádném vznešeném smyslu „neví", jakou teplotu chceš; prostě vypne topení, když se místnost dost ohřeje, a zase ho zapne, když vychladne. Metabolická dráha dělá přesně tohle: <em>konečný produkt</em> výrobní linky, jakmile se nahromadí, tiše sáhne zpátky a vypne enzym poblíž <em>začátku</em> téže linky. Té věci se vyrobilo dost, takže linka, která ji vyrábí, zpomalí &mdash; ne na rozkaz, ale prostým molekulovým dotykem. Když se produkt spotřebuje a jeho hladina klesne, brzda povolí a linka zase zrychlí. Nabídka honí poptávku automaticky, napořád, bez potřeby jakéhokoli manažera.</p>
+
+      <aside class="simile">
+        <span class="tag">Přirovnání ze života</span>
+        <p>Je to továrna, která zastaví vlastní výrobní linku, když se sklad naplní, a znovu ji rozjede, když objednávky vyprázdní police. Žádné oběžníky, žádné porady &mdash; plný sklad je sám o sobě ten signál. Hotový výrobek je zároveň cíl i vypínač.</p>
+      </aside>
+
+      <p>A protože dráhy jsou nevratné jednosměrky (vzpomeň si: každá má hned na začátku silně z kopce vedoucí <span class="term">rozhodující krok</span>, turniket, kterým se snadno zpátky neprojde), stačí buňce dát brzdu na ten jediný turniket, aby ovládla celou linku. Nemusí hlídat každý schod &mdash; jen ten vchod. Právě proto metabolismus není strnulé potrubí pevných trubek, ale živá, sama se dolaďující ekonomika: síť jednosměrek, každá s hlídaným vchodem, každý vchod citlivý na to, kolik produktu se už povaluje kolem. Zvedni kdekoli poptávku a příslušné turnikety se otevřou víc; nech poptávku klesnout a přivřou se. Systém si moment za momentem nachází vlastní rovnováhu, aniž kdy kdokoli rozhoduje.</p>
+
+      <aside class="codenote">
+        <div class="bar"><span class="lbl">wetware // regulace jako zpětná vazba</span><span class="dots"><i style="background:#BF6A3F"></i><i style="background:#C69A46"></i><i style="background:#2F5D46"></i></span></div>
+<pre><code><span class="c-key">def</span> <span class="c-fn">pathway</span>(substrate):
+    <span class="c-key">while</span> demand_exists():
+        <span class="c-key">if</span> product_level &gt; <span class="c-str">ENOUGH</span>:
+            <span class="c-fn">throttle</span>(committed_step)   <span class="c-com"># produkt se dotkne prvního enzymu -&gt; brzda</span>
+        <span class="c-key">else</span>:
+            <span class="c-fn">open</span>(committed_step)       <span class="c-com"># brzda povolí -&gt; linka zrychlí</span>
+        yield <span class="c-fn">one_step</span>()
+<span class="c-com"># Nikde se neimportuje žádný ústřední dispečer. Tou řídicí jednotkou *je* ta smyčka.</span></code></pre>
+      </aside>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 320 24"><g fill="none" stroke="#5E8570" stroke-width="1.4" stroke-linecap="round"><path d="M6 12 H120"/><path d="M200 12 H314"/><path d="M120 12 C120 12 135 12 145 6"/><path d="M120 12 C120 12 135 12 145 18"/><path d="M200 12 C200 12 185 12 175 6"/></g><circle cx="145" cy="6" r="3" fill="#2F5D46"/><circle cx="145" cy="18" r="3" fill="#2F5D46"/><circle cx="175" cy="6" r="3" fill="#2F5D46"/><circle cx="160" cy="12" r="4" fill="#BF6A3F"/></svg>
+  </div>
+
+  <section class="chapter">
+    <div class="measure">
+      <p class="eyebrow"><span class="n">07</span> Terénní poznámky</p>
+      <h2 class="head">Otázky, které lidé doopravdy kladou ve dvě ráno</h2>
+      <p>Tohle jsou, víceméně doslova, otázky, jimiž se hemží metabolické kouty Redditu, Quory a všelijakých fór &mdash; ty upřímné, nestydaté. A každá z nich se nakonec ukáže být dveřmi do něčeho, čemu už teď rozumíš.</p>
+    </div>
+
+    <div class="faq">
+      <details class="q" open>
+        <summary>Když zhubnu, kam se ten tuk vlastně poděje?</summary>
+        <div class="a">
+          <p class="q-mini">odpověď překvapí skoro každého, včetně lékařů</p>
+          <p>Většinu ho vydýcháš. V hojně citované studii z roku 2014 v časopise <em>BMJ</em> sledovali Ruben Meerman a Andrew Brown jednotlivé atomy a zjistili, že když ztratíš 10 kg tuku, asi <strong>8,4 kg odejde plícemi jako oxid uhličitý</strong> a zbylých 1,6 kg odejde jako voda &mdash; močí, potem, dechem, slzami. Když se zeptali 150 lékařů, dietologů a osobních trenérů, nejčastější tip zněl, že se tuk „promění v energii" nebo teplo. Jenže to by porušovalo zákon zachování hmotnosti: hmota se musí <em>někam</em> podět a atomy se nemůžou rozplynout v čirou energii. Tuk je uhlík, vodík a kyslík; zoxiduj ho (to je to schodiště z oddílu 04) a dostaneš CO&#8322; a H&#8322;O &mdash; a ten uhlík ti doslova odpluje s příštím výdechem. Tvé plíce jsou hlavní vylučovací orgán pro hubnutí. A ne &mdash; nezkrátíš si to tím, že budeš dýchat usilovněji; jediný způsob, jak vyrobit víc CO&#8322;, je dráhu opravdu roztočit rychleji, tedy hýbat svaly.</p>
+          <span class="src">Zdroj: Meerman &amp; Brown, BMJ 2014 (349:g7257); UNSW.</span>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Zpomaluje se mi s věkem opravdu metabolismus? Dá se „nakopnout"?</summary>
+        <div class="a">
+          <p class="q-mini">věda je tu novější než lidová moudrost</p>
+          <p>Ne kdy a ne jak si myslíš. Největší studie svého druhu &mdash; Herman Pontzer a početný mezinárodní tým, publikováno v <em>Science</em> roku 2021, s měřením skutečného denního energetického výdeje u více než <strong>6 400 lidí od 8 dnů do 95 let napříč 29 zeměmi</strong> &mdash; našla čtyři odlišná metabolická životní období. Po přepočtu na velikost těla energetický výdej <em>vrcholí kolem prvního roku</em> (roční dítě spaluje energii na kilogram zhruba o 50 % rychleji než dospělý), pozvolna klesá během dětství a pak je od zhruba 20 do 60 let v podstatě <strong>plochý a „pevný jako skála"</strong>. Nehne s ním puberta. Nehne s ním ani těhotenství, jakmile započítáš tu hmotu navíc. Teprve po šedesátce začíná pomalu klesat. Rozšiřování pasu ve středním věku je tedy skutečné, ale zpomalený metabolismus za ním nestojí &mdash; ta desetiletí jsou metabolicky <em>nejstálejší</em> v celém tvém životě. A co se týče „nakopnutí" pilulkou nebo lektvarem: klidový výdej je z drtivé většiny dán tím, kolik máš beztukové tkáně, a tím neustálým úklidem uvnitř tvých buněk. Jediná páka, která tím číslem opravdu pohne, je hýbat svaly.</p>
+          <span class="src">Zdroj: Pontzer et al., Science 2021 (373:808).</span>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Proč vlastně potřebuju dýchat kyslík? Co vlastně <em>dělá</em>?</summary>
+        <div class="a">
+          <p class="q-mini">není to palivo &mdash; je to odtok</p>
+          <p>Tahle otázka lidi vážně mate, protože intuitivní odpověď („kyslík je palivo") je naruby. Kyslík není to, co pálíš. Kyslík je <strong>odtok na dně elektronového vodopádu</strong> &mdash; konečný akceptor elektronů. Vzpomeň si na schodiště: jak se glukóza rozebírá, odtrhávají se z ní vysokoenergetické elektrony a padají dolů dýchacím řetězcem, přičemž při každém spádu uvolňují využitelnou energii. Jenže vodopád teče jedině tehdy, když má voda kam odtékat. Když je dno ucpané, celý sloupec se nahromadí a zastaví &mdash; a s ním i naprostá většina tvé výroby ATP. Kyslík je po elektronech znamenitě hladový (má velmi příznivý redukční potenciál), a tak sedí na dně a dychtivě vysává vyčerpané, nízkoenergetické elektrony, slučuje se s nimi a s vodíkem na obyčejnou vodu (to je ta „metabolická voda", kterou vyrábíš jen tím, že dýcháš). Nech odtok otevřený a elektrony proudí dál a ATP se dál razí. Zacpi ho &mdash; zadrž dech &mdash; a během pár minut dřez přeteče a soustrojí se zadře. Přes <strong>95 % kyslíku, který vdechneš</strong>, padne přesně na tuhle jedinou práci.</p>
+          <span class="src">Zdroje: Khan Academy; LibreTexts (Biology); komunitní výklady.</span>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Proč si tělo nemůže prostě držet velkou baterii nabitého ATP na později?</summary>
+        <div class="a">
+          <p class="q-mini">tohle už znáš z oddílu 03, ale stojí za to říct to naplno</p>
+          <p>Dva důvody, jeden praktický a jeden chemický. Prakticky: ATP je na množství energie, které drží, <em>těžké a neskladné</em>. Uskladnit zásobu na celý den by znamenalo tahat s sebou desítky kilogramů &mdash; nesmysl. Proto tělo ukládá dlouhodobou energii do daleko úspornějších, stabilnějších forem: glykogenu pro rychlý přístup a tuku pro hlubokou rezervu. To je spořicí účet; ATP jsou drobné, na které je <em>proměňuješ</em>, na požádání a přesně tam, kde je potřeba. Chemicky: ATP je natažená past na myši. Celá jeho užitečnost pramení z toho, že je připravené zareagovat &mdash; termodynamicky nestabilní, zadržované jen aktivační bariérou. Nemůžeš „hromadit" něco, jehož celým úkolem je být utraceno ve chvíli, kdy vznikne. Trezor plný natažených pastí není zásoba energie; je to neštěstí, které čeká, až se stane. Elegance tvého těla tkví v tom, že skoro žádné ATP nedrží po ruce a místo toho udržuje závratné tempo obměny &mdash; pořád ho vyrábí, pořád utrácí, nikdy nehromadí.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Není „metabolismus" jen nóbl slovo pro trávení?</summary>
+        <div class="a">
+          <p class="q-mini">snadno se to splete; rozlišit to je užitečné</p>
+          <p>Trávení je jedna nakládací rampa; metabolismus je celá továrna, i s tou rampou. Trávení je konkrétně rozklad velkých molekul v potravě na malé &mdash; bílkovin na aminokyseliny, škrobu na cukry &mdash; většinou venku ve střevě, aby se daly vstřebat. To je jen úplný vršek katabolické nálevky. <em>Metabolismus</em> je celek: všechno, co ty vstřebané molekuly pak dělají uvnitř tvých buněk &mdash; jak se oxidují dolů po schodišti kvůli energii, jak se přestavují na tvé vlastní tkáně, jak se ukládají, jak se jimi signalizuje. Když lidé řeknou, že někdo má „rychlý metabolismus", nemyslí rychlé trávení; myslí tím, že celá buněčná ekonomika běží naplno. Trávení dostane suroviny za dveře. Metabolismus je obchod, který se s nimi vede, jakmile jsou uvnitř.</p>
+        </div>
+      </details>
+
+      <details class="q">
+        <summary>Když energie nevzniká ani nezaniká, kam se „ztrácí", když ji spotřebuju?</summary>
+        <div class="a">
+          <p class="q-mini">celá kapitola v jediné odpovědi</p>
+          <p>Nikam se neztrácí &mdash; jen <em>klesá v jakosti</em>. Nejsi spotřebitelka energie; jsi její <strong>znehodnocovatelka</strong>, přeměňovačka. Energie přichází v soustředěné, vysoce jakostní, nízkoentropické podobě (pevné vazby potravy, ostrý spád potrava-versus-kyslík) a odchází v rozptýlené, nízkojakostní, vysokoentropické podobě (teplo rovnoměrně rozlité do okolí, prostý roztroušený odpad). <em>Množství</em> se zachovává do posledního joulu; co se mění, je jeho užitečnost. A to snížení je ta platba. Tím, že necháš energii spadnout z vysoké jakosti do nízké, si pro sebe seškrábneš špetku uspořádanosti &mdash; právě tolik, aby tvé biliony molekul vydržely ve svém nepravděpodobném uspořádání o okamžik déle. Jsi zařízení na přeměnu dobré energie v odpadní teplo, které si za to účtuje malou provizi v měně své vlastní pokračující existence. A ta provize je tvůj život.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+  <section class="chapter">
+    <div class="coda">
+      <p class="eyebrow" style="max-width:none"><span class="n">&#8734;</span> Coda</p>
+      <p>A tak se vracíme tam, kde jsme začali, jenže teď by to mělo dopadnout jinak. Nejsi věc, která život <em>má</em>. Nejsi předmět, který podstupuje děj zvaný žití. Ty tím dějem <em>jsi</em>. To podstatné jméno byla vždycky iluze &mdash; momentka spletená s filmem. Pod zdáním pevného, ohraničeného já je jen tohle: stojatá vlna v řece hmoty a energie, pomalý a nádherně řízený oheň, vír, který se naučil financovat vlastní spořádanost tím, že pomáhá vesmíru rozpadnout se o kousek dál.</p>
+      <p>Každý princip, s nímž jsme se potkali, je jednou stranou téhož jediného faktu. Dynamický ustálený stav &mdash; jsi tok, ne látka. Ekonomika volné energie &mdash; žiješ z toho, co teče z kopce. ATP jako překotná hotovost, ne baterie. Schodiště, ne útes &mdash; oheň brán po nejmenších doušcích. Přesýpací hodiny &mdash; mnohé v několik, několik v mnohé. Samočinné termostaty &mdash; ekonomika bez ředitele. Nakonec o žádnou chemii vlastně nejde. Jde o to, co obnáší být slovesem ve vesmíru, který by tě mnohem radši viděl jako podstatné jméno.</p>
+      <p style="font-style:italic; color:var(--forest-deep);">Nejsi oheň, který hoří. Jsi to hoření.</p>
+      <p class="signoff">&mdash; konec Kapitoly první &middot; <span style="color:var(--terra-deep)">WETWARE</span> &middot; logika metabolismu</p>
+    </div>
+
+    <div class="nextup">
+      <span class="k">Dále v terénním průvodci</span>
+      <div class="t">Kapitola druhá &mdash; <em>První rameno schodiště.</em> Sledujeme jedinou molekulu cukru dolů po úvodních schodech a díváme se, jak glykolýza předvede nejstarší trik biochemické knihy: utratit trochu ATP, aby se ho vyrobilo víc.</div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div><strong>WETWARE &mdash; Terénní průvodce programy uvnitř tebe.</strong> Kapitola první. Psáno v duchu přednáškového sálu: důkladně, beze spěchu a bez ochoty tě podceňovat.</div>
+    <div class="srcs">Vědecká páteř sestavena z Nelson &amp; Cox, <em>Lehninger Principles of Biochemistry</em> (8. vyd.) a Voet &amp; Voet, <em>Biochemistry</em> (4. vyd.). Údaje v terénních poznámkách čerpány z: Meerman &amp; Brown, BMJ 2014; Pontzer et al., Science 2021; a otevřených vzdělávacích zdrojů (Khan Academy, LibreTexts). Simulace jsou schematické výukové modely &mdash; čísla jsou poctivá, řádově správná a zaokrouhlená pro přehlednost.</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TAU = Math.PI*2;
+
+  function cssVar(n){ try { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); } catch(e){ return ''; } }
+  var C = {
+    canvas: cssVar('--panel-2') || '#E6DDC6',
+    ink: cssVar('--ink') || '#26211A',
+    inkSoft: cssVar('--ink-soft') || '#524A3B',
+    forest: cssVar('--forest') || '#2F5D46',
+    forestDeep: cssVar('--forest-deep') || '#1E4634',
+    sage: cssVar('--sage') || '#5E8570',
+    terra: cssVar('--terra') || '#BF6A3F',
+    terraDeep: cssVar('--terra-deep') || '#9E5230',
+    gold: cssVar('--gold') || '#C69A46',
+    rule: cssVar('--rule') || '#DED5BE',
+    fHot: cssVar('--flame-hot') || '#E8A13C',
+    fMid: cssVar('--flame-mid') || '#D9773A',
+    fCore: cssVar('--flame-core') || '#F3D08A'
+  };
+
+  function roundRect(ctx,x,y,w,h,r){
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);
+    ctx.arcTo(x+w,y,x+w,y+h,r);
+    ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r);
+    ctx.arcTo(x,y,x+w,y,r);
+    ctx.closePath();
+  }
+
+  function setupCanvas(canvas, aspect){
+    var ctx = canvas.getContext('2d');
+    var dim = {w:0,h:0};
+    function resize(){
+      var cssW = canvas.clientWidth || canvas.parentNode.clientWidth || 600;
+      var cssH = Math.round(cssW * aspect);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(cssW * dpr);
+      canvas.height = Math.round(cssH * dpr);
+      canvas.style.height = cssH + 'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      dim.w = cssW; dim.h = cssH;
+    }
+    resize();
+    if(window.ResizeObserver){
+      var ro = new ResizeObserver(function(){ resize(); if(canvas._onResize) canvas._onResize(dim); });
+      ro.observe(canvas);
+    } else {
+      window.addEventListener('resize', function(){ resize(); if(canvas._onResize) canvas._onResize(dim); });
+    }
+    return { ctx:ctx, dim:function(){ return dim; } };
+  }
+
+  function makeLoop(el, step){
+    var running=false, raf=null, last=0, visible=true, wanted=false;
+    function frame(t){
+      if(!running) return;
+      var dt = (t-last)/1000; if(!(dt>0)) dt=0.016; if(dt>0.05) dt=0.05; last=t;
+      step(dt);
+      raf = requestAnimationFrame(frame);
+    }
+    var api = {
+      start:function(){ wanted=true; if(running||!visible) return; running=true; last=performance.now(); raf=requestAnimationFrame(frame); },
+      stop:function(){ running=false; if(raf) cancelAnimationFrame(raf); }
+    };
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        for(var i=0;i<es.length;i++){
+          visible = es[i].isIntersecting;
+          if(visible && wanted){ api.start(); } else if(!visible){ api.stop(); }
+        }
+      },{threshold:0.05}).observe(el);
+    }
+    return api;
+  }
+
+  /* ===== SIM 01 — STOJATÁ VLNA (plamen) ===== */
+  (function(){
+    var canvas = document.getElementById('flameCanvas');
+    if(!canvas) return;
+    var S = setupCanvas(canvas, 0.62);
+    var ctx = S.ctx;
+    var particles = [];
+    var emitting = true;
+    var cycled = 0;
+    var elState = document.getElementById('flameState');
+    var elCount = document.getElementById('flameCount');
+    var elShape = document.getElementById('flameShape');
+
+    function spawn(w,h){
+      var baseX = w/2;
+      var spread = Math.min(w*0.16, 70);
+      var x = baseX + (Math.random()*2-1)*spread;
+      return { x:x, y:h-14,
+        vx:(baseX - x)*0.010 + (Math.random()*2-1)*8,
+        vy:-(60 + Math.random()*70),
+        life:0, max:1.1 + Math.random()*0.9,
+        r:8 + Math.random()*16 };
+    }
+    function drawStatic(){
+      var d = S.dim(); var w=d.w, h=d.h;
+      ctx.clearRect(0,0,w,h);
+      var cx=w/2, base=h-14;
+      for(var i=0;i<60;i++){
+        var t=i/60, y=base - t*(h*0.8);
+        var wid=(1-t)*Math.min(w*0.16,70)*1.6*(0.6+0.4*Math.sin(t*6));
+        if(wid<1) wid=1;
+        var g=ctx.createRadialGradient(cx,y,0,cx,y,wid);
+        g.addColorStop(0, C.fCore); g.addColorStop(0.5, C.fMid); g.addColorStop(1,'rgba(217,119,58,0)');
+        ctx.fillStyle=g; ctx.globalAlpha=0.16*(1-t*0.4);
+        ctx.beginPath(); ctx.arc(cx, y, wid, 0, TAU); ctx.fill();
+      }
+      ctx.globalAlpha=1;
+    }
+    function step(dt){
+      var d = S.dim(); var w=d.w, h=d.h;
+      ctx.clearRect(0,0,w,h);
+      var gg=ctx.createRadialGradient(w/2,h,0,w/2,h,w*0.5);
+      gg.addColorStop(0,'rgba(191,106,63,0.10)'); gg.addColorStop(1,'rgba(191,106,63,0)');
+      ctx.fillStyle=gg; ctx.fillRect(0,0,w,h);
+      var rate = emitting ? 9 : 0;
+      for(var s=0;s<rate;s++){ if(particles.length<520) particles.push(spawn(w,h)); }
+      ctx.globalCompositeOperation='lighter';
+      for(var i=particles.length-1;i>=0;i--){
+        var p=particles[i];
+        p.life += dt; p.x += p.vx*dt; p.y += p.vy*dt;
+        p.vy += 22*dt; p.vx *= (1-0.6*dt);
+        var lt = p.life/p.max;
+        if(lt>=1){ particles.splice(i,1); cycled++; continue; }
+        var alpha = (1-lt)*0.5;
+        var rr = p.r*(1 - lt*0.55); if(rr<0.5) rr=0.5;
+        var col = lt<0.4 ? C.fCore : (lt<0.75 ? C.fMid : C.fHot);
+        var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rr);
+        g.addColorStop(0, col); g.addColorStop(1,'rgba(217,119,58,0)');
+        ctx.globalAlpha=alpha; ctx.fillStyle=g;
+        ctx.beginPath(); ctx.arc(p.x,p.y,rr,0,TAU); ctx.fill();
+      }
+      ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1;
+      if(elCount) elCount.textContent = cycled.toLocaleString();
+      if(elShape) elShape.textContent = (emitting ? 'drží' : (particles.length>0 ? 'rozpadá se…' : 'pryč'));
+    }
+    var loop = makeLoop(canvas, step);
+    canvas._onResize = function(){ if(REDUCED) drawStatic(); };
+    document.getElementById('flameToggle').addEventListener('click', function(){
+      emitting = !emitting;
+      this.setAttribute('aria-pressed', String(!emitting));
+      this.textContent = emitting ? 'Odřízni palivo' : 'Zapal znovu';
+      if(elState) elState.textContent = emitting ? 'proudí' : 'palivo odříznuto';
+      if(REDUCED){ if(emitting){ drawStatic(); } else { var d=S.dim(); ctx.clearRect(0,0,d.w,d.h); if(elShape) elShape.textContent='pryč'; } }
+    });
+    document.getElementById('flameReset').addEventListener('click', function(){
+      particles.length=0; cycled=0; emitting=true;
+      var t=document.getElementById('flameToggle'); t.setAttribute('aria-pressed','false'); t.textContent='Odřízni palivo';
+      if(elState) elState.textContent='proudí'; if(elCount) elCount.textContent='0';
+      if(REDUCED) drawStatic();
+    });
+    if(REDUCED){ drawStatic(); } else { loop.start(); }
+  })();
+  /* ===== SIM 02 — EKONOMIKA ATP ===== */
+  (function(){
+    var canvas = document.getElementById('atpCanvas');
+    if(!canvas) return;
+    var S = setupCanvas(canvas, 0.52);
+    var ctx = S.ctx;
+    var TOKENS = 24;
+    var toks = [];
+    for(var i=0;i<TOKENS;i++){ toks.push({ th:(i/TOKENS)*TAU, charged:true }); }
+    var demand = 1, demandName = 'klid';
+    var cycledKg = 0;
+    var sparkUse = 0, sparkRe = 0;
+    var elDemand = document.getElementById('atpDemand');
+    var elPool = document.getElementById('atpPool');
+    var elCycled = document.getElementById('atpCycled');
+
+    function geo(){ var d=S.dim(); return {w:d.w,h:d.h, cx:d.w/2, cy:d.h*0.52, rx:d.w*0.33, ry:d.h*0.30}; }
+
+    function draw(){
+      var g=geo(); var w=g.w,h=g.h;
+      ctx.clearRect(0,0,w,h);
+      ctx.strokeStyle=C.rule; ctx.lineWidth=1.5; ctx.setLineDash([4,5]);
+      ctx.beginPath(); ctx.ellipse(g.cx,g.cy,g.rx,g.ry,0,0,TAU); ctx.stroke(); ctx.setLineDash([]);
+      ctx.textAlign='center'; ctx.font='700 11px Inter, sans-serif';
+      ctx.fillStyle=C.sage;
+      ctx.fillText('nabité ATP míří k práci  \u2192', g.cx, g.cy-g.ry-12);
+      ctx.fillText('\u2190  vybité ADP se vrací dobít', g.cx, g.cy+g.ry+20);
+      var ux=g.cx-g.rx, uy=g.cy;
+      ctx.fillStyle=C.terra; ctx.beginPath(); ctx.arc(ux,uy,18+sparkUse*7,0,TAU); ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font='700 9px Inter, sans-serif'; ctx.fillText('SPOTŘEBA', ux, uy+3.2);
+      var rx2=g.cx+g.rx;
+      ctx.fillStyle=C.forest; ctx.beginPath(); ctx.arc(rx2,uy,18+sparkRe*7,0,TAU); ctx.fill();
+      ctx.fillStyle='#fff'; ctx.fillText('NABÍJENÍ', rx2, uy+3.2);
+      ctx.fillStyle=C.inkSoft; ctx.font='600 10px Fira Code, monospace';
+      ctx.fillText('zásoba je pevně daná \u2014 sleduj, jak drží', g.cx, g.cy-3);
+      ctx.fillStyle=C.forestDeep; ctx.font='700 11px Fira Code, monospace';
+      ctx.fillText('nárok: '+demandName, g.cx, g.cy+15);
+      var charged=0;
+      for(var i=0;i<toks.length;i++){
+        var t=toks[i];
+        var x=g.cx + g.rx*Math.cos(t.th);
+        var y=g.cy + g.ry*Math.sin(t.th);
+        if(t.charged) charged++;
+        if(t.charged){ ctx.fillStyle=C.gold; ctx.strokeStyle=C.terraDeep; }
+        else { ctx.fillStyle='#D9CFB6'; ctx.strokeStyle=C.rule; }
+        ctx.beginPath(); ctx.arc(x,y,8,0,TAU); ctx.fill();
+        ctx.lineWidth=1.5; ctx.stroke();
+        ctx.fillStyle = t.charged ? '#5A3A1E' : C.inkSoft;
+        ctx.font='600 7px Fira Code, monospace';
+        ctx.fillText(t.charged ? 'ATP' : 'ADP', x, y+2.4);
+      }
+      return charged;
+    }
+
+    function step(dt){
+      sparkUse = Math.max(0, sparkUse - dt*4);
+      sparkRe  = Math.max(0, sparkRe  - dt*4);
+      var speed = 0.9*demand;
+      for(var i=0;i<toks.length;i++){
+        var t=toks[i];
+        var prev=t.th;
+        t.th += speed*dt;
+        var pv=((prev%TAU)+TAU)%TAU;
+        var nv=((t.th%TAU)+TAU)%TAU;
+        if(pv < Math.PI && nv >= Math.PI && t.charged){ t.charged=false; sparkUse=1; }
+        if(nv < pv){ if(!t.charged){ t.charged=true; sparkRe=1; } }
+      }
+      cycledKg += demand*dt*0.02;
+      var charged=draw();
+      if(elPool) elPool.textContent = '~'+(46+Math.round(charged/TOKENS*8))+' g';
+      if(elCycled) elCycled.textContent = cycledKg.toFixed(2)+' kg';
+      if(elDemand) elDemand.textContent = demandName;
+    }
+
+    var loop = makeLoop(canvas, step);
+    canvas._onResize = function(){ if(REDUCED) draw(); };
+
+    function setDemand(val,name,btn){
+      demand=val; demandName=name;
+      var ids=['atpRest','atpWalk','atpSprint'];
+      for(var k=0;k<ids.length;k++){ document.getElementById(ids[k]).setAttribute('aria-pressed', String(ids[k]===btn)); }
+      if(REDUCED) draw();
+    }
+    document.getElementById('atpRest').addEventListener('click', function(){ setDemand(1,'klid','atpRest'); });
+    document.getElementById('atpWalk').addEventListener('click', function(){ setDemand(2.4,'chůze','atpWalk'); });
+    document.getElementById('atpSprint').addEventListener('click', function(){ setDemand(6,'sprint','atpSprint'); });
+    document.getElementById('atpReset').addEventListener('click', function(){ cycledKg=0; if(elCycled) elCycled.textContent='0.00 kg'; if(REDUCED) draw(); });
+
+    if(REDUCED){ draw(); } else { loop.start(); }
+  })();
+
+  /* ===== SIM 03 — SPALOVÁNÍ vs SCHODIŠTĚ ===== */
+  (function(){
+    var canvas = document.getElementById('stairCanvas');
+    if(!canvas) return;
+    var S = setupCanvas(canvas, 0.66);
+    var ctx = S.ctx;
+
+    var STAIRS = [
+      {name:'Glykolýza',        sub:'glukóza \u2192 pyruvát', atp:2},
+      {name:'Oxidace pyruvátu',sub:'\u2192 acetyl-CoA',       atp:0},
+      {name:'Citrátový cyklus', sub:'roztáčí NADH',          atp:0},
+      {name:'Dýchací řetězec',sub:'NADH \u2192 e\u207B pumpuje',atp:30},
+      {name:'Kyslík',            sub:'e\u207B + O\u2082 \u2192 H\u2082O', atp:0, drain:true}
+    ];
+    var N = STAIRS.length;
+    var STEP_TIME = 0.85;
+    var o2 = true;
+
+    var matchSpent=false, fireProg=0, fireAnim=false;
+    var runAnim=false, stalled=false, done=false;
+    var markPos=0, target=0, lastArrived=-1, atp=0, credited=[], electrons=0;
+
+    var elFireCap=document.getElementById('fireCap');
+    var elAtp=document.getElementById('stairAtp');
+    var elCap=document.getElementById('stairCap');
+    var btnO2=document.getElementById('stairO2');
+
+    function pct(a){ return Math.round((a*30.5/2870)*100); }
+
+    function geo(){
+      var d=S.dim(); var w=d.w,h=d.h;
+      var midX=w*0.40;
+      var rx0=w*0.46, rx1=w-12;
+      var ry0=52, ry1=h-52;
+      return {w:w,h:h, midX:midX, rx0:rx0, rx1:rx1, ry0:ry0, ry1:ry1, sw:(rx1-rx0)/N, sh:(ry1-ry0)/N};
+    }
+    function landing(g,i){
+      var tx=g.rx0+i*g.sw, ty=g.ry0+i*g.sh;
+      return {tx:tx, ty:ty, cx:tx+g.sw*0.5};
+    }
+    function drawHex(cx,cy,r,fill,stroke){
+      ctx.beginPath();
+      for(var i=0;i<6;i++){ var a=-Math.PI/2+i*TAU/6; var x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r; if(i===0)ctx.moveTo(x,y); else ctx.lineTo(x,y); }
+      ctx.closePath(); ctx.fillStyle=fill; ctx.fill(); ctx.strokeStyle=stroke; ctx.lineWidth=2; ctx.stroke();
+    }
+
+    function drawMatch(g){
+      var lx=g.midX*0.5, hexY=74;
+      if(fireProg>0){
+        var burst=Math.sin(Math.min(fireProg,1)*Math.PI);
+        if(burst>0.001){
+          var cols=[C.fCore,C.fHot,C.fMid], n=14;
+          for(var i=0;i<n;i++){
+            var ang=-Math.PI/2+(i/(n-1)-0.5)*1.7;
+            var rr=34*burst*(0.55+0.45*((i*7)%5)/5);
+            ctx.fillStyle=cols[i%3]; ctx.globalAlpha=0.85*burst;
+            ctx.beginPath(); ctx.arc(lx+Math.cos(ang)*rr, hexY+Math.sin(ang)*rr-4, 4+3*burst,0,TAU); ctx.fill();
+          }
+          ctx.globalAlpha=1;
+        }
+      }
+      drawHex(lx,hexY,20, matchSpent?'#D9CFB6':C.forest, matchSpent?C.rule:C.forestDeep);
+      ctx.textAlign='center'; ctx.fillStyle=matchSpent?C.inkSoft:'#fff';
+      ctx.font='700 8.5px Fira Code, monospace'; ctx.fillText('C\u2086H\u2081\u2082O\u2086', lx, hexY+3);
+      ctx.fillStyle=C.inkSoft; ctx.font='600 10px Fira Code, monospace';
+      ctx.fillText(matchSpent?'spáleno \u2192 jen teplo':'škrtni a uvolni', lx, hexY+48);
+      var bw=Math.min(96,g.midX*0.72), bx=lx-bw/2, by=hexY+66;
+      ctx.fillStyle='#D9CFB6'; roundRect(ctx,bx,by,bw,10,5); ctx.fill();
+      ctx.fillStyle=C.terra; roundRect(ctx,bx,by,bw*(matchSpent?0.012:0),10,5); ctx.fill();
+      ctx.fillStyle=C.inkSoft; ctx.font='600 9px Inter, sans-serif';
+      ctx.fillText('zachyceno '+(matchSpent?'~0%':'\u2014'), lx, by+24);
+    }
+
+    function drawStair(g){
+      ctx.lineWidth=2.5; ctx.strokeStyle=C.sage;
+      for(var i=0;i<N;i++){
+        var L=landing(g,i);
+        ctx.beginPath(); ctx.moveTo(L.tx,L.ty); ctx.lineTo(L.tx+g.sw,L.ty); ctx.lineTo(L.tx+g.sw,L.ty+g.sh); ctx.stroke();
+        ctx.textAlign='left'; ctx.fillStyle=C.inkSoft; ctx.font='700 8.5px Inter, sans-serif';
+        ctx.fillText(STAIRS[i].name, L.tx+3, L.ty-13);
+        ctx.fillStyle=C.sage; ctx.font='500 7.5px Fira Code, monospace';
+        ctx.fillText(STAIRS[i].sub, L.tx+3, L.ty-4);
+        if(STAIRS[i].atp>0){
+          ctx.textAlign='right'; ctx.fillStyle=C.gold; ctx.font='700 8px Fira Code, monospace';
+          ctx.fillText('+'+STAIRS[i].atp, L.tx+g.sw-3, L.ty-4);
+        }
+      }
+      ctx.textAlign='center';
+      var last=landing(g,N-1), ox=last.cx, oy=last.ty+g.sh*0.5;
+      ctx.beginPath(); ctx.arc(ox,oy,13,0,TAU); ctx.fillStyle=o2?C.forest:'#C9BEA6'; ctx.fill();
+      ctx.fillStyle=o2?'#fff':C.inkSoft; ctx.font='700 8px Fira Code, monospace'; ctx.fillText(o2?'O\u2082':'\u2205', ox, oy+3);
+      ctx.fillStyle=C.inkSoft; ctx.font='600 8px Inter, sans-serif'; ctx.fillText(o2?'odtok otevřen':'není akceptor', ox, oy+21);
+
+      var jx=(g.midX+g.rx0)/2, jw=22, jy=g.ry0+4, jh=(g.ry1-g.ry0)-2;
+      ctx.strokeStyle=C.rule; ctx.lineWidth=2; roundRect(ctx,jx-jw/2,jy,jw,jh,5); ctx.stroke();
+      var fh=jh*(atp/32);
+      ctx.fillStyle=C.gold; roundRect(ctx,jx-jw/2+2,jy+jh-fh+2,jw-4,Math.max(0,fh-4),4); ctx.fill();
+      ctx.fillStyle=C.forestDeep; ctx.font='700 9px Fira Code, monospace';
+      ctx.fillText('ATP', jx, jy-6); ctx.fillText(String(atp), jx, jy+jh+15);
+
+      if(stalled){
+        var etc=landing(g,3);
+        var m=Math.round(electrons);
+        for(var e=0;e<m;e++){ var ex=etc.cx-14+(e%5)*7, ey=etc.ty-26-Math.floor(e/5)*7; ctx.fillStyle=C.terra; ctx.beginPath(); ctx.arc(ex,ey,3,0,TAU); ctx.fill(); }
+        ctx.fillStyle=C.terraDeep; ctx.font='700 9px Inter, sans-serif'; ctx.fillText('ZASEKNUTO', etc.cx, etc.ty-44);
+      }
+
+      var i0=Math.floor(markPos); if(i0<0)i0=0; if(i0>N-1)i0=N-1;
+      var i1=Math.min(i0+1,N-1), f=markPos-i0;
+      var A=landing(g,i0), B=landing(g,i1);
+      var mx=A.cx+(B.cx-A.cx)*f, my=(A.ty+(B.ty-A.ty)*f)-12;
+      ctx.fillStyle=C.terra; ctx.beginPath(); ctx.arc(mx,my,9,0,TAU); ctx.fill();
+      ctx.fillStyle=C.fCore; ctx.beginPath(); ctx.arc(mx,my,4.5,0,TAU); ctx.fill();
+    }
+
+    function draw(){
+      var g=geo();
+      ctx.clearRect(0,0,g.w,g.h);
+      ctx.strokeStyle=C.rule; ctx.lineWidth=1; ctx.setLineDash([3,5]);
+      ctx.beginPath(); ctx.moveTo(g.midX,26); ctx.lineTo(g.midX,g.h-26); ctx.stroke(); ctx.setLineDash([]);
+      ctx.textAlign='center'; ctx.font='700 10.5px Inter, sans-serif';
+      ctx.fillStyle=C.terraDeep; ctx.fillText('ZÁPALKA', g.midX*0.5, 24);
+      ctx.fillStyle=C.forestDeep; ctx.fillText('SCHODIŠTĚ', (g.rx0+g.rx1)/2, 24);
+      drawMatch(g); drawStair(g);
+    }
+
+    function arrive(idx){
+      if(idx===3 && !o2){ runAnim=false; stalled=true; if(elCap) elCap.textContent='~'+pct(atp)+'%'; return; }
+      if(!credited[idx]){ credited[idx]=true; atp+=STAIRS[idx].atp; if(elAtp) elAtp.textContent=String(atp); }
+      if(idx>=N-1){ runAnim=false; done=true; if(elCap) elCap.textContent='~'+pct(atp)+'%'; }
+      else { target++; }
+    }
+    function step(dt){
+      if(fireAnim){ fireProg+=dt/1.2; if(fireProg>=1){ fireProg=1; fireAnim=false; matchSpent=true; if(elFireCap) elFireCap.textContent='~0%'; } }
+      if(runAnim){
+        var sp=1/STEP_TIME;
+        if(markPos<target) markPos=Math.min(target, markPos+sp*dt);
+        if(markPos>=target){ markPos=target; if(lastArrived!==target){ lastArrived=target; arrive(target); } }
+      }
+      if(stalled){ electrons=Math.min(24, electrons+dt*10); }
+      draw();
+    }
+
+    function softResetStair(){ runAnim=false; stalled=false; done=false; markPos=0; target=0; lastArrived=-1; atp=0; credited=[]; electrons=0; if(elAtp)elAtp.textContent='0'; if(elCap)elCap.textContent='\u2014'; }
+    function drawStatic(){
+      matchSpent=true; fireProg=1; fireAnim=false;
+      if(o2){ markPos=N-1; atp=32; stalled=false; electrons=0; } else { markPos=3; atp=2; stalled=true; electrons=12; }
+      if(elFireCap)elFireCap.textContent='~0%'; if(elAtp)elAtp.textContent=String(atp); if(elCap)elCap.textContent='~'+pct(atp)+'%';
+      draw();
+    }
+
+    var loop=makeLoop(canvas, step);
+    canvas._onResize=function(){ if(REDUCED) drawStatic(); else draw(); };
+
+    document.getElementById('stairFire').addEventListener('click', function(){
+      matchSpent=false; fireProg=0; fireAnim=true; if(elFireCap)elFireCap.textContent='\u2014';
+      if(REDUCED){ matchSpent=true; fireProg=1; if(elFireCap)elFireCap.textContent='~0%'; draw(); }
+    });
+    document.getElementById('stairRun').addEventListener('click', function(){
+      softResetStair();
+      if(REDUCED){ drawStatic(); return; }
+      runAnim=true;
+    });
+    btnO2.addEventListener('click', function(){
+      o2=!o2; btnO2.textContent=o2?'Kyslík: ZAP':'Kyslík: VYP'; btnO2.setAttribute('aria-pressed', String(!o2));
+      softResetStair(); if(REDUCED) drawStatic(); else draw();
+    });
+    document.getElementById('stairReset').addEventListener('click', function(){
+      matchSpent=false; fireProg=0; fireAnim=false; if(elFireCap)elFireCap.textContent='\u2014';
+      softResetStair(); if(REDUCED) drawStatic(); else draw();
+    });
+
+    if(REDUCED){ drawStatic(); } else { loop.start(); }
+  })();
+
+  /* ===== PĚT TAHŮ — panel se záložkami ===== */
+  (function(){
+    var panel=document.getElementById('movesPanel');
+    if(!panel) return;
+    var MV=[
+      { name:'Tvorba a štěpení vazeb uhlík\u2013uhlík',
+        eq:'A\u2013C\u2013C\u2013B   \u21CC   A\u2013C   +   C\u2013B',
+        say:'Nejodvážnější tah z celého rejstříku: sáhnout přímo do uhlíkové kostry a přetnout ji, nebo dva kusy svařit v jeden. Právě takhle se šestiuhlíkový cukr zlomí na dvě tříuhlíkové poloviny a takhle tělo skládá dlouhé tuky po jedné dvojuhlíkové cihle. Stavba a demolice, na úrovni samotného lešení.' },
+      { name:'Přesmyky (izomerizace)',
+        eq:'X\u2013C\u2013C\u2013H   \u21CC   H\u2013C\u2013C\u2013X',
+        say:'Nic se nepřidá, nic se neubere \u2014 jen se skupina zvedne a položí o sedadlo dál. Glukóza a fruktóza jsou naprosto tytéž atomy v jiném uspořádání a jediný enzym přeháže jednu v druhou. Nejlevnější úprava, jaká existuje: přepsat přerovnáním.' },
+      { name:'Radikálové reakce',
+        eq:'A:B   \u2192   A\u2022   +   \u2022B',
+        say:'Většina chemie buňky posouvá elektrony po dvou, slušně spárované. Tu a tam ale buňka pár rozdělí a pustí jednotlivé elektrony z řetězu \u2014 rychlé, reaktivní, lehce nebezpečné a občas přesně ten nástroj, který je potřeba. Bere se do kleští, nikdy holou rukou.' },
+      { name:'Přenosy skupin',
+        eq:'D\u2013G   +   A   \u2192   D   +   A\u2013G',
+        say:'Celá funkční skupina \u2014 fosfát, amino, acetyl \u2014 se zvedne z jedné molekuly a předá druhé. Přesně tohle ATP doopravdy dělá, když „utrácí“: předává svůj krajní fosfát něčemu, co potřebovalo náboj. Buňka jako jeden dlouhý štafetový běh s balíčky.' },
+      { name:'Oxidace\u2013redukce (redox)',
+        eq:'A(red) + B(ox)   \u2192   A(ox) + B(red)',
+        say:'Tah pod všemi ostatními \u2014 ten, který energii doopravdy uloží. Oxidovat znamená ztrácet elektrony; redukovat znamená je získávat. Každá kalorie, kterou tvé tělo kdy spálilo, se scvrkla na elektrony klouzající z potravy ke kyslíku, přičemž si buňka cestou seškrábne kus toho spádu. Přenašeče jako NADH jsou obrněné vozy, které je tam dovezou.' }
+    ];
+    var tabs=document.querySelectorAll('.moves-tabs button');
+    function render(i){
+      var m=MV[i];
+      panel.innerHTML='<div class="mv-name">'+m.name+'</div><div class="mv-eq">'+m.eq+'</div><div class="mv-say">'+m.say+'</div>';
+      for(var k=0;k<tabs.length;k++){ tabs[k].setAttribute('aria-selected', String(k===i)); }
+    }
+    for(var k=0;k<tabs.length;k++){ (function(idx){ tabs[idx].addEventListener('click', function(){ render(idx); }); })(k); }
+    render(0);
+  })();
+
+  /* ===== ukazatel postupu čtení ===== */
+  (function(){
+    var pf=document.getElementById('progress');
+    if(!pf) return;
+    function onScroll(){
+      var st=window.pageYOffset||document.documentElement.scrollTop||0;
+      var dh=(document.documentElement.scrollHeight||document.body.scrollHeight)-window.innerHeight;
+      var p=dh>0?(st/dh):0; if(p<0)p=0; if(p>1)p=1;
+      pf.style.width=(p*100).toFixed(1)+'%';
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
+
+})();
+</script>
+</body>
+</html>
