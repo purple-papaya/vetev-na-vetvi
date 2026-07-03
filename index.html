@@ -7,261 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#F4EFE1;
-    --paper-2:#FBF8EF;
-    --panel:#FCFAF3;
-    --forest:#2F5D46;
-    --forest-deep:#213F30;
-    --sage:#5E8570;
-    --sage-soft:#9DB6A6;
-    --terra:#BF6A3F;
-    --terra-deep:#9E5230;
-    --gold:#C69A46;
-    --ink:#26211A;
-    --ink-soft:#5A5140;
-    --rule:#DED5BE;
-    --rule-soft:#E7DFCC;
-  }
-
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:Inter, system-ui, sans-serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    /* faint botanical wash so the cream isn't flat */
-    background-image:
-      radial-gradient(circle at 88% 6%, rgba(94,133,112,0.05), transparent 42%),
-      radial-gradient(circle at 4% 96%, rgba(191,106,63,0.045), transparent 40%);
-    background-attachment:fixed;
-  }
-  ::selection{background:rgba(191,106,63,0.22);}
-  a{color:inherit;text-decoration:none;}
-  :focus-visible{outline:2.5px solid var(--terra);outline-offset:3px;border-radius:2px;}
-
-  .skip{position:absolute;left:-999px;top:auto;}
-  .skip:focus{left:16px;top:12px;z-index:20;background:var(--forest);color:var(--paper);padding:.5rem .8rem;border-radius:8px;font:600 .85rem Inter;}
-
-  .shell{max-width:1000px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.4rem);}
-
-  /* ---------------- top bar ---------------- */
-  .topbar{
-    position:sticky;top:0;z-index:10;
-    background:rgba(244,239,225,0.86);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
-    border-bottom:1px solid var(--rule);
-  }
-  .topbar-in{
-    max-width:1000px;margin:0 auto;
-    padding:.7rem clamp(1.1rem,4vw,2.4rem);
-    display:flex;align-items:center;gap:1rem;
-    flex-wrap:wrap;
-  }
-  .brand{display:inline-flex;align-items:center;gap:.6rem;}
-  .brand svg{display:block;flex:none;}
-  .brand .word{
-    font-family:Merriweather, Georgia, serif;
-    font-weight:700;font-size:1.18rem;letter-spacing:.005em;color:var(--forest-deep);
-  }
-  .brand .word b{color:var(--terra-deep);font-weight:700;}
-  .topnav{margin-left:auto;display:flex;gap:.2rem;flex-wrap:wrap;}
-  .topnav a{
-    font-family:"Fira Code", monospace;
-    font-size:.78rem;letter-spacing:.04em;
-    color:var(--ink-soft);
-    padding:.4rem .7rem;border-radius:999px;
-    transition:color .18s ease, background .18s ease;
-  }
-  .topnav a:hover{color:var(--forest-deep);background:rgba(94,133,112,0.12);}
-
-  /* ---------------- hero ---------------- */
-  .hero{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,auto);
-    gap:clamp(1.5rem,5vw,3.2rem);
-    align-items:center;
-    padding:clamp(3rem,8vw,5.4rem) 0 clamp(2rem,5vw,3rem);
-  }
-  .hero-copy{max-width:34rem;}
-  .kicker{
-    font-family:"Fira Code", monospace;
-    font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--terra-deep);
-    display:inline-flex;align-items:center;gap:.55rem;
-    margin-bottom:1.15rem;
-  }
-  .kicker::before{content:"";width:26px;height:2px;background:var(--terra);display:inline-block;}
-  h1{
-    font-family:Merriweather, Georgia, serif;
-    font-weight:900;
-    font-size:clamp(2.35rem,5.6vw,3.9rem);
-    line-height:1.04;
-    letter-spacing:-0.015em;
-    margin:0 0 1.15rem;
-    color:var(--ink);
-  }
-  h1 .leaf{color:var(--forest);font-style:italic;font-weight:400;}
-  .dek{
-    font-size:clamp(1.05rem,2.1vw,1.2rem);
-    color:var(--ink-soft);
-    line-height:1.62;
-    margin:0 0 1.7rem;
-  }
-  .dek .em{color:var(--forest-deep);font-weight:600;}
-  .cue{
-    font-family:"Fira Code", monospace;font-size:.82rem;color:var(--sage);
-    display:inline-flex;align-items:center;gap:.5rem;
-  }
-  .cue svg{display:block;}
-
-  .hero-art{display:block;}
-  .hero-art svg{display:block;height:auto;width:clamp(180px,26vw,268px);}
-
-  /* ---------------- the grove (signature nav) ---------------- */
-  .grove-wrap{
-    padding:clamp(1.6rem,4vw,2.6rem) 0 clamp(3rem,7vw,4.6rem);
-    border-top:1px solid var(--rule);
-  }
-  .grove-head{
-    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-    flex-wrap:wrap;margin-bottom:clamp(1.8rem,4vw,2.6rem);
-  }
-  .grove-head .lbl{
-    font-family:"Fira Code", monospace;font-size:.76rem;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--sage);
-  }
-  .grove-head .say{
-    font-family:Merriweather, serif;font-style:italic;font-size:1rem;color:var(--ink-soft);
-    max-width:34rem;
-  }
-
-  .grove{list-style:none;margin:0;padding:0;}
-
-  .limb{position:relative;padding:0 0 clamp(1.9rem,4vw,2.7rem) 3.1rem;}
-  .limb:last-child{padding-bottom:0;}
-  /* continuous trunk down the left of each limb */
-  .limb::before{
-    content:"";position:absolute;left:11px;top:.25em;bottom:0;
-    border-left:2px solid var(--sage);
-  }
-  .limb:last-child::before{bottom:auto;height:1.05em;}
-  /* curved elbow peeling off the trunk to the knot */
-  .limb::after{
-    content:"";position:absolute;left:11px;top:.25em;width:30px;height:.8em;
-    border-left:2px solid var(--sage);
-    border-bottom:2px solid var(--sage);
-    border-bottom-left-radius:15px;
-  }
-  .knot{
-    position:absolute;left:41px;top:1.05em;width:14px;height:14px;
-    transform:translate(-50%,-50%);border-radius:50%;
-    background:var(--paper);border:2.5px solid var(--forest);
-    transition:background .2s ease, border-color .2s ease, transform .2s ease;
-    z-index:2;
-  }
-  .limb:hover .knot,.limb:focus-within .knot{background:var(--terra);border-color:var(--terra-deep);transform:translate(-50%,-50%) scale(1.12);}
-
-  .limb-head{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;}
-  .limb-name{
-    font-family:Merriweather, Georgia, serif;font-weight:700;
-    font-size:clamp(1.45rem,3.2vw,1.85rem);color:var(--forest-deep);
-    line-height:1.1;
-    transition:color .18s ease;
-  }
-  a.limb-link:hover .limb-name{color:var(--terra-deep);}
-  .go{
-    font-family:"Fira Code", monospace;font-size:.72rem;letter-spacing:.06em;
-    color:var(--sage);border:1px solid var(--rule);border-radius:999px;
-    padding:.18rem .6rem;transition:.18s ease;
-    white-space:nowrap;
-  }
-  a.limb-link:hover .go{color:var(--terra-deep);border-color:var(--terra);background:var(--paper-2);}
-  .limb-note{
-    margin:.55rem 0 0;color:var(--ink-soft);max-width:46rem;font-size:1.02rem;
-  }
-
-  /* twigs — a branch on a branch */
-  .twigs{list-style:none;margin:1.35rem 0 .2rem;padding:0;}
-  .twig{position:relative;padding:0 0 1.05rem 2.4rem;}
-  .twig:last-child{padding-bottom:0;}
-  .twig::before{
-    content:"";position:absolute;left:7px;top:.15em;bottom:0;
-    border-left:1.6px solid var(--sage-soft);
-  }
-  .twig:last-child::before{bottom:auto;height:.8em;}
-  .twig::after{
-    content:"";position:absolute;left:7px;top:.15em;width:22px;height:.65em;
-    border-left:1.6px solid var(--sage-soft);
-    border-bottom:1.6px solid var(--sage-soft);
-    border-bottom-left-radius:11px;
-  }
-  .bud{
-    position:absolute;left:29px;top:.8em;width:9px;height:9px;
-    transform:translate(-50%,-50%);border-radius:50%;
-    background:var(--gold);border:1.5px solid var(--paper);
-    box-shadow:0 0 0 1.5px var(--gold);
-    transition:background .18s ease, box-shadow .18s ease;
-    z-index:2;
-  }
-  .twig:hover .bud,.twig:focus-within .bud{background:var(--terra);box-shadow:0 0 0 1.5px var(--terra-deep);}
-  .twig-name{
-    font-family:"Fira Code", monospace;font-weight:600;font-size:.98rem;
-    color:var(--forest-deep);letter-spacing:.01em;
-    transition:color .18s ease;
-  }
-  a.twig-link:hover .twig-name{color:var(--terra-deep);}
-  .twig-note{margin:.2rem 0 0;color:var(--ink-soft);font-size:.94rem;max-width:44rem;}
-
-  .latest{
-    margin-top:1.5rem;display:inline-flex;align-items:center;gap:.55rem;
-    font-family:"Fira Code", monospace;font-size:.8rem;color:var(--forest);
-    padding:.5rem .85rem;border:1px dashed var(--sage);border-radius:10px;
-    transition:.18s ease;
-  }
-  .latest:hover{background:var(--paper-2);border-style:solid;border-color:var(--terra);color:var(--terra-deep);}
-  .latest b{font-weight:600;}
-
-  /* ---------------- footer ---------------- */
-  .foot{
-    border-top:1px solid var(--rule);
-    padding:clamp(1.8rem,4vw,2.4rem) 0 clamp(2.4rem,5vw,3.2rem);
-    display:flex;gap:1rem 1.6rem;flex-wrap:wrap;align-items:center;
-    color:var(--ink-soft);font-size:.86rem;
-  }
-  .foot .mk{display:inline-flex;align-items:center;gap:.5rem;color:var(--forest-deep);font-family:Merriweather,serif;font-weight:700;}
-  .foot .sys{font-family:"Fira Code",monospace;font-size:.74rem;color:var(--sage);letter-spacing:.02em;}
-  .foot .sys b{color:var(--terra-deep);font-weight:600;}
-
-  /* ---------------- responsive ---------------- */
-  @media (max-width:720px){
-    .hero{grid-template-columns:1fr;padding-top:clamp(2rem,9vw,3rem);}
-    .hero-art{order:-1;}
-    .hero-art svg{width:clamp(150px,44vw,210px);}
-    .topnav{margin-left:0;width:100%;}
-    .brand{width:100%;}
-  }
-
-  /* ---------------- motion ---------------- */
-  @media (prefers-reduced-motion:no-preference){
-    .rise{opacity:0;transform:translateY(12px);animation:rise .72s cubic-bezier(.2,.7,.3,1) forwards;}
-    .d1{animation-delay:.04s;} .d2{animation-delay:.12s;} .d3{animation-delay:.2s;}
-    .d4{animation-delay:.28s;} .d5{animation-delay:.36s;} .d6{animation-delay:.46s;}
-    @keyframes rise{to{opacity:1;transform:none;}}
-    .draw path.grow{stroke-dasharray:340;stroke-dashoffset:340;animation:draw 1.5s ease forwards .25s;}
-    @keyframes draw{to{stroke-dashoffset:0;}}
-    .pop{opacity:0;animation:pop .5s ease forwards;}
-    .pop.p1{animation-delay:1.05s;} .pop.p2{animation-delay:1.2s;} .pop.p3{animation-delay:1.35s;}
-    @keyframes pop{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
-  }
-</style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 <a class="skip" href="#grove">Přejít na rozcestník</a>
@@ -344,7 +91,7 @@
     <ul class="grove">
       <!-- ABOUT -->
       <li class="limb rise d1" id="about">
-        <a class="limb-link" href="o-mne.html">
+        <a class="limb-link" href="pages/o-mne.html">
           <span class="knot" aria-hidden="true"></span>
           <span class="limb-head">
             <span class="limb-name">O mně</span>
@@ -356,7 +103,7 @@
 
       <!-- WETWARE -->
       <li class="limb rise d2" id="wetware">
-        <a class="limb-link" href="wetware.html">
+        <a class="limb-link" href="pages/wetware.html">
           <span class="knot" aria-hidden="true"></span>
           <span class="limb-head">
             <span class="limb-name">Wetware</span>
@@ -367,28 +114,28 @@
 
         <ul class="twigs">
           <li class="twig">
-            <a class="twig-link" href="wetware-biochemie.html">
+            <a class="twig-link" href="pages/wetware-biochemie.html">
               <span class="bud" aria-hidden="true"></span>
               <span class="twig-name">Biochemie</span>
             </a>
             <p class="twig-note">Chemie života: energie, molekuly a reakce, které nedovolí, aby se celý vzorec zastavil.</p>
           </li>
           <li class="twig">
-            <a class="twig-link" href="wetware-neurobiologie.html">
+            <a class="twig-link" href="pages/wetware-neurobiologie.html">
               <span class="bud" aria-hidden="true"></span>
               <span class="twig-name">Neurobiologie</span>
             </a>
             <p class="twig-note">Nervy, signály a ta zvláštní skutečnost, že tělo je zapojené natolik dobře, aby si všimlo samo sebe.</p>
           </li>
           <li class="twig">
-            <a class="twig-link" href="wetware-fyziologie.html">
+            <a class="twig-link" href="pages/wetware-fyziologie.html">
               <span class="bud" aria-hidden="true"></span>
               <span class="twig-name">Fyziologie</span>
             </a>
             <p class="twig-note">Jak spolu části spolupracují: orgány, soustavy a tělo běžící jako jeden fungující celek.</p>
           </li>
           <li class="twig">
-            <a class="twig-link" href="wetware-molekularni-biologie.html">
+            <a class="twig-link" href="pages/wetware-molekularni-biologie.html">
               <span class="bud" aria-hidden="true"></span>
               <span class="twig-name">Molekulární biologie</span>
             </a>
@@ -396,7 +143,7 @@
           </li>
         </ul>
 
-        <a class="latest" href="wetware-ch1-jsi-sloveso.html">
+        <a class="latest" href="pages/wetware-ch1-jsi-sloveso.html">
           <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="#BF6A3F"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#BF6A3F" stroke-width="1.4" stroke-linecap="round"/></svg>
           Začni tady &middot; <b>Kapitola první — Jsi sloveso</b> &#8594;
         </a>
@@ -404,7 +151,7 @@
 
       <!-- STORIES -->
       <li class="limb rise d3" id="stories">
-        <a class="limb-link" href="pribehy.html">
+        <a class="limb-link" href="pages/pribehy.html">
           <span class="knot" aria-hidden="true"></span>
           <span class="limb-head">
             <span class="limb-name">Příběhy</span>
@@ -416,7 +163,7 @@
 
       <!-- LUŠTĚNÍ -->
       <li class="limb rise d4" id="lusteni">
-        <a class="limb-link" href="lusteni.html">
+        <a class="limb-link" href="pages/lusteni.html">
           <span class="knot" aria-hidden="true"></span>
           <span class="limb-head">
             <span class="limb-name">Luštění</span>
@@ -428,7 +175,7 @@
 
       <!-- ZPĚTNÁ VAZBA -->
       <li class="limb rise d5" id="zpetna-vazba">
-        <a class="limb-link" href="zpetna-vazba.html">
+        <a class="limb-link" href="pages/zpetna-vazba.html">
           <span class="knot" aria-hidden="true"></span>
           <span class="limb-head">
             <span class="limb-name">Zpětná vazba</span>

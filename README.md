@@ -4,18 +4,31 @@ Osobní web — terénní poznámky o živých věcech a příbězích, které v
 Statické HTML v designovém systému **Větev na větvi** (cream, lesní zeleň + terakota,
 Merriweather / Inter / Fira Code, motiv větve a uzlů). Žádné závislosti, žádný build.
 
-## Obsah
+## Struktura repozitáře
 
-| Soubor | Co to je |
-| --- | --- |
-| `index.html` | Rozcestník (hlavní strana) |
-| `wetware-ch1-jsi-sloveso.html` | WETWARE · Kapitola první — *Jsi sloveso* (hotová kapitola) |
-| `o-mne.html`, `wetware.html`, `pribehy.html`, `lusteni.html`, `zpetna-vazba.html` | Zatím zástupné stránky („připravuje se") |
-| `wetware-biochemie.html`, `wetware-neurobiologie.html`, `wetware-fyziologie.html`, `wetware-molekularni-biologie.html` | Podvětve Wetware — zatím zástupné |
-| `404.html` | Stránka pro nenalezené adresy |
-| `.nojekyll` | Řekne GitHub Pages, ať HTML servíruje tak, jak je (bez Jekyll) |
+```
+index.html            rozcestník (hlavní strana) — musí zůstat v kořeni (GitHub Pages)
+404.html               stránka pro nenalezené adresy — musí zůstat v kořeni
+.nojekyll               řekne GitHub Pages, ať HTML servíruje tak, jak je (bez Jekyll)
+css/
+  base.css               sdílené proměnné (barvy, typo) + reset — používá každá stránka
+  home.css                layout rozcestníku (index.html)
+  stub.css                layout zástupných stránek (pages/*.html stub + 404.html)
+  chapter.css              styly kapitoly WETWARE (pages/wetware-ch1-jsi-sloveso.html)
+assets/
+  icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
+                            vykreslované přes <use> místo kopírování SVG na každou stránku
+pages/
+  wetware-ch1-jsi-sloveso.html   WETWARE · Kapitola první — Jsi sloveso (hotová kapitola)
+  o-mne.html, wetware.html, pribehy.html, lusteni.html, zpetna-vazba.html   zástupné stránky
+  wetware-biochemie.html, wetware-neurobiologie.html,
+  wetware-fyziologie.html, wetware-molekularni-biologie.html                podvětve Wetware — zástupné
+```
 
-Všechny odkazy jsou **relativní**, takže web funguje i v podadresáři `/vetev-na-vetvi/`.
+Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět přes `../`),
+takže web funguje i v podadresáři `/vetev-na-vetvi/`. `index.html` a `404.html` zůstávají
+v kořeni repozitáře — GitHub Pages je odsud vyžaduje (rozcestník i vlastní 404 stránka
+fungují jen tehdy, když leží přímo v publikované složce).
 
 ## Publikace přes GitHub Pages
 

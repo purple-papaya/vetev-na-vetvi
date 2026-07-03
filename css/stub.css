@@ -1,0 +1,16 @@
+/* Větev na větvi — placeholder-page layout (used by pages/*.html stubs and 404.html) */
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif;padding:2rem;text-align:center;
+  background-image:radial-gradient(circle at 85% 8%,rgba(94,133,112,0.05),transparent 42%),radial-gradient(circle at 6% 94%,rgba(191,106,63,0.045),transparent 40%);}
+.mark{margin-bottom:1.6rem;}
+.eyebrow{font-family:"Fira Code",monospace;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:1rem;
+  display:inline-flex;align-items:center;gap:.55rem;}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--terra);display:inline-block;}
+h1{font-family:Merriweather,Georgia,serif;font-weight:900;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 1.1rem;color:var(--ink);}
+p.note{max-width:34rem;color:var(--ink-soft);font-size:1.06rem;line-height:1.62;margin:0 0 2.1rem;}
+.back{font-family:"Fira Code",monospace;font-size:.85rem;color:var(--forest);border:1px solid var(--rule);border-radius:999px;
+  padding:.55rem 1.05rem;transition:.18s ease;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;}
+.back:hover{background:#FBF8EF;border-color:var(--terra);color:var(--terra-deep);}
+.foot{margin-top:2.8rem;display:inline-flex;align-items:center;gap:.5rem;font-family:"Fira Code",monospace;font-size:.72rem;color:var(--sage);letter-spacing:.03em;}
+a{color:inherit;}
+:focus-visible{outline:2.5px solid var(--terra);outline-offset:3px;border-radius:4px;}

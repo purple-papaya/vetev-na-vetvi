@@ -1,0 +1,18 @@
+/* Větev na větvi — shared design tokens, used by every page */
+:root{
+  --paper:#F4EFE1;
+  --paper-2:#FBF8EF;
+  --panel:#FCFAF3;
+  --forest:#2F5D46;
+  --forest-deep:#213F30;
+  --sage:#5E8570;
+  --sage-soft:#9DB6A6;
+  --terra:#BF6A3F;
+  --terra-deep:#9E5230;
+  --gold:#C69A46;
+  --ink:#26211A;
+  --ink-soft:#5A5140;
+  --rule:#DED5BE;
+  --rule-soft:#E7DFCC;
+}
+*{box-sizing:border-box;}
