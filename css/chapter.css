@@ -36,7 +36,8 @@ section.chapter{padding:3.2rem 0 1.4rem;}
 .brandmark{display:flex; align-items:center; gap:.6rem; text-decoration:none; color:inherit;}
 .brandmark .wm{font-family:var(--font-sans); font-weight:700; letter-spacing:.16em; font-size:.82rem; text-transform:uppercase; color:var(--forest-deep);}
 .brandmark .wm b{color:var(--terra-deep);}
-.topbar .chaptag{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em;}
+.topbar .chaptag{font-family:var(--font-mono); font-size:.72rem; color:var(--ink-soft); letter-spacing:.04em; text-decoration:none; transition:color .15s ease;}
+a.chaptag:hover{color:var(--terra-deep);}
 .progress-rail{position:absolute; left:0; right:0; bottom:-1px; height:2px; background:transparent;}
 .progress-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--forest),var(--terra)); transition:width .12s linear;}
 .hero{padding:4.4rem 0 1.2rem;}

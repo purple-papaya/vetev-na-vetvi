@@ -21,8 +21,8 @@ assets/
 pages/
   wetware-ch1-jsi-sloveso.html   WETWARE · Kapitola první — Jsi sloveso (hotová kapitola)
   o-mne.html, wetware.html, pribehy.html, lusteni.html, zpetna-vazba.html   zástupné stránky
-  wetware-biochemie.html, wetware-neurobiologie.html,
-  wetware-fyziologie.html, wetware-molekularni-biologie.html                podvětve Wetware — zástupné
+  wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
+  wetware-molekularni-biologie.html, wetware-farmakologie.html               podvětve Wetware — zástupné
 ```
 
 Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět přes `../`),
