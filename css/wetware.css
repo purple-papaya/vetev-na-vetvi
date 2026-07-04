@@ -1,0 +1,31 @@
+/* Větev na větvi — Wetware hub (pages/wetware.html)
+   Reuses the grove/branch-nav system from home.css; this file only adds
+   the inventory-specific bits (page intro, status pills, empty/upcoming states). */
+
+.page-head{padding:clamp(2.4rem,6vw,4rem) 0 clamp(1rem,3vw,1.4rem);max-width:42rem;}
+
+/* status pill next to a sub-branch or chapter */
+.status{
+  font-family:"Fira Code", monospace;font-size:.7rem;letter-spacing:.06em;
+  color:var(--sage);border:1px solid var(--rule);border-radius:999px;
+  padding:.16rem .58rem;white-space:nowrap;
+}
+.status.ready{color:var(--terra-deep);border-color:var(--terra);background:var(--paper-2);}
+
+/* an upcoming chapter — present in the inventory, not yet a page */
+.twig.upcoming .bud{background:var(--sage-soft);box-shadow:0 0 0 1.5px var(--sage-soft);}
+.twig.upcoming .twig-name{color:var(--sage);}
+.twig .twig-head{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+
+/* a sub-branch that has no chapters yet */
+.no-chapters{
+  list-style:none;margin:1.2rem 0 .2rem;padding:0;
+}
+.no-chapters li{position:relative;padding:0 0 0 2.4rem;}
+.no-chapters li::after{
+  content:"";position:absolute;left:7px;top:.62em;width:20px;
+  border-top:1.6px dashed var(--sage-soft);
+}
+.no-chapters .twig-name{
+  font-family:"Fira Code", monospace;font-weight:600;font-size:.92rem;color:var(--sage);
+}

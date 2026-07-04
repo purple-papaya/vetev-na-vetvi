@@ -12,15 +12,17 @@ index.html            rozcestník (hlavní strana) — musí zůstat v kořeni (
 .nojekyll               řekne GitHub Pages, ať HTML servíruje tak, jak je (bez Jekyll)
 css/
   base.css               sdílené proměnné (barvy, typo) + reset — používá každá stránka
-  home.css                layout rozcestníku (index.html)
+  home.css                grove/větvová navigace + chrome — sdílí index.html a Wetware hub
+  wetware.css             doplňky pro Wetware hub (rozvrh kapitol, stavové štítky)
   stub.css                layout zástupných stránek (pages/*.html stub + 404.html)
   chapter.css              styly kapitoly WETWARE (pages/wetware-ch1-jsi-sloveso.html)
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
 pages/
+  wetware.html             Wetware hub — rozcestník všech podvětví a jejich kapitol
   wetware-ch1-jsi-sloveso.html   WETWARE · Kapitola první — Jsi sloveso (hotová kapitola)
-  o-mne.html, wetware.html, pribehy.html, lusteni.html, zpetna-vazba.html   zástupné stránky
+  o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html               podvětve Wetware — zástupné
 ```

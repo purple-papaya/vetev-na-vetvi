@@ -6,16 +6,169 @@
 <title>Větev na větvi — Wetware</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/base.css">
-<link rel="stylesheet" href="../css/stub.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/wetware.css">
 </head>
 <body>
-  <div class="mark"><svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#logo-mark"></use></svg></div>
-  <div class="eyebrow">rozcestník / wetware</div>
-  <h1>Wetware</h1>
-  <p class="note">Terénní průvodce programy uvnitř tebe se teprve rozrůstá. První kapitola už ale čeká — vrať se na rozcestník a dej se do čtení.</p>
-  <a class="back" href="../index.html">&#8592; Zpět na rozcestník</a>
-  <div class="foot"><svg width="16" height="16" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#logo-mark-sm"></use></svg> Větev na větvi</div>
+<a class="skip" href="#grove">Přejít na obsah</a>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../index.html" aria-label="Větev na větvi — rozcestník">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#logo-mark"></use></svg>
+      <span class="word">Větev na <b>větvi</b></span>
+    </a>
+    <nav class="topnav" aria-label="Podvětve Wetware">
+      <a href="../index.html">&#8592; Rozcestník</a>
+      <a href="#biochemie">Biochemie</a>
+      <a href="#neurobiologie">Neurobiologie</a>
+      <a href="#fyziologie">Fyziologie</a>
+      <a href="#molekularni-biologie">Molekulární biologie</a>
+      <a href="#farmakologie">Farmakologie</a>
+    </nav>
+  </div>
+</div>
+
+<main class="shell" id="top">
+
+  <header class="page-head">
+    <span class="kicker rise d1">Terénní průvodce</span>
+    <h1 class="rise d2">Wetware</h1>
+    <p class="dek rise d3">Ilustrovaný terénní průvodce programy uvnitř tebe &mdash; logika těla, vyprávěná pomalu a bez ochoty cokoli zjednodušovat. Pět podvětví, každé se svými kapitolami. Tady je celý rozvrh.</p>
+  </header>
+
+  <section class="grove-wrap" id="grove" aria-labelledby="grove-h">
+    <div class="grove-head">
+      <span class="lbl" id="grove-h">Wetware ve větvích</span>
+      <span class="say">Pět podvětví. Kapitoly přibývají, jak větve rostou.</span>
+    </div>
+
+    <ul class="grove">
+
+      <!-- BIOCHEMIE -->
+      <li class="limb rise d1" id="biochemie">
+        <a class="limb-link" href="wetware-biochemie.html">
+          <span class="knot" aria-hidden="true"></span>
+          <span class="limb-head">
+            <span class="limb-name">Biochemie</span>
+            <span class="status ready">1 kapitola</span>
+          </span>
+        </a>
+        <p class="limb-note">Chemie života: energie, molekuly a reakce, které nedovolí, aby se celý vzorec zastavil.</p>
+
+        <ul class="twigs">
+          <li class="twig">
+            <a class="twig-link" href="wetware-ch1-jsi-sloveso.html">
+              <span class="bud" aria-hidden="true"></span>
+              <span class="twig-name">Kapitola první &mdash; Jsi sloveso</span>
+            </a>
+            <p class="twig-note">Vnitřní logika metabolismu: proč jsi spíš sloveso než podstatné jméno &mdash; pomalý oheň, stojatá vlna, vír. Tři živé simulace, ~22 min čtení.</p>
+          </li>
+          <li class="twig upcoming">
+            <span class="twig-head">
+              <span class="bud" aria-hidden="true"></span>
+              <span class="twig-name">Kapitola druhá &mdash; První rameno schodiště</span>
+              <span class="status">připravuje se</span>
+            </span>
+            <p class="twig-note">Sledujeme jedinou molekulu cukru dolů po úvodních schodech a díváme se, jak glykolýza předvede nejstarší trik biochemické knihy.</p>
+          </li>
+        </ul>
+      </li>
+
+      <!-- NEUROBIOLOGIE -->
+      <li class="limb rise d2" id="neurobiologie">
+        <a class="limb-link" href="wetware-neurobiologie.html">
+          <span class="knot" aria-hidden="true"></span>
+          <span class="limb-head">
+            <span class="limb-name">Neurobiologie</span>
+            <span class="status">připravuje se</span>
+          </span>
+        </a>
+        <p class="limb-note">Nervy, signály a ta zvláštní skutečnost, že tělo je zapojené natolik dobře, aby si všimlo samo sebe.</p>
+        <ul class="no-chapters">
+          <li><span class="twig-name">Zatím bez kapitol &mdash; větev teprve raší.</span></li>
+        </ul>
+      </li>
+
+      <!-- FYZIOLOGIE -->
+      <li class="limb rise d3" id="fyziologie">
+        <a class="limb-link" href="wetware-fyziologie.html">
+          <span class="knot" aria-hidden="true"></span>
+          <span class="limb-head">
+            <span class="limb-name">Fyziologie</span>
+            <span class="status">připravuje se</span>
+          </span>
+        </a>
+        <p class="limb-note">Jak spolu části spolupracují: orgány, soustavy a tělo běžící jako jeden fungující celek.</p>
+        <ul class="no-chapters">
+          <li><span class="twig-name">Zatím bez kapitol &mdash; větev teprve raší.</span></li>
+        </ul>
+      </li>
+
+      <!-- MOLEKULÁRNÍ BIOLOGIE -->
+      <li class="limb rise d4" id="molekularni-biologie">
+        <a class="limb-link" href="wetware-molekularni-biologie.html">
+          <span class="knot" aria-hidden="true"></span>
+          <span class="limb-head">
+            <span class="limb-name">Molekulární biologie</span>
+            <span class="status">připravuje se</span>
+          </span>
+        </a>
+        <p class="limb-note">Instrukce vespod: DNA, bílkoviny a to, jak se z řádku kódu stane živá bytost.</p>
+        <ul class="no-chapters">
+          <li><span class="twig-name">Zatím bez kapitol &mdash; větev teprve raší.</span></li>
+        </ul>
+      </li>
+
+      <!-- FARMAKOLOGIE -->
+      <li class="limb rise d5" id="farmakologie">
+        <a class="limb-link" href="wetware-farmakologie.html">
+          <span class="knot" aria-hidden="true"></span>
+          <span class="limb-head">
+            <span class="limb-name">Farmakologie</span>
+            <span class="status">připravuje se</span>
+          </span>
+        </a>
+        <p class="limb-note">Cizí molekuly, které vstoupí do hry: léky, jedy a jemné umění změnit běžící chemii zvenčí, aniž se rozbije.</p>
+        <ul class="no-chapters">
+          <li><span class="twig-name">Zatím bez kapitol &mdash; větev teprve raší.</span></li>
+        </ul>
+      </li>
+
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <span class="mk">
+      <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#logo-mark-sm"></use></svg>
+      Větev na větvi
+    </span>
+    <span>Wetware &mdash; terénní průvodce programy uvnitř tebe.</span>
+    <span class="sys"><b>větev na větvi</b>, celou cestu dolů</span>
+  </footer>
+
+</main>
+
+<script>
+  /* progressive enhancement only — page is fully usable without JS */
+  (function(){
+    "use strict";
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var links = document.querySelectorAll('a[href^="#"]');
+    for (var i=0;i<links.length;i++){
+      links[i].addEventListener('click', function(e){
+        var id = this.getAttribute('href');
+        if(id.length < 2) return;
+        var el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+        if(el.id){ history.replaceState(null,'', '#'+el.id); }
+      });
+    }
+  })();
+</script>
 </body>
 </html>

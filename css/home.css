@@ -1,4 +1,5 @@
-/* Větev na větvi — homepage (index.html) layout */
+/* Větev na větvi — grove/branch-nav layout + page chrome.
+   Shared by the homepage (index.html) and the Wetware hub (pages/wetware.html). */
 html{-webkit-text-size-adjust:100%;}
 body{
   margin:0;
