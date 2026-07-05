@@ -618,7 +618,7 @@
       ctx.fillStyle=C.forest; ctx.beginPath(); ctx.arc(rx2,uy,18+sparkRe*7,0,TAU); ctx.fill();
       ctx.fillStyle='#fff'; ctx.fillText('NABÍJENÍ', rx2, uy+3.2);
       ctx.fillStyle=C.inkSoft; ctx.font='600 10px Fira Code, monospace';
-      ctx.fillText('zásoba je pevně daná \u2014 sleduj, jak drží', g.cx, g.cy-3);
+      ctx.fillText('zásoba je pevně daná \u2013 sleduj, jak drží', g.cx, g.cy-3);
       ctx.fillStyle=C.forestDeep; ctx.font='700 11px Fira Code, monospace';
       ctx.fillText('nárok: '+demandName, g.cx, g.cy+15);
       var charged=0;
@@ -745,7 +745,7 @@
       ctx.fillStyle='#D9CFB6'; roundRect(ctx,bx,by,bw,10,5); ctx.fill();
       ctx.fillStyle=C.terra; roundRect(ctx,bx,by,bw*(matchSpent?0.012:0),10,5); ctx.fill();
       ctx.fillStyle=C.inkSoft; ctx.font='600 9px Inter, sans-serif';
-      ctx.fillText('zachyceno '+(matchSpent?'~0%':'\u2014'), lx, by+24);
+      ctx.fillText('zachyceno '+(matchSpent?'~0%':'\u2013'), lx, by+24);
     }
 
     function drawStair(g){
@@ -818,7 +818,7 @@
       draw();
     }
 
-    function softResetStair(){ runAnim=false; stalled=false; done=false; markPos=0; target=0; lastArrived=-1; atp=0; credited=[]; electrons=0; if(elAtp)elAtp.textContent='0'; if(elCap)elCap.textContent='\u2014'; }
+    function softResetStair(){ runAnim=false; stalled=false; done=false; markPos=0; target=0; lastArrived=-1; atp=0; credited=[]; electrons=0; if(elAtp)elAtp.textContent='0'; if(elCap)elCap.textContent='\u2013'; }
     function drawStatic(){
       matchSpent=true; fireProg=1; fireAnim=false;
       if(o2){ markPos=N-1; atp=32; stalled=false; electrons=0; } else { markPos=3; atp=2; stalled=true; electrons=12; }
@@ -830,7 +830,7 @@
     canvas._onResize=function(){ if(REDUCED) drawStatic(); else draw(); };
 
     document.getElementById('stairFire').addEventListener('click', function(){
-      matchSpent=false; fireProg=0; fireAnim=true; if(elFireCap)elFireCap.textContent='\u2014';
+      matchSpent=false; fireProg=0; fireAnim=true; if(elFireCap)elFireCap.textContent='\u2013';
       if(REDUCED){ matchSpent=true; fireProg=1; if(elFireCap)elFireCap.textContent='~0%'; draw(); }
     });
     document.getElementById('stairRun').addEventListener('click', function(){
@@ -843,7 +843,7 @@
       softResetStair(); if(REDUCED) drawStatic(); else draw();
     });
     document.getElementById('stairReset').addEventListener('click', function(){
-      matchSpent=false; fireProg=0; fireAnim=false; if(elFireCap)elFireCap.textContent='\u2014';
+      matchSpent=false; fireProg=0; fireAnim=false; if(elFireCap)elFireCap.textContent='\u2013';
       softResetStair(); if(REDUCED) drawStatic(); else draw();
     });
 
@@ -855,21 +855,21 @@
     var panel=document.getElementById('movesPanel');
     if(!panel) return;
     var MV=[
-      { name:'Tvorba a štěpení vazeb uhlík\u2013uhlík',
+      { name:'Tvorba a&nbsp;štěpení vazeb uhlík\u2013uhlík',
         eq:'A\u2013C\u2013C\u2013B   \u21CC   A\u2013C   +   C\u2013B',
-        say:'Nejodvážnější tah z celého rejstříku: sáhnout přímo do uhlíkové kostry a přetnout ji, nebo dva kusy svařit v jeden. Právě takhle se šestiuhlíkový cukr zlomí na dvě tříuhlíkové poloviny a takhle tělo skládá dlouhé tuky po jedné dvojuhlíkové cihle. Stavba a demolice, na úrovni samotného lešení.' },
+        say:'Nejodvážnější tah z&nbsp;celého rejstříku: sáhnout přímo do uhlíkové kostry a&nbsp;přetnout ji, nebo dva kusy svařit v&nbsp;jeden. Právě takhle se šestiuhlíkový cukr zlomí na dvě tříuhlíkové poloviny a&nbsp;takhle tělo skládá dlouhé tuky po jedné dvojuhlíkové cihle. Stavba a&nbsp;demolice, na úrovni samotného lešení.' },
       { name:'Přesmyky (izomerizace)',
         eq:'X\u2013C\u2013C\u2013H   \u21CC   H\u2013C\u2013C\u2013X',
-        say:'Nic se nepřidá, nic se neubere \u2014 jen se skupina zvedne a položí o sedadlo dál. Glukóza a fruktóza jsou naprosto tytéž atomy v jiném uspořádání a jediný enzym přeháže jednu v druhou. Nejlevnější úprava, jaká existuje: přepsat přerovnáním.' },
+        say:'Nic se nepřidá, nic se neubere \u2013 jen se skupina zvedne a&nbsp;položí o&nbsp;sedadlo dál. Glukóza a&nbsp;fruktóza jsou naprosto tytéž atomy v&nbsp;jiném uspořádání a&nbsp;jediný enzym přeháže jednu v&nbsp;druhou. Nejlevnější úprava, jaká existuje: přepsat přerovnáním.' },
       { name:'Radikálové reakce',
         eq:'A:B   \u2192   A\u2022   +   \u2022B',
-        say:'Většina chemie buňky posouvá elektrony po dvou, slušně spárované. Tu a tam ale buňka pár rozdělí a pustí jednotlivé elektrony z řetězu \u2014 rychlé, reaktivní, lehce nebezpečné a občas přesně ten nástroj, který je potřeba. Bere se do kleští, nikdy holou rukou.' },
+        say:'Většina chemie buňky posouvá elektrony po dvou, slušně spárované. Tu a&nbsp;tam ale buňka pár rozdělí a&nbsp;pustí jednotlivé elektrony z&nbsp;řetězu \u2013 rychlé, reaktivní, lehce nebezpečné a&nbsp;občas přesně ten nástroj, který je potřeba. Bere se do kleští, nikdy holou rukou.' },
       { name:'Přenosy skupin',
         eq:'D\u2013G   +   A   \u2192   D   +   A\u2013G',
-        say:'Celá funkční skupina \u2014 fosfát, amino, acetyl \u2014 se zvedne z jedné molekuly a předá druhé. Přesně tohle ATP doopravdy dělá, když „utrácí“: předává svůj krajní fosfát něčemu, co potřebovalo náboj. Buňka jako jeden dlouhý štafetový běh s balíčky.' },
+        say:'Celá funkční skupina \u2013 fosfát, amino, acetyl \u2013 se zvedne z&nbsp;jedné molekuly a&nbsp;předá druhé. Přesně tohle ATP doopravdy dělá, když „utrácí“: předává svůj krajní fosfát něčemu, co potřebovalo náboj. Buňka jako jeden dlouhý štafetový běh s&nbsp;balíčky.' },
       { name:'Oxidace\u2013redukce (redox)',
         eq:'A(red) + B(ox)   \u2192   A(ox) + B(red)',
-        say:'Tah pod všemi ostatními \u2014 ten, který energii doopravdy uloží. Oxidovat znamená ztrácet elektrony; redukovat znamená je získávat. Každá kalorie, kterou tvé tělo kdy spálilo, se scvrkla na elektrony klouzající z potravy ke kyslíku, přičemž si buňka cestou seškrábne kus toho spádu. Přenašeče jako NADH jsou obrněné vozy, které je tam dovezou.' }
+        say:'Tah pod všemi ostatními \u2013 ten, který energii doopravdy uloží. Oxidovat znamená ztrácet elektrony; redukovat znamená je získávat. Každá kalorie, kterou tvé tělo kdy spálilo, se scvrkla na elektrony klouzající z&nbsp;potravy ke kyslíku, přičemž si buňka cestou seškrábne kus toho spádu. Přenašeče jako NADH jsou obrněné vozy, které je tam dovezou.' }
     ];
     var tabs=document.querySelectorAll('.moves-tabs button');
     function render(i){
