@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jak se sůl naučila říkat já – Větev na větvi</title>
+<meta name="description" content="Jak se pár vlhkých kilogramů buněk, z nichž každá je asi tak chytrá jako vypínač, spikne, aby se z nich stalo to, co právě čte tuto větu. Úvod do logiky nervové soustavy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/neurobiologie-ch1.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-neurobiologie.html">Neurobiologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Terénní průvodce mokrým strojem</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title">Jak se sůl naučila<br>říkat <em>já</em></h1>
+  <p class="deck">Jak se pár vlhkých kilogramů buněk – z&nbsp;nichž každá je asi tak chytrá jako vypínač – tiše spikne, aby se z&nbsp;nich stalo právě to, co teď čte tuto větu.</p>
+  <p class="byline">Úvod do logiky nervové soustavy. Vyprávěno beze spěchu, na všedních věcech a&nbsp;s&nbsp;pěti malými strojky, do kterých můžete šťouchat. <b>Vychází z&nbsp;knihy</b> <i>From Neuron to Brain</i> – vedeno v&nbsp;duchu pořádné dlouhé přednášky.</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 220" role="img" aria-label="Větvící se útvar: holá větev, která je zároveň – když přimhouříte oči – jedinou nervovou buňkou s dendrity a axonem.">
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round">
+        <!-- main trunk / axon -->
+        <path d="M40,150 C160,150 250,120 340,116" stroke="var(--sage-deep)" stroke-width="3"/>
+        <!-- soma -->
+        <circle cx="360" cy="114" r="17" fill="var(--sage-mist)" stroke="var(--sage-deep)" stroke-width="2.6"/>
+        <!-- dendrites, upper -->
+        <path d="M372,104 C430,70 470,58 520,34"/>
+        <path d="M520,34 C540,26 556,30 566,20"/>
+        <path d="M520,34 C544,38 556,54 574,52"/>
+        <path d="M372,106 C440,88 500,92 560,80"/>
+        <path d="M560,80 C578,76 588,66 600,64"/>
+        <path d="M560,80 C580,86 588,98 604,98"/>
+        <!-- dendrites, lower -->
+        <path d="M370,124 C440,150 500,150 566,168"/>
+        <path d="M566,168 C586,174 596,186 610,188"/>
+        <path d="M566,168 C588,164 600,150 616,150"/>
+        <path d="M372,120 C450,128 520,120 590,120"/>
+        <path d="M590,120 C610,120 622,110 636,110"/>
+        <path d="M590,120 C612,122 624,132 640,130"/>
+        <!-- axon terminals (right) -->
+        <path d="M40,150 C30,150 24,142 16,140" stroke="var(--sage-deep)"/>
+        <path d="M40,150 C30,150 24,158 16,160" stroke="var(--sage-deep)"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="566" cy="20" r="4.6"/><circle cx="574" cy="52" r="4.6"/>
+        <circle cx="600" cy="64" r="4.6"/><circle cx="604" cy="98" r="4.6"/>
+        <circle cx="610" cy="188" r="4.6"/><circle cx="616" cy="150" r="4.6"/>
+        <circle cx="636" cy="110" r="4.6"/><circle cx="640" cy="130" r="4.6"/>
+        <circle cx="16" cy="140" r="4.2"/><circle cx="16" cy="160" r="4.2"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Jedna nervová buňka – <em>neuron</em>. Slovo <em>dendrit</em> pochází z&nbsp;řeckého výrazu pro <em>stromeček</em>. Jinými slovy: to, čím myslíte, má tvar větve na větvi.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Začněme něčím lehce absurdním. Právě v&nbsp;tuto chvíli – abyste přečetli slovo <em>teď</em> – pár vlhkých kilogramů tkáně poskládané za vašima očima skládá drobné pulzy elektřiny a&nbsp;nepatrné dávky chemie do zážitku porozumění jednomu slovu. Používáte tu věc k&nbsp;tomu, abyste té věci porozuměli. Jako by se jazyk otočil a&nbsp;přečetl sám sebe, nebo se řeka uprostřed toku zastavila a&nbsp;zeptala se, kam se všechna ta voda vlastně žene.</p>
+
+  <p>Jsme na to tak zvyklí, že nám to přestalo připadat zvláštní. Přitom je to – když se nad tím na chvíli zastavíte – asi nejpodivnější skutečnost, jakou známe. To, co máte mezi ušima, nesvítí. Nezní to významem. Když to rozříznete, vypadá to jako šedorůžový vlašský ořech s&nbsp;konzistencí tuhého tofu. Je to z&nbsp;buněk – obyčejných buněk, vlhkých a&nbsp;slaných, které běží na cukru a&nbsp;kyslíku jako všechno ostatní živé. A&nbsp;jediná taková buňka je sama o&nbsp;sobě až trapně jednoduchá. Neumí myslet. Neumí cítit. Má zhruba rozumový rozsah vypínače.</p>
+
+  <p>A&nbsp;přesto jsme tady.</p>
+
+  <p>Tahle první kapitola není o&nbsp;žádném konkrétním zázraku mozku – ne o&nbsp;paměti, ne o&nbsp;vidění, ne o&nbsp;tom, proč milujete lidi, které milujete. Je o&nbsp;<em>logice</em>, která je pod tím vším: o&nbsp;hrstce triků, které příroda jednou provždy vymyslí v&nbsp;té nejskromnější nervové buňce a&nbsp;pak je používá znovu a&nbsp;znovu, všude a&nbsp;napořád. Ve skutečnosti jich je jen asi pět. Jakmile je máte, zbytek neurovědy přestává být zdí odborných termínů a&nbsp;stává se variacemi na téma, kterému už rozumíte.</p>
+
+  <p>Vezmu to pomalu a&nbsp;budu kroužit k&nbsp;jádru – tak, jak o&nbsp;vesmíru mluvíval Alan Watts, beze spěchu, s&nbsp;potěšením z&nbsp;té věci samotné, místo abych ji honem definoval. Watts měl dar, díky kterému jste cítili, že vesmír je zároveň dokonale obyčejný i&nbsp;naprosto ohromující – a&nbsp;nervová soustava si takový údiv rozhodně zaslouží. Taky na vás nebudu mluvit povýšeně. Myšlenky tady jsou dost jednoduché na to, abych nemusel. Když někdo dokáže, aby neurověda zněla složitě, obvykle je to tím, že přeskočil tu část, kde dává smysl.</p>
+
+  <p>Tak tedy. Pět triků. Pojďme se s&nbsp;nimi seznámit.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 RESTING POTENTIAL ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Napětí v&nbsp;<em>klidu</em></h2>
+
+  <p>Ještě než nervová buňka vůbec cokoli udělá – než vystřelí, než promluví – už něco dělá. Drží náboj. Jako natažený luk nebo kytarová struna vychýlená do strany a&nbsp;ještě nepuštěná spočívá klidový neuron pod tichým, neviditelným napětím, nabitý a&nbsp;čekající.</p>
+
+  <p>Odkud se to bere. Každá buňka je váček – membrána z&nbsp;olejnatého tuku obalená kolem kapky slané vody, plovoucí v&nbsp;další slané vodě. Jenže sůl uvnitř je namíchaná trochu jinak než sůl venku. Venku se dovnitř tlačí velký dav <span class="kw">sodíku</span>. Uvnitř je víc <span class="kw">draslíku</span> a&nbsp;celá populace velkých, nevrlých molekul bílkovin, které nesou záporný náboj a&nbsp;jsou prostě příliš velké na to, aby odešly. Když to všechno sečtete, vnitřek buňky je oproti okolí asi o&nbsp;sedmdesát tisícin voltu <em>zápornější</em>. Malé číslo. Nesmírné důsledky. To trvalé napětí – <span class="kw">klidový membránový potenciál</span> – je ten natažený luk. Je to baterie, kterou každý nervový signál utratí.</p>
+
+  <p>Jenže baterie, kterou necháte být, se vybije. Ionty prosakují. Dav venku by se strašně rád nahrnul dovnitř; draslík uvnitř se pomalu vytrácí ven. Buňka tedy musí pracovat – nepřetržitě, bez jediné chvíle klidu – aby gradient nespadl. V&nbsp;membráně jsou zapuštěné miliony nepatrných molekulárních pump a&nbsp;každá popadne tři sodíkové ionty, vystrčí je ven, popadne dva draslíkové ionty a&nbsp;vtáhne je dovnitř, přičemž pokaždé spálí molekulu paliva. Vylévat, vylévat, vylévat, bez konce.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Je to <b>pramička s&nbsp;pomalu prosakující dírou</b> a&nbsp;někdo, kdo z&nbsp;ní kbelíkem vylévá vodu, celý den, každý den, bez ustání. Přestaňte vylévat a&nbsp;loďka se nepotopí nijak dramaticky – jen se tiše, pomaloučku naplní. To je smrt na buněčné úrovni: ne třesk, ale gradient, který spadne na nulu. Zhruba <b>pětina až čtvrtina</b> veškeré energie, kterou vaše tělo v&nbsp;klidu spálí, jde na provoz těchhle pump. Být naživu a&nbsp;v&nbsp;klidu není zadarmo. Je to ten nejdražší druh klidu, jaký existuje.
+  </aside>
+
+  <p>Takže slovo <em>klidový</em> je pěkná malá lež. Není na tom nic klidného. Klidový neuron je pružina držená pod napětím posádkou vyčerpaných pump, balancující na hraně nějaké akce – a&nbsp;stačí jí jediný důvod.</p>
+
+  <p>Podívejte se na to. Níže je kousek membrány. Vypněte pumpu a&nbsp;uvidíte, jak rychle se „klid“ promění v&nbsp;naprosté nic.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Membrána a&nbsp;pumpa</div>
+      <div class="readout">
+        <span class="lo">gradient</span> <b id="s1-grad">100%</b>
+        <span class="lo">membrána</span> <b id="s1-mv">−70 mV</b>
+      </div>
+    </div>
+    <canvas id="sim1" height="300" aria-label="Buněčná membrána se sodíkovými a draslíkovými ionty po obou stranách a pumpou, která udržuje rozdíl napětí."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="s1-pump" aria-pressed="true">Pumpa: ZAP</button>
+      <button class="ctrl spark" id="s1-open">Otevřít kanál</button>
+      <span class="hint">terakota = sodík · šalvějová = draslík · modrá = uvězněné bílkoviny</span>
+    </div>
+  </div>
+  <figcaption><b>Natažený luk.</b> Když pumpa běží, sodík (terakota) zůstává natěsnaný venku a&nbsp;vnitřek si drží náboj. Vypněte ji a&nbsp;gradient vyprchá k&nbsp;nule – plochá čára rovnováhy, která pro živou buňku znamená, že je po party. Být v&nbsp;klidu je práce.</figcaption>
+</figure>
+
+<!-- ===================== §2 THRESHOLD / ALL-OR-NONE ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>To <em>rozhodnutí</em></h2>
+
+  <p>Neuron nemumlá. Neztrácí se v&nbsp;půli věty, neříká věci napůl, nekličkuje. Má přesně dva režimy: buď vystřelí, nebo mlčí. A&nbsp;způsob, jakým se mezi nimi rozhoduje, je druhý velký trik.</p>
+
+  <p>Signály přicházejí k&nbsp;buňce jako drobná pošťouchnutí jejího napětí. Pošťouchnutí nahoru – směrem k&nbsp;nule, směrem k&nbsp;výstřelu – se nazývá <span class="kw">excitační</span> (dráždivý) vstup: malé „ano“. Pošťouchnutí dolů, pryč od výstřelu, je <span class="kw">inhibiční</span> (tlumivý): malé „ne“. Sama o&nbsp;sobě jsou tahle pošťouchnutí chabá a&nbsp;vytrácejí se skoro stejně rychle, jak přišla, jako vlnky, které se uklidní na hladině rybníka. Jedno „ano“ v&nbsp;podstatě neudělá nic.</p>
+
+  <p>Ale když se ta „ano“ nakupí dost rychle – spousta naráz, nebo jedno hned po druhém, dřív než předchozí stačí vyprchat – napětí stoupá a&nbsp;stoupá, až překročí jistou čáru. Ta čára je <span class="kw">práh</span> a&nbsp;překročit ji je jako naklonit plnou sklenici za bod, odkud už není návratu. Natažený luk se uvolní. Buňka vyšle jediný, úplný, prudký hrot napětí – <span class="kw">akční potenciál</span> – který vyskočí nad nulu a&nbsp;zase spadne dolů, celé asi za tisícinu sekundy.</p>
+
+  <p>A&nbsp;teď to, co lidem přijde vážně překvapivé: <strong>každý z&nbsp;těch hrotů je naprosto stejný.</strong> Ne zhruba. Identický. Sotva znatelný přítok vstupu, těsně nad prahem, vyvolá přesně stejný hrot jako jeho kolosální záplava. Ze zbraně nevystřelíte jemně – zmáčkněte spoušť dost silně a&nbsp;kulka vylétne přesně tou rychlostí, kterou vždycky, o&nbsp;nic víc, o&nbsp;nic míň. Pod prahem: nejde nic. Na prahu nebo nad ním: pokaždé plný výstřel. To je slavný zákon <span class="kw">vše, nebo nic</span> a&nbsp;je to nejblíž, jak se tělo dostává k&nbsp;tomu být digitální.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Je to <b>zvonek</b>, který zvoní jen na jednu hlasitost. Nemůžete ho zmáčknout silněji, aby zněl hlasitěji. Chcete-li říct „tohle je naléhavé“, jediná možnost je zvonit <b>rychleji</b> – cink, cink, cink, cink. To je celá slovní zásoba neuronu. Ne <i>jak hlasitě</i>, ale <i>jak často</i>. Silný signál je <b>rychlá</b> salva stejných hrotů; slabý je líné odkapávání. Je to morseovka, vyťukávaná až tisíckrát za sekundu, v&nbsp;jazyce o&nbsp;jediném písmenu.
+  </aside>
+
+  <p>Což vede k&nbsp;jedné krásné otázce. Když neuron, který vysílá signál, vyšle tentýž hrot naráz do každé jednotlivé své větve – a&nbsp;to dělá – kdo pak rozhoduje, <em>které</em> buňky vlastně zareagují? Odpověď převrací to, jak si většina lidí mozek představuje: odesílatel nevybírá vůbec. Křičí stejně do všech směrů. <strong>Volbu vždycky dělá posluchač.</strong> Každá přijímající buňka si tam sčítá vlastní tajné volby – tisíce „ano“ a&nbsp;tisíce „ne“ přicházejí každý okamžik – a&nbsp;vystřelí jen tehdy, když „ano“ vyhrají o&nbsp;dost, aby překročila její práh. Typická buňka ve vaší mozkové kůře naslouchá zhruba deseti až čtyřiceti tisícům jiných najednou. Jediná Purkyňova buňka ve vašem mozečku naslouchá víc než sto tisícům. Parlament šepotů, který se tisíckrát za sekundu rozhodne v&nbsp;jediný čistý výkřik.</p>
+
+  <p>Zkuste být tím neuronem. Pošťouchněte ho nahoru, pošťouchněte dolů a&nbsp;najděte tu hranu.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Překročení prahu</div>
+      <div class="readout">
+        <span class="lo">Vm</span> <b id="s2-mv">−70 mV</b>
+        <span class="lo">hroty</span> <b id="s2-count">0</b>
+      </div>
+    </div>
+    <canvas id="sim2" height="300" aria-label="Osciloskopický záznam napětí neuronu s čárou prahu. Excitační a inhibiční vstupy jím pošťuchují nahoru a dolů."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="s2-exc">Excitovat ＋ (ano)</button>
+      <button class="ctrl" id="s2-inh">Inhibovat − (ne)</button>
+      <button class="ctrl" id="s2-hold">Držet podnět</button>
+      <span class="hint">nakupte „ano“ dost rychle, aby se překročila čárkovaná čára</span>
+    </div>
+  </div>
+  <figcaption><b>Vše, nebo nic.</b> Jednotlivá pošťouchnutí vyprchají. Doručte jich dost, než odezní, a&nbsp;napětí překročí práh – a&nbsp;hrot, který vyšlehne, má vždycky stejnou výšku, ať jste přes čáru jen taktak přelezli, nebo ji přeletěli. Podržte podnět a&nbsp;sledujte, jak se ze slabého versus silného vstupu stane <i>pomalé versus rychlé pálení</i>. Stejné písmeno, jiný rytmus.</figcaption>
+</figure>
+
+<!-- ===================== §3 PROPAGATION / MYELIN ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Putující <em>vlna</em></h2>
+
+  <p>Buňka tedy vystřelila. Teď se ten hrot musí <em>někam dostat</em> – po dlouhé výstupní větvi, <span class="kw">axonu</span>, který ve vaší noze může měřit celý metr od páteře ke špičce prstu. A&nbsp;tady narážíme na omyl, který nejvíc toužím rozebrat, protože ho s&nbsp;sebou nosí skoro každý – a&nbsp;je mylný způsobem mnohem zajímavějším než pravda, kterou lidé předpokládají.</p>
+
+  <p>Představa ve většině hlav je: nerv je drát, signál je elektřina a&nbsp;putuje skoro rychlostí světla. Cvak, okamžik, hotovo.</p>
+
+  <p>Není to drát. Signál není elektřina ve smyslu drátu. A&nbsp;<em>ne</em>putuje ničím, co by se rychlosti světla podobalo. Nejrychlejší nervy ve vašem těle se dostanou nanejvýš na nějakých 120 metrů za sekundu – přes 400 kilometrů v&nbsp;hodině, zhruba rychlý expresní vlak. Ty pomalé – tupá pulzující bolest naraženého palce – se plíží rychlostí kolem dvou kilometrů v&nbsp;hodině, rychlostí loudavé chůze. Skutečná elektřina ve skutečném měděném drátu se přitom pohybuje slušným zlomkem rychlosti světla. Nervový vzruch je tedy něco jako <strong>milionkrát pomalejší</strong> než elektřina, za jakou ho lidé považují.</p>
+
+  <p>Proč tak pomalu? Protože vzruch není věc, která protéká <em>skrz</em> trubku. Je to řetězová reakce. Je to <strong>vlna</strong>.</p>
+
+  <p>Přesně víte, jak to funguje, protože jste to viděli na stadionu. Mexická vlna oběhne celou arénu – ale ani jediný člověk kolem arény neputuje. Každý se prostě postaví, když se postaví jeho soused, a&nbsp;zase si sedne. Nikdo nemění místo; pohybuje se <em>vzorec</em>. Akční potenciál je přesně tohle. Každý malý kousek membrány axonu na okamžik rozevře své sodíkové branky, překlopí se do kladných hodnot, a&nbsp;tím <strong>strhne kousek hned vedle, aby udělal totéž</strong> – pak branky přibouchne a&nbsp;začne se zotavovat. Kousek po kousku po kousku se to překlopení znovu a&nbsp;znovu vytváří celou cestu dál. Hrot, který dorazí na druhý konec, není ten hrot, se kterým jste začali – stejně jako druhá strana mexické vlny neobsahuje původního člověka. Je to tisící článek v&nbsp;štafetě naprosto stejných událostí.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Je to <b>hořící zápalná šňůra</b> nebo řada <b>padajících kostek domina</b>. Plamen, který dorazí k&nbsp;dynamitu, není ta zápalka, kterou jste škrtli – je to čerstvý plamen, nejnovější v&nbsp;dlouhém řetězci, kde každý zažehne ten další. A&nbsp;hlavně: zápalná šňůra <b>nemůže hořet pozpátku</b>. Hned za plamenem je úsek, který právě dohořel a&nbsp;nemá už co dát. V&nbsp;neuronu je tato vyčerpaná zóna <b>refrakterní fáze</b> – jako záchod, který právě spláchl a&nbsp;než může spláchnout znovu, musí se chvíli napouštět. Právě tahle drobná únava udržuje vlnu v&nbsp;pochodu vpřed a&nbsp;nikdy ji nepustí zpátky.
+  </aside>
+
+  <p>Kdyby to ale byl celý příběh, mysleli bychom všichni hlemýždím tempem. Evoluce proto našla trik na rychlost, a&nbsp;je elegantní. Obalte většinu axonu tučnou izolační pochvou – <span class="kw">myelinem</span> – a&nbsp;nechte jen malé holé mezery v&nbsp;pravidelných rozestupech. Teď vlna nemůže po obalených úsecích unikat, takže místo aby souvisle prosakovala, <strong>skáče</strong> z&nbsp;mezery do mezery a&nbsp;obnovuje se jen na holých místech. Tomuhle skákání se říká <span class="kw">saltatorní vedení</span>, z&nbsp;latinského <em>saltare</em>, skákat nebo tančit – signál tančí po axonu a&nbsp;míjí místní zastávky jako expresní vlak. Je to mnohonásobně rychlejší než plazení po holém drátu. A&nbsp;když se ta izolace rozpadne, jako u&nbsp;roztroušené sklerózy, expresy zpomalí do šouravé chůze – a&nbsp;důsledky jsou přesně takové, jaké byste čekali.</p>
+
+  <p>Níže: nechte závodit myelinizovaný axon proti holému. Odpalte je zároveň a&nbsp;sledujte, jak tanec porazí plazení.</p>
+
+  <p class="punch">Ta vlna je zcela reálná – dá se změřit, načasovat, zablokovat lékem. A&nbsp;přesto není z&nbsp;ničeho jiného než z&nbsp;řetězce místních událostí, z&nbsp;nichž každá umírá ve chvíli, kdy se rodí. <b>Zpráva putuje, přestože ve skutečnosti neputuje nic.</b></p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Vlna po axonu</div>
+      <div class="readout">
+        <span class="lo">myelinizovaný</span> <b id="s3-fast">– m/s</b>
+        <span class="lo">holý</span> <b id="s3-slow">– m/s</b>
+      </div>
+    </div>
+    <canvas id="sim3" height="300" aria-label="Dva axony, jeden obalený myelinem a jeden holý, po každém z nich putuje vlna vzruchu."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="s3-fire">Odpálit oba</button>
+      <span class="hint">obalený axon skáče z&nbsp;mezery do mezery; holý se musí plazit</span>
+    </div>
+  </div>
+  <figcaption><b>Saltatorní vedení.</b> Horní axon je izolovaný myelinem (světlé úseky); vzruch přeskakuje mezi holými mezerami – <i>zářezy</i> – a&nbsp;letí. Spodní axon se musí obnovovat v&nbsp;každém jednotlivém bodě po celé délce, takže se vleče. Stejný trik, ohromně jiná rychlost. Právě proto model drátu selhává: je to štafeta, ne proud.</figcaption>
+</figure>
+
+<!-- ===================== §4 THE SYNAPSE ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Ta <em>mezera</em></h2>
+
+  <p>A&nbsp;teď zvrat, který si po svém odhalení opravdu zasloužil titulní strany, protože je tak nečekaný. Máte tu vlnu, která se řítí po axonu k&nbsp;další buňce. Předpokládali byste, že na konci jsou obě buňky spojené – propojené drátem, spájené, souvislé – aby signál mohl rovnou přejít.</p>
+
+  <p>Nejsou spojené. Ty dráty se nedotýkají.</p>
+
+  <p>Na konci každé větve, přesně tam, kde by se jeden neuron měl zapojit do dalšího, je mezera. Nepatrná – asi dvacet miliardtin metru, <span class="kw">synaptická štěrbina</span> – ale z&nbsp;pohledu elektrické vlny by to klidně mohl být kaňon. Vzruch dorazí na okraj útesu a&nbsp;prostě nemůže skočit. Buňka tedy udělá něco úžasného a&nbsp;trochu absurdního: <strong>hodí zprávu přes mezeru jako chemii.</strong></p>
+
+  <p>Když vlna dorazí na zakončení, spustí uvolnění obláčku specializovaných molekul – <span class="kw">neuropřenašečů</span> – které se z&nbsp;malých předpřipravených bublinek vysypou do mezery. Přeplují štěrbinu a&nbsp;na druhé straně je zachytí receptory tvarované tak, aby je přijaly: klíč do zámku, správná mince do správného otvoru. Právě tohle zachycení pošťouchne napětí další buňky – nahoru, pokud jsou přenašeč a&nbsp;jeho receptor excitačního, „ano“ druhu; dolů, pokud jsou inhibičního, „ne“ druhu. Celé předání trvá asi tisícinu sekundy, <span class="kw">synaptické zpoždění</span>. Pak úklidová četa mezeru zase vymete, připravená na další zprávu, jako když se mezi písničkami zamete parket.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představte si dva lidi na okrajích úzkého kaňonu. Můžou přes něj na sebe křičet, ale nikdy přes něj nedosáhnou a&nbsp;nedotknou se. Aby si předali něco hmotného – vzkaz, dárek – musí to jeden z&nbsp;nich <b>hodit</b>. Synapse je právě ten hod: <b>vzkaz v&nbsp;láhvi</b>, přehozený přes mezeru, kterou samotná elektřina překročit nedokáže. A&nbsp;jestli láhev obsahuje dobrou zprávu, nebo špatnou – běž, nebo stůj – závisí čistě na tom, co je chytač na druhé straně vybaven přijmout.
+  </aside>
+
+  <p>Proč se proboha tak namáhat? Proč vyvinout nádherně rychlou elektrickou vlnu a&nbsp;pak v&nbsp;rozhodujícím okamžiku přerušit obvod a&nbsp;uchýlit se k&nbsp;házení chemie přes mezeru? Protože ta mezera není chyba. Ta mezera je celý smysl.</p>
+
+  <p>Spájený drát umí jen jedno: předat signál dál, věrně, navždy, beze změny. Ale mezera je <em>rozhodnutí</em>. Dá se zesílit nebo zeslabit. Dá se zesílit tak, že se ze šepotu stane výkřik, nebo ztlumit tak, že se výkřik přejde. Dá se vyladit, umlčet, přesměrovat – a&nbsp;hlavně se dokáže <strong>měnit používáním.</strong> Každá dovednost, kterou jste kdy trénovali, až ji vaše ruce prostě uměly, každý fakt, který jste se kdy naučili, každý člověk, jehož tvář ve vás něco rozsvítí – to všechno je zapsáno, fyzicky, jako úpravy síly těchhle mezer. Myšlení se neděje uvnitř buněk. Děje se v&nbsp;prostorech <em>mezi</em> nimi. (Celou jednu příští kapitolu strávíme dole v&nbsp;té mezeře, protože právě tam si uchováváte všechno, čím jste.)</p>
+
+  <p>Pošlete přes ni signál a&nbsp;sledujte, jak mění podobu.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Přes mezeru</div>
+      <div class="readout">
+        <span class="lo">cílová buňka</span> <b id="s4-state">klid</b>
+        <span class="lo">Vm</span> <b id="s4-mv">−70 mV</b>
+      </div>
+    </div>
+    <canvas id="sim4" height="300" aria-label="Synapse: presynaptické zakončení uvolňuje neuropřenašeč přes mezeru k receptorům druhé buňky."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="s4-send">Poslat signál</button>
+      <button class="ctrl spark is-on" id="s4-type" aria-pressed="true">Typ: excitační (ano)</button>
+      <span class="hint">vlna se zastaví u&nbsp;útesu – zpráva přejde jako chemie</span>
+    </div>
+  </div>
+  <figcaption><b>Chemická štafeta.</b> Vzruch nemůže přejít mezeru, takže zakončení uvolní neuropřenašeč (unášené tečky), který se naváže na receptory protější buňky – a&nbsp;pošťouchne ji směrem k&nbsp;výstřelu (excitační), nebo od něj (inhibiční). Přepněte typ a&nbsp;sledujte, jak totéž doručení vyvolá opačný hlas. Právě v&nbsp;téhle malé mezeře žije učení.</figcaption>
+</figure>
+
+<!-- ===================== §5 EMERGENCE ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>To <em>spiknutí</em></h2>
+
+  <p>A&nbsp;teď ustupte úplně dozadu. Všechno, s&nbsp;čím jsme se dosud setkali, popisuje jednu buňku, jak dělá věci jedné buňky. Drží náboj. Sčítá hlasy. Vystřelí, nebo ne. Hodí chemii přes mezeru. To je celý repertoár – celá pracovní náplň neuronu. Není to, přiznejme si, nijak působivé. Vypínač s&nbsp;pár názory a&nbsp;refrakterní fází.</p>
+
+  <p>Jenže ve vaší lebce je jich napěchováno asi <strong>86 miliard</strong>. (Populární číslo „100 miliard“ je mírně nadsazené – někdo si konečně sedl a&nbsp;pořádně to spočítal.) A&nbsp;jsou navzájem propojené zhruba <strong>100 biliony</strong> takových malých mezer – což je víc spojení, než je hvězd v&nbsp;Mléčné dráze, a&nbsp;to zhruba tisíckrát. Během horečnatého raného vývoje váš mozek sešíval nové mezery tempem asi deset tisíc každých patnáct minut.</p>
+
+  <p>A&nbsp;teď skutečnost, kterou nikdo úplně nevysvětlil a&nbsp;která by měla každého ohromit: <strong>nikdo nevelí.</strong> Za vašima očima nesedí žádný človíček, který by na obrazovce sledoval představení a&nbsp;tahal za páky. Není žádný hlavní neuron, který by štěkal rozkazy. Nebyl žádný plán, který by rozvrhl to propojení – buňky se navzájem našly a&nbsp;zapojily podle místních pravidel, tak jako se les uspořádá v&nbsp;les bez výboru, bez architekta, bez plánu uloženého kdekoli v&nbsp;šuplíku.</p>
+
+  <p>A&nbsp;ze všech těch nepatrných, místních, bezmyšlenkovitých rozhodnutí ano–ne – pálících všude, naráz, kde každá buňka je slepá vůči celku – se vynoří něco, co se zvenčí chová, jako by <em>chtělo</em> věci. Vlny aktivity se přelévají tkání. Vzorce vznikají, ustalují se, soupeří, ozývají se a&nbsp;mizí. A&nbsp;někde v&nbsp;tom převalujícím se počasí ze soli a&nbsp;napětí je celý pocit toho, že jste <em>vy</em>, jak tu sedíte a&nbsp;právě teď tohle čtete a&nbsp;přemýšlíte, jestli tomu věřit.</p>
+
+  <p>Strojek níže je přesně tohle v&nbsp;komiksové podobě, a&nbsp;je ze všech nejdůležitější, tak u&nbsp;něj vydržte. Každý čtvereček poslouchá jediné hloupé pravidlo – totéž, které poslouchá neuron: <em>pokud se soused právě rozsvítil, rozsviť se; pak zhasni a&nbsp;chvíli odpočívej, než se smíš rozsvítit znovu.</em> A&nbsp;to je celé. Žádný čtvereček nevidí celou desku. Žádný čtvereček není vůdce. Žádný čtvereček neví, co je to spirála. Šťouchněte do něj kdekoli a&nbsp;sledujte, co dav vypínačů – z&nbsp;nichž každý dělá jen tu místní věc – postaví úplně sám: vlny, spirály, počasí. Řád, z&nbsp;ničeho jiného než z&nbsp;místních, kteří si hledí svého.</p>
+
+  <p class="punch">Nejste věc, kterou vaše neurony vyrobí a&nbsp;pak předají nějakému „vy“, které čeká, až ji převezme. Vy <b>jste</b> ten vzorec. Vesmír – většinou studený, většinou prázdný, který (pokud víme) jinde skoro nic nevšímá – v&nbsp;tomhle jednom teplém vlhkém koutě uspořádal trochu soli tak spletitě, že se otočí zpět a&nbsp;dívá se sama na sebe. A&nbsp;to dívání zevnitř připadá jako <b>já</b>. Špetka soli, na okamžik přesvědčená, že je člověkem – čímž, k&nbsp;naší radosti, také je.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 05</span> Spiknutí vypínačů</div>
+      <div class="readout">
+        <span class="lo">buňky</span> <b id="s5-cells">–</b>
+        <span class="lo">aktivní</span> <b id="s5-active">0</b>
+      </div>
+    </div>
+    <canvas id="sim5" height="330" aria-label="Mřížka buněk; každá vystřelí, když vystřelí soused, a pak odpočívá, čímž vznikají samovolně se organizující vlny a spirály."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark is-on" id="s5-play" aria-pressed="true">Pauza</button>
+      <button class="ctrl" id="s5-poke">Šťouchnout (nebo klikněte do mřížky)</button>
+      <button class="ctrl" id="s5-reset">Reset</button>
+      <span class="hint">žádný vůdce · žádný plán · jen sousedé</span>
+    </div>
+  </div>
+  <figcaption><b>Emergence.</b> Každá buňka se řídí jedním pravidlem – <i>vystřel, když vystřelil soused, pak odpočívej</i> – přesně pravidlem neuronu. Nic tady není řízené, a&nbsp;přesto se objevují a&nbsp;samy se udržují souvislé vlny a&nbsp;rotující spirály. Tohle je celá teze kapitoly v&nbsp;jednom obrázku: dejte jednoduchým dílům dostatečně bohaté uspořádání a&nbsp;ony dělají věci, které by žádný jednotlivý díl nikdy nedokázal. Vynásobte to 86 miliardami a&nbsp;jednou z&nbsp;těch věcí, které dělají, jste <i>vy</i>.</figcaption>
+</figure>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §6 QUESTIONS ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>doopravdy</em> ptají</h2>
+  <p class="faq-intro">Když se podíváte na Reddit, na Quoru, na discordové servery a&nbsp;facebookové skupiny, kde lidé kladou upřímné otázky ve dvě ráno, pořád se vynořuje pár stejných. Tady jsou, zodpovězené na rovinu – bez povyšování.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Je mozek elektrický, nebo chemický?</summary>
+    <div class="answer">
+      <p>Obojí – a&nbsp;střídají se. Podél každé buňky je signál <em>elektrický</em>: ta solná vlna, kterou jsme popisovali, řítící se po axonu. Mezi buňkami, u&nbsp;každé mezery, se stává <em>chemickým</em>: obláček neuropřenašeče přehozený přes mezeru. Poctivá jednořádková odpověď tedy zní: <strong>elektřina na cestování, chemie na překonání mezery.</strong> Každá vaše myšlenka je štafeta, která pořád mění kostým – jiskra, chemie, jiskra, chemie – miliardkrát za sekundu.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Jak rychlá je vlastně myšlenka?</summary>
+    <div class="answer">
+      <p>Pomalejší, než byste hádali, a&nbsp;mnohem pomalejší než drát. Nervové signály se pohybují někde od zhruba půl metru za sekundu až po nějakých 120 – ty rychlé, myelinizované kolem 400 kilometrů v&nbsp;hodině, pomalá vlákna bolesti asi rychlostí chůze. Zareagovat na něco, co vidíte, trvá pár desetin sekundy, a&nbsp;většina z&nbsp;toho není vůbec cestování – je to mozek, který <em>rozhoduje, na co se to dívá</em>. Přenos je ta levná část; čas spolyká výklad.</p>
+      <p>A&nbsp;nezapomeňte: protože je to řetězová reakce, a&nbsp;ne proud, je nervový vzruch asi milionkrát pomalejší než elektřina, o&nbsp;které si lidé myslí, že jimi prosvištěla.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Využíváme opravdu jen 10 % mozku?</summary>
+    <div class="answer">
+      <p>Ne. Je to úhledný, lákavý mýtus a&nbsp;nikdo si není úplně jistý, kde vznikl – možná ze špatně pochopeného psychologa Williama Jamese, který uvažoval o&nbsp;nevyužitém potenciálu, možná ze zkomoleného Einsteinova výroku, který Einstein nikdy neřekl. Zobrazovací metody rozsvítí během běžného dne v&nbsp;podstatě celý orgán a&nbsp;poškození i&nbsp;malé oblasti spolehlivě něco konkrétního rozbije. Využíváte ho celý.</p>
+      <p>Co <em>máte</em>, je nevyužitý <em>potenciál</em> – a&nbsp;to je jiný a&nbsp;mnohem pravdivější druh naděje. Neexistuje nečinných 90 %, která čekají, až se zapnou; je tu jen celoživotní zásoba spojení, která jste ještě nevytvořili.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kde jsou uložené vzpomínky?</summary>
+    <div class="answer">
+      <p>Ne na jednom místě a&nbsp;ne jako soubory na disku. Pokud víme, vzpomínka <em>je</em> vzorec – určitá sada sil spojení rozprostřená přes mnoho buněk a&nbsp;mnoho mezer. Santiago Ramón y Cajal, člověk, který jako první nakreslil neurony jako stromy, tuhle myšlenku nadhodil před víc než 130 lety, a&nbsp;z&nbsp;velké části obstála: pamatujete si tím, že <em>přelaďujete mezery.</em></p>
+      <p>Různé druhy bydlí v&nbsp;různých čtvrtích. Hipokampus indexuje příběh vašeho dne; mozeček a&nbsp;bazální ganglia drží dovednost jízdy na kole; prefrontální kůra žongluje s&nbsp;tím, na co myslíte právě v&nbsp;této vteřině. Slavný pacient známý jako H. M., který o&nbsp;hipokampus přišel při operaci, se pořád dokázal <em>učit nové dovednosti</em> – jeho ruce se cvikem zlepšovaly – a&nbsp;přitom si vůbec nedokázal vzpomenout, že by kdy trénoval. Dva různé paměťové systémy, čistě oddělené jedinou operací. Někteří vědci jdou dál a&nbsp;tvrdí, že „ukládání“ je úplně špatné slovo: vzpomínka možná není ani tak věc, kterou si uchováváte, jako spíš věc, kterou znovu <em>děláte</em>.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Je mozek v&nbsp;podstatě jen počítač?</summary>
+    <div class="answer">
+      <p>Je to nejlepší metafora, jakou máme, a&nbsp;přitom vážně zavádějící – je dobré ji držet volně. Neuron není drát ani logické hradlo. Je to živá buňka, která prosakuje, přizpůsobuje se, vytváří úplně nová spojení, prořezává stará a&nbsp;přepojuje se <em>za provozu</em> – „zapojování naživo“, bez plánu a&nbsp;bez vypínače. Počítač drží hardware a&nbsp;software odděleně; v&nbsp;mozku to propojení <em>je</em> paměť <em>je</em> program, všechno je to jedna a&nbsp;táž fyzická věc. Užitečné jako volná analogie. Špatně jako popis. Mozek není ani tak plošný spoj jako spíš prales, který si každou noc přepojuje vlastní stezky.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Když jsou neurony jen zapnuto/vypnuto, odkud se berou myšlenky a&nbsp;pocity?</summary>
+    <div class="answer">
+      <p>Poctivá odpověď zní: nikdo to úplně neví. Tohle je <em>ta</em> otevřená otázka a&nbsp;není náhoda, že seriózní učebnice neurovědy končí kapitolou doslova nazvanou „Otevřené otázky“. Kdokoli vám tady podá úhlednou větičku, něco vám prodává.</p>
+      <p>Ale „zapnuto/vypnuto“ není celý příběh. Bohatství nespočívá v&nbsp;jediném vypínači, ale v&nbsp;tom, <em>které</em> buňky pálí, v&nbsp;<em>jakém vzorci</em>, jakou <em>rychlostí</em>, přes <em>kolik mezer a&nbsp;jaké síly</em> – astronomicky rozlehlý prostor možností. Jednoduché díly, uspořádané dostatečně bohatě, spolehlivě dělají věci, které samotné díly nedokážou; viděli jste to v&nbsp;poslední simulaci, kde bezmyšlenkovité čtverečky vytvořily spirály, které žádný z&nbsp;nich „neznal“. To není vytáčka ani mávnutí rukou. Je to nejhlubší skutečnost v&nbsp;místnosti. A&nbsp;správná reakce na ni, myslím, není úhledné vysvětlení, ale jistý druh vytrvalého úžasu.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kdo vlastně rozhoduje, kdy neuron vystřelí?</summary>
+    <div class="answer">
+      <p>Ne odesílatel. Když neuron vystřelí, vyšle tentýž identický hrot naráz do <em>všech</em> svých cílů – nemůže si vybírat. Vlastní rozhodnutí dělá každá <em>přijímající</em> buňka tím, že si sečte vlastní tisíce hlasů ano a&nbsp;ne a&nbsp;vystřelí jen tehdy, když „ano“ vyhrají o&nbsp;dost, aby překročila práh. Volba se vždy dělá po proudu, u&nbsp;posluchače – nikdy u&nbsp;toho, kdo mluví.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Dokážou neurony dorůst? Umí se mozek uzdravit?</summary>
+    <div class="answer">
+      <p>Zčásti – a&nbsp;tohle je jedna z&nbsp;hranic poznání. Dospělý mozek se neustále přepojuje; to je <em>plasticita</em>, ustavičné posilování a&nbsp;přetváření spojení, a&nbsp;právě tak získáváte zpět dovednosti a&nbsp;přizpůsobujete se po zranění. Pár oblastí dokonce i&nbsp;v&nbsp;dospělosti vytváří nějaké opravdu nové neurony. Ale rozsáhlé dorůstání ztracených neuronů a&nbsp;opětovné spojení dlouhých přerušených drah, jako je přeťatá mícha, je zatím většinou mimo náš dosah. Přimět nervovou soustavu, aby se sama přestavěla, je přesně ten druh otevřeného problému, který budou pozdější kapitoly této série honit.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== CODA ===================== -->
+<section class="coda">
+  <p>Tak tady je ta logika, na jeden nádech: nabitá membrána, hlasování, vlna, mezera – a&nbsp;86 miliard z&nbsp;nich, které se spiknou, aniž by kdokoli velel. Všechno ostatní v&nbsp;této sérii – jak vidíte, jak si pamatujete, jak se z&nbsp;vás vůbec stává někdo – jsou variace na těchhle pět tahů. Příště sestoupíme dolů do té mezery, protože právě ten malý prostor mezi buňkami je místo, kam se zapisuje zkušenost. Pro tuhle chvíli, myslím, stačí na okamžik posedět s&nbsp;tou naprostou podivností. Jste špetka soli, která se naučila přemýšlet, z&nbsp;čeho je. Na obyčejné úterý docela slušný trik.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Nicholls, Martin, Fuchs, Brown, Diamond a&nbsp;Weisblat – <em>From Neuron to Brain</em>, 5. vydání (Sinauer / Oxford). Páteř této kapitoly: pojetí signalizace, postřeh Ramóna y Cajala, že tvar neuronu prozrazuje jeho úlohu, synaptická štěrbina o&nbsp;šířce ~20&nbsp;nm, synaptické zpoždění ~1&nbsp;ms, sbíhavost ~10 000 vstupů na jeden motorický neuron a&nbsp;100 000+ na jednu Purkyňovu buňku a&nbsp;závěrečný postoj „Otevřených otázek“.</li>
+    <li>Počet neuronů (~86 miliard): přepočet metodou izotropního frakcionátoru (Herculano-Houzel), který opravil tradičních „100 miliard“. Počet synapsí (~100 bilionů) a&nbsp;rychlosti vedení (~0,5–120 m/s; rychlá vlákna ~400–440 km/h, nemyelinizovaná vlákna bolesti ~2 km/h) jsou široce uváděné hodnoty.</li>
+    <li>Vyvrácení mýtu o&nbsp;„10 % mozku“ (jeho mlhavý původ u&nbsp;Williama Jamese / Einsteina), rozprostřená povaha paměti a&nbsp;případ pacienta H. M. (Henry Molaison) vycházejí z&nbsp;veřejných populárně-vzdělávacích neurovědeckých zdrojů a&nbsp;z&nbsp;literatury o&nbsp;paměťových systémech.</li>
+    <li>Všechna vysvětlení jsou zde parafrázovaná a&nbsp;zjednodušená pro běžného čtenáře; tam, kde je věda opravdu nejednotná – především u&nbsp;skoku od nervové aktivity k&nbsp;vědomému prožitku – to tato kapitola říká na rovinu, místo aby předstírala opak.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    bar.style.width = (p*100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg:'#21271D', panel:'#2A3125', line:'#46503C',
+    ink:'#E9E7D8', muted:'#9AA48C',
+    sage:'#9BB07E', sageDeep:'#6E8455', sagePale:'#C7D6AC',
+    terra:'#D08A5E', terraBright:'#E39A67', gold:'#D9B75A',
+    blue:'#7FA0C0'
+  };
+
+  /* hi-DPI canvas setup; returns ctx + logical size */
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    var h = Math.max(1, parseInt(canvas.getAttribute('height'),10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return {ctx:ctx, w:w, h:h};
+  }
+  function rr(ctx,x,y,w,h,r){
+    r = Math.min(r, w/2, h/2);
+    ctx.beginPath();
+    ctx.moveTo(x+r,y);
+    ctx.arcTo(x+w,y,x+w,y+h,r);
+    ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r);
+    ctx.arcTo(x,y,x+w,y,r);
+    ctx.closePath();
+  }
+  function lerp(a,b,t){ return a + (b-a)*t; }
+
+  /* register a simulation with a resize-safe render loop that
+     pauses whenever the canvas scrolls out of view (saves battery) */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin:'140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+      }, 150);
+    });
+    start();
+    return sim;
+  }
+
+  /* =========================================================
+     SIM 01 – resting membrane potential & the pump
+     ========================================================= */
+  makeSim('sim1', function(canvas, dim){
+    var membraneY;
+    var ions = [];
+    var gradient = 1;      // 0..1
+    var pumpOn = true;
+    var pumpPhase = 0;
+    var flash = [];        // channel-open bursts
+    var gradEl = document.getElementById('s1-grad');
+    var mvEl = document.getElementById('s1-mv');
+    var btnPump = document.getElementById('s1-pump');
+    var btnOpen = document.getElementById('s1-open');
+
+    function seed(dim){
+      membraneY = dim.h*0.5;
+      ions = [];
+      var N = Math.round(dim.w/14);
+      for(var i=0;i<N;i++){
+        // sodium – biased outside(top); potassium – biased inside(bottom); anions inside
+        var r = Math.random();
+        var type = r<0.45 ? 'na' : (r<0.85 ? 'k' : 'an');
+        ions.push({
+          type:type,
+          x: Math.random()*dim.w,
+          y: Math.random()*dim.h,
+          vx:(Math.random()-0.5)*0.5,
+          vy:(Math.random()-0.5)*0.5
+        });
+      }
+    }
+    seed(dim);
+
+    btnPump.addEventListener('click', function(){
+      pumpOn = !pumpOn;
+      btnPump.textContent = 'Pumpa: ' + (pumpOn?'ZAP':'VYP');
+      btnPump.classList.toggle('is-on', pumpOn);
+      btnPump.setAttribute('aria-pressed', pumpOn?'true':'false');
+    });
+    btnOpen.addEventListener('click', function(){
+      // open a channel: a rush of sodium inward at a random x
+      var cx = lerp(dim.w*0.2, dim.w*0.8, Math.random());
+      flash.push({x:cx, t:1});
+      for(var i=0;i<ions.length;i++){
+        if(ions[i].type==='na' && ions[i].y<membraneY && Math.abs(ions[i].x-cx)<40){
+          ions[i].vy += 2.4;
+        }
+      }
+    });
+
+    return {
+      resize:function(dim){ seed(dim); },
+      step:function(dim){
+        // gradient relaxes toward target
+        var target = pumpOn ? 1 : 0;
+        gradient += (target - gradient) * 0.012;
+        pumpPhase += pumpOn ? 0.06 : 0;
+        for(var i=0;i<flash.length;i++){ flash[i].t -= 0.02; }
+        flash = flash.filter(function(f){return f.t>0;});
+
+        for(var j=0;j<ions.length;j++){
+          var p = ions[j];
+          // brownian jitter
+          if(!REDUCED){ p.vx += (Math.random()-0.5)*0.25; p.vy += (Math.random()-0.5)*0.25; }
+          // sorting bias proportional to gradient (pump organizing the ions)
+          var g = gradient;
+          if(p.type==='na'){ // wants to be up (outside)
+            var wantY = lerp(dim.h*0.5, dim.h*0.22, g);
+            p.vy += (wantY - p.y)*0.0006*g;
+          } else if(p.type==='k'){ // inside(bottom)
+            var wy = lerp(dim.h*0.5, dim.h*0.74, g);
+            p.vy += (wy - p.y)*0.0006*g;
+          } else { // anions locked inside
+            var ay = lerp(dim.h*0.6, dim.h*0.8, g);
+            p.vy += (ay - p.y)*0.0012;
+          }
+          p.vx *= 0.94; p.vy *= 0.94;
+          p.x += p.vx; p.y += p.vy;
+          // walls
+          if(p.x<6){p.x=6;p.vx*=-1;} if(p.x>dim.w-6){p.x=dim.w-6;p.vx*=-1;}
+          if(p.y<8){p.y=8;p.vy*=-1;} if(p.y>dim.h-8){p.y=dim.h-8;p.vy*=-1;}
+          // membrane barrier – anions never cross; others rarely
+          var near = Math.abs(p.y-membraneY)<7;
+          if(near){
+            var openHere = flash.some(function(f){return Math.abs(f.x-p.x)<40;});
+            if(p.type==='an' || (!openHere && Math.random()>0.02)){
+              p.y = membraneY + (p.vy>0 ? 7 : -7);
+              p.vy *= -0.6;
+            }
+          }
+        }
+        var mv = Math.round(-70*gradient);
+        gradEl.textContent = Math.round(gradient*100)+'%';
+        mvEl.textContent = (mv<=0?'':'+') + mv + ' mV';
+      },
+      draw:function(ctx,dim){
+        ctx.clearRect(0,0,dim.w,dim.h);
+        // outside / inside tint
+        ctx.fillStyle='rgba(208,138,94,0.05)';
+        ctx.fillRect(0,0,dim.w,membraneY);
+        ctx.fillStyle='rgba(155,176,126,0.05)';
+        ctx.fillRect(0,membraneY,dim.w,dim.h-membraneY);
+        // labels
+        ctx.font='11px "Source Code Pro", monospace';
+        ctx.fillStyle=C.muted; ctx.textAlign='left';
+        ctx.fillText('VENKU   ·  +', 12, 20);
+        ctx.fillText('UVNITŘ  ·  −', 12, dim.h-12);
+
+        // membrane (two lipid layers of dots)
+        ctx.fillStyle='rgba(199,214,172,0.5)';
+        for(var x=6;x<dim.w;x+=9){
+          ctx.beginPath(); ctx.arc(x, membraneY-3, 2.3, 0, 6.29); ctx.fill();
+          ctx.beginPath(); ctx.arc(x, membraneY+3, 2.3, 0, 6.29); ctx.fill();
+        }
+        // open-channel flashes
+        for(var f=0;f<flash.length;f++){
+          ctx.globalAlpha = flash[f].t*0.9;
+          ctx.strokeStyle=C.terraBright; ctx.lineWidth=2;
+          ctx.beginPath(); ctx.moveTo(flash[f].x-8, membraneY-10);
+          ctx.lineTo(flash[f].x-8, membraneY+10);
+          ctx.moveTo(flash[f].x+8, membraneY-10);
+          ctx.lineTo(flash[f].x+8, membraneY+10); ctx.stroke();
+          ctx.globalAlpha=1;
+        }
+        // the pump icon (center)
+        var px = dim.w*0.5;
+        ctx.save();
+        ctx.translate(px, membraneY);
+        ctx.fillStyle = pumpOn ? 'rgba(217,183,90,0.18)' : 'rgba(70,80,60,0.25)';
+        rr(ctx,-16,-16,32,32,7); ctx.fill();
+        ctx.strokeStyle = pumpOn ? C.gold : C.line; ctx.lineWidth=2;
+        rr(ctx,-16,-16,32,32,7); ctx.stroke();
+        // rotating rotor to show work
+        ctx.rotate(pumpPhase);
+        ctx.strokeStyle = pumpOn ? C.gold : C.muted;
+        ctx.beginPath();
+        ctx.moveTo(-9,0); ctx.lineTo(9,0); ctx.moveTo(0,-9); ctx.lineTo(0,9);
+        ctx.stroke();
+        ctx.restore();
+        if(pumpOn){
+          ctx.fillStyle=C.gold; ctx.font='9px "Source Code Pro",monospace';
+          ctx.textAlign='center'; ctx.fillText('ATP', px, membraneY-22);
+        }
+
+        // ions
+        for(var i=0;i<ions.length;i++){
+          var p=ions[i];
+          if(p.type==='na'){ ctx.fillStyle=C.terra; }
+          else if(p.type==='k'){ ctx.fillStyle=C.sage; }
+          else { ctx.fillStyle=C.blue; }
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.type==='an'?4.4:3.4, 0, 6.29);
+          ctx.fill();
+          if(p.type!=='an'){
+            ctx.fillStyle='rgba(33,39,29,0.8)';
+            ctx.font='7px "Source Code Pro",monospace'; ctx.textAlign='center';
+            ctx.fillText(p.type==='na'?'+':'+', p.x, p.y+2.5);
+          }
+        }
+        // voltmeter needle bar on right
+        var mvFrac = gradient; // 0..1
+        var bx = dim.w-30, by0=30, by1=dim.h-30;
+        ctx.strokeStyle=C.line; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(bx,by0); ctx.lineTo(bx,by1); ctx.stroke();
+        var ny = lerp(by1, by0, mvFrac);
+        ctx.strokeStyle=C.gold; ctx.lineWidth=3;
+        ctx.beginPath(); ctx.moveTo(bx-6,ny); ctx.lineTo(bx+6,ny); ctx.stroke();
+        ctx.fillStyle=C.muted; ctx.font='9px "Source Code Pro",monospace'; ctx.textAlign='right';
+        ctx.fillText('−70', bx-10, by0+4);
+        ctx.fillText('  0', bx-10, by1+2);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 – threshold / all-or-none (oscilloscope)
+     ========================================================= */
+  makeSim('sim2', function(canvas, dim){
+    var REST=-70, THRESH=-55, PEAK=40, AHP=-80;
+    var vm=REST;
+    var state='rest';      // rest | spike
+    var spikeT=0;
+    var trace=[];
+    var maxLen;
+    var holding=false;
+    var holdTick=0;
+    var count=0;
+    var mvEl=document.getElementById('s2-mv');
+    var cEl=document.getElementById('s2-count');
+    var bExc=document.getElementById('s2-exc');
+    var bInh=document.getElementById('s2-inh');
+    var bHold=document.getElementById('s2-hold');
+
+    function sizeTrace(dim){ maxLen=Math.round(dim.w); while(trace.length<maxLen) trace.unshift(REST); if(trace.length>maxLen) trace=trace.slice(trace.length-maxLen); }
+    sizeTrace(dim);
+
+    function toY(v,dim){ // map mV (-90..+50) to y
+      var top=dim.h*0.12, bot=dim.h*0.9;
+      return lerp(bot, top, (v-(-90))/(50-(-90)));
+    }
+    function excite(){ if(state==='rest'){ vm+=9; } }
+    function inhibit(){ if(state==='rest'){ vm-=8; } }
+    bExc.addEventListener('click', excite);
+    bInh.addEventListener('click', inhibit);
+    bHold.addEventListener('click', function(){
+      holding=!holding;
+      bHold.classList.toggle('is-on', holding);
+      bHold.textContent = holding? 'Zastavit podnět':'Držet podnět';
+    });
+
+    return {
+      resize:function(dim){ sizeTrace(dim); },
+      step:function(dim){
+        if(holding){ holdTick++; if(state==='rest' && holdTick%7===0){ vm+=6; } }
+        if(state==='rest'){
+          vm += (REST-vm)*0.08;               // leak back to rest
+          if(vm>=THRESH){ state='spike'; spikeT=0; count++; cEl.textContent=count; }
+        } else {
+          spikeT++;
+          // scripted stereotyped waveform (~ frames)
+          if(spikeT<6) vm = lerp(THRESH, PEAK, spikeT/6);
+          else if(spikeT<16) vm = lerp(PEAK, AHP, (spikeT-6)/10);
+          else if(spikeT<30) vm = lerp(AHP, REST, (spikeT-16)/14);
+          else { state='rest'; vm=REST; }
+        }
+        trace.push(vm); if(trace.length>maxLen) trace.shift();
+        mvEl.textContent = (vm<=0?'':'+') + Math.round(vm) + ' mV';
+      },
+      draw:function(ctx,dim){
+        ctx.clearRect(0,0,dim.w,dim.h);
+        // grid
+        ctx.strokeStyle='rgba(70,80,60,0.35)'; ctx.lineWidth=1;
+        for(var gy=0;gy<5;gy++){ var yy=lerp(dim.h*0.12,dim.h*0.9,gy/4);
+          ctx.beginPath(); ctx.moveTo(0,yy); ctx.lineTo(dim.w,yy); ctx.stroke(); }
+        // threshold + rest lines
+        ctx.setLineDash([5,5]);
+        ctx.strokeStyle=C.terra; ctx.beginPath();
+        var ty=toY(THRESH,dim); ctx.moveTo(0,ty); ctx.lineTo(dim.w,ty); ctx.stroke();
+        ctx.setLineDash([2,4]); ctx.strokeStyle=C.muted; ctx.beginPath();
+        var ry=toY(REST,dim); ctx.moveTo(0,ry); ctx.lineTo(dim.w,ry); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle=C.terra; ctx.font='10px "Source Code Pro",monospace'; ctx.textAlign='left';
+        ctx.fillText('práh  −55 mV', 8, ty-6);
+        ctx.fillStyle=C.muted; ctx.fillText('klid  −70 mV', 8, ry+14);
+
+        // trace
+        ctx.strokeStyle=C.sage; ctx.lineWidth=2.2; ctx.lineJoin='round';
+        ctx.beginPath();
+        for(var i=0;i<trace.length;i++){
+          var x=i, y=toY(trace[i],dim);
+          if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+        // leading dot
+        var lx=trace.length-1, ly=toY(trace[trace.length-1],dim);
+        ctx.fillStyle = (state==='spike')?C.terraBright:C.gold;
+        ctx.beginPath(); ctx.arc(lx,ly,4,0,6.29); ctx.fill();
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 – propagation & myelin (race)
+     ========================================================= */
+  makeSim('sim3', function(canvas, dim){
+    var fastFront=-1, slowFront=-1;     // px position of wave front (-1 = idle)
+    var fastSpeed, slowSpeed;
+    var pad=48;
+    var yFast, ySlow;
+    var nodes=[];
+    var fastEl=document.getElementById('s3-fast');
+    var slowEl=document.getElementById('s3-slow');
+    var bFire=document.getElementById('s3-fire');
+
+    function layout(dim){
+      yFast=dim.h*0.32; ySlow=dim.h*0.72;
+      fastSpeed=dim.w/70;      // px per frame (fast)
+      slowSpeed=dim.w/300;     // px per frame (slow)
+      nodes=[];
+      var n=7;
+      for(var i=1;i<=n;i++){ nodes.push(pad + (dim.w-2*pad)*i/(n+1)); }
+    }
+    layout(dim);
+
+    function fire(){ fastFront=pad; slowFront=pad;
+      fastEl.textContent='~100 m/s'; slowEl.textContent='~2 m/s'; }
+    bFire.addEventListener('click', fire);
+
+    function drawAxon(ctx,dim,y,front,myelin){
+      var x0=pad, x1=dim.w-pad, r=13;
+      // base tube
+      ctx.strokeStyle=C.line; ctx.lineWidth=2;
+      rr(ctx,x0,y-r,x1-x0,2*r,r); ctx.stroke();
+      // fill activation as a bump around 'front'
+      if(front>=0){
+        for(var x=x0;x<x1;x+=3){
+          var d=Math.abs(x-front);
+          var act = d<26 ? (1-d/26) : 0;         // leading bump
+          var behind = (x<front-8) ? Math.max(0, 1-(front-x)/70) : 0; // refractory tail
+          if(act>0){
+            ctx.fillStyle='rgba(227,154,103,'+(0.85*act)+')';
+            ctx.beginPath(); ctx.arc(x, y, r*0.7, 0, 6.29); ctx.fill();
+          } else if(behind>0){
+            ctx.fillStyle='rgba(110,132,85,'+(0.35*behind)+')';
+            ctx.beginPath(); ctx.arc(x, y, r*0.55, 0, 6.29); ctx.fill();
+          }
+        }
+        // bright core
+        ctx.fillStyle=C.gold;
+        ctx.beginPath(); ctx.arc(front, y, 5, 0, 6.29); ctx.fill();
+      }
+      // myelin segments
+      if(myelin){
+        var segs=nodes.length+1;
+        for(var s=0;s<segs;s++){
+          var a = s===0 ? x0 : nodes[s-1];
+          var b = s===segs-1 ? x1 : nodes[s];
+          var gap=6;
+          ctx.fillStyle='rgba(199,214,172,0.20)';
+          rr(ctx, a+gap, y-r-4, (b-a)-2*gap, 2*r+8, 8); ctx.fill();
+          ctx.strokeStyle='rgba(199,214,172,0.5)'; ctx.lineWidth=1.5;
+          rr(ctx, a+gap, y-r-4, (b-a)-2*gap, 2*r+8, 8); ctx.stroke();
+        }
+        // nodes marks
+        ctx.fillStyle=C.muted;
+        for(var k=0;k<nodes.length;k++){ ctx.fillRect(nodes[k]-1, y-r-2, 2, 2*r+4); }
+      }
+    }
+
+    return {
+      resize:function(dim){ layout(dim); },
+      step:function(dim){
+        if(fastFront>=0){
+          fastFront += fastSpeed;              // myelinated: fast
+          if(fastFront>dim.w-pad+4){ fastFront=-1; }
+        }
+        if(slowFront>=0){
+          slowFront += slowSpeed;              // bare: slow crawl
+          if(slowFront>dim.w-pad+4){ slowFront=-1; }
+        }
+      },
+      draw:function(ctx,dim){
+        ctx.clearRect(0,0,dim.w,dim.h);
+        ctx.font='11px "Source Code Pro",monospace'; ctx.textAlign='left';
+        ctx.fillStyle=C.sagePale; ctx.fillText('MYELINIZOVANÝ  – skáče od zářezu k zářezu', pad, yFast-26);
+        ctx.fillStyle=C.muted;    ctx.fillText('HOLÝ  – plazí se celou cestu', pad, ySlow-26);
+        drawAxon(ctx,dim,yFast,fastFront,true);
+        drawAxon(ctx,dim,ySlow,slowFront,false);
+        if(fastFront<0 && slowFront<0){
+          ctx.fillStyle=C.muted; ctx.font='12px "Source Sans 3",sans-serif';
+          ctx.textAlign='center';
+          ctx.fillText('stiskněte „Odpálit oba“ a spusťte vlnu po každém axonu', dim.w/2, dim.h-14);
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 – the synapse
+     ========================================================= */
+  makeSim('sim4', function(canvas, dim){
+    var state='idle';    // idle | ca | release | done
+    var t=0;
+    var particles=[];    // neurotransmitter
+    var excit=true;
+    var postV=-70;       // postsynaptic mV
+    var boutonY, receptorY, cleftTop, cleftBot;
+    var bindCount=0;
+    var stateEl=document.getElementById('s4-state');
+    var mvEl=document.getElementById('s4-mv');
+    var bSend=document.getElementById('s4-send');
+    var bType=document.getElementById('s4-type');
+
+    function layout(dim){
+      boutonY=dim.h*0.30; cleftTop=dim.h*0.44; cleftBot=dim.h*0.56; receptorY=dim.h*0.60;
+    }
+    layout(dim);
+
+    function send(){
+      if(state!=='idle' && state!=='done') return;
+      state='ca'; t=0; particles=[]; bindCount=0;
+    }
+    bSend.addEventListener('click', send);
+    bType.addEventListener('click', function(){
+      excit=!excit;
+      bType.textContent='Typ: '+(excit?'excitační (ano)':'inhibiční (ne)');
+      bType.classList.toggle('is-on', excit);
+      bType.classList.toggle('spark', excit);
+      bType.setAttribute('aria-pressed', excit?'true':'false');
+    });
+
+    var recep=[];
+    function receptors(dim){ recep=[]; var n=7; for(var i=0;i<n;i++){ recep.push(dim.w*0.5 - (n-1)*11 + i*22); } }
+    receptors(dim);
+
+    return {
+      resize:function(dim){ layout(dim); receptors(dim); },
+      step:function(dim){
+        t++;
+        if(state==='ca'){ if(t>22){ state='release'; t=0;
+            // spawn transmitter from bouton bottom
+            for(var i=0;i<16;i++){
+              particles.push({x:dim.w*0.5+(Math.random()-0.5)*70, y:boutonY+22,
+                vx:(Math.random()-0.5)*0.6, vy:0.8+Math.random()*0.6, bound:false, life:1});
+            }
+        }}
+        else if(state==='release'||state==='done'){
+          for(var j=0;j<particles.length;j++){
+            var p=particles[j];
+            if(!p.bound){
+              p.x+=p.vx; p.y+=p.vy; p.vx*=0.98;
+              if(!REDUCED){ p.x+=(Math.random()-0.5)*0.6; }
+              if(p.y>=receptorY-4){
+                // try to bind to nearest receptor
+                var nearest=1e9, idx=-1;
+                for(var k=0;k<recep.length;k++){ var d=Math.abs(recep[k]-p.x); if(d<nearest){nearest=d;idx=k;} }
+                if(nearest<12){ p.bound=true; p.x=recep[idx]; p.y=receptorY-2; bindCount++; }
+                else { p.vy*=-0.4; p.y=receptorY-6; }
+              }
+            } else {
+              p.life-=0.006; // reuptake / clearing
+            }
+          }
+          particles=particles.filter(function(p){return p.life>0;});
+          if(state==='release' && t>40) state='done';
+          if(state==='done' && particles.length===0){ state='idle'; }
+        }
+        // postsynaptic voltage responds to bound transmitter
+        var drive = bindCount;
+        var targetV = -70 + (excit? drive*3.0 : -drive*2.4);
+        if(state==='idle'){ targetV=-70; }
+        postV += (targetV-postV)*0.06;
+        stateEl.textContent = (state==='idle')?'klid':(excit?'depolarizace':'hyperpolarizace');
+        mvEl.textContent = (postV<=0?'':'+') + Math.round(postV) + ' mV';
+      },
+      draw:function(ctx,dim){
+        ctx.clearRect(0,0,dim.w,dim.h);
+        var cx=dim.w*0.5;
+        // presynaptic bouton
+        ctx.fillStyle='rgba(110,132,85,0.30)'; ctx.strokeStyle=C.sageDeep; ctx.lineWidth=2;
+        ctx.beginPath();
+        ctx.moveTo(cx-90,10);
+        ctx.lineTo(cx+90,10);
+        ctx.quadraticCurveTo(cx+95, boutonY, cx+70, boutonY+18);
+        ctx.quadraticCurveTo(cx, boutonY+30, cx-70, boutonY+18);
+        ctx.quadraticCurveTo(cx-95, boutonY, cx-90,10);
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+        ctx.fillStyle=C.sagePale; ctx.font='10px "Source Code Pro",monospace'; ctx.textAlign='center';
+        ctx.fillText('ZAKONČENÍ AXONU', cx, 26);
+
+        // Ca influx flash
+        if(state==='ca'){
+          ctx.fillStyle=C.gold; ctx.font='10px "Source Code Pro",monospace';
+          for(var i=0;i<5;i++){ var fx=cx-40+i*20, fy=boutonY-6-((t*0.6)%18);
+            ctx.fillText('Ca', fx, fy); }
+        }
+        // vesicles inside bouton
+        ctx.fillStyle='rgba(199,214,172,0.5)';
+        for(var v=0;v<6;v++){ var vx=cx-60+v*24, vy=boutonY-4;
+          ctx.beginPath(); ctx.arc(vx,vy,6,0,6.29); ctx.fill(); }
+
+        // postsynaptic membrane
+        ctx.fillStyle='rgba(110,132,85,0.22)';
+        ctx.fillRect(cx-120, receptorY, 240, dim.h-receptorY);
+        ctx.strokeStyle=C.sageDeep; ctx.lineWidth=2;
+        ctx.beginPath(); ctx.moveTo(cx-120,receptorY); ctx.lineTo(cx+120,receptorY); ctx.stroke();
+        ctx.fillStyle=C.sagePale; ctx.fillText('PŘIJÍMAJÍCÍ BUŇKA', cx, dim.h-14);
+        // receptors
+        for(var r=0;r<recep.length;r++){
+          var lit = particles.some(function(p){return p.bound && Math.abs(p.x-recep[r])<3;});
+          ctx.fillStyle = lit ? (excit?C.terraBright:C.blue) : 'rgba(199,214,172,0.4)';
+          rr(ctx, recep[r]-6, receptorY-6, 12, 8, 3); ctx.fill();
+        }
+        // gap label
+        ctx.strokeStyle='rgba(70,80,60,0.5)'; ctx.setLineDash([3,4]);
+        ctx.beginPath(); ctx.moveTo(cx+120,(cleftTop+cleftBot)/2); ctx.lineTo(cx+150,(cleftTop+cleftBot)/2); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle=C.muted; ctx.textAlign='left'; ctx.font='9px "Source Code Pro",monospace';
+        ctx.fillText('mezera', cx+124, (cleftTop+cleftBot)/2-5);
+        ctx.fillText('~20 nm', cx+124, (cleftTop+cleftBot)/2+9);
+        ctx.textAlign='center';
+
+        // transmitter particles
+        for(var q=0;q<particles.length;q++){
+          var pp=particles[q];
+          ctx.globalAlpha=pp.life;
+          ctx.fillStyle = excit ? C.terra : C.blue;
+          ctx.beginPath(); ctx.arc(pp.x, pp.y, 3.6, 0, 6.29); ctx.fill();
+          ctx.globalAlpha=1;
+        }
+
+        // postsynaptic voltage meter (right)
+        var by0=receptorY+8, by1=dim.h-16, bx=dim.w-26;
+        ctx.strokeStyle=C.line; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(bx,by0); ctx.lineTo(bx,by1); ctx.stroke();
+        var frac=(postV-(-90))/(20-(-90)); frac=Math.max(0,Math.min(1,frac));
+        var ny=lerp(by1,by0,frac);
+        ctx.strokeStyle = postV>-70? C.terraBright : (postV<-70? C.blue : C.gold);
+        ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(bx-6,ny); ctx.lineTo(bx+6,ny); ctx.stroke();
+
+        if(state==='idle' && particles.length===0){
+          ctx.fillStyle=C.muted; ctx.font='12px "Source Sans 3",sans-serif';
+          ctx.fillText('stiskněte „Poslat signál“', cx, (cleftTop+cleftBot)/2+4);
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 05 – excitable medium / emergence
+     ========================================================= */
+  makeSim('sim5', function(canvas, dim){
+    var cols, rows, cell;
+    var grid, next;
+    var REFRACT=6;        // states: 0 resting, 1 excited, 2..REFRACT+1 refractory
+    var playing = !REDUCED;
+    var acc=0, stepEvery=0.06; // seconds
+    var last=performance.now();
+    var cellsEl=document.getElementById('s5-cells');
+    var activeEl=document.getElementById('s5-active');
+    var bPlay=document.getElementById('s5-play');
+    var bPoke=document.getElementById('s5-poke');
+    var bReset=document.getElementById('s5-reset');
+
+    function build(dim){
+      cell = Math.max(7, Math.round(dim.w/90));
+      cols = Math.floor(dim.w/cell);
+      rows = Math.floor(dim.h/cell);
+      grid = new Uint8Array(cols*rows);
+      next = new Uint8Array(cols*rows);
+      cellsEl.textContent = (cols*rows).toLocaleString();
+      seedSpiral();
+    }
+    function idx(x,y){ return y*cols+x; }
+    function seedSpiral(){
+      grid.fill(0);
+      // a broken wavefront tends to curl into a spiral
+      var midY=Math.floor(rows/2);
+      for(var x=0;x<Math.floor(cols/2);x++){ grid[idx(x,midY)]=1; }
+      for(var y=0;y<midY;y++){ grid[idx(Math.floor(cols/2),y)]=2; }
+    }
+    function pokeAt(cx,cy){
+      for(var y=-2;y<=2;y++) for(var x=-2;x<=2;x++){
+        var gx=cx+x, gy=cy+y;
+        if(gx>=0&&gx<cols&&gy>=0&&gy<rows && Math.random()>0.35) grid[idx(gx,gy)]=1;
+      }
+    }
+    build(dim);
+    // sync play button to initial state (paused under reduced-motion)
+    bPlay.textContent = playing ? 'Pauza' : 'Spustit';
+    bPlay.classList.toggle('is-on', playing);
+    bPlay.setAttribute('aria-pressed', playing ? 'true' : 'false');
+
+    function stepGrid(){
+      var active=0;
+      for(var y=0;y<rows;y++){
+        for(var x=0;x<cols;x++){
+          var s=grid[idx(x,y)];
+          var ns=s;
+          if(s===0){
+            // count excited neighbours (Moore)
+            var c=0;
+            for(var dy=-1;dy<=1;dy++)for(var dx=-1;dx<=1;dx++){
+              if(dx===0&&dy===0)continue;
+              var nx=x+dx, ny=y+dy;
+              if(nx>=0&&nx<cols&&ny>=0&&ny<rows && grid[idx(nx,ny)]===1) c++;
+            }
+            if(c>=1) ns=1;
+          } else if(s===1){ ns=2; }
+          else { ns = (s>=REFRACT+1)?0:(s+1); }
+          if(ns===1) active++;
+          next[idx(x,y)]=ns;
+        }
+      }
+      var tmp=grid; grid=next; next=tmp;
+      activeEl.textContent=active;
+    }
+
+    bPlay.addEventListener('click', function(){
+      playing=!playing;
+      bPlay.textContent=playing?'Pauza':'Spustit';
+      bPlay.classList.toggle('is-on', playing);
+      bPlay.setAttribute('aria-pressed', playing?'true':'false');
+    });
+    bPoke.addEventListener('click', function(){ pokeAt(Math.floor(cols*Math.random()), Math.floor(rows*Math.random())); });
+    bReset.addEventListener('click', function(){ seedSpiral(); });
+    canvas.addEventListener('click', function(e){
+      var rect=canvas.getBoundingClientRect();
+      var cx=Math.floor((e.clientX-rect.left)/cell);
+      var cy=Math.floor((e.clientY-rect.top)/cell);
+      pokeAt(cx,cy);
+    });
+
+    return {
+      resize:function(dim){ build(dim); },
+      step:function(dim){
+        var now=performance.now(); var dt=(now-last)/1000; last=now;
+        if(playing){ acc+=dt; if(acc>=stepEvery){ acc=0; stepGrid(); } }
+      },
+      draw:function(ctx,dim){
+        ctx.clearRect(0,0,dim.w,dim.h);
+        for(var y=0;y<rows;y++){
+          for(var x=0;x<cols;x++){
+            var s=grid[idx(x,y)];
+            if(s===0) continue;
+            if(s===1){ ctx.fillStyle=C.terraBright; }
+            else {
+              var f=(s-1)/(REFRACT+1);       // fade through sage as it recovers
+              ctx.fillStyle='rgba(110,132,85,'+(0.55*(1-f)+0.12)+')';
+            }
+            ctx.fillRect(x*cell+0.5, y*cell+0.5, cell-1, cell-1);
+          }
+        }
+        // faint frame
+        ctx.strokeStyle='rgba(70,80,60,0.4)'; ctx.lineWidth=1;
+        ctx.strokeRect(0.5,0.5,cols*cell-1,rows*cell-1);
+      }
+    };
+  });
+
+})();
+</script>
+</body>
+</html>
