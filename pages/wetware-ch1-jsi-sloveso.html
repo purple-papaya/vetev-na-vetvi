@@ -210,7 +210,7 @@
         <div class="sim-tab"><span class="id">SIM 03</span><span class="name">Spalování vs. schodiště</span></div>
         <div class="sim-body">
           <div class="sim-canvas-wrap">
-            <canvas id="stairCanvas" role="img" aria-label="Dva způsoby, jak uvolnit energii z jedné molekuly glukózy, vedle sebe. Vlevo škrtnutí zápalkou uvolní všechnu energii naráz jako neužitečný záblesk tepla a nezachytí skoro nic. Vpravo buněčné schodiště spouští energii po stupních, na několika schodech razí mince ATP a dole předává elektrony kyslíku, čímž zachytí zhruba třetinu energie v použitelné podobě. Přepínač odebere kyslík, což schodiště blízko dna zasekne a výtěžek ATP se zhroutí."></canvas>
+            <canvas id="stairCanvas" role="img" aria-label="Dvě cesty, jak uvolnit energii z jedné molekuly glukózy. Vlevo zápalka: glukóza spadne naráz a všechna energie odejde jako teplo. Vpravo buněčné schodiště: v glykolýze, oxidaci pyruvátu a citrátovém cyklu vzniknou 4 ATP a elektrony se naloží na NADH. Odtud stečou dýchacím řetězcem ke kyslíku a cestou vznikne dalších 28 ATP, celkem buňka zachytí zhruba třetinu energie. Bez kyslíku se dýchací řetězec i cyklus zastaví, zbudou 2 ATP z glykolýzy a pyruvát se změní na laktát."></canvas>
           </div>
           <div class="sim-controls">
             <button class="btn primary" id="stairFire">Škrtni zápalkou &#9656; vlevo</button>
@@ -223,7 +223,7 @@
             <span>zápalka &ndash; zachyceno: <b id="fireCap">&ndash;</b></span>
             <span>schodiště &ndash; ATP: <b id="stairAtp">0</b> &middot; zachyceno: <b id="stairCap">&ndash;</b></span>
           </div>
-          <figcaption>Stejná molekula, stejná energie, dva osudy. Zápalka skoro všechno promrhá jako teplo. Schodiště zachytí zhruba třetinu v&nbsp;podobě ATP; zbytek také odejde jako teplo, protože žádný stroj není dokonalý. Pak přepni kyslík na <b>VYP</b> a&nbsp;spusť dráhu znovu: elektrony nemají kam odtéct, dýchací řetězec se zastaví a&nbsp;s&nbsp;ním i&nbsp;citrátový cyklus. Buňce zbudou jen 2 ATP z&nbsp;glykolýzy. Proto potřebuješ kyslík – viz otázky na konci.</figcaption>
+          <figcaption>Stejná molekula, stejná energie, dva osudy. Zápalka ji uvolní naráz a&nbsp;celá odejde jako teplo. Buňka jde po schodech: v&nbsp;prvních třech krocích získá pár ATP a&nbsp;hlavně naloží elektrony na NADH (zelené tečky). Elektrony pak stečou dýchacím řetězcem ke kyslíku a&nbsp;jejich energie cestou vyrobí většinu ATP (zlaté mince). Celkem buňka zachytí zhruba třetinu energie, zbytek odejde jako teplo. Pak vypni kyslík a&nbsp;spusť dráhu znovu: elektrony nemají kam odtéct, NADH se hromadí a&nbsp;dýchací řetězec i&nbsp;citrátový cyklus se zastaví. Zbudou jen 2&nbsp;ATP z&nbsp;glykolýzy. Ta jede dál jen proto, že se NADH vyprázdní do pyruvátu a&nbsp;vznikne laktát. V&nbsp;něm zůstane většina energie na později. Proto potřebuješ kyslík – viz otázky na konci.</figcaption>
         </div>
       </figure>
 
@@ -674,179 +674,524 @@
     if(REDUCED){ draw(); } else { loop.start(); }
   })();
 
-  /* ===== SIM 03 – SPALOVÁNÍ vs SCHODIŠTĚ ===== */
+  /* ===== SIM 03 – SPALOVÁNÍ vs SCHODIŠTĚ =====
+     Svislý žebřík energie: nahoře glukóza, dole CO2 + H2O, rozdíl ~2 840 kJ/mol.
+     Vlevo zápalka: jeden pád, všechno teplo. Vpravo buňka: na třech menších schodech
+     vznikne pár ATP a hlavně se naloží elektrony na NADH (zelené tečky); ty pak stečou
+     dýchacím řetězcem ke kyslíku a cestou razí většinu ATP (zlaté mince do počítadla).
+     Výšky schodů jsou schematické (dýchací řetězec ve skutečnosti uvolní ~88 % energie).
+     Bez kyslíku je zásobník NADH plný, dráha skončí po glykolýze a pyruvát se změní na laktát. */
   (function(){
     var canvas = document.getElementById('stairCanvas');
     if(!canvas) return;
-    var S = setupCanvas(canvas, 0.66);
-    var ctx = S.ctx;
-
-    var STAIRS = [
-      {name:'Glykolýza',        sub:'glukóza \u2192 pyruvát', atp:2},
-      {name:'Oxidace pyruvátu',sub:'\u2192 acetyl-CoA',       atp:0},
-      {name:'Citrátový cyklus', sub:'NADH, FADH₂', atp:2},
-      {name:'Dýchací řetězec',sub:'e⁻ z NADH → ATP',atp:28},
-      {name:'Kyslík',            sub:'e\u207B + O\u2082 \u2192 H\u2082O', atp:0, drain:true}
+    var ctx = canvas.getContext('2d');
+    var NB = '\u00a0', SANS = 'Inter, sans-serif', MONO = 'Fira Code, monospace';
+    var INK_GOLD = '#74551A', INK_TERRA = '#8A4526', FAINT = '#C9BEA6', TRACK = '#D9CFB6';
+    var G_KJ = 2840, ATP_KJ = 30.5, LACT_KJ = 196;   /* glukóza -> 2 laktát: dG'° ~ -196 kJ/mol (Lehninger) */
+    var TOTAL_ATP = 32, ETC_ATP = 28, N_E = 12;        /* 10 NADH + 2 FADH2 na jednu glukózu */
+    var LH = 12, BAND = 40;                             /* řádek popisku, výška jednoho z prvních tří schodů */
+    var STAGES = [
+      {name:'Glykolýza',        sub:'glukóza → 2 pyruvát', gain:'+2 ATP · 2 NADH', atp:2, e:2, dur:0.9},
+      {name:'Oxidace pyruvátu', sub:'→ acetyl-CoA + CO₂', gain:'2 NADH', atp:0, e:2, dur:0.6},
+      {name:'Citrátový cyklus', sub:'→ 4 CO₂', gain:'+2 ATP · 6 NADH · 2 FADH₂',
+        alt:'+2 ATP · NADH, FADH₂', atp:2, e:8, dur:0.9},
+      {name:'Dýchací řetězec',  sub:'e⁻ → O₂ → H₂O', gain:'+28 ATP',
+        note:'skoro 90' + NB + '% energie', atp:28, e:0}
     ];
-    var N = STAIRS.length;
-    var STEP_TIME = 0.85;
-    var o2 = true;
+    var FONT = {name:['700', 10.5, SANS], sub:['500', 9.5, MONO], gain:['600', 9.5, MONO], note:['600', 9.5, MONO], warn:['600', 9.5, MONO]};
+    var INKS = {sub:C.inkSoft, gain:INK_GOLD, note:C.forestDeep, warn:INK_TERRA};
 
-    var matchSpent=false, fireProg=0, fireAnim=false;
-    var runAnim=false, stalled=false, done=false;
-    var markPos=0, target=0, lastArrived=-1, atp=0, credited=[], electrons=0;
+    var W = 600, H = 470, g = null, o2 = true, lastW = 0;
+    var fire = freshFire(), cell = freshCell();
+    var elFireCap = document.getElementById('fireCap');
+    var elAtp = document.getElementById('stairAtp');
+    var elCap = document.getElementById('stairCap');
+    var btnO2 = document.getElementById('stairO2');
 
-    var elFireCap=document.getElementById('fireCap');
-    var elAtp=document.getElementById('stairAtp');
-    var elCap=document.getElementById('stairCap');
-    var btnO2=document.getElementById('stairO2');
-
-    function pct(a){ return Math.round((a*30.5/2840)*100); }
-
-    function geo(){
-      var d=S.dim(); var w=d.w,h=d.h;
-      var midX=w*0.40;
-      var rx0=w*0.46, rx1=w-12;
-      var ry0=52, ry1=h-52;
-      return {w:w,h:h, midX:midX, rx0:rx0, rx1:rx1, ry0:ry0, ry1:ry1, sw:(rx1-rx0)/N, sh:(ry1-ry0)/N};
+    function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+    function ease(p){ return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2; }
+    function pct(f){ return Math.round(f * 100) + NB + '%'; }
+    function hexRgb(h){
+      var m = /^#?([0-9a-f]{6})$/i.exec(h || '');
+      if(!m) return null;
+      var n = parseInt(m[1], 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
     }
-    function landing(g,i){
-      var tx=g.rx0+i*g.sw, ty=g.ry0+i*g.sh;
-      return {tx:tx, ty:ty, cx:tx+g.sw*0.5};
-    }
-    function drawHex(cx,cy,r,fill,stroke){
-      ctx.beginPath();
-      for(var i=0;i<6;i++){ var a=-Math.PI/2+i*TAU/6; var x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r; if(i===0)ctx.moveTo(x,y); else ctx.lineTo(x,y); }
-      ctx.closePath(); ctx.fillStyle=fill; ctx.fill(); ctx.strokeStyle=stroke; ctx.lineWidth=2; ctx.stroke();
+    function mix(a, b, t){
+      var A = hexRgb(a), B = hexRgb(b);
+      if(!A || !B) return t < 0.5 ? a : b;
+      return 'rgb(' + Math.round(A[0] + (B[0] - A[0]) * t) + ',' + Math.round(A[1] + (B[1] - A[1]) * t) + ',' + Math.round(A[2] + (B[2] - A[2]) * t) + ')';
     }
 
-    function drawMatch(g){
-      var lx=g.midX*0.5, hexY=74;
-      if(fireProg>0){
-        var burst=Math.sin(Math.min(fireProg,1)*Math.PI);
-        if(burst>0.001){
-          var cols=[C.fCore,C.fHot,C.fMid], n=14;
-          for(var i=0;i<n;i++){
-            var ang=-Math.PI/2+(i/(n-1)-0.5)*1.7;
-            var rr=34*burst*(0.55+0.45*((i*7)%5)/5);
-            ctx.fillStyle=cols[i%3]; ctx.globalAlpha=0.85*burst;
-            ctx.beginPath(); ctx.arc(lx+Math.cos(ang)*rr, hexY+Math.sin(ang)*rr-4, 4+3*burst,0,TAU); ctx.fill();
+    function freshFire(){ return {phase:'idle', y:0, v:0, parts:[], glow:0, fill:0}; }
+    function freshCell(){ return {phase:'idle', stage:0, t:0, atp:0, minted:0, coins:[], tokens:[], puffs:[], fill:0, fade:1, pulse:0, bump:0}; }
+    function resetFire(){ fire = freshFire(); if(elFireCap) elFireCap.textContent = '–'; }
+    function resetCell(){ cell = freshCell(); if(elAtp) elAtp.textContent = '0'; if(elCap) elCap.textContent = '–'; }
+    function setCap(n){ if(elCap) elCap.textContent = '~' + pct(n * ATP_KJ / G_KJ); }
+
+    /* ---------- velikost a rozvržení ---------- */
+    function resize(){
+      W = canvas.clientWidth || (canvas.parentNode && canvas.parentNode.clientWidth) || 600;
+      H = W < 480 ? 470 : Math.round(clamp(W * 0.75, 440, 480));
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      layout();
+    }
+    function layout(){
+      var P = W < 360 ? 8 : 12, k, j;
+      var lw = Math.round(clamp(W * 0.17, 50, 120));
+      var L = {x0:P, x1:P + lw, cx:P + lw / 2};
+      var R = {x0:L.x1 + 12, x1:W - P};
+      var sw = Math.round(clamp((R.x1 - R.x0) * 0.4, 70, 200));
+      var S = {x0:R.x0 + 2, x1:R.x0 + 2 + sw};
+      var tw = (sw - 24) / 6, tw2 = tw / 2, r = clamp(tw * 0.4, 4.5, 9);
+      var yTop = 48 + 2 * r, yBot = H - 74, y = [yTop];
+      for(k = 0; k < 3; k++) y.push(y[k] + BAND);
+      y.push(yBot);
+      var sx = S.x0 + 4 * tw, dy = (yBot - y[3]) / 4;
+      var drain = {x:sx + 2 * tw + 12, y:yBot};
+      var stair = [[S.x0, y[0]]];
+      for(k = 0; k < 3; k++){ var xr = S.x0 + (k + 1) * tw; stair.push([xr, y[k]], [xr, y[k + 1]]); }
+      stair.push([sx, y[3]]);
+      for(j = 0; j < 4; j++){ var xs = sx + j * tw2, yy = y[3] + (j + 1) * dy; stair.push([xs, yy], [xs + tw2, yy]); }
+      stair.push([drain.x - 10, yBot]);
+      var sp = clamp((4 * tw - 10) / 4, 5.5, 9);
+      g = {L:L, R:R, S:S, tw:tw, tw2:tw2, r:r, yTop:yTop, yBot:yBot, y:y, sx:sx, dy:dy, drain:drain, stair:stair,
+           lab:{x0:S.x1 + 12, x1:R.x1}, topY:yTop - 2 * r - 6, barY:H - 46,
+           pool:{x:S.x0 + 3 + sp / 2, y:y[3] + 14 + sp / 2, sp:sp}, tr:Math.min(2.6, sp * 0.42),
+           coin:{x:R.x1 - 30, y:21}};
+    }
+
+    /* ---------- dráhy kuličky, elektronů a mincí ---------- */
+    function ledgeX(k){ return g.S.x0 + (k + 0.5) * g.tw; }
+    function stagePath(k){
+      var r = g.r, xe = g.S.x0 + (k + 1) * g.tw;
+      return [[ledgeX(k), g.y[k] - r], [xe - r * 0.6, g.y[k] - r], [ledgeX(k + 1), g.y[k + 1] - r]];
+    }
+    function along(pts, p){
+      var lens = [], tot = 0, i, d;
+      for(i = 1; i < pts.length; i++){ d = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); lens.push(d); tot += d; }
+      var want = p * tot;
+      for(i = 0; i < lens.length; i++){
+        if(want <= lens[i] || i === lens.length - 1){
+          var f = lens[i] ? clamp(want / lens[i], 0, 1) : 1;
+          return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f];
+        }
+        want -= lens[i];
+      }
+      return pts[pts.length - 1];
+    }
+    function ballPos(){
+      var c = cell;
+      if(c.phase === 'run') return along(stagePath(c.stage), ease(clamp(c.t / STAGES[c.stage].dur, 0, 1)));
+      if(c.phase === 'ferment' || c.phase === 'stalled') return [ledgeX(1), g.y[1] - g.r];
+      if(c.phase === 'etc' || c.phase === 'done') return [ledgeX(3), g.y[3] - g.r];
+      return [ledgeX(0), g.y[0] - g.r];
+    }
+    function poolSpot(i){ var s = g.pool.sp; return [g.pool.x + (i % 4) * s, g.pool.y + Math.floor(i / 4) * s]; }
+    function dropPath(i){
+      var pts = [poolSpot(i), [g.sx + 3, g.y[3] - 3]];
+      for(var j = 0; j < 4; j++) pts.push([g.sx + (j + 0.5) * g.tw2, g.y[3] + (j + 1) * g.dy - 3]);
+      pts.push([g.drain.x, g.drain.y - 1]);
+      return pts;
+    }
+    function tokenPos(tk){
+      var p, q, s;
+      if(tk.mode === 'fly'){
+        p = clamp(tk.t / tk.dur, 0, 1); q = ease(p); s = poolSpot(tk.i);
+        return [tk.x0 + (s[0] - tk.x0) * q, tk.y0 + (s[1] - tk.y0) * q - Math.sin(p * Math.PI) * 14];
+      }
+      if(tk.mode === 'pool') return poolSpot(tk.i);
+      if(tk.mode === 'drop') return along(dropPath(tk.i), clamp(tk.d, 0, 1));
+      if(tk.mode === 'bounce'){
+        /* bez kyslíku: NADH vyrazí k plnému zásobníku a vrátí se do pyruvátu */
+        p = clamp(tk.t / tk.dur, 0, 1);
+        q = p < 0.5 ? 0.7 * ease(p * 2) : 0.7 * (1 - ease((p - 0.5) * 2));
+        var tx = g.pool.x + 1.5 * g.pool.sp, ty = g.pool.y - g.pool.sp;
+        return [tk.x0 + (tx - tk.x0) * q + (tk.i ? 6 : -6) * Math.sin(p * Math.PI), tk.y0 + (ty - tk.y0) * q];
+      }
+      return null;
+    }
+    function spawnCoins(n, x, y, stagger){
+      for(var i = 0; i < n; i++) cell.coins.push({x0:x, y0:y, t:-i * stagger, dur:0.6});
+    }
+    function spawnTokens(n, x, y){
+      for(var i = 0; i < n; i++) cell.tokens.push({i:cell.tokens.length, mode:'fly', t:-i * 0.04, dur:0.45, x0:x, y0:y, d:0});
+    }
+    function dropSource(){
+      var best = null, bd = -1;
+      for(var i = 0; i < cell.tokens.length; i++){
+        var tk = cell.tokens[i];
+        if(tk.mode === 'drop' && tk.d > bd){ bd = tk.d; best = tk; }
+      }
+      return best ? tokenPos(best) : [g.sx + g.tw, (g.y[3] + g.yBot) / 2];
+    }
+    function flame(x, y, pw){
+      var spread = Math.min(40, (g.L.x1 - g.L.x0) * 0.6);
+      return {x:x + (Math.random() - 0.5) * 10 * pw, y:y, vx:(Math.random() - 0.5) * spread * pw,
+              vy:-(20 + Math.random() * 60) * pw, life:0, max:0.5 + Math.random() * 0.7, r:3 + Math.random() * 5 * pw};
+    }
+
+    /* ---------- krok simulace ---------- */
+    function busy(){
+      var c = cell;
+      return fire.phase === 'fall' || fire.parts.length > 0 || (fire.phase === 'done' && (fire.fill < 1 || fire.glow > 0)) ||
+             c.phase === 'run' || c.phase === 'etc' || c.phase === 'ferment' || c.coins.length > 0 || c.puffs.length > 0 ||
+             c.pulse > 0 || c.bump > 0 || ((c.phase === 'done' || c.phase === 'stalled') && c.fill < 1);
+    }
+    function update(dt){
+      var c = cell, i, tk, st, at;
+      /* zápalka: jeden pád */
+      if(fire.phase === 'fall'){
+        fire.v += 2400 * dt; fire.y += fire.v * dt;
+        for(i = 0; i < 3; i++) fire.parts.push(flame(g.L.cx, fire.y, 0.6));
+        if(fire.y >= g.yBot - g.r){
+          fire.y = g.yBot - g.r; fire.phase = 'done'; fire.glow = 1;
+          for(i = 0; i < 40; i++) fire.parts.push(flame(g.L.cx, g.yBot - 3, 1.4));
+          if(elFireCap) elFireCap.textContent = '~0' + NB + '%';
+        }
+      } else if(fire.phase === 'done'){
+        fire.fill = Math.min(1, fire.fill + dt * 1.8);
+        fire.glow = Math.max(0, fire.glow - dt * 0.4);
+      }
+      for(i = fire.parts.length - 1; i >= 0; i--){
+        var fp = fire.parts[i];
+        fp.life += dt; fp.x += fp.vx * dt; fp.y += fp.vy * dt; fp.vy -= 40 * dt;
+        if(fp.life >= fp.max) fire.parts.splice(i, 1);
+      }
+
+      /* buňka: tři schody, pak dýchací řetězec */
+      if(c.phase === 'run'){
+        st = STAGES[c.stage]; c.t += dt;
+        if(c.t >= st.dur){
+          c.t = st.dur; at = ballPos();
+          if(st.atp) spawnCoins(st.atp, at[0], at[1], 0.12);
+          if(!o2 && c.stage === 0){
+            for(i = 0; i < 2; i++) c.tokens.push({i:i, mode:'bounce', t:-i * 0.12, dur:1.0, x0:at[0], y0:at[1]});
+            c.phase = 'ferment'; c.t = 0;
+          } else {
+            spawnTokens(st.e, at[0], at[1]);
+            if(c.stage > 0) c.puffs.push({x:at[0], y:at[1] - g.r, t:0});
+            c.stage++; c.t = 0;
+            if(c.stage === 3) c.phase = 'etc';
           }
-          ctx.globalAlpha=1;
+        }
+      } else if(c.phase === 'etc'){
+        c.t += dt; c.fade = Math.max(0, c.fade - dt / 0.45);
+        var prog = 0, gone = 0;
+        for(i = 0; i < c.tokens.length; i++){
+          tk = c.tokens[i];
+          if(tk.mode === 'pool' && c.t >= 0.09 * tk.i){ tk.mode = 'drop'; tk.d = 0; }
+          if(tk.mode === 'drop'){ tk.d += dt; if(tk.d >= 1){ tk.d = 1; tk.mode = 'gone'; c.pulse = 1; } }
+          if(tk.mode === 'drop') prog += tk.d;
+          else if(tk.mode === 'gone'){ prog += 1; gone++; }
+        }
+        var want = Math.min(ETC_ATP, Math.floor(ETC_ATP * prog / N_E + 1e-6));
+        while(c.minted < want){ at = dropSource(); spawnCoins(1, at[0], at[1], 0); c.minted++; }
+        if(gone >= N_E && c.minted >= ETC_ATP){ c.phase = 'done'; c.fade = 0; setCap(TOTAL_ATP); }
+      } else if(c.phase === 'ferment'){
+        c.t += dt;
+        if(c.t >= 1.15){ c.phase = 'stalled'; setCap(2); }
+      }
+      for(i = 0; i < c.tokens.length; i++){
+        tk = c.tokens[i];
+        if(tk.mode === 'fly'){ tk.t += dt; if(tk.t >= tk.dur) tk.mode = 'pool'; }
+        else if(tk.mode === 'bounce'){ tk.t += dt; if(tk.t >= tk.dur) tk.mode = 'gone'; }
+      }
+      for(i = c.coins.length - 1; i >= 0; i--){
+        var co = c.coins[i];
+        co.t += dt;
+        if(co.t >= co.dur){
+          c.coins.splice(i, 1); c.bump = 1;
+          c.atp = Math.min(o2 ? TOTAL_ATP : 2, c.atp + 1);
+          if(elAtp) elAtp.textContent = String(c.atp);
         }
       }
-      drawHex(lx,hexY,20, matchSpent?'#D9CFB6':C.forest, matchSpent?C.rule:C.forestDeep);
-      ctx.textAlign='center'; ctx.fillStyle=matchSpent?C.inkSoft:'#fff';
-      ctx.font='700 8.5px Fira Code, monospace'; ctx.fillText('C\u2086H\u2081\u2082O\u2086', lx, hexY+3);
-      ctx.fillStyle=C.inkSoft; ctx.font='600 10px Fira Code, monospace';
-      ctx.fillText(matchSpent?'spáleno \u2192 jen teplo':'škrtni a uvolni', lx, hexY+48);
-      var bw=Math.min(96,g.midX*0.72), bx=lx-bw/2, by=hexY+66;
-      ctx.fillStyle='#D9CFB6'; roundRect(ctx,bx,by,bw,10,5); ctx.fill();
-      ctx.fillStyle=C.terra; roundRect(ctx,bx,by,bw*(matchSpent?0.012:0),10,5); ctx.fill();
-      ctx.fillStyle=C.inkSoft; ctx.font='600 9px Inter, sans-serif';
-      ctx.fillText('zachyceno '+(matchSpent?'~0 %':'\u2013'), lx, by+24);
+      for(i = c.puffs.length - 1; i >= 0; i--){ c.puffs[i].t += dt; if(c.puffs[i].t >= 1.2) c.puffs.splice(i, 1); }
+      c.pulse = Math.max(0, c.pulse - dt * 2.5);
+      c.bump = Math.max(0, c.bump - dt * 5);
+      if((c.phase === 'done' || c.phase === 'stalled') && !c.coins.length) c.fill = Math.min(1, c.fill + dt * 1.8);
+    }
+    function step(dt){
+      if(!g || !busy()) return;
+      update(dt);
+      draw();
+    }
+    function finishStatic(){
+      var c = cell;
+      if(o2){ c.phase = 'done'; c.atp = TOTAL_ATP; c.minted = ETC_ATP; c.fade = 0; setCap(TOTAL_ATP); }
+      else { c.phase = 'stalled'; c.atp = 2; setCap(2); }
+      c.fill = 1;
+      if(elAtp) elAtp.textContent = String(c.atp);
     }
 
-    function drawStair(g){
-      ctx.lineWidth=2.5; ctx.strokeStyle=C.sage;
-      for(var i=0;i<N;i++){
-        var L=landing(g,i);
-        ctx.beginPath(); ctx.moveTo(L.tx,L.ty); ctx.lineTo(L.tx+g.sw,L.ty); ctx.lineTo(L.tx+g.sw,L.ty+g.sh); ctx.stroke();
-        ctx.textAlign='left'; ctx.fillStyle=C.inkSoft; ctx.font='700 8.5px Inter, sans-serif';
-        ctx.fillText(STAIRS[i].name, L.tx+3, L.ty-13);
-        ctx.fillStyle=C.sage; ctx.font='500 7.5px Fira Code, monospace';
-        ctx.fillText(STAIRS[i].sub, L.tx+3, L.ty-4);
-        if(STAIRS[i].atp>0){
-          ctx.textAlign='right'; ctx.fillStyle=C.gold; ctx.font='700 8px Fira Code, monospace';
-          ctx.fillText('+'+STAIRS[i].atp+' ATP', L.tx+g.sw-4, L.ty+12);
-        }
+    /* ---------- kreslení ---------- */
+    function fitFont(txt, maxW, size, weight, fam, min){
+      var s = size, lo = min || 7.5;
+      for(;;){
+        ctx.font = weight + ' ' + s + 'px ' + fam;
+        if(s <= lo || ctx.measureText(txt).width <= maxW) return s;
+        s = Math.max(lo, s - 0.5);
       }
-      ctx.textAlign='center';
-      var last=landing(g,N-1), ox=last.cx, oy=last.ty+g.sh*0.5;
-      ctx.beginPath(); ctx.arc(ox,oy,13,0,TAU); ctx.fillStyle=o2?C.forest:'#C9BEA6'; ctx.fill();
-      ctx.fillStyle=o2?'#fff':C.inkSoft; ctx.font='700 8px Fira Code, monospace'; ctx.fillText(o2?'O\u2082':'\u2205', ox, oy+3);
-      ctx.fillStyle=C.inkSoft; ctx.font='600 8px Inter, sans-serif'; ctx.fillText(o2?'odtok otevřen':'není akceptor', ox, oy+21);
-
-      var jx=(g.midX+g.rx0)/2, jw=22, jy=g.ry0+4, jh=(g.ry1-g.ry0)-2;
-      ctx.strokeStyle=C.rule; ctx.lineWidth=2; roundRect(ctx,jx-jw/2,jy,jw,jh,5); ctx.stroke();
-      var fh=jh*(atp/32);
-      ctx.fillStyle=C.gold; roundRect(ctx,jx-jw/2+2,jy+jh-fh+2,jw-4,Math.max(0,fh-4),4); ctx.fill();
-      ctx.fillStyle=C.forestDeep; ctx.font='700 9px Fira Code, monospace';
-      ctx.fillText('ATP', jx, jy-6); ctx.fillText(String(atp), jx, jy+jh+15);
-
-      if(stalled){
-        var etc=landing(g,3);
-        var m=Math.round(electrons);
-        for(var e=0;e<m;e++){ var ex=etc.cx-14+(e%5)*7, ey=etc.ty-26-Math.floor(e/5)*7; ctx.fillStyle=C.terra; ctx.beginPath(); ctx.arc(ex,ey,3,0,TAU); ctx.fill(); }
-        ctx.fillStyle=C.terraDeep; ctx.font='700 9px Inter, sans-serif'; ctx.fillText('ZASEKNUTO', etc.cx, etc.ty-36-Math.floor(Math.max(0,m-1)/5)*7);
+    }
+    function seg(x1, y1, x2, y2){ ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); }
+    function poly(P, a, b){
+      ctx.beginPath(); ctx.moveTo(P[a][0], P[a][1]);
+      for(var i = a + 1; i <= b; i++) ctx.lineTo(P[i][0], P[i][1]);
+      ctx.stroke();
+    }
+    function dot(x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); }
+    function coin(x, y, r, label){
+      ctx.fillStyle = C.gold; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill();
+      ctx.strokeStyle = C.terraDeep; ctx.lineWidth = r > 5 ? 1.2 : 0.8; ctx.stroke();
+      if(label){ ctx.fillStyle = '#4A3214'; ctx.font = '700 6.5px ' + MONO; ctx.textAlign = 'center'; ctx.fillText('ATP', x, y + 2.3); }
+    }
+    function glucose(x, y, r, col){
+      ctx.beginPath();
+      for(var i = 0; i < 6; i++){
+        var a = -Math.PI / 2 + i * TAU / 6, px = x + Math.cos(a) * r, py = y + Math.sin(a) * r;
+        if(i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
       }
-
-      var i0=Math.floor(markPos); if(i0<0)i0=0; if(i0>N-1)i0=N-1;
-      var i1=Math.min(i0+1,N-1), f=markPos-i0;
-      var A=landing(g,i0), B=landing(g,i1);
-      var mx=A.cx+(B.cx-A.cx)*f, my=(A.ty+(B.ty-A.ty)*f)-12;
-      ctx.fillStyle=C.terra; ctx.beginPath(); ctx.arc(mx,my,9,0,TAU); ctx.fill();
-      ctx.fillStyle=C.fCore; ctx.beginPath(); ctx.arc(mx,my,4.5,0,TAU); ctx.fill();
+      ctx.closePath(); ctx.fillStyle = col; ctx.fill();
+      dot(x, y, r * 0.4, C.fCore);
+    }
+    function bar(x0, x1, y, segs, fill){
+      var w = x1 - x0, h = 10, x = x0;
+      ctx.fillStyle = TRACK; roundRect(ctx, x0, y, w, h, 5); ctx.fill();
+      if(fill <= 0 || !segs.length) return;
+      ctx.save(); roundRect(ctx, x0, y, w * fill, h, Math.min(5, w * fill / 2)); ctx.clip();
+      for(var i = 0; i < segs.length; i++){ var sw = w * segs[i].f; ctx.fillStyle = segs[i].c; ctx.fillRect(x, y, sw + 0.5, h); x += sw; }
+      ctx.restore();
+    }
+    function legend(items, x0, x1, y){
+      ctx.textAlign = 'left'; ctx.font = '600 9.5px ' + MONO;
+      var x = x0, yy = y;
+      for(var i = 0; i < items.length; i++){
+        var w = 11 + ctx.measureText(items[i].t).width;
+        if(x > x0 && x + w > x1){ x = x0; yy += 13; }
+        ctx.fillStyle = items[i].c; ctx.fillRect(x, yy - 7.5, 7, 7);
+        ctx.fillStyle = C.ink; ctx.fillText(items[i].t, x + 11, yy);
+        x += w + 10;
+      }
+    }
+    function stageLines(k){
+      var st = STAGES[k];
+      if(o2 || k === 0){
+        var a = [{t:st.name, k:'name'}, {t:st.sub, k:'sub'}, {t:st.gain, k:'gain', alt:st.alt}];
+        if(st.note) a.push({t:st.note, k:'note'});
+        return a;
+      }
+      if(k === 3) return [{t:st.name, k:'name', dim:true}, {t:'stojí – chybí O₂', k:'warn'}, {t:'NADH se hromadí', k:'warn'}];
+      return [{t:st.name, k:'name', dim:true}, {t:'stojí', k:'warn'}];
+    }
+    function stageLabel(k){
+      var lines = stageLines(k), n = lines.length, c = cell;
+      var mid = k < 3 ? (g.y[k] + g.y[k + 1]) / 2 : g.y[3] + 2 * g.dy;
+      var top = mid - n * LH / 2, x = g.lab.x0, w = g.lab.x1 - x;
+      var active = (c.phase === 'run' && c.stage === k) || (c.phase === 'etc' && k === 3) || (c.phase === 'ferment' && k === 0);
+      /* tečkovaná vodicí čára od schodu k popisku */
+      var from = k < 3 ? g.S.x0 + (k + 1) * g.tw + 4 : g.sx + g.tw + 4;
+      ctx.strokeStyle = FAINT; ctx.lineWidth = 1; ctx.setLineDash([1, 3]);
+      seg(from, mid, x - 10, mid); ctx.setLineDash([]);
+      for(var i = 0; i < n; i++){
+        var Ln = lines[i], f = FONT[Ln.k], t = Ln.t;
+        ctx.font = f[0] + ' ' + f[1] + 'px ' + f[2];
+        if(Ln.alt && ctx.measureText(t).width * 8 / f[1] > w) t = Ln.alt;
+        fitFont(t, w, f[1], f[0], f[2], 7.5);
+        ctx.textAlign = 'left';
+        if(Ln.k === 'name'){ ctx.globalAlpha = Ln.dim ? 0.55 : 1; ctx.fillStyle = active ? C.forestDeep : (Ln.dim ? C.inkSoft : C.ink); }
+        else ctx.fillStyle = INKS[Ln.k];
+        ctx.fillText(t, x, top + 9 + i * LH);
+        ctx.globalAlpha = 1;
+      }
+      if(active){ ctx.fillStyle = C.forest; ctx.fillRect(x - 6, top + 1, 2.5, n * LH - 2); }
     }
 
     function draw(){
-      var g=geo();
-      ctx.clearRect(0,0,g.w,g.h);
-      ctx.strokeStyle=C.rule; ctx.lineWidth=1; ctx.setLineDash([3,5]);
-      ctx.beginPath(); ctx.moveTo(g.midX,26); ctx.lineTo(g.midX,g.h-26); ctx.stroke(); ctx.setLineDash([]);
-      ctx.textAlign='center'; ctx.font='700 10.5px Inter, sans-serif';
-      ctx.fillStyle=C.terraDeep; ctx.fillText('ZÁPALKA', g.midX*0.5, 24);
-      ctx.fillStyle=C.forestDeep; ctx.fillText('SCHODIŠTĚ', (g.rx0+g.rx1)/2, 24);
-      drawMatch(g); drawStair(g);
-    }
+      if(!g) return;
+      var i, k, c = cell, L = g.L, S = g.S, lw = L.x1 - L.x0;
+      ctx.clearRect(0, 0, W, H);
+      ctx.globalAlpha = 1; ctx.setLineDash([]); ctx.lineCap = 'butt'; ctx.lineJoin = 'miter'; ctx.textBaseline = 'alphabetic';
 
-    function arrive(idx){
-      if(idx===1 && !o2){ runAnim=false; stalled=true; if(elCap) elCap.textContent='~'+pct(atp)+' %'; return; }
-      if(!credited[idx]){ credited[idx]=true; atp+=STAIRS[idx].atp; if(elAtp) elAtp.textContent=String(atp); }
-      if(idx>=N-1){ runAnim=false; done=true; if(elCap) elCap.textContent='~'+pct(atp)+' %'; }
-      else { target++; }
-    }
-    function step(dt){
-      if(fireAnim){ fireProg+=dt/1.2; if(fireProg>=1){ fireProg=1; fireAnim=false; matchSpent=true; if(elFireCap) elFireCap.textContent='~0 %'; } }
-      if(runAnim){
-        var sp=1/STEP_TIME;
-        if(markPos<target) markPos=Math.min(target, markPos+sp*dt);
-        if(markPos>=target){ markPos=target; if(lastArrived!==target){ lastArrived=target; arrive(target); } }
+      /* oddělovač drah a společné hladiny: stejný start, stejný cíl */
+      ctx.strokeStyle = C.rule; ctx.lineWidth = 1; ctx.setLineDash([3, 5]);
+      seg(L.x1 + 6, 10, L.x1 + 6, H - 10);
+      ctx.strokeStyle = FAINT;
+      seg(L.x1 - 4, g.yTop, S.x0 - 4, g.yTop);
+      seg(L.x1 - 4, g.yBot, g.sx + 3 * g.tw2 - 4, g.yBot);
+      ctx.setLineDash([]);
+
+      /* hlavičky a počítadlo ATP */
+      ctx.textAlign = 'center'; ctx.fillStyle = INK_TERRA; fitFont('ZÁPALKA', lw, 10.5, '700', SANS, 8);
+      ctx.fillText('ZÁPALKA', L.cx, 24);
+      ctx.textAlign = 'left'; ctx.fillStyle = C.forestDeep; ctx.font = '700 10.5px ' + SANS;
+      ctx.fillText('SCHODIŠTĚ', g.R.x0, 24);
+      ctx.textAlign = 'right'; ctx.font = '700 15px ' + MONO; ctx.fillStyle = C.forestDeep;
+      ctx.fillText(String(c.atp), g.R.x1, 26);
+      g.coin.x = g.R.x1 - ctx.measureText('32').width - 13; g.coin.y = 21;
+      coin(g.coin.x, g.coin.y, 8.5 + 2 * c.bump, true);
+
+      /* ===== levá dráha: zápalka ===== */
+      ctx.textAlign = 'center'; ctx.fillStyle = C.inkSoft; fitFont('glukóza', lw, 9.5, '600', MONO);
+      ctx.fillText('glukóza', L.cx, g.topY);
+      ctx.strokeStyle = C.sage; ctx.lineWidth = 2.5; ctx.lineCap = 'round';
+      seg(L.x0 + 6, g.yTop, L.x1 - 6, g.yTop);
+      seg(L.x0 + 6, g.yBot, L.x1 - 6, g.yBot);
+      ctx.lineCap = 'butt'; ctx.strokeStyle = FAINT; ctx.lineWidth = 1.5; ctx.setLineDash([2, 4]);
+      seg(L.cx, g.yTop + 8, L.cx, g.yBot - 8); ctx.setLineDash([]);
+      ctx.save(); ctx.translate(L.cx - 6, (g.yTop + g.yBot) / 2); ctx.rotate(-Math.PI / 2);
+      ctx.textAlign = 'center'; ctx.fillStyle = C.inkSoft; ctx.font = '600 9px ' + MONO;
+      ctx.fillText('všechno naráz', 0, 0); ctx.restore();
+      ctx.save(); ctx.beginPath(); ctx.rect(L.x0 - 4, 0, lw + 8, g.yBot + 8); ctx.clip();
+      if(fire.glow > 0){
+        /* teplo: eliptická záře nad dnem, užší než dráha, ať nemá ostré okraje */
+        var gR = lw / 2 + 2;
+        ctx.save(); ctx.translate(L.cx, g.yBot); ctx.scale(1, 64 / gR);
+        var gr = ctx.createRadialGradient(0, 0, 0, 0, 0, gR);
+        gr.addColorStop(0, 'rgba(232,161,60,' + (0.5 * fire.glow).toFixed(3) + ')');
+        gr.addColorStop(1, 'rgba(232,161,60,0)');
+        ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(0, 0, gR, 0, TAU); ctx.fill();
+        ctx.restore();
       }
-      if(stalled){ electrons=Math.min(24, electrons+dt*10); }
-      draw();
+      for(i = 0; i < fire.parts.length; i++){
+        var fp = fire.parts[i], lt = fp.life / fp.max;
+        ctx.globalAlpha = Math.max(0, (1 - lt) * 0.7);
+        dot(fp.x, fp.y, Math.max(0.5, fp.r * (1 - lt * 0.5)), lt < 0.3 ? C.fCore : (lt < 0.65 ? C.fHot : C.fMid));
+      }
+      ctx.globalAlpha = 1; ctx.restore();
+      if(fire.phase !== 'done') glucose(L.cx, fire.phase === 'fall' ? fire.y : g.yTop - g.r, g.r, C.terra);
+      ctx.textAlign = 'center'; ctx.fillStyle = C.inkSoft; fitFont('CO₂ + H₂O', lw, 9.5, '500', MONO);
+      ctx.fillText('CO₂ + H₂O', L.cx, g.yBot + 18);
+      bar(L.x0, L.x1, g.barY, fire.phase === 'done' ? [{f:1, c:C.fMid}] : [], fire.fill);
+      if(fire.phase === 'done' && fire.fill > 0.02){
+        var heat = 'teplo 100' + NB + '%';
+        ctx.globalAlpha = Math.min(1, fire.fill * 2); ctx.fillStyle = INK_TERRA; ctx.textAlign = 'center'; ctx.font = '600 9.5px ' + MONO;
+        if(ctx.measureText(heat).width <= lw) ctx.fillText(heat, L.cx, g.barY + 22);
+        else { ctx.fillText('teplo', L.cx, g.barY + 22); ctx.fillText('100' + NB + '%', L.cx, g.barY + 35); }
+        ctx.globalAlpha = 1;
+      }
+
+      /* ===== pravá dráha: buněčné schodiště ===== */
+      var topTxt = 'glukóza · 2' + NB + '840 kJ/mol';
+      ctx.textAlign = 'left'; ctx.fillStyle = C.inkSoft; fitFont(topTxt, g.R.x1 - S.x0, 9.5, '600', MONO);
+      ctx.fillText(topTxt, S.x0, g.topY);
+      ctx.strokeStyle = C.sage; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      if(o2) poly(g.stair, 0, g.stair.length - 1);
+      else { poly(g.stair, 0, 3); ctx.globalAlpha = 0.3; poly(g.stair, 3, g.stair.length - 1); ctx.globalAlpha = 1; }
+      ctx.lineJoin = 'miter'; ctx.lineCap = 'butt';
+      /* kyslík = odtok na dně */
+      var d = g.drain;
+      if(c.pulse > 0){ ctx.globalAlpha = 0.4 * c.pulse; dot(d.x, d.y - 1, 9 + 8 * (1 - c.pulse), C.forest); ctx.globalAlpha = 1; }
+      dot(d.x, d.y - 1, 9, o2 ? C.forest : FAINT);
+      ctx.textAlign = 'center'; ctx.font = '700 7.5px ' + MONO; ctx.fillStyle = o2 ? '#fff' : C.inkSoft;
+      ctx.fillText(o2 ? 'O₂' : '∅', d.x, d.y + 1.7);
+      /* zásobník NADH */
+      var pl = g.pool, bx = pl.x - pl.sp / 2 - 3, by = pl.y - pl.sp / 2 - 3, bw = 4 * pl.sp + 6, bh = 3 * pl.sp + 6;
+      ctx.strokeStyle = o2 ? C.sage : C.terra; ctx.globalAlpha = 0.6; ctx.lineWidth = 1;
+      roundRect(ctx, bx, by, bw, bh, 4); ctx.stroke(); ctx.globalAlpha = 1;
+      ctx.fillStyle = C.inkSoft; ctx.font = '600 8.5px ' + MONO; ctx.textAlign = 'center';
+      ctx.fillText('NADH', bx + bw / 2, by + bh + 11);
+      if(!o2) for(i = 0; i < N_E; i++){ var ps = poolSpot(i); dot(ps[0], ps[1], g.tr, C.terra); }
+      /* popisky fází */
+      for(k = 0; k < 4; k++) stageLabel(k);
+      ctx.textAlign = 'center'; ctx.fillStyle = C.inkSoft; fitFont('CO₂ + H₂O', S.x1 - S.x0, 9.5, '500', MONO);
+      var prodW = ctx.measureText('CO₂ + H₂O').width;
+      ctx.fillText('CO₂ + H₂O', clamp(g.drain.x, S.x0 + prodW / 2, g.R.x1 - prodW / 2), g.yBot + 18);
+      /* CO2 odchází cestou */
+      ctx.font = '600 9px ' + MONO; ctx.textAlign = 'left'; ctx.fillStyle = C.inkSoft;
+      for(i = 0; i < c.puffs.length; i++){
+        var pf = c.puffs[i], q = pf.t / 1.2;
+        ctx.globalAlpha = Math.max(0, 1 - q);
+        ctx.fillText('CO₂', pf.x + 4, pf.y - 4 - q * 22);
+      }
+      ctx.globalAlpha = 1;
+      /* elektrony na NADH */
+      for(i = 0; i < c.tokens.length; i++){
+        var tk = c.tokens[i];
+        if(tk.mode === 'gone' || ((tk.mode === 'fly' || tk.mode === 'bounce') && tk.t < 0)) continue;
+        var tp = tokenPos(tk);
+        if(tp) dot(tp[0], tp[1], g.tr, C.forest);
+      }
+      /* kulička: glukóza → pyruvát → … */
+      var bp = ballPos();
+      if(c.phase === 'etc' || c.phase === 'done'){
+        if(c.fade > 0.01){ ctx.globalAlpha = c.fade; glucose(bp[0], bp[1], g.r * (0.4 + 0.6 * c.fade), C.terra); ctx.globalAlpha = 1; }
+      } else if(c.phase === 'ferment' || c.phase === 'stalled'){
+        var fq = c.phase === 'stalled' ? 1 : clamp((c.t - 0.8) / 0.35, 0, 1);
+        glucose(bp[0], bp[1], g.r, mix(C.terra, C.sage, fq));
+        if(fq > 0){
+          ctx.globalAlpha = fq; ctx.textAlign = 'left'; ctx.fillStyle = INK_TERRA;
+          fitFont('→ laktát', S.x1 - bp[0] - g.r - 6, 9.5, '700', MONO, 8);
+          ctx.fillText('→ laktát', bp[0] + g.r + 5, bp[1] + 3.5);
+          ctx.globalAlpha = 1;
+        }
+      } else {
+        glucose(bp[0], bp[1], g.r, C.terra);
+      }
+      /* kam jde energie */
+      var segs = [], items = null;
+      if(c.phase === 'done'){
+        var fa = TOTAL_ATP * ATP_KJ / G_KJ;
+        segs = [{f:fa, c:C.gold}, {f:1 - fa, c:C.fMid}];
+        items = [{c:C.gold, t:'ATP ' + pct(fa)}, {c:C.fMid, t:'teplo ' + pct(1 - fa)}];
+      } else if(c.phase === 'stalled'){
+        var fa2 = 2 * ATP_KJ / G_KJ, fh = (LACT_KJ - 2 * ATP_KJ) / G_KJ;
+        segs = [{f:fa2, c:C.gold}, {f:fh, c:C.fMid}, {f:1 - fa2 - fh, c:C.sage}];
+        items = [{c:C.gold, t:'ATP ' + pct(fa2)}, {c:C.fMid, t:'teplo ' + pct(fh)}, {c:C.sage, t:'v' + NB + 'laktátu ' + pct(1 - fa2 - fh)}];
+      }
+      bar(g.R.x0, g.R.x1, g.barY, segs, c.fill);
+      if(items && c.fill > 0.02){
+        ctx.globalAlpha = Math.min(1, c.fill * 2); legend(items, g.R.x0, g.R.x1, g.barY + 22); ctx.globalAlpha = 1;
+      } else {
+        ctx.textAlign = 'left'; ctx.fillStyle = C.inkSoft; ctx.font = '600 9.5px ' + MONO;
+        ctx.fillText('kam jde energie?', g.R.x0, g.barY + 22);
+      }
+      /* mince ATP letí do počítadla */
+      for(i = 0; i < c.coins.length; i++){
+        var co = c.coins[i];
+        if(co.t < 0) continue;
+        var u = ease(clamp(co.t / co.dur, 0, 1)), ex = g.coin.x, ey = g.coin.y;
+        var mx = (co.x0 + ex) / 2, my = Math.min(co.y0, ey) - 30;
+        coin((1 - u) * (1 - u) * co.x0 + 2 * (1 - u) * u * mx + u * u * ex,
+             (1 - u) * (1 - u) * co.y0 + 2 * (1 - u) * u * my + u * u * ey, 3.8, false);
+      }
     }
 
-    function softResetStair(){ runAnim=false; stalled=false; done=false; markPos=0; target=0; lastArrived=-1; atp=0; credited=[]; electrons=0; if(elAtp)elAtp.textContent='0'; if(elCap)elCap.textContent='\u2013'; }
-    function drawStatic(){
-      matchSpent=true; fireProg=1; fireAnim=false;
-      if(o2){ markPos=N-1; atp=32; stalled=false; electrons=0; } else { markPos=1; atp=2; stalled=true; electrons=12; }
-      if(elFireCap)elFireCap.textContent='~0 %'; if(elAtp)elAtp.textContent=String(atp); if(elCap)elCap.textContent='~'+pct(atp)+' %';
-      draw();
-    }
-
-    var loop=makeLoop(canvas, step);
-    canvas._onResize=function(){ if(REDUCED) drawStatic(); else draw(); };
-
+    /* ---------- ovládání ---------- */
     document.getElementById('stairFire').addEventListener('click', function(){
-      matchSpent=false; fireProg=0; fireAnim=true; if(elFireCap)elFireCap.textContent='\u2013';
-      if(REDUCED){ matchSpent=true; fireProg=1; if(elFireCap)elFireCap.textContent='~0 %'; draw(); }
+      resetFire();
+      if(REDUCED){ fire.phase = 'done'; fire.fill = 1; fire.glow = 0.6; if(elFireCap) elFireCap.textContent = '~0' + NB + '%'; draw(); return; }
+      fire.phase = 'fall'; fire.y = g.yTop - g.r; fire.v = 0;
     });
     document.getElementById('stairRun').addEventListener('click', function(){
-      softResetStair();
-      if(REDUCED){ drawStatic(); return; }
-      runAnim=true;
+      resetCell();
+      if(REDUCED){ finishStatic(); draw(); return; }
+      cell.phase = 'run';
     });
     btnO2.addEventListener('click', function(){
-      o2=!o2; btnO2.textContent=o2?'Kyslík: ZAP':'Kyslík: VYP'; btnO2.setAttribute('aria-pressed', String(!o2));
-      softResetStair(); if(REDUCED) drawStatic(); else draw();
+      o2 = !o2;
+      btnO2.textContent = o2 ? 'Kyslík: ZAP' : 'Kyslík: VYP';
+      btnO2.setAttribute('aria-pressed', String(!o2));
+      resetCell(); draw();
     });
     document.getElementById('stairReset').addEventListener('click', function(){
-      matchSpent=false; fireProg=0; fireAnim=false; if(elFireCap)elFireCap.textContent='\u2013';
-      softResetStair(); if(REDUCED) drawStatic(); else draw();
+      resetFire(); resetCell(); draw();
     });
 
-    if(REDUCED){ drawStatic(); } else { loop.start(); }
+    function onResize(){
+      var w = canvas.clientWidth;
+      if(w && w === lastW) return;
+      lastW = w; resize(); draw();
+    }
+    onResize();
+    if(window.ResizeObserver) new ResizeObserver(onResize).observe(canvas);
+    else window.addEventListener('resize', onResize);
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ draw(); });
+    var loop = makeLoop(canvas, step);
+    if(!REDUCED) loop.start();
   })();
 
   /* ===== PĚT TAHŮ – panel se záložkami ===== */
