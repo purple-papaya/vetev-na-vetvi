@@ -19,6 +19,7 @@ css/
   chapter.css              styly kapitoly Biochemie (pages/wetware-ch1-jsi-sloveso.html)
   farmakologie-ch1.css     styly kapitoly Farmakologie — „Lék je vlna“ (vlastní design)
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
+  fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
@@ -27,6 +28,7 @@ pages/
   wetware-ch1-jsi-sloveso.html          Biochemie · Kapitola první — Jsi sloveso (hotová kapitola)
   wetware-farmakologie-ch1-lek-je-vlna.html   Farmakologie · Kapitola první — Lék je vlna (hotová kapitola)
   wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html   Neurobiologie · Kapitola první — Jak se sůl naučila říkat já (hotová kapitola)
+  wetware-fyziologie-ch1-more-pod-kuzi.html   Fyziologie · Kapitola první — Moře pod kůží (hotová kapitola)
   o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html               podvětve Wetware — zástupné

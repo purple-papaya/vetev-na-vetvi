@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Moře pod kůží – Větev na větvi</title>
+<meta name="description" content="Úvod do logiky fyziologie: jak tělo udržuje vnitřní prostředí stálé – zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova za plného provozu. S pěti interaktivními simulacemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/fyziologie-ch1.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-fyziologie.html">Fyziologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Jak zůstat naživu</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title"><em>Moře</em><br>pod kůží</h1>
+  <p class="deck">Jak tělo udržuje své nitro stálé, zatímco se všechno kolem mění – a&nbsp;proč nesmí nikdy dopustit, aby se všechno vyrovnalo.</p>
+  <p class="byline">Úvod do logiky fyziologie: pět myšlenek, přirovnání ze života a&nbsp;pět simulací na hraní. <b>Vychází z</b>&nbsp;učebnice <i>Boron &amp; Boulpaep, Medical Physiology</i> (3.&nbsp;vydání).</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Větvící se strom, který je zároveň dýchacími cestami plic: jedna trubice se znovu a znovu dělí na stále jemnější větve zakončené drobnými sklípky.">
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="3" stroke-linecap="round">
+        <path d="M450,236 C450,210 450,196 450,178"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M450,178 C450,160 400,150 360,132"/>
+        <path d="M450,178 C450,160 500,150 540,132"/>
+        <path d="M360,132 C330,118 315,108 300,90"/>
+        <path d="M360,132 C355,116 372,104 392,92"/>
+        <path d="M540,132 C570,118 585,108 600,90"/>
+        <path d="M540,132 C545,116 528,104 508,92"/>
+        <path d="M300,90 C288,78 280,70 268,58"/>
+        <path d="M300,90 C305,76 320,70 332,60"/>
+        <path d="M392,92 C384,78 380,68 372,56"/>
+        <path d="M392,92 C400,80 412,74 424,64"/>
+        <path d="M600,90 C612,78 620,70 632,58"/>
+        <path d="M600,90 C595,76 580,70 568,60"/>
+        <path d="M508,92 C516,78 520,68 528,56"/>
+        <path d="M508,92 C500,80 488,74 476,64"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="268" cy="58" r="5"/><circle cx="332" cy="60" r="5"/>
+        <circle cx="372" cy="56" r="5"/><circle cx="424" cy="64" r="5"/>
+        <circle cx="632" cy="58" r="5"/><circle cx="568" cy="60" r="5"/>
+        <circle cx="528" cy="56" r="5"/><circle cx="476" cy="64" r="5"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Dýchací cesty plic. Jedna trubice se rozdělí na dvě, pak znovu a&nbsp;znovu, zhruba třiadvacetkrát, až větve skončí asi 300&nbsp;miliony drobných plicních sklípků. Větev na větvi na větvi.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Právě teď má tvé tělo kolem 37&nbsp;°C. Stejně tomu bylo ráno a&nbsp;stejně to bude i&nbsp;zítra, plus minus stupeň, ať strávíš den na sněhu, nebo v&nbsp;sauně. Krev máš zhruba stejně slanou a&nbsp;stejně kyselou jako před rokem, ať bylo k&nbsp;obědu cokoli. Nemusíš na nic z&nbsp;toho myslet. Něco v&nbsp;tobě se o&nbsp;to stará, každou vteřinu.</p>
+
+  <p>Proč na tom záleží, vysvětlil už v&nbsp;roce 1878 francouzský fyziolog Claude Bernard. Tvé buňky se s&nbsp;vnějším světem vůbec nesetkají. Každá z&nbsp;nich je obklopená tekutinou – vodou mezi buňkami a&nbsp;tekutou částí krve – a&nbsp;ta tekutina je jediný svět, který znají. Bernard ji nazval <span class="kw">vnitřním prostředím</span> (<i>milieu intérieur</i>) a&nbsp;tvrdil, že právě jeho stálost umožňuje svobodný, nezávislý život. Ještěrka je za chladného rána ztuhlá a&nbsp;pomalá; ty si můžeš vyjít na procházku do sněhu. Rozdíl je uvnitř.</p>
+
+  <p>A&nbsp;to vnitřní prostředí je slaná voda. Je zhruba stejně slaná jako fyziologický roztok v&nbsp;nemocniční infuzi, který se ostatně míchá právě tak, aby jí odpovídal. Mořská voda je asi čtyřikrát slanější. Tvé buňky pořád žijí jako jejich jednobuněční předkové, obklopené vodou. Jediný rozdíl je v&nbsp;tom, že ty tu vodu nosíš s&nbsp;sebou, uzavřenou v&nbsp;kůži.</p>
+
+  <p>Americký fyziolog Walter Cannon dal později tomuto neustálému udržování jméno: <span class="kw">homeostáza</span>. Předpona <i>homeo-</i> znamená „podobný“, ne „stejný“, a&nbsp;Cannon výslovně upozorňoval, že nejde o&nbsp;nic pevného a&nbsp;nehybného. Jde o&nbsp;stav, který se může měnit, a&nbsp;přesto zůstává poměrně stálý.</p>
+
+  <p>V&nbsp;učebnicích se homeostáza často popisuje jako „rovnováha“. Fyzikálně je to ale spíš naopak. Ve fyzice je <span class="kw">rovnováha</span> stav, kdy se všechno vyrovnalo: teploty jsou stejné, látky rovnoměrně promíchané a&nbsp;nic už nemá kam téct. Hrnek čaje zapomenutý na stole dospěje do rovnováhy s&nbsp;místností. Tělo po smrti také. Živé tělo se tam nedostane nikdy. Je teplejší než místnost, jeho buňky mají uvnitř jiné soli než venku a&nbsp;každou vteřinu spotřebovává energii, aby se tyhle rozdíly nevyrovnaly. To není rovnováha, ale <span class="kw">ustálený stav</span>. Boron a&nbsp;Boulpaep to říkají hned v&nbsp;první kapitole své učebnice: dobře regulovaná veličina není v&nbsp;rovnováze, ale v&nbsp;ustáleném stavu, a&nbsp;udržet ji v&nbsp;něm stojí energii.</p>
+
+  <p>Fyziologie má tisíce detailů, ale stojí na hrstce myšlenek. Tady je pět z&nbsp;nich. Jakmile je znáš, přestanou srdce, plíce a&nbsp;ledviny vypadat jako samostatné kapitoly a&nbsp;začnou vypadat jako variace na jedno téma.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si <b>akvárium</b>. Někdo musí hlídat, aby voda měla správnou teplotu, slanost a&nbsp;kyselost, jinak ryby uhynou. Dobré akvárium má ohřívač, filtr, čerpadlo a&nbsp;sadu testů. Ty máš od každého tisíce, běží ve dne v&nbsp;noci a&nbsp;nikdo se o&nbsp;ně starat nemusí.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 NEGATIVNÍ ZPĚTNÁ VAZBA ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span><em>Termostat</em></h2>
+
+  <p>Jak udržet něco stálé, když do toho svět pořád strká? Nastavit to jednou a&nbsp;odejít nejde. Musíš to neustále kontrolovat a&nbsp;opravovat, podobně jako když udržuješ auto v&nbsp;jízdním pruhu: volant nikdy nedržíš úplně rovně, jen ho pořád lehce pootáčíš doleva a&nbsp;doprava.</p>
+
+  <p>Fyziologové tomu říkají <span class="kw">negativní zpětná vazba</span>. Potřebuje <strong>čidlo</strong>, které veličinu měří, <strong>žádanou hodnotu</strong>, se kterou ji porovná, a&nbsp;<strong>efektor</strong>, který ji vrátí zpátky, když se odchýlí. Boron a&nbsp;Boulpaep k&nbsp;tomu přidávají čtvrtý prvek, na který se snadno zapomíná: <strong>zesílení</strong>, tedy jak silně systém na danou odchylku zareaguje. Změřit, porovnat, opravit – pořád dokola, dokud žiješ.</p>
+
+  <p>Přesně tak funguje termostat na stěně. Změří teplotu v&nbsp;místnosti, porovná ji s&nbsp;nastavenou hodnotou a&nbsp;zapne nebo vypne topení. Tvé tělo takových smyček provozuje tisíce: pro teplotu, cukr v&nbsp;krvi, krevní tlak, kyselost, kyslík, oxid uhličitý, vodu i&nbsp;sůl.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Nejjednodušší verzi najdeš ve <b>splachovací nádržce</b> na záchodě. Jak se nádržka plní, stoupá s&nbsp;hladinou plovák, a&nbsp;když je dost vysoko, zavře ventil. Žádná elektronika, žádný software, jen součástka, která pozná „plno“ a&nbsp;zastaví přítok. Spousta toho, co tě drží naživu, není o&nbsp;nic chytřejší. Jen se to opakuje tisíckrát.
+  </aside>
+
+  <p>Teplotní smyčka má celý tým efektorů. Když je ti horko, potíš se a&nbsp;cévy v&nbsp;kůži se rozšíří, aby odvedly teplo. Když je ti zima, třeseš se, a&nbsp;tím vyrábíš teplo; cévy v&nbsp;kůži se stáhnou, aby ho udržely, a&nbsp;drobné svaly u&nbsp;kořínků chlupů se smrští. To je husí kůže, pozůstatek srsti, kterou už nemáme. Cukr v&nbsp;krvi funguje stejně, jen s&nbsp;jinými hráči. Když stoupne, slinivka vyplaví inzulin a&nbsp;buňky si cukr z&nbsp;krve vezmou; když klesne, slinivka vyplaví glukagon a&nbsp;játra cukr do krve vrátí.</p>
+
+  <p>Dvě věci lidi často matou. Zaprvé, „negativní“ tu neznamená „špatná“. Znamená, že smyčka jde proti změně: když hodnotu zvedneš, stlačí ji zpátky. Zadruhé, regulovaná veličina nikdy nesedí přesně na žádané hodnotě, protože smyčka neustále opravuje drobné odchylky oběma směry. A&nbsp;sama žádaná hodnota se během dne posouvá: kolem čtvrté ráno máš teplotu asi o&nbsp;půl stupně nižší než pozdě odpoledne.</p>
+
+  <p>Vyzkoušej si to. Pošli tělo do mrazu nebo do vedra a&nbsp;sleduj, jak ho smyčka vrací zpátky. Pak zpětnou vazbu vypni.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Tělesný termostat</div>
+      <div class="readout">
+        <span class="lo">teplota</span> <b id="s1-temp">37,0&nbsp;°C</b>
+        <span class="lo">tělo</span> <b id="s1-state">drží teplotu</b>
+      </div>
+    </div>
+    <canvas id="sim1" height="300" aria-label="Průběh tělesné teploty v čase kolem žádané hodnoty 37 °C, pod ním pruh s teplotou okolí."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl" id="s1-cold">Mráz ❄</button>
+      <button class="ctrl spark" id="s1-hot">Vedro ☀</button>
+      <button class="ctrl is-on" id="s1-fb" aria-pressed="true">Zpětná vazba: zapnutá</button>
+      <label>Síla korekce <input type="range" id="s1-gain" min="0" max="100" value="45" aria-label="Síla korekce"></label>
+    </div>
+  </div>
+  <figcaption><b>Negativní zpětná vazba.</b> Přerušovaná čára je žádaná hodnota, 37&nbsp;°C; pruh dole ukazuje teplotu okolí. V&nbsp;mrazu se tělo třese, ve vedru se potí a&nbsp;jeho teplota se drží blízko 37&nbsp;°C. Když sílu korekce zvýšíš, systém začne přestřelovat a&nbsp;kmitat, jako sprcha, u&nbsp;které pořád přetáčíš kohoutek, protože voda reaguje se zpožděním. Když zpětnou vazbu vypneš, teplota těla prostě sleduje okolí.</figcaption>
+</figure>
+
+<section class="prose">
+  <p>To kmitání není jen vrtoch simulace. Při těžkém srdečním selhání teče krev z&nbsp;plic do mozku pomalu, takže smyčka, která řídí dýchání, dostává informace pozdě. Dýchání pak přestřeluje oběma směry: zesílí, zeslábne, na chvíli se zastaví a&nbsp;zase se rozjede. Říká se tomu Cheyneovo-Stokesovo dýchání a&nbsp;je to učebnicový příklad zpětné vazby, která přichází pozdě.</p>
+
+  <p>Existuje i&nbsp;<span class="kw">pozitivní zpětná vazba</span>, kdy změna vyvolá ještě víc téže změny. Je to ten pískot, když se mikrofon dostane moc blízko k&nbsp;vlastnímu reproduktoru. Tělo ji používá jen výjimečně, a&nbsp;to pro děje, které mají rychle doběhnout do jasného konce. Při porodu každý stah vyvolá vyplavení oxytocinu, který zesílí další stah, dokud se dítě nenarodí. Při srážení krve každý aktivovaný srážecí faktor aktivuje další. Stejně funguje i&nbsp;bleskový vzestup akčního potenciálu v&nbsp;nervu.</p>
+
+  <p class="punch">Tvých 37&nbsp;stupňů není stav, ve kterém jsi. Je to <b>výsledek, který tělo vyrábí znovu</b> každou vteřinu.</p>
+</section>
+
+<!-- ===================== §2 SPÁDY / DIFUZE / OSMÓZA ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Všechno jde <em>z&nbsp;kopce</em></h2>
+
+  <p>Proč se tělo musí tolik snažit? Kvůli jednomu z&nbsp;nejspolehlivějších pravidel přírody: rozdíly mizí. Teplo přechází z&nbsp;teplejšího na chladnější, nikdy obráceně. Kapka inkoustu se ve sklenici vody rozptýlí a&nbsp;už se nikdy znovu neposbírá. Vůně kávy se z&nbsp;kuchyně dostane do všech pokojů. Když věci necháš být, každý rozdíl se vyrovná.</p>
+
+  <p>V&nbsp;těle je nejdůležitější podobou tohoto pravidla <span class="kw">difuze</span>: molekuly se šíří z&nbsp;místa, kde jich je hodně, tam, kde jich je málo. Nic je netlačí. Každá molekula se pohybuje náhodně a&nbsp;naráží do ostatních. Dav se rozptýlí prostě proto, že způsobů, jak být rozptýlený, je nesrovnatelně víc než způsobů, jak zůstat pohromadě. Difuze nic nestojí a&nbsp;na krátké vzdálenosti je velmi rychlá.</p>
+
+  <p><span class="kw">Osmóza</span> je zvláštní případ, který mate skoro každého. Dej mezi sladkou a&nbsp;slanou vodu membránu, která propustí vodu, ale ne sůl, a&nbsp;voda začne přecházet na slanou stranu, jako by ji chtěla naředit. Rozpuštěné částice snižují to, čemu chemici říkají chemický potenciál vody, a&nbsp;voda se stejně jako všechno ostatní pohybuje z&nbsp;vyššího k&nbsp;nižšímu. Osmóza je prostě difuze vody přes membránu směrem k&nbsp;roztoku s&nbsp;více rozpuštěnými částicemi.</p>
+
+  <p>Tohle jediné pravidlo vysvětluje spoustu věcí. Červená krvinka v&nbsp;čisté vodě nabobtná a&nbsp;praskne, v&nbsp;mořské vodě se scvrkne. Zvadlý salát ve studené vodě zase zkřehne a&nbsp;osolené okurky pustí vodu. A&nbsp;proto taky nemůžeš pít mořskou vodu: ledviny neumějí vyrobit moč tak slanou jako moře, takže zbavit se soli z&nbsp;jedné sklenice by tě stálo víc vody, než kolik jí v&nbsp;té sklenici bylo.</p>
+
+  <p>Tělo toho chytře využívá. Pumpy na vodu nemá. Když potřebuje přesunout vodu, pumpuje sůl a&nbsp;voda jde za ní. Tak vstřebává vodu střevo a&nbsp;tak ji ledviny získávají zpátky. Proto také rehydratační roztoky obsahují sůl i&nbsp;cukr: střevo je vstřebává společně a&nbsp;voda jde s&nbsp;nimi.</p>
+
+  <p>Kde tohle všechno putování z&nbsp;kopce končí? V&nbsp;rovnováze: všechno je rovnoměrně promíchané a&nbsp;žádné rozdíly nezbyly. Pro buňku to znamená smrt. Živá buňka drží sodík převážně venku a&nbsp;draslík uvnitř a&nbsp;oba jí neustále prosakují membránou. Proto pohání pumpy, především sodno-draselnou pumpu, které ionty přenášejí zpátky do kopce, proti spádu. Pumpy únik nezastaví, jen s&nbsp;ním drží krok. Nic se nemění, protože pumpy vracejí přesně tolik, kolik uteče. To je ustálený stav, ne rovnováha. U&nbsp;savců v&nbsp;klidu spotřebuje samotná sodno-draselná pumpa zhruba pětinu až čtvrtinu veškerého ATP, které tělo vyrobí.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si <b>děravý kbelík</b>. Když do něj liješ vodu přesně tak rychle, jak vytéká, hladina zůstane stejná. Je stálá, a&nbsp;přitom v&nbsp;kbelíku nic neodpočívá, a&nbsp;jakmile přestaneš lít, začne klesat. To je ustálený stav. Tvé buňky jsou kbelíky, do kterých někdo nikdy nepřestane lít.
+  </aside>
+
+  <p>Vyzkoušej si to. Nech částice rozptýlit, dokud nebudou obě strany stejné: pohybují se dál, ale na každou stranu jich přejde stejně. Pak zvol membránu, která sůl zadrží, a&nbsp;sleduj, jak se místo soli hýbe voda. Nakonec zapni pumpu a&nbsp;uvidíš, co stojí udržet rozdíl.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Z&nbsp;kopce a&nbsp;zase nahoru</div>
+      <div class="readout">
+        <span class="lo">vlevo</span> <b id="s2-left">—</b>
+        <span class="lo">vpravo</span> <b id="s2-right">—</b>
+        <span class="lo">stav</span> <b id="s2-state">—</b>
+      </div>
+    </div>
+    <canvas id="sim2" height="300" aria-label="Dvě komory s vodou oddělené membránou, s částicemi soli, které se rozptylují; membrána může sůl zadržet, takže se místo ní pohybuje voda, a pumpa vrací sůl do kopce."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="s2-mode" aria-pressed="true">Režim: difuze</button>
+      <button class="ctrl" id="s2-add">Přisypat sůl vlevo</button>
+      <button class="ctrl spark" id="s2-pump" aria-pressed="false">Pumpa: vypnutá</button>
+      <button class="ctrl" id="s2-reset">Znovu</button>
+    </div>
+  </div>
+  <figcaption><b>Difuze, osmóza a&nbsp;ustálený stav.</b> Čísla ukazují koncentraci soli na každé straně. V&nbsp;režimu difuze membrána sůl propouští a&nbsp;ta se šíří, dokud nejsou obě strany stejné; v&nbsp;rovnováze se částice pohybují dál, ale na každou stranu jich přechází stejně. V&nbsp;režimu osmózy membrána sůl zadrží, takže se ke slanější straně přesouvá voda a&nbsp;mění se hladiny. Pumpa spotřebovává energii, aby sůl vracela do kopce. Se zapnutou pumpou rozdíl vydrží – ne proto, že by nic neunikalo, ale proto, že pumpa s&nbsp;únikem drží krok.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Svět tě neustále vyrovnává. Zůstat naživu znamená <b>udržet si své rozdíly</b> a&nbsp;platit za ně.</p>
+</section>
+
+<!-- ===================== §3 PROUDĚNÍ ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Pumpy a&nbsp;<em>potrubí</em></h2>
+
+  <p>Difuze má háček. Na nepatrné vzdálenosti je rychlá a&nbsp;na dlouhé beznadějná, protože doba, kterou potřebuje, roste s&nbsp;druhou mocninou vzdálenosti. Šířku buňky urazí kyslík za setiny sekundy, milimetr za pár minut, centimetr za hodiny a&nbsp;metr za roky. Samotnou difuzí by se kyslík z&nbsp;plic do prstů na nohou nikdy nedostal.</p>
+
+  <p>Cokoli silnějšího než zhruba milimetr proto potřebuje druhý způsob dopravy: <span class="kw">proudění</span>. Místo čekání, až molekuly někam dobloudí, se přesouvá celá tekutina, podobně jako když rostoucí město přestane spoléhat na studny a&nbsp;postaví vodovod. Přesně k&nbsp;tomu slouží srdce a&nbsp;cévy. Srdce dopraví krev na pár setin milimetru téměř ke každé buňce a&nbsp;poslední úsek obstará difuze. Plíce to dělají stejně. Dýchání dopraví vzduch hluboko do dýchacích cest a&nbsp;závěr cesty, včetně přechodu do krve přes bariéru tenkou asi 0,6&nbsp;µm, nechává na difuzi.</p>
+
+  <p>Kolik potrubím proteče? Fyziologie používá stejný zákon jako zahradní hadice nebo elektrický obvod: <strong>průtok se rovná tlakovému rozdílu dělenému odporem</strong>. Pustíš kohoutek víc a&nbsp;voda teče silněji. Hadici přimáčkneš a&nbsp;teče slaběji. V&nbsp;těle je hnací silou krevní tlak, odporem cévy a&nbsp;výsledkem průtok krve, v&nbsp;klidu asi pět litrů za minutu.</p>
+
+  <p>Překvapivé je, jak silně odpor závisí na šířce trubky. Průtok neroste úměrně poloměru, dokonce ani jeho druhé mocnině, ale jeho <em>čtvrté mocnině</em>. Zmenši poloměr cévy na polovinu a&nbsp;průtok klesne na šestnáctinu. Rozšiř ji jen o&nbsp;deset procent a&nbsp;průtok vzroste skoro o&nbsp;polovinu. Proto tělo rozvádí krev hlavně tím, že mění šířku malých tepen. Nepatrné stažení svaloviny kolem nich funguje jako kohoutek. Tak se krev nahrne do svalů, když běžíš, a&nbsp;do tváře, když se červenáš.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Zkus pít hustý milkshake <b>širokým brčkem na bubble tea</b> a&nbsp;pak obyčejným brčkem, které je zhruba poloviční. Poloviční šířka, a&nbsp;sát musíš asi šestnáctkrát silněji.
+  </aside>
+
+  <p>Vyzkoušej si to: když měníš tlak, průtok ho poslušně následuje. Když změníš poloměr, průtok poskočí.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Průtok = tlak ÷ odpor</div>
+      <div class="readout">
+        <span class="lo">tlak</span> <b id="s3-press-v">×1,00</b>
+        <span class="lo">poloměr</span> <b id="s3-rad-v">×1,00</b>
+        <span class="lo">průtok</span> <b id="s3-flow">×1,00</b>
+      </div>
+    </div>
+    <canvas id="sim3" height="300" aria-label="Céva s proudícími částicemi; posuvníky mění tlak a poloměr a průtok závisí na čtvrté mocnině poloměru."></canvas>
+    <div class="sim-controls">
+      <label>Tlak <input type="range" id="s3-press" min="10" max="100" value="55" aria-label="Tlak"></label>
+      <label>Poloměr <input type="range" id="s3-rad" min="20" max="100" value="60" aria-label="Poloměr"></label>
+      <span class="hint">dvojnásobný poloměr → 16× větší průtok</span>
+    </div>
+  </div>
+  <figcaption><b>Čtvrtá mocnina.</b> Průtok roste úměrně tlaku, ale se čtvrtou mocninou poloměru. Zdvojnásob poloměr a&nbsp;průtok vzroste šestnáctkrát; zmenši ho na polovinu a&nbsp;průtok klesne na šestnáctinu. Proto tělo rozděluje krev mezi orgány hlavně změnou šířky malých tepen.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">I&nbsp;když sedíš úplně bez hnutí, uvnitř jsi v&nbsp;pohybu: <b>celý objem tvé krve oběhne tělo</b> zhruba jednou za minutu.</p>
+</section>
+
+<!-- ===================== §4 POVRCH A OBJEM ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Svět v&nbsp;<em>záhybech</em></h2>
+
+  <p>Velikost přináší ještě jeden problém, geometrický. Všechno, co si tělo vyměňuje se světem (kyslík, oxid uhličitý, potrava, odpad, teplo), musí projít nějakým povrchem. Když ale něco zvětšíš, povrch roste s&nbsp;druhou mocninou velikosti, kdežto objem se třetí. Zdvojnásob velikost těla a&nbsp;bude mít čtyřikrát víc povrchu, ale osmkrát víc objemu, který je třeba živit. Čím jsi větší, tím méně povrchu připadá na každý gram.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    <b>Drcený led</b> taje rychleji než kostka a&nbsp;<b>brambory nakrájené na kostičky</b> se uvaří dřív než celé: stejné množství hmoty, mnohem víc povrchu. Proto také miminka prochladnou rychleji než dospělí a&nbsp;potřebují čepičku, i&nbsp;když tobě je teplo.
+  </aside>
+
+  <p>Velká zvířata to obcházejí skládáním. Velké povrchy vměstnají do malého objemu tak, že je větví a&nbsp;vrásní. Tvé dýchací cesty se větví zhruba třiadvacetkrát a&nbsp;končí asi 300&nbsp;miliony drobných plicních sklípků o&nbsp;celkové ploše 50–100&nbsp;m², tedy zhruba jako byt 3+1. Jediný balon o&nbsp;stejném objemu jako tvé plíce by měl povrch jen kolem 0,16&nbsp;m², dva a&nbsp;půl listu papíru A4. Výstelka tenkého střeva je zřasená, řasy jsou pokryté prstovitými klky a&nbsp;klky mikroklky. Rozložená do roviny by měla asi 30&nbsp;m², zhruba jako garsonka.</p>
+
+  <p>Proto také buňky zůstávají malé. Buňka, která by příliš vyrostla, by měla na svůj objem málo membrány a&nbsp;její střed by hladověl. Když chce život být velký, má dvě možnosti: vyrobit víc malých buněk, nebo poskládat své povrchy. Obvykle dělá obojí. Dýchací cesty, cévy i&nbsp;výstelka střeva jsou postavené podle stejného vzoru: větev na větvi na větvi.</p>
+
+  <p>Nech tělo v&nbsp;simulaci růst a&nbsp;sleduj, jak mu povrch přestává stačit. Pak ho nech rozvětvit.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Povrch nestíhá</div>
+      <div class="readout">
+        <span class="lo">povrch ÷ objem</span> <b id="s4-ratio">—</b>
+        <span class="lo">mimo dosah</span> <b id="s4-starve">—</b>
+      </div>
+    </div>
+    <canvas id="sim4" height="300" aria-label="Tělo, které roste podle posuvníku; s růstem vzniká uprostřed oblast příliš vzdálená od povrchu, dokud větvení nepřinese povrch dovnitř."></canvas>
+    <div class="sim-controls">
+      <label>Velikost <input type="range" id="s4-size" min="0" max="100" value="30" aria-label="Velikost"></label>
+      <button class="ctrl spark" id="s4-branch" aria-pressed="false">Větvení: vypnuté</button>
+      <span class="hint">zvětši tělo, pak ho nech rozvětvit</span>
+    </div>
+  </div>
+  <figcaption><b>Proč je tělo poskládané.</b> Když tělo roste, jeho povrch roste pomaleji než objem a&nbsp;uprostřed vznikne oblast, která je od všech povrchů příliš daleko, než aby se dala zásobit (vybarvená). Větvení vnese povrch dovnitř těla a&nbsp;odříznutá oblast zmizí, aniž by se tělo jakkoli zvětšilo. V&nbsp;plicích jsou těmi větvemi dýchací cesty, v&nbsp;tkáních cévy.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Nosíš v&nbsp;sobě <b>povrchy o&nbsp;rozloze bytu</b>, poskládané tak, aby skoro každá buňka měla zásobování na dosah.</p>
+</section>
+
+<!-- ===================== §5 OBNOVA ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>Za plného <em>provozu</em></h2>
+
+  <p>Kromě udržování stálosti musí tělo zvládat ještě jednu práci: údržbu sebe sama. Buňky se opotřebovávají a&nbsp;většina z&nbsp;nich se vyměňuje, zatímco tělo dál běží. Jako dálnice D1, která se opravuje za plného provozu, jen tělu to jde rychleji.</p>
+
+  <p>Čísla jsou úctyhodná. Tvé tělo vymění zhruba 330&nbsp;miliard buněk denně, skoro čtyři miliony každou sekundu. Výstelka střeva, která to schytává nejvíc, se obnoví každých pár dní. Svrchní vrstvě kůže to trvá zhruba čtyři týdny, červeným krvinkám asi čtyři měsíce a&nbsp;kostře zhruba deset let: každý rok se přestaví asi desetina tvých kostí. Látky, ze kterých se skládáš, tebou protékají ještě rychleji. Voda, která tvoří asi 60&nbsp;% tvé hmotnosti, se z&nbsp;poloviny vymění zhruba za deset dní.</p>
+
+  <p>Tady je zrnko pravdy v&nbsp;oblíbeném tvrzení, že každých sedm let máš úplně nové tělo. To tvrzení neplatí, a&nbsp;to zajímavým způsobem: některé buňky se nevymění nikdy. Neurony tvé mozkové kůry jsou stejně staré jako ty. Bílkoviny v&nbsp;jádru oční čočky vznikly dřív, než ti byly dva roky. A&nbsp;víc než polovina buněk srdečního svalu s&nbsp;tebou zůstane celý život. Víme to díky jaderným zkouškám z&nbsp;50. a&nbsp;60. let, které na čas zvýšily množství radioaktivního uhlíku ve vzduchu: uhlík zabudovaný do DNA buňky prozradí, kdy se buňka narodila.</p>
+
+  <p>Obnova je nejrychlejší tam, kde je největší opotřebení. Výstelka střeva čelí kyselině, enzymům a&nbsp;bakteriím, kůže tření. Odvrácenou stranu vidíme v&nbsp;medicíně. Chemoterapie, která útočí na dělící se buňky, zasáhne nejdřív rychle se obnovující tkáně. Proto může způsobit záněty v&nbsp;ústech, potíže se střevy, zhoršení krevního obrazu a&nbsp;vypadávání vlasů.</p>
+
+  <p>A&nbsp;tělo jen nereaguje. Také plánuje dopředu. Sliny se ti sbíhají už při vůni jídla, ještě před prvním soustem, a&nbsp;srdce zrychlí na startovní čáře dřív, než závod začne. Posunout se může i&nbsp;sama žádaná hodnota. Horečka není rozbitý termostat: mozek žádanou hodnotu záměrně zvýší a&nbsp;ty se třeseš, dokud ji nedoženeš. Homeostáza není pevně nastavený knoflík. Je to nepřetržité vyjednávání se světem.</p>
+
+  <p>V&nbsp;simulaci níže je každý čtvereček jedna buňka obarvená podle stáří. Sleduj, jak různě rychle se tkáně obnovují, a&nbsp;pak obnovu zastav a&nbsp;uvidíš, které selžou první.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 05</span> Za plného provozu</div>
+      <div class="readout">
+        <span class="lo">uplynulo</span> <b id="s5-time">—</b>
+        <span class="lo">1&nbsp;s&nbsp;≈</span> <b id="s5-rate">—</b>
+        <span class="lo">obnova</span> <b id="s5-state">běží</b>
+      </div>
+    </div>
+    <canvas id="sim5" height="330" aria-label="Pět tkání nakreslených jako mřížky buněk obarvených podle stáří: výstelka střeva, pokožka, červené krvinky, kost a neurony mozkové kůry, každá se obnovuje jinou rychlostí."></canvas>
+    <div class="sim-controls">
+      <label>Rychlost <input type="range" id="s5-speed" min="0" max="100" value="25" aria-label="Rychlost času"></label>
+      <button class="ctrl is-on" id="s5-renew" aria-pressed="true">Obnova: zapnutá</button>
+      <button class="ctrl" id="s5-reset">Znovu</button>
+    </div>
+  </div>
+  <figcaption><b>Obnova různou rychlostí.</b> Světlé buňky jsou nové, šedé staré. Výstelka střeva se vymění každých pár dní, svrchní vrstva kůže zhruba za čtyři týdny, červené krvinky asi za čtyři měsíce a&nbsp;kost zhruba za deset let; neurony mozkové kůry se nevymění nikdy a&nbsp;stárnou s&nbsp;tebou. Když obnovu zastavíš, nejdřív selžou rychle se obnovující tkáně, a&nbsp;přesně tak se projevují i&nbsp;vedlejší účinky chemoterapie.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Většina tvých buněk <b>ještě neslavila první narozeniny</b>. Pár jich je přesně stejně starých jako ty.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Tyhle otázky se pořád dokola objevují na Redditu, Quoře, studijních Discordech i&nbsp;ve facebookových skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Jaký je rozdíl mezi anatomií a&nbsp;fyziologií?</summary>
+    <div class="answer">
+      <p>Anatomie popisuje, z&nbsp;jakých částí se tělo skládá a&nbsp;kde leží; fyziologie vysvětluje, jak fungují. Anatomie je kytara, fyziologie hudba.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Co je homeostáza, jednou větou?</summary>
+    <div class="answer">
+      <p>Udržování podmínek uvnitř těla (teploty, soli, kyselosti, cukru, tlaku) v&nbsp;úzkém rozmezí, které buňky potřebují, a&nbsp;to neustálým měřením a&nbsp;opravováním každé odchylky.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Jaký je rozdíl mezi difuzí a&nbsp;osmózou?</summary>
+    <div class="answer">
+      <p>Difuze je šíření jakékoli látky z&nbsp;místa, kde je jí hodně, tam, kde je jí málo, v&nbsp;jakémkoli prostředí: parfém v&nbsp;místnosti, cukr v&nbsp;čaji. Osmóza je zvláštní případ: voda prochází membránou směrem k&nbsp;roztoku s&nbsp;více rozpuštěnými částicemi. Obojí je pasivní a&nbsp;nestojí žádnou energii.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč je negativní zpětná vazba ta „dobrá“?</summary>
+    <div class="answer">
+      <p>„Negativní“ tu znamená „působící proti“. Negativní zpětná vazba jde proti změně, a&nbsp;tím věci stabilizuje. Pozitivní zpětná vazba změnu zesiluje, takže ji tělo používá jen pro děje, které mají rychle doběhnout do jasného konce, jako je porod nebo srážení krve.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč je udržet se naživu tak energeticky náročné?</summary>
+    <div class="answer">
+      <p>Protože všechno v&nbsp;tobě má sklon se vyrovnat: teplo uniká, ionty prosakují membránami, bílkoviny se opotřebovávají. Udržet rozdíly stojí práci. V&nbsp;klidu spotřebuje syntéza bílkovin zhruba čtvrtinu ATP, které tělo vyrobí, a&nbsp;sodno-draselná pumpa pětinu až čtvrtinu. Spolu s&nbsp;prací srdce, dýchacích svalů a&nbsp;dalších pump to dává bazální metabolismus: provozní náklady na život mimo rovnováhu.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Opravdu se každých sedm let vymění všechny buňky v&nbsp;těle?</summary>
+    <div class="answer">
+      <p>Ne. Buňky se obnovují neustále, ale velmi různou rychlostí: výstelka střeva za pár dní, svrchní vrstva kůže zhruba za čtyři týdny, červené krvinky asi za čtyři měsíce, kost zhruba za deset let. Některé buňky se nevymění vůbec: neurony mozkové kůry, jádro oční čočky a&nbsp;víc než polovina buněk srdečního svalu. Úplně nové tělo tedy nemáš nikdy.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kolik vody v&nbsp;sobě mám?</summary>
+    <div class="answer">
+      <p>U&nbsp;typického dospělého muže asi 60&nbsp;% tělesné hmotnosti, u&nbsp;žen a&nbsp;u&nbsp;lidí s&nbsp;větším podílem tuku o&nbsp;něco méně, protože tuk obsahuje málo vody. Zhruba dvě třetiny jsou uvnitř buněk a&nbsp;zbylá třetina mimo ně: právě to je vnitřní prostředí, o&nbsp;kterém je tahle kapitola. U&nbsp;muže vážícího 70&nbsp;kg je to asi 42&nbsp;litrů.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč je fyziologie tak těžká na učení?</summary>
+    <div class="answer">
+      <p>Protože to není seznam faktů, ale síť regulačních smyček, které se navzájem ovlivňují, a&nbsp;někdy si dokonce konkurují. Když běžíš v&nbsp;horku, smyčka, která tě chladí, tě nutí potit se. Pocení ale zmenšuje objem krve a&nbsp;ten hlídá jiná smyčka, pro tělo důležitější. V&nbsp;určité chvíli tělo pocení omezí, a&nbsp;když běžíš dál, hrozí úpal.</p>
+      <p>Dobrá zpráva: pod tím vším se pořád vracejí stejné myšlenky. Zpětná vazba, spády, proudění, povrch a&nbsp;obnova.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== KÓDA ===================== -->
+<section class="coda">
+  <p>Tohle je logika fyziologie v&nbsp;kostce. Udržovat vnitřní prostředí stálé (zpětná vazba). Vzdorovat sklonu všeho se vyrovnat (spády a&nbsp;pumpy). Dopravovat věci na dlouhé vzdálenosti hromadně (proudění). Skládat povrchy tak, aby měla každá buňka zásobování na dosah (povrch). A&nbsp;za plného provozu se neustále přestavovat (obnova). Srdce, plíce, ledviny: každá další kapitola bude těchto pět myšlenek v&nbsp;nové kombinaci. To všechno jen proto, aby si přes čtyřicet litrů teplé slané vody mohlo vyjít na procházku do sněhu. Na obyčejné úterý docela slušný výkon.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Homeostáza, ustálený stav versus rovnováha a&nbsp;prvky negativní zpětné vazby (kap.&nbsp;1); tělesné tekutiny, ustálený stav pumpy a&nbsp;úniku, voda následující rozpuštěné látky (kap.&nbsp;5); Poiseuilleův zákon (kap.&nbsp;17); generace dýchacích cest, plocha sklípků, proudění a&nbsp;difuze v&nbsp;plicích (kap.&nbsp;26); Cheyneovo-Stokesovo dýchání (box&nbsp;32-2); perorální rehydratace (box&nbsp;44-1).</li>
+    <li>Bernard C. <em>Leçons sur les phénomènes de la vie communs aux animaux et aux végétaux</em>, 1878. Cannon W.&nbsp;B. <em>The Wisdom of the Body</em>, 1932 (homeostáza jako stav, který se může měnit, a&nbsp;přesto zůstává poměrně stálý).</li>
+    <li>Rolfe D.&nbsp;F.&nbsp;S., Brown G.&nbsp;C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. <em>Physiological Reviews</em> 77, 1997. V&nbsp;klidu připadá na syntézu bílkovin asi 25–30&nbsp;% a&nbsp;na Na⁺/K⁺-ATPázu 19–28&nbsp;% spotřeby kyslíku spřažené s&nbsp;tvorbou ATP.</li>
+    <li>Francis D.&nbsp;P. a&nbsp;kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. <em>Circulation</em>, 2000.</li>
+    <li>Helander H.&nbsp;F., Fändriks L. Surface area of the digestive tract – revisited. <em>Scandinavian Journal of Gastroenterology</em> 49, 2014 (tenké střevo ≈ 30&nbsp;m²).</li>
+    <li>Sender R., Milo R. The distribution of cellular turnover in the human body. <em>Nature Medicine</em> 27, 2021 (≈ 330&nbsp;miliard vyměněných buněk denně).</li>
+    <li>Spalding K.&nbsp;L. a&nbsp;kol. Retrospective birth dating of cells in humans. <em>Cell</em>, 2005. Bhardwaj R.&nbsp;D. a&nbsp;kol. Neocortical neurogenesis in humans is restricted to development. <em>PNAS</em>, 2006. Bergmann O. a&nbsp;kol. Evidence for cardiomyocyte renewal in humans. <em>Science</em> 324, 2009 (během života se vymění méně než 50&nbsp;% kardiomyocytů). Lynnerup N. a&nbsp;kol. Radiocarbon dating of the human eye lens crystallines reveal proteins without carbon turnover throughout life. <em>PLoS ONE</em> 3, 2008.</li>
+    <li>Obnova pokožky ≈ 26–27&nbsp;dní (Weinstein a&nbsp;Van Scott 1965; Rothberg a&nbsp;kol. 1961, podle BioNumbers); přestavba kostry ≈ 10&nbsp;% ročně (Parfitt 1994; Manolagas, <em>Endocrine Reviews</em> 2000); biologický poločas tělesné vody ≈ 10&nbsp;dní (Kanadská komise pro jadernou bezpečnost, informační list o&nbsp;tritiu); NOAA Ocean Service, „Can humans drink seawater?“.</li>
+    <li>Doby difuze jsou řádové odhady podle vztahu t ≈ x²/2D, kde D pro kyslík ve vodě ≈ 2–3 × 10⁻⁵ cm²/s. Všechno je tu zjednodušeno pro laického čtenáře.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CS = (document.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('cs') === 0;
+
+  /* ---------- language helpers ---------- */
+  function tr(en, cs){ return CS ? cs : en; }
+  function num(x, d){ var s = x.toFixed(d); return CS ? s.replace('.', ',') : s; }
+  function pct(x){ var s = String(Math.round(x)); return CS ? s + ' %' : s + '%'; }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function fmtDays(d){
+    if(!isFinite(d)) return '—';
+    if(d < 1){ var hh = Math.max(1, Math.round(d * 24)); return CS ? hh + ' ' + plural(hh, 'hodina', 'hodiny', 'hodin') : hh + ' hour' + (hh === 1 ? '' : 's'); }
+    if(d < 14){ var n = Math.round(d); return CS ? n + ' ' + plural(n, 'den', 'dny', 'dní') : n + ' day' + (n === 1 ? '' : 's'); }
+    if(d < 60){ var w = Math.round(d / 7); return CS ? w + ' ' + plural(w, 'týden', 'týdny', 'týdnů') : w + ' week' + (w === 1 ? '' : 's'); }
+    if(d < 730){ var m = Math.round(d / 30.44); return CS ? m + ' ' + plural(m, 'měsíc', 'měsíce', 'měsíců') : m + ' month' + (m === 1 ? '' : 's'); }
+    var y = Math.round(d / 365.25); return CS ? y + ' ' + plural(y, 'rok', 'roky', 'let') : y + ' year' + (y === 1 ? '' : 's');
+  }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    var h = Math.max(1, parseInt(canvas.getAttribute('height'), 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+      }, 150);
+    });
+    start();
+    return sim;
+  }
+
+  /* =========================================================
+     SIM 01 — the body's thermostat (delayed negative feedback)
+     The body leaks heat to its surroundings and makes heat at rest;
+     the loop adds shivering or sweating in proportion to the
+     (delayed) error. Too much gain + delay = overshoot.
+     ========================================================= */
+  makeSim('sim1', function(canvas, dim){
+    var SET = 37, ROOM = 22;
+    var K = 0.0012;              // passive heat exchange with the surroundings, per frame
+    var H0 = K * (SET - ROOM);   // resting heat production: balances at 37 °C in a normal room
+    var UMAX = 0.06;             // capacity of shivering / sweating
+    var DELAY = 20;              // frames between sensing and responding
+    var T = SET, env = ROOM, envTarget = ROOM, spell = 0;
+    var fbOn = true, gain = 0.037, effect = 0;
+    var buf = [], head = 0, hist = [], envHist = [], N = 0;
+    var tEl = document.getElementById('s1-temp');
+    var sEl = document.getElementById('s1-state');
+    var bCold = document.getElementById('s1-cold');
+    var bHot = document.getElementById('s1-hot');
+    var bFb = document.getElementById('s1-fb');
+    var sGain = document.getElementById('s1-gain');
+
+    function readGain(){ if(sGain) gain = 0.01 * Math.pow(18, parseFloat(sGain.value) / 100); }
+    readGain();
+    function seed(d){
+      N = Math.max(80, Math.round(d.w));
+      hist = []; envHist = [];
+      for(var i = 0; i < N; i++){ hist.push(T); envHist.push(env); }
+      buf = []; for(var j = 0; j < DELAY; j++) buf.push(SET - T);
+      head = 0;
+    }
+    seed(dim);
+
+    if(bCold) bCold.addEventListener('click', function(){ envTarget = 0; spell = 300; });
+    if(bHot) bHot.addEventListener('click', function(){ envTarget = 40; spell = 300; });
+    if(bFb) bFb.addEventListener('click', function(){
+      fbOn = !fbOn;
+      toggleBtn(bFb, fbOn, tr('Feedback: ', 'Zpětná vazba: ') + (fbOn ? tr('ON', 'zapnutá') : tr('OFF', 'vypnutá')));
+    });
+    if(sGain) sGain.addEventListener('input', readGain);
+
+    var TMIN = 28, TMAX = 44, TOP = 16, STRIP = 14;
+    function plotBottom(h){ return h - STRIP - 30; }
+    function yFor(t, h){
+      var c = Math.max(TMIN - 0.6, Math.min(TMAX + 0.6, t));
+      return TOP + (TMAX - c) / (TMAX - TMIN) * (plotBottom(h) - TOP);
+    }
+    function envColor(e){
+      if(e < 15) return 'rgba(127,160,192,' + (0.35 + 0.5 * Math.min(1, (15 - e) / 15)).toFixed(3) + ')';
+      if(e > 29) return 'rgba(208,138,94,' + (0.35 + 0.5 * Math.min(1, (e - 29) / 11)).toFixed(3) + ')';
+      return 'rgba(155,176,126,0.22)';
+    }
+
+    return {
+      resize: function(d){ seed(d); },
+      step: function(){
+        if(spell > 0){ spell--; if(spell === 0) envTarget = ROOM; }
+        env += (envTarget - env) * 0.05;
+        var delayed = buf[head]; buf[head] = SET - T; head = (head + 1) % DELAY;
+        var u = 0;
+        if(fbOn){ u = gain * delayed; if(u > UMAX) u = UMAX; else if(u < -UMAX) u = -UMAX; }
+        effect = u;
+        var noise = REDUCED ? 0 : (Math.random() - 0.5) * 0.03;
+        T += K * (env - T) + H0 + u + noise;
+        if(T < 18) T = 18; if(T > 48) T = 48;
+        hist.push(T); if(hist.length > N) hist.shift();
+        envHist.push(env); if(envHist.length > N) envHist.shift();
+
+        var st;
+        if(fbOn){
+          if(effect > 0.004) st = tr('shivering — making heat', 'třes – tvorba tepla');
+          else if(effect < -0.004) st = tr('sweating — losing heat', 'pocení – odvod tepla');
+          else st = tr('holding steady', 'drží teplotu');
+        } else if(T < 35){
+          st = tr('no regulation — hypothermia', 'bez regulace – podchlazení');
+        } else if(T > 40){
+          st = tr('no regulation — overheating', 'bez regulace – přehřátí');
+        } else {
+          st = tr('no regulation — follows the surroundings', 'bez regulace – sleduje okolí');
+        }
+        setTxt(tEl, num(T, 1) + ' °C');
+        setTxt(sEl, st);
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, i;
+        ctx.clearRect(0, 0, w, h);
+
+        /* reference lines: hypothermia and overheating thresholds */
+        ctx.font = '10px ' + MONO;
+        [35, 40].forEach(function(t){
+          var y = yFor(t, h);
+          ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.setLineDash([2, 5]);
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+          ctx.fillText(t + ' °C', w - 10, y - 4);
+          ctx.textAlign = 'left';
+        });
+
+        /* set point */
+        var yS = yFor(SET, h);
+        ctx.strokeStyle = C.sagePale; ctx.lineWidth = 1.2; ctx.setLineDash([6, 5]);
+        ctx.beginPath(); ctx.moveTo(0, yS); ctx.lineTo(w, yS); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = C.sagePale; ctx.font = '11px ' + MONO;
+        ctx.fillText(tr('set point 37 °C', 'žádaná hodnota 37 °C'), 8, yS - 7);
+
+        /* temperature trace */
+        var bad = (T < 35 || T > 40);
+        ctx.strokeStyle = bad ? C.terra : C.sage; ctx.lineWidth = 2;
+        ctx.beginPath();
+        for(i = 0; i < hist.length; i++){
+          var x = i / (N - 1) * (w - 6), y = yFor(hist[i], h);
+          if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.fillStyle = bad ? C.terraBright : C.gold;
+        ctx.beginPath(); ctx.arc(w - 6, yFor(T, h), 4, 0, Math.PI * 2); ctx.fill();
+
+        /* surroundings strip */
+        var sy = h - STRIP - 6, cw = (w - 6) / (N - 1);
+        for(i = 0; i < envHist.length; i++){
+          ctx.fillStyle = envColor(envHist[i]);
+          ctx.fillRect(i * cw, sy, cw + 1, STRIP);
+        }
+        ctx.fillStyle = C.muted; ctx.font = '11px ' + MONO;
+        ctx.fillText(tr('surroundings ', 'okolí ') + num(env, 0) + ' °C', 8, sy - 6);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 — diffusion, osmosis, and the pump that keeps a difference
+     ========================================================= */
+  makeSim('sim2', function(canvas, dim){
+    var D = dim, osmo = false, pumpOn = false;
+    var parts = [], levelL = 0.5, levelR = 0.5;
+    var LMIN = 0.12, LMAX = 0.9, PADX = 14, TOP = 28, BOT = 26;
+    var pumpAcc = 0, flash = 0, amp = 1.85, flux = 0;
+    var cLs = 0, cRs = 0, cLslow = 0, cRslow = 0;
+    var lEl = document.getElementById('s2-left');
+    var rEl = document.getElementById('s2-right');
+    var stEl = document.getElementById('s2-state');
+    var bMode = document.getElementById('s2-mode');
+    var bAdd = document.getElementById('s2-add');
+    var bPump = document.getElementById('s2-pump');
+    var bReset = document.getElementById('s2-reset');
+
+    function mid(d){ return d.w / 2; }
+    function bottomY(d){ return d.h - BOT; }
+    function yTop(side, d){ var lv = side === 'L' ? levelL : levelR; return bottomY(d) - lv * (bottomY(d) - TOP); }
+    function spawn(side, d){
+      var m = mid(d);
+      var x = side === 'L' ? lerp(PADX + 5, m - 8, Math.random()) : lerp(m + 8, d.w - PADX - 5, Math.random());
+      return {x: x, y: lerp(yTop(side, d) + 5, bottomY(d) - 5, Math.random()), vx: 0, vy: 0, side: side};
+    }
+    function counts(){ var nL = 0; for(var i = 0; i < parts.length; i++) if(parts[i].side === 'L') nL++; return [nL, parts.length - nL]; }
+    function seed(d){
+      parts = []; levelL = 0.5; levelR = 0.5; flux = 0;
+      for(var i = 0; i < 100; i++) parts.push(spawn('L', d));
+      for(var j = 0; j < 20; j++) parts.push(spawn('R', d));
+      amp = 2.0 * Math.max(0.55, Math.min(1.3, d.w / 640));
+      cLs = cLslow = 100; cRs = cRslow = 20;
+    }
+    seed(dim);
+
+    function labelMode(){ toggleBtn(bMode, !osmo, tr('Mode: ', 'Režim: ') + (osmo ? tr('osmosis', 'osmóza') : tr('diffusion', 'difuze'))); }
+    function labelPump(){ toggleBtn(bPump, pumpOn, tr('Pump: ', 'Pumpa: ') + (pumpOn ? tr('ON', 'zapnutá') : tr('OFF', 'vypnutá'))); }
+    if(bMode) bMode.addEventListener('click', function(){ osmo = !osmo; labelMode(); });
+    if(bAdd) bAdd.addEventListener('click', function(){ if(parts.length < 200){ for(var i = 0; i < 20; i++) parts.push(spawn('L', D)); } });
+    if(bPump) bPump.addEventListener('click', function(){ pumpOn = !pumpOn; labelPump(); });
+    if(bReset) bReset.addEventListener('click', function(){ seed(D); pumpOn = false; labelPump(); });
+
+    return {
+      resize: function(d){ D = d; seed(d); },
+      step: function(d){
+        D = d;
+        var w = d.w, m = mid(d), bottom = bottomY(d), i;
+        if(flash > 0) flash -= 0.04;
+
+        /* the pump carries salt from right to left, against the gradient */
+        if(pumpOn){
+          pumpAcc += 0.16;
+          while(pumpAcc >= 1){
+            pumpAcc -= 1;
+            var cand = [];
+            for(i = 0; i < parts.length; i++) if(parts[i].side === 'R') cand.push(i);
+            if(cand.length){
+              var p = parts[cand[(Math.random() * cand.length) | 0]];
+              p.side = 'L';
+              p.x = m - 8 - Math.random() * 14;
+              p.y = lerp(yTop('L', d) + 6, bottom - 6, Math.random());
+              p.vx = -0.6; p.vy = 0;
+              flash = 1;
+            }
+          }
+        }
+
+        var k = REDUCED ? 0.45 : 1;
+        for(i = 0; i < parts.length; i++){
+          var q = parts[i];
+          q.vx = q.vx * 0.98 + (Math.random() - 0.5) * amp * k;
+          q.vy = q.vy * 0.98 + (Math.random() - 0.5) * amp * k;
+          q.x += q.vx; q.y += q.vy;
+          var top = yTop(q.side, d);
+          if(q.y < top + 3){ q.y = top + 3; q.vy = Math.abs(q.vy); }
+          if(q.y > bottom - 3){ q.y = bottom - 3; q.vy = -Math.abs(q.vy); }
+          if(q.x < PADX + 3){ q.x = PADX + 3; q.vx = Math.abs(q.vx); }
+          if(q.x > w - PADX - 3){ q.x = w - PADX - 3; q.vx = -Math.abs(q.vx); }
+          if(osmo){
+            if(q.side === 'L' && q.x > m - 3){ q.x = m - 3; q.vx = -Math.abs(q.vx); }
+            if(q.side === 'R' && q.x < m + 3){ q.x = m + 3; q.vx = Math.abs(q.vx); }
+          } else {
+            var ns = q.x < m ? 'L' : 'R';
+            if(ns !== q.side){
+              if(q.y < yTop(ns, d) + 3){ q.x = q.side === 'L' ? m - 3 : m + 3; q.vx = -q.vx; }
+              else q.side = ns;
+            }
+          }
+        }
+
+        var c = counts();
+        var cL = c[0] / levelL * 0.5, cR = c[1] / levelR * 0.5;  // relative to the starting volume
+        cLs += (cL - cLs) * 0.025; cRs += (cR - cRs) * 0.025;
+        cLslow += (cL - cLslow) * 0.012; cRslow += (cR - cRslow) * 0.012;
+
+        if(osmo){
+          flux = (cL - cR) * 0.00003;
+          levelL += flux; levelR -= flux;
+          if(levelL > LMAX){ levelR += levelL - LMAX; levelL = LMAX; }
+          if(levelR > LMAX){ levelL += levelR - LMAX; levelR = LMAX; }
+          if(levelL < LMIN){ levelR -= LMIN - levelL; levelL = LMIN; }
+          if(levelR < LMIN){ levelL -= LMIN - levelR; levelR = LMIN; }
+        } else {
+          /* with an open membrane the water levels even out again */
+          flux = 0;
+          var avg = (levelL + levelR) / 2;
+          levelL += (avg - levelL) * 0.03; levelR += (avg - levelR) * 0.03;
+        }
+
+        var rel = Math.abs(cLslow - cRslow) / Math.max(cLslow, cRslow, 1);
+        var st;
+        if(!osmo){
+          if(pumpOn) st = rel < 0.25 ? tr('pump building a difference…', 'pumpa buduje rozdíl…') : tr('pump holds the difference', 'pumpa drží rozdíl');
+          else if(rel < 0.18) st = tr('equilibrium', 'rovnováha');
+          else st = tr('evening out…', 'vyrovnává se…');
+        } else if(pumpOn){
+          st = tr('salt pumped, water follows', 'pumpa žene sůl, voda za ní');
+        } else if(Math.abs(flux) < 0.00015 || levelL >= LMAX - 0.002 || levelR <= LMIN + 0.002 || levelL <= LMIN + 0.002 || levelR >= LMAX - 0.002){
+          st = tr('levels settled', 'hladiny ustálené');
+        } else {
+          st = flux > 0 ? tr('water flows left ←', 'voda teče doleva ←') : tr('water flows right →', 'voda teče doprava →');
+        }
+        setTxt(lEl, String(Math.round(cLs)));
+        setTxt(rEl, String(Math.round(cRs)));
+        setTxt(stEl, st);
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, m = mid(d), bottom = bottomY(d), i;
+        ctx.clearRect(0, 0, w, h);
+
+        /* tank */
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+        rr(ctx, PADX, TOP - 8, w - 2 * PADX, bottom - TOP + 8, 6); ctx.stroke();
+
+        /* water */
+        ['L', 'R'].forEach(function(s){
+          var top = yTop(s, d);
+          var x0 = s === 'L' ? PADX + 1 : m + 2;
+          var x1 = s === 'L' ? m - 2 : w - PADX - 1;
+          ctx.fillStyle = 'rgba(127,160,192,0.16)';
+          ctx.fillRect(x0, top, x1 - x0, bottom - top);
+          ctx.strokeStyle = 'rgba(127,160,192,0.6)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(x0, top); ctx.lineTo(x1, top); ctx.stroke();
+        });
+
+        /* salt */
+        ctx.fillStyle = C.terra;
+        for(i = 0; i < parts.length; i++){
+          ctx.beginPath(); ctx.arc(parts[i].x, parts[i].y, 2.6, 0, Math.PI * 2); ctx.fill();
+        }
+
+        /* membrane */
+        if(osmo){ ctx.strokeStyle = C.sage; ctx.lineWidth = 3; }
+        else { ctx.strokeStyle = 'rgba(155,176,126,0.55)'; ctx.lineWidth = 2; ctx.setLineDash([4, 7]); }
+        ctx.beginPath(); ctx.moveTo(m, TOP - 8); ctx.lineTo(m, bottom); ctx.stroke();
+        ctx.setLineDash([]);
+
+        /* pump */
+        if(pumpOn || flash > 0){
+          var py = (Math.max(yTop('L', d), yTop('R', d)) + bottom) / 2;
+          ctx.globalAlpha = pumpOn ? 0.55 + 0.45 * Math.max(0, flash) : Math.max(0, flash);
+          ctx.fillStyle = C.gold;
+          ctx.beginPath(); ctx.arc(m, py, 7, 0, Math.PI * 2); ctx.fill();
+          ctx.strokeStyle = C.gold; ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.moveTo(m + 22, py); ctx.lineTo(m + 11, py);
+          ctx.moveTo(m - 11, py); ctx.lineTo(m - 22, py); ctx.lineTo(m - 17, py - 4);
+          ctx.moveTo(m - 22, py); ctx.lineTo(m - 17, py + 4); ctx.stroke();
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = C.gold; ctx.font = '10px ' + MONO; ctx.textAlign = 'center';
+          ctx.fillText('ATP', m, py - 13);
+          ctx.textAlign = 'left';
+        }
+
+        /* labels */
+        ctx.fillStyle = C.muted; ctx.font = '11px ' + MONO;
+        ctx.fillText(tr('LEFT', 'VLEVO'), PADX + 4, 13);
+        ctx.textAlign = 'right'; ctx.fillText(tr('RIGHT', 'VPRAVO'), w - PADX - 4, 13);
+        ctx.textAlign = 'center'; ctx.fillStyle = osmo ? C.sagePale : C.muted;
+        ctx.fillText(osmo ? tr('membrane holds salt back', 'membrána sůl zadrží') : tr('membrane lets salt through', 'membrána sůl propouští'), m, h - 8);
+        ctx.textAlign = 'left';
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — flow = pressure / resistance (radius to the fourth power)
+     ========================================================= */
+  makeSim('sim3', function(canvas, dim){
+    var P = 55, R = 60, P0 = 55, R0 = 60, parts = [];
+    var pvEl = document.getElementById('s3-press-v');
+    var rvEl = document.getElementById('s3-rad-v');
+    var fEl = document.getElementById('s3-flow');
+    var sP = document.getElementById('s3-press');
+    var sR = document.getElementById('s3-rad');
+    if(sP) P = parseFloat(sP.value);
+    if(sR) R = parseFloat(sR.value);
+
+    function half(d){ return (R / 100) * d.h * 0.40; }
+    function target(){ return Math.max(5, Math.round(46 * Math.pow(R / R0, 2))); }
+    function spawn(d, anyX){
+      var cy = d.h / 2, ph = half(d);
+      return {x: anyX ? Math.random() * d.w : -Math.random() * 24, y: cy + (Math.random() * 2 - 1) * ph * 0.9};
+    }
+    function fill(d){ parts = []; var n = target(); for(var i = 0; i < n; i++) parts.push(spawn(d, true)); }
+    fill(dim);
+    function fmtX(v){ return '×' + (v < 0.1 ? num(v, 3) : num(v, 2)); }
+    if(sP) sP.addEventListener('input', function(){ P = parseFloat(sP.value); });
+    if(sR) sR.addEventListener('input', function(){ R = parseFloat(sR.value); });
+
+    return {
+      resize: function(d){ fill(d); },
+      step: function(d){
+        var cy = d.h / 2, ph = half(d), pr = P / P0, rr0 = R / R0;
+        var vbase = 1.5 * pr * rr0 * rr0;             // centre-line speed ∝ P·r²
+        var want = target();                          // particles ∝ cross-section (r²)
+        while(parts.length < want) parts.push(spawn(d, true));
+        if(parts.length > want) parts.length = want;
+        for(var i = 0; i < parts.length; i++){
+          var p = parts[i];
+          if(p.y < cy - ph + 2 || p.y > cy + ph - 2) p.y = cy + (Math.random() * 2 - 1) * ph * 0.9;
+          var off = (p.y - cy) / ph, prof = Math.max(0.05, 1 - off * off);   // parabolic profile
+          p.x += vbase * prof;
+          if(p.x > d.w + 24){ p.x = -Math.random() * 24; p.y = cy + (Math.random() * 2 - 1) * ph * 0.9; }
+        }
+        setTxt(pvEl, fmtX(pr));
+        setTxt(rvEl, fmtX(rr0));
+        setTxt(fEl, fmtX(pr * Math.pow(rr0, 4)));
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, cy = h / 2, ph = half(d), pr = P / P0, rr0 = R / R0, i;
+        var vbase = 1.5 * pr * rr0 * rr0;
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = 'rgba(155,176,126,0.06)';
+        ctx.fillRect(0, cy - ph, w, ph * 2);
+        ctx.strokeStyle = C.sageDeep; ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(0, cy - ph); ctx.lineTo(w, cy - ph);
+        ctx.moveTo(0, cy + ph); ctx.lineTo(w, cy + ph);
+        ctx.stroke();
+
+        ctx.strokeStyle = C.sagePale; ctx.lineWidth = 2.2; ctx.lineCap = 'round';
+        for(i = 0; i < parts.length; i++){
+          var p = parts[i], off = (p.y - cy) / ph, prof = Math.max(0.05, 1 - off * off);
+          var len = Math.min(24, 3 + vbase * prof * 3);
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - len, p.y); ctx.stroke();
+        }
+        ctx.lineCap = 'butt';
+
+        /* radius caliper */
+        ctx.strokeStyle = 'rgba(208,138,94,0.65)'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+        ctx.beginPath(); ctx.moveTo(30, cy); ctx.lineTo(30, cy - ph); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = C.terra; ctx.font = '11px ' + MONO;
+        ctx.fillText(tr('radius', 'poloměr'), 36, cy - ph / 2 + 4);
+
+        /* flow gauge (log scale) */
+        var f = pr * Math.pow(rr0, 4);
+        var lo = Math.log(0.002) / Math.LN10, hi = Math.log(15) / Math.LN10;
+        var frac = Math.max(0, Math.min(1, (Math.log(Math.max(f, 0.002)) / Math.LN10 - lo) / (hi - lo)));
+        var gx = w - 18, gy = 18, gh = h - 36;
+        ctx.fillStyle = 'rgba(33,39,29,0.88)'; ctx.fillRect(w - 52, 0, 52, h);
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.strokeRect(gx, gy, 8, gh);
+        ctx.fillStyle = f > 4 ? C.terraBright : C.sage;
+        ctx.fillRect(gx, gy + gh * (1 - frac), 8, gh * frac);
+        var one = (0 - lo) / (hi - lo), oy = gy + gh * (1 - one);
+        ctx.strokeStyle = C.sagePale; ctx.beginPath(); ctx.moveTo(gx - 4, oy); ctx.lineTo(gx + 12, oy); ctx.stroke();
+        ctx.fillStyle = C.muted; ctx.font = '10px ' + MONO; ctx.textAlign = 'right';
+        ctx.fillText('×1', gx - 6, oy + 3);
+        ctx.fillText(tr('flow', 'průtok'), gx - 6, gy + 9);
+        ctx.textAlign = 'left';
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — surface falls behind volume; branching brings it inside
+     Each small square is tissue; it is supplied only if it lies within
+     REACH of a surface (the outer edge or a branch).
+     ========================================================= */
+  makeSim('sim4', function(canvas, dim){
+    var D = dim, sizeV = 30, branched = false, geo = null, dirty = true;
+    var REACH = 26, CELL = 7;
+    var rEl = document.getElementById('s4-ratio');
+    var sEl = document.getElementById('s4-starve');
+    var sSize = document.getElementById('s4-size');
+    var bBr = document.getElementById('s4-branch');
+    if(sSize) sizeV = parseFloat(sSize.value);
+
+    function sideFor(d){ var maxS = Math.max(110, Math.min(d.w * 0.62, d.h - 52)); return lerp(50, maxS, sizeV / 100); }
+    function segDist(px, py, s){
+      var dx = s.x2 - s.x1, dy = s.y2 - s.y1, L2 = dx * dx + dy * dy;
+      var t = L2 ? ((px - s.x1) * dx + (py - s.y1) * dy) / L2 : 0;
+      t = Math.max(0, Math.min(1, t));
+      var qx = s.x1 + t * dx - px, qy = s.y1 + t * dy - py;
+      return Math.sqrt(qx * qx + qy * qy);
+    }
+    /* space-filling tree: every branch heads toward the centre of the
+       region it has to supply, and that region is split in two for its
+       daughter branches (the way airways and vessels fill an organ) */
+    var seedN = 1;
+    function rnd(){ seedN = (seedN * 16807) % 2147483647; return (seedN - 1) / 2147483646; }
+    function grow(segs, x, y, rect, depth){
+      var cx = rect.x0 + rect.w / 2, cy = rect.y0 + rect.h / 2;
+      var f = depth <= 1 ? 0.85 : 0.64 + 0.16 * rnd();
+      var ex = x + (cx - x) * f, ey = y + (cy - y) * f;
+      segs.push({x1: x, y1: y, x2: ex, y2: ey, depth: depth});
+      if(depth <= 1) return;
+      var r = 0.42 + 0.16 * rnd(), a, b;
+      if(rect.w >= rect.h){
+        a = {x0: rect.x0, y0: rect.y0, w: rect.w * r, h: rect.h};
+        b = {x0: rect.x0 + rect.w * r, y0: rect.y0, w: rect.w * (1 - r), h: rect.h};
+      } else {
+        a = {x0: rect.x0, y0: rect.y0, w: rect.w, h: rect.h * r};
+        b = {x0: rect.x0, y0: rect.y0 + rect.h * r, w: rect.w, h: rect.h * (1 - r)};
+      }
+      grow(segs, ex, ey, a, depth - 1);
+      grow(segs, ex, ey, b, depth - 1);
+    }
+    function build(d){
+      var s = sideFor(d), x0 = (d.w - s) / 2, y0 = (d.h - s) / 2 + 6;
+      var segs = [];
+      if(branched){
+        var depth = Math.max(2, Math.min(8, Math.ceil(Math.log(s * s / 1900) / Math.LN2) + 1));
+        seedN = 20261017;
+        grow(segs, x0 + s / 2, y0 + s, {x0: x0, y0: y0, w: s, h: s}, depth);
+      }
+      var n = Math.max(1, Math.floor(s / CELL)), off = (s - n * CELL) / 2, cells = [], starving = 0;
+      for(var i = 0; i < n; i++){
+        for(var j = 0; j < n; j++){
+          var cx = x0 + off + (i + 0.5) * CELL, cy = y0 + off + (j + 0.5) * CELL;
+          var dd = Math.min(cx - x0, x0 + s - cx, cy - y0, y0 + s - cy);
+          for(var k = 0; k < segs.length && dd > REACH; k++){ var q = segDist(cx, cy, segs[k]); if(q < dd) dd = q; }
+          var st = dd > REACH; if(st) starving++;
+          cells.push({x: cx, y: cy, s: st});
+        }
+      }
+      var bl = 0;
+      for(var k2 = 0; k2 < segs.length; k2++){ var g = segs[k2]; bl += Math.sqrt((g.x2 - g.x1) * (g.x2 - g.x1) + (g.y2 - g.y1) * (g.y2 - g.y1)); }
+      var ratio = ((4 * s + 2 * bl) / (s * s)) / (4 / 50);   // relative to the smallest body
+      geo = {s: s, x0: x0, y0: y0, segs: segs, cells: cells, frac: starving / (n * n), ratio: ratio};
+      dirty = false;
+      setTxt(rEl, '×' + num(ratio, 2));
+      setTxt(sEl, pct(100 * geo.frac));
+    }
+
+    if(sSize) sSize.addEventListener('input', function(){ sizeV = parseFloat(sSize.value); dirty = true; });
+    if(bBr) bBr.addEventListener('click', function(){
+      branched = !branched; dirty = true;
+      toggleBtn(bBr, branched, tr('Branching: ', 'Větvení: ') + (branched ? tr('ON', 'zapnuté') : tr('OFF', 'vypnuté')));
+    });
+
+    return {
+      resize: function(d){ D = d; dirty = true; },
+      step: function(d){ D = d; if(dirty) build(d); },
+      draw: function(ctx, d){
+        if(!geo) return;
+        var w = d.w, h = d.h, i, c;
+        ctx.clearRect(0, 0, w, h);
+        var half = CELL / 2 - 0.5;
+        for(i = 0; i < geo.cells.length; i++){
+          c = geo.cells[i];
+          ctx.fillStyle = c.s ? 'rgba(208,138,94,0.55)' : 'rgba(155,176,126,0.10)';
+          ctx.fillRect(c.x - half, c.y - half, CELL - 1, CELL - 1);
+        }
+        for(i = 0; i < geo.segs.length; i++){
+          var g = geo.segs[i];
+          ctx.strokeStyle = C.sagePale; ctx.lineWidth = 0.7 + g.depth * 0.5; ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(g.x1, g.y1); ctx.lineTo(g.x2, g.y2); ctx.stroke();
+          if(g.depth === 1){ ctx.fillStyle = C.terra; ctx.beginPath(); ctx.arc(g.x2, g.y2, 2.3, 0, Math.PI * 2); ctx.fill(); }
+        }
+        ctx.lineCap = 'butt';
+        ctx.strokeStyle = C.sage; ctx.lineWidth = 2;
+        ctx.strokeRect(geo.x0, geo.y0, geo.s, geo.s);
+
+        ctx.font = '11px ' + MONO; ctx.fillStyle = C.muted;
+        ctx.fillText(branched ? tr('branched surface', 'rozvětvený povrch') : tr('smooth surface', 'hladký povrch'), 12, 16);
+        ctx.fillStyle = 'rgba(208,138,94,0.75)'; ctx.fillRect(12, h - 20, 9, 9);
+        ctx.fillStyle = C.muted;
+        ctx.fillText(tr('too far from any surface', 'příliš daleko od povrchu'), 26, h - 12);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 05 — open during renovation: tissues renewing at their own pace
+     Each square is a cell coloured by age. Lifespans: gut lining ~4 d,
+     epidermis ~27 d, red blood cells ~120 d, bone ~10 y, cortical neurons never.
+     ========================================================= */
+  makeSim('sim5', function(canvas, dim){
+    var D = dim;
+    var TIS = [
+      {name: tr('Gut lining', 'Výstelka střeva'), life: 4},
+      {name: tr('Skin surface', 'Pokožka'), life: 27},
+      {name: tr('Red blood cells', 'Červené krvinky'), life: 120},
+      {name: tr('Bone', 'Kost'), life: 3650},
+      {name: tr('Cortex neurons', 'Neurony mozkové kůry'), life: Infinity}
+    ];
+    var BODY0 = 30 * 365.25;                 // the body starts 30 years old
+    var ROWS = 3, SQ = 9, GAP = 2, PADX = 16, TOP = 8, BAND = 56;
+    var cols = 0, renewOn = true, elapsed = 0, dpf = 0.126, frameN = 0;
+    var tEl = document.getElementById('s5-time');
+    var rateEl = document.getElementById('s5-rate');
+    var stEl = document.getElementById('s5-state');
+    var sSpeed = document.getElementById('s5-speed');
+    var bRenew = document.getElementById('s5-renew');
+    var bReset = document.getElementById('s5-reset');
+
+    var STOPS = [[0.5, [246, 227, 161]], [5, [226, 190, 92]], [40, [227, 154, 103]], [400, [155, 176, 126]], [4000, [110, 132, 85]], [20000, [84, 92, 76]]];
+    function ageColor(age){
+      var a = Math.max(STOPS[0][0], Math.min(STOPS[STOPS.length - 1][0], age));
+      var la = Math.log(a);
+      for(var i = 0; i < STOPS.length - 1; i++){
+        var l0 = Math.log(STOPS[i][0]), l1 = Math.log(STOPS[i + 1][0]);
+        if(la <= l1){
+          var t = (la - l0) / (l1 - l0), c0 = STOPS[i][1], c1 = STOPS[i + 1][1];
+          return 'rgb(' + Math.round(lerp(c0[0], c1[0], t)) + ',' + Math.round(lerp(c0[1], c1[1], t)) + ',' + Math.round(lerp(c0[2], c1[2], t)) + ')';
+        }
+      }
+      var cl = STOPS[STOPS.length - 1][1];
+      return 'rgb(' + cl[0] + ',' + cl[1] + ',' + cl[2] + ')';
+    }
+    function newLife(t){ return isFinite(t.life) ? t.life * (0.7 + 0.6 * Math.random()) : Infinity; }
+    function seed(d){
+      cols = Math.max(8, Math.floor((d.w - 2 * PADX + GAP) / (SQ + GAP)));
+      elapsed = 0;
+      TIS.forEach(function(t){
+        t.cells = [];
+        for(var i = 0; i < cols * ROWS; i++){
+          var life = newLife(t);
+          t.cells.push({age: isFinite(life) ? Math.random() * life : BODY0, life: life, alive: true});
+        }
+        t.alive = t.cells.length; t.mean = NaN; t.meanNow = NaN;
+      });
+    }
+    function readSpeed(){ if(sSpeed) dpf = 0.02 * Math.pow(10, 3.2 * parseFloat(sSpeed.value) / 100); }
+    function labelRenew(){
+      toggleBtn(bRenew, renewOn, tr('Renewal: ', 'Obnova: ') + (renewOn ? tr('ON', 'zapnutá') : tr('OFF', 'vypnutá')));
+      setTxt(stEl, renewOn ? tr('running', 'běží') : tr('stopped', 'zastavená'));
+    }
+    seed(dim); readSpeed();
+
+    if(sSpeed) sSpeed.addEventListener('input', readSpeed);
+    if(bRenew) bRenew.addEventListener('click', function(){ renewOn = !renewOn; labelRenew(); });
+    if(bReset) bReset.addEventListener('click', function(){ seed(D); renewOn = true; labelRenew(); });
+
+    return {
+      resize: function(d){ D = d; seed(d); },
+      step: function(d){
+        D = d; frameN++;
+        var dt = dpf;
+        elapsed += dt;
+        TIS.forEach(function(t){
+          var sum = 0, n = 0;
+          for(var i = 0; i < t.cells.length; i++){
+            var c = t.cells[i];
+            if(c.alive){
+              c.age += dt;
+              if(c.age > c.life){
+                if(renewOn){ c.life = newLife(t); c.age = Math.random() * Math.min(dt, c.life); }
+                else c.alive = false;
+              }
+            } else if(renewOn && Math.random() < 0.05){
+              c.alive = true; c.life = newLife(t); c.age = 0;
+            }
+            if(c.alive){ sum += c.age; n++; }
+          }
+          t.alive = n; t.meanNow = n ? sum / n : NaN;
+          if(frameN % 8 === 1 || !n) t.mean = t.meanNow;
+        });
+        setTxt(tEl, fmtDays(elapsed));
+        setTxt(rateEl, fmtDays(dpf * 60));
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h;
+        ctx.clearRect(0, 0, w, h);
+        for(var b = 0; b < TIS.length; b++){
+          var t = TIS[b], y0 = TOP + b * BAND, i;
+          ctx.textAlign = 'left';
+          ctx.fillStyle = C.ink; ctx.font = '600 12px ' + SANS;
+          ctx.fillText(t.name, PADX, y0 + 11);
+          var lab;
+          if(!isFinite(t.life)) lab = tr('never replaced · ', 'nikdy se nevymění · ') + fmtDays(BODY0 + elapsed);
+          else if(t.alive === 0) lab = tr('none left', 'žádné nezbyly');
+          else lab = tr('avg. age ', 'prům. stáří ') + fmtDays(t.mean);
+          ctx.font = '10px ' + MONO;
+          ctx.fillStyle = (isFinite(t.life) && t.alive === 0) ? C.terraBright : C.muted;
+          ctx.textAlign = 'right'; ctx.fillText(lab, w - PADX, y0 + 11);
+          ctx.textAlign = 'left';
+          var gy = y0 + 18;
+          for(i = 0; i < t.cells.length; i++){
+            var c = t.cells[i], col = i % cols, row = (i / cols) | 0;
+            var x = PADX + col * (SQ + GAP), y = gy + row * (SQ + GAP);
+            if(c.alive){ ctx.fillStyle = ageColor(c.age); ctx.fillRect(x, y, SQ, SQ); }
+            else { ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.strokeRect(x + 0.5, y + 0.5, SQ - 1, SQ - 1); }
+          }
+        }
+        /* age legend */
+        var ly = h - 20, lx = PADX + 40, lw = Math.min(200, w * 0.4);
+        var g = ctx.createLinearGradient(lx, 0, lx + lw, 0);
+        for(var s = 0; s <= 10; s++){
+          var age = Math.exp(lerp(Math.log(0.5), Math.log(20000), s / 10));
+          g.addColorStop(s / 10, ageColor(age));
+        }
+        ctx.fillStyle = g; ctx.fillRect(lx, ly, lw, 7);
+        ctx.fillStyle = C.muted; ctx.font = '10px ' + MONO;
+        ctx.textAlign = 'right'; ctx.fillText(tr('new', 'nová'), lx - 6, ly + 7);
+        ctx.textAlign = 'left'; ctx.fillText(tr('old', 'stará'), lx + lw + 6, ly + 7);
+      }
+    };
+  });
+
+})();
+</script>
+</body>
+</html>
