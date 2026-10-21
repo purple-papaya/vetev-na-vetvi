@@ -285,3 +285,15 @@
     .dec .nt{width:1.3rem;height:1.6rem;font-size:.85rem;}
     .dec .rna{width:1.3rem;}
   }
+
+  /* blog: grid of chapter cards (Spád, práh, smyčka) */
+  figure.triad{max-width:var(--measure-wide);margin:2rem auto 2.4rem;padding-inline:1.5rem;display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));gap:.9rem;}
+  figure.triad .card{border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem 1rem;background:var(--paper-warm);}
+  figure.triad .br{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-deep);}
+  figure.triad h3{font-family:var(--serif);font-size:1.02rem;line-height:1.3;margin:.2rem 0 .1rem;}
+  figure.triad h3 a{color:var(--ink);text-decoration-color:var(--terra-pale);text-underline-offset:3px;}
+  figure.triad dl{margin:.55rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.32rem .65rem;font-family:var(--sans);font-size:.86rem;line-height:1.42;}
+  figure.triad dt{font-weight:600;color:var(--sage-deep);}
+  figure.triad dd{margin:0;color:var(--ink-2);}
+  figure.triad figcaption{grid-column:1/-1;margin-top:.3rem;}
