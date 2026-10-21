@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Čtení bez čtenáře – Větev na větvi</title>
+<meta name="description" content="Úvod do logiky molekulární biologie: jak se z řetězce čtyř písmen stane živé tělo, když v buňce nikdo nic nečte – opis s korekturou, pracovní kopie, překlad a stejný text čtený v každé buňce jinak. Se čtyřmi interaktivními simulacemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-molekularni-biologie.html">Molekulární biologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Instrukce vespod</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title"><em>Čtení</em><br>bez čtenáře</h1>
+  <p class="deck">Jak se z&nbsp;řetězce čtyř písmen stane živé tělo, když v&nbsp;buňce není nikdo, kdo by ho četl.</p>
+  <p class="byline">Úvod do logiky molekulární biologie: pět myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b> učebnice <i>Alberts a&nbsp;kol., Molecular Biology of the Cell</i> (7.&nbsp;vydání).</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Dvoušroubovice DNA, která se nahoře rozdvojí a každá větev se dál dělí, jako rodokmen kopií.">
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M450.0,240.0 L453.4,238.3 L456.5,236.7 L458.9,235.1 L460.5,233.4 L461.0,231.8 L460.5,230.1 L458.9,228.4 L456.5,226.8 L453.4,225.2 L450.0,223.5 L446.6,221.8 L443.5,220.2 L441.1,218.6 L439.5,216.9 L439.0,215.2 L439.5,213.6 L441.1,211.9 L443.5,210.3 L446.6,208.7 L450.0,207.0 L453.4,205.3 L456.5,203.7 L458.9,202.1 L460.5,200.4 L461.0,198.8 L460.5,197.1 L458.9,195.4 L456.5,193.8 L453.4,192.2 L450.0,190.5 L446.6,188.8 L443.5,187.2 L441.1,185.6 L439.5,183.9 L439.0,182.2 L439.5,180.6 L441.1,178.9 L443.5,177.3 L446.6,175.7 L450.0,174.0"/>
+        <path d="M450.0,240.0 L446.6,238.3 L443.5,236.7 L441.1,235.1 L439.5,233.4 L439.0,231.8 L439.5,230.1 L441.1,228.4 L443.5,226.8 L446.6,225.2 L450.0,223.5 L453.4,221.8 L456.5,220.2 L458.9,218.6 L460.5,216.9 L461.0,215.2 L460.5,213.6 L458.9,211.9 L456.5,210.3 L453.4,208.7 L450.0,207.0 L446.6,205.3 L443.5,203.7 L441.1,202.1 L439.5,200.4 L439.0,198.8 L439.5,197.1 L441.1,195.4 L443.5,193.8 L446.6,192.2 L450.0,190.5 L453.4,188.8 L456.5,187.2 L458.9,185.6 L460.5,183.9 L461.0,182.2 L460.5,180.6 L458.9,178.9 L456.5,177.3 L453.4,175.7 L450.0,174.0"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage-mute)" stroke-width="1.5" stroke-linecap="round">
+        <path d="M442.3,233.8 L457.7,233.8"/><path d="M442.3,229.7 L457.7,229.7"/><path d="M442.3,217.3 L457.7,217.3"/><path d="M442.3,213.2 L457.7,213.2"/><path d="M442.3,200.8 L457.7,200.8"/><path d="M442.3,196.7 L457.7,196.7"/><path d="M442.3,184.3 L457.7,184.3"/><path d="M442.3,180.2 L457.7,180.2"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M450,174 C447,158 400,152 362,134"/>
+        <path d="M450,174 C453,158 500,152 538,134"/>
+        <path d="M454,175 C458,160 504,154 541,138"/>
+        <path d="M446,175 C442,160 396,154 359,138"/>
+        <path d="M360,135 C330,120 315,108 300,90"/>
+        <path d="M360,135 C355,118 372,104 392,92"/>
+        <path d="M540,135 C570,120 585,108 600,90"/>
+        <path d="M540,135 C545,118 528,104 508,92"/>
+        <path d="M300,90 C288,78 280,70 268,58"/>
+        <path d="M300,90 C305,76 320,70 332,60"/>
+        <path d="M392,92 C384,78 380,68 372,56"/>
+        <path d="M392,92 C400,80 412,74 424,64"/>
+        <path d="M600,90 C612,78 620,70 632,58"/>
+        <path d="M600,90 C595,76 580,70 568,60"/>
+        <path d="M508,92 C516,78 520,68 528,56"/>
+        <path d="M508,92 C500,80 488,74 476,64"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="268" cy="58" r="5"/><circle cx="332" cy="60" r="5"/>
+        <circle cx="372" cy="56" r="5"/><circle cx="424" cy="64" r="5"/>
+        <circle cx="632" cy="58" r="5"/><circle cx="568" cy="60" r="5"/>
+        <circle cx="528" cy="56" r="5"/><circle cx="476" cy="64" r="5"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Rodokmen kopií. Před každým dělením buňky se dvoušroubovice rozestoupí a&nbsp;ke každému vláknu se přiloží nové. Tvoje DNA je kopie kopie kopie – <em>větev na větvi</em>.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">V&nbsp;každé tvé buňce je uložený text dlouhý přes tři miliardy písmen, a&nbsp;to dvakrát: jednou od matky, jednou od otce. Vytištěný by zaplnil víc než tisíc knih tlustých jako učebnice, ze které tahle kapitola vychází. Říká se mu genom a&nbsp;mluví se o&nbsp;něm jako o&nbsp;knize, kterou buňka čte. Jenže v&nbsp;buňce není nikdo, kdo by četl.</p>
+
+  <p>Molekulární biologie je plná slov vypůjčených od čtení a&nbsp;psaní. Gen se <i>přepisuje</i>, zpráva se <i>překládá</i>, buňka <i>čte</i> svou DNA. Jsou to užitečná slova, ale svádějí k&nbsp;omylu: člověk si představí malého úředníka, který listuje stránkami a&nbsp;rozhoduje, co je zrovna potřeba. Nikdo takový tam není. Jsou tam jen molekuly, které se v&nbsp;teple bez přestání pohybují a&nbsp;narážejí do sebe. Každá molekula v&nbsp;buňce se za sekundu srazí s&nbsp;obrovským množstvím jiných a&nbsp;velká bílkovina se přitom stihne zhruba milionkrát otočit kolem své osy.</p>
+
+  <p>Když do sebe dvě molekuly narazí a&nbsp;jejich tvary a&nbsp;náboje k&nbsp;sobě sednou, na chvíli spolu zůstanou. To je celé „čtení“. Tahle kapitola ukazuje, jak z&nbsp;takových náhodných setkání vznikne něco, co navenek vypadá jako pečlivá práce s&nbsp;textem. Stojí na pěti myšlenkách: čtyři písmena, opis s&nbsp;korekturou, pracovní kopie, překlad a&nbsp;stejný text, který každá buňka používá jinak.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si dva kousky <b>puzzle v&nbsp;krabici</b>, se kterou někdo pořád třese. Většinou se minou, ale jakmile do sebe narazí správnými stranami, zaklapnou – a&nbsp;nikdo se přitom nedíval na obrázek. V&nbsp;buňce se takhle setkávají molekuly. Teplo je to třesení a&nbsp;„čtení“ je zaklapnutí dvou tvarů, které k&nbsp;sobě pasují. Rozdíl je jen v&nbsp;tempu: tohle třesení se odehrává milionkrát za sekundu.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 ČTYŘI PÍSMENA ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Čtyři <em>písmena</em></h2>
+
+  <p>DNA je dlouhé vlákno ze čtyř druhů stavebních kamenů, nukleotidů, které se označují písmeny A, C, G a&nbsp;T. Dvě taková vlákna jsou stočená do dvoušroubovice a&nbsp;drží spolu díky jednoduchému pravidlu: <span class="kw">A&nbsp;se vždy páruje s&nbsp;T a&nbsp;G s&nbsp;C</span>. Kdo zná jedno vlákno, zná i&nbsp;druhé.</p>
+
+  <p>Tohle pravidlo je nejdůležitější věta celé kapitoly. Každé vlákno nese otisk svého protějšku jako forma, podle které se odlévá odlitek. Při kopírování se vlákna rozestoupí a&nbsp;ke každému se podle pravidla přiloží nové. Žádné porozumění, jen kousky, které k&nbsp;sobě pasují.</p>
+
+  <p>Lidský genom má 3,1&nbsp;miliardy takových dvojic. Všechna vlákna z&nbsp;jediné buňky by natažená za sebou měřila asi dva metry, přitom jádro, ve kterém jsou uložená, má průměr kolem šesti mikrometrů. Jako kdyby se do tenisového míčku vešlo čtyřicet kilometrů velmi tenké nitě.</p>
+
+  <p>A&nbsp;teď překvapení: stavbu bílkovin popisuje jen asi jedno procento té délky. Genů pro bílkoviny máš zhruba dvacet tisíc. Další úseky slouží jako přepínače, které určují, kdy a&nbsp;kde se který gen použije, z&nbsp;jiných vznikají molekuly RNA, které se v&nbsp;bílkovinu nikdy nepřeloží, a&nbsp;zhruba polovinu genomu tvoří úseky, které se v&nbsp;různých obměnách mnohokrát opakují.</p>
+
+  <p class="punch">Genom není výkres těla. Je to <b>sada tvarů, které k&nbsp;něčemu pasují</b>.</p>
+</section>
+
+<!-- ===================== §2 OPIS S KOREKTUROU ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Opis s&nbsp;<em>korekturou</em></h2>
+
+  <p>Než se buňka rozdělí, musí celý text opsat: 6,2&nbsp;miliardy písmen, protože v&nbsp;jádře nese obě sady. Opisuje ho enzym <span class="kw">DNA-polymeráza</span>. Postupuje po rozpleteném vlákně a&nbsp;k&nbsp;jeho písmenům přidává protějšky podle párovacího pravidla. Nečte, jen zkouší, co přilne.</p>
+
+  <p>Samo párování ale není dokonalé. Polymeráza se splete zhruba jednou za sto tisíc písmen. Při opisu celého genomu by to dělalo desítky tisíc chyb při každém dělení. Proto má buňka tři pojistky za sebou. První je samotný výběr písmene. Druhou je korektura: polymeráza umí couvnout a&nbsp;čerstvě přidané písmeno, které nesedí, odstřihnout, a&nbsp;tím chyby sníží ještě stokrát. Třetí přichází po opisu: zvláštní soustava enzymů projde nové vlákno, najde písmena, která nesedí, a&nbsp;opraví je, takže chyb ubude ještě tisíckrát. Dohromady se buňka splete jednou na deset miliard písmen, a&nbsp;to stejně spolehlivě u&nbsp;bakterie jako u&nbsp;člověka.</p>
+
+  <p>Opisuje se rychle, ale ne dost rychle na to, aby stačil jeden stroj. Na lidské DNA postupuje opisovací aparát asi padesát písmen za sekundu. Průměrný chromozom má sto padesát milionů dvojic, takže kdyby ho opisoval jediný stroj od začátku do konce, trvalo by to asi pět týdnů. Buňka proto začne opisovat na mnoha místech najednou.</p>
+
+  <p>Vyzkoušej si to. Pusť opisování a&nbsp;zapínej pojistky jednu po druhé.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Opis se třemi pojistkami</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">chyba na</span> <b id="m1-rate">100&nbsp;000 písmen</b></span>
+        <span class="rd"><span class="lo">na jeden opis genomu</span> <b id="m1-genome">≈ 62&nbsp;000 chyb</b></span>
+      </div>
+    </div>
+    <canvas id="msim1" height="200" aria-label="Opisování DNA: horní vlákno je předloha, dolní se skládá písmeno po písmenu. Chybně připojená písmena svítí červeně, opravená zeleně."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="m1-pick" aria-pressed="true" disabled>1 · Výběr písmene: vždy</button>
+      <button class="ctrl" id="m1-proof" aria-pressed="false">2 · Korektura: vypnutá</button>
+      <button class="ctrl" id="m1-mmr" aria-pressed="false">3 · Oprava po opisu: vypnutá</button>
+      <span class="hint">chyby jsou tu 5000× častější, aby byly vidět</span>
+    </div>
+  </div>
+  <figcaption><b>Tři pojistky.</b> Polymeráza přidává k&nbsp;předloze protějšky podle pravidla A–T a&nbsp;G–C. Chyby (červeně) jsou tu pětitisíckrát častější než ve skutečnosti, jinak by nebyly vidět. Čísla nahoře ale počítají se skutečnými poměry: bez dalších pojistek by na jeden opis genomu připadlo kolem 62&nbsp;000 chyb, s&nbsp;korekturou kolem 620 a&nbsp;se všemi třemi méně než jedna.</figcaption>
+</figure>
+
+<section class="prose">
+  <p>Méně než jedna chyba na celý opis ovšem není nula. Buňky se v&nbsp;těle dělí celý život, a&nbsp;tak se v&nbsp;nich drobné odchylky pomalu střádají. Každá tvoje buňka je proto trochu jiná kopie téhož textu.</p>
+
+  <p class="punch">Přesnost DNA nevzniká tím, že se nic nepokazí. Vzniká tím, že <b>každou chybu čekají tři různé kontroly</b>.</p>
+</section>
+
+<!-- ===================== §3 PRACOVNÍ KOPIE ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Pracovní <em>kopie</em></h2>
+
+  <p>DNA z&nbsp;jádra nevychází. Když buňka potřebuje některý gen použít, vyrobí si z&nbsp;něj pracovní kopii z&nbsp;RNA. Tomu se říká <span class="kw">přepis</span> neboli transkripce a&nbsp;dělá ho enzym RNA-polymeráza. RNA se od DNA liší jen v&nbsp;drobnostech: místo cukru deoxyribózy má ribózu a&nbsp;místo písmene T písmeno U, které se ale páruje stejně, s&nbsp;A. Zpráva tedy zůstane stejná, jen napsaná trochu jiným písmem.</p>
+
+  <p>Pracovní kopie se smí plést víc než originál. RNA-polymeráza udělá zhruba jednu chybu na deset tisíc písmen, asi tisíckrát víc než DNA-polymeráza s&nbsp;korekturou. Nevadí to, protože RNA nic trvale neuchovává: vadná kopie se spotřebuje a&nbsp;rozpadne a&nbsp;ta další bude nejspíš v&nbsp;pořádku. Originál zůstane netknutý.</p>
+
+  <p>Kopie jsou zároveň zesilovač. Z&nbsp;jednoho genu může vzniknout mnoho kopií a&nbsp;podle každé mnoho molekul bílkoviny. I&nbsp;bílkovina, které je v&nbsp;buňce obrovské množství, tak může pocházet z&nbsp;genu, který je v&nbsp;genomu jen jednou.</p>
+
+  <p>A&nbsp;každá kopie má omezenou životnost. U&nbsp;bakterií má většina kopií poločas jen pár minut. V&nbsp;našich buňkách vydrží déle, ale většina má poločas kratší než půl hodiny. Některé žijí mnohem déle: kopie genu pro β-globin, bílkovinu krevního barviva, má poločas přes deset hodin. Životnost kopie je stejně silný ovladač jako rychlost přepisu, protože čím déle kopie vydrží, tím víc bílkoviny podle ní vznikne.</p>
+
+  <p>Vyzkoušej si to. Měň rychlost přepisu, životnost kopie a&nbsp;rychlost výroby bílkoviny a&nbsp;sleduj, kolik jí se nastřádá. Pak gen vypni.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Zesilovač</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">kopie RNA</span> <b id="m2-m">0</b></span>
+        <span class="rd"><span class="lo">bílkovina</span> <b id="m2-p">0</b></span>
+        <span class="rd"><span class="lo">z&nbsp;jedné kopie</span> <b id="m2-gain">–</b></span>
+      </div>
+    </div>
+    <canvas id="msim2" height="300" aria-label="Gen vlevo vyrábí kopie RNA, podle kterých vznikají molekuly bílkoviny. Dva grafy vpravo ukazují, jak se v čase mění počet kopií a množství bílkoviny."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="m2-gene" aria-pressed="true">Gen: zapnutý</button>
+      <label>Přepis <input type="range" id="m2-tx" min="0" max="100" value="50" aria-label="Rychlost přepisu"><span class="v" id="m2-tx-v"></span></label>
+      <label>Poločas kopie <input type="range" id="m2-mhl" min="0" max="100" value="42" aria-label="Poločas kopie RNA"><span class="v" id="m2-mhl-v"></span></label>
+      <label>Výroba bílkoviny <input type="range" id="m2-tl" min="0" max="100" value="50" aria-label="Kolik molekul bílkoviny vznikne z jedné kopie za hodinu"><span class="v" id="m2-tl-v"></span></label>
+      <label>Poločas bílkoviny <input type="range" id="m2-phl" min="0" max="100" value="60" aria-label="Poločas bílkoviny"><span class="v" id="m2-phl-v"></span></label>
+    </div>
+  </div>
+  <figcaption><b>Jeden gen, mnoho molekul.</b> Gen vlevo vyrábí kopie RNA, které po čase zanikají. Podle každé vznikají molekuly bílkoviny (zlaté tečky), které také postupně mizí. Obě hladiny se ustálí tam, kde výroba vyrovná zánik. Jedna sekunda tu odpovídá hodině. Když gen vypneš, kopie zmizí za pár sekund, ale bílkovina vydrží mnohem déle: buňka má krátkou paměť na příkazy a&nbsp;dlouhou na jejich výsledky.</figcaption>
+</figure>
+
+<!-- ===================== §4 PŘEKLAD ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span><em>Překlad</em></h2>
+
+  <p>Teď přijde nejpodivnější krok. Bílkoviny se skládají z&nbsp;dvaceti druhů aminokyselin, kdežto RNA má jen čtyři písmena. Jak napsat dvacet věcí čtyřmi znaky? Po trojicích. Čtyři písmena dávají 4 × 4 × 4 = 64 trojic, takzvaných <span class="kw">kodonů</span>. To je víc, než je potřeba, a&nbsp;tak většinu aminokyselin kóduje několik různých trojic. Tři trojice znamenají „konec“ a&nbsp;jedna, AUG, zároveň „začátek“ i&nbsp;aminokyselinu methionin.</p>
+
+  <p>Bílkovinu skládá <span class="kw">ribozom</span>, stroj z&nbsp;více než padesáti bílkovin a&nbsp;několika molekul RNA. Jenže ani ribozom nečte. Skutečnými překladateli jsou malé molekuly tRNA, které fungují jako adaptéry. Na jednom konci nesou aminokyselinu, na druhém trojici písmen, která se páruje s&nbsp;kodonem. Ribozom drží zprávu a&nbsp;posouvá ji, a&nbsp;když se k&nbsp;ní přiloží tRNA se správnou trojicí, připojí její aminokyselinu k&nbsp;rostoucímu řetězci. Zase párování, zase zaklapnutí.</p>
+
+  <p>Ribozom v&nbsp;našich buňkách přidá asi čtyři aminokyseliny za sekundu a&nbsp;splete se zhruba jednou na deset tisíc. Výroba většiny bílkovin trvá od dvaceti sekund do několika minut. Po jedné kopii přitom jede za sebou víc ribozomů, třeba jen osmdesát písmen od sebe, takže podle ní vzniká několik molekul najednou.</p>
+
+  <p>Pořadí aminokyselin pak určuje, jak se hotový řetězec složí do prostorového tvaru, a&nbsp;tvar určuje, co bílkovina umí. Proto stačí jedno změněné písmeno. U&nbsp;srpkovité anémie stojí na šestém místě řetězce β-globinu valin místo kyseliny glutamové. Ta drobnost vytvoří na povrchu hemoglobinu lepkavé místo. Když hemoglobin odevzdá kyslík, molekuly se jím slepují do dlouhých vláken a&nbsp;ta deformují červené krvinky.</p>
+
+  <p>Stejně důležité je, odkud se začne číst. Mezi trojicemi nejsou mezery, a&nbsp;kdyby čtení začalo o&nbsp;písmeno vedle, dával by celý zbytek zprávy úplně jiná slova. Správný začátek, a&nbsp;tím i&nbsp;celý čtecí rámec, určí startovní AUG.</p>
+
+  <p>Vyzkoušej si to. Ťukni na písmeno a&nbsp;změň ho, nebo jedno vlož či vyjmi, a&nbsp;sleduj, co se stane s&nbsp;bílkovinou.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Dekodér</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">bílkovina</span> <b id="m3-prot">–</b></span>
+        <span class="rd"><span class="lo">změna</span> <b id="m3-diff">žádná</b></span>
+      </div>
+    </div>
+    <div class="dec" id="m3-dec"></div>
+    <p class="dec-key">Řádky v&nbsp;každé trojici: <b>DNA</b> (ťukni na písmeno), <b>RNA</b> (místo T je U), <b>aminokyselina</b>. Zelený rámeček je start, oranžový změna.</p>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="m3-sickle">Srpkovitá záměna</button>
+      <button class="ctrl" id="m3-ins">Vložit písmeno</button>
+      <button class="ctrl" id="m3-del">Vyjmout písmeno</button>
+      <button class="ctrl" id="m3-reset">Obnovit</button>
+    </div>
+  </div>
+  <figcaption><b>Kód po trojicích.</b> Tenhle krátký úsek DNA kóduje startovní methionin a&nbsp;začátek řetězce β-globinu: Val-His-Leu-Thr-Pro-Glu-Glu-Lys. Záměna jednoho písmene obvykle změní jednu aminokyselinu, nebo žádnou, protože mnoho trojic znamená totéž. Srpkovitá záměna změní A&nbsp;na T a&nbsp;kyselinu glutamovou na šestém místě na valin. Vložené nebo vyjmuté písmeno ale posune čtecí rámec a&nbsp;změní všechno, co následuje.</figcaption>
+</figure>
+
+<!-- ===================== §5 STEJNÝ TEXT, JINÉ ČTENÍ ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>Stejný text, jiné <em>čtení</em></h2>
+
+  <p>Neuron ze sítnice a&nbsp;buňka z&nbsp;jater vypadají, jako by patřily dvěma různým tvorům. Neuron se větví do dálky a&nbsp;vede elektrické signály, jaterní buňka zpracovává živiny a&nbsp;odbourává alkohol a&nbsp;léky. A&nbsp;přitom obě nesou úplně stejný text.</p>
+
+  <p>Jak to víme? Když se z&nbsp;žabího vajíčka odstraní jádro a&nbsp;místo něj se vloží jádro z&nbsp;hotové, specializované buňky žáby, vyroste z&nbsp;vajíčka normální pulec. Specializovaná buňka tedy neztratila nic, co je potřeba ke stavbě celého těla. Později se totéž povedlo u&nbsp;ovcí, myší, prasat, koz, psů i&nbsp;skotu. Rozdíl mezi buňkami není v&nbsp;textu, ale v&nbsp;tom, které jeho části se používají. V&nbsp;těle máš přes dvě stě pojmenovaných typů buněk a&nbsp;všechny vznikly ze stejného genomu.</p>
+
+  <p>O&nbsp;tom, který gen se přepíše, rozhodují <span class="kw">regulační bílkoviny</span>, které nasedají na krátké úseky DNA poblíž genů. Zase žádné čtení, jen tvar, který na určité pořadí písmen pasuje. A&nbsp;rozhodují ve skupinách. Pěkně je to vidět na genu <i>eve</i> octomilky. Jeho přepínač pro druhý proužek reaguje na čtyři regulační bílkoviny: dvě ho zapínají (Bicoid a&nbsp;Hunchback), dvě vypínají (Krüppel a&nbsp;Giant). Gen se zapne jen tam, kde jsou oba zapínače a&nbsp;žádný vypínač. Taková kombinace se v&nbsp;raném zárodku vyskytuje jen na jednom místě, a&nbsp;tak vznikne ostrý proužek.</p>
+
+  <p>Vyzkoušej si to. Vypínej jednotlivé regulační bílkoviny, jako by je mušce chyběly, a&nbsp;sleduj, co se stane s&nbsp;proužkem.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Přepínače genů</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">proužek eve</span> <b id="m4-stripe">–</b></span>
+      </div>
+    </div>
+    <canvas id="msim4" height="250" aria-label="Nahoře koncentrace čtyř regulačních bílkovin podél zárodku octomilky od hlavy k ocasu, dole zárodek s jádry, ve kterých je gen eve zapnutý."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#7FA0C0"></i>Bicoid</span>
+      <span><i style="background:#9BB07E"></i>Hunchback</span>
+      <span><i style="background:#B07A9A"></i>Giant</span>
+      <span><i style="background:#D08A5E"></i>Krüppel</span>
+      <span><i style="background:#D9B75A;border-radius:50%"></i>jádro se zapnutým genem <em>eve</em></span>
+    </div>
+    <div class="sim-controls">
+      <span class="lbl">zapínače</span>
+      <button class="ctrl is-on" id="m4-bcd" aria-pressed="true">Bicoid</button>
+      <button class="ctrl is-on" id="m4-hb" aria-pressed="true">Hunchback</button>
+      <span class="gap"></span>
+      <span class="lbl">vypínače</span>
+      <button class="ctrl spark is-on" id="m4-gt" aria-pressed="true">Giant</button>
+      <button class="ctrl spark is-on" id="m4-kr" aria-pressed="true">Krüppel</button>
+    </div>
+  </div>
+  <figcaption><b>Logika z&nbsp;bílkovin.</b> Křivky ukazují, kde v&nbsp;zárodku je kterých regulačních bílkovin hodně (zjednodušeno podle obrázku 7–32 v&nbsp;Albertsovi). Gen <i>eve</i> se zapne jen v&nbsp;jádrech, kde jsou oba zapínače a&nbsp;žádný vypínač. Bez Krüppelu se proužek rozšíří dozadu, bez Giantu dopředu, bez zapínačů zmizí. Celý přepínač genu <i>eve</i> přitom váže přes dvacet různých regulačních bílkovin a&nbsp;sedm jejich kombinací vytvoří sedm proužků.</figcaption>
+</figure>
+
+<section class="prose">
+  <p>Takhle se z&nbsp;jednoho textu stane přes dvě stě různých buněk. Žádná nedostane jiný návod. Dostane jinou kombinaci přepínačů a&nbsp;ta pak vydrží i&nbsp;po dělení: buňka, která se jednou rozhodla, čím bude, si tu volbu pamatuje po mnoho generací. Říká se tomu buněčná paměť a&nbsp;bez ní by nevznikla žádná tkáň.</p>
+
+  <p class="punch">Gen sám nic neříká. Říká něco jen <b>v&nbsp;kombinaci s&nbsp;tím, co se kolem něj zrovna vznáší</b>.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem DNA pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Jak dlouhá je moje DNA?</summary>
+    <div class="answer">
+      <p>DNA z&nbsp;jedné buňky by natažená za sebou měřila asi dva metry. Všech 46 chromozomů se přitom vejde do jádra o&nbsp;průměru kolem šesti mikrometrů. Aby se nezamotaly, jsou navinuté na bílkovinné cívky a&nbsp;mnohokrát poskládané.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Je většina DNA odpad?</summary>
+    <div class="answer">
+      <p>„Odpad“ je silné slovo. Bílkoviny kóduje asi 1&nbsp;% genomu. Dalších asi 3,5&nbsp;% se během evoluce změnilo tak málo, že nejspíš něco důležitého dělá, a&nbsp;zhruba 45&nbsp;% se přepisuje do RNA. Asi polovinu genomu tvoří úseky, které se mnohokrát opakují. O&nbsp;části DNA víme, že je nezbytná, o&nbsp;části, že na ní moc nezáleží, a&nbsp;o&nbsp;velkém zbytku zatím nevíme dost.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kolik mám genů?</summary>
+    <div class="answer">
+      <p>Asi dvacet tisíc genů pro bílkoviny (podle Albertse přesně 19&nbsp;116, plus stovky genů pro velmi krátké bílkoviny) a&nbsp;kolem pěti tisíc genů pro jiné druhy RNA. To je méně, než se před přečtením genomu čekalo. Jeden gen ale může dát několik různých bílkovin, protože se jeho kopie dá různě sestříhat.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Je DNA ve všech mých buňkách stejná?</summary>
+    <div class="answer">
+      <p>Skoro. Při každém dělení vznikne v&nbsp;celém genomu v&nbsp;průměru méně než jedna nová chyba, ale buňky se dělí celý život, takže se drobné rozdíly střádají. Úmyslnou výjimkou jsou lymfocyty, bílé krvinky imunity: ty si část DNA samy přeskládají, aby každá z&nbsp;nich poznávala něco jiného. Víc o&nbsp;tom v&nbsp;kapitole <a href="wetware-imunologie-ch1-darwin-v-mizni-uzline.html">Darwin v&nbsp;mízní uzlině</a>.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kdo tedy tu DNA čte?</summary>
+    <div class="answer">
+      <p>Nikdo. Buňka je nacpaná molekulami, které se v&nbsp;teple neustále pohybují. Místo na enzymu, kam zapadá jeho cílová molekula, s&nbsp;ní u&nbsp;hojné látky narazí asi pětsetkrát za tisícinu sekundy. Většina srážek nic nezpůsobí, ale když se potkají dva tvary, které k&nbsp;sobě pasují, chvíli spolu vydrží, a&nbsp;to stačí. „Čtení“ je statistika obrovského množství náhodných setkání.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== KÓDA ===================== -->
+<section class="coda">
+  <p>Tohle je logika molekulární biologie v&nbsp;kostce. Text o&nbsp;čtyřech písmenech, který se opisuje pod trojí kontrolou. Pracovní kopie, které se smějí plést, protože jsou na jedno použití. Překlad po trojicích, kde zase rozhoduje jen to, co k&nbsp;čemu pasuje. A&nbsp;stejný text, ze kterého každá buňka používá jiné stránky. Nikde v&nbsp;tom celém není čtenář. Je tam jen chemie, která se chová, jako by četla.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Pohyb a&nbsp;srážky molekul v&nbsp;buňce (kap.&nbsp;2, s.&nbsp;65–66); pořadí aminokyselin určuje tvar bílkoviny (kap.&nbsp;3, s.&nbsp;140); párování bází, délka DNA v&nbsp;jádře, „víc než tisíc knih“ a&nbsp;tabulka 4–1 se základními čísly lidského genomu (kap.&nbsp;4, s.&nbsp;186–194); přesnost a&nbsp;rychlost replikace, tabulka 5–1 (kap.&nbsp;5, s.&nbsp;255–275); RNA, přesnost přepisu, zesílení, genetický kód, tRNA, ribozom a&nbsp;polyribozomy (kap.&nbsp;6, s.&nbsp;324–375); stejný genom v&nbsp;různých buňkách, klonování z&nbsp;jádra specializované buňky, buněčná paměť a&nbsp;gen <i>eve</i> (kap.&nbsp;7, s.&nbsp;397–425); poločasy mRNA (kap.&nbsp;7, s.&nbsp;459); přes dvě stě typů buněk (kap.&nbsp;22, s.&nbsp;1279); přestavba DNA v&nbsp;lymfocytech (kap.&nbsp;24, s.&nbsp;1377–1378).</li>
+    <li>Voet D., Voet J.&nbsp;G. <em>Biochemistry</em>, 4.&nbsp;vyd. Wiley, 2011. Pořadí aminokyselin v&nbsp;řetězci β-globinu a&nbsp;hemoglobin srpkovité anémie (kap.&nbsp;10).</li>
+    <li>Nelson D.&nbsp;L., Cox M.&nbsp;M. <em>Lehninger Principles of Biochemistry</em>, 8.&nbsp;vyd. W.&nbsp;H.&nbsp;Freeman, 2021. Srpkovitá anémie a&nbsp;slepování hemoglobinu do vláken (kap.&nbsp;5); záměna kyseliny glutamové za valin jedním písmenem kodonu (kap.&nbsp;27, úloha 14).</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 02 jsou rychlosti a&nbsp;poločasy nastavitelné jen pro ilustraci; poločasy RNA odpovídají Albertsovým rozsahům (bakterie minuty, většina lidských kopií pod půl hodiny, β-globin přes deset hodin).</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  var BASES = ['A', 'C', 'G', 'T'];
+  var BASE_COL = {A: '#9BB07E', T: '#D08A5E', G: '#D9B75A', C: '#7FA0C0', U: '#D08A5E'};
+  function comp(b){ return {A: 'T', T: 'A', G: 'C', C: 'G'}[b]; }
+  function randBase(){ return BASES[(Math.random() * 4) | 0]; }
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+
+  /* =========================================================
+     SIM 01 — copying DNA with three safeguards
+     Polymerase error 1e-5, proofreading leaves 1e-2 of those,
+     mismatch repair leaves 1e-3 (Alberts, Table 5-1). On screen the
+     error rate is 5000x higher so that errors are visible at all.
+     ========================================================= */
+  makeSim('msim1', function(canvas, dim){
+    var SHOW = 5000, BASE_ERR = 1e-5, GENOME = 6.2e9;
+    var proof = false, mmr = false;
+    var seq = [], head = 0, frac = 0, last = now();
+    var stats = {made: 0, cut: 0, fixed: 0};
+    var rateEl = document.getElementById('m1-rate');
+    var genEl = document.getElementById('m1-genome');
+    var bProof = document.getElementById('m1-proof');
+    var bMmr = document.getElementById('m1-mmr');
+
+    function rate(){ return BASE_ERR * (proof ? 1e-2 : 1) * (mmr ? 1e-3 : 1); }
+    function readout(){
+      var r = rate(), per = 1 / r, g = GENOME * r;
+      var perTxt = per >= 1e9 ? grp(per / 1e9) + NB + plural(Math.round(per / 1e9), 'miliardu', 'miliardy', 'miliard') + ' písmen'
+                 : per >= 1e6 ? grp(per / 1e6) + NB + plural(Math.round(per / 1e6), 'milion', 'miliony', 'milionů') + ' písmen'
+                 : grp(per) + NB + 'písmen';
+      setTxt(rateEl, perTxt);
+      setTxt(genEl, g < 1 ? 'méně než 1 chyba' : '≈' + NB + grp(g) + NB + plural(Math.round(g), 'chyba', 'chyby', 'chyb'));
+    }
+    function resetStats(){ stats = {made: 0, cut: 0, fixed: 0}; }
+    if(bProof) bProof.addEventListener('click', function(){
+      proof = !proof; toggleBtn(bProof, proof, '2 · Korektura: ' + (proof ? 'zapnutá' : 'vypnutá')); readout(); resetStats();
+    });
+    if(bMmr) bMmr.addEventListener('click', function(){
+      mmr = !mmr; toggleBtn(bMmr, mmr, '3 · Oprava po opisu: ' + (mmr ? 'zapnutá' : 'vypnutá')); readout(); resetStats();
+    });
+    readout();
+
+    function tileW(d){ return clamp(Math.round(d.w / 26), 16, 24); }
+    function polyX(d){ return Math.round(d.w * 0.6); }
+    function xOf(i, d){ var tw = tileW(d); return polyX(d) + (i - head + 1) * tw - frac * tw; }
+
+    function pair(item){
+      var t = now();
+      stats.made++;
+      item.n = comp(item.t);
+      if(Math.random() < BASE_ERR * SHOW){
+        if(proof && Math.random() < 0.99){ item.cut = t; stats.cut++; return; }
+        var wrong; do { wrong = randBase(); } while(wrong === item.n);
+        item.n = wrong; item.err = true;
+        if(mmr && Math.random() < 0.999) item.fixAt = t + 0.9 + Math.random() * 1.4;
+      }
+    }
+    function fill(d){
+      var tw = tileW(d);
+      while(seq.length === 0 || xOf(seq.length - 1, d) < d.w + tw) seq.push({t: randBase(), n: null, err: false});
+      while(seq.length && xOf(0, d) < -2 * tw){ seq.shift(); head--; }
+    }
+    for(var k = 0; k < 6; k++) seq.push({t: randBase(), n: null});
+    head = 0;
+
+    return {
+      step: function(d){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        frac += dt * (REDUCED ? 4 : 9);
+        while(frac >= 1){ frac -= 1; if(head < seq.length){ pair(seq[head]); head++; } }
+        for(var i = 0; i < seq.length; i++){
+          var it = seq[i];
+          if(it.err && it.fixAt && t >= it.fixAt){ it.err = false; it.n = comp(it.t); it.fixed = t; it.fixAt = null; stats.fixed++; }
+        }
+        fill(d);
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, tw = tileW(d), px = polyX(d), t = now();
+        ctx.clearRect(0, 0, w, h);
+        var yT = 40, yN = yT + tw + 26;
+        ctx.font = '600 11px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText('předloha', 12, yT - 10);
+        ctx.fillText('nová kopie', 12, yN + tw + 16);
+        ctx.font = '500 ' + Math.round(tw * 0.62) + 'px ' + MONO; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        for(var i = 0; i < seq.length; i++){
+          var it = seq[i], x = xOf(i, d) - tw;
+          if(x > w || x < -tw) continue;
+          rr(ctx, x + 1, yT, tw - 2, tw, 3); ctx.fillStyle = '#323B2B'; ctx.fill();
+          ctx.fillStyle = BASE_COL[it.t]; ctx.fillText(it.t, x + tw / 2, yT + tw / 2 + 1);
+          if(it.n){
+            var bg = '#323B2B';
+            if(it.err) bg = '#8E3B2E';
+            else if(it.fixed && t - it.fixed < 1.2) bg = 'rgba(155,176,126,' + (0.9 - 0.6 * (t - it.fixed) / 1.2).toFixed(2) + ')';
+            rr(ctx, x + 1, yN, tw - 2, tw, 3); ctx.fillStyle = bg; ctx.fill();
+            ctx.fillStyle = it.err ? '#FFE3D6' : BASE_COL[it.n]; ctx.fillText(it.n, x + tw / 2, yN + tw / 2 + 1);
+            ctx.strokeStyle = it.err ? 'rgba(227,154,103,.35)' : 'rgba(199,214,172,.18)'; ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(x + tw / 2, yT + tw + 3); ctx.lineTo(x + tw / 2, yN - 3); ctx.stroke();
+            if(it.cut && t - it.cut < 0.8){
+              ctx.fillStyle = 'rgba(217,183,90,' + (1 - (t - it.cut) / 0.8).toFixed(2) + ')';
+              ctx.font = '600 ' + Math.round(tw * 0.7) + 'px ' + SANS; ctx.fillText('✂', x + tw / 2, yN + tw + 14);
+              ctx.font = '500 ' + Math.round(tw * 0.62) + 'px ' + MONO;
+            }
+          }
+        }
+        // polymerase clamp
+        rr(ctx, px - tw - 6, yT - 8, tw + 12, yN + tw - yT + 16, 9);
+        ctx.strokeStyle = C.gold; ctx.lineWidth = 2; ctx.stroke();
+        ctx.fillStyle = 'rgba(217,183,90,.08)'; ctx.fill();
+        ctx.textBaseline = 'alphabetic'; ctx.font = '600 11px ' + SANS; ctx.fillStyle = C.gold; ctx.textAlign = 'center';
+        ctx.fillText('DNA-polymeráza', clamp(px - tw / 2, 50, w - 50), yT - 16);
+        // demo counters
+        ctx.textAlign = 'left'; ctx.font = '500 11px ' + MONO; ctx.fillStyle = C.muted;
+        var errNow = 0; for(var j = 0; j < head && j < seq.length; j++) if(seq[j].err) errNow++;
+        ctx.fillText('korektura: ' + stats.cut + ' · oprava po opisu: ' + stats.fixed, 12, h - 10);
+        ctx.fillStyle = errNow ? C.terraBright : C.sage;
+        ctx.fillText('chyb na obrazovce: ' + errNow, 12, h - 26);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 — one gene, many molecules
+     dm/dt = k_tx - ln2/T_m * m ;  dp/dt = k_tl * m - ln2/T_p * p
+     1 s on screen = 1 h of cell time.
+     ========================================================= */
+  makeSim('msim2', function(canvas, dim){
+    var on = true, m = 0, p = 0, last = now(), hist = [], acc = 0;
+    var sTx = document.getElementById('m2-tx'), sMh = document.getElementById('m2-mhl');
+    var sTl = document.getElementById('m2-tl'), sPh = document.getElementById('m2-phl');
+    var mEl = document.getElementById('m2-m'), pEl = document.getElementById('m2-p'), gEl = document.getElementById('m2-gain');
+    var vTx = document.getElementById('m2-tx-v'), vMh = document.getElementById('m2-mhl-v');
+    var vTl = document.getElementById('m2-tl-v'), vPh = document.getElementById('m2-phl-v');
+    var bGene = document.getElementById('m2-gene');
+    var P = {};
+    function fmtT(min){ return min < 60 ? Math.round(min) + NB + 'min' : (min < 600 ? num(min / 60, 1) : Math.round(min / 60)) + NB + 'h'; }
+    function read(){
+      P.ktx = 1.2 * (+sTx.value);                       // copies per hour (default 60)
+      P.Tm = 2 * Math.pow(600, (+sMh.value) / 100);      // minutes, 2 min .. 20 h (default ~30 min)
+      P.ktl = 6 * (+sTl.value);                          // proteins per copy per hour (default 300)
+      P.Tp = 20 * Math.pow(288, (+sPh.value) / 100);     // minutes, 20 min .. 4 days (default ~10 h)
+      setTxt(vTx, Math.round(P.ktx) + '/h'); setTxt(vMh, fmtT(P.Tm));
+      setTxt(vTl, Math.round(P.ktl) + '/h'); setTxt(vPh, fmtT(P.Tp));
+      var perCopy = P.ktl * (P.Tm / 60) / Math.LN2;      // proteins made during a copy's mean lifetime
+      setTxt(gEl, '≈' + NB + big(perCopy) + NB + 'molekul');
+    }
+    [sTx, sMh, sTl, sPh].forEach(function(s){ if(s) s.addEventListener('input', read); });
+    read();
+    if(bGene) bGene.addEventListener('click', function(){ on = !on; toggleBtn(bGene, on, 'Gen: ' + (on ? 'zapnutý' : 'vypnutý')); });
+
+    // fixed random spots for drawing molecules
+    var spots = []; for(var i = 0; i < 260; i++) spots.push([Math.random(), Math.random(), Math.random()]);
+    var mScale = 60, pScale = 2e5;
+
+    function integrate(hours){
+      var dm = Math.LN2 / (P.Tm / 60), dp = Math.LN2 / (P.Tp / 60);
+      var n = Math.max(1, Math.ceil(hours / 0.005)), h = hours / n;
+      for(var k = 0; k < n; k++){
+        var m1 = m + h * ((on ? P.ktx : 0) - dm * m);
+        p += h * (P.ktl * m - dp * p);
+        m = Math.max(0, m1); p = Math.max(0, p);
+      }
+    }
+    function layout(d){
+      var wide = d.w >= 520;
+      return wide ? {cx: 0, cy: 0, cw: d.w * 0.44, ch: d.h, px: d.w * 0.48, pw: d.w * 0.5 - 12, py: 14, ph: d.h - 34}
+                  : {cx: 0, cy: 0, cw: d.w, ch: d.h * 0.42, px: 12, pw: d.w - 24, py: d.h * 0.45, ph: d.h * 0.55 - 18};
+    }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        integrate(dt);                                   // 1 s = 1 h
+        acc += dt;
+        if(acc >= 0.1){ acc = 0; hist.push([m, p]); if(hist.length > 720) hist.shift(); }
+        setTxt(mEl, grp(m)); setTxt(pEl, big(p));
+      },
+      draw: function(ctx, d){
+        var L = layout(d); ctx.clearRect(0, 0, d.w, d.h);
+        // --- cell cartoon ---
+        var gx = L.cx + 18, gy = L.cy + L.ch * 0.5;
+        ctx.fillStyle = on ? C.sage : '#56604B';
+        rr(ctx, gx, gy - 9, 16, 18, 3); ctx.fill();
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillStyle = C.muted;
+        ctx.fillText(on ? 'gen' : 'gen (vyp.)', gx - 2, gy - 15);
+        var nm = Math.min(40, Math.round(m)), t = now();
+        ctx.strokeStyle = C.sagePale; ctx.lineWidth = 1.6;
+        for(var i = 0; i < nm; i++){
+          var s = spots[i], x = L.cx + 48 + s[0] * (L.cw - 70), y = L.cy + 14 + s[1] * (L.ch - 28);
+          x += Math.sin(t * 0.9 + s[2] * 6) * 3; y += Math.cos(t * 0.7 + s[2] * 5) * 3;
+          ctx.beginPath(); ctx.moveTo(x, y);
+          for(var q = 1; q <= 4; q++) ctx.lineTo(x + q * 4, y + (q % 2 ? -3 : 3));
+          ctx.stroke();
+        }
+        var np = Math.min(220, Math.round(p / (pScale / 160)));
+        ctx.fillStyle = C.gold;
+        for(var j = 0; j < np; j++){
+          var u = spots[(j + 40) % spots.length];
+          var x2 = L.cx + 40 + ((u[0] * 7.3 + j * 0.618) % 1) * (L.cw - 52), y2 = L.cy + 10 + ((u[1] * 5.1 + j * 0.414) % 1) * (L.ch - 20);
+          ctx.beginPath(); ctx.arc(x2, y2, 1.8, 0, 6.283); ctx.fill();
+        }
+        // --- plots ---
+        var mMax = 10, pMax = 1000;
+        for(var k = 0; k < hist.length; k++){ if(hist[k][0] > mMax) mMax = hist[k][0]; if(hist[k][1] > pMax) pMax = hist[k][1]; }
+        mScale += (mMax * 1.15 - mScale) * 0.08; pScale += (pMax * 1.15 - pScale) * 0.08;
+        var gh = (L.ph - 14) / 2;
+        function plot(y0, idx, scale, col, label, val){
+          ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(L.px, y0 + gh); ctx.lineTo(L.px + L.pw, y0 + gh); ctx.stroke();
+          ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+          ctx.fillText(label, L.px, y0 + 10);
+          ctx.textAlign = 'right'; ctx.fillStyle = col; ctx.fillText(val, L.px + L.pw, y0 + 10);
+          ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath();
+          var n = hist.length, step = L.pw / 719;
+          for(var r = 0; r < n; r++){
+            var xx = L.px + L.pw - (n - 1 - r) * step, yy = y0 + gh - (hist[r][idx] / scale) * (gh - 16);
+            if(r === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);
+          }
+          ctx.stroke();
+        }
+        plot(L.py, 0, mScale, C.sagePale, 'kopie RNA', grp(m));
+        plot(L.py + gh + 14, 1, pScale, C.gold, 'bílkovina', big(p));
+        ctx.textAlign = 'right'; ctx.font = '500 10px ' + MONO; ctx.fillStyle = C.muted;
+        ctx.fillText('posledních 72 h →', L.px + L.pw, L.py + L.ph + 12);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — decoder (DOM): DNA -> RNA -> protein in triplets
+     ========================================================= */
+  (function(){
+    var box = document.getElementById('m3-dec');
+    if(!box) return;
+    var CODE = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG';
+    var IDX = {T: 0, C: 1, A: 2, G: 3};
+    var THREE = {A: 'Ala', R: 'Arg', N: 'Asn', D: 'Asp', C: 'Cys', E: 'Glu', Q: 'Gln', G: 'Gly', H: 'His', I: 'Ile',
+                 L: 'Leu', K: 'Lys', M: 'Met', F: 'Phe', P: 'Pro', S: 'Ser', T: 'Thr', W: 'Trp', Y: 'Tyr', V: 'Val', '*': 'STOP'};
+    var LEAD = 'GCC', ORIG = LEAD + 'ATGGTGCACCTGACTCCTGAGGAGAAGTAA';
+    var ORIG_PROT = translate(ORIG.split('').map(function(b){ return {b: b}; })).prot;
+    var seq;
+    function reset(){ seq = ORIG.split('').map(function(b){ return {b: b, ed: false}; }); }
+    function aa(c){ return CODE[16 * IDX[c[0]] + 4 * IDX[c[1]] + IDX[c[2]]]; }
+    function translate(s){
+      var str = s.map(function(x){ return x.b; }).join(''), start = str.indexOf('ATG');
+      var res = {start: start, prot: [], stopAt: -1};
+      if(start < 0) return res;
+      for(var i = start; i + 3 <= str.length; i += 3){
+        var a = aa(str.substr(i, 3));
+        if(a === '*'){ res.stopAt = i; break; }
+        res.prot.push(a);
+      }
+      return res;
+    }
+    var protEl = document.getElementById('m3-prot'), diffEl = document.getElementById('m3-diff');
+    function describe(tr){
+      if(tr.start < 0) return 'chybí start (AUG)';
+      var p = tr.prot, o = ORIG_PROT, first = -1, n = 0;
+      for(var i = 0; i < Math.max(p.length, o.length); i++){ if(p[i] !== o[i]){ n++; if(first < 0) first = i; } }
+      var edited = seq.some(function(x){ return x.ed; }) || seq.length !== ORIG.length;
+      if(n === 0 && tr.stopAt >= 0) return edited ? 'žádná – tichá záměna' : 'žádná';
+      if(tr.start !== LEAD.length && seq.length === ORIG.length) return 'čte se od jiného AUG';
+      if(seq.length !== ORIG.length) return 'posunutý rámec od pozice ' + Math.max(0, first);
+      if(tr.stopAt < 0) return 'zrušený stop – čte se dál';
+      if(p.length === o.length && n === 1) return THREE[o[first]] + first + ' → ' + THREE[p[first]];
+      if(p.length < o.length && n === o.length - p.length) return 'předčasný stop po ' + p.length + ' ' + plural(p.length, 'aminokyselině', 'aminokyselinách', 'aminokyselinách');
+      return n + ' ' + plural(n, 'změněná aminokyselina', 'změněné aminokyseliny', 'změněných aminokyselin');
+    }
+    function render(){
+      var tr = translate(seq), html = [], groups = [], i;
+      if(tr.start < 0){ groups.push({from: 0, to: seq.length, kind: 'out'}); }
+      else {
+        if(tr.start > 0) groups.push({from: 0, to: tr.start, kind: 'out'});
+        var end = tr.stopAt >= 0 ? tr.stopAt + 3 : tr.start + Math.floor((seq.length - tr.start) / 3) * 3;
+        for(i = tr.start; i < end; i += 3) groups.push({from: i, to: i + 3, kind: i === tr.start ? 'start' : 'cod'});
+        if(end < seq.length) groups.push({from: end, to: seq.length, kind: 'out'});
+      }
+      var ci = 0;
+      groups.forEach(function(g){
+        var cls = 'cod' + (g.kind === 'out' ? ' out' : '') + (g.kind === 'start' ? ' start' : '');
+        var label = '', aaCls = 'aa';
+        if(g.kind !== 'out'){
+          var c = seq.slice(g.from, g.to).map(function(x){ return x.b; }).join(''), a = aa(c);
+          label = THREE[a]; if(a === '*') aaCls += ' stop';
+          if(a !== '*' && ORIG_PROT[ci] !== a) cls += ' chg';
+          ci++;
+        } else { label = g.from === 0 && tr.start !== 0 ? 'před startem' : 'nečte se'; aaCls += ' none'; }
+        var dna = '', rna = '';
+        for(var k = g.from; k < g.to; k++){
+          dna += '<button class="nt' + (seq[k].ed ? ' edit' : '') + '" data-i="' + k + '" aria-label="Písmeno ' + seq[k].b + ', pozice ' + (k + 1) + '">' + seq[k].b + '</button>';
+          rna += '<span class="rna">' + (seq[k].b === 'T' ? 'U' : seq[k].b) + '</span>';
+        }
+        html.push('<div class="' + cls + '"><div class="row">' + dna + '</div><div class="row">' + rna + '</div><div class="' + aaCls + '">' + label + '</div></div>');
+      });
+      box.innerHTML = html.join('');
+      setTxt(protEl, tr.start < 0 ? '–' : (tr.prot.map(function(x){ return THREE[x]; }).join('-') || '–'));
+      setTxt(diffEl, describe(tr));
+    }
+    box.addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('.nt') : null;
+      if(!b) return;
+      var k = +b.getAttribute('data-i');
+      seq[k].b = BASES[(BASES.indexOf(seq[k].b) + 1) % 4]; seq[k].ed = true;
+      render();
+      var again = box.querySelector('.nt[data-i="' + k + '"]'); if(again) again.focus();
+    });
+    onClick('m3-sickle', function(){ reset(); var k = LEAD.length + 6 * 3 + 1; seq[k].b = 'T'; seq[k].ed = true; render(); });
+    onClick('m3-ins', function(){ seq.splice(LEAD.length + 10, 0, {b: 'A', ed: true}); render(); });
+    onClick('m3-del', function(){ if(seq.length > LEAD.length + 12){ seq.splice(LEAD.length + 10, 1); } render(); });
+    onClick('m3-reset', function(){ reset(); render(); });
+    reset(); render();
+  })();
+
+  /* =========================================================
+     SIM 04 — combinatorial control of eve stripe 2
+     Activators Bicoid, Hunchback; repressors Giant, Krüppel
+     (Alberts, Figs 7-31, 7-32; profiles simplified).
+     ========================================================= */
+  makeSim('msim4', function(canvas, dim){
+    var on = {bcd: true, hb: true, gt: true, kr: true};
+    var stripeEl = document.getElementById('m4-stripe');
+    var dirty = true;
+    function prof(x){
+      return {
+        bcd: on.bcd ? Math.exp(-x / 0.18) : 0,
+        hb: on.hb ? 1 / (1 + Math.exp((x - 0.47) / 0.025)) : 0,
+        gt: on.gt ? 1 / (1 + Math.exp((x - 0.27) / 0.015)) + 0.9 * Math.exp(-Math.pow((x - 0.8) / 0.06, 2)) : 0,
+        kr: on.kr ? Math.exp(-Math.pow((x - 0.46) / 0.06, 2)) : 0
+      };
+    }
+    function eve(x){
+      var c = prof(x);
+      if(c.gt > 0.25 || c.kr > 0.25) return 0;
+      return (c.bcd > 0.08 ? 0.5 : 0) + (c.hb > 0.5 ? 0.5 : 0);
+    }
+    function summary(){
+      var a = -1, b = -1, lvl = 0;
+      for(var i = 0; i <= 400; i++){ var x = i / 400, e = eve(x); if(e > 0){ if(a < 0) a = x; b = x; lvl = Math.max(lvl, e); } }
+      if(a < 0) return 'nevznikne';
+      return Math.round(a * 100) + '–' + Math.round(b * 100) + NB + '% délky' + (lvl < 1 ? ' (slabý)' : '');
+    }
+    var keys = [['bcd', 'm4-bcd', 'Bicoid'], ['hb', 'm4-hb', 'Hunchback'], ['gt', 'm4-gt', 'Giant'], ['kr', 'm4-kr', 'Krüppel']];
+    keys.forEach(function(k){
+      onClick(k[1], function(){
+        on[k[0]] = !on[k[0]];
+        toggleBtn(document.getElementById(k[1]), on[k[0]], k[2] + (on[k[0]] ? '' : ' chybí'));
+        setTxt(stripeEl, summary()); dirty = true;
+      });
+    });
+    setTxt(stripeEl, summary());
+    var COL = {bcd: C.blue, hb: C.sage, gt: C.plum, kr: C.terra};
+    return {
+      resize: function(){ dirty = true; },
+      step: function(){},
+      draw: function(ctx, d){
+        if(!dirty) return; dirty = false;
+        var w = d.w, h = d.h, x0 = 16, x1 = w - 16, top = 22, gh = h * 0.46;
+        function X(x){ return x0 + x * (x1 - x0); }
+        ctx.clearRect(0, 0, w, h);
+        // stripe band in the graph
+        ctx.fillStyle = 'rgba(217,183,90,.13)';
+        for(var i = 0; i < 400; i++){ var xx = i / 400, e = eve(xx); if(e > 0) ctx.fillRect(X(xx), top, (x1 - x0) / 400 + 0.6, gh); }
+        // regulator curves
+        Object.keys(COL).forEach(function(k, n){
+          ctx.strokeStyle = COL[k]; ctx.globalAlpha = on[k] ? 1 : 0.25; ctx.lineWidth = 2;
+          ctx.setLineDash(on[k] ? [] : [4, 4]);
+          ctx.beginPath();
+          for(var j = 0; j <= 200; j++){
+            var x = j / 200, v = on[k] ? prof(x)[k] : 0;
+            var y = top + gh - Math.min(1.05, v) * (gh - 6);
+            if(j === 0) ctx.moveTo(X(x), y); else ctx.lineTo(X(x), y);
+          }
+          ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+        });
+        // embryo with nuclei
+        var ey = top + gh + 18, eh = h - ey - 22, cx = (x0 + x1) / 2, rx = (x1 - x0) / 2, ry = eh / 2, cyy = ey + ry;
+        ctx.beginPath(); ctx.ellipse(cx, cyy, rx, ry, 0, 0, 6.283);
+        ctx.fillStyle = '#2C3427'; ctx.fill(); ctx.strokeStyle = C.line; ctx.lineWidth = 1.2; ctx.stroke();
+        var cols = Math.max(24, Math.round((x1 - x0) / 9)), rows = 5;
+        for(var c = 0; c < cols; c++){
+          var fx = (c + 0.5) / cols, ex = eve(fx), px = X(fx);
+          for(var r = 0; r < rows; r++){
+            var fy = (r + 0.5) / rows - 0.5, dx = (px - cx) / rx, dy = fy * 2;
+            if(dx * dx + dy * dy * 0.92 > 0.86) continue;
+            ctx.beginPath(); ctx.arc(px, cyy + fy * (eh - 10), 2.6, 0, 6.283);
+            ctx.fillStyle = ex > 0 ? (ex >= 1 ? C.gold : 'rgba(217,183,90,.5)') : '#4A5541';
+            ctx.fill();
+          }
+        }
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted;
+        ctx.textAlign = 'left'; ctx.fillText('hlava', x0, h - 6);
+        ctx.textAlign = 'right'; ctx.fillText('ocas', x1, h - 6);
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
