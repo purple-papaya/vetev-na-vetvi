@@ -26,6 +26,11 @@ css/
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
+  og/                      náhledové obrázky pro sdílení (1200×630, jeden na kapitolu a článek) a logo
+tools/
+  seo.py                   metadata pro vyhledávače a jazykové modely (viz níž)
+sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
+llms.txt, llms-full.txt  přehled a plné texty pro jazykové modely (generuje tools/seo.py)
 pages/
   wetware.html             Wetware hub — rozcestník všech podvětví a jejich kapitol
   wetware-ch1-jsi-sloveso.html          Biochemie · Kapitola první — Jsi sloveso (hotová kapitola)
@@ -49,6 +54,30 @@ Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět p
 takže web funguje i v podadresáři `/vetev-na-vetvi/`. `index.html` a `404.html` zůstávají
 v kořeni repozitáře — GitHub Pages je odsud vyžaduje (rozcestník i vlastní 404 stránka
 fungují jen tehdy, když leží přímo v publikované složce).
+
+## Vyhledávače a jazykové modely
+
+Metadata všech stránek spravuje `tools/seo.py` (jen standardní knihovna Pythonu). Po přidání
+nebo úpravě stránky ho spusť z kořene repozitáře:
+
+```bash
+python3 tools/seo.py
+```
+
+- **Nová stránka**: přidej ji do slovníku `PAGES` v `tools/seo.py` (titulek, popis, u kapitol témata
+  a anglické shrnutí). Stránky, které tam chybí, skript vypíše a nechá beze změny.
+- **Co se generuje**: v hlavičce každé stránky blok mezi komentáři `seo:begin` a `seo:end`
+  (titulek, popis, kanonická adresa, Open Graph, strukturovaná data JSON-LD včetně častých otázek
+  a zdrojů kapitol) a v kořeni `sitemap.xml`, `robots.txt`, `llms.txt` a `llms-full.txt`.
+  Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
+- **Zástupné stránky** (O mně, Příběhy, Luštění, Zpětná vazba) a 404 mají `noindex`. Až dostanou
+  obsah, změň v `PAGES` jejich `kind` ze `stub` na vhodný typ.
+- **Adresa webu** je v proměnné `SITE_URL`. Pokud web přejde na vlastní doménu, změň ji a skript
+  spusť znovu.
+- **Data publikace a úpravy** se berou z historie gitu. Commity, jejichž zpráva začíná `SEO:`,
+  se nepočítají, takže úprava metadat stránku „neomladí“.
+- **robots.txt** na adrese `github.io/vetev-na-vetvi/` roboti nečtou (berou ho jen z kořene domény).
+  Mapu webu proto odešli ručně v Google Search Console a Bing Webmaster Tools.
 
 ## Publikace přes GitHub Pages
 
