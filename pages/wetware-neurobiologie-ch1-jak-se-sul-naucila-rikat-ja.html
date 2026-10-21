@@ -408,7 +408,9 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var rect = canvas.getBoundingClientRect();
     var w = Math.max(1, Math.round(rect.width));
-    var h = Math.max(1, parseInt(canvas.getAttribute('height'),10) || 300);
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
     canvas.width = w * dpr;
     canvas.height = h * dpr;
     canvas.style.height = h + 'px';
