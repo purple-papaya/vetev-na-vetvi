@@ -20,6 +20,8 @@ css/
   farmakologie-ch1.css     styly kapitoly Farmakologie — „Lék je vlna“ (vlastní design)
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
   fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
+  wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie
+                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace)
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
@@ -29,9 +31,15 @@ pages/
   wetware-farmakologie-ch1-lek-je-vlna.html   Farmakologie · Kapitola první — Lék je vlna (hotová kapitola)
   wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html   Neurobiologie · Kapitola první — Jak se sůl naučila říkat já (hotová kapitola)
   wetware-fyziologie-ch1-more-pod-kuzi.html   Fyziologie · Kapitola první — Moře pod kůží (hotová kapitola)
+  wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html   Molekulární biologie · Kapitola první — Čtení bez čtenáře (hotová kapitola)
+  wetware-imunologie-ch1-darwin-v-mizni-uzline.html   Imunologie · Kapitola první — Darwin v mízní uzlině (hotová kapitola)
+  wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html   Vývojová biologie · Kapitola první — Tělo, které se postavilo samo (hotová kapitola)
+  wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
   o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
-  wetware-molekularni-biologie.html, wetware-farmakologie.html               podvětve Wetware — zástupné
+  wetware-molekularni-biologie.html, wetware-farmakologie.html,
+  wetware-imunologie.html, wetware-vyvojova-biologie.html,
+  wetware-endokrinologie.html               podvětve Wetware — krátký popis a odkaz na první kapitolu
 ```
 
 Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět přes `../`),

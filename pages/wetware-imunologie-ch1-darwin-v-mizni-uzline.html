@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Darwin v mízní uzlině – Větev na větvi</title>
+<meta name="description" content="Úvod do logiky imunity: jak tělo pozná, co k němu patří, aniž by předem znalo své nepřátele – poplach podle vzoru, náhodný generátor receptorů, výběr, škola v brzlíku a paměť. Se čtyřmi interaktivními simulacemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-imunologie.html">Imunologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Vlastní a&nbsp;cizí</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title"><em>Darwin</em><br>v&nbsp;mízní uzlině</h1>
+  <p class="deck">Jak tělo pozná nepřítele, kterého nikdy nevidělo – a&nbsp;proč přitom nenapadne samo sebe.</p>
+  <p class="byline">Úvod do logiky imunity: pět myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b> učebnice <i>Alberts a&nbsp;kol., Molecular Biology of the Cell</i> (7.&nbsp;vydání).</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Řada krátkých tenkých stonků, každý s jiným pupenem. Jeden z nich zesílí a rozvětví se do bohaté koruny.">
+      <g class="draw" fill="none" stroke="var(--sage-mute)" stroke-width="1.5" stroke-linecap="round">
+        <path d="M180,240 C182,226 176,214 170,204"/><path d="M215,240 C214,224 222,212 228,198"/>
+        <path d="M250,240 C252,228 246,218 240,210"/><path d="M285,240 C284,222 292,208 300,196"/>
+        <path d="M320,240 C322,228 316,220 312,212"/><path d="M355,240 C354,226 360,214 366,204"/>
+        <path d="M390,240 C392,230 386,222 382,216"/><path d="M510,240 C508,230 514,222 518,216"/>
+        <path d="M545,240 C546,226 540,214 534,204"/><path d="M580,240 C578,228 584,220 588,212"/>
+        <path d="M615,240 C616,222 608,208 600,196"/><path d="M650,240 C648,228 654,218 660,210"/>
+        <path d="M685,240 C686,224 678,212 672,198"/><path d="M720,240 C718,226 724,214 730,204"/>
+      </g>
+      <g class="draw" fill="var(--sage-mute)" stroke="none">
+        <circle cx="170" cy="204" r="3.5"/><circle cx="228" cy="198" r="3.5"/><circle cx="240" cy="210" r="3.5"/>
+        <circle cx="300" cy="196" r="3.5"/><circle cx="312" cy="212" r="3.5"/><circle cx="366" cy="204" r="3.5"/>
+        <circle cx="382" cy="216" r="3.5"/><circle cx="518" cy="216" r="3.5"/><circle cx="534" cy="204" r="3.5"/>
+        <circle cx="588" cy="212" r="3.5"/><circle cx="600" cy="196" r="3.5"/><circle cx="660" cy="210" r="3.5"/>
+        <circle cx="672" cy="198" r="3.5"/><circle cx="730" cy="204" r="3.5"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="3" stroke-linecap="round">
+        <path d="M450,240 C450,222 452,204 450,186"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.4" stroke-linecap="round">
+        <path d="M450,186 C440,170 420,160 400,150"/><path d="M450,186 C460,170 480,160 500,150"/>
+        <path d="M400,150 C385,140 370,128 352,118"/><path d="M400,150 C402,134 410,122 420,110"/>
+        <path d="M500,150 C515,140 530,128 548,118"/><path d="M500,150 C498,134 490,122 480,110"/>
+        <path d="M352,118 C340,106 332,96 322,84"/><path d="M352,118 C356,104 364,94 372,82"/>
+        <path d="M420,110 C414,96 410,84 408,72"/><path d="M420,110 C426,96 432,82 436,70"/>
+        <path d="M548,118 C560,106 568,96 578,84"/><path d="M548,118 C544,104 536,94 528,82"/>
+        <path d="M480,110 C486,96 490,84 492,72"/><path d="M480,110 C474,96 468,82 464,70"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="322" cy="84" r="5"/><circle cx="372" cy="82" r="5"/><circle cx="408" cy="72" r="5"/><circle cx="436" cy="70" r="5"/>
+        <circle cx="464" cy="70" r="5"/><circle cx="492" cy="72" r="5"/><circle cx="528" cy="82" r="5"/><circle cx="578" cy="84" r="5"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Klonální výběr. Lymfocytů je obrovská zásoba a&nbsp;každý má jiný receptor. Když přijde vetřelec, namnoží se jen ty, které do něj zapadnou – z&nbsp;jediné buňky vyroste celý klon, <em>větev na větvi</em>.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Pro bakterii je tvoje tělo ráj. Stálé teplo, voda a&nbsp;všude kolem cukry, tuky a&nbsp;bílkoviny. Bakterie, která se dělí jednou za hodinu, může za jediný den mít skoro dvacet milionů potomků. A&nbsp;tělo nemá jak vědět, kdo zrovna přijde: bakterie, virus, houba, nebo parazit, letos jiný než loni.</p>
+
+  <p>Přesto většina nákaz skončí dřív, než o&nbsp;nich vůbec víš. Imunitní systém na to má dvě strategie. Starší, kterou mají všechny mnohobuněčné organismy, pozná mikroby podle obecných znaků, které naše buňky nemají. Je rychlá, ale hrubá. Novější se objevila u&nbsp;obratlovců s&nbsp;čelistmi a&nbsp;Alberts o&nbsp;ní mluví jako o&nbsp;„velkém třesku“ v&nbsp;evoluci obrany. Nesnaží se nepřátele předvídat. Předem vyrobí náhodné receptory v&nbsp;astronomickém počtu a&nbsp;pak namnoží ty, které se hodí.</p>
+
+  <p>Je to Darwinův princip náhodné rozmanitosti a&nbsp;přísného výběru, jenže uvnitř jednoho těla a&nbsp;během pár dní. Kapitola stojí na pěti myšlenkách: poplach podle vzoru, generátor náhody, škola v&nbsp;brzlíku, výběr a&nbsp;paměť.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si <b>zámečnickou dílnu</b>, která neví, jaké zámky k&nbsp;ní přijdou. Vyrobí si proto předem přes bilion náhodně vybroušených klíčů. Když se objeví neznámý zámek, zkusí se všechny. Klíč, který jde aspoň trochu pootočit, se nechá okopírovat v&nbsp;tisících kusů a&nbsp;kopie se dál drobně přibrušují, dokud nesedí úplně. Klíče, které by odemykaly dveře samotné dílny, se mezitím vyhodí. Přesně takhle pracuje adaptivní imunita.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 POPLACH PODLE VZORU ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Poplach podle <em>vzoru</em></h2>
+
+  <p>První obranou je obyčejná hradba. Kůži tvoří silná vrstva zrohovatělých buněk a&nbsp;mazové žlázy na ní vylučují mastné kyseliny a&nbsp;kyselinu mléčnou, které brzdí růst bakterií. Dýchací cesty a&nbsp;střevo pokrývá hlen, na kterém mikroby špatně drží, řasinky v&nbsp;dýchacích cestách ho neustále posouvají ven a&nbsp;pohyby střeva brání mikrobům se uchytit. Buňky na povrchu vylučují defenziny, krátké kladně nabité peptidy, které rozrušují membrány bakterií, hub i&nbsp;obalených virů. A&nbsp;kůži i&nbsp;střevo obývají neškodné mikroby, které těm nebezpečným konkurují o&nbsp;potravu.</p>
+
+  <p>Když mikrob hradbu prorazí, čekají za ní buňky vrozené imunity, třeba makrofágy. Nemají seznam nepřátel. Mají receptory, které rozpoznávají <span class="kw">molekulární vzory</span>: stavební prvky společné celým skupinám mikrobů, které v&nbsp;našem těle chybějí nebo jsou ukryté. Receptor TLR4 pozná lipopolysacharid z&nbsp;obalu gramnegativních bakterií, TLR5 bílkovinu bakteriálního bičíku, TLR3 dvouvláknovou RNA virů a&nbsp;Dectin-1 β-glukan z&nbsp;buněčné stěny hub. TLR9 se chytá úseků DNA bez methylových skupin, které jsou běžné u&nbsp;bakterií, virů a&nbsp;prvoků, ale v&nbsp;DNA obratlovců vzácné. Jen receptorů rodiny TLR má člověk nejméně deset.</p>
+
+  <p>První takový receptor objevili u&nbsp;octomilky. Jmenuje se Toll a&nbsp;biologové ho znali z&nbsp;vývoje mušího zárodku, kde pomáhá určit, kde bude břicho a&nbsp;kde záda. Pak se ukázalo, že bez něj moucha nevyrobí obranné peptidy proti houbám: mušku bez Tollu houba doslova prorostla. Podobné receptory mají rostliny i&nbsp;živočichové.</p>
+
+  <p>Když receptor zabere, buňka spustí poplach. Vylučuje cytokiny a&nbsp;další signální molekuly a&nbsp;ty rozjedou <span class="kw">zánět</span>. Cévy v&nbsp;okolí se rozšíří a&nbsp;začnou propouštět tekutinu a&nbsp;bílkoviny a&nbsp;z&nbsp;krve se do tkáně derou bílé krvinky, nejdřív neutrofily, později monocyty a&nbsp;lymfocyty. Proto zanícené místo bolí, je červené, teplé a&nbsp;oteklé. Některé cytokiny doputují až do mozku a&nbsp;zvednou teplotu celého těla: horečka pomáhá některým imunitním buňkám v&nbsp;boji.</p>
+
+  <p>Vrozená imunita zasahuje během hodin, ale má dvě slabiny. Je hrubá: pozná „nějakou bakterii“, ne konkrétního vetřelce. A&nbsp;její odpověď je krátká, trvalou ochranu nezanechá. Proto potřebujeme ještě druhou obranu, pomalejší a&nbsp;mnohem přesnější. Tu spouští právě vrozená imunita: bez jejího poplachu se adaptivní imunita do ničeho nepustí.</p>
+
+  <p>Vyzkoušej si to. Do tkáně pronikají bakterie, houby a&nbsp;viry. Vypínej receptory makrofágů a&nbsp;sleduj, kdo projde.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Přítel, nebo vetřelec?</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">bakterie</span> <b id="i1-bac">0</b></span>
+        <span class="rd"><span class="lo">houby</span> <b id="i1-fun">0</b></span>
+        <span class="rd"><span class="lo">nakažené buňky</span> <b id="i1-inf">0</b></span>
+      </div>
+    </div>
+    <canvas id="isim1" height="270" aria-label="Tkáň z vlastních buněk, do které pronikají bakterie, houby a viry. Makrofágy s receptory na povrchu požírají mikroby, které poznají."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#D08A5E"></i>bakterie</span>
+      <span><i style="background:#B07A9A;border-radius:50%"></i>houby</span>
+      <span><i style="background:#7FA0C0"></i>viry</span>
+      <span><i style="background:rgba(199,214,172,.25);border:1.5px solid #C7D6AC;border-radius:50%"></i>makrofág</span>
+      <span><i style="background:rgba(127,160,192,.45)"></i>nakažená buňka</span>
+    </div>
+    <div class="sim-controls">
+      <span class="lbl">receptory</span>
+      <button class="ctrl is-on" id="i1-tlr4" aria-pressed="true">TLR4 · LPS</button>
+      <button class="ctrl is-on" id="i1-tlr5" aria-pressed="true">TLR5 · bičík</button>
+      <button class="ctrl is-on" id="i1-tlr3" aria-pressed="true">TLR3 · RNA virů</button>
+      <button class="ctrl is-on" id="i1-dectin" aria-pressed="true">Dectin-1 · glukan</button>
+      <span class="gap"></span>
+      <button class="ctrl spark" id="i1-wound">Nová rána</button>
+    </div>
+  </div>
+  <figcaption><b>Poplach podle vzoru.</b> Makrofágy nesou čtyři druhy receptorů (barevné výběžky). Každý pozná jeden molekulární vzor, a&nbsp;tím celou skupinu mikrobů. Bakterie mají dva vzory, lipopolysacharid i&nbsp;bičík, takže projdou, až když vypneš oba receptory. Viry se množí jen uvnitř buněk tkáně. Receptory pro virovou RNA mají i&nbsp;ony: nakažená buňka pak vyšle signály, které v&nbsp;okolí brzdí množení viru (zlatavý nádech), a&nbsp;bez nich se nákaza šíří tkání. Vlastní buňky žádný z&nbsp;těch vzorů nemají a&nbsp;makrofágy je nechají být. Když receptor zabere, rozjede se zánět a&nbsp;z&nbsp;cévy dorazí posily. Vypni receptor pro houby a&nbsp;dopadne to jako u&nbsp;mušky bez Tollu.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Vrozená imunita nepozná, kdo přišel. Pozná, <b>z&nbsp;čeho je postavený</b>.</p>
+</section>
+
+<!-- ===================== §2 GENERÁTOR NÁHODY ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Generátor <em>náhody</em></h2>
+
+  <p>Adaptivní imunitu obstarávají <span class="kw">lymfocyty</span>, bílé krvinky dvou hlavních druhů. B-lymfocyty vyrábějí protilátky, T-lymfocyty zabíjejí nakažené buňky nebo řídí ostatní imunitní buňky. V&nbsp;těle jich máš asi dva biliony, takže imunitní systém je co do hmoty buněk srovnatelný s&nbsp;játry nebo mozkem. Každý lymfocyt nese na povrchu receptory jediného tvaru a&nbsp;ten si vybral dřív, než se s&nbsp;čímkoli setkal. B-lymfocyty dohromady umějí vyrobit víc než bilion různých protilátek. Receptory přitom rozliší i&nbsp;dvě bílkoviny, které se liší jedinou aminokyselinou.</p>
+
+  <p>Jenže genů pro bílkoviny máš jen asi dvacet tisíc. Jak z&nbsp;nich vznikne bilion receptorů? Lymfocyt si svůj receptor <span class="kw">poskládá z&nbsp;dílků</span>. Gen pro těžký řetězec protilátky není v&nbsp;DNA uložený vcelku, ale jako tři zásobníky úseků: 40 úseků V, asi 23 úseků D a&nbsp;6 úseků J. Dospívající B-lymfocyt vybere náhodně po jednom z&nbsp;každého zásobníku, DNA mezi nimi vystřihne a&nbsp;vybrané úseky spojí. To dává 40 × 23 × 6 = 5520 možností. Lehký řetězec se skládá stejně, jen ze dvou úseků, a&nbsp;má 295 variant. Vazebné místo tvoří oba řetězce společně, takže kombinací je přes 1,6 milionu.</p>
+
+  <p>Tím to nekončí. Spoje mezi úseky jsou nepřesné: na koncích se pár písmen ztratí a&nbsp;pár náhodných přibude. Tím se rozmanitost znásobí ještě deset- až stomilionkrát, a&nbsp;to právě v&nbsp;nejproměnlivější části vazebného místa. Celá mašinerie má zajímavý původ. Stejným mechanismem se z&nbsp;DNA vystřihují transpozony, skákající geny, a&nbsp;imunitní generátor náhody z&nbsp;nich nejspíš vznikl.</p>
+
+  <p>Za náhodu se platí. Délka spoje je nahodilá, a&nbsp;protože se genetický kód čte po trojicích, zhruba dva spoje ze tří posunou čtecí rámec. Za spojem pak vznikne nesmysl, stejně jako po vloženém nebo vyjmutém písmenu v&nbsp;dekodéru z&nbsp;kapitoly <a href="wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html">Čtení bez čtenáře</a>. Buňka, která nesestaví funkční protilátku, v&nbsp;kostní dřeni zahyne.</p>
+
+  <p>Dvě věci stojí za povšimnutí. Lymfocyt si DNA přeskládá natrvalo, takže je výjimkou z&nbsp;pravidla, že všechny buňky těla nesou stejný text. A&nbsp;receptor vznikne dřív, než lymfocyt cokoli potká. Generátor nemá tušení, co je venku, a&nbsp;tak vyrábí receptory na dnešní mikroby, na jejich budoucí mutanty – a&nbsp;taky na vlastní tělo.</p>
+
+  <p>Vyzkoušej si to. Pusť automat a&nbsp;sleduj, jak si lymfocyt skládá těžký řetězec protilátky.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Automat na receptory</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">úseky</span> <b id="i2-seg">–</b></span>
+        <span class="rd"><span class="lo">výsledek</span> <b id="i2-res">–</b></span>
+        <span class="rd"><span class="lo">funkčních</span> <b id="i2-ok">–</b></span>
+      </div>
+    </div>
+    <canvas id="isim2" height="300" aria-label="Nahoře zásobníky úseků V, D a J v DNA, uprostřed přeskládaný gen s náhodnými písmeny na spojích, dole vazebná místa posledních buněk."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="i2-next">Další buňka</button>
+      <button class="ctrl" id="i2-many">100 buněk najednou</button>
+      <button class="ctrl" id="i2-reset">Vynulovat</button>
+    </div>
+  </div>
+  <figcaption><b>Automat na receptory.</b> Každé zmáčknutí je jeden dospívající B-lymfocyt, který si skládá gen pro těžký řetězec protilátky: náhodně vybere úsek V, D a&nbsp;J, DNA mezi nimi vystřihne a&nbsp;na spojích pár písmen ubere a&nbsp;pár náhodných přidá (zlatá písmena). Když délka úseku mezi V&nbsp;a&nbsp;J není dělitelná třemi, posune se čtecí rámec a&nbsp;řetězec je k&nbsp;ničemu. Obrys dole naznačuje tvar vazebného místa: u&nbsp;každé buňky je jiný. Lehký řetězec se skládá stejně, z&nbsp;úseků V&nbsp;a&nbsp;J, a&nbsp;celkem je podle Albertse přes 1,6 milionu kombinací a&nbsp;s&nbsp;nepřesnými spoji víc než bilion různých receptorů.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Imunitní systém nepředvídá, kdo přijde. <b>Připraví se na všechno najednou</b> – i&nbsp;na sebe sama.</p>
+</section>
+
+<!-- ===================== §3 ŠKOLA V BRZLÍKU ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Škola v&nbsp;<em>brzlíku</em></h2>
+
+  <p>Generátor, který vyrábí receptory na všechno, je nebezpečný. Kdyby lymfocyty namířené proti vlastním bílkovinám volně kolovaly tělem, napadly by ho. Tělo se proto musí naučit, co k&nbsp;němu patří. Že jde opravdu o&nbsp;učení, ukazuje pokus s&nbsp;myšmi. Normální myš proti své vlastní krevní bílkovině C5 imunitní odpověď nevytvoří. Myš, které gen pro C5 chybí, proti ní reaguje snadno. A&nbsp;když se C5 dospělé myši pokusně odebere, začne proti ní za pár týdnů nebo měsíců reagovat také: mezitím totiž dozrají nové lymfocyty, které se s&nbsp;C5 nikdy nesetkaly.</p>
+
+  <p>Hlavní škola je v&nbsp;<span class="kw">brzlíku</span>, kde dozrávají T-lymfocyty. Zkoušky jsou dvě. Při první musí receptor aspoň slabě poznat vlastní molekuly MHC, na kterých buňky vystavují úlomky svých bílkovin. T-lymfocyt totiž vidí cizí úlomky jen na vlastních MHC, takže buňka, která MHC nepozná vůbec, by byla k&nbsp;ničemu. Nedostane signál k&nbsp;přežití, a&nbsp;tak tiše zahyne. Při druhé zkoušce dopadne opačně buňka, která se na vlastní úlomky váže příliš silně. Ta by byla nebezpečná, a&nbsp;proto dostane signál zemřít. Říká se tomu negativní selekce.</p>
+
+  <p>Buňky s&nbsp;vazbou někde mezi tím přežijí a&nbsp;odcházejí do krve jako hotové pomocné nebo cytotoxické T-lymfocyty. Některé z&nbsp;těch, které se k&nbsp;vlastním úlomkům vážou docela silně, ale ještě ne dost na vyřazení, se stanou <span class="kw">regulačními T-lymfocyty</span>. Ty pak v&nbsp;těle tlumí jiné lymfocyty namířené proti vlastním tkáním – pojistka pro případ, že někdo školou proklouzne.</p>
+
+  <p>Zbývá háček. Jak může brzlík vyřadit lymfocyty namířené proti inzulinu, když inzulin vyrábějí jen β-buňky slinivky? Pomáhá mu bílkovina <span class="kw">AIRE</span>. V&nbsp;části buněk dřeně brzlíku spustí slabý přepis 75–90&nbsp;% všech genů, včetně těch, které jinak fungují jen v&nbsp;jediném orgánu. Dospívající lymfocyty tak v&nbsp;brzlíku potkají vzorky skoro celého těla. Lidé i&nbsp;myši s&nbsp;nefunkčním genem <i>AIRE</i> mají těžké autoimunitní onemocnění mnoha orgánů. A&nbsp;když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a&nbsp;vznikne cukrovka 1.&nbsp;typu.</p>
+
+  <p>B-lymfocyty mají podobnou školu v&nbsp;kostní dřeni. Ty, které se na vlastní molekuly vážou silně, dostanou ještě jednu šanci: přeskládají si lehký řetězec a&nbsp;zkusí to s&nbsp;novým receptorem. Když se to nepovede, zahynou. A&nbsp;pro lymfocyty, které přesto proklouznou, má tělo další pojistky. Lymfocyt se aktivuje, jen když mu kromě antigenu dá druhý signál jiná buňka, a&nbsp;ta ho dává hlavně tehdy, když vrozená imunita hlásí poplach. Lymfocyt, který potká svůj antigen bez poplachu, se místo aktivace obvykle vypne, zahyne, nebo ho utlumí regulační T-lymfocyt.</p>
+
+  <p>Vyzkoušej si to. Nastav, jak přísně má brzlík vyřazovat, a&nbsp;sleduj, co projde do krve. Pak vypni AIRE.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Brzlík</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">projde užitečných</span> <b id="i3-good">–</b></span>
+        <span class="rd"><span class="lo">nebezpečných</span> <b id="i3-bad">–</b></span>
+      </div>
+    </div>
+    <canvas id="isim3" height="300" aria-label="Dospívající T-lymfocyty procházejí kůrou a dření brzlíku. Dole sloupce ukazují, jaký osud čeká buňky podle síly vazby na vlastní molekuly."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#9BB07E;border-radius:50%"></i>projde</span>
+      <span><i style="background:#B07A9A;border-radius:50%"></i>projde jako regulační</span>
+      <span><i style="background:#E39A67;border-radius:50%"></i>projde, ale napadne tělo</span>
+      <span><i style="background:rgba(170,70,50,.75)"></i>vyřazena</span>
+      <span><i style="background:#788070;border-radius:50%"></i>zahyne bez signálu</span>
+    </div>
+    <div class="sim-controls">
+      <label>Přísnost <input type="range" id="i3-thr" min="0" max="100" value="50" aria-label="Jak přísně brzlík vyřazuje buňky, které se váží na vlastní molekuly"><span class="v" id="i3-thr-v"></span></label>
+      <button class="ctrl spark is-on" id="i3-aire" aria-pressed="true">AIRE: zapnutý</button>
+    </div>
+  </div>
+  <figcaption><b>Škola s&nbsp;nejistým výsledkem.</b> Dospívající T-lymfocyty procházejí brzlíkem zleva doprava. Šedé zahynou bez signálu k&nbsp;přežití, protože vlastní MHC nepoznají vůbec. Červené se na vlastní úlomky vážou příliš silně a&nbsp;brzlík je vyřadí. Sloupce dole ukazují osud buněk podle síly vazby (zlatý trojúhelník je práh). Výběr ale není dokonalý, a&nbsp;tak je každé nastavení kompromis: přísná škola vyřadí i&nbsp;užitečné buňky, mírná pustí do těla víc buněk namířených proti němu. Bez AIRE brzlík neukáže bílkoviny jednotlivých orgánů a&nbsp;buňky namířené proti nim projdou i&nbsp;přísnou školou. Poměry v&nbsp;modelu jsou jen ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Vlastní není to, co máš zapsané v&nbsp;genech. Vlastní je to, <b>s&nbsp;čím se imunitní systém setkal, když se učil</b>.</p>
+</section>
+
+<!-- ===================== §4 VÝBĚR ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span><em>Výběr</em></h2>
+
+  <p>Lymfocyty, které školou projdou, neustále kolují. Krví se dostanou do mízní uzliny, protáhnou se jí, mízními cévami pokračují do další a&nbsp;nakonec se vrátí do krve. Jedno kolo trvá asi půl dne až den. Do uzlin mezitím dendritické buňky přinášejí z&nbsp;místa nákazy úlomky mikrobů. To kolování je nutné, protože konkrétní antigen pozná jen jeden lymfocyt z&nbsp;deseti tisíc až z&nbsp;milionu. Každý tak obchází uzlinu za uzlinou a&nbsp;hledá ten svůj.</p>
+
+  <p>Když lymfocyt svůj antigen najde a&nbsp;dostane i&nbsp;druhý signál, rozběhne se <span class="kw">klonální výběr</span>. Buňka se začne dělit a&nbsp;z&nbsp;jediného lymfocytu nebo z&nbsp;hrstky jich vznikne obrovský klon buněk se stejným receptorem. Část z&nbsp;nich se změní v&nbsp;buňky, které bojují: z&nbsp;B-lymfocytů jsou plazmatické buňky, které chrlí protilátky, z&nbsp;T-lymfocytů buňky, které zabíjejí nakažené buňky nebo pomáhají ostatním. Antigen tedy nic nevyrábí ani neučí. Jen vybírá z&nbsp;toho, co už v&nbsp;těle je.</p>
+
+  <p>Pak přijde nejdarwinovštější část imunity. V&nbsp;mízních uzlinách vznikají <span class="kw">zárodečná centra</span>, kde se aktivované B-lymfocyty rychle dělí a&nbsp;přitom řízeně mutují. Enzym AID mění v&nbsp;genech pro vazebné místo cytosin na uracil a&nbsp;oprava takových míst nechává chyby. V&nbsp;úseku pro vazebné místo tak při každém dělení přibude asi jedna mutace, zhruba milionkrát víc, než je u&nbsp;jiných genů běžné. Většina mutací vazbu zhorší a&nbsp;takové buňky zahynou. Antigen ale přednostně podporuje ty vzácné, které se na něj vážou pevněji, a&nbsp;ty se dělí dál. Čím méně antigenu zbývá, tím je výběr přísnější.</p>
+
+  <p>Je to evoluce v&nbsp;plném smyslu slova: dědičná rozmanitost, výběr podle toho, kdo pasuje, a&nbsp;množení vítězů. Jen místo milionů let jí stačí jedna nemoc. Protilátky na začátku odpovědi se na antigen vážou slabě, s&nbsp;afinitou kolem 10<sup>5</sup> až 10<sup>7</sup> l/mol. Po kolech mutací a&nbsp;výběru mohou dosáhnout až 10<sup>11</sup> l/mol, tedy vázat se deset tisíckrát až milionkrát pevněji.</p>
+
+  <p>Vyzkoušej si to. Pusť do těla patogen A&nbsp;a&nbsp;sleduj, které klony se namnoží a&nbsp;jak sílí vazba protilátek. Až nákaza odezní, pusť stejný patogen znovu, nebo zkus jiný.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Darwin v&nbsp;mízní uzlině</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">den</span> <b id="i4-day">–</b></span>
+        <span class="rd"><span class="lo" id="i4-ab-l">protilátky</span> <b id="i4-ab">–</b></span>
+        <span class="rd"><span class="lo">afinita</span> <b id="i4-aff">–</b></span>
+      </div>
+    </div>
+    <canvas id="isim4" height="320" aria-label="Vlevo klony B-lymfocytů v mízní uzlině, vpravo graf protilátek a patogenu v čase na logaritmické stupnici."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#D9B75A"></i>protilátky proti A</span>
+      <span><i style="background:#7FA0C0"></i>proti B</span>
+      <span><i style="background:repeating-linear-gradient(90deg,#D08A5E 0 4px,transparent 4px 7px);height:3px"></i>patogen A</span>
+      <span><i style="background:repeating-linear-gradient(90deg,#B07A9A 0 4px,transparent 4px 7px);height:3px"></i>patogen B</span>
+      <span><i style="background:transparent;border:1.5px solid #C7D6AC;border-radius:50%"></i>paměťové buňky</span>
+    </div>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="i4-a">Patogen A</button>
+      <button class="ctrl spark" id="i4-b">Patogen B</button>
+      <button class="ctrl is-on" id="i4-mut" aria-pressed="true">Hypermutace: zapnutá</button>
+      <button class="ctrl" id="i4-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Evoluce v&nbsp;mízní uzlině.</b> Každý kroužek je klon B-lymfocytů. Velikost ukazuje počet buněk, barva to, jak pevně se jeho receptor váže na poslední patogen (šedá slabě, zlatá pevně). Patogen nejdřív roste a&nbsp;vrozená imunita ho jen brzdí. Po několika dnech se namnoží klony, které na něj pasují, a&nbsp;jejich protilátky ho zlikvidují (graf má logaritmickou stupnici). S&nbsp;hypermutací z&nbsp;vybraných klonů vznikají mutanti, nejlepší z&nbsp;nich přerostou své rodiče a&nbsp;vazba protilátek během odpovědi sílí. Po nákaze zůstanou paměťové buňky (světlý lem). Jeden den tu trvá půl sekundy a&nbsp;jednotky jsou jen relativní.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Imunita nevymýšlí protilátky na míru. <b>Pěstuje je</b> – mutací a&nbsp;výběrem, tak jako evoluce pěstuje druhy.</p>
+</section>
+
+<!-- ===================== §5 PAMĚŤ ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span><em>Paměť</em></h2>
+
+  <p>Když nákaza odezní, většina bojujících buněk zahyne. Z&nbsp;namnoženého klonu ale zůstanou <span class="kw">paměťové buňky</span>, které žijí dlouho, někdy celý život, i&nbsp;když svůj antigen už nikdy nepotkají. Některé paměťové T-lymfocyty zůstanou natrvalo přímo v&nbsp;místě, kudy mikrob vnikl. A&nbsp;část plazmatických buněk se přesune do kostní dřeně, kde přežívá roky a&nbsp;dál vylučuje protilátky do krve.</p>
+
+  <p>Při druhém setkání proto imunita nezačíná od nuly. Buněk, které antigen poznají, je mnohem víc, reagují ochotněji a&nbsp;jejich receptory už prošly výběrem. Odpověď přijde dřív, je silnější a&nbsp;protilátky se vážou pevněji. Přesně to je vidět v&nbsp;simulaci, když stejný patogen přijde podruhé: protilátky vyskočí během pár dní a&nbsp;patogen se skoro nestihne rozmnožit. Jiný patogen ale začíná úplně od začátku. Kdo prodělá spalničky nebo je proti nim očkovaný, je proti nim chráněný celý život – proti příušnicím nebo planým neštovicím ho to ale neochrání. Paměť je stejně specifická jako receptory, na kterých stojí.</p>
+
+  <p>Na paměti stojí <span class="kw">očkování</span>. Jeho moderní éra začala v&nbsp;roce 1796, kdy Edward Jenner popsal, že materiál z&nbsp;kravských neštovic chrání lidi před pravými neštovicemi. Pravé neštovice zabily ve sto letech před svým koncem zhruba půl miliardy lidí. V&nbsp;roce 1980 byly díky celosvětovému očkování vymýceny. Vakcína ukáže imunitnímu systému antigen, aniž by přišla nemoc. Musí přitom spustit i&nbsp;poplach vrozené imunity, jinak by se adaptivní imunita do ničeho nepustila. Celé mikroby nebo jejich výtažky ho spustí samy, vakcínám z&nbsp;čistých bílkovin se proto přidává adjuvans – látka, která receptory vrozené imunity aktivuje.</p>
+
+  <p>Paměť má ovšem slabé místo: pamatuje si tvar. Mikrob, který tvar změní, jí unikne. Trypanozoma, prvok, který způsobuje africkou spavou nemoc, má asi tisíc genů pro různé povrchové bílkoviny a&nbsp;průběžně je střídá, takže několik jejích buněk protilátkám vždycky unikne a&nbsp;nemoc se vrací ve vlnách. Chřipkový virus zase mění své povrchové bílkoviny drobnými mutacemi a&nbsp;občas si celé úseky genomu vymění s&nbsp;viry ptáků nebo prasat.</p>
+
+  <p class="punch">Imunitní paměť není záznam v&nbsp;archivu. Je to <b>změněná populace buněk</b>: vítězové výběru zůstanou v&nbsp;těle jako stálá posádka.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem imunity pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Proč mě vlastní imunita nenapadne?</summary>
+    <div class="answer">
+      <p>Protože se to naučila. Lymfocyty, které se na vlastní molekuly vážou příliš silně, se vyřadí už při dozrávání v&nbsp;brzlíku a&nbsp;v&nbsp;kostní dřeni. Ty, které proklouznou, se v&nbsp;těle obvykle neaktivují, protože jim chybí druhý signál, který jiné buňky dávají hlavně při nákaze, a&nbsp;hlídají je regulační T-lymfocyty. Když tyhle pojistky selžou, vznikne autoimunitní onemocnění – například cukrovka 1.&nbsp;typu, při které T-lymfocyty zničí β-buňky slinivky.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč můžu dostat chřipku znovu, ale spalničky jen jednou?</summary>
+    <div class="answer">
+      <p>Prodělané spalničky i&nbsp;očkování proti nim chrání celý život. Chřipkový virus ale své hlavní povrchové bílkoviny, hemaglutinin a&nbsp;neuraminidázu, průběžně mění drobnými mutacemi a&nbsp;čas od času si vymění celé úseky genomu s&nbsp;chřipkovými viry ptáků nebo prasat. Paměťové buňky z&nbsp;minulé nákazy pak na novou verzi sedí hůř nebo vůbec. Když se objeví kmen, se kterým se lidé ještě nesetkali, šíří se populací bez imunity. Tak vznikla pandemie španělské chřipky v&nbsp;roce 1918, která zabila 20 až 50&nbsp;milionů lidí, i&nbsp;pozdější pandemie.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kolik lidí musí být imunních, aby se nemoc nešířila?</summary>
+    <div class="answer">
+      <p>Záleží na nemoci. U&nbsp;spalniček je to asi 95&nbsp;% populace, u&nbsp;covidu-19 se odhad pohybuje mezi 65 a&nbsp;90&nbsp;% podle varianty viru. Říká se tomu kolektivní imunita. Brzdí šíření nákazy, protože ubývá lidí, které lze nakazit, a&nbsp;tím chrání i&nbsp;ty, kdo imunitu nemají.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Způsobuje očkování autismus?</summary>
+    <div class="answer">
+      <p>Ne. Obavy vyvolal článek z&nbsp;roku 1998, který spojoval očkování proti spalničkám, příušnicím a&nbsp;zarděnkám s&nbsp;autismem. Ukázal se jako nepravdivý a&nbsp;podvodný a&nbsp;časopis The Lancet ho v&nbsp;roce 2010 stáhl. Škody už ale napáchal: v&nbsp;Británii po něm ubylo očkovaných dětí a&nbsp;epidemie spalniček byly častější a&nbsp;větší. Velká dánská studie pak sledovala přes 650 tisíc dětí a&nbsp;u&nbsp;očkovaných žádné vyšší riziko autismu nenašla.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kde vlastně imunitní systém je?</summary>
+    <div class="answer">
+      <p>Všude. Lymfocyty vznikají v&nbsp;kostní dřeni a&nbsp;T-lymfocyty dozrávají v&nbsp;brzlíku. Pracují hlavně v&nbsp;mízních uzlinách, slezině, mandlích a&nbsp;v&nbsp;lymfatické tkáni střeva, dýchacích cest a&nbsp;kůže a&nbsp;mezi nimi neustále kolují krví a&nbsp;mízou. Dohromady jich je asi dva biliony, takže imunitní systém je co do hmoty buněk srovnatelný s&nbsp;játry nebo mozkem.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== KÓDA ===================== -->
+<section class="coda">
+  <p>Tohle je logika imunity v&nbsp;kostce. Rychlý poplach podle znaků, které mikroby prozradí. Generátor náhody, který předem vyrobí receptory na cokoli. Škola, ve které se vyřadí ty namířené proti vlastnímu tělu. Výběr, který namnoží ty, co pasují, a&nbsp;mutacemi je dál vybrousí. A&nbsp;paměť, díky které je druhé setkání kratší. Darwin popsal, jak náhoda a&nbsp;výběr během milionů let tvarují druhy. Tvoje mízní uzliny dělají totéž s&nbsp;buňkami během jediné nemoci.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Vrozená imunita: bariéry, molekulární vzory a&nbsp;receptory, které je rozpoznávají (tabulka 24–1), receptor Toll a&nbsp;moucha bez něj (obr.&nbsp;24–3), zánět a&nbsp;horečka (kap.&nbsp;24, s.&nbsp;1353–1357); Toll ve vývoji octomilky (kap.&nbsp;21, s.&nbsp;1230 a&nbsp;1236); „velký třesk“ adaptivní imunity, počet lymfocytů, klonální výběr, primární a&nbsp;sekundární odpověď (obr.&nbsp;24–16), paměťové buňky, kolování lymfocytů a&nbsp;imunologická tolerance včetně pokusu s&nbsp;C5 (kap.&nbsp;24, s.&nbsp;1364–1371); skládání genů pro protilátky z&nbsp;úseků V, D a&nbsp;J, nepřesné spoje a&nbsp;posun čtecího rámce, přeskládání receptoru, somatická hypermutace a&nbsp;afinita protilátek (kap.&nbsp;24, s.&nbsp;1377–1379); pozitivní a&nbsp;negativní selekce v&nbsp;brzlíku, regulační T-lymfocyty a&nbsp;AIRE (kap.&nbsp;24, s.&nbsp;1389–1391 a&nbsp;1401); očkování, Jenner a&nbsp;pravé neštovice, adjuvans, kolektivní imunita a&nbsp;podvodná zpráva o&nbsp;autismu (kap.&nbsp;24, s.&nbsp;1397–1401); původ mechanismu přeskládání v&nbsp;transpozonech (kap.&nbsp;5, s.&nbsp;309); antigenní variabilita trypanozom a&nbsp;chřipky, pandemie z&nbsp;roku 1918 (kap.&nbsp;23, s.&nbsp;1342–1344).</li>
+    <li>The Lancet. Retraction – Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children. <em>Lancet</em> 375, 445 (2010).</li>
+    <li>Hviid A., Hansen J.&nbsp;V., Frisch M., Melbye M. Measles, mumps, rubella vaccination and autism: a&nbsp;nationwide cohort study. <em>Annals of Internal Medicine</em> 170, 513–520 (2019).</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 01 jsou rychlosti mikrobů a&nbsp;buněk zvolené tak, aby bylo dění vidět. V&nbsp;simulaci 03 je rozdělení síly vazby vymyšlené pro ilustraci. Simulace 04 má věrně jen tvar odpovědí: zpoždění primární odpovědi o&nbsp;několik dní, rychlejší a&nbsp;silnější odpověď při druhém setkání se stejným antigenem a&nbsp;afinitu, která sílí jen s&nbsp;hypermutací. Afinitu převádí do Albertsova rozsahu 10<sup>5</sup>–10<sup>11</sup> l/mol.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rand(a, b){ return a + Math.random() * (b - a); }
+  var SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+  function sup(n){ return String(n).split('').map(function(ch){ return SUP[+ch]; }).join(''); }
+  function hexPath(ctx, x, y, r){
+    ctx.beginPath();
+    for(var i = 0; i < 6; i++){
+      var a = Math.PI / 6 + i * Math.PI / 3;
+      if(i === 0) ctx.moveTo(x + r * Math.cos(a), y + r * Math.sin(a)); else ctx.lineTo(x + r * Math.cos(a), y + r * Math.sin(a));
+    }
+    ctx.closePath();
+  }
+  function blob(ctx, x, y, r, ph){
+    ctx.beginPath();
+    for(var i = 0; i <= 20; i++){
+      var a = i / 20 * 6.283185, k = 1 + 0.08 * Math.sin(3 * a + ph) + 0.05 * Math.sin(5 * a - ph * 1.3);
+      if(i === 0) ctx.moveTo(x + r * k * Math.cos(a), y + r * k * Math.sin(a)); else ctx.lineTo(x + r * k * Math.cos(a), y + r * k * Math.sin(a));
+    }
+    ctx.closePath();
+  }
+  function mixHex(a, b, t){
+    var pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+    var r = Math.round(lerp(pa >> 16, pb >> 16, t)), g = Math.round(lerp(pa >> 8 & 255, pb >> 8 & 255, t)), bl = Math.round(lerp(pa & 255, pb & 255, t));
+    return 'rgb(' + r + ',' + g + ',' + bl + ')';
+  }
+
+  /*MODEL4*/
+  function mulberry(seed){
+    return function(){
+      seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+      var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  /* Germinal-centre toy model. Each clone of B cells has an affinity for antigen A and for B.
+     Clonal selection: only clones that fit grow, and better fit means faster growth; the lymph
+     node has limited room, so clones compete. Somatic hypermutation: growing clones spawn mutant
+     clones, most of them worse. Memory: a share of every expansion becomes memory cells, which
+     mature over days, live long and later give rise to more productive effector cells.
+     Time is in days. Only the shapes are meant to be realistic, not the units. */
+  function gcModel(seed){
+    var R = mulberry(seed), NMAX = 170, NNAIVE = 110;
+    var KP = 4, RMAX = 8, RQ = 4, RQ2 = 3, DEATH = 0.6, DQ = 0.4, TM = 8, TS = 2.5;
+    var PHI = 0.04, DMEM = 0.004, MU = 0.03, SD = 0.1, BIAS = 0.045, NCAP = 20000;
+    var RHO = 1.9, PMAX = 4000, KIN = 0.75, KAB = 0.045, PROD = 0.006, QX = 3, TAU = 5, AB0 = 0.12;
+    var S = {cl: [], P: {A: 0, B: 0}, sig: {A: 0, B: 0}, Ab: {A: AB0, B: AB0}, day: 0, mut: true, focus: 'A', spawned: 0};
+    function gauss(){ var u = 0; while(u === 0) u = R(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * R()); }
+    function low(){ return 0.1 + 0.36 * Math.pow(R(), 2.4); }
+    for(var i = 0; i < NNAIVE; i++){
+      var aA = low(), aB = low();
+      if(aA > 0.33 && aB > 0.33){ if(R() < 0.5) aA = 0.1 + 0.2 * R(); else aB = 0.1 + 0.2 * R(); }   // no clone fits both
+      S.cl.push({a: {A: aA, B: aB}, n: 0, q: 0, m: 0, mi: 0, naive: true, x: 0.04 + 0.92 * R(), y: 0.06 + 0.88 * R()});
+    }
+    // only a handful of the many naive clones fit a given antigen at all
+    [[0.5, 'A'], [0.46, 'A'], [0.43, 'A'], [0.49, 'B'], [0.45, 'B'], [0.42, 'B']].forEach(function(q, k){
+      var c = S.cl[(k * 17 + 5) % NNAIVE];
+      c.a[q[1]] = q[0]; c.a[q[1] === 'A' ? 'B' : 'A'] = 0.12 + 0.15 * R();
+    });
+    function fit(a){ var x = (a - 0.32) / 0.6; return x <= 0 ? 0 : Math.pow(Math.min(1, x), 1.3); }
+    function eff(a){ return a <= 0.36 ? 0 : (a - 0.36) / 0.64; }
+    function slot(){
+      if(S.cl.length < NMAX){ var c = {}; S.cl.push(c); return c; }
+      var best = null, bs = 1e9;
+      for(var i = NNAIVE; i < S.cl.length; i++){ var c2 = S.cl[i], sz = c2.n + c2.q + c2.m + c2.mi; if(sz < 0.25 && sz < bs){ bs = sz; best = c2; } }
+      return best;
+    }
+    function spawn(p){
+      var c = slot(); if(!c) return;
+      var f = S.focus, oth = f === 'A' ? 'B' : 'A', a = {};
+      a[f] = Math.max(0.05, Math.min(0.97, p.a[f] - BIAS + SD * gauss()));
+      a[oth] = Math.max(0.05, Math.min(p.a[oth] <= 0.33 ? 0.33 : 0.97, p.a[oth] + 0.03 * gauss()));
+      c.a = a; c.n = 1; c.q = 0; c.m = 0; c.mi = 0; c.naive = false; c.born = S.day;
+      var ang = R() * 6.283185, d = 0.025 + 0.035 * R();
+      c.x = Math.max(0.03, Math.min(0.97, p.x + Math.cos(ang) * d));
+      c.y = Math.max(0.05, Math.min(0.95, p.y + Math.sin(ang) * d * 1.6));
+      p.n = Math.max(0, p.n - 1); S.spawned++;
+    }
+    function step(dt){
+      var pA = S.P.A, pB = S.P.B, hA = pA / (pA + KP), hB = pB / (pB + KP);
+      // activation signal for memory cells: on while the pathogen is present, fades over days
+      S.sig.A += dt * (pA > 0 ? (1 - S.sig.A) / 0.3 : -S.sig.A / TS);
+      S.sig.B += dt * (pB > 0 ? (1 - S.sig.B) / 0.3 : -S.sig.B / TS);
+      var prodA = 0, prodB = 0, tot = 0, i, c;
+      for(i = 0; i < S.cl.length; i++) tot += S.cl[i].n + S.cl[i].q;
+      var crowd = 1 / (1 + tot / NCAP);
+      for(i = 0; i < S.cl.length; i++){
+        c = S.cl[i];
+        var fA = fit(c.a.A), fB = fit(c.a.B), sn = (hA * fA + hB * fB) * crowd, sm = (S.sig.A * fA + S.sig.B * fB) * crowd;
+        var grow = RMAX * sn * (c.n + (c.naive ? 1 : 0));            // naive and germinal-centre cells
+        var growQ = sm * (RQ * c.m + RQ2 * c.q);                      // effectors made from memory cells
+        c.n += dt * (grow - DEATH * c.n);
+        c.q += dt * (growQ - DQ * c.q);
+        c.mi += dt * (PHI * (grow + growQ) - c.mi / TM);              // new memory cells mature for days
+        c.m += dt * (c.mi / TM - DMEM * c.m);
+        if(c.n < 0) c.n = 0;
+        if(c.q < 0) c.q = 0;
+        if(S.mut && grow > 0 && R() < MU * grow * dt) spawn(c);
+        var w = c.n + QX * c.q;
+        prodA += w * eff(c.a.A); prodB += w * eff(c.a.B);
+      }
+      S.Ab.A += dt * (PROD * prodA - (S.Ab.A - AB0) / TAU);
+      S.Ab.B += dt * (PROD * prodB - (S.Ab.B - AB0) / TAU);
+      ['A', 'B'].forEach(function(X){
+        var p = S.P[X]; if(p <= 0) return;
+        p += dt * (RHO * p * (1 - p / PMAX) - KIN * p - KAB * (S.Ab[X] - AB0) * p);
+        S.P[X] = p < 0.02 ? 0 : p;
+      });
+      S.day += dt;
+    }
+    function affinity(X){                   // antibody-weighted mean affinity of the producing cells
+      var num = 0, den = 0;
+      for(var i = 0; i < S.cl.length; i++){ var c = S.cl[i], w = (c.n + QX * c.q) * eff(c.a[X]); num += w * c.a[X]; den += w; }
+      return den > 1 ? num / den : 0;
+    }
+    return {
+      S: S, fit: fit, AB0: AB0,
+      infect: function(X){ S.focus = X; S.P[X] = Math.max(S.P[X], 0) + 1; },
+      run: function(days){ var n = Math.max(1, Math.ceil(days / 0.02)), h = days / n; for(var k = 0; k < n; k++) step(h); },
+      affinity: affinity
+    };
+  }
+  /*END MODEL4*/
+
+  /* =========================================================
+     SIM 01 — pattern recognition by innate immune cells.
+     Receptors and the microbial molecules they bind follow Alberts,
+     Table 24-1: TLR4 – LPS and TLR5 – flagellin (bacteria),
+     TLR3 – double-stranded RNA (viruses), Dectin-1 – beta-glucan (fungi).
+     Viruses multiply only inside tissue cells.
+     ========================================================= */
+  makeSim('isim1', function(canvas, dim){
+    var REC = {tlr4: true, tlr5: true, tlr3: true, dectin: true};
+    var PAT = {bac: ['tlr4', 'tlr5'], fun: ['dectin'], vir: ['tlr3']};
+    var RKEYS = ['tlr4', 'tlr5', 'tlr3', 'dectin'];
+    var RCOL = {tlr4: C.terra, tlr5: C.terraBright, tlr3: C.blue, dectin: C.plum};
+    var SPEED = {bac: 20, vir: 16, fun: 4};
+    var CAP = {bac: 70, fun: 70, vir: 60}, clock = 0, last = now(), nextIn = 2.5, recruitAt = 0, alarm = 0, hotX = 0, hotY = 0;
+    var mic = [], phag = [], fx = [], cells = [], rows = [], geo = {}, cellR = 13;
+    var W = dim.w, VY = dim.h - 18;
+    var cnt = {bac: document.getElementById('i1-bac'), fun: document.getElementById('i1-fun'), vir: document.getElementById('i1-inf')};
+    var TS = REDUCED ? 0.5 : 1;
+
+    function seen(k){ var p = PAT[k]; for(var i = 0; i < p.length; i++) if(REC[p[i]]) return true; return false; }
+    function buildTissue(){
+      cellR = W < 520 ? 12 : 14;
+      geo = {dx: cellR * 1.75, dy: cellR * 1.52, x0: cellR * 0.45, y0: cellR * 0.95};
+      rows = []; cells = [];
+      for(var r = 0; geo.y0 + r * geo.dy < VY - cellR * 0.7; r++){
+        var row = [];
+        for(var c = 0; ; c++){
+          var x = geo.x0 + (r % 2 ? geo.dx / 2 : 0) + c * geo.dx;
+          if(x > W + cellR) break;
+          var cell = {x: x, y: geo.y0 + r * geo.dy, inf: 0, dmg: -99, prot: -99};
+          row.push(cell); cells.push(cell);
+        }
+        rows.push(row);
+      }
+    }
+    function cellAt(x, y){
+      var r = Math.round((y - geo.y0) / geo.dy); if(r < 0 || r >= rows.length) return null;
+      var c = Math.round((x - geo.x0 - (r % 2 ? geo.dx / 2 : 0)) / geo.dx), row = rows[r];
+      return (c >= 0 && c < row.length) ? row[c] : null;
+    }
+    function divT(k){ return k === 'bac' ? rand(2.6, 3.4) : (k === 'fun' ? rand(2.8, 3.6) : 1e9); }
+    function protect(ce){                                  // infected cell senses viral RNA and warns its neighbours
+      for(var i = 0; i < cells.length; i++){ var o = cells[i]; if(Math.abs(o.x - ce.x) < cellR * 3.6 && Math.abs(o.y - ce.y) < cellR * 3.4) o.prot = clock; }
+    }
+    function addMic(k, x, y, a){
+      var n = 0; for(var i = 0; i < mic.length; i++) if(mic[i].k === k) n++;
+      if(n >= CAP[k]) return;
+      mic.push({k: k, x: x, y: y, a: a === undefined ? Math.random() * 6.283 : a, div: clock + divT(k), born: clock});
+    }
+    function addPhag(x, y, res){
+      var small = W < 520;
+      phag.push({x: x, y: y, r: res ? (small ? 13 : 15) : (small ? 9 : 10), res: res, tx: res ? x : hotX, ty: res ? y : hotY, cd: 0, al: 0,
+                 wob: Math.random() * 6.283, life: res ? 1e9 : clock + 9, born: clock, gone: 0});
+    }
+    function wound(n){
+      var y0 = rand(0.2, 0.75) * VY;
+      for(var i = 0; i < n; i++){
+        addMic('bac', 6, y0 + rand(-14, 14), rand(-0.6, 0.6));
+        addMic('fun', 8, y0 + rand(-14, 14), rand(-0.6, 0.6));
+        addMic('vir', 6, y0 + rand(-14, 14), rand(-0.6, 0.6));
+      }
+    }
+    buildTissue();
+    addPhag(W * 0.16, VY * 0.36, true); addPhag(W * 0.5, VY * 0.66, true); addPhag(W * 0.82, VY * 0.3, true);
+    wound(2);
+
+    RKEYS.forEach(function(k){
+      var id = 'i1-' + k, btn = document.getElementById(id), label = btn ? btn.textContent : '';
+      onClick(id, function(){ REC[k] = !REC[k]; toggleBtn(btn, REC[k], REC[k] ? label : label.split(' · ')[0] + ' chybí'); });
+    });
+    onClick('i1-wound', function(){ wound(4); });
+
+    function counts(){
+      var nb = 0, nf = 0, ni = 0, i;
+      for(i = 0; i < mic.length; i++){ var k = mic[i].k; if(k === 'bac') nb++; else if(k === 'fun') nf++; }
+      for(i = 0; i < cells.length; i++) if(cells[i].inf) ni++;
+      setTxt(cnt.bac, String(nb)); setTxt(cnt.fun, String(nf)); setTxt(cnt.vir, String(ni));
+    }
+    return {
+      resize: function(d){
+        var sx = d.w / W; W = d.w; VY = d.h - 18; buildTissue();
+        mic.forEach(function(m){ m.x *= sx; m.y = Math.min(m.y, VY - 8); });
+        phag.forEach(function(f){ f.x *= sx; f.tx *= sx; f.y = Math.min(f.y, VY - 10); });
+      },
+      step: function(){
+        var t = now(), dt = Math.min(0.05, t - last) * TS; last = t; clock += dt;
+        if(clock >= nextIn){ nextIn = clock + 5; wound(1); }
+        var i, j;
+        for(i = mic.length - 1; i >= 0; i--){
+          var m = mic[i];
+          m.a += (Math.random() - 0.5) * (m.k === 'fun' ? 4 : 10) * dt;
+          m.x += Math.cos(m.a) * SPEED[m.k] * dt; m.y += Math.sin(m.a) * SPEED[m.k] * dt;
+          if(m.x < 4){ m.x = 4; m.a = Math.PI - m.a; }
+          if(m.x > W - 4){ m.x = W - 4; m.a = Math.PI - m.a; }
+          if(m.y < 4){ m.y = 4; m.a = -m.a; }
+          if(m.y > VY - 8){ m.y = VY - 8; m.a = -m.a; }
+          if(m.k === 'vir'){
+            if(clock - m.born > 7){ mic.splice(i, 1); continue; }           // free virions fall apart
+            var ce = cellAt(m.x, m.y);
+            if(ce && !ce.inf && clock - ce.dmg > 10 && clock - ce.prot > 10 && Math.random() < 1.5 * dt){
+              ce.inf = clock; mic.splice(i, 1); if(REC.tlr3) protect(ce); continue;
+            }
+          } else if(clock >= m.div){
+            m.div = clock + divT(m.k);
+            var b = m.a + rand(2, 4.3);
+            addMic(m.k, m.x + Math.cos(b) * 6, m.y + Math.sin(b) * 6, b);
+          }
+        }
+        for(i = 0; i < cells.length; i++){                                  // infected cells release new virions
+          var cl = cells[i];
+          if(cl.inf && clock - cl.inf > 2.5){ cl.inf = 0; cl.dmg = clock; for(j = 0; j < (REC.tlr3 ? 2 : 4); j++) addMic('vir', cl.x + rand(-4, 4), cl.y + rand(-4, 4)); }
+        }
+        alarm = Math.max(0, alarm - dt * 0.16);
+        var reach = Math.max(160, W * 0.36), nRec = 0;
+        for(i = phag.length - 1; i >= 0; i--){
+          var f = phag[i];
+          f.cd -= dt; f.al = Math.max(0, f.al - dt * 0.5);
+          if(!f.res){
+            if(clock > f.life){ f.gone += dt; if(f.gone > 0.8) phag.splice(i, 1); continue; }
+            nRec++;
+          }
+          var best = -1, bd = reach;
+          for(j = 0; j < mic.length; j++){
+            var q = mic[j]; if(!seen(q.k)) continue;
+            var dd = Math.abs(q.x - f.x) + Math.abs(q.y - f.y);
+            if(dd < bd){ bd = dd; best = j; }
+          }
+          var spd;
+          if(best >= 0){
+            var tq = mic[best]; f.tx = tq.x; f.ty = tq.y; spd = f.res ? 58 : 80;
+            if(Math.hypot(tq.x - f.x, tq.y - f.y) < f.r + 4 && f.cd <= 0){
+              fx.push({x: tq.x, y: tq.y, t: clock, k: 'eat', c: tq.k});
+              mic.splice(best, 1); f.cd = f.res ? 0.22 : 0.16; f.al = 1; alarm = Math.min(1, alarm + 0.22); hotX = tq.x; hotY = tq.y;
+              if(!f.res) f.life = clock + 9;
+              if(Math.random() < 0.3) fx.push({x: f.x, y: f.y, t: clock, k: 'ring', r: f.r});
+            }
+          } else {
+            spd = f.res ? 14 : 30;
+            if(Math.hypot(f.tx - f.x, f.ty - f.y) < 6){
+              if(f.res || alarm < 0.2){ f.tx = rand(20, W - 20); f.ty = rand(18, VY - 24); }
+              else { f.tx = clamp(hotX + rand(-60, 60), 20, W - 20); f.ty = clamp(hotY + rand(-45, 45), 18, VY - 24); }
+            }
+          }
+          var dx = f.tx - f.x, dy = f.ty - f.y, dl = Math.hypot(dx, dy) || 1, sl = Math.min(dl, spd * dt);
+          f.x += dx / dl * sl; f.y += dy / dl * sl;
+        }
+        if(alarm > 0.3 && nRec < 8 && clock > recruitAt){ recruitAt = clock + 0.6; addPhag(clamp(hotX + rand(-50, 50), 20, W - 20), VY + 2, false); }
+        while(fx.length && clock - fx[0].t > 1.2) fx.shift();
+        counts();
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, i;
+        ctx.clearRect(0, 0, w, h);
+        ctx.lineWidth = 1;
+        for(i = 0; i < cells.length; i++){                                  // the body's own cells
+          var c = cells[i];
+          hexPath(ctx, c.x, c.y, cellR * 0.95);
+          if(c.inf){ ctx.fillStyle = 'rgba(127,160,192,' + (0.18 + 0.12 * (clock - c.inf)).toFixed(2) + ')'; ctx.fill(); }
+          else if(clock - c.prot < 10){ ctx.fillStyle = 'rgba(217,183,90,' + (0.09 * (1 - (clock - c.prot) / 10)).toFixed(3) + ')'; ctx.fill(); }
+          else if(clock - c.dmg < 8){ ctx.fillStyle = 'rgba(16,19,14,' + (0.55 * (1 - (clock - c.dmg) / 8)).toFixed(2) + ')'; ctx.fill(); }
+          ctx.strokeStyle = 'rgba(155,176,126,.14)'; ctx.stroke();
+        }
+        rr(ctx, 6, VY + 1, w - 12, 11, 5.5);                                 // blood vessel
+        ctx.fillStyle = 'rgba(208,138,94,.12)'; ctx.fill();
+        ctx.strokeStyle = 'rgba(208,138,94,.38)'; ctx.stroke();
+        for(i = 0; i < mic.length; i++){
+          var m = mic[i];
+          if(m.k === 'bac'){
+            ctx.save(); ctx.translate(m.x, m.y); ctx.rotate(m.a);
+            ctx.strokeStyle = 'rgba(227,154,103,.6)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(-5, 0);
+            for(var s = 1; s <= 4; s++) ctx.lineTo(-5 - s * 2.4, Math.sin(clock * 14 + s + i) * 1.7);
+            ctx.stroke();
+            rr(ctx, -5, -2.3, 10, 4.6, 2.3); ctx.fillStyle = C.terra; ctx.fill();
+            ctx.restore();
+          } else if(m.k === 'fun'){
+            ctx.fillStyle = C.plum;
+            ctx.beginPath(); ctx.arc(m.x, m.y, 3.8, 0, 6.283); ctx.fill();
+            ctx.beginPath(); ctx.arc(m.x + Math.cos(m.a) * 4.6, m.y + Math.sin(m.a) * 4.6, 2.4, 0, 6.283); ctx.fill();
+          } else {
+            hexPath(ctx, m.x, m.y, 2.9); ctx.fillStyle = C.blue; ctx.fill();
+          }
+        }
+        for(i = 0; i < phag.length; i++){                                   // macrophages and recruited neutrophils
+          var f = phag[i];
+          ctx.globalAlpha = f.gone ? Math.max(0, 1 - f.gone / 0.8) : Math.min(1, (clock - f.born) / 0.5);
+          if(f.al > 0){ ctx.beginPath(); ctx.arc(f.x, f.y, f.r + 7, 0, 6.283); ctx.fillStyle = 'rgba(217,183,90,' + (0.2 * f.al).toFixed(3) + ')'; ctx.fill(); }
+          blob(ctx, f.x, f.y, f.r, f.wob + clock * 0.9);
+          ctx.fillStyle = f.res ? 'rgba(199,214,172,.17)' : 'rgba(155,176,126,.2)'; ctx.fill();
+          ctx.strokeStyle = f.res ? C.sagePale : C.sage; ctx.lineWidth = 1.4; ctx.stroke();
+          for(var k = 0; k < 4; k++){
+            if(!REC[RKEYS[k]]) continue;
+            ctx.strokeStyle = RCOL[RKEYS[k]]; ctx.lineWidth = 1.7;
+            for(var n = 0; n < 3; n++){
+              var an = f.wob * 0.3 + (n * 4 + k) * (6.283185 / 12);
+              ctx.beginPath();
+              ctx.moveTo(f.x + Math.cos(an) * (f.r - 1), f.y + Math.sin(an) * (f.r - 1));
+              ctx.lineTo(f.x + Math.cos(an) * (f.r + 3.6), f.y + Math.sin(an) * (f.r + 3.6));
+              ctx.stroke();
+            }
+          }
+          ctx.globalAlpha = 1;
+        }
+        for(i = 0; i < fx.length; i++){
+          var e = fx[i], age = clock - e.t;
+          if(e.k === 'eat' && age < 0.5){
+            var r = 3 + age * 12;
+            ctx.strokeStyle = 'rgba(217,183,90,' + (1 - age / 0.5).toFixed(2) + ')'; ctx.lineWidth = 1.3;
+            ctx.beginPath(); ctx.moveTo(e.x - r, e.y); ctx.lineTo(e.x + r, e.y); ctx.moveTo(e.x, e.y - r); ctx.lineTo(e.x, e.y + r); ctx.stroke();
+          } else if(e.k === 'ring'){
+            ctx.beginPath(); ctx.arc(e.x, e.y, e.r + age * 34, 0, 6.283);
+            ctx.strokeStyle = 'rgba(217,183,90,' + (0.4 * (1 - age / 1.2)).toFixed(2) + ')'; ctx.lineWidth = 1; ctx.stroke();
+          }
+        }
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left';
+        ctx.fillStyle = alarm > 0.35 ? C.gold : C.muted;
+        ctx.fillText(alarm > 0.35 ? 'poplach: z cévy přicházejí neutrofily' : 'klid', 12, VY - 5);
+        ctx.textAlign = 'right'; ctx.fillStyle = C.muted; ctx.fillText('céva', w - 12, VY - 5);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 — assembling a heavy-chain gene from V, D and J segments
+     40 V x ~23 D x 6 J (Alberts, Fig. 24-29); letters lost and added
+     at the joints; the joint keeps the reading frame only if its
+     length is divisible by three.
+     ========================================================= */
+  makeSim('isim2', function(canvas, dim){
+    var NV = 40, ND = 23, NJ = 6, B4 = 'ACGT', DUR = REDUCED ? 0.05 : 1.6;
+    var cur = null, t0 = -99, hist = [], total = 0, good = 0, dirty = true;
+    var segEl = document.getElementById('i2-seg'), resEl = document.getElementById('i2-res'), okEl = document.getElementById('i2-ok');
+    var SITE = [C.gold, C.terraBright, C.sagePale, C.blue, C.plum, C.sage];
+    function rs(len){ var s = ''; for(var i = 0; i < len; i++) s += B4[(Math.random() * 4) | 0]; return s; }
+    function hashStr(s){ var h = 2166136261; for(var i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h | 0; }
+    function make(){
+      var c = {v: (Math.random() * NV) | 0, d: (Math.random() * ND) | 0, j: (Math.random() * NJ) | 0,
+               cut: [(Math.random() * 4) | 0, (Math.random() * 4) | 0], n1: rs((Math.random() * 7) | 0), n2: rs((Math.random() * 7) | 0)};
+      c.dLen = 12 + (c.d * 7) % 16;                         // letters lost from the ends of D, random letters added
+      c.len = c.dLen - c.cut[0] - c.cut[1] + c.n1.length + c.n2.length;
+      c.ok = c.len % 3 === 0;
+      var r = mulberry(hashStr([c.v, c.d, c.j, c.cut.join(''), c.n1, c.n2].join('|')));
+      c.pts = []; for(var i = 0; i < 6; i++) c.pts.push(0.12 + 0.88 * r());
+      c.col = SITE[(r() * SITE.length) | 0];
+      return c;
+    }
+    function record(c){
+      total++; if(c.ok) good++;
+      hist.push(c); if(hist.length > 40) hist.shift();
+    }
+    function readout(){
+      if(!cur) return;
+      setTxt(segEl, 'V' + (cur.v + 1) + ' · D' + (cur.d + 1) + ' · J' + (cur.j + 1));
+      var done = now() - t0 >= DUR;
+      setTxt(resEl, done ? (cur.ok ? 'funkční řetězec' : 'posunutý rámec') : '…');
+      setTxt(okEl, good + ' z ' + total);
+    }
+    function next(){ cur = make(); t0 = now(); record(cur); dirty = true; readout(); }
+    onClick('i2-next', next);
+    onClick('i2-many', function(){ for(var i = 0; i < 99; i++) record(make()); next(); t0 = now() - DUR; readout(); });
+    onClick('i2-reset', function(){ hist = []; total = 0; good = 0; next(); t0 = now() - DUR; readout(); });
+    next(); t0 = now() - DUR; readout();
+
+    function joint(lost, added){ var p = []; if(lost) p.push('−' + lost); if(added) p.push('+' + added); return p.join(' ') || '±0'; }
+    function site(ctx, x, y, w, h, c, alpha){             // binding site: a profile unique to each receptor
+      ctx.beginPath(); ctx.moveTo(x, y + h); ctx.lineTo(x, y + h * 0.2);
+      for(var i = 0; i < c.pts.length; i++) ctx.lineTo(x + (i + 0.5) / c.pts.length * w, y + c.pts[i] * h * 0.62);
+      ctx.lineTo(x + w, y + h * 0.2); ctx.lineTo(x + w, y + h); ctx.closePath();
+      ctx.globalAlpha = alpha; ctx.fillStyle = c.col; ctx.fill(); ctx.globalAlpha = 1;
+    }
+    return {
+      resize: function(){ dirty = true; },
+      step: function(){ if(now() - t0 < DUR + 0.1) dirty = true; },
+      draw: function(ctx, d){
+        if(!dirty) return; dirty = false;
+        readout();
+        var w = d.w, h = d.h, pad = 12, t = now() - t0, narrow = w < 560, i;
+        ctx.clearRect(0, 0, w, h);
+        // ---- germline locus
+        var y1 = 30, bh = 15, g = narrow ? 8 : 12, cw = narrow ? 16 : 26;
+        var bw = (w - 2 * pad - 3 * g - cw) / (NV + ND + NJ);
+        var spin = t < DUR * 0.45;
+        var hv = spin ? ((t * 41) | 0) % NV : cur.v, hd = spin ? ((t * 31 + 7) | 0) % ND : cur.d, hj = spin ? ((t * 19 + 3) | 0) % NJ : cur.j;
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText(narrow ? 'zárodečná DNA' : 'zárodečná DNA · gen pro těžký řetězec protilátky', pad, y1 - 10);
+        ctx.textAlign = 'right'; ctx.fillText('40 × 23 × 6 = 5520 kombinací', w - pad, y1 - 10);
+        function group(x0, count, col, hi){
+          for(var k = 0; k < count; k++){
+            var on = k === hi;
+            ctx.globalAlpha = on ? 1 : 0.38; ctx.fillStyle = col;
+            ctx.fillRect(x0 + k * bw + 0.3, on ? y1 - 3 : y1, Math.max(1, bw - 1), on ? bh + 6 : bh);
+          }
+          ctx.globalAlpha = 1;
+          return x0 + count * bw;
+        }
+        var xv = pad, xd = group(xv, NV, C.terra, hv) + g, xj = group(xd, ND, C.gold, hd) + g, xc = group(xj, NJ, C.sage, hj) + g;
+        ctx.fillStyle = C.blue; ctx.globalAlpha = 0.8; ctx.fillRect(xc, y1, cw, bh); ctx.globalAlpha = 1;
+        ctx.font = '500 10px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'center';
+        ctx.fillText('V', xv + NV * bw / 2, y1 + bh + 13); ctx.fillText('D', xd + ND * bw / 2, y1 + bh + 13);
+        ctx.fillText('J', xj + NJ * bw / 2, y1 + bh + 13); ctx.fillText('C', xc + cw / 2, y1 + bh + 13);
+        // ---- rearranged gene
+        var y2 = 98, k1 = clamp((t - DUR * 0.45) / (DUR * 0.25), 0, 1), k2 = clamp((t - DUR * 0.7) / (DUR * 0.3), 0, 1);
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillStyle = C.muted;
+        ctx.fillText('přeskládaná DNA jednoho B-lymfocytu', pad, y2 - 14);
+        if(t >= DUR * 0.45){
+          var lw = narrow ? 7 : 8.5, wV = narrow ? 44 : 64, wD = narrow ? 26 : 36, wJ = narrow ? 22 : 30, wC = narrow ? 22 : 34;
+          var wn1 = cur.n1.length * lw * k2, wn2 = cur.n2.length * lw * k2, gap = (1 - k2) * (narrow ? 26 : 44);
+          var tot = wV + wn1 + gap + wD + wn2 + gap + wJ + 8 + wC, x = Math.max(pad, (w - tot) / 2), bh2 = 16;
+          function blk(xx, ww, col, lab){
+            ctx.fillStyle = col; ctx.globalAlpha = 0.9; rr(ctx, xx, y2, ww, bh2, 3); ctx.fill(); ctx.globalAlpha = 1;
+            ctx.fillStyle = '#1E231A'; ctx.font = '600 10px ' + MONO; ctx.textAlign = 'center'; ctx.fillText(lab, xx + ww / 2, y2 + 11.5);
+          }
+          function letters(xx, s){
+            ctx.font = '500 ' + (narrow ? 10 : 11) + 'px ' + MONO; ctx.textAlign = 'center'; ctx.fillStyle = C.gold;
+            for(var q = 0; q < s.length; q++) ctx.fillText(s[q], xx + (q + 0.5) * lw, y2 + 12);
+          }
+          function loop(xa, xb){                               // the DNA in between is cut out
+            if(k2 >= 1) return;
+            ctx.strokeStyle = 'rgba(199,214,172,' + (0.55 * (1 - k2)).toFixed(2) + ')'; ctx.lineWidth = 1.4;
+            ctx.beginPath(); ctx.moveTo(xa, y2 + 2); ctx.bezierCurveTo(xa, y2 - 26, xb, y2 - 26, xb, y2 + 2); ctx.stroke();
+          }
+          var x1 = x + wV, x2 = x1 + wn1 + gap, x3 = x2 + wD, x4 = x3 + wn2 + gap;
+          blk(x, wV, C.terra, 'V' + (cur.v + 1));
+          loop(x1, x2);
+          if(k2 > 0.6) letters(x1, cur.n1);
+          blk(x2, wD, C.gold, 'D' + (cur.d + 1));
+          loop(x3, x4);
+          if(k2 > 0.6) letters(x3, cur.n2);
+          blk(x4, wJ, C.sage, 'J' + (cur.j + 1));
+          blk(x4 + wJ + 8, wC, C.blue, 'C');
+          if(k1 > 0 && k2 < 1){
+            ctx.font = '500 9px ' + SANS; ctx.fillStyle = 'rgba(199,214,172,' + (0.8 * (1 - k2)).toFixed(2) + ')'; ctx.textAlign = 'center';
+            ctx.fillText('vystřiženo', (x1 + x2) / 2, y2 - 24);
+          }
+          if(k2 >= 1){
+            ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'center';
+            ctx.fillText(joint(cur.cut[0], cur.n1.length), x1 + wn1 / 2, y2 + bh2 + 11);
+            ctx.fillText(joint(cur.cut[1], cur.n2.length), x3 + wn2 / 2, y2 + bh2 + 11);
+          }
+        }
+        // ---- verdict
+        var y3 = 158;
+        if(t >= DUR){
+          var q3 = Math.floor(cur.len / 3), rem = cur.len % 3;
+          ctx.textAlign = 'left'; ctx.font = '500 11px ' + MONO; ctx.fillStyle = C.ink;
+          ctx.fillText('úsek mezi V a J: ' + cur.len + ' ' + plural(cur.len, 'písmeno', 'písmena', 'písmen'), pad, y3);
+          ctx.fillStyle = cur.ok ? C.sage : C.terraBright;
+          var msg = cur.ok ? cur.len + ' = 3 × ' + q3 + ' → rámec sedí, řetězec je funkční'
+                           : cur.len + ' = 3 × ' + q3 + ' + ' + rem + ' → rámec se posune, řetězec je k ničemu';
+          if(narrow && msg.length > 44){
+            var cut = msg.indexOf('→');
+            ctx.fillText(msg.slice(0, cut + 1), pad, y3 + 17); ctx.fillText(msg.slice(cut + 2), pad, y3 + 33);
+          } else ctx.fillText(msg, pad, y3 + 17);
+          if(!narrow && cur.ok){                                // the finished receptor, big
+            var bx = w - pad - 70, by = y3 - 26;
+            ctx.strokeStyle = C.line; ctx.lineWidth = 6; ctx.lineCap = 'round';
+            ctx.beginPath(); ctx.moveTo(bx + 35, by + 54); ctx.lineTo(bx + 35, by + 30); ctx.lineTo(bx + 14, by + 12);
+            ctx.moveTo(bx + 35, by + 30); ctx.lineTo(bx + 56, by + 12); ctx.stroke(); ctx.lineCap = 'butt';
+            ctx.save(); ctx.translate(bx + 12, by + 12); ctx.rotate(-0.85); site(ctx, -9, -16, 18, 16, cur, 1); ctx.restore();
+            ctx.save(); ctx.translate(bx + 58, by + 12); ctx.rotate(0.85); site(ctx, -9, -16, 18, 16, cur, 1); ctx.restore();
+          }
+        }
+        // ---- gallery of recent cells
+        var tile = narrow ? 22 : 26, gapT = 4, ncol = Math.floor((w - 2 * pad + gapT) / (tile + gapT)), yg = h - tile - 12;
+        ctx.textAlign = 'left'; ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted;
+        ctx.fillText('vazebná místa posledních buněk (× = buňka zahyne)', pad, yg - 8);
+        var shown = hist.slice(-ncol);
+        if(t < DUR && shown.length) shown = shown.slice(0, -1);
+        for(i = 0; i < shown.length; i++){
+          var c = shown[i], tx = pad + i * (tile + gapT);
+          rr(ctx, tx, yg, tile, tile, 4); ctx.fillStyle = '#2C3427'; ctx.fill();
+          if(c.ok) site(ctx, tx + 4, yg + 5, tile - 8, tile - 9, c, 1);
+          else {
+            ctx.strokeStyle = '#6A735E'; ctx.lineWidth = 1.5; var m = 7;
+            ctx.beginPath(); ctx.moveTo(tx + m, yg + m); ctx.lineTo(tx + tile - m, yg + tile - m);
+            ctx.moveTo(tx + tile - m, yg + m); ctx.lineTo(tx + m, yg + tile - m); ctx.stroke();
+          }
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — the thymus: positive and negative selection
+     (Alberts, Fig. 24-41). Cells that do not recognise self MHC die of
+     neglect; cells that bind self too strongly are deleted. The thymus
+     only estimates binding strength, so deletion is probabilistic around
+     the threshold. Without AIRE, organ-specific self proteins are not shown.
+     ========================================================= */
+  makeSim('isim3', function(canvas, dim){
+    var N = 6000, R3 = mulberry(20260517), SC = [], ST = [], i;
+    for(i = 0; i < N; i++){
+      var binder = R3() < 0.3;
+      SC.push(binder ? 0.2 + 0.8 * Math.pow(R3(), 1.6) : 0.2 * R3());   // binding to self peptides shown everywhere
+      ST.push(0.9 * Math.pow(R3(), 3));                                   // binding to organ-specific self peptides
+    }
+    var SMIN = 0.2, DANGER = 0.62, SIG = 0.045, NBIN = 32, T = 0.6, aire = true, bins = [];
+    var slider = document.getElementById('i3-thr'), vEl = document.getElementById('i3-thr-v');
+    var goodEl = document.getElementById('i3-good'), badEl = document.getElementById('i3-bad'), bAire = document.getElementById('i3-aire');
+    var flow = [], acc = 0, last = now(), clock = 0, dirtyHist = true;
+    function pdel(s){ return 1 / (1 + Math.exp(-(s - T) / SIG)); }
+    function seenS(k){ return aire ? Math.max(SC[k], ST[k]) : SC[k]; }
+    function trueS(k){ return Math.max(SC[k], ST[k]); }
+    function recompute(){
+      var v = slider ? +slider.value : 50;
+      T = 0.85 - 0.5 * v / 100;
+      setTxt(vEl, v < 20 ? 'velmi mírná' : v < 40 ? 'mírná' : v < 60 ? 'střední' : v < 80 ? 'přísná' : 'velmi přísná');
+      var gS = 0, gT = 0, bS = 0, bT = 0, k, b;
+      bins = []; for(b = 0; b < NBIN; b++) bins.push({tot: 0, ok: 0, bad: 0});
+      for(k = 0; k < N; k++){
+        if(SC[k] < SMIN) continue;                                         // died of neglect
+        var surv = 1 - pdel(seenS(k)), tr = trueS(k), bad = tr >= DANGER;
+        if(bad){ bT++; bS += surv; } else { gT++; gS += surv; }
+        var bi = Math.min(NBIN - 1, Math.floor((tr - SMIN) / (1 - SMIN) * NBIN));
+        bins[bi].tot++; if(bad) bins[bi].bad += surv; else bins[bi].ok += surv;
+      }
+      setTxt(goodEl, Math.round(100 * gS / gT) + NB + '%');
+      setTxt(badEl, Math.round(100 * bS / bT) + NB + '%');
+      dirtyHist = true;
+    }
+    if(slider) slider.addEventListener('input', recompute);
+    if(bAire) bAire.addEventListener('click', function(){ aire = !aire; toggleBtn(bAire, aire, 'AIRE: ' + (aire ? 'zapnutý' : 'vypnutý')); recompute(); });
+    recompute();
+    function layout(d){ var top = 8, fh = Math.round(d.h * 0.5); return {top: top, fh: fh, hy: top + fh + 30, hh: d.h - (top + fh + 30) - 30}; }
+    return {
+      step: function(d){
+        var t = now(), dt = Math.min(0.05, t - last) * (REDUCED ? 0.5 : 1); last = t; clock += dt;
+        var w = d.w, X1 = w * 0.34, X2 = w * 0.67;
+        acc += dt * 16;
+        while(acc >= 1){ acc -= 1; flow.push({k: (Math.random() * N) | 0, x: -4, y: rand(0.14, 0.9), sp: rand(70, 100) * (w < 520 ? 0.75 : 1), st: 0, td: 0}); }
+        for(var j = flow.length - 1; j >= 0; j--){
+          var c = flow[j];
+          if(c.st === 1 || c.st === 3){ if(clock - c.td > 0.8) flow.splice(j, 1); continue; }
+          c.x += c.sp * dt;
+          if(c.st === 0 && c.x >= X1){ if(SC[c.k] < SMIN){ c.st = 1; c.td = clock; } else c.st = 2; }
+          else if(c.st === 2 && c.x >= X2){
+            var s = seenS(c.k);
+            if(Math.random() < pdel(s)){ c.st = 3; c.td = clock; }
+            else { c.st = 4; c.kind = trueS(c.k) >= DANGER ? 'bad' : (s >= T - 0.1 ? 'treg' : 'ok'); }
+          }
+          if(c.x > w + 6) flow.splice(j, 1);
+        }
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, L = layout(d), X1 = w * 0.34, X2 = w * 0.67, xa = w * 0.05, xb = w * 0.5, xc = w * 0.84, i;
+        ctx.clearRect(0, 0, w, h);
+        // ---- thymus: cortex and medulla, then blood
+        rr(ctx, xa, L.top, xb - xa - 2, L.fh, 10); ctx.fillStyle = 'rgba(155,176,126,.07)'; ctx.fill();
+        rr(ctx, xb + 2, L.top, xc - xb - 4, L.fh, 10); ctx.fillStyle = 'rgba(155,176,126,.13)'; ctx.fill();
+        rr(ctx, xc + 2, L.top, w - xc - 8, L.fh, 10); ctx.fillStyle = 'rgba(208,138,94,.10)'; ctx.fill();
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText('kůra', xa + 8, L.top + 14); ctx.fillText('dřeň', xb + 10, L.top + 14);
+        ctx.textAlign = 'center'; ctx.fillText('krev', (xc + w) / 2, L.top + 14);
+        ctx.setLineDash([3, 4]); ctx.strokeStyle = 'rgba(217,183,90,.55)'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(X1, L.top + 20); ctx.lineTo(X1, L.top + L.fh - 16); ctx.moveTo(X2, L.top + 20); ctx.lineTo(X2, L.top + L.fh - 16); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = '600 9.5px ' + SANS; ctx.fillStyle = C.gold;
+        ctx.fillText('pozná vlastní MHC?', X1, L.top + L.fh - 5);
+        ctx.fillText('váže se moc silně?', X2, L.top + L.fh - 5);
+        for(i = 0; i < flow.length; i++){
+          var c = flow[i], y = L.top + 20 + c.y * (L.fh - 44), a, col = C.sagePale, r = 3.2;
+          if(c.st === 1){ a = 1 - (clock - c.td) / 0.8; col = 'rgba(120,128,108,' + Math.max(0, a).toFixed(2) + ')'; y += (clock - c.td) * 8; }
+          else if(c.st === 3){
+            a = 1 - (clock - c.td) / 0.8; col = 'rgba(214,92,64,' + Math.max(0, a).toFixed(2) + ')';
+            ctx.beginPath(); ctx.arc(c.x, y, r + (clock - c.td) * 14, 0, 6.283); ctx.strokeStyle = col; ctx.lineWidth = 1; ctx.stroke();
+          }
+          else if(c.st === 4) col = c.kind === 'bad' ? C.terraBright : (c.kind === 'treg' ? C.plum : C.sage);
+          ctx.beginPath(); ctx.arc(c.x, y, r, 0, 6.283); ctx.fillStyle = col; ctx.fill();
+          if(c.st === 4 && c.kind === 'bad'){ ctx.beginPath(); ctx.arc(c.x, y, r + 3, 0, 6.283); ctx.strokeStyle = 'rgba(227,154,103,.6)'; ctx.lineWidth = 1.2; ctx.stroke(); }
+        }
+        // ---- fate by binding strength (all cells that passed the first check)
+        var x0 = 12, x1 = w - 12, bw = (x1 - x0) / NBIN, hy = L.hy, hh = L.hh;
+        function X(s){ return x0 + (s - SMIN) / (1 - SMIN) * (x1 - x0); }
+        ctx.fillStyle = 'rgba(227,154,103,.08)'; ctx.fillRect(X(DANGER), hy - 6, x1 - X(DANGER), hh + 6);
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillStyle = C.muted;
+        ctx.fillText('osud podle síly vazby', x0, hy - 12);
+        ctx.textAlign = 'right'; ctx.fillStyle = C.terraBright; ctx.fillText('nebezpečná vazba', x1, hy - 12);
+        for(i = 0; i < NBIN; i++){
+          var bn = bins[i]; if(!bn.tot) continue;
+          var fo = bn.ok / bn.tot, fb = bn.bad / bn.tot, bx = x0 + i * bw + 1, bwid = Math.max(1, bw - 2);
+          var hOk = fo * hh, hBad = fb * hh;
+          ctx.fillStyle = 'rgba(170,70,50,.55)'; ctx.fillRect(bx, hy, bwid, hh - hOk - hBad);
+          ctx.fillStyle = C.terraBright; ctx.fillRect(bx, hy + hh - hOk - hBad, bwid, hBad);
+          ctx.fillStyle = C.sage; ctx.fillRect(bx, hy + hh - hOk, bwid, hOk);
+        }
+        var xt = X(T);
+        if(xt >= x0 && xt <= x1){
+          ctx.fillStyle = C.gold; ctx.beginPath(); ctx.moveTo(xt, hy + hh + 2); ctx.lineTo(xt - 5, hy + hh + 10); ctx.lineTo(xt + 5, hy + hh + 10); ctx.closePath(); ctx.fill();
+        }
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted;
+        ctx.textAlign = 'left'; ctx.fillText('slabá', x0, h - 6);
+        ctx.textAlign = 'center'; ctx.fillText('síla vazby na vlastní molekuly', (x0 + x1) / 2, h - 6);
+        ctx.textAlign = 'right'; ctx.fillText('silná', x1, h - 6);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — Darwin in a lymph node: clonal selection, somatic
+     hypermutation and memory (primary vs secondary response,
+     Alberts, Fig. 24-16). 1 s on screen = 2 days.
+     ========================================================= */
+  makeSim('isim4', function(canvas, dim){
+    var M, hist, events, started, acc, last = now(), mutOn = true, SPD = REDUCED ? 1 : 2, WIN = 60;
+    var dayEl = document.getElementById('i4-day'), abEl = document.getElementById('i4-ab'), affEl = document.getElementById('i4-aff');
+    var abLab = document.getElementById('i4-ab-l');
+    var bMut = document.getElementById('i4-mut');
+    function reset(){ M = gcModel((Math.random() * 1e9) | 0); M.S.mut = mutOn; hist = []; events = []; started = false; acc = 0; readout(); }
+    function infect(X){ if(!started){ started = true; M.S.day = 0; hist = [{d: 0, a: M.S.Ab.A, b: M.S.Ab.B, pa: 0, pb: 0}]; } M.infect(X); events.push({d: M.S.day, X: X}); }
+    function fmtAb(v){ return v < 10 ? num(v, 1) : grp(v); }
+    function readout(){
+      if(!started){ setTxt(dayEl, '–'); setTxt(abEl, '–'); setTxt(affEl, '–'); setTxt(abLab, 'protilátky'); return; }
+      var f = M.S.focus, a = M.affinity(f);
+      setTxt(dayEl, String(Math.floor(M.S.day)));
+      setTxt(abLab, 'protilátky proti ' + f); setTxt(abEl, fmtAb(M.S.Ab[f]));
+      setTxt(affEl, a ? '10' + sup(Math.round(5 + 6 * clamp((a - 0.3) / 0.7, 0, 1))) + NB + 'l/mol' : '–');
+    }
+    onClick('i4-a', function(){ infect('A'); });
+    onClick('i4-b', function(){ infect('B'); });
+    onClick('i4-reset', reset);
+    if(bMut) bMut.addEventListener('click', function(){ mutOn = !mutOn; M.S.mut = mutOn; toggleBtn(bMut, mutOn, 'Hypermutace: ' + (mutOn ? 'zapnutá' : 'vypnutá')); });
+    reset();
+    function layout(d){
+      return d.w >= 600 ? {cx: 10, cy: 8, cw: d.w * 0.4 - 10, ch: d.h - 16, px: d.w * 0.4 + 40, pw: d.w * 0.6 - 54, py: 16, ph: d.h - 46}
+                        : {cx: 10, cy: 8, cw: d.w - 20, ch: d.h * 0.42, px: 40, pw: d.w - 54, py: d.h * 0.42 + 26, ph: d.h * 0.58 - 56};
+    }
+    var LMIN = Math.log(0.1) / Math.LN10, LMAX = Math.log(3000) / Math.LN10;
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        if(!started) return;
+        var days = dt * SPD;
+        M.run(days); acc += days;
+        while(acc >= 0.25){ acc -= 0.25; var S = M.S; hist.push({d: S.day, a: S.Ab.A, b: S.Ab.B, pa: S.P.A, pb: S.P.B}); }
+        while(hist.length > 2 && hist[0].d < M.S.day - WIN - 2) hist.shift();
+        readout();
+      },
+      draw: function(ctx, d){
+        var L = layout(d), w = d.w, h = d.h, S = M.S, f = S.focus, i;
+        ctx.clearRect(0, 0, w, h);
+        // ---- clones in the lymph node
+        rr(ctx, L.cx, L.cy, L.cw, L.ch, 10); ctx.fillStyle = 'rgba(155,176,126,.06)'; ctx.fill();
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText('klony B-lymfocytů v mízní uzlině', L.cx + 8, L.cy + 14);
+        var rmax = d.w >= 600 ? 13 : 10, order = S.cl.slice().sort(function(p, q){ return (q.n + q.q + q.m) - (p.n + p.q + p.m); });
+        for(i = 0; i < order.length; i++){
+          var c = order[i], mem = c.m + c.mi, size = c.n + c.q + mem + (c.naive ? 1 : 0);
+          if(size < 0.3) continue;
+          var r = clamp(1.3 + 2.2 * Math.log(1 + size) / Math.LN10, 1.3, rmax);
+          var x = L.cx + 8 + c.x * (L.cw - 16), y = L.cy + 22 + c.y * (L.ch - 30);
+          var k = Math.pow(M.fit(c.a[f]), 0.6);
+          ctx.beginPath(); ctx.arc(x, y, r, 0, 6.283); ctx.fillStyle = mixHex('#59634F', '#E2C063', k); ctx.fill();
+          if(mem >= 1){
+            ctx.beginPath(); ctx.arc(x, y, r + 1.8, 0, 6.283);
+            ctx.strokeStyle = 'rgba(199,214,172,' + clamp(0.3 + 0.18 * Math.log(mem) / Math.LN10, 0.3, 0.95).toFixed(2) + ')'; ctx.lineWidth = 1.4; ctx.stroke();
+          }
+        }
+        // ---- antibodies and pathogen over time (log scale)
+        var px = L.px, pw = L.pw, py = L.py, ph = L.ph;
+        var d0 = started ? Math.max(0, S.day - WIN) : 0;
+        function X(day){ return px + (day - d0) / WIN * pw; }
+        function Y(v){ var l = Math.log(Math.max(0.1, v)) / Math.LN10; return py + ph - (l - LMIN) / (LMAX - LMIN) * ph; }
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+        [1, 10, 100, 1000].forEach(function(v){
+          var yy = Y(v); ctx.globalAlpha = 0.5; ctx.beginPath(); ctx.moveTo(px, yy); ctx.lineTo(px + pw, yy); ctx.stroke(); ctx.globalAlpha = 1;
+          ctx.fillText(v >= 1000 ? '1000' : String(v), px - 5, yy + 3);
+        });
+        ctx.beginPath(); ctx.moveTo(px, py + ph); ctx.lineTo(px + pw, py + ph); ctx.stroke();
+        ctx.textAlign = 'center';
+        for(var dd = Math.ceil(d0 / 10) * 10; dd <= d0 + WIN; dd += 10) ctx.fillText(String(dd), X(dd), py + ph + 13);
+        ctx.textAlign = 'right'; ctx.fillText('dny', px + pw, py + ph + 25);
+        ctx.textAlign = 'left'; ctx.font = '600 10px ' + SANS; ctx.fillText('množství (logaritmická stupnice)', px, py - 5);
+        if(!started){
+          ctx.textAlign = 'center'; ctx.font = '600 11px ' + SANS; ctx.fillStyle = C.sagePale;
+          ctx.fillText('Pusť do těla patogen A nebo B', px + pw / 2, py + ph / 2);
+          return;
+        }
+        function curve(key, col, dash){
+          ctx.strokeStyle = col; ctx.lineWidth = dash ? 1.5 : 2.2; ctx.setLineDash(dash ? [4, 3] : []);
+          ctx.beginPath(); var on = false;
+          for(var q = 0; q < hist.length; q++){
+            var e = hist[q]; if(e.d < d0) continue;
+            var v = e[key];
+            if(dash && v <= 0){ on = false; continue; }
+            var xx = X(e.d), yy = Y(v);
+            if(!on){ ctx.moveTo(xx, yy); on = true; } else ctx.lineTo(xx, yy);
+          }
+          ctx.stroke(); ctx.setLineDash([]);
+        }
+        curve('pa', C.terra, true); curve('pb', C.plum, true);
+        curve('a', C.gold, false); curve('b', C.blue, false);
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'center';
+        for(i = 0; i < events.length; i++){
+          var ev = events[i]; if(ev.d < d0) continue;
+          var ex = X(ev.d); ctx.fillStyle = ev.X === 'A' ? C.terra : C.plum;
+          ctx.beginPath(); ctx.moveTo(ex, py + ph - 9); ctx.lineTo(ex - 4.5, py + ph - 1); ctx.lineTo(ex + 4.5, py + ph - 1); ctx.closePath(); ctx.fill();
+          ctx.fillText(ev.X, ex, py + ph - 12);
+        }
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

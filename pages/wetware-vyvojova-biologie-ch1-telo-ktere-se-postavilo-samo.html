@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Tělo, které se postavilo samo – Větev na větvi</title>
+<meta name="description" content="Úvod do logiky vývojové biologie: jak se z jedné buňky stane tělo bez architekta a bez plánku – spád a práh, sousedé, hodiny a buněčná smrt jako sochař. Se čtyřmi interaktivními simulacemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-vyvojova-biologie.html">Vývojová biologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Tvar bez architekta</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title"><em>Tělo</em>, které se<br>postavilo samo</h1>
+  <p class="deck">Jak z&nbsp;jediné buňky vyroste tělo, když nikde není plánek ani stavbyvedoucí.</p>
+  <p class="byline">Úvod do logiky vývojové biologie: pět myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b> učebnice <i>Alberts a&nbsp;kol., Molecular Biology of the Cell</i> (7.&nbsp;vydání) a&nbsp;z&nbsp;knihy <i>From Neuron to Brain</i> (5.&nbsp;vydání).</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Rovný stonek s páry postranních větviček v pravidelných odstupech. Směrem k vrcholu jsou páry menší a na špičce je pupen.">
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="3" stroke-linecap="round">
+        <path d="M450,240 C449,206 451,170 450,134 C449,104 451,78 450,52"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round">
+        <path d="M450,212 C427,208 404,200 380,198"/><path d="M450,212 C473,208 496,200 520,198"/>
+        <path d="M450,184 C429,180 409,173 388,171"/><path d="M450,184 C471,180 491,173 512,171"/>
+        <path d="M450,156 C432,152 414,146 396,144"/><path d="M450,156 C468,152 486,146 504,144"/>
+        <path d="M450,130 C435,127 420,121 405,119"/><path d="M450,130 C465,127 480,121 495,119"/>
+        <path d="M450,106 C438,103 426,99 414,97"/><path d="M450,106 C462,103 474,99 486,97"/>
+        <path d="M450,84 C441,82 432,78 424,77"/><path d="M450,84 C459,82 468,78 476,77"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="380" cy="198" r="5"/><circle cx="520" cy="198" r="5"/>
+        <circle cx="388" cy="171" r="4.8"/><circle cx="512" cy="171" r="4.8"/>
+        <circle cx="396" cy="144" r="4.5"/><circle cx="504" cy="144" r="4.5"/>
+        <circle cx="405" cy="119" r="4.2"/><circle cx="495" cy="119" r="4.2"/>
+        <circle cx="414" cy="97" r="3.8"/><circle cx="486" cy="97" r="3.8"/>
+        <circle cx="424" cy="77" r="3.4"/><circle cx="476" cy="77" r="3.4"/>
+      </g>
+      <g class="draw leaf" fill="var(--gold)" stroke="none">
+        <circle cx="450" cy="48" r="5.5"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Díl po dílu. Páteř obratlovce vzniká jako tenhle stonek: na rostoucím konci přibývá v&nbsp;pravidelném rytmu jeden pár za druhým, <em>větev na větvi</em>.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Na začátku je jediná buňka, oplozené vajíčko. Na konci tělo z&nbsp;víc než deseti bilionů buněk více než dvou set typů. Každá je na svém místě: nervové buňky v&nbsp;mozku, svalové buňky na kostech, na každé ruce pět prstů. Nikde přitom není výkres, podle kterého by se stavělo, ani stavbyvedoucí, který by ho četl.</p>
+
+  <p>Vývoj stojí podle Albertse na třech procesech: buňky se množí, specializují se a&nbsp;přeskupují se do tkání a&nbsp;orgánů. A&nbsp;pak je tu překvapení. Člověk by nečekal, že červa, blechu, orla a&nbsp;krakatici obrovskou staví tytéž mechanismy, stejně jako by nečekal, že se stejným postupem vyrábí bota a&nbsp;letadlo. Ve skutečnosti je základní mašinerie vývoje u&nbsp;všech živočichů v&nbsp;podstatě stejná. Všichni berou nástroje ze stejné skříně.</p>
+
+  <p>Kapitola stojí na pěti myšlenkách: rozcestí za rozcestím, spád a&nbsp;práh, soused říká ne, hodiny a&nbsp;vlna a&nbsp;sochař, který ubírá.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si <b>stadion, kde diváci skládají obří obrazec</b> z&nbsp;barevných kartiček. Nikdo z&nbsp;nich obrazec nevidí. Každý má jen jednoduché pravidlo: podle čísla řady a&nbsp;sedadla zvedni tuhle barvu. Obrazec vznikne, protože každý ví, kde sedí. Zárodek funguje podobně, jen buňky musí svoje „číslo sedadla“ zjistit samy – z&nbsp;koncentrace signálů, od sousedů a&nbsp;z&nbsp;rytmu vlastních hodin.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 ROZCESTÍ ZA ROZCESTÍM ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Rozcestí za <em>rozcestím</em></h2>
+
+  <p>Oplozené vajíčko se nejdřív mnohokrát rozdělí. Pak začne každá buňka volit: z&nbsp;několika málo možností, které jí zbývají, vybere jednu, a&nbsp;další volba už přichází z&nbsp;užší nabídky. Vývojová dráha buňky se tak větví rozcestí za rozcestím, podobně jako rozhodnutí v&nbsp;lidském životě. A&nbsp;buňka se při každé volbě řídí tím, co si nese z&nbsp;minulosti, a&nbsp;tím, co jí právě říkají sousedé.</p>
+
+  <p>Minulost je v&nbsp;buňce zapsaná jako <span class="kw">buněčná paměť</span>: ve stavu chromatinu a&nbsp;v&nbsp;sadě regulačních bílkovin a&nbsp;RNA, které zrovna obsahuje. Víc o&nbsp;tom, jak ze stejného textu vznikají různé buňky, je v&nbsp;kapitole <a href="wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html">Čtení bez čtenáře</a>. Dvě buňky s&nbsp;jinou historií proto odpovědí na stejný signál každá jinak. A&nbsp;odpověď závisí i&nbsp;na tom, jaké další signály přicházejí zároveň. Zárodek si tak vystačí s&nbsp;hrstkou signálních drah a&nbsp;používá je znovu a&nbsp;znovu, pokaždé s&nbsp;jiným výsledkem.</p>
+
+  <p>Dceřiné buňky se mohou lišit dvojím způsobem. Buď se narodí jiné, protože mateřská buňka při dělení rozdělí některé molekuly nerovnoměrně. Nebo se narodí stejné a&nbsp;rozdílné je udělají až signály, které dostanou potom.</p>
+
+  <p>Některé volby spouští jediná řídicí bílkovina. Když se u&nbsp;octomilky zapne gen <i>eyeless</i> v&nbsp;buňkách, ze kterých má vzniknout noha, vyroste na noze oko. Stejně zafunguje i&nbsp;jeho obdoba z&nbsp;olihně. U&nbsp;obratlovců se tomuto genu říká <i>Pax6</i> a&nbsp;lidé s&nbsp;jeho mutacemi se rodí bez duhovky.</p>
+
+  <p class="punch">Buňka nedostane plán celého těla. Dostane <b>jen další rozcestí</b> – a&nbsp;pamatuje si, kudy už šla.</p>
+</section>
+
+<!-- ===================== §2 SPÁD A PRÁH ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Spád a&nbsp;<em>práh</em></h2>
+
+  <p>Jak ale buňka pozná, kde je? Nejjednodušší cesta vede přes <span class="kw">morfogen</span>. Skupinka buněk ho na jednom místě vyrábí, molekuly se od zdroje šíří difuzí a&nbsp;cestou se rozkládají. Vznikne spád koncentrace: u&nbsp;zdroje je morfogenu hodně, dál od něj čím dál méně. Takhle morfogeny působí nanejvýš zhruba na milimetr.</p>
+
+  <p>Buňky pak čtou, kolik morfogenu k&nbsp;nim doputuje, a&nbsp;odpovídají přes <span class="kw">prahy</span>. Cílový gen se zapne jen tam, kde koncentrace překročí určitou hodnotu, a&nbsp;pod ní zůstane vypnutý. Plynulý spád se tak rozpadne na několik ostrých pásem: vysoká koncentrace pošle buňky jednou cestou, střední jinou a&nbsp;nízká třetí. Jediná vylučovaná bílkovina tak v&nbsp;poli buněk vytvoří několik různých osudů.</p>
+
+  <p>Tvar spádu přitom určují dvě obyčejné fyzikální veličiny: jak rychle se morfogen šíří a&nbsp;jak dlouho vydrží. Morfogen, který difunduje rychleji, dosáhne dál, ale u&nbsp;zdroje ho pak bude méně. Delší poločas zvedne koncentraci všude. A&nbsp;spád se nevytvoří hned: s&nbsp;poločasem kolem tří hodin a&nbsp;difuzí typickou pro malou bílkovinu se ustaluje celé hodiny.</p>
+
+  <p>Spád a&nbsp;prahy už znáš z&nbsp;kapitoly <a href="wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html">Čtení bez čtenáře</a>. Proužek genu <i>eve</i> u&nbsp;octomilky vzniká přesně takhle, z&nbsp;prahů několika spádů najednou.</p>
+
+  <p>Vyzkoušej si to. Měň poločas, difuzi a&nbsp;produkci morfogenu a&nbsp;sleduj, kam se posunou hranice mezi pásmy. Pak odstraň zdroj, nejdřív bez paměti buněk a&nbsp;potom s&nbsp;ní.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Spád a&nbsp;prahy</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">čas</span> <b id="d1-t">0 min</b></span>
+        <span class="rd"><span class="lo">dosah prahu 1</span> <b id="d1-b1">–</b></span>
+        <span class="rd"><span class="lo">dosah prahu 2</span> <b id="d1-b2">–</b></span>
+      </div>
+    </div>
+    <canvas id="dsim1" height="260" aria-label="Nahoře koncentrace morfogenu podle vzdálenosti od zdroje vlevo se dvěma prahy, dole řada buněk obarvených podle toho, který práh překročily."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#D08A5E"></i>nad prahem 1</span>
+      <span><i style="background:#D9B75A"></i>mezi prahy</span>
+      <span><i style="background:#3A4433;border:1px solid #6E8455"></i>pod prahem 2</span>
+    </div>
+    <div class="sim-controls">
+      <label>Poločas <input type="range" id="d1-hl" min="0" max="100" value="50" aria-label="Poločas morfogenu"><span class="v" id="d1-hl-v"></span></label>
+      <label>Difuze <input type="range" id="d1-d" min="0" max="100" value="50" aria-label="Difuzní koeficient morfogenu"><span class="v" id="d1-d-v"></span></label>
+      <label>Produkce <input type="range" id="d1-p" min="0" max="100" value="50" aria-label="Rychlost výroby morfogenu ve zdroji"><span class="v" id="d1-p-v"></span></label>
+      <span class="gap"></span>
+      <button class="ctrl is-on" id="d1-src" aria-pressed="true">Zdroj: zapnutý</button>
+      <button class="ctrl" id="d1-mem" aria-pressed="false">Paměť buněk: vypnutá</button>
+      <button class="ctrl" id="d1-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Spád a&nbsp;prahy.</b> Zdroj vlevo vyrábí morfogen, který se šíří tkání a&nbsp;rozkládá se. Buňky dole dostanou podle koncentrace jeden ze tří osudů. Výchozí poločas 170&nbsp;minut a&nbsp;difuze 1&nbsp;µm²/s&nbsp;odpovídají Albertsovu příkladu a&nbsp;posuvníky je mění až trojnásobně oběma směry. Rychlejší difuze posune hranice dál, ale u&nbsp;zdroje koncentraci sníží. Delší poločas ji zvedne všude. Bez paměti buňky po odstranění zdroje svůj osud ztratí, s&nbsp;pamětí si ho udrží, pokud byly nad prahem aspoň hodinu. Jedna sekunda tu odpovídá dvaceti minutám.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Buňka nepotřebuje mapu. Stačí jí <b>změřit koncentraci a&nbsp;porovnat ji s&nbsp;prahem</b>.</p>
+</section>
+
+<!-- ===================== §3 SOUSED ŘÍKÁ NE ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Soused říká <em>ne</em></h2>
+
+  <p>Spád potřebuje zdroj, tedy nerovnost, která už v&nbsp;zárodku je. Vzorec ale umí vzniknout i&nbsp;z&nbsp;buněk, které jsou na začátku všechny stejné. Stačí, aby si sousedé navzájem bránili udělat totéž. Říká se tomu <span class="kw">laterální inhibice</span>.</p>
+
+  <p>Funguje přes dvojici bílkovin na povrchu buněk. Delta na jedné buňce se váže na receptor Notch na buňce sousední a&nbsp;říká jí: nespecializuj se. Buňka s&nbsp;aktivovaným Notch navíc vyrábí méně vlastní Delty, a&nbsp;tak méně tlumí své sousedy. Kdo má na začátku o&nbsp;chlup víc Delty, utlumí sousedy o&nbsp;něco víc, ti pak tlumí jeho o&nbsp;něco méně – a&nbsp;malý rozdíl se sám zesiluje, až jedna buňka vyhraje a&nbsp;ostatní kolem ní ustoupí. Jako počáteční rozdíl stačí i&nbsp;náhodný šum.</p>
+
+  <p>Takhle vznikají štětinky na hřbetě octomilky. Každá je drobný smyslový orgán a&nbsp;vyrůstá z&nbsp;jediné buňky, která zvítězila ve skupince podobných buněk. Štětinky jsou proto rozmístěné pravidelně, s&nbsp;odstupy, ačkoli je nikdo neodměřoval. Vítězná buňka dokonce umí tlumit i&nbsp;buňky, kterých se přímo nedotýká: natáhne k&nbsp;nim dlouhé výběžky. Když signalizace přes Notch nefunguje, vznikne obrovský nadbytek nervových buněk na úkor buněk pokožky a&nbsp;zárodek nepřežije.</p>
+
+  <p>Vyzkoušej si to. Každá buňka začíná se skoro stejným množstvím Delty a&nbsp;rozdíl dělá jen náhoda. Spusť to několikrát za sebou a&nbsp;sleduj, že vzorec je pokaždé jiný, ale odstupy zůstávají stejné.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Mozaika z&nbsp;ničeho</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">budoucích štětinek</span> <b id="d2-n">–</b></span>
+        <span class="rd"><span class="lo">podíl</span> <b id="d2-frac">–</b></span>
+      </div>
+    </div>
+    <canvas id="dsim2" height="280" aria-label="Plocha šestiúhelníkových buněk. Buňky s hodně Delty svítí zlatě a tlumí sousedy, takže vznikne pravidelná mozaika."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="d2-new">Nový začátek</button>
+      <button class="ctrl" id="d2-range" aria-pressed="false">Dosah: jen sousedé</button>
+      <button class="ctrl is-on" id="d2-notch" aria-pressed="true">Notch: funguje</button>
+    </div>
+  </div>
+  <figcaption><b>Mozaika z&nbsp;ničeho.</b> Každý šestiúhelník je buňka. Čím je zlatější, tím víc má Delty a&nbsp;tím víc tlumí sousedy. Z&nbsp;náhodného šumu za pár okamžiků vznikne pravidelná mozaika: vítězné buňky (s&nbsp;čárkou budoucí štětinky) obklopené buňkami, které ustoupily. S&nbsp;delším dosahem signálu jsou vítězové řidší. Když Notch nefunguje, nikdo nikoho netlumí a&nbsp;specializují se všechny buňky. Model laterální inhibice podle Colliera a&nbsp;kol. (1996).</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Na pravidelnost není potřeba pravítko. Stačí, aby <b>každý trochu bránil sousedovi</b>.</p>
+</section>
+
+<!-- ===================== §4 HODINY A VLNA ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Hodiny a&nbsp;<em>vlna</em></h2>
+
+  <p>Tělo obratlovců se opakuje: obratel za obratlem, žebro za žebrem, sval za svalem. V&nbsp;zárodku se zakládají jako <span class="kw">somity</span>, bloky buněk po obou stranách osy těla. Nevznikají najednou, ale jeden pár po druhém, od hlavy k&nbsp;ocasu, v&nbsp;pravidelném rytmu. Podle druhu jich nakonec je od necelých čtyřiceti u&nbsp;žáby nebo dánia pruhovaného po víc než tři sta u&nbsp;hada.</p>
+
+  <p>Rytmus udávají molekulární <span class="kw">hodiny</span>. V&nbsp;buňkách na zadním konci zárodku kmitá exprese několika genů. Gen se zapne, jeho bílkovina se nahromadí a&nbsp;vypne ho, pak se rozpadne – a&nbsp;gen se zase zapne. Jeden kmit trvá u&nbsp;dánia 30&nbsp;minut, u&nbsp;kuřete 90, u&nbsp;myši 120 a&nbsp;u&nbsp;člověka 300&nbsp;minut. Délku kmitu určují hlavně zpoždění v&nbsp;té smyčce, tedy to, jak dlouho trvá vyrobit mRNA a&nbsp;bílkovinu a&nbsp;jak dlouho vydrží. Perioda je zhruba dvojnásobek celkového zpoždění.</p>
+
+  <p>Hodiny samy somit neudělají. Druhou složkou je <span class="kw">vlna</span>. Zadní konec zárodku neustále roste a&nbsp;buňky, které zůstávají pozadu, se postupně dostávají z&nbsp;dosahu signálů z&nbsp;ocasu. Jejich hodiny se zpomalí a&nbsp;zastaví a&nbsp;buňka zamrzne ve fázi, ve které ji to zastihlo. Časový rytmus se tak otiskne do prostoru jako pruhy a&nbsp;každý kmit hodin přidá jeden pár somitů. Velikost somitu je prostě to, o&nbsp;kolik osa za jeden kmit naroste. Když hodiny nejdou, buňky se nakonec do skupin stejně rozpadnou, jenže nepravidelně.</p>
+
+  <p>Vyzkoušej si to. Nastav periodu podle různých živočichů, změň rychlost růstu a&nbsp;sleduj, kolik somitů se na osu vejde. Pak hodiny zastav.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Hodiny a&nbsp;vlna</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">párů somitů</span> <b id="d3-n">0</b></span>
+        <span class="rd"><span class="lo">na celou osu</span> <b id="d3-tot">–</b></span>
+      </div>
+    </div>
+    <canvas id="dsim3" height="200" aria-label="Zárodek zleva od hlavy doprava k ocasu. Vpravo kmitající buňky, vlevo hotové páry somitů, které přibývají jeden po druhém."></canvas>
+    <div class="sim-controls">
+      <label>Perioda <input type="range" id="d3-T" min="20" max="320" step="5" value="90" aria-label="Perioda segmentačních hodin v minutách"><span class="v" id="d3-T-v"></span></label>
+      <label>Růst osy <input type="range" id="d3-v" min="0" max="100" value="50" aria-label="Rychlost prodlužování osy těla"><span class="v" id="d3-v-v"></span></label>
+      <span class="gap"></span>
+      <button class="ctrl is-on" id="d3-clock" aria-pressed="true">Hodiny: běží</button>
+      <button class="ctrl" id="d3-reset">Znovu</button>
+    </div>
+  </div>
+  <figcaption><b>Hodiny a&nbsp;vlna.</b> Vpravo roste ocas. Buňky v&nbsp;pásu před ním kmitají (zlatě svítí v&nbsp;jedné fázi cyklu) a&nbsp;směrem dopředu se jejich kmity zpomalují. Tečkovaná čára je místo, kde se hodiny zastaví: buňky, které ji minou, zamrznou a&nbsp;za každý kmit vznikne jeden pár somitů. Periody dánia, kuřete, myši a&nbsp;člověka jsou podle Albertse, rychlost růstu je jen relativní. Kratší perioda nebo pomalejší růst dají víc menších somitů. Jedna sekunda tu odpovídá 50 minutám.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Páteř je <b>čas převedený na délku</b>: každý obratel je jeden tik hodin.</p>
+</section>
+
+<!-- ===================== §5 SOCHAŘ, KTERÝ UBÍRÁ ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>Sochař, který <em>ubírá</em></h2>
+
+  <p>Tělo se nestaví jen přidáváním. Velkou část práce odvede smrt. Ruce a&nbsp;nohy začínají jako lopatky a&nbsp;prsty se od sebe oddělí teprve tehdy, když buňky mezi nimi spáchají sebevraždu. Stejně zmizí ocas pulce při přeměně v&nbsp;žábu, na pokyn hormonu štítné žlázy (o&nbsp;hormonech víc v&nbsp;kapitole <a href="wetware-endokrinologie-ch1-dopis-pro-vsechny.html">Dopis pro všechny</a>). Tomuhle řízenému zániku se říká <span class="kw">apoptóza</span>, z&nbsp;řeckého slova pro opadávání listů ze stromu.</p>
+</section>
+
+<figure class="illus">
+  <svg viewBox="0 0 640 220" role="img" aria-label="Dvě stadia tlapky myšího zárodku. Vlevo lopatka s pěti paprsky budoucích prstů a s umírajícími buňkami mezi nimi, vpravo o den později oddělené prsty.">
+    <g transform="translate(40,10)">
+      <path d="M40,200 C34,150 20,110 26,74 C32,30 70,12 120,12 C170,12 208,30 214,74 C220,110 206,150 200,200 Z" fill="var(--sage-mist)" stroke="var(--sage-pale)" stroke-width="2"/>
+      <g fill="none" stroke="var(--sage)" stroke-width="13" stroke-linecap="round" opacity=".75">
+        <path d="M70,190 C64,140 52,92 48,58"/><path d="M96,190 C93,130 88,74 86,32"/><path d="M120,190 C120,130 120,72 120,22"/>
+        <path d="M144,190 C147,130 152,74 154,32"/><path d="M170,190 C176,140 188,92 192,58"/>
+      </g>
+      <g fill="var(--terra)">
+        <circle cx="66" cy="70" r="2.6"/><circle cx="72" cy="96" r="2.6"/><circle cx="62" cy="118" r="2.6"/><circle cx="76" cy="132" r="2.4"/><circle cx="70" cy="52" r="2.4"/>
+        <circle cx="104" cy="42" r="2.6"/><circle cx="106" cy="70" r="2.6"/><circle cx="100" cy="100" r="2.4"/><circle cx="110" cy="122" r="2.6"/><circle cx="102" cy="146" r="2.4"/>
+        <circle cx="136" cy="42" r="2.6"/><circle cx="134" cy="70" r="2.6"/><circle cx="140" cy="100" r="2.4"/><circle cx="130" cy="122" r="2.6"/><circle cx="138" cy="146" r="2.4"/>
+        <circle cx="174" cy="70" r="2.6"/><circle cx="168" cy="96" r="2.6"/><circle cx="178" cy="118" r="2.6"/><circle cx="164" cy="132" r="2.4"/><circle cx="170" cy="52" r="2.4"/>
+      </g>
+      <text x="120" y="218" text-anchor="middle">buňky mezi prsty umírají</text>
+    </g>
+    <g fill="none" stroke="var(--sage-mute)" stroke-width="1.6" stroke-linecap="round"><path d="M296,110 L340,110 M330,102 L340,110 L330,118"/></g>
+    <g transform="translate(380,10)">
+      <path d="M40,200 C38,170 40,150 56,140 L184,140 C200,150 202,170 200,200 Z" fill="var(--sage-mist)" stroke="var(--sage-pale)" stroke-width="2"/>
+      <g fill="none" stroke="var(--sage)" stroke-width="15" stroke-linecap="round" opacity=".8">
+        <path d="M70,190 C64,140 52,92 48,58"/><path d="M96,190 C93,130 88,74 86,32"/><path d="M120,190 C120,130 120,72 120,22"/>
+        <path d="M144,190 C147,130 152,74 154,32"/><path d="M170,190 C176,140 188,92 192,58"/>
+      </g>
+      <text x="120" y="218" text-anchor="middle">o den později</text>
+    </g>
+  </svg>
+  <figcaption><b>Prsty z&nbsp;lopatky.</b> Tlapka myšího zárodku: umírající buňky (oranžové tečky) jsou soustředěné mezi budoucími prsty. O&nbsp;den později je tkáň mezi nimi pryč. Zjednodušeno podle obrázku 18–2 v&nbsp;Albertsovi.</figcaption>
+</figure>
+
+<section class="prose">
+  <p>Apoptóza je úhledná. Buňka se zmenší, rozpadne se na balíčky obalené membránou a&nbsp;sousední buňka nebo makrofág ji pozře dřív, než by se její obsah vylil a&nbsp;vyvolal zánět. Proto je mrtvých buněk v&nbsp;tkáni vidět málo, i&nbsp;když jich umírá spousta. V&nbsp;těle dospělého člověka jich takhle zanikne nejméně milion za sekundu a&nbsp;dělení je průběžně nahrazuje.</p>
+
+  <p>Nejvíc stojí za pozornost, k&nbsp;čemu je smrt dobrá v&nbsp;nervové soustavě. Mnoho nervových buněk vznikne do zásoby. Jejich výběžky dorostou k&nbsp;cílové tkáni, třeba ke svalu, a&nbsp;ta vylučuje jen omezené množství <span class="kw">faktoru přežití</span>. Neurony o&nbsp;něj soupeří: ty, které ho dostanou dost, přežijí, ostatní spáchají apoptózu. Počet neuronů se tak sám přizpůsobí velikosti cíle a&nbsp;nikdo ho nemusí předem spočítat. Viktor Hamburger a&nbsp;jeho kolegové zjistili, že ve vyvíjející se končetině zahyne 40 až 70&nbsp;% motoneuronů, které do ní vyslaly výběžky. S&nbsp;přidanou končetinou jich zahynulo méně, po odstranění pupenu končetiny víc.</p>
+
+  <p>První takový faktor objevila Rita Levi-Montalciniová se spolupracovníky. Je to nervový růstový faktor, zkráceně NGF. Když se jeho účinek novorozeným myším zablokoval protilátkami, zahynuly skoro všechny jejich sympatické neurony.</p>
+
+  <p>Vyzkoušej si to. Šedesát neuronů soupeří o&nbsp;faktor ze svalu. Změň velikost svalu a&nbsp;spusť nový pokus.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Soutěž o&nbsp;přežití</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">přežívá</span> <b id="d4-alive">–</b></span>
+        <span class="rd"><span class="lo">zahynulo</span> <b id="d4-dead">–</b></span>
+      </div>
+    </div>
+    <canvas id="dsim4" height="280" aria-label="Vlevo šedesát neuronů v míše, vpravo sval. Po výběžcích putuje ze svalu k neuronům faktor přežití; neurony, kterým ho nestačí, zahynou."></canvas>
+    <div class="sim-controls">
+      <label>Velikost svalu <input type="range" id="d4-size" min="0" max="100" value="63" aria-label="Velikost cílového svalu"><span class="v" id="d4-size-v"></span></label>
+      <button class="ctrl spark" id="d4-new">Nový pokus</button>
+    </div>
+  </div>
+  <figcaption><b>Soutěž o&nbsp;přežití.</b> Neurony vlevo posílají výběžky do svalu vpravo. Sval vylučuje omezené množství faktoru přežití (zlaté tečky putují po výběžcích zpátky k&nbsp;neuronům) a&nbsp;dělí se mezi neurony podle toho, jak silné s&nbsp;ním mají spojení. Neuron, kterému faktor dlouho nestačí, zahyne (červeně). Přežije jich zhruba tolik, kolik jich sval uživí: s&nbsp;normálním svalem asi polovina, s&nbsp;větším víc, s&nbsp;menším méně. Čísla jsou ilustrační, ale drží se rozsahu, který změřil Hamburger.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Vývoj nepočítá dopředu. <b>Vyrobí nadbytek a&nbsp;nechá přežít to, co se hodí</b> – stejně jako imunita v&nbsp;kapitole <a href="wetware-imunologie-ch1-darwin-v-mizni-uzline.html">Darwin v&nbsp;mízní uzlině</a>.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem vývoje pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Jak buňka ví, kde v&nbsp;těle je?</summary>
+    <div class="answer">
+      <p>Předem to neví. Zjistí to z&nbsp;okolí: z&nbsp;koncentrace signálů, které se šíří od zdrojů, ze signálů od sousedů a&nbsp;z&nbsp;toho, čím už prošla. Výsledkem je sada zapnutých genů, která pak rozhoduje, čím buňka bude. Pěkný příklad jsou geny <i>Hox</i>. Myš má asi 65 obratlů: 7 krčních, 13 hrudních s&nbsp;žebry, 6 bederních, 4 křížové a&nbsp;asi 35 ocasních. Jaký který bude, určují právě geny <i>Hox</i>. Když se gen <i>HoxA10</i>, který normálně pracuje v&nbsp;bederní oblasti, zapne podél celé páteře, ztratí krční a&nbsp;hrudní obratle žebra a&nbsp;vypadají jako bederní.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč mají hadi tolik obratlů?</summary>
+    <div class="answer">
+      <p>Počet somitů, a&nbsp;tím i&nbsp;obratlů, závisí na tom, kolik kmitů segmentační hodiny stihnou, než se zásoba buněk na zadním konci zárodku vyčerpá. U&nbsp;hada je to přes tři sta. Jeho hodiny přitom nejdou o&nbsp;moc rychleji než kuřecí, jeden pár somitů vznikne zhruba za sto minut. Celý hadí zárodek se ale vyvíjí několikrát pomaleji. Vzhledem k&nbsp;růstu osy těla tedy hodiny tikají mnohem častěji a&nbsp;vznikne víc menších somitů.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Vymění se mi každých sedm let všechny buňky?</summary>
+    <div class="answer">
+      <p>Ne, různé tkáně se obnovují úplně jinak rychle. Buňky výstelky tenkého střeva vznikají z&nbsp;kmenových buněk na dně krypt a&nbsp;za tři až pět dní doputují na špičku klku, kde se odloupnou. Krvinky celý život doplňují kmenové buňky v&nbsp;kostní dřeni. Neurony mozkové kůry se ale v&nbsp;dospělosti skoro netvoří. Ukázala to nečekaná stopa: uhlík-14 z&nbsp;jaderných zkoušek v&nbsp;letech 1955–1963 se zabudoval do DNA buněk, které tehdy vznikly. U&nbsp;lidí narozených v&nbsp;té době zůstává v&nbsp;neuronech kůry celý život, kdežto z&nbsp;gliových buněk a&nbsp;buněk cév postupně mizí, protože je nahrazují nové.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč člověku nedoroste ruka jako mlokovi?</summary>
+    <div class="answer">
+      <p>Mloci, čolci a&nbsp;axolotlové to umějí: na místě amputace jim vznikne blastém, malý pupen podobný zárodečnému pupenu končetiny, a&nbsp;z&nbsp;něj končetina doroste. Lidské tělo takhle opravuje jen některé tkáně. Když se potkanovi odeberou dvě třetiny jater, dorostou skoro do původní velikosti asi za dva týdny. Odumřelý srdeční sval ale nahradí jizva a&nbsp;neurony, které zahynou třeba při Alzheimerově nemoci, se nenahradí vůbec.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== KÓDA ===================== -->
+<section class="coda">
+  <p>Tohle je logika vývoje v&nbsp;kostce. Rozcestí za rozcestím, kde buňka volí podle své minulosti a&nbsp;okolí. Spád, který se přes prahy rozpadne na pásma. Sousedé, kteří si navzájem brání udělat totéž, a&nbsp;tak se rozestoupí. Hodiny, jejichž tikot se otiskne do páteře. A&nbsp;smrt, která odstraní, co přebývá. Žádný z&nbsp;těch mechanismů nezná výsledek. Každá buňka dělá svou malou věc na svém místě – a&nbsp;tělo se postaví samo.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Lidské tělo z&nbsp;víc než 10<sup>13</sup> buněk (kap.&nbsp;1, s.&nbsp;2); Notch, Delta a&nbsp;nadbytek nervových buněk při poruše signalizace (kap.&nbsp;15, s.&nbsp;928); apoptóza, oddělování prstů (obr.&nbsp;18–2), ocas pulce a&nbsp;hormon štítné žlázy, nejméně milion zaniklých buněk za sekundu, faktory přežití a&nbsp;počet neuronů (kap.&nbsp;18, s.&nbsp;1089–1090 a&nbsp;1098–1099); tři procesy vývoje a&nbsp;větvení voleb, stejná mašinerie u&nbsp;všech živočichů (kap.&nbsp;21, s.&nbsp;1217); <i>eyeless</i> a&nbsp;<i>Pax6</i> (kap.&nbsp;21, s.&nbsp;1218 a&nbsp;1242–1243); buněčná paměť, kombinace signálů, morfogeny a&nbsp;prahy (obr.&nbsp;21–8 a&nbsp;21–9), laterální inhibice a&nbsp;nerovnoměrné dělení (kap.&nbsp;21, s.&nbsp;1222–1224); geny <i>Hox</i> a&nbsp;obratle myši (kap.&nbsp;21, s.&nbsp;1242); štětinky octomilky (kap.&nbsp;21, s.&nbsp;1243–1244); somity a&nbsp;segmentační hodiny (kap.&nbsp;21, s.&nbsp;1249–1250); přes dvě stě typů buněk, kmenové buňky střeva a&nbsp;krve, regenerace jater, srdce a&nbsp;končetin mloků (kap.&nbsp;22, s.&nbsp;1279, 1282, 1286, 1289, 1296 a&nbsp;1298).</li>
+    <li>Nicholls J.&nbsp;G., Martin A.&nbsp;R., Fuchs P.&nbsp;A., Brown D.&nbsp;A., Diamond M.&nbsp;E., Weisblat D.&nbsp;A. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Uhlík-14 a&nbsp;neurony mozkové kůry (kap.&nbsp;25, s.&nbsp;544); úmrtí 40–70&nbsp;% motoneuronů, NGF a&nbsp;pokusy Rity Levi-Montalciniové (kap.&nbsp;25, s.&nbsp;555).</li>
+    <li>Gomez C. a&nbsp;kol. Control of segment number in vertebrate embryos. <em>Nature</em> 454, 335–339 (2008).</li>
+    <li>Collier J.&nbsp;R., Monk N.&nbsp;A.&nbsp;M., Maini P.&nbsp;K., Lewis J.&nbsp;H. Pattern formation by lateral inhibition with feedback: a&nbsp;mathematical model of Delta-Notch intercellular signalling. <em>Journal of Theoretical Biology</em> 183, 429–446 (1996).</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 01 se morfogen šíří v&nbsp;jednom rozměru, prahy a&nbsp;hodina potřebná pro zápis do paměti jsou zvolené pro ilustraci. Simulace 02 používá Collierův model s&nbsp;náhodným počátečním šumem. V&nbsp;simulaci 03 jsou periody podle Albertse, ale růst osy a&nbsp;délka kmitající zóny jsou relativní. V&nbsp;simulaci 04 je potřeba faktoru a&nbsp;jeho množství nastavené tak, aby s&nbsp;normálním svalem zahynula zhruba polovina neuronů.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rand(a, b){ return a + Math.random() * (b - a); }
+  function fmtMin(min){ var h = Math.floor(min / 60), m = Math.round(min - h * 60); if(m === 60){ h++; m = 0; } return h ? h + NB + 'h' + (m ? ' ' + m + NB + 'min' : '') : m + NB + 'min'; }
+  function hexPath(ctx, x, y, r){
+    ctx.beginPath();
+    for(var i = 0; i < 6; i++){
+      var a = Math.PI / 6 + i * Math.PI / 3;
+      if(i === 0) ctx.moveTo(x + r * Math.cos(a), y + r * Math.sin(a)); else ctx.lineTo(x + r * Math.cos(a), y + r * Math.sin(a));
+    }
+    ctx.closePath();
+  }
+  function mix(a, b, t){
+    var pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+    return 'rgb(' + Math.round(lerp(pa >> 16, pb >> 16, t)) + ',' + Math.round(lerp(pa >> 8 & 255, pb >> 8 & 255, t)) + ',' + Math.round(lerp(pa & 255, pb & 255, t)) + ')';
+  }
+
+  /* =========================================================
+     SIM 01 — a morphogen gradient read through two thresholds.
+     dc/dt = D d2c/dx2 - k c, production at the source (x = 0).
+     Defaults follow Alberts, Fig. 21-9: half-life 170 min,
+     D = 1 um2/s. Each slider changes its value up to threefold.
+     1 s on screen = 10 min.
+     ========================================================= */
+  makeSim('dsim1', function(canvas, dim){
+    var L = 300, LC = 600, N = 300, dx = LC / N, D0 = 1, HL0 = 170;     // tissue modelled to 600 um, 300 um shown
+    var LAM0 = Math.sqrt(D0 / (Math.LN2 / (HL0 * 60)));                     // ~121 um
+    var J0 = D0 / LAM0;                                                      // gives c(0) = 1 at the defaults
+    var T1 = 0.5, T2 = 0.15, COMMIT = 60, NC = 30;
+    var c = new Float64Array(N), tmin = 0, last = now(), src = true, mem = false, ymax = 1.2;
+    var cellFate = new Int8Array(NC), above = new Float64Array(NC * 2), locked = new Int8Array(NC);
+    var sHl = document.getElementById('d1-hl'), sD = document.getElementById('d1-d'), sP = document.getElementById('d1-p');
+    var vHl = document.getElementById('d1-hl-v'), vD = document.getElementById('d1-d-v'), vP = document.getElementById('d1-p-v');
+    var tEl = document.getElementById('d1-t'), b1El = document.getElementById('d1-b1'), b2El = document.getElementById('d1-b2');
+    var P = {};
+    function f3(s){ return Math.pow(3, ((s ? +s.value : 50) - 50) / 50); }
+    function read(){
+      P.hl = HL0 * f3(sHl); P.D = D0 * f3(sD); P.j = f3(sP);
+      setTxt(vHl, Math.round(P.hl) + NB + 'min'); setTxt(vD, num(P.D, P.D < 1 ? 2 : 1) + NB + 'µm²/s'); setTxt(vP, num(P.j, 1) + '×');
+    }
+    [sHl, sD, sP].forEach(function(s){ if(s) s.addEventListener('input', read); });
+    read();
+    function reset(){ c.fill(0); tmin = 0; cellFate.fill(0); above.fill(0); locked.fill(0); }
+    onClick('d1-reset', reset);
+    var bSrc = onClick('d1-src', function(){ src = !src; toggleBtn(bSrc, src, 'Zdroj: ' + (src ? 'zapnutý' : 'odstraněný')); });
+    var bMem = onClick('d1-mem', function(){ mem = !mem; toggleBtn(bMem, mem, 'Paměť buněk: ' + (mem ? 'zapnutá' : 'vypnutá')); if(!mem){ locked.fill(0); } });
+    function at(x){ var i = Math.min(N - 1, Math.max(0, Math.floor(x / dx))); return c[i]; }
+    function boundary(th){
+      if(c[0] < th) return null;
+      for(var i = 1; i < N; i++) if(c[i] < th){ var f = (c[i - 1] - th) / (c[i - 1] - c[i]); return (i - 0.5 + f) * dx; }
+      return LC;
+    }
+    function step(secs){
+      var k = Math.LN2 / (P.hl * 60), n = Math.max(1, Math.ceil(secs / (0.35 * dx * dx / P.D))), h = secs / n, a = P.D * h / (dx * dx);
+      var nx = new Float64Array(N);
+      for(var s = 0; s < n; s++){
+        for(var i = 0; i < N; i++){
+          var l = i > 0 ? c[i - 1] : c[i], r = i < N - 1 ? c[i + 1] : c[i];
+          nx[i] = c[i] + a * (l - 2 * c[i] + r) - k * h * c[i];
+        }
+        if(src) nx[0] += J0 * P.j * h / dx;
+        for(var q = 0; q < N; q++) c[q] = nx[q] > 0 ? nx[q] : 0;
+      }
+    }
+    function fates(dmin){
+      for(var i = 0; i < NC; i++){
+        var v = at((i + 0.5) * L / NC), f = v > T1 ? 2 : (v > T2 ? 1 : 0);
+        above[2 * i] = v > T1 ? above[2 * i] + dmin : 0;
+        above[2 * i + 1] = v > T2 ? above[2 * i + 1] + dmin : 0;
+        if(mem){
+          if(above[2 * i] >= COMMIT) locked[i] = 2;
+          else if(above[2 * i + 1] >= COMMIT && locked[i] < 1) locked[i] = 1;
+          f = Math.max(f, locked[i]);
+        }
+        cellFate[i] = f;
+      }
+    }
+    function readout(){
+      setTxt(tEl, fmtMin(tmin));
+      var b1 = boundary(T1), b2 = boundary(T2);
+      setTxt(b1El, b1 === null ? '–' : (b1 >= L ? '> ' + L + NB + 'µm' : Math.round(b1) + NB + 'µm'));
+      setTxt(b2El, b2 === null ? '–' : (b2 >= L ? '> ' + L + NB + 'µm' : Math.round(b2) + NB + 'µm'));
+    }
+    var FC = ['#3A4433', C.gold, C.terra];
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        var dmin = dt * (REDUCED ? 10 : 20);
+        if(tmin < 6000){ step(dmin * 60); tmin += dmin; }
+        fates(dmin); readout();
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, x0 = 44, x1 = w - 14, py = 16, ph = h - 112, i;
+        ctx.clearRect(0, 0, w, h);
+        function X(um){ return x0 + um / L * (x1 - x0); }
+        var NV = Math.round(L / dx), mx = 0; for(i = 0; i < NV; i++) if(c[i] > mx) mx = c[i];
+        ymax += (Math.max(1.15, mx * 1.12) - ymax) * 0.06;
+        function Y(v){ return py + ph - v / ymax * ph; }
+        // source
+        rr(ctx, 6, py, 26, ph, 5); ctx.fillStyle = src ? 'rgba(208,138,94,.35)' : 'rgba(120,128,108,.25)'; ctx.fill();
+        ctx.save(); ctx.translate(23, py + ph / 2); ctx.rotate(-Math.PI / 2);
+        ctx.font = '600 10px ' + SANS; ctx.textAlign = 'center'; ctx.fillStyle = src ? C.terraBright : C.muted; ctx.fillText(src ? 'zdroj' : 'bez zdroje', 0, 0); ctx.restore();
+        // thresholds
+        ctx.setLineDash([4, 4]); ctx.lineWidth = 1; ctx.font = '600 10px ' + SANS; ctx.textAlign = 'right';
+        [[T1, 'práh 1', C.terra], [T2, 'práh 2', C.gold]].forEach(function(q){
+          var y = Y(q[0]); ctx.strokeStyle = q[2]; ctx.globalAlpha = 0.8;
+          ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y); ctx.stroke(); ctx.globalAlpha = 1;
+          ctx.fillStyle = q[2]; ctx.fillText(q[1], x1, y - 4);
+        });
+        ctx.setLineDash([]);
+        // gradient
+        ctx.beginPath(); ctx.moveTo(X(0), Y(0));
+        for(i = 0; i < NV; i++) ctx.lineTo(X((i + 0.5) * dx), Y(c[i]));
+        ctx.lineTo(X(L), Y(0)); ctx.closePath(); ctx.fillStyle = 'rgba(217,183,90,.14)'; ctx.fill();
+        ctx.beginPath();
+        for(i = 0; i < NV; i++){ var xx = X((i + 0.5) * dx), yy = Y(c[i]); if(i === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy); }
+        ctx.strokeStyle = C.gold; ctx.lineWidth = 2.2; ctx.stroke();
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, py + ph); ctx.lineTo(x1, py + ph); ctx.stroke();
+        ctx.textAlign = 'left'; ctx.fillStyle = C.muted; ctx.font = '600 10px ' + SANS; ctx.fillText('koncentrace morfogenu', x0 + 4, py + 10);
+        // cells
+        var cy = py + ph + 22, cw = (x1 - x0) / NC, chh = 26;
+        for(i = 0; i < NC; i++){
+          rr(ctx, x0 + i * cw + 1, cy, cw - 2, chh, 3); ctx.fillStyle = FC[cellFate[i]]; ctx.fill();
+          if(mem && locked[i]){ ctx.strokeStyle = 'rgba(233,231,216,.55)'; ctx.lineWidth = 1; ctx.stroke(); }
+        }
+        ctx.font = '500 10px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'center';
+        for(var um = 0; um <= L; um += 100) ctx.fillText(um + ' µm', Math.min(x1 - 18, Math.max(x0 + 14, X(um))), cy + chh + 16);
+        ctx.textAlign = 'left'; ctx.font = '600 10px ' + SANS; ctx.fillText('řada buněk', x0, cy - 6);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 — lateral inhibition through Notch and Delta on a hexagonal
+     sheet (model of Collier et al., 1996). Delta of the neighbours
+     activates Notch; Notch represses the cell's own Delta.
+     ========================================================= */
+  makeSim('dsim2', function(canvas, dim){
+    var A = 0.01, B = 100;
+    var cells = [], far = false, notch = true, last = now(), settle = 0;
+    var cntEl = document.getElementById('d2-n'), fracEl = document.getElementById('d2-frac');
+    function build(d){
+      var r = d.w < 520 ? 9 : 10.5, hx = r * Math.sqrt(3), vy = r * 1.5;
+      var cols = Math.max(6, Math.floor((d.w - 16) / hx - 0.5)), rows = Math.max(6, Math.floor((d.h - 16 - r) / vy));
+      var ox = (d.w - (cols - 0.5) * hx) / 2 + hx / 2, oy = (d.h - (rows - 1) * vy) / 2;
+      cells = [];
+      for(var j = 0; j < rows; j++) for(var i = 0; i < cols; i++) cells.push({i: i, j: j, x: ox + i * hx + (j % 2 ? hx / 2 : 0) - hx / 2, y: oy + j * vy, n: 0, d: 0, nb1: [], nb2: []});
+      function idx(i, j){ return (i < 0 || j < 0 || i >= cols || j >= rows) ? -1 : j * cols + i; }
+      cells.forEach(function(c){
+        var odd = c.j % 2, d1 = odd ? [[1, 0], [-1, 0], [0, -1], [1, -1], [0, 1], [1, 1]] : [[1, 0], [-1, 0], [-1, -1], [0, -1], [-1, 1], [0, 1]];
+        d1.forEach(function(o){ var k = idx(c.i + o[0], c.j + o[1]); if(k >= 0) c.nb1.push(k); });
+      });
+      cells.forEach(function(c, k){                                        // second ring = neighbours of neighbours
+        var seen = {}; seen[k] = 1; c.nb1.forEach(function(q){ seen[q] = 1; });
+        c.nb1.forEach(function(q){ cells[q].nb1.forEach(function(z){ if(!seen[z]){ seen[z] = 1; c.nb2.push(z); } }); });
+      });
+      R = r; seed();
+    }
+    var R = 10;
+    function seed(){ cells.forEach(function(c){ c.n = 0.1 * Math.random(); c.d = 0.5 + 0.1 * (Math.random() - 0.5); }); settle = 0; }
+    function step(h){
+      var i, c, k;
+      for(i = 0; i < cells.length; i++){
+        c = cells[i];
+        var s = 0;
+        for(k = 0; k < c.nb1.length; k++) s += cells[c.nb1[k]].d;
+        var m = c.nb1.length ? s / c.nb1.length : 0;
+        if(far) for(k = 0; k < c.nb2.length; k++) m = Math.max(m, cells[c.nb2[k]].d);   // protrusions reach the next ring
+        var act = notch ? m * m / (A + m * m) : 0;
+        c.nn = c.n + h * (act - c.n);
+        c.nd = c.d + h * (1 / (1 + B * c.nn * c.nn) - c.d) + (settle < 2 ? 0.004 * (Math.random() - 0.5) : 0);
+      }
+      for(i = 0; i < cells.length; i++){ c = cells[i]; c.n = c.nn; c.d = Math.max(0, c.nd); }
+    }
+    var bFar = onClick('d2-range', function(){ far = !far; toggleBtn(bFar, far, 'Dosah: ' + (far ? 'i přes souseda' : 'jen sousedé')); seed(); });
+    var bNotch = onClick('d2-notch', function(){ notch = !notch; toggleBtn(bNotch, notch, 'Notch: ' + (notch ? 'funguje' : 'nefunguje')); seed(); });
+    onClick('d2-new', seed);
+    build(dim);
+    return {
+      resize: function(d){ build(d); },
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t; settle += dt;
+        var n = REDUCED ? 3 : 6; for(var s = 0; s < n; s++) step(0.06);
+        var hi = 0; cells.forEach(function(c){ if(c.d > 0.5) hi++; });
+        setTxt(cntEl, String(hi)); setTxt(fracEl, Math.round(100 * hi / cells.length) + NB + '%');
+      },
+      draw: function(ctx, d){
+        ctx.clearRect(0, 0, d.w, d.h);
+        for(var i = 0; i < cells.length; i++){
+          var c = cells[i], v = clamp(c.d, 0, 1);
+          hexPath(ctx, c.x, c.y, R * 0.94);
+          ctx.fillStyle = mix('#2F382A', '#E2C063', Math.pow(v, 1.6)); ctx.fill();
+          if(v > 0.7){
+            ctx.strokeStyle = 'rgba(30,35,26,.85)'; ctx.lineWidth = 1.4;
+            ctx.beginPath(); ctx.moveTo(c.x - R * 0.15, c.y + R * 0.3); ctx.lineTo(c.x + R * 0.25, c.y - R * 0.45); ctx.stroke();
+          }
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — clock and wavefront. Cells of the presomitic mesoderm
+     oscillate (slowing down towards the front) and freeze in their
+     phase when the tail moves past; every cycle lays down one somite.
+     Clock periods from Alberts, p. 1250. 1 s on screen = 40 min.
+     ========================================================= */
+  makeSim('dsim3', function(canvas, dim){
+    var COLW = 3, last = now(), clock = true, done = 0, mins = 0;
+    var cols, tail, x0, xEnd, psm, v, T, tPhase, irregularAt;
+    var sT = document.getElementById('d3-T'), sV = document.getElementById('d3-v');
+    var vT = document.getElementById('d3-T-v'), vV = document.getElementById('d3-v-v');
+    var nEl = document.getElementById('d3-n'), totEl = document.getElementById('d3-tot');
+    var SPECIES = [[30, 'dánio'], [90, 'kuře'], [120, 'myš'], [300, 'člověk']];
+    function read(){
+      T = sT ? +sT.value : 90; v = 0.24 * Math.pow(3, ((sV ? +sV.value : 50) - 50) / 50);   // px per minute
+      var sp = ''; SPECIES.forEach(function(q){ if(Math.abs(q[0] - T) <= 4) sp = ' · ' + q[1]; });
+      setTxt(vT, T + NB + 'min' + sp); setTxt(vV, num(v / 0.24, 1) + '×');
+    }
+    function reset(d){
+      x0 = 14; xEnd = d.w - 14; psm = Math.min(150, Math.round(d.w * 0.24));
+      cols = []; tail = x0 + psm; tPhase = 0; done = 0; mins = 0; irregularAt = x0;
+      for(var x = x0; x < tail; x += COLW){                // start from the steady phase profile of a running clock
+        var s = (tail - x) / psm;
+        cols.push({x: x, ph: -2 * Math.PI / T * (psm / v) * (0.55 / 3) * s * s * s, fz: false, seg: 0});
+      }
+    }
+    if(sT) sT.addEventListener('input', read);
+    if(sV) sV.addEventListener('input', read);
+    var bClock = onClick('d3-clock', function(){ clock = !clock; toggleBtn(bClock, clock, 'Hodiny: ' + (clock ? 'běží' : 'zastavené')); });
+    onClick('d3-reset', function(){ reset(dim2); });
+    var dim2 = dim;
+    read(); reset(dim);
+    function segIndex(c){ return Math.floor(c.ph / (2 * Math.PI)); }
+    function somites(){                                     // runs of frozen columns with the same index
+      var out = [], cur = null;
+      for(var i = 0; i < cols.length; i++){
+        var c = cols[i]; if(!c.fz) break;
+        if(!cur || c.seg !== cur.seg){ cur = {seg: c.seg, a: c.x, b: c.x + COLW}; out.push(cur); } else cur.b = c.x + COLW;
+      }
+      return out;
+    }
+    return {
+      resize: function(d){ dim2 = d; reset(d); },
+      step: function(d){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        if(done){ if(t - done > 4) reset(d); return; }
+        var dm = dt * (REDUCED ? 25 : 50); mins += dm;
+        tPhase += 2 * Math.PI / T * dm;
+        tail = Math.min(xEnd, tail + v * dm);
+        while(cols.length && cols[cols.length - 1].x + COLW < tail) cols.push({x: cols[cols.length - 1].x + COLW, ph: clock ? tPhase : 0, fz: false, seg: 0});
+        var front = tail - psm;
+        for(var i = 0; i < cols.length; i++){
+          var c = cols[i];
+          if(c.fz) continue;
+          if(c.x < front){
+            c.fz = true;
+            if(clock) c.seg = segIndex(c);
+            else {                                          // no clock: cells still clump, but irregularly
+              if(c.x >= irregularAt){ irregularAt = c.x + v * T * rand(0.35, 1.9); c.seg = (i ? cols[i - 1].seg : 0) + 1; }
+              else c.seg = i ? cols[i - 1].seg : 0;
+            }
+            continue;
+          }
+          var s = clamp((tail - c.x) / psm, 0, 1);
+          if(clock) c.ph += 2 * Math.PI / T * dm * (1 - 0.55 * s * s);
+        }
+        if(tail >= xEnd && front >= cols[cols.length - 1].x) done = t;
+        if(tail >= xEnd && !done){ /* let the front catch up */ tail = xEnd; psm = Math.max(0, psm - v * dm); if(psm <= 0) done = t; }
+        var segs = somites().length;
+        setTxt(nEl, String(segs));
+        setTxt(totEl, '≈' + NB + Math.round((xEnd - x0) / (v * T)));
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, mid = h * 0.5, band = Math.min(34, h * 0.16), i;
+        ctx.clearRect(0, 0, w, h);
+        var front = tail - psm;
+        // neural tube
+        ctx.fillStyle = 'rgba(199,214,172,.12)'; rr(ctx, x0, mid - 5, Math.max(4, tail - x0), 10, 5); ctx.fill();
+        // presomitic mesoderm: oscillating cells
+        for(i = 0; i < cols.length; i++){
+          var c = cols[i]; if(c.fz) continue;
+          var lv = clock ? 0.5 + 0.5 * Math.cos(c.ph) : 0.25;
+          ctx.fillStyle = mix('#36402F', '#E2C063', lv);
+          ctx.fillRect(c.x, mid - 8 - band, COLW + 0.4, band); ctx.fillRect(c.x, mid + 8, COLW + 0.4, band);
+        }
+        // somites
+        var segs = somites();
+        for(i = 0; i < segs.length; i++){
+          var s = segs[i], wdt = s.b - s.a - 2;
+          if(wdt < 1) continue;
+          var col = i % 2 ? '#8FA674' : '#A8BC8C';
+          rr(ctx, s.a + 1, mid - 8 - band, wdt, band, Math.min(6, wdt / 2)); ctx.fillStyle = col; ctx.fill();
+          rr(ctx, s.a + 1, mid + 8, wdt, band, Math.min(6, wdt / 2)); ctx.fill();
+        }
+        // tail bud and front
+        ctx.beginPath(); ctx.arc(tail + 4, mid, band * 0.7, -Math.PI / 2, Math.PI / 2); ctx.fillStyle = 'rgba(217,183,90,.18)'; ctx.fill();
+        if(psm > 0){
+          ctx.setLineDash([3, 3]); ctx.strokeStyle = 'rgba(233,231,216,.5)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(front, mid - band - 16); ctx.lineTo(front, mid + band + 16); ctx.stroke(); ctx.setLineDash([]);
+        }
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText('hlava', x0, mid - band - 22);
+        ctx.textAlign = 'right'; ctx.fillText('ocas roste →', w - 14, mid - band - 22);
+        if(psm > 0){
+          var xk = Math.max(front + 46, Math.min(w - 50, (front + tail) / 2));
+          ctx.textAlign = 'center'; ctx.fillStyle = C.gold; ctx.fillText('kmitající buňky', xk, mid + band + 30);
+          if(front - x0 > 120){ ctx.fillStyle = C.sagePale; ctx.fillText('hotové somity', Math.min((x0 + front) / 2, xk - 110), mid + band + 30); }
+        } else {
+          ctx.textAlign = 'center'; ctx.fillStyle = C.sagePale; ctx.fillText('hotovo: ' + segs.length + ' ' + plural(segs.length, 'pár', 'páry', 'párů') + ' somitů', w / 2, mid + band + 30);
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — neurons compete for a survival factor made by their
+     target (Alberts, Fig. 18-12; FNtB ch. 25: 40-70 % of the
+     motoneurons that reach a limb die; a larger target saves more).
+     ========================================================= */
+  makeSim('dsim4', function(canvas, dim){
+    var NN = 60, NEED = 1, F0 = 34, last = now(), clock = 0, size = 1;
+    var nr = [], parts = [];
+    var sS = document.getElementById('d4-size'), vS = document.getElementById('d4-size-v');
+    var aliveEl = document.getElementById('d4-alive'), deadEl = document.getElementById('d4-dead');
+    function read(){
+      size = 0.3 * Math.pow(2 / 0.3, (sS ? +sS.value : 63) / 100);
+      setTxt(vS, num(size, 1) + '×' + (size < 0.75 ? ' · zmenšený' : size > 1.5 ? ' · končetina navíc' : ''));
+    }
+    function reset(){
+      nr = []; parts = []; clock = 0;
+      for(var i = 0; i < NN; i++) nr.push({w: rand(0.6, 1.4), s: rand(0.4, 2.4), alive: true, td: 0, r: 0});
+    }
+    if(sS) sS.addEventListener('input', read);
+    onClick('d4-new', reset);
+    read(); reset();
+    function layout(d){
+      var narrow = d.w < 560, cols = narrow ? 5 : 6, rows = Math.ceil(NN / cols);
+      var gx = narrow ? 16 : 26, gy = (d.h - 40) / rows;
+      return {cols: cols, x0: 26, y0: 26, gx: gx, gy: gy, tx: d.w * (narrow ? 0.72 : 0.74), tw: d.w * (narrow ? 0.2 : 0.18)};
+    }
+    function pos(i, Lt){ var cI = i % Lt.cols, rI = Math.floor(i / Lt.cols); return {x: Lt.x0 + cI * Lt.gx, y: Lt.y0 + rI * Lt.gy + (cI % 2) * Lt.gy * 0.35}; }
+    return {
+      step: function(d){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        var h = dt * (REDUCED ? 1.2 : 2.4); clock += h;
+        var F = F0 * size, W = 0, i;
+        for(i = 0; i < NN; i++) if(nr[i].alive) W += nr[i].w;
+        var alive = 0;
+        for(i = 0; i < NN; i++){
+          var n = nr[i]; if(!n.alive) continue;
+          n.r = W ? F * n.w / W : 0;
+          n.s = Math.min(2.5, n.s + h * 0.5 * (n.r - NEED));        // reserve: grows with enough factor, shrinks without
+          if(n.s < 0){ n.alive = false; n.td = clock; } else alive++;
+        }
+        setTxt(aliveEl, alive + ' z ' + NN);
+        setTxt(deadEl, Math.round(100 * (NN - alive) / NN) + NB + '%');
+        var Lt = layout(d);
+        for(i = 0; i < NN; i++){                               // factor carried back along the axons
+          var q = nr[i]; if(!q.alive) continue;
+          if(Math.random() < q.r * h * 1.1) parts.push({i: i, k: 0});
+        }
+        for(i = parts.length - 1; i >= 0; i--){ parts[i].k += h * 0.45; if(parts[i].k >= 1 || !nr[parts[i].i].alive) parts.splice(i, 1); }
+      },
+      draw: function(ctx, d){
+        var Lt = layout(d), w = d.w, h = d.h, i;
+        ctx.clearRect(0, 0, w, h);
+        var th = (h - 60) * clamp(size / 2, 0.15, 1), ty = (h - th) / 2;
+        // spinal cord and target
+        rr(ctx, 8, 10, Lt.x0 + (Lt.cols - 1) * Lt.gx + 18, h - 20, 10); ctx.fillStyle = 'rgba(155,176,126,.07)'; ctx.fill();
+        rr(ctx, Lt.tx, ty, Lt.tw, th, 10); ctx.fillStyle = 'rgba(208,138,94,.22)'; ctx.fill();
+        ctx.strokeStyle = 'rgba(208,138,94,.5)'; ctx.lineWidth = 1; ctx.stroke();
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left'; ctx.fillText('mícha', 14, h - 14);
+        ctx.textAlign = 'center'; ctx.fillStyle = C.terraBright; ctx.fillText('sval', Lt.tx + Lt.tw / 2, ty - 6);
+        function axon(p, e, k){                                  // point on the axon, k = 0 at the target, 1 at the cell body
+          var mx = (p.x + e.x) / 2, u = 1 - k;
+          var ax = p.x + 6, ay = p.y, bx = e.x, by = e.y, c1x = mx, c1y = p.y, c2x = mx, c2y = e.y;
+          var tt = u, it = 1 - tt;
+          return {x: it * it * it * ax + 3 * it * it * tt * c1x + 3 * it * tt * tt * c2x + tt * tt * tt * bx,
+                  y: it * it * it * ay + 3 * it * it * tt * c1y + 3 * it * tt * tt * c2y + tt * tt * tt * by};
+        }
+        var ends = [];
+        for(i = 0; i < NN; i++){
+          var p = pos(i, Lt), e = {x: Lt.tx + 4, y: ty + 8 + ((i * 37) % NN) / NN * (th - 16)};
+          ends.push([p, e]);
+          var n = nr[i], al = n.alive ? 1 : Math.max(0, 1 - (clock - n.td) / 1.5);
+          if(al <= 0) continue;
+          ctx.strokeStyle = n.alive ? 'rgba(199,214,172,' + (0.12 + 0.25 * clamp(n.w / 2, 0, 1)).toFixed(2) + ')' : 'rgba(120,128,108,' + (0.3 * al).toFixed(2) + ')';
+          ctx.lineWidth = n.alive ? 0.8 + 0.6 * clamp(n.w / 2, 0, 1) : 0.6;
+          ctx.beginPath(); ctx.moveTo(p.x + 6, p.y); ctx.bezierCurveTo((p.x + e.x) / 2, p.y, (p.x + e.x) / 2, e.y, e.x, e.y); ctx.stroke();
+        }
+        ctx.fillStyle = C.gold;
+        for(i = 0; i < parts.length; i++){
+          var pr = parts[i], en = ends[pr.i], pt = axon(en[0], en[1], pr.k);
+          ctx.beginPath(); ctx.arc(pt.x, pt.y, 1.6, 0, 6.283); ctx.fill();
+        }
+        for(i = 0; i < NN; i++){
+          var nn = nr[i], ps = pos(i, Lt), r = 4.6;
+          if(nn.alive){ ctx.beginPath(); ctx.arc(ps.x, ps.y, r, 0, 6.283); ctx.fillStyle = mix('#7A8A66', '#C7D6AC', clamp(nn.s / 2, 0, 1)); ctx.fill(); }
+          else {
+            var a = clock - nn.td, sc = Math.max(0.35, 1 - a * 0.5);
+            ctx.beginPath(); ctx.arc(ps.x, ps.y, r * sc, 0, 6.283); ctx.fillStyle = 'rgba(214,92,64,' + clamp(0.9 - a * 0.25, 0.25, 0.9).toFixed(2) + ')'; ctx.fill();
+          }
+        }
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

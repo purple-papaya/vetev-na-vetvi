@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Dopis pro všechny – Větev na větvi</title>
+<meta name="description" content="Úvod do logiky hormonů: zpráva rozeslaná celému tělu v nepatrné koncentraci, kterou přečtou jen buňky se správným receptorem – smyčky, poločasy a rytmus jako součást zprávy. Se čtyřmi interaktivními simulacemi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-endokrinologie.html">Endokrinologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Zprávy na dálku</span><span class="sep"></span><span class="n">Kapitola první</span></p>
+  <h1 class="title"><em>Dopis</em><br>pro všechny</h1>
+  <p class="deck">Jak tělo posílá zprávy, které dostane každá buňka, ale přečtou je jen ty, kterým jsou určené.</p>
+  <p class="byline">Úvod do logiky hormonů: pět myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b> učebnic <i>Boron a&nbsp;Boulpaep, Medical Physiology</i> (3.&nbsp;vydání), <i>Alberts a&nbsp;kol., Molecular Biology of the Cell</i> (7.&nbsp;vydání) a&nbsp;<i>Lehninger Principles of Biochemistry</i> (8.&nbsp;vydání).</p>
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Kmen, ze kterého se větve rozbíhají do všech stran a končí desítkami pupenů. Většina pupenů je bledá, jen několik je obarvených.">
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="3" stroke-linecap="round">
+        <path d="M450,240 C450,214 449,190 450,166"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round">
+        <path d="M450,166 C420,150 360,146 300,132"/><path d="M450,166 C440,140 410,118 380,98"/><path d="M450,166 C452,136 446,104 440,74"/>
+        <path d="M450,166 C460,138 482,112 510,92"/><path d="M450,166 C486,152 540,146 600,132"/>
+        <path d="M300,132 C276,126 252,128 228,134"/><path d="M300,132 C280,116 262,104 240,96"/><path d="M300,132 C292,112 286,96 282,78"/>
+        <path d="M380,98 C364,86 352,74 340,58"/><path d="M380,98 C384,82 390,66 398,52"/>
+        <path d="M440,74 C432,60 426,48 420,34"/><path d="M440,74 C448,60 456,48 466,36"/>
+        <path d="M510,92 C516,76 522,62 530,48"/><path d="M510,92 C530,82 548,74 566,66"/>
+        <path d="M600,132 C620,116 640,106 662,98"/><path d="M600,132 C626,128 650,130 674,136"/><path d="M600,132 C606,112 612,96 618,80"/>
+      </g>
+      <g class="draw leaf" fill="var(--sage-pale)" stroke="none">
+        <circle cx="228" cy="134" r="4.6"/><circle cx="282" cy="78" r="4.6"/><circle cx="340" cy="58" r="4.6"/>
+        <circle cx="420" cy="34" r="4.6"/><circle cx="530" cy="48" r="4.6"/><circle cx="566" cy="66" r="4.6"/>
+        <circle cx="618" cy="80" r="4.6"/><circle cx="674" cy="136" r="4.6"/>
+      </g>
+      <g class="draw leaf" fill="var(--terra)" stroke="none">
+        <circle cx="240" cy="96" r="5.2"/><circle cx="398" cy="52" r="5.2"/><circle cx="466" cy="36" r="5.2"/><circle cx="662" cy="98" r="5.2"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Dopis pro všechny. Hormon putuje cévami, které se dělí až ke každé buňce v&nbsp;těle – <em>větev na větvi</em>. Přečtou ho ale jen buňky, které mají správný receptor.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Leknutí trvá zlomek sekundy, ale jeho následky cítíš ještě dlouho: srdce buší, dech se zrychlí a&nbsp;ruce se třesou. Mozek dal přes nervy vědět nadledvinám a&nbsp;ty vypustily do krve adrenalin. Ten se pak dostane ke každé buňce v&nbsp;těle. Přesto každá tkáň odpoví po svém: srdce bije rychleji a&nbsp;silněji, průdušky se rozšíří a&nbsp;játra uvolní do krve glukózu.</p>
+
+  <p>Hormony jsou dopisy pro všechny. Žláza je vypustí do krve a&nbsp;krev je roznese po celém těle. Zprávu dostane každá buňka, ale přečte ji jen ta, která má pro ni receptor. A&nbsp;jak ji přečte, záleží na ní.</p>
+
+  <p>Kapitola stojí na pěti myšlenkách: drát a&nbsp;rozhlas, šepot v&nbsp;krvi, smyčka, pomalý a&nbsp;rychlý a&nbsp;nakonec rytmus, který je sám zprávou.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Představ si <b>městský rozhlas</b>. Hlášení slyší každý, kdo je zrovna venku, ale zareagují jen ti, kterých se týká: „Majitelé modrých aut, přeparkujte.“ Zbytek města si hlášení nevšímá. A&nbsp;každý majitel modrého auta může zareagovat jinak – jeden přeparkuje, druhý zavolá sousedovi, aby to udělal za něj. S&nbsp;hormony je to stejné. Hlášení je pro všechny, ale o&nbsp;tom, co se stane, rozhoduje posluchač.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 DRÁT A ROZHLAS ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Drát a&nbsp;<em>rozhlas</em></h2>
+
+  <p>Na velkou vzdálenost si buňky posílají zprávy hlavně dvěma cestami. Nervová buňka natáhne výběžek až k&nbsp;cíli a&nbsp;zprávu předá na synapsi, kde přenašeč přeskočí štěrbinu širokou zlomek mikrometru (o&nbsp;té mezeře víc v&nbsp;kapitole <a href="wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html">Jak se sůl naučila říkat já</a>). Je to jako telefonní drát: rychlé, přesné a&nbsp;soukromé, odpověď přijde během tisícin sekundy. Endokrinní buňka naopak vypustí hormon do krve a&nbsp;ten se dostane všude. Než narazí na svůj cíl, urazí klidně metr i&nbsp;víc.</p>
+
+  <p>Rozdíl je hlavně v&nbsp;doručování, ne v&nbsp;molekulách. Adrenalin a&nbsp;noradrenalin slouží na některých synapsích jako přenašeče a&nbsp;v&nbsp;krvi jako hormony.</p>
+
+  <p>Rozhlas má obrovskou výhodu: jedním hlášením osloví celé tělo najednou. Platí za to tím, že adresu nenese obálka, ale přijímač. Rozhoduje to, jestli buňka má pro daný hormon <span class="kw">receptor</span>, a&nbsp;také to, co je za receptorem zapojené. Alberts to říká přímo: signál sám o&nbsp;sobě nese málo informace a&nbsp;buňka na něj odpoví podle stavu, ve kterém už je – podle své historie a&nbsp;podle genů, které má zapnuté. Acetylcholin třeba v&nbsp;srdci zpomalí buňky, které udávají rytmus, ve slinné žláze spustí vylučování slin a&nbsp;kosterní sval přiměje ke stahu.</p>
+
+  <p class="punch">Hormon neříká, co se má stát. Říká jen, <b>že je čas</b>. Co to znamená, ví každá buňka sama.</p>
+</section>
+
+<!-- ===================== §2 ŠEPOT V KRVI ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Šepot v&nbsp;<em>krvi</em></h2>
+
+  <p>Hormonů je v&nbsp;krvi neuvěřitelně málo. Mnohé kolují v&nbsp;koncentraci 10<sup>−9</sup> až 10<sup>−12</sup> mol/l. Při nanomolární koncentraci připadá na jednu molekulu hormonu přes padesát miliard molekul vody. A&nbsp;přece je buňky spolehlivě najdou.</p>
+
+  <p>Umožňují to receptory s&nbsp;mimořádnou <span class="kw">afinitou</span>. Receptory steroidních hormonů vážou svůj hormon tak pevně, že jsou napůl obsazené už při koncentraci kolem jednoho nanomolu na litr. Receptor s&nbsp;tisíckrát nižší afinitou by takový šepot skoro neslyšel.</p>
+
+  <p>Druhým trikem je <span class="kw">zesílení</span>. Jediná molekula hormonu na receptoru spustí enzym, který vyrobí mnoho molekul druhého posla, a&nbsp;každý další stupeň zprávu znásobí. Jedna molekula adrenalinu tak z&nbsp;glykogenu uvolní tisíce až miliony molekul glukóza-1-fosfátu. Stejně funguje i&nbsp;kaskáda hormonů: několik nanogramů hormonu CRH z&nbsp;hypotalamu uvolní z&nbsp;hypofýzy několik mikrogramů kortikotropinu (ACTH) a&nbsp;ten z&nbsp;nadledvin miligramy kortizolu. Zesílení je nejméně milionkrát.</p>
+
+  <p>Třetím trikem jsou <span class="kw">vazebné bílkoviny</span>. Steroidní hormony a&nbsp;hormony štítné žlázy se krví vozí navázané na ně. Z&nbsp;tyroxinu je volných jen asi dvě setiny procenta, z&nbsp;kortizolu 3–4&nbsp;%. Navázaná zásoba tlumí kolísání a&nbsp;prodlužuje hormonu život: navázaný tyroxin má poločas 7–8&nbsp;dní, volný jen několik minut. Účinkuje přitom jen hormon volný.</p>
+
+  <p>Vyzkoušej si to. Měň koncentraci hormonu a&nbsp;sleduj, kolik receptorů je obsazených. Pak receptoru afinitu sniž.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Šepot a&nbsp;receptor</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">koncentrace</span> <b id="e1-conc">–</b></span>
+        <span class="rd"><span class="lo">obsazeno</span> <b id="e1-occ">–</b></span>
+        <span class="rd"><span class="lo">K<sub>d</sub></span> <b id="e1-kd">–</b></span>
+      </div>
+    </div>
+    <canvas id="esim1" height="250" aria-label="Vlevo krev s molekulami hormonu nad buňkou s receptory, vpravo křivka obsazení receptorů podle koncentrace hormonu."></canvas>
+    <div class="sim-controls">
+      <label>Koncentrace <input type="range" id="e1-c" min="0" max="60" value="20" aria-label="Koncentrace hormonu v logaritmickém měřítku"><span class="v" id="e1-c-v"></span></label>
+      <button class="ctrl is-on" id="e1-aff" aria-pressed="true">Receptor: vysoká afinita</button>
+    </div>
+  </div>
+  <figcaption><b>Šepot a&nbsp;receptor.</b> Buňka dole nese receptory. Nahoře je krev s&nbsp;molekulami hormonu; jejich počet je kvůli názornosti v&nbsp;logaritmickém měřítku. Podíl obsazených receptorů se řídí vztahem c&nbsp;/&nbsp;(c&nbsp;+&nbsp;K<sub>d</sub>): při koncentraci rovné disociační konstantě K<sub>d</sub> je obsazená polovina. Zlatá křivka patří receptoru s&nbsp;K<sub>d</sub>&nbsp;=&nbsp;1&nbsp;nM, jakou mívají receptory steroidních hormonů, šedá receptoru s&nbsp;tisíckrát nižší afinitou. Plnou čarou je vždy ten receptor, který máš právě zapnutý. Zvýrazněný pás ukazuje koncentrace, ve kterých krví koluje mnoho hormonů.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Hormon šeptá. Slyší ho jen ten, kdo na něj <b>má citlivé ucho</b>.</p>
+</section>
+
+<!-- ===================== §3 SMYČKA ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span><em>Smyčka</em></h2>
+
+  <p>Hormony se nevylučují naslepo. Většinu hlídá <span class="kw">zpětná vazba</span>: žláza sleduje, co její hormon způsobil, a&nbsp;podle toho přidá nebo ubere. Jak taková smyčka funguje obecně, ukazuje kapitola <a href="wetware-fyziologie-ch1-more-pod-kuzi.html">Moře pod kůží</a>. Nejjednodušší je to u&nbsp;inzulinu. Když stoupne glukóza v&nbsp;krvi, β-buňky slinivky vyloučí inzulin. Ten v&nbsp;játrech utlumí výrobu glukózy a&nbsp;ve svalech podpoří její ukládání. Glukóza klesne a&nbsp;β-buňky vylučování zase sníží.</p>
+
+  <p>Složitější smyčky mají několik pater. Shora je řídí <span class="kw">hypotalamus</span>, oblast mozku velká asi jako hrášek. Jeho hormony putují krátkými cévami do hypofýzy a&nbsp;ta vylučuje vlastní hormony do krve. U&nbsp;štítné žlázy vypadá řetězec takhle: hypotalamus vylučuje TRH, malý peptid ze tří aminokyselin, hypofýza pak TSH a&nbsp;štítná žláza tyroxin (T4) a&nbsp;trijodtyronin (T3). Hormony štítné žlázy zpětně tlumí výrobu TRH i&nbsp;TSH.</p>
+
+  <p>Ta zpětná vazba je mimořádně citlivá. Když volný T4 klesne na polovinu, TSH vyskočí na padesáti- až stonásobek. Hypofýza přitom nereaguje na okamžitý stav. Hladinu hormonů štítné žlázy spíš průměruje v&nbsp;čase, protože T3 na ni působí přes změnu přepisu genů, a&nbsp;to je pomalý děj.</p>
+
+  <p>Smyčka se umí bránit i&nbsp;nedostatku. Hormony štítné žlázy jsou jediné, které potřebují jód. Když ho v&nbsp;potravě chybí, hladina hormonů klesne, TSH stoupne a&nbsp;žlázu pobízí k&nbsp;výkonu i&nbsp;k&nbsp;růstu. Vznikne struma, zvětšená štítná žláza. Někdy tím tělo nedostatek vyrovná, jindy ne.</p>
+
+  <p>Smyčku lze ale i&nbsp;oklamat. U&nbsp;Gravesovy choroby tělo vyrábí protilátky, které se navážou na receptor pro TSH a&nbsp;napodobí ho. Na rozdíl od hypofýzy je nic nebrzdí: žláza roste a&nbsp;vyrábí víc a&nbsp;víc hormonů, zatímco TSH klesne hluboko pod normál.</p>
+
+  <p>Vyzkoušej si to. Uber jód, přidej tablety T4, odstraň štítnou žlázu nebo zapni Gravesovu chorobu a&nbsp;sleduj, jak smyčka odpovídá. Jedna sekunda je tu jeden den.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Smyčka štítné žlázy</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">volný T4</span> <b id="e2-t4">–</b></span>
+        <span class="rd"><span class="lo">TSH</span> <b id="e2-tsh">–</b></span>
+        <span class="rd"><span class="lo">velikost žlázy</span> <b id="e2-size">–</b></span>
+      </div>
+    </div>
+    <canvas id="esim2" height="300" aria-label="Řetěz hypotalamus, hypofýza a štítná žláza se zpětnou vazbou a grafy volného T4 a TSH za posledních 120 dní."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="e2-iod" aria-pressed="true">Jód: dostatek</button>
+      <button class="ctrl" id="e2-dose" aria-pressed="false">Tablety T4: žádné</button>
+      <button class="ctrl spark" id="e2-graves" aria-pressed="false">Gravesova choroba: ne</button>
+      <button class="ctrl" id="e2-rem" aria-pressed="false">Štítná žláza: na místě</button>
+      <button class="ctrl" id="e2-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Smyčka štítné žlázy.</b> Schéma ukazuje řetězec hypotalamus–hypofýza–štítná žláza: tloušťka modré šipky odpovídá množství TSH a&nbsp;přerušovaná čára je zpětná vazba. Grafy ukazují volný T4 a&nbsp;TSH za posledních 120&nbsp;dní, TSH v&nbsp;logaritmickém měřítku. T4 má poločas 8&nbsp;dní, a&nbsp;tak se po každé změně ustaluje týdny. Citlivost TSH je nastavená podle Borona: pokles T4 na polovinu zvedne TSH zhruba šedesátkrát. Žláza roste, když ji něco dlouho pobízí. Všechny hodnoty jsou násobky normálu.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Žláza neví, kolik hormonu je potřeba. <b>Pozná to podle toho, co způsobila</b> – a&nbsp;opraví se.</p>
+</section>
+
+<!-- ===================== §4 POMALÝ A RYCHLÝ ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Pomalý a&nbsp;<em>rychlý</em></h2>
+
+  <p>Hormony se liší i&nbsp;rychlostí. Některé zaberou během sekund: adrenalin zrychlí srdce a&nbsp;glukagon spustí v&nbsp;játrech rozklad glykogenu. Jiné potřebují hodiny až dny: aldosteron mění zadržování soli a&nbsp;růstový hormon výrobu bílkovin.</p>
+
+  <p>Rychlost závisí hlavně na tom, kudy zpráva vede. Peptidové hormony a&nbsp;adrenalin se váží na receptory na povrchu buňky a&nbsp;mění činnost bílkovin, které už v&nbsp;buňce jsou. Steroidní hormony a&nbsp;hormony štítné žlázy projdou membránou k&nbsp;receptorům uvnitř buňky a&nbsp;mění přepis genů. Kortizol tak podle Lehningera nemění činnost hotových enzymů, ale to, kolik a&nbsp;jakých enzymů buňka vyrobí. A&nbsp;to trvá.</p>
+
+  <p>Druhým ovladačem je životnost. Po změně výroby se hladina každé molekuly ustálí až za několik poločasů. Molekula s&nbsp;poločasem v&nbsp;minutách sleduje změny skoro okamžitě, molekula s&nbsp;poločasem v&nbsp;hodinách je vyhlazuje. Odpovídá tomu i&nbsp;to, jak hormony krví cestují. Ty, které řídí krátkodobé děje, jako adrenalin a&nbsp;mnoho peptidových hormonů, plavou volně. Hormony s&nbsp;dlouhodobým účinkem, jako steroidy a&nbsp;hormony štítné žlázy, se vozí na vazebných bílkovinách.</p>
+
+  <p>Pěkně je to vidět na kortizolu. Hypofýza vylučuje ACTH v&nbsp;krátkých pulzech a&nbsp;nadledviny na ně odpovídají kortizolem. Protože má kortizol poločas mnohem delší než ACTH, jeho výkyvy jsou delší a&nbsp;mělčí. Pomalý hormon funguje jako filtr, který z&nbsp;rychlých záblesků udělá plynulou vlnu.</p>
+
+  <p>Vyzkoušej si to. Sleduj den kortizolu, měň jeho poločas a&nbsp;zkus, co udělá stres.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Den kortizolu</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">čas</span> <b id="e3-t">–</b></span>
+        <span class="rd"><span class="lo">kortizol</span> <b id="e3-c">–</b></span>
+        <span class="rd"><span class="lo">vrchol za 24&nbsp;h</span> <b id="e3-peak">–</b></span>
+      </div>
+    </div>
+    <canvas id="esim3" height="250" aria-label="Průběh ACTH a kortizolu během dne od půlnoci do půlnoci. Noc je podbarvená."></canvas>
+    <div class="sim-legend">
+      <span><i style="background:#7FA0C0"></i>ACTH</span>
+      <span><i style="background:#D9B75A"></i>kortizol</span>
+      <span><i style="background:rgba(217,183,90,.3)"></i>kortizol včera</span>
+    </div>
+    <div class="sim-controls">
+      <label>Poločas kortizolu <input type="range" id="e3-hl" min="1" max="12" value="6" aria-label="Poločas kortizolu v násobcích poločasu ACTH"><span class="v" id="e3-hl-v"></span></label>
+      <button class="ctrl spark" id="e3-stress">Stres</button>
+    </div>
+  </div>
+  <figcaption><b>Den kortizolu.</b> Hypotalamus vysílá pulzy, jejichž velikost řídí denní hodiny: největší jsou k&nbsp;ránu, nejmenší pozdě odpoledne a&nbsp;navečer. ACTH (modře) na každý pulz rychle vyskočí a&nbsp;zase klesne. Kortizol (zlatě) ho sleduje, ale s&nbsp;delším poločasem jeho výkyvy vyhlazuje. Když poločas změníš, model upraví výrobu kortizolu tak, aby průměrná hladina zůstala stejná, a&nbsp;mění se jen tvar křivky. Stres podle Borona zvětší pulzy, ne jejich četnost. Hodnoty jsou relativní a&nbsp;jedna sekunda je tu půl hodiny.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Poločas není vada. Je to <b>nastavení, jak rychle má zpráva vyprchat</b>.</p>
+</section>
+
+<!-- ===================== §5 RYTMUS JE ZPRÁVA ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>Rytmus je <em>zpráva</em></h2>
+
+  <p>Mnoho hormonů se nevylučuje plynule, ale v&nbsp;pulzech. U&nbsp;hormonů hypotalamu je to pravidlo: v&nbsp;pulzech se vylučuje i&nbsp;CRH, a&nbsp;proto i&nbsp;ACTH. A&nbsp;někdy na rytmu záleží víc než na množství.</p>
+
+  <p>Nejlepším příkladem je GnRH, hormon hypotalamu, který v&nbsp;hypofýze řídí výrobu hormonů LH a&nbsp;FSH a&nbsp;přes ně pohlavní žlázy. Normálně přichází v&nbsp;pulzech. Když se ale podává nepřetržitě, receptory pro GnRH v&nbsp;hypofýze ubudou a&nbsp;výroba LH i&nbsp;FSH se paradoxně zastaví. Medicína toho využívá: u&nbsp;žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit.</p>
+
+  <p>Rytmus má i&nbsp;denní podobu. Vnitřní hodiny v&nbsp;suprachiazmatickém jádře hypotalamu dostávají signály ze sítnice a&nbsp;nastavují denní rytmy těla. Vylučování ACTH, a&nbsp;tím i&nbsp;kortizolu, je proto nejvyšší brzy ráno a&nbsp;nejnižší pozdě odpoledne a&nbsp;navečer.</p>
+
+  <p>Vyzkoušej si to. Pouštěj do hypofýzy stejné množství GnRH jednou v&nbsp;pulzech a&nbsp;jednou nepřetržitě a&nbsp;sleduj, co se stane s&nbsp;receptory a&nbsp;s&nbsp;odpovědí.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Pulzy, nebo proud</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">receptory k&nbsp;dispozici</span> <b id="e4-r">–</b></span>
+        <span class="rd"><span class="lo">LH za 24&nbsp;h</span> <b id="e4-lh">–</b></span>
+      </div>
+    </div>
+    <canvas id="esim4" height="260" aria-label="Tři pásy za posledních 24 hodin: přísun GnRH, podíl receptorů v hypofýze, které jsou k dispozici, a vylučování LH."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark is-on" id="e4-mode" aria-pressed="true">GnRH: v&nbsp;pulzech</button>
+      <button class="ctrl" id="e4-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Pulzy, nebo proud.</b> Nahoře přísun GnRH, uprostřed podíl receptorů v&nbsp;hypofýze, které jsou k&nbsp;dispozici, dole vylučování LH. Obsazený receptor se postupně stahuje z&nbsp;povrchu a&nbsp;mezi pulzy se zase vrací. Při pulzech má čas se zotavit a&nbsp;každý pulz vyvolá odpověď. Při nepřetržitém přísunu stejného průměrného množství receptory ubývají a&nbsp;odpověď po počátečním vzplanutí odezní. Číslo „LH za 24&nbsp;h“ je vztažené k&nbsp;odpovědi při pulzech. Model je zjednodušený a&nbsp;časová osa jen ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">U&nbsp;hormonů neplatí, že víc je víc. <b>Zpráva je v&nbsp;rytmu</b>, ne jen v&nbsp;množství.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem hormonů pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Proč mám kortizolu nejvíc ráno?</summary>
+    <div class="answer">
+      <p>Řídí to vnitřní hodiny. Suprachiazmatické jádro hypotalamu dostává signály ze sítnice a&nbsp;nastavuje denní rytmy těla. Přes hormony CRH a&nbsp;vazopresin řídí vylučování ACTH v&nbsp;hypofýze a&nbsp;to zase kortizol v&nbsp;nadledvinách. ACTH je nejvyšší brzy ráno a&nbsp;nejnižší pozdě odpoledne a&nbsp;navečer a&nbsp;kortizol ho sleduje. Na denní rytmus se přidávají pulzy. Při stresu, třeba při nízké hladině cukru v&nbsp;krvi, hypotalamus pulzy zvětší.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč se po změně dávky hormonů štítné žlázy čeká týdny?</summary>
+    <div class="answer">
+      <p>Protože tyroxin (T4) žije v&nbsp;krvi dlouho. Navázaný na bílkoviny má poločas kolem osmi dní a&nbsp;hladina se po každé změně ustaluje několik poločasů: za jeden poločas dosáhne poloviny nové rovnováhy, za 3,3 poločasu 90&nbsp;% a&nbsp;za 4,4 poločasu 95&nbsp;%. U&nbsp;tyroxinu to dělá zhruba pět týdnů. Stejná aritmetika platí pro každý lék, viz kapitola <a href="wetware-farmakologie-ch1-lek-je-vlna.html">Lék je vlna</a>. Pomalu odpovídá i&nbsp;hypofýza, protože hormony štítné žlázy na ni působí přes přepis genů.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Jak může stejný hormon něco zapnout a&nbsp;jinde vypnout?</summary>
+    <div class="answer">
+      <p>Protože o&nbsp;odpovědi rozhoduje buňka, ne hormon. Adrenalin ve slinivce povzbudí vylučování glukagonu a&nbsp;zároveň utlumí vylučování inzulinu. Acetylcholin v&nbsp;srdci zpomalí buňky, které udávají rytmus, ve slinné žláze spustí vylučování slin a&nbsp;kosterní sval přiměje ke stahu. Rozdíl dělají receptory a&nbsp;to, co je za nimi zapojené: jiné signální bílkoviny a&nbsp;jiné geny.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč se do soli přidává jód?</summary>
+    <div class="answer">
+      <p>Protože bez jódu štítná žláza nevyrobí své hormony; jsou to jediné hormony, které tenhle stopový prvek potřebují. Když jódu chybí, hormonů štítné žlázy ubude, hypofýza zvýší TSH a&nbsp;ten žlázu pobízí k&nbsp;růstu, takže vznikne struma. Pokud jód chybí v&nbsp;kritickém období vývoje v&nbsp;kojeneckém věku, těžce to poškodí mozek. Doplňování jódu do soli a&nbsp;pečiva nedostatek v&nbsp;Severní Americe prakticky odstranilo. V&nbsp;horských a&nbsp;vnitrozemských oblastech mnoha rozvojových zemí ale zůstává jednou z&nbsp;hlavních příčin nemocí, kterým se dá předejít.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== KÓDA ===================== -->
+<section class="coda">
+  <p>Tohle je logika hormonů v&nbsp;kostce. Zpráva rozeslaná všem, kterou přečtou jen buňky se správným receptorem. Šepot v&nbsp;nanomolárních koncentracích, který zesílí kaskády. Smyčky, ve kterých žláza pozná, kolik má vyrábět, podle toho, co způsobila. Poločasy, které rozhodují, jak rychle zpráva přijde a&nbsp;jak dlouho vydrží. A&nbsp;rytmus, který je součástí zprávy. Tělo nepotřebuje nikoho, kdo by kontroloval, jestli dopis došel. Stačí, že každá buňka ví, co si s&nbsp;ním počít.</p>
+  <p class="sign">Konec první kapitoly</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje a&nbsp;další čtení</h4>
+  <ul>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Kap.&nbsp;47 (Organization of Endocrine Control): koncentrace hormonů 10<sup>−9</sup>–10<sup>−12</sup>&nbsp;M, rychlé a&nbsp;pomalé hormony, vazebné bílkoviny a&nbsp;poločas tyroxinu, zpětná vazba inzulinu a&nbsp;osa CRH–ACTH–kortizol, receptory steroidních hormonů s&nbsp;K<sub>D</sub> kolem 1&nbsp;nM, nepřetržité podávání GnRH. Kap.&nbsp;49 (The Thyroid Gland): T4 a&nbsp;T3, poločasy 8&nbsp;dní a&nbsp;asi 24&nbsp;hodin, podíl volného T4, osa TRH–TSH, citlivost a&nbsp;pomalost zpětné vazby, jód a&nbsp;struma (box&nbsp;49-1), Gravesova choroba (box&nbsp;49-4). Kap.&nbsp;50 (The Adrenal Gland): vazba kortizolu na bílkoviny, suprachiazmatické jádro, denní a&nbsp;pulzní rytmus ACTH a&nbsp;kortizolu (obr.&nbsp;50-5), stres zvětšuje pulzy, delší poločas kortizolu tlumí jeho výkyvy.</li>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Čtyři způsoby signalizace mezi buňkami (kap.&nbsp;15, s.&nbsp;875); nízké koncentrace signálů a&nbsp;afinita receptorů (s.&nbsp;876); stejný signál, různé odpovědi – acetylcholin (s.&nbsp;877); rychlost, citlivost a&nbsp;zesílení odpovědi, význam rychlého obratu molekul (s.&nbsp;885–887, obr.&nbsp;15–15).</li>
+    <li>Nelson D.&nbsp;L., Cox M.&nbsp;M. <em>Lehninger Principles of Biochemistry</em>, 8.&nbsp;vyd. W.&nbsp;H.&nbsp;Freeman, 2021. Nervová a&nbsp;endokrinní signalizace a&nbsp;jejich dosah, zesílení signálu, kaskáda CRH–ACTH–kortizol se zesílením nejméně milionkrát, hypotalamus velký jako hrášek, TRH (kap.&nbsp;23.1); účinky adrenalinu a&nbsp;kortizolu (kap.&nbsp;23.3).</li>
+    <li>Rosenbaum S.&nbsp;E. <em>Basic Pharmacokinetics and Pharmacodynamics</em>, 2.&nbsp;vyd. Wiley, 2017. Podíl ustáleného stavu podle počtu poločasů (kap.&nbsp;12, tab.&nbsp;12.2, s.&nbsp;270).</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 01 je počet nakreslených molekul v&nbsp;logaritmickém měřítku. V&nbsp;simulaci 02 vychází poločas T4 a&nbsp;citlivost TSH z&nbsp;Borona, ostatní parametry jsou zvolené pro názornost. V&nbsp;simulaci 03 je poločas kortizolu nastavitelný jen relativně k&nbsp;ACTH a&nbsp;tvar denního rytmu sleduje Boronův obr.&nbsp;50-5. V&nbsp;simulaci 04 jsou rychlosti ubývání a&nbsp;návratu receptorů ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rand(a, b){ return a + Math.random() * (b - a); }
+  function conc(M){                                      // molar concentration in readable units
+    var u = M < 1e-9 ? ['pM', 1e12] : (M < 1e-6 ? ['nM', 1e9] : ['µM', 1e6]), v = M * u[1];
+    return (v >= 10 ? grp(Math.round(v)) : num(v, 1)) + NB + u[0];
+  }
+  function hhmm(min){ var m = ((Math.round(min) % 1440) + 1440) % 1440; return Math.floor(m / 60) + ':' + ('0' + (m % 60)).slice(-2); }
+  function xf(v, d){ return num(v, d === undefined ? (v < 10 ? 1 : 0) : d) + '×'; }
+
+  /* =========================================================
+     SIM 01 — a whisper and a receptor. Occupancy = c / (c + Kd).
+     Kd ~ 1 nM is typical of steroid-hormone receptors (Boron, ch. 47);
+     many hormones circulate at 1e-12 to 1e-9 M.
+     ========================================================= */
+  makeSim('esim1', function(canvas, dim){
+    var NR = 16, logC = -10, kdHi = true, last = now(), clock = 0, dirty = true;
+    var slider = document.getElementById('e1-c'), vEl = document.getElementById('e1-c-v');
+    var cEl = document.getElementById('e1-conc'), oEl = document.getElementById('e1-occ'), kEl = document.getElementById('e1-kd');
+    var order = []; for(var i = 0; i < NR; i++) order.push(i);
+    order.sort(function(){ return Math.random() - 0.5; });
+    var mol = []; for(i = 0; i < 40; i++) mol.push({x: Math.random(), y: Math.random(), a: Math.random() * 6.283});
+    function kd(){ return kdHi ? 1e-9 : 1e-6; }
+    function occ(){ var c = Math.pow(10, logC); return c / (c + kd()); }
+    function read(){
+      logC = -12 + (slider ? +slider.value : 20) / 10;
+      var c = Math.pow(10, logC);
+      setTxt(vEl, conc(c)); setTxt(cEl, conc(c));
+      var o = occ() * 100;
+      setTxt(oEl, (o < 1 ? num(o, o < 0.1 ? 2 : 1) : Math.round(o)) + NB + '%');
+      setTxt(kEl, kdHi ? '1' + NB + 'nM' : '1' + NB + 'µM');
+      dirty = true;
+    }
+    if(slider) slider.addEventListener('input', read);
+    var bKd = onClick('e1-aff', function(){ kdHi = !kdHi; toggleBtn(bKd, kdHi, 'Receptor: ' + (kdHi ? 'vysoká afinita' : 'nízká afinita')); read(); });
+    read();
+    function layout(d){
+      return d.w >= 600 ? {sx: 10, sw: d.w * 0.56, sy: 10, sh: d.h - 20, px: d.w * 0.56 + 52, pw: d.w * 0.44 - 66, py: 22, ph: d.h - 62}
+                        : {sx: 10, sw: d.w - 20, sy: 10, sh: d.h * 0.5, px: 46, pw: d.w - 60, py: d.h * 0.5 + 30, ph: d.h * 0.5 - 66};
+    }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t; clock += dt * (REDUCED ? 0.3 : 1);
+        for(var k = 0; k < mol.length; k++){
+          var m = mol[k]; m.a += (Math.random() - 0.5) * 3 * dt;
+          m.x = (m.x + Math.cos(m.a) * 0.04 * dt + 1) % 1; m.y = (m.y + Math.sin(m.a) * 0.04 * dt + 1) % 1;
+        }
+      },
+      draw: function(ctx, d){
+        var L = layout(d), w = d.w, h = d.h, i, o = occ();
+        ctx.clearRect(0, 0, w, h);
+        // ---- scene: blood above, cell below
+        var memY = L.sy + L.sh * 0.68;
+        ctx.fillStyle = 'rgba(208,138,94,.07)'; rr(ctx, L.sx, L.sy, L.sw, memY - L.sy - 6, 8); ctx.fill();
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+        ctx.fillText('krev', L.sx + 8, L.sy + 14);
+        var nm = Math.max(1, Math.round(1 + 5 * (logC + 12)));               // log scale for display
+        ctx.fillStyle = C.gold;
+        for(i = 0; i < Math.min(nm, mol.length); i++){
+          var mx = L.sx + 10 + mol[i].x * (L.sw - 20), my = L.sy + 20 + mol[i].y * (memY - L.sy - 34);
+          ctx.beginPath(); ctx.arc(mx, my, 2.6, 0, 6.283); ctx.fill();
+        }
+        // cell
+        var glow = o;
+        ctx.fillStyle = 'rgba(208,138,94,' + (0.08 + 0.32 * glow).toFixed(3) + ')';
+        rr(ctx, L.sx, memY, L.sw, L.sy + L.sh - memY, 8); ctx.fill();
+        ctx.strokeStyle = C.sagePale; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(L.sx, memY); ctx.lineTo(L.sx + L.sw, memY); ctx.stroke();
+        ctx.fillStyle = C.muted; ctx.fillText('buňka s receptory', L.sx + 8, L.sy + L.sh - 8);
+        var nOcc = Math.round(o * NR), gap = L.sw / NR;
+        for(i = 0; i < NR; i++){
+          var rx = L.sx + gap * (i + 0.5), busy = order.indexOf(i) < nOcc;
+          ctx.strokeStyle = busy ? C.terraBright : C.sage; ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.moveTo(rx, memY + 6); ctx.lineTo(rx, memY - 6); ctx.lineTo(rx - 5, memY - 12); ctx.moveTo(rx, memY - 6); ctx.lineTo(rx + 5, memY - 12); ctx.stroke();
+          if(busy){ ctx.fillStyle = C.gold; ctx.beginPath(); ctx.arc(rx, memY - 13, 3.2, 0, 6.283); ctx.fill(); }
+        }
+        // ---- binding curves
+        var x0 = L.px, x1 = L.px + L.pw, y0 = L.py, y1 = L.py + L.ph;
+        function X(lc){ return x0 + (lc + 12) / 6 * (x1 - x0); }
+        function Y(f){ return y1 - f * (y1 - y0); }
+        ctx.fillStyle = 'rgba(217,183,90,.08)'; ctx.fillRect(X(-12), y0, X(-9) - X(-12), y1 - y0);
+        ctx.font = '600 9.5px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'center';
+        ctx.fillText('hormony v krvi', (X(-12) + X(-9)) / 2, y0 - 6);
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y1); ctx.lineTo(x1, y1); ctx.stroke();
+        ctx.font = '500 9.5px ' + MONO; ctx.textAlign = 'center';
+        [[-12, '1 pM'], [-9, '1 nM'], [-6, '1 µM']].forEach(function(q){ ctx.fillText(q[1], Math.min(x1 - 14, Math.max(x0 + 14, X(q[0]))), y1 + 13); });
+        ctx.textAlign = 'right'; ctx.fillText('100 %', x0 - 4, y0 + 4); ctx.fillText('0', x0 - 4, y1);
+        [[1e-9, C.gold, kdHi], [1e-6, C.muted, !kdHi]].forEach(function(q){
+          ctx.strokeStyle = q[1]; ctx.lineWidth = q[2] ? 2.2 : 1.4; ctx.setLineDash(q[2] ? [] : [4, 3]);
+          ctx.beginPath();
+          for(var j = 0; j <= 120; j++){ var lc = -12 + j / 20, c = Math.pow(10, lc), f = c / (c + q[0]); if(j === 0) ctx.moveTo(X(lc), Y(f)); else ctx.lineTo(X(lc), Y(f)); }
+          ctx.stroke(); ctx.setLineDash([]);
+        });
+        ctx.fillStyle = C.terraBright; ctx.beginPath(); ctx.arc(X(logC), Y(o), 4.5, 0, 6.283); ctx.fill();
+        ctx.textAlign = 'left'; ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.fillText('obsazené receptory', x0 + 4, y0 + 10);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 02 — the thyroid loop. TRH -> TSH -> T4; T4 inhibits TSH.
+     T4 half-life 8 days; halving free T4 raises TSH ~64-fold
+     (Boron: 50- to 100-fold). Units are multiples of normal.
+     1 s on screen = 1 day.
+     ========================================================= */
+  makeSim('esim2', function(canvas, dim){
+    var K = Math.LN2 / 8, last = now(), day = 0, acc = 0;
+    var st, hist, iodine = true, graves = false, removed = false, dose = 0, DOSES = [0, 0.5, 1, 1.5];
+    var t4El = document.getElementById('e2-t4'), tshEl = document.getElementById('e2-tsh'), sEl = document.getElementById('e2-size');
+    function reset(){ st = {T4: 1, TSH: 1, S: 1}; hist = []; day = 0; acc = 0; }
+    reset();
+    var bI = onClick('e2-iod', function(){ iodine = !iodine; toggleBtn(bI, iodine, 'Jód: ' + (iodine ? 'dostatek' : 'nedostatek')); });
+    var bD = onClick('e2-dose', function(){
+      dose = DOSES[(DOSES.indexOf(dose) + 1) % DOSES.length];
+      toggleBtn(bD, dose > 0, 'Tablety T4: ' + (dose ? num(dose, 1) + '× denní výroby' : 'žádné'));
+    });
+    var bG = onClick('e2-graves', function(){ graves = !graves; toggleBtn(bG, graves, 'Gravesova choroba: ' + (graves ? 'ano' : 'ne')); });
+    var bR = onClick('e2-rem', function(){ removed = !removed; toggleBtn(bR, removed, 'Štítná žláza: ' + (removed ? 'odstraněná' : 'na místě')); });
+    onClick('e2-reset', function(){
+      iodine = true; graves = false; removed = false; dose = 0; reset();
+      toggleBtn(bI, true, 'Jód: dostatek'); toggleBtn(bD, false, 'Tablety T4: žádné');
+      toggleBtn(bG, false, 'Gravesova choroba: ne'); toggleBtn(bR, false, 'Štítná žláza: na místě');
+    });
+    function stepDay(h){
+      var s = st, tshT = clamp(Math.pow(Math.max(s.T4, 0.02), -6), 0.003, 120);
+      s.TSH += h * (tshT - s.TSH) / 1.5;                                 // the pituitary averages over time
+      var own = removed ? 0 : s.S * (iodine ? 1 : 0.35) * (2 * s.TSH / (1 + s.TSH) + (graves ? 1.8 : 0));
+      s.T4 += h * (K * (own + dose) - K * s.T4);
+      var push = s.TSH + (graves ? 2 : 0);
+      if(!removed) s.S = clamp(s.S + h * (push > 1 ? 0.002 * Math.min(push - 1, 50) : 0.004 * (push - 1)) * s.S, 0.5, 2.6);
+    }
+    function layout(d){
+      return d.w >= 600 ? {dx: 10, dw: d.w * 0.32, px: d.w * 0.32 + 56, pw: d.w * 0.68 - 70, py: 16, ph: d.h - 44}
+                        : {dx: 10, dw: d.w - 20, dh: 118, px: 50, pw: d.w - 64, py: 150, ph: d.h - 176};
+    }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        var days = dt * (REDUCED ? 0.5 : 1), n = Math.max(1, Math.ceil(days / 0.02));
+        for(var k = 0; k < n; k++) stepDay(days / n);
+        day += days; acc += days;
+        while(acc >= 0.25){ acc -= 0.25; hist.push([day, st.T4, st.TSH]); if(hist.length > 480) hist.shift(); }
+        setTxt(t4El, xf(st.T4, 1)); setTxt(tshEl, st.TSH < 0.1 ? '< 0,1×' : xf(st.TSH)); setTxt(sEl, removed ? '–' : xf(st.S, 1));
+      },
+      draw: function(ctx, d){
+        var L = layout(d), w = d.w, h = d.h, i, wide = d.w >= 600;
+        ctx.clearRect(0, 0, w, h);
+        // ---- diagram
+        var GAP = 22, bh = wide ? 34 : 26, rows, bx, bw;
+        var labels = [['hypotalamus', 'TRH'], ['hypofýza', 'TSH'], ['štítná žláza', 'T4, T3']];
+        if(wide){ bx = L.dx + 6; bw = L.dw - 46; rows = [18, 80, 142]; }      // room on the right for the feedback bracket
+        else { bx = L.dx + 4; bw = (L.dw - 8 - 2 * GAP) / 3; rows = [6, 6, 6]; }
+        var boxes = [];
+        for(i = 0; i < 3; i++){
+          var x = wide ? bx : bx + i * (bw + GAP), y = rows[i];
+          boxes.push({x: x, y: y, w: bw, h: bh});
+          rr(ctx, x, y, bw, bh, 8); ctx.fillStyle = 'rgba(155,176,126,.10)'; ctx.fill();
+          ctx.font = '600 10px ' + SANS; ctx.textAlign = 'center'; ctx.fillStyle = C.sagePale;
+          ctx.fillText(labels[i][0], x + bw / 2, y + bh / 2 - (wide ? 2 : 1));
+          ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.gold; ctx.fillText(labels[i][1], x + bw / 2, y + bh / 2 + 11);
+        }
+        function arrow(a, b, thick, col){
+          var x1, y1, x2, y2;
+          if(wide){ x1 = a.x + a.w * 0.4; y1 = a.y + a.h + 2; x2 = b.x + b.w * 0.4; y2 = b.y - 3; }
+          else { x1 = a.x + a.w + 3; y1 = a.y + a.h * 0.5; x2 = b.x - 3; y2 = b.y + b.h * 0.5; }
+          var ang = Math.atan2(y2 - y1, x2 - x1), hl = 5 + thick * 0.6, hw = thick / 2 + 3;
+          var xs = x2 - Math.cos(ang) * hl, ys = y2 - Math.sin(ang) * hl;     // the shaft stops where the head begins
+          ctx.strokeStyle = col; ctx.lineWidth = thick; ctx.lineCap = 'butt';
+          ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(xs, ys); ctx.stroke();
+          ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+          ctx.lineTo(xs - Math.sin(ang) * hw, ys + Math.cos(ang) * hw);
+          ctx.lineTo(xs + Math.sin(ang) * hw, ys - Math.cos(ang) * hw);
+          ctx.closePath(); ctx.fill();
+        }
+        arrow(boxes[0], boxes[1], 2, C.sage);
+        arrow(boxes[1], boxes[2], clamp(1 + 1.6 * Math.log(1 + st.TSH * 3), 0.6, wide ? 9 : 7), C.blue);
+        // feedback: T4 and T3 inhibit TRH and TSH (dashed path ending in inhibition bars)
+        ctx.strokeStyle = C.terraBright; ctx.fillStyle = C.terraBright; ctx.lineCap = 'butt';
+        function bar(x1, y1, x2, y2){ ctx.setLineDash([]); ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); }
+        ctx.lineWidth = 1.4; ctx.setLineDash([4, 3]); ctx.beginPath();
+        if(wide){
+          var fx = bx + bw + 16, yH = boxes[0].y + bh / 2, yP = boxes[1].y + bh / 2, yT = boxes[2].y + bh / 2;
+          ctx.moveTo(bx + bw + 2, yT); ctx.lineTo(fx, yT); ctx.lineTo(fx, yH); ctx.lineTo(bx + bw + 5, yH);
+          ctx.moveTo(fx, yP); ctx.lineTo(bx + bw + 5, yP); ctx.stroke();
+          bar(bx + bw + 4, yH - 6, bx + bw + 4, yH + 6); bar(bx + bw + 4, yP - 6, bx + bw + 4, yP + 6);
+          ctx.save(); ctx.translate(fx + 15, (yH + yT) / 2); ctx.rotate(-Math.PI / 2);
+          ctx.font = '600 10px ' + SANS; ctx.textAlign = 'center'; ctx.fillText('T4 a T3 brzdí', 0, 0); ctx.restore();
+        } else {
+          var fy = boxes[0].y + bh + 12;
+          var cx = function(b){ return b.x + b.w / 2; };
+          ctx.moveTo(cx(boxes[2]), boxes[2].y + bh + 2); ctx.lineTo(cx(boxes[2]), fy); ctx.lineTo(cx(boxes[0]), fy); ctx.lineTo(cx(boxes[0]), boxes[0].y + bh + 5);
+          ctx.moveTo(cx(boxes[1]), fy); ctx.lineTo(cx(boxes[1]), boxes[1].y + bh + 5); ctx.stroke();
+          bar(cx(boxes[0]) - 6, boxes[0].y + bh + 4, cx(boxes[0]) + 6, boxes[0].y + bh + 4);
+          bar(cx(boxes[1]) - 6, boxes[1].y + bh + 4, cx(boxes[1]) + 6, boxes[1].y + bh + 4);
+          ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillText('T4 a T3 brzdí TRH i TSH', L.dx + 4, fy + 16);
+        }
+        ctx.setLineDash([]);
+        // gland
+        var gx = wide ? bx + bw * 0.4 : L.dx + L.dw * 0.72, gy = wide ? boxes[2].y + bh + 40 : boxes[0].y + bh + 60, sz = removed ? 0 : (wide ? 10 : 12) * Math.sqrt(st.S);
+        if(!removed){
+          ctx.fillStyle = graves ? 'rgba(227,154,103,.75)' : 'rgba(208,138,94,.55)';
+          ctx.beginPath(); ctx.ellipse(gx - sz * 0.95, gy, sz * 0.75, sz * 1.25, -0.25, 0, 6.283); ctx.fill();
+          ctx.beginPath(); ctx.ellipse(gx + sz * 0.95, gy, sz * 0.75, sz * 1.25, 0.25, 0, 6.283); ctx.fill();
+          ctx.fillRect(gx - sz * 0.5, gy + sz * 0.15, sz, sz * 0.35);
+        } else { ctx.font = '600 10px ' + SANS; ctx.textAlign = 'center'; ctx.fillStyle = C.muted; ctx.fillText('žláza odstraněna', gx, gy); }
+        ctx.font = '600 9.5px ' + SANS; ctx.textAlign = 'left';
+        var chips = [];
+        if(!iodine) chips.push(['málo jódu', C.muted]);
+        if(dose) chips.push(['tablety T4', C.gold]);
+        if(graves) chips.push(['protilátky', C.terraBright]);
+        chips.forEach(function(c, k){ ctx.fillStyle = c[1]; ctx.fillText('• ' + c[0], wide ? bx : L.dx + 4, (wide ? gy + 34 : gy - 10) + k * 13); });
+        // ---- plots: free T4 (linear) and TSH (log)
+        var gh = (L.ph - 20) / 2, d0 = Math.max(0, day - 120);
+        function X(t){ return L.px + (t - d0) / 120 * L.pw; }
+        function plot(y0, idx, toY, col, label, ticks){
+          ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(L.px, y0 + gh); ctx.lineTo(L.px + L.pw, y0 + gh); ctx.stroke();
+          ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+          ticks.forEach(function(tk){ var yy = toY(tk[0]); ctx.fillText(tk[1], L.px - 4, yy + 3); ctx.globalAlpha = 0.35; ctx.beginPath(); ctx.moveTo(L.px, yy); ctx.lineTo(L.px + L.pw, yy); ctx.stroke(); ctx.globalAlpha = 1; });
+          ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillStyle = col; ctx.fillText(label, L.px + 4, y0 + 9);
+          ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath();
+          for(var q = 0; q < hist.length; q++){ var e = hist[q], xx = X(e[0]), yy2 = toY(e[idx]); if(q === 0) ctx.moveTo(xx, yy2); else ctx.lineTo(xx, yy2); }
+          ctx.stroke();
+        }
+        var yA = L.py, yB = L.py + gh + 20;
+        plot(yA, 1, function(v){ return yA + gh - clamp(v, 0, 4) / 4 * (gh - 12); }, C.gold, 'volný T4', [[1, '1×'], [3, '3×']]);
+        plot(yB, 2, function(v){ var l = Math.log(clamp(v, 0.01, 100)) / Math.LN10; return yB + gh - (l + 2) / 4 * (gh - 12); }, C.blue, 'TSH (log)', [[0.01, '0,01'], [1, '1×'], [100, '100×']]);
+        ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+        ctx.fillText('posledních 120 dní →', L.px + L.pw, yB + gh + 14);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — a day of cortisol. CRH/ACTH pulses whose size follows
+     the circadian clock (largest towards morning); cortisol follows
+     ACTH with a longer half-life, so its swings are longer and damped.
+     Stress enlarges the pulses, not their frequency (Boron, ch. 50).
+     1 s on screen = 30 min. Values are relative.
+     ========================================================= */
+  makeSim('esim3', function(canvas, dim){
+    var TA = 10, ratio = 6, last = now(), tmin = 0, nextPulse = 20, stressUntil = -1;
+    var A = 0, Cc = 0.6, today = [], yesterday = [], acc = 0, cmax = 0.0001, amax = 0.0001;
+    var sR = document.getElementById('e3-hl'), vR = document.getElementById('e3-hl-v');
+    var tEl = document.getElementById('e3-t'), cEl = document.getElementById('e3-c'), pEl = document.getElementById('e3-peak');
+    function readR(){ ratio = sR ? +sR.value : 6; setTxt(vR, ratio + '× ACTH'); }
+    if(sR) sR.addEventListener('input', readR);
+    readR();
+    onClick('e3-stress', function(){ stressUntil = tmin + 90; });
+    function circ(min){ var hr = (min / 60) % 24, dh = Math.min(Math.abs(hr - 6.5), 24 - Math.abs(hr - 6.5)); return 0.22 + 0.78 * Math.exp(-dh * dh / (3.2 * 3.2)); }
+    // warm up two days; the second one is shown as yesterday, so the first night already has a reference
+    function adv(dm){
+      var n = Math.max(1, Math.ceil(dm / 0.5)), hstep = dm / n;
+      for(var k = 0; k < n; k++){
+        if(tmin >= nextPulse){ A += circ(tmin) * (tmin < stressUntil ? 3 : 1) * rand(0.75, 1.25); nextPulse = tmin + rand(70, 110); }
+        A -= hstep * A / TA * Math.LN2;
+        // production is scaled with the half-life so the average level stays put; only the shape changes
+        Cc += hstep * (0.02 * 6 / ratio * A - Cc / (TA * ratio) * Math.LN2);
+        tmin += hstep;
+      }
+    }
+    while(tmin < 2880){ adv(5); if(tmin > 1440 && tmin < 2880) yesterday.push([tmin % 1440, A, Cc, tmin - 2880]); }
+    tmin = 0; nextPulse = 15;
+    yesterday.forEach(function(e){ if(e[2] > cmax) cmax = e[2]; if(e[1] > amax) amax = e[1]; });
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        var dm = dt * (REDUCED ? 15 : 30), day0 = Math.floor(tmin / 1440);
+        adv(dm);
+        acc += dm;
+        if(acc >= 3){ acc = 0; today.push([tmin % 1440, A, Cc, tmin]); }
+        if(Math.floor(tmin / 1440) !== day0){ yesterday = today; today = []; }
+        var mC = 0.0001, mA = 0.0001, pk = null;
+        yesterday.concat(today).forEach(function(e){
+          if(e[2] > mC) mC = e[2]; if(e[1] > mA) mA = e[1];
+          if(e[3] > tmin - 1440 && (!pk || e[2] > pk[2])) pk = e;             // highest cortisol in the last 24 h
+        });
+        cmax += (mC - cmax) * 0.05; amax += (mA - amax) * 0.05;
+        setTxt(tEl, hhmm(tmin)); setTxt(cEl, Math.round(100 * Cc / Math.max(mC, Cc)) + NB + '%');   // share of the highest level in the last two days
+        setTxt(pEl, pk ? hhmm(pk[0]) : '–');
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, x0 = 14, x1 = w - 14, y0 = 26, y1 = h - 34, i;
+        ctx.clearRect(0, 0, w, h);
+        function X(m){ return x0 + m / 1440 * (x1 - x0); }
+        ctx.fillStyle = 'rgba(127,160,192,.08)';
+        ctx.fillRect(X(0), y0 - 8, X(360) - X(0), y1 - y0 + 8); ctx.fillRect(X(1320), y0 - 8, X(1440) - X(1320), y1 - y0 + 8);
+        ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.muted; ctx.textAlign = 'center';
+        ctx.fillText('noc', (X(0) + X(360)) / 2, y0 + 6);
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, y1); ctx.lineTo(x1, y1); ctx.stroke();
+        ctx.font = '500 9.5px ' + MONO;
+        [[0, 'půlnoc'], [360, '6:00'], [720, 'poledne'], [1080, '18:00'], [1440, 'půlnoc']].forEach(function(q){
+          ctx.textAlign = q[0] === 0 ? 'left' : (q[0] === 1440 ? 'right' : 'center'); ctx.fillText(q[1], X(q[0]), y1 + 14);
+        });
+        function curve(arr, idx, scale, col, lw, alpha){
+          if(!arr.length) return;
+          ctx.globalAlpha = alpha; ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath();
+          for(var q = 0; q < arr.length; q++){ var e = arr[q], xx = X(e[0]), yy = y1 - clamp(e[idx] / scale, 0, 1.15) * (y1 - y0 - 10); if(q === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy); }
+          ctx.stroke(); ctx.globalAlpha = 1;
+        }
+        curve(yesterday, 2, cmax, C.gold, 1.5, 0.25);
+        curve(today, 1, amax, C.blue, 1.3, 0.85);
+        curve(today, 2, cmax, C.gold, 2.6, 1);
+        var xn = X(tmin % 1440);
+        ctx.strokeStyle = 'rgba(233,231,216,.4)'; ctx.setLineDash([2, 3]); ctx.beginPath(); ctx.moveTo(xn, y0); ctx.lineTo(xn, y1); ctx.stroke(); ctx.setLineDash([]);
+        if(tmin < stressUntil){ ctx.font = '600 10px ' + SANS; ctx.fillStyle = C.terraBright; ctx.textAlign = 'center'; ctx.fillText('stres', clamp(xn, 30, w - 30), y0 - 10); }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — pulses or a steady stream of GnRH. The same average
+     amount; occupied receptors are withdrawn and return between
+     pulses (Boron, ch. 47: continuous GnRH downregulates its receptors).
+     1 s on screen = 40 min. The time axis is illustrative.
+     ========================================================= */
+  makeSim('esim4', function(canvas, dim){
+    var KDES = 1 / 25, TREC = 600, KG = 0.15, NH = 4, KR = 0.12, PER = 90, DUR = 6, H = 1;
+    var pulse = true, last = now(), tmin = 0, R = 1, acc = 0, hist = [], lhDay = [], base = 0.066;
+    var rEl = document.getElementById('e4-r'), lEl = document.getElementById('e4-lh');
+    var bM = onClick('e4-mode', function(){ pulse = !pulse; toggleBtn(bM, pulse, 'GnRH: ' + (pulse ? 'v pulzech' : 'nepřetržitě')); });
+    onClick('e4-reset', function(){ tmin = 0; R = 1; hist = []; lhDay = []; });
+    function g(t){ return pulse ? ((t % PER) < DUR ? H : 0) : H * DUR / PER; }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        var dm = dt * (REDUCED ? 20 : 40), n = Math.max(1, Math.ceil(dm / 0.5)), hs = dm / n;
+        for(var k = 0; k < n; k++){
+          var G = g(tmin), th = G / (G + KG * H);
+          R += hs * ((1 - R) / TREC - KDES * th * R);
+          var s = th * R, resp = Math.pow(s, NH) / (Math.pow(KR, NH) + Math.pow(s, NH));
+          lhDay.push([tmin, resp]); tmin += hs;
+          acc += hs;
+          if(acc >= 2){ acc = 0; hist.push([tmin, G, R, resp]); }
+        }
+        while(lhDay.length && lhDay[0][0] < tmin - 1440) lhDay.shift();
+        while(hist.length && hist[0][0] < tmin - 1440) hist.shift();
+        var sum = 0; for(var q = 1; q < lhDay.length; q++) sum += lhDay[q][1] * (lhDay[q][0] - lhDay[q - 1][0]);
+        var span = lhDay.length > 1 ? lhDay[lhDay.length - 1][0] - lhDay[0][0] : 0;
+        setTxt(rEl, Math.round(100 * R) + NB + '%');
+        setTxt(lEl, span > 60 ? Math.round(100 * sum / span / base) + NB + '%' : '–');
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, x0 = 14, x1 = w - 14, i;
+        ctx.clearRect(0, 0, w, h);
+        var t0 = Math.max(0, tmin - 1440);
+        function X(t){ return x0 + (t - t0) / 1440 * (x1 - x0); }
+        var bands = [{y: 14, h: (h - 50) * 0.22, key: 1, col: C.sagePale, lab: 'GnRH', max: 1},
+                     {y: 14 + (h - 50) * 0.22 + 14, h: (h - 50) * 0.3, key: 2, col: C.blue, lab: 'receptory', max: 1},
+                     {y: 14 + (h - 50) * 0.52 + 28, h: (h - 50) * 0.48 - 14, key: 3, col: C.gold, lab: 'LH', max: 1}];
+        bands.forEach(function(b){
+          ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, b.y + b.h); ctx.lineTo(x1, b.y + b.h); ctx.stroke();
+          ctx.font = '600 10px ' + SANS; ctx.textAlign = 'left'; ctx.fillStyle = b.col; ctx.fillText(b.lab, x0, b.y - 3);
+          ctx.strokeStyle = b.col; ctx.lineWidth = b.key === 1 ? 1.4 : 2; ctx.beginPath();
+          for(var q = 0; q < hist.length; q++){
+            var e = hist[q], xx = X(e[0]), yy = b.y + b.h - clamp(e[b.key] / b.max, 0, 1) * (b.h - 4);
+            if(q === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);
+          }
+          ctx.stroke();
+        });
+        if(!pulse){
+          ctx.font = '600 9.5px ' + SANS; ctx.fillStyle = C.sagePale; ctx.textAlign = 'right';
+          ctx.fillText('stálý přísun, stejné průměrné množství', x1, bands[0].y + bands[0].h - 8);
+        }
+        ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+        ctx.fillText('posledních 24 h →', x1, h - 8);
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
