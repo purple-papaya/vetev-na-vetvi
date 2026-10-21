@@ -21,7 +21,8 @@ css/
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
   fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
   wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie
-                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace)
+                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace);
+                            používá je i článek na blogu
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
@@ -35,6 +36,8 @@ pages/
   wetware-imunologie-ch1-darwin-v-mizni-uzline.html   Imunologie · Kapitola první — Darwin v mízní uzlině (hotová kapitola)
   wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html   Vývojová biologie · Kapitola první — Tělo, které se postavilo samo (hotová kapitola)
   wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
+  blog.html                Blog — rozcestník kratších textů mezi kapitolami
+  blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
   o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
