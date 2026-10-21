@@ -4,8 +4,252 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>Moře pod kůží – Větev na větvi</title>
-<meta name="description" content="Úvod do logiky fyziologie: jak tělo udržuje vnitřní prostředí stálé – zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova za plného provozu. S pěti interaktivními simulacemi.">
+<title>Moře pod kůží: úvod do fyziologie | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moře pod kůží">
+<meta property="og:description" content="Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/wetware-fyziologie-ch1-more-pod-kuzi.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Moře pod kůží – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-10-17T10:58:47+00:00">
+<meta property="article:modified_time" content="2026-10-21T11:00:09+00:00">
+<meta property="article:section" content="Fyziologie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html",
+   "name": "Moře pod kůží: úvod do fyziologie | Větev na větvi",
+   "description": "Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-fyziologie-ch1-more-pod-kuzi.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Jaký je rozdíl mezi anatomií a fyziologií?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Anatomie popisuje, z jakých částí se tělo skládá a kde leží; fyziologie vysvětluje, jak fungují. Anatomie je kytara, fyziologie hudba."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Co je homeostáza, jednou větou?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Udržování podmínek uvnitř těla (teploty, soli, kyselosti, cukru, tlaku) v úzkém rozmezí, které buňky potřebují, a to neustálým měřením a opravováním každé odchylky."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Jaký je rozdíl mezi difuzí a osmózou?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Difuze je šíření jakékoli látky z místa, kde je jí hodně, tam, kde je jí málo, v jakémkoli prostředí: parfém v místnosti, cukr v čaji. Osmóza je zvláštní případ: voda prochází membránou směrem k roztoku s více rozpuštěnými částicemi. Obojí je pasivní a nestojí žádnou energii."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč je negativní zpětná vazba ta „dobrá“?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "„Negativní“ tu znamená „působící proti“. Negativní zpětná vazba jde proti změně, a tím věci stabilizuje. Pozitivní zpětná vazba změnu zesiluje, takže ji tělo používá jen pro děje, které mají rychle doběhnout do jasného konce, jako je porod nebo srážení krve."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč je udržet se naživu tak energeticky náročné?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Protože všechno v tobě má sklon se vyrovnat: teplo uniká, ionty prosakují membránami, bílkoviny se opotřebovávají. Udržet rozdíly stojí práci. V klidu spotřebuje syntéza bílkovin zhruba čtvrtinu ATP, které tělo vyrobí, a sodno-draselná pumpa pětinu až čtvrtinu. Spolu s prací srdce, dýchacích svalů a dalších pump to dává bazální metabolismus: provozní náklady na život mimo rovnováhu."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Opravdu se každých sedm let vymění všechny buňky v těle?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne. Buňky se obnovují neustále, ale velmi různou rychlostí: výstelka střeva za pár dní, svrchní vrstva kůže zhruba za čtyři týdny, červené krvinky asi za čtyři měsíce, kost zhruba za deset let. Některé buňky se nevymění vůbec: neurony mozkové kůry, jádro oční čočky a víc než polovina buněk srdečního svalu. Úplně nové tělo tedy nemáš nikdy."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kolik vody v sobě mám?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "U typického dospělého muže asi 60 % tělesné hmotnosti, u žen a u lidí s větším podílem tuku o něco méně, protože tuk obsahuje málo vody. Zhruba dvě třetiny jsou uvnitř buněk a zbylá třetina mimo ně: právě to je vnitřní prostředí, o kterém je tahle kapitola. U muže vážícího 70 kg je to asi 42 litrů."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč je fyziologie tak těžká na učení?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Protože to není seznam faktů, ale síť regulačních smyček, které se navzájem ovlivňují, a někdy si dokonce konkurují. Když běžíš v horku, smyčka, která tě chladí, tě nutí potit se. Pocení ale zmenšuje objem krve a ten hlídá jiná smyčka, pro tělo důležitější. V určité chvíli tělo pocení omezí, a když běžíš dál, hrozí úpal. Dobrá zpráva: pod tím vším se pořád vracejí stejné myšlenky. Zpětná vazba, spády, proudění, povrch a obnova."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://vetevnavetvi.cz/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Fyziologie",
+     "item": "https://vetevnavetvi.cz/pages/wetware-fyziologie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Moře pod kůží",
+     "item": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html#article",
+   "headline": "Moře pod kůží",
+   "description": "Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-fyziologie-ch1-more-pod-kuzi.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-17T10:58:47+00:00",
+   "dateModified": "2026-10-21T11:00:09+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "homeostáza"
+    },
+    {
+     "@type": "Thing",
+     "name": "negativní zpětná vazba"
+    },
+    {
+     "@type": "Thing",
+     "name": "difuze"
+    },
+    {
+     "@type": "Thing",
+     "name": "osmóza"
+    },
+    {
+     "@type": "Thing",
+     "name": "ustálený stav"
+    },
+    {
+     "@type": "Thing",
+     "name": "obnova buněk"
+    }
+   ],
+   "keywords": "homeostáza, negativní zpětná vazba, difuze, osmóza, ustálený stav, obnova buněk",
+   "wordCount": 3653,
+   "timeRequired": "PT18M",
+   "citation": [
+    "Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Homeostáza, ustálený stav versus rovnováha a prvky negativní zpětné vazby (kap. 1); tělesné tekutiny, ustálený stav pumpy a úniku, voda následující rozpuštěné látky (kap. 5); Poiseuilleův zákon (kap. 17); generace dýchacích cest, plocha sklípků, proudění a difuze v plicích (kap. 26); Cheyneovo-Stokesovo dýchání (box 32-2); perorální rehydratace (box 44-1).",
+    "Bernard C. Leçons sur les phénomènes de la vie communs aux animaux et aux végétaux, 1878. Cannon W. B. The Wisdom of the Body, 1932 (homeostáza jako stav, který se může měnit, a přesto zůstává poměrně stálý).",
+    "Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 1997. V klidu připadá na syntézu bílkovin asi 25–30 % a na Na⁺/K⁺-ATPázu 19–28 % spotřeby kyslíku spřažené s tvorbou ATP.",
+    "Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.",
+    "Helander H. F., Fändriks L. Surface area of the digestive tract – revisited. Scandinavian Journal of Gastroenterology 49, 2014 (tenké střevo ≈ 30 m²).",
+    "Sender R., Milo R. The distribution of cellular turnover in the human body. Nature Medicine 27, 2021 (≈ 330 miliard vyměněných buněk denně).",
+    "Spalding K. L. a kol. Retrospective birth dating of cells in humans. Cell, 2005. Bhardwaj R. D. a kol. Neocortical neurogenesis in humans is restricted to development. PNAS, 2006. Bergmann O. a kol. Evidence for cardiomyocyte renewal in humans. Science 324, 2009 (během života se vymění méně než 50 % kardiomyocytů). Lynnerup N. a kol. Radiocarbon dating of the human eye lens crystallines reveal proteins without carbon turnover throughout life. PLoS ONE 3, 2008.",
+    "Obnova pokožky ≈ 26–27 dní (Weinstein a Van Scott 1965; Rothberg a kol. 1961, podle BioNumbers); přestavba kostry ≈ 10 % ročně (Parfitt 1994; Manolagas, Endocrine Reviews 2000); biologický poločas tělesné vody ≈ 10 dní (Kanadská komise pro jadernou bezpečnost, informační list o tritiu); NOAA Ocean Service, „Can humans drink seawater?“.",
+    "Doby difuze jsou řádové odhady podle vztahu t ≈ x²/2D, kde D pro kyslík ve vodě ≈ 2–3 × 10⁻⁵ cm²/s. Všechno je tu zjednodušeno pro laického čtenáře."
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://vetevnavetvi.cz/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://vetevnavetvi.cz/pages/wetware.html"
+   },
+   "articleSection": "Fyziologie"
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">

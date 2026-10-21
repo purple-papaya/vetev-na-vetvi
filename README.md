@@ -21,10 +21,16 @@ css/
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
   fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
   wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie
-                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace)
+                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace);
+                            používá je i článek na blogu
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
+  og/                      náhledové obrázky pro sdílení (1200×630, jeden na kapitolu a článek) a logo
+tools/
+  seo.py                   metadata pro vyhledávače a jazykové modely (viz níž)
+sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
+llms.txt, llms-full.txt  přehled a plné texty pro jazykové modely (generuje tools/seo.py)
 pages/
   wetware.html             Wetware hub — rozcestník všech podvětví a jejich kapitol
   wetware-ch1-jsi-sloveso.html          Biochemie · Kapitola první — Jsi sloveso (hotová kapitola)
@@ -35,6 +41,8 @@ pages/
   wetware-imunologie-ch1-darwin-v-mizni-uzline.html   Imunologie · Kapitola první — Darwin v mízní uzlině (hotová kapitola)
   wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html   Vývojová biologie · Kapitola první — Tělo, které se postavilo samo (hotová kapitola)
   wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
+  blog.html                Blog — rozcestník kratších textů mezi kapitolami
+  blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
   o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
@@ -46,6 +54,30 @@ Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět p
 takže web funguje i v podadresáři `/vetev-na-vetvi/`. `index.html` a `404.html` zůstávají
 v kořeni repozitáře — GitHub Pages je odsud vyžaduje (rozcestník i vlastní 404 stránka
 fungují jen tehdy, když leží přímo v publikované složce).
+
+## Vyhledávače a jazykové modely
+
+Metadata všech stránek spravuje `tools/seo.py` (jen standardní knihovna Pythonu). Po přidání
+nebo úpravě stránky ho spusť z kořene repozitáře:
+
+```bash
+python3 tools/seo.py
+```
+
+- **Nová stránka**: přidej ji do slovníku `PAGES` v `tools/seo.py` (titulek, popis, u kapitol témata
+  a anglické shrnutí). Stránky, které tam chybí, skript vypíše a nechá beze změny.
+- **Co se generuje**: v hlavičce každé stránky blok mezi komentáři `seo:begin` a `seo:end`
+  (titulek, popis, kanonická adresa, Open Graph, strukturovaná data JSON-LD včetně častých otázek
+  a zdrojů kapitol) a v kořeni `sitemap.xml`, `robots.txt`, `llms.txt` a `llms-full.txt`.
+  Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
+- **Zástupné stránky** (O mně, Příběhy, Luštění, Zpětná vazba) a 404 mají `noindex`. Až dostanou
+  obsah, změň v `PAGES` jejich `kind` ze `stub` na vhodný typ.
+- **Adresa webu** je `https://vetevnavetvi.cz/` (proměnná `SITE_URL`). Kdyby se web přestěhoval,
+  změň ji a skript spusť znovu.
+- **Data publikace a úpravy** se berou z historie gitu. Commity, jejichž zpráva začíná `SEO:`,
+  se nepočítají, takže úprava metadat stránku „neomladí“.
+- **Mapa webu** je odkázaná z `robots.txt`. Rychlejší je ale odeslat ji i ručně v Google Search Console
+  a Bing Webmaster Tools (`https://vetevnavetvi.cz/sitemap.xml`).
 
 ## Publikace přes GitHub Pages
 

@@ -1,0 +1,5 @@
+# Větev na větvi – vyhledávače i jazykové modely jsou vítány.
+User-agent: *
+Allow: /
+
+Sitemap: https://vetevnavetvi.cz/sitemap.xml
