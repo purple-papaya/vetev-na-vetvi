@@ -163,8 +163,10 @@ PAGES = {
         en='Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that '
            'turn them into decisions, feedback loops, and no central controller.'),
     # ---- placeholders, not worth indexing yet
-    'pages/o-mne.html': dict(kind='stub', name='O mně', title='O mně | Větev na větvi',
-                             desc='Kdo vede terénní zápisník Větev na větvi. Stránka se připravuje.'),
+    'pages/o-mne.html': dict(
+        kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
+        desc='Pája vystudovala molekulární biologii a biochemii a pracuje jako datová analytička v Brně. Jak vznikají '
+             'kapitoly, z jakých učebnic a s jakou rolí AI.'),
     'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
                                desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
     'pages/lusteni.html': dict(kind='stub', name='Luštění', title='Luštění | Větev na větvi',
@@ -174,7 +176,12 @@ PAGES = {
     '404.html': dict(kind='404', name='Stránka nenalezena', title='Stránka nenalezena | Větev na větvi',
                      desc='Tahle adresa na webu Větev na větvi neexistuje.'),
 }
-INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post'}
+INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'about'}
+
+# The author, as described on the About page (pages/o-mne.html).
+AUTHOR = dict(name='Pája', job='datová analytička', locality='Brno', country='CZ',
+              education='Molekulární biologie a biochemie organismů',
+              knows=['molekulární biologie', 'biochemie', 'fyziologie', 'datová analýza'])
 
 
 # ------------------------------------------------------------------ helpers
@@ -399,6 +406,11 @@ def markdown_of(page_path, page_html):
 # ------------------------------------------------------------------ JSON-LD
 ORG = {'@type': 'Organization', '@id': SITE_URL + '#org', 'name': SITE_NAME, 'url': SITE_URL,
        'logo': {'@type': 'ImageObject', 'url': SITE_URL + LOGO_IMAGE, 'width': 512, 'height': 512}}
+PERSON_ID = SITE_URL + 'pages/o-mne.html#person'
+PERSON = {'@type': 'Person', '@id': PERSON_ID, 'name': AUTHOR['name'], 'url': SITE_URL + 'pages/o-mne.html',
+          'jobTitle': AUTHOR['job'], 'knowsAbout': AUTHOR['knows'],
+          'description': f"Vystudovala obor {AUTHOR['education']}, pracuje jako {AUTHOR['job']} a píše web {SITE_NAME}.",
+          'address': {'@type': 'PostalAddress', 'addressLocality': AUTHOR['locality'], 'addressCountry': AUTHOR['country']}}
 WEBSITE = {'@type': 'WebSite', '@id': SITE_URL + '#website', 'url': SITE_URL, 'name': SITE_NAME,
            'description': SITE_DESC, 'inLanguage': 'cs', 'publisher': {'@id': SITE_URL + '#org'}}
 
@@ -415,7 +427,7 @@ def crumbs_of(path):
         trail.append((PAGES[meta['branch']]['name'], meta['branch']))
     if kind in ('blog', 'post'):
         trail.append(('Blog', 'pages/blog.html'))
-    if kind in ('chapter', 'post', 'stub', 'hub'):
+    if kind in ('chapter', 'post', 'stub', 'hub', 'about'):
         trail.append((meta['name'], path))
     seen, out = set(), []
     for name, p in trail:
@@ -464,7 +476,7 @@ def graph_of(path, page_html, dates):
                    'inLanguage': 'cs', 'url': url, 'mainEntityOfPage': {'@id': url + '#webpage'},
                    'image': {'@type': 'ImageObject', 'url': image, 'width': 1200, 'height': 630},
                    'datePublished': meta.get('date') or dates[0], 'dateModified': dates[1],
-                   'author': {'@id': SITE_URL + '#org'}, 'publisher': {'@id': SITE_URL + '#org'},
+                   'author': {'@id': PERSON_ID}, 'publisher': {'@id': SITE_URL + '#org'},
                    'isAccessibleForFree': True,
                    'about': [{'@type': 'Thing', 'name': a} for a in meta.get('about', [])],
                    'keywords': ', '.join(meta.get('about', []))}
@@ -487,11 +499,16 @@ def graph_of(path, page_html, dates):
             article['mentions'] = [{'@type': 'Article', 'name': PAGES[p]['name'], 'url': url_of(p)}
                                    for p, m in PAGES.items() if m['kind'] == 'chapter']
         nodes.append(article)
+        nodes.append(PERSON)
         faqs = faqs_of(page_html)
         if faqs:
             page['@type'] = ['WebPage', 'FAQPage']
             page['mainEntity'] = [{'@type': 'Question', 'name': q,
                                    'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faqs]
+    if kind == 'about':
+        page['@type'] = 'AboutPage'
+        page['mainEntity'] = {'@id': PERSON_ID}
+        nodes.append(PERSON)
     nodes.insert(2, page)
     return {'@context': 'https://schema.org', '@graph': nodes}
 
@@ -506,10 +523,12 @@ def head_block(path, page_html, dates):
     image = SITE_URL + image_of(path)
     esc = lambda s: html.escape(s, quote=True)
     robots = 'index, follow, max-image-preview:large' if kind in INDEXABLE else 'noindex, follow'
-    og_type = 'article' if kind in ('chapter', 'post') else 'website'
+    og_type = 'article' if kind in ('chapter', 'post') else ('profile' if kind == 'about' else 'website')
     lines = [BEGIN,
              f'<meta name="description" content="{esc(meta["desc"])}">',
              f'<meta name="robots" content="{robots}">']
+    if kind in ('chapter', 'post', 'about'):
+        lines.append(f'<meta name="author" content="{esc(AUTHOR["name"])}">')
     if kind != '404':
         lines.append(f'<link rel="canonical" href="{esc(url)}">')
     lines += [f'<meta name="theme-color" content="{THEME_COLOR}">',
@@ -524,6 +543,8 @@ def head_block(path, page_html, dates):
               '<meta property="og:image:height" content="630">',
               f'<meta property="og:image:alt" content="{esc(meta.get("name", SITE_NAME))} – {SITE_NAME}">',
               '<meta name="twitter:card" content="summary_large_image">']
+    if og_type == 'profile':
+        lines.append(f'<meta property="profile:first_name" content="{esc(AUTHOR["name"])}">')
     if og_type == 'article':
         lines += [f'<meta property="article:published_time" content="{meta.get("date") or dates[0]}">',
                   f'<meta property="article:modified_time" content="{dates[1]}">']
@@ -581,6 +602,10 @@ def write_site_files(all_dates):
     for p in posts:
         m = PAGES[p]
         lines.append(f'- [{m["name"]}]({url_of(p)}): {m["desc"]} English: {m["en"]}')
+    lines += ['', '## O autorce', '',
+              f'- [O mně]({url_of("pages/o-mne.html")}): {AUTHOR["name"]} vystudovala obor {AUTHOR["education"]} '
+              f'a pracuje jako {AUTHOR["job"]} ({AUTHOR["locality"]}). Kapitoly píše s pomocí AI (Claude od Anthropicu); '
+              'fakta a čísla se ověřují proti citovaným učebnicím.']
     lines += ['', '## Rozcestníky', '',
               f'- [Rozcestník]({SITE_URL}): hlavní strana webu',
               f'- [Wetware]({url_of("pages/wetware.html")}): přehled všech větví a kapitol',

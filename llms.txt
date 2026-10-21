@@ -21,6 +21,10 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 
 - [Spád, práh, smyčka](https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html): Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil. English: Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that turn them into decisions, feedback loops, and no central controller.
 
+## O autorce
+
+- [O mně](https://vetevnavetvi.cz/pages/o-mne.html): Pája vystudovala obor Molekulární biologie a biochemie organismů a pracuje jako datová analytička (Brno). Kapitoly píše s pomocí AI (Claude od Anthropicu); fakta a čísla se ověřují proti citovaným učebnicím.
+
 ## Rozcestníky
 
 - [Rozcestník](https://vetevnavetvi.cz/): hlavní strana webu
