@@ -4,7 +4,245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>Lék je vlna – Větev na větvi</title>
+<title>Lék je vlna: farmakokinetika a farmakodynamika | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lék je vlna">
+<meta property="og:description" content="Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.">
+<meta property="og:url" content="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html">
+<meta property="og:image" content="https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-farmakologie-ch1-lek-je-vlna.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lék je vlna – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-07-06T06:52:38+02:00">
+<meta property="article:modified_time" content="2026-10-21T05:38:04+00:00">
+<meta property="article:section" content="Farmakologie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org",
+   "name": "Větev na větvi",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html#webpage",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html",
+   "name": "Lék je vlna: farmakokinetika a farmakodynamika | Větev na větvi",
+   "description": "Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-farmakologie-ch1-lek-je-vlna.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Jaký je vlastně rozdíl mezi farmakokinetikou a farmakodynamikou?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kinetika je to, co tělo dělá s lékem; dynamika je to, co lék dělá s tělem. Kinetika je cesta – jak se molekula dostane dovnitř, rozšíří se, rozloží a odejde (příběh ADME a koncentrační křivka na obrázku 1). Dynamika je cíl – co se stane, když molekula najde svůj receptor a tlačítko zmáčkne, nebo zablokuje (obrázek 3). Kinetika ti tedy řekne, kolik léku je kde a kdy, dynamika, co to množství na místě dělá."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč trvá „pět poločasů“, než se dosáhne ustáleného stavu – a než lék opustí tělo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Protože každý poločas uzavře polovinu mezery, která ještě zbývá. Při pravidelném dávkování urazíš po jednom poločasu 50 % cesty, po dvou 75 %, po třech 87,5 %, po čtyřech asi 94 % a po pěti asi 97 % – a to už je plató tak blízko, že se tomu říká ustálený stav. Při vylučování platí stejná aritmetika obráceně: po pěti poločasech je pryč asi 97 %. Platí to bez ohledu na to, jak velká je dávka a jak často ji bereš; záleží jen na poločasu. Nasycovací dávka může účinek urychlit, protože hladinu rozjede rovnou blízko plató, ale samotnou aritmetiku pěti poločasů nezmění. (Obrázek 2 ukazuje přesně tohle.) Vychází z: Allucent, „Steady-State Concentration in Pharmacokinetics“; Rosenbaum, Basic Pharmacokinetics and Pharmacodynamics, kap. 11 a 12."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Potence vs. účinnost – pořád si to pletu. V čem je skutečný rozdíl?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Potence říká, kolik léku potřebuješ; účinnost, kam až tě lék dokáže dostat. Potence se měří pomocí EC_50 (nebo ED_50), tedy koncentrace, která vyvolá polovinu maximálního účinku daného léku. Nižší EC_50 znamená vyšší potenci, protože stačí méně léku. Účinnost se měří pomocí E_max, největšího účinku, jakého lék dosáhne při jakékoli dávce. Jsou na sobě nezávislé, a to lidem uniká: velmi potentní lék může mít nízký strop a méně potentní lék s vysokým stropem ho při dostatečné dávce předstihne. „Potentnější“ tedy neznamená „silnější“ ani „lepší“, jen to, že stačí méně miligramů. O klinické užitečnosti obvykle rozhoduje účinnost; potence rozhoduje spíš o velikosti tablety. Na obrázku 3 si oba pojmy rozplétáš vlastníma rukama. Vychází z: Deranged Physiology; LITFL; Katzung, Basic & Clinical Pharmacology; Rosenbaum, kap. 19."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč mi grapefruitová šťáva rozhazuje léky?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vzpomeň si na kontrolu ve stěně střeva: enzym CYP3A4 rozloží část některých léků dřív, než se dostanou do krve. Grapefruit obsahuje látky (furanokumariny), které tenhle enzym ve střevě vyřadí, a to nevratně. Střevo musí vyrobit nový enzym, a než se to stane, může uplynout den i víc. Grapefruit navíc ovlivňuje i některé přenašeče, které léky stěnou střeva přenášejí. Bez kontroly projde prvním průchodem mnohem víc nezměněného léku, takže běžná dávka se může chovat jako mnohem větší a dostat tě do toxického pásma. Týká se to hlavně některých statinů na cholesterol, některých léků na krevní tlak a srdeční rytmus a hrstky dalších, které mají varování v příbalovém letáku. A protože každý má ve střevě jiné množství tohoto enzymu, stejná sklenice působí na různé lidi různě silně. Vychází z: U.S. FDA, „Grapefruit Juice and Some Drugs Don't Mix“; Bailey et al.; Grapefruit–drug interactions (přehled)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Jak může být „distribuční objem“ větší než celé tělo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Protože to nikdy nebyl skutečný objem. Je to přepočítávací číslo: celkové množství léku v těle dělené koncentrací, kterou naměříš v krevní plazmě. Nic ho nenutí odpovídat skutečnému objemu čehokoli. Když se lék rád schovává v tkáních – v tuku, ve svalech, v orgánech –, v plazmě ho koluje jen málo a naměřená koncentrace je nepatrná. Když běžné množství léku vydělíš nepatrnou koncentrací, vyjde obří číslo, někdy stovky nebo tisíce litrů. Velký distribuční objem proto čti jako index schovávání, ne jako velikost kbelíku: velké číslo znamená, že je lék hlavně v tkáních, malé, že zůstává v krvi. Vychází z: Certara, „Understanding Volume of Distribution“; Rosenbaum, kap. 4."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Musím opravdu dobrat celou kúru antibiotik?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tady se odborníci opravdu přou, takže si otázka zaslouží poctivou odpověď, ne heslo. Stará poučka „antibiotika se musí vždycky dobrat, jinak vznikne rezistence“ stojí na vratší půdě, než napovídá její sebejistota. Analýza v BMJ (2017) upozornila, že u mnoha běžných infekcí chybí důkazy, že by dřívější vysazení po zlepšení pěstovalo rezistenci – a že naopak zbytečně dlouhé užívání antibiotik rezistenci podporuje. Ale – a je to skutečné ale – „je mi líp“ neznamená „infekce je pryč“. Některé infekce se po předčasném vysazení vracejí a předepsaná délka léčby je nastavená na konkrétní bakterii a místo infekce. Upravovat si léčbu podle toho, jak se cítíš, je přesně cesta k návratu nemoci. Obhajitelný postoj tedy není „přestaň, kdy chceš“ ani „vždycky slepě dober“, ale: ber to, co ti bylo předepsáno, a pokud chceš skončit dřív, zeptej se lékaře, ne internetu. Výzkum se tu stále vyvíjí. Vychází z: Llewelyn et al., BMJ (2017) a debata, kterou to rozpoutalo; protiargumenty v The Conversation a PBS NewsHour."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč jsou některé léky jen injekční? Proč je nemůžu prostě spolknout?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Obvykle proto, že by je cesta přes trávicí trubici zničila dřív, než by stihly zabrat. Viníci jsou dva. Zaprvé efekt prvního průchodu: u některých léků je kontrola v játrech tak přísná, že do oběhu skoro nic neprojde a biologická dostupnost je téměř nulová. Zadruhé některé molekuly trávicí trubici nepřežijí nebo jí neprojdou: inzulin je bílkovina, kterou trávicí enzymy rozštěpí stejně jako bílkoviny z jídla, a heparin je velký, silně nabitý polysacharid, který stěnou střeva skoro neprojde. Když jsou vstupní dveře drtička, doručí se lék za ně – do žíly, pod kůži, do svalu –, aby dorazil nedotčený. Proto křivka „Injekce“ na obrázku 1 nemá žádný vzestup: celou cestu přes trávicí trubici přeskočila."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Farmakologie",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Lék je vlna",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html#article",
+   "headline": "Lék je vlna",
+   "description": "Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html",
+   "mainEntityOfPage": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-farmakologie-ch1-lek-je-vlna.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-07-06T06:52:38+02:00",
+   "dateModified": "2026-10-21T05:38:04+00:00",
+   "author": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "farmakokinetika"
+    },
+    {
+     "@type": "Thing",
+     "name": "farmakodynamika"
+    },
+    {
+     "@type": "Thing",
+     "name": "biologický poločas"
+    },
+    {
+     "@type": "Thing",
+     "name": "ustálený stav"
+    },
+    {
+     "@type": "Thing",
+     "name": "terapeutické okno"
+    },
+    {
+     "@type": "Thing",
+     "name": "receptor"
+    }
+   ],
+   "keywords": "farmakokinetika, farmakodynamika, biologický poločas, ustálený stav, terapeutické okno, receptor",
+   "wordCount": 3604,
+   "timeRequired": "PT18M",
+   "citation": [
+    "Sara E. Rosenbaum, Basic Pharmacokinetics and Pharmacodynamics, 2. vyd., Wiley 2017 – kniha, o kterou se tato kapitola opírá: terapeutické rozmezí, receptory a částeční agonisté (kap. 1), vstřebávání, distribuce a vylučování (kap. 3–5), křivka po spolknutí (kap. 9), ustálený stav a opakované dávkování (kap. 11, 12 a 14), model E _max (kap. 19)",
+    "U.S. FDA – Grapefruit Juice and Some Drugs Don't Mix",
+    "Certara – Understanding Volume of Distribution",
+    "Allucent – Steady-State Concentration in Pharmacokinetics",
+    "Deranged Physiology – Potency and Efficacy",
+    "Llewelyn a kol., BMJ 2017, k debatě o dobírání antibiotik",
+    "CDC – fentanyl",
+    "Pfizer – naloxon, klinická farmakologie",
+    "Walsh a kol., Clinical Pharmacology & Therapeutics 1994, k stropu účinku buprenorfinu",
+    "Boron & Boulpaep, Medical Physiology, 3. vyd., kap. 34, k ledvinné filtraci."
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+   },
+   "articleSection": "Farmakologie"
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

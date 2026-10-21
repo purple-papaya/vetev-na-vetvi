@@ -1,0 +1,1357 @@
+# Větev na větvi – plné texty
+
+> Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.
+
+Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.
+
+---
+
+# Jsi sloveso
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html  
+Větev: Biochemie  
+Shrnutí: Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.  
+English: Introduction to metabolism: why you are a process rather than a thing; ATP, stepwise release of energy and feedback inhibition without a central controller.
+
+01 Omyl, kterého se všichni dopouštíme
+
+## Myslíš si, že jsi podstatné jméno. Nejsi.
+
+Máš pocit, že jsi věc: pevný předmět, který kdysi vznikl, vydrží roky jako lžíce v šuplíku a jednou se opotřebuje. Je to nejpřirozenější představa na světě – a skoro celá je mylná.
+
+Většina atomů, ze kterých je tvá paže, v ní před rokem ještě nebyla. Jak se to ví? Ve třicátých letech přidával biochemik Rudolf Schoenheimer do potravy pokusných myší a potkanů látky označené těžkými izotopy, aby mohl sledovat, kam se v těle dostanou jednotlivé atomy. Čekal, že potrava jen dodá palivo a hotové tkáně zůstanou nedotčené, tak jako auto zůstává stejné, i když do něj dolíváš benzin. Zjistil opak. Označené atomy rychle pronikaly i do tkání, které všichni pokládali za hotové, a jiné atomy je ve stejnou chvíli opouštěly. Tělo se neustále bourá a staví znovu, i když se jeho hmotnost nezmění ani o gram. Schoenheimer tomu říkal dynamický stav tělesných složek.
+
+Když látka, ze které jsi, tebou protéká a průběžně se vyměňuje, nemůže být tím, co jsi ty. Vydrží něco jiného: vzorec, uspořádání, které proud neustále vytváří znovu. Nejsi voda ve fontáně, jsi její tvar – a ten existuje, jen dokud voda teče.
+
+Není to mystika, ale střízlivá chemie, a právě tady začíná studium metabolismu. Metabolismus (z řeckého metabolé, změna) je souhrn všech reakcí, které v tobě rozkládají molekuly a skládají nové. Jsou jich tisíce a běží i teď, zatímco čteš. Nejsi stavba, která má metabolismus. Jsi metabolismus, který na čas dostal tvar.
+
+Simulace: Plamen svíčky má stálý tvar, ale žádná částice v něm nezůstane: plyn proudí vzhůru a hned ho nahradí další. Plamen je hoření, ne to, co hoří. Když odřízneš palivo, žádný „plamen“ nikde nečeká – vzorec se prostě přestane tvořit. Jsi útvar stejného druhu, jen pomalejší, chladnější a mnohem lépe řízený.
+
+```
+# Skrz kámen neběží žádný proces. Skrz tebe běží přesně jeden, bez přestávky:
+while alive:
+    fuel   = eat()            # importuj řád ze světa
+    energy = break_down(fuel)  # katabolismus -- uvolni volnou energii
+    rebuild(self, energy)   # anabolismus -- utrať ji na znovuvytváření sebe
+    export(heat, disorder)  # zaplať vesmíru jeho daň (viz oddíl 02)
+# Ta smyčka *jsi* ty. Zastaví se jen jednou. Tomu říkáme konec programu.
+```
+
+02 Jediné pravidlo bez výjimky
+
+## Všechno se rozpadá. Ty z toho rozpadu žiješ.
+
+Vesmír má jedno pravidlo, které platí vždycky, a vyplývá z něj skoro všechno v této kapitole. Druhý termodynamický zákon říká, že věci mají sklon se rozptylovat, chladnout a promíchávat, tedy směřovat k větší neuspořádanosti. Horká káva vychladne a sama se znovu neohřeje. Vůně uteče z lahvičky a zpátky se nevrátí. Míra neuspořádanosti se jmenuje entropie a celková entropie vesmíru pořád jen roste.
+
+Ty jsi přitom ztělesnění řádu: asi 10^27 molekul (jednička a dvacet sedm nul) uspořádaných přesněji než v jakékoli továrně. A nejen jednou – to uspořádání se udržuje každou chvíli znovu, proti neustálému tahu k chaosu. Jak je to možné?
+
+Nejsi uzavřená sklenice, jsi otevřený systém. Představ si vír v řece. Je skutečný a stálý: můžeš ho vyfotit a zítra ho najdeš na stejném místě. Řád ale nevytváří z ničeho. Existuje jen proto, že řeka teče z kopce, a za jeho malou uspořádanost platí neuspořádanost celého toku. Zastav řeku a vír zmizí.
+
+Tvůj vnitřní řád funguje stejně. Udržuješ ho uprostřed mnohem většího toku energie: od potravy a kyslíku přes tvou chemii až k rozptýlenému teplu a odpadu. Druhý zákon tím neporušuješ, ty se jím živíš. Každý kousek řádu v tobě je zaplacený větší neuspořádaností, kterou vydáváš do okolí, hlavně v podobě tepla. Proto z tebe sálá teplo. Není to vedlejší účinek, je to účtenka.
+
+Jedna jemnost, o kterou zakopne skoro každý: buňky neumějí pracovat s teplem. Parní stroj získává práci z tepla, které přechází z teplejšího místa na chladnější, a k tomu potřebuje teplotní rozdíl. Tvé buňky ale mají všechny zhruba stejnou teplotu – jsou izotermické. Teplo, které z tebe odchází, je proto opravdu odpad. Buňka umí využít jen energii uloženou v chemických vazbách, tedy v tom, jak ochotně spolu molekuly reagují. Chemici jí podle Willarda Gibbse říkají volná energie.
+
+> Přirovnání ze života
+
+> Mlýnské kolo neroztočíš teplem rybníka, i kdyby byl sebeteplejší. Roztočí ho jen voda, která padá. Teplo je ten teplý rybník, volná energie je vodopád. Buňka umí využít jen vodopád.
+
+Logika metabolismu tedy nezní „spal potravu kvůli teplu“, ale zachyť volnou energii, která se uvolňuje, když něco padá z kopce, a dřív, než se z ní stane teplo, ji použij na práci do kopce – na to, co tě drží naživu. K tomu buňka potřebuje měnu.
+
+03 Energetická měna
+
+## ATP není baterie, ale drobné v kapse.
+
+O ATP (adenosintrifosfátu) se říká, že je „energetická měna buňky“. To sedí, jen se ta metafora často chápe špatně. Lidé si ATP představují jako baterii, zásobu, kterou nabiješ a schováš na později. Tak to není. ATP jsou drobné v kapse a protékají ti mezi prsty neuvěřitelně rychle.
+
+V těle máš v každém okamžiku jen asi 50 gramů ATP, pár polévkových lžic. Za den ho ale vyrobíš a spotřebuješ zhruba tolik, kolik vážíš – desítky kilogramů. Každá molekula se tak za den nabije a vybije zhruba tisíckrát. Energii v ATP neskladuješ, jen ji velmi rychle protáčíš.
+
+~50 gATP v těle v každém okamžiku – celá pokladna ~tvá váhaATP vyrobené a utracené za den – denní obrat ~1000×kolikrát se každá molekula ATP za den znovu nabije a použije
+
+Proč tělo nenabije jednu velkou baterii? Protože měna se musí dát snadno utratit. Molekuly se dají seřadit podle toho, jak ochotně předávají fosfátovou skupinu a kolik volné energie přitom uvolní; odborně se tomu říká potenciál přenosu fosforylové skupiny. Fosfoenolpyruvát stojí na této stupnici vysoko a fosfát předává velmi ochotně, glukóza-6-fosfát je nízko. ATP stojí schválně uprostřed.
+
+A právě tam univerzální měna patří. ATP může fosfát převzít od molekul s vyšším potenciálem, které vznikají při rozkladu živin, a předat ho tam, kde je potřeba. Je to prostředník mezi reakcemi, které energii uvolňují, a reakcemi, které ji spotřebovávají.
+
+> Přirovnání ze života
+
+> ATP je jako hotovost v peněžence, ne peníze na spořicím účtu. Peněženka je pořád skoro prázdná, protože z ní neustále platíš a zase ji doplňuješ. Spořicí účet, tedy dlouhodobou zásobu energie, máš jinde: v tuku a glykogenu.
+
+Zbývá otázka: když ATP fosfát tak ochotně předává, proč se ve vodném prostředí buňky samo nerozpadne? Protože je termodynamicky nestabilní, ale kineticky stabilní. Reagovat „chce“, jenže mu v tom brání vysoká energetická bariéra. Je jako natažená past na myši, která může ležet na polici libovolně dlouho. Energii uvolní, až když ji spustí enzym, a to přesně tam a tehdy, kde ji buňka potřebuje. Natažená pružina a řízená spoušť: tahle kombinace stojí za každým řízeným dějem v tobě.
+
+Simulace: Zásoba ATP zůstává skoro stálá, i když průtok prudce roste. Výroba drží krok se spotřebou tak těsně, že rezerva nevyschne ani nepřeteče. Přepni na sprint: obrat vyskočí, a zásoba přesto drží. Tělo energii neskladuje, nechává ji proudit.
+
+### Druhá měna
+
+ATP přenáší fosfát. Stavba těla ale potřebuje i elektrony, tedy redukční sílu, se kterou se z jednoduchých oxidovaných látek skládají složité molekuly bohaté na energii, například tuky. Elektrony přenášejí dvě skoro stejné molekuly, NADH a NADPH. Liší se jen jednou fosfátovou skupinou navíc, která na samotné reakci nic nemění, ale buňce slouží jako štítek. Díky ní vede dva oddělené účty. NAD^+ drží převážně v oxidované, „prázdné“ podobě, připravené elektrony z rozkládaných živin přijímat. NADPH drží převážně v redukované, „plné“ podobě, připravené elektrony dávat na stavbu. Stejná bankovka, jiná barva – a buňka si nikdy nesplete peníze na provoz s penězi na stavbu.
+
+04 Proč nevybuchneš
+
+## Schodiště, ne útes.
+
+Poleno na topení „chce“ shořet. Jeho reakce s kyslíkem uvolní spoustu volné energie a produkty, oxid uhličitý a voda, jsou mnohem stabilnější než dřevo. Přesto leží v kůlně celé roky beze změny.
+
+Mezi polenem a jeho osudem stojí aktivační energie, bariéra, kterou musí molekuly nejdřív překonat. Při pokojové teplotě na to nestačí. Když ale škrtneš zápalkou, reakce se rozběhne: uvolněné teplo popostrčí další kus dřeva a pak další. Za pár minut je energie, kterou strom ukládal desítky let, pryč jako záblesk tepla a světla. Skoro nic z ní se nezachytí.
+
+Ty jsi z podobného materiálu jako to poleno, z uhlíku a vodíku bohatých na energii, a žiješ ve stejném kyslíku. Glukóza v tvé krvi by hořela stejně ochotně. Tvé buňky ji s kyslíkem opravdu spojí a skončí u stejných produktů, oxidu uhličitého a vody. Jen to nedělají jako zápalka.
+
+Dělají dvě věci, které oheň neumí. Zaprvé: oheň bariéru překonává teplem, kdežto enzymy ji snižují, takže reakce běží při tělesné teplotě a bez plamene. Zadruhé: glukózu nespálí jedním skokem, ale po schodišti zhruba dvaceti malých kroků, z nichž každý řídí jiný enzym. Na několika schodech se část uvolněné energie rovnou uloží do ATP, na jiných se naloží elektrony na přenašeč NADH. Ty pak sestoupí poslední částí schodiště, dýchacím řetězcem, a na jeho konci je převezme kyslík.
+
+> Přirovnání ze života
+
+> Vodopád i přehrada s elektrárnou pracují se stejnou řekou a stejným spádem. Vodopád všechnu energii promění v tříšť a hluk. Přehrada ji po stupních posílá přes turbíny a svítí s ní celé město. Spalování je vodopád, ty jsi přehrada.
+
+Simulace: Stejná molekula, stejná energie, dva osudy. Zápalka ji uvolní naráz a celá odejde jako teplo. Buňka jde po schodech: v prvních třech krocích získá pár ATP a hlavně naloží elektrony na NADH (zelené tečky). Elektrony pak stečou dýchacím řetězcem ke kyslíku a jejich energie cestou vyrobí většinu ATP (zlaté mince). Celkem buňka zachytí zhruba třetinu energie, zbytek odejde jako teplo. Pak vypni kyslík a spusť dráhu znovu: elektrony nemají kam odtéct, NADH se hromadí a dýchací řetězec i citrátový cyklus se zastaví. Zbudou jen 2 ATP z glykolýzy. Ta jede dál jen proto, že se NADH vyprázdní do pyruvátu a vznikne laktát. V něm zůstane většina energie na později. Proto potřebuješ kyslík – viz otázky na konci.
+
+Proto můžeš být plná paliva, žít v kyslíku, a přesto nevzplanout. Metabolismus je řízené hoření po malých doušcích. Oheň je skutečný, jen je rozdělený na mnoho malých, hlídaných kroků a z každého se vytěží trocha využitelné energie.
+
+05 Tvar metabolismu
+
+## Nálevka, pak fontána.
+
+Velká nástěnná mapa metabolismu s tisíci šipek a názvů, které se kříží jako ulice na plánu města, umí člověka vyděsit. Nemusí. Většina z ní jsou detaily a základní tvar se vejde do dlaně.
+
+Ten tvar připomíná přesýpací hodiny. Horní polovina je katabolismus, rozklad. Nahoře se sype všechno, co sníš: bílkoviny, tuky, sacharidy. Krok za krokem se zjednodušují, až se velká část sejde v jediném úzkém hrdle – v malém dvouuhlíkovém úlomku neseném molekulou acetyl-CoA. Ať jíš steak, jablko, nebo olivový olej, velká část skončí tady. Buňka proto nepotřebuje tisíc oddělených drah pro tisíc látek. Stačí jí hrstka společných meziproduktů.
+
+Pod hrdlem se hodiny zase rozšiřují. Dolní polovina je anabolismus, stavba. Z malé sady meziproduktů vzniká všechno, z čeho se skládáš: membrány, svaly, hormony. Málo vstupů, mnoho výstupů. Nálevka, pak fontána.
+
+Jedna věc tu ještě stojí za pozornost. Cesta dolů a cesta nahoru nikdy nevedou přesně stejnou silnicí. I když se molekula rozloží a později zase složí, rozklad a stavba používají jiné enzymy a často i jiné části buňky. Vypadá to jako plýtvání, ale je to naopak. Kdyby obě party jezdily po jedné obousměrné silnici, nedaly by se řídit nezávisle. Takhle má buňka na každém směru vlastní ventil: může stavbu rozjet naplno a rozklad přibrzdit, nebo obráceně. K řízení se ještě dostaneme. Nejdřív se ale podívejme, co všechny ty reakce chemicky dělají. Je toho méně, než by se zdálo.
+
+05·b Gramatika buňky
+
+Buňka zvládá tisíce různých reakcí, ale skoro všechny jsou obměnou pěti základních typů. Když je znáš, z mapy metabolismu se stanou věty. Klikni na každý z nich:
+
+06 Ekonomika se řídí sama
+
+## Nikdo nevelí. A právě o to jde.
+
+Tak složitý systém přece musí mít řídicí centrum, které sleduje poptávku a rozdává příkazy. Nemá. Metabolismus se řídí sám, podobně jako trh, přes tisíce drobných místních zpětných vazeb.
+
+Hlavní trik se jmenuje zpětnovazebná inhibice a znáš ho z termostatu. Termostat neví, jakou teplotu chceš; jen vypne topení, když je v místnosti dost teplo, a znovu ho zapne, když se ochladí. Metabolická dráha dělá totéž. Když se nahromadí její konečný produkt, naváže se na enzym na začátku dráhy a zpomalí ho. Produktu je dost, tak se ho vyrábí méně – bez příkazu, prostým dotykem molekul. Když se produkt spotřebuje, brzda povolí a výroba se zase rozjede.
+
+> Přirovnání ze života
+
+> Je to jako dílna, která zastaví výrobu, když se naplní sklad, a znovu ji rozjede, když se police vyprázdní. Žádné porady ani oběžníky: plný sklad je sám signálem. Hotový výrobek je cíl i vypínač zároveň.
+
+Většina drah začíná rozhodujícím krokem, který uvolní hodně volné energie, a proto je prakticky nevratný. Je to turniket, kterým se zpátky nechodí. Buňce stačí brzdit tenhle jeden vstup a ovládá celou dráhu; nemusí hlídat každý schod. Metabolismus tak není strnulé potrubí, ale síť jednosměrek s hlídanými vjezdy a každý vjezd reaguje na to, kolik produktu už je k dispozici. Když poptávka vzroste, turnikety se pootevřou. Když klesne, přivřou se. Systém se ladí sám, aniž by kdokoli rozhodoval.
+
+```
+def pathway(substrate):
+    while demand_exists():
+        if product_level > ENOUGH:
+            throttle(committed_step)   # produkt se dotkne prvního enzymu -> brzda
+        else:
+            open(committed_step)       # brzda povolí -> linka zrychlí
+        yield one_step()
+# Nikde se neimportuje žádný ústřední dispečer. Tou řídicí jednotkou *je* ta smyčka.
+```
+
+07 Terénní poznámky
+
+## Na co se lidé opravdu ptají
+
+Tyhle otázky se pořád vracejí na Redditu, Quoře i v různých fórech. Odpovědi na ně stojí na tom, co už teď víš.
+
+### Když zhubnu, kam se ten tuk vlastně poděje?
+
+Většinu ho vydýcháš. Ruben Meerman a Andrew Brown v roce 2014 v časopise BMJ spočítali, kam odcházejí jednotlivé atomy: z 10 kg tuku odejde 8,4 kg plícemi jako oxid uhličitý a zbylých 1,6 kg jako voda – močí, potem, dechem a slzami. Když se zeptali 150 lékařů, dietologů a osobních trenérů, nejčastěji slyšeli, že se tuk „promění v energii“ nebo v teplo. To by ale porušilo zákon zachování hmotnosti: atomy se v energii rozplynout nemůžou. Tuk se skládá z uhlíku, vodíku a kyslíku. Když se oxiduje (to je schodiště z oddílu 04), vznikne CO_2 a H_2O a uhlík odejde s výdechem. Rychlejším dýcháním si to ale nezkrátíš. Víc CO_2 vyrobíš jen tak, že víc spálíš, tedy když se budeš hýbat.
+
+Zdroj: Meerman & Brown, BMJ 2014 (349:g7257); UNSW.
+
+### Zpomaluje se mi s věkem opravdu metabolismus? Dá se „nakopnout“?
+
+Ne tak, jak se říká. Zatím největší studie svého druhu (Pontzer a kol., Science 2021) změřila skutečný denní energetický výdej u více než 6 400 lidí ve věku od 8 dní do 95 let ve 29 zemích a našla čtyři životní fáze. Po přepočtu na velikost těla je výdej nejvyšší kolem prvního roku, zhruba o polovinu vyšší než u dospělých. Během dětství a dospívání pozvolna klesá a mezi dvacítkou a šedesátkou je prakticky stálý, i v těhotenství, když se započítá přibraná hmotnost. Klesat začne až po šedesátce. Přibírání ve středním věku je tedy skutečné, jen za ním nestojí zpomalený metabolismus. A „nakopnout“ ho pilulkou nejde: klidový výdej závisí hlavně na množství beztukové tkáně. Opravdu s ním pohne jen pohyb a svaly.
+
+Zdroj: Pontzer et al., Science 2021 (373:808).
+
+### Proč potřebuju kyslík? Co vlastně dělá?
+
+Intuitivní odpověď „kyslík je palivo“ je obráceně. Kyslík nespaluješ. Je to odtok na dně elektronového vodopádu, takzvaný konečný akceptor elektronů. Když se glukóza rozkládá, odtrhávají se z ní elektrony bohaté na energii a stékají dýchacím řetězcem; jejich energie se cestou využívá k výrobě ATP. Jenže voda teče, jen když má kam odtéct. Kyslík elektrony ochotně přijímá (má velmi kladný redoxní potenciál) a spojuje se s nimi a s protony na vodu. Když odtok ucpeš – zadržíš dech –, řetězec se zastaví a s ním většina výroby ATP. Asi 90 % kyslíku, který tělo spotřebuje, skončí právě tady, v mitochondriích na konci dýchacího řetězce.
+
+Zdroje: Rolfe & Brown, Physiological Reviews 1997; Nelson & Cox, Lehninger, kap. 19.
+
+### Proč si tělo nemůže prostě držet velkou baterii nabitého ATP na později?
+
+Ze dvou důvodů. Prakticky: ATP je na množství energie, kterou nese, těžké. Zásoba na celý den by vážila desítky kilogramů. Tělo proto ukládá energii do úspornějších a stabilnějších forem – do glykogenu pro rychlý přístup a do tuku pro dlouhodobou rezervu – a ATP z nich vyrábí podle potřeby. Chemicky: ATP je užitečné právě tím, že je připravené reagovat. Sklad plný natažených pastí není zásoba energie, ale nehoda, která čeká, až se stane. Tělo proto drží ATP málo a obrací ho velmi rychle.
+
+### Není „metabolismus“ jen hezčí slovo pro trávení?
+
+Trávení je nakládací rampa, metabolismus celá továrna i s rampou. Trávení rozkládá velké molekuly potravy na malé – bílkoviny na aminokyseliny, škrob na cukry –, většinou ve střevě, aby se daly vstřebat. To je jen úplný vršek katabolické nálevky. Metabolismus je všechno, co se se vstřebanými molekulami děje pak uvnitř buněk: jak se oxidují kvůli energii, jak se z nich stavějí tvé tkáně, jak se ukládají a jak slouží jako signály. Kdo má „rychlý metabolismus“, nemá rychlé trávení, ale rychleji běžící buněčnou ekonomiku.
+
+### Když energie nevzniká ani nezaniká, kam se „ztrácí“, když ji spotřebuju?
+
+Nikam – jen ztrácí na kvalitě. Nejsi spotřebitelka energie, ale její přeměňovačka. Energie do tebe vstupuje v soustředěné, kvalitní podobě (chemické vazby v potravě, ochotné reagovat s kyslíkem) a odchází v rozptýlené, málo použitelné podobě (teplo rozlité do okolí, jednoduchý odpad). Množství zůstává stejné do posledního joulu, mění se jen jeho užitečnost. A ten rozdíl je tvá platba: tím, že necháš energii spadnout z vysoké kvality na nízkou, získáš trochu řádu – právě tolik, aby tvé molekuly vydržely ve svém nepravděpodobném uspořádání o chvíli déle. Ta provize je tvůj život.
+
+∞ Kóda
+
+Vracíme se na začátek, jen s jiným pohledem. Nejsi věc, která život má. Jsi ten děj sám. Podstatné jméno byla iluze, momentka zaměněná za film. Pod pevným, ohraničeným já je stojatá vlna v proudu hmoty a energie: pomalý, dobře řízený oheň, vír, který platí za vlastní řád tím, že pomáhá vesmíru o kousek rychleji se rozpadat.
+
+Všechno, co jsme probrali, jsou strany jednoho faktu. Dynamický ustálený stav: jsi tok, ne látka. Volná energie: žiješ z toho, co teče z kopce. ATP: drobné, ne baterie. Schodiště, ne útes: oheň po malých doušcích. Přesýpací hodiny: z mnoha málo, z mála mnoho. Zpětné vazby: ekonomika bez ředitele. Nakonec nejde o chemii, ale o to, co znamená být slovesem ve vesmíru, který tě má za podstatné jméno.
+
+Nejsi oheň, který hoří. Jsi to hoření.
+
+– Dále v terénním průvodci Kapitola druhá – První rameno schodiště. Sledujeme jednu molekulu cukru po prvních schodech glykolýzy a díváme se na nejstarší trik biochemie: utratit trochu ATP, aby se ho vyrobilo víc.
+
+---
+
+# Jak se sůl naučila říkat já
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html  
+Větev: Neurobiologie  
+Shrnutí: Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.  
+English: Introduction to neurobiology: resting potential and the sodium-potassium pump, threshold and the action potential, myelin, synapses and 86 billion neurons.
+
+Obrázek: Jedna nervová buňka – neuron. Slovo dendrit pochází z řeckého dendron, strom. To, čím myslíš, má tedy tvar větve na větvi.
+
+Začněme něčím trochu absurdním. Právě teď, když čteš slovo teď, skládá pár vlhkých kilogramů tkáně za tvýma očima drobné elektrické pulzy a nepatrné dávky chemie do zážitku porozumění. Tou věcí se snažíš pochopit tu samou věc. Jako by se jazyk otočil a přečetl sám sebe.
+
+Jsme na to tak zvyklí, že nám to nepřipadá zvláštní. Přitom je to asi nejpodivnější skutečnost, jakou známe. To, co máš mezi ušima, nesvítí ani nezní významem. Na řezu vypadá jako šedorůžový vlašský ořech s konzistencí tofu. Je z obyčejných buněk, vlhkých a slaných, které běží na cukru a kyslíku jako všechno živé. A jedna taková buňka je sama o sobě až trapně jednoduchá. Neumí myslet ani cítit. Má zhruba rozumový rozsah vypínače.
+
+A přesto jsme tady.
+
+Tahle kapitola není o žádném konkrétním zázraku mozku – ani o paměti, ani o vidění, ani o lásce. Je o logice pod tím vším: o hrstce triků, které nervová buňka používá znovu a znovu, všude. Je jich asi pět. Až je budeš znát, přestane být neurověda zdí odborných termínů a stane se variacemi na téma, kterému už rozumíš.
+
+Pojďme na ně.
+
+## i. Napětí v klidu
+
+Ještě než nervová buňka cokoli udělá, už něco dělá: drží náboj. Jako natažený luk nebo vychýlená kytarová struna, kterou ještě nikdo nepustil, je klidový neuron pod tichým, neviditelným napětím.
+
+Odkud se bere? Každá buňka je váček: membrána z tuků kolem kapky slané vody, plovoucí v další slané vodě. Jenže sůl uvnitř je namíchaná jinak než venku. Venku je hodně sodíku, který by se rád dostal dovnitř. Uvnitř je víc draslíku a spousta velkých, záporně nabitých bílkovin, které jsou příliš velké na to, aby odešly. Výsledek: vnitřek buňky je proti okolí asi o 70 tisícin voltu zápornější. Malé číslo, obrovské důsledky. Tohle trvalé napětí, klidový membránový potenciál, je ten natažený luk – baterie, kterou každý nervový signál utratí.
+
+Jenže baterie, kterou necháš být, se vybije. Ionty prosakují: sodík se tlačí dovnitř, draslík pomalu uniká ven. Buňka proto musí nepřetržitě pracovat, aby se rozdíl nevyrovnal. V membráně jsou miliony drobných pump a každá při jednom cyklu vystrčí tři sodíkové ionty ven, vtáhne dva draslíkové dovnitř a spotřebuje přitom jednu molekulu ATP. Pořád dokola, bez konce.
+
+> Přirovnání ze života: Je to loďka s malou dírou ve dně a někdo, kdo z ní celý den vylévá vodu. Když přestane, loďka se nepotopí nijak dramaticky – jen se tiše, pomalu naplní. Tak vypadá smrt na úrovni buňky: ne třesk, ale rozdíl, který klesne na nulu. Na provoz těchto pump padne zhruba pětina až čtvrtina všeho ATP, které tělo v klidu vyrobí. Klid není zadarmo. Je to ten nejdražší druh klidu, jaký existuje.
+
+Slovo klidový je tedy malá lež. Klidový neuron je pružina držená pod napětím posádkou neúnavných pump, připravená vyrazit – stačí jí jediný důvod.
+
+Podívej se na to. Níže je kousek membrány. Vypni pumpu a uvidíš, jak rychle se „klid“ promění v nic.
+
+Simulace: Natažený luk. Když pumpa běží, sodík (terakota) zůstává natěsnaný venku a vnitřek drží náboj. Vypni ji a rozdíl se vytratí k nule – plochá čára rovnováhy, což pro živou buňku znamená konec. Být v klidu je práce.
+
+## ii. To rozhodnutí
+
+Neuron nemumlá. Nemluví napůl, nekličkuje. Má dva režimy: buď vystřelí, nebo mlčí. A způsob, jakým se mezi nimi rozhoduje, je druhý velký trik.
+
+Signály přicházejí k buňce jako drobná postrčení jejího napětí. Postrčení nahoru, směrem k výstřelu, se jmenuje excitační vstup: malé „ano“. Postrčení dolů, pryč od výstřelu, je inhibiční: malé „ne“. Samo o sobě je každé postrčení slabé a vyprchá skoro stejně rychle, jak přišlo, jako vlnka na rybníce. Jedno „ano“ nezmůže nic.
+
+Když se ale „ano“ nahromadí dost rychle – hodně najednou, nebo jedno za druhým, dřív než předchozí vyprchá –, napětí stoupá, až překročí určitou hranici. Ta hranice je práh a překročit ji je jako naklonit plnou sklenici za bod, odkud už není návratu. Luk se uvolní. Buňka vyšle krátký, prudký napěťový hrot – akční potenciál –, který vyskočí nad nulu a zase spadne, celý zhruba za tisícinu sekundy.
+
+A teď to, co lidi překvapí: hroty jednoho neuronu jsou prakticky stejně vysoké. Podnět, který práh sotva překročí, vyvolá stejný hrot jako obrovská záplava vstupů. Pod prahem se nestane nic, na prahu a nad ním přijde vždycky celý výstřel. To je zákon vše, nebo nic a tělo se v něm nejvíc blíží digitální technice.
+
+> Přirovnání ze života: Je to zvonek, který zvoní jen jednou hlasitostí. Silnějším stiskem ho nerozezníš hlasitěji. Když chceš říct „tohle spěchá“, můžeš jen zvonit častěji – cink, cink, cink. To je celá slovní zásoba neuronu: ne jak hlasitě, ale jak často. Silný podnět je rychlá salva stejných hrotů, slabý je líné odkapávání. Morseovka o jediném písmenu, vyťukávaná až několiksetkrát za sekundu.
+
+Z toho plyne krásná otázka. Když neuron vyšle stejný hrot do všech svých větví naráz – a to dělá –, kdo rozhoduje, které buňky zareagují? Odesílatel ne. Křičí stejně do všech stran. Rozhoduje vždycky posluchač. Každá přijímající buňka sčítá vlastní hlasy – tisíce „ano“ a „ne“ v každém okamžiku – a vystřelí jen tehdy, když „ano“ převáží natolik, že překročí práh. Na jeden motorický neuron v míše se sbíhá asi deset tisíc vstupů a jedna Purkyňova buňka v mozečku jich má přes sto tisíc. Parlament šepotů, který se mnohokrát za sekundu rozhodne v jediný čistý výkřik.
+
+Zkus být tím neuronem. Postrč ho nahoru, postrč ho dolů a najdi tu hranu.
+
+Simulace: Vše, nebo nic. Jednotlivá postrčení vyprchají. Když jich přidáš dost, než odezní, napětí překročí práh a hrot, který vyšlehne, má vždycky stejnou výšku, ať práh sotva překročíš, nebo ho přeletíš. Podrž podnět a uvidíš, jak se ze slabého a silného vstupu stane pomalé a rychlé pálení. Stejné písmeno, jiný rytmus.
+
+## iii. Putující vlna
+
+Buňka vystřelila. Teď se musí hrot někam dostat – po dlouhém výběžku zvaném axon, který může v noze měřit celý metr od páteře ke špičce prstu. A tady narážíme na omyl, který nosí v hlavě skoro každý.
+
+Představa zní: nerv je drát, signál je elektřina a letí skoro rychlostí světla. Cvak a je to tam.
+
+Nerv ale není drát a signál nejde jako proud v kabelu. Nejrychlejší nervová vlákna dosahují asi 120 metrů za sekundu, tedy přes 400 kilometrů za hodinu – zhruba jako rychlovlak. Ta nejpomalejší, která vedou tupou bolest naraženého palce, se plíží rychlostí kolem dvou kilometrů za hodinu, jako loudavá chůze. Elektrický signál v měděném drátu se přitom šíří značnou částí rychlosti světla. Nervový vzruch je tedy zhruba milionkrát pomalejší, než si lidé představují.
+
+Proč tak pomalu? Protože vzruch není nic, co by teklo trubkou. Je to řetězová reakce. Je to vlna.
+
+Znáš to ze stadionu. Mexická vlna oběhne celou arénu, a přitom nikdo z diváků neodejde ze svého místa. Každý se postaví, když se postaví soused, a zase si sedne. Nepohybují se lidé, pohybuje se vzorec. Akční potenciál funguje stejně. Každý kousek membrány axonu na okamžik otevře sodíkové kanály, napětí v něm vyskočí do kladných hodnot a tím přiměje sousední kousek, aby udělal totéž. Pak se kanály zavřou a membrána se zotavuje. Hrot, který dorazí na konec, není ten, který vyrazil – je to tisící článek štafety stejných událostí.
+
+> Přirovnání ze života: Je to hořící zápalná šňůra nebo řada padajících kostek domina. Plamen, který dorazí k náloži, není ten, kterým to začalo – je to vždy nový plamen, zapálený tím předchozím. A šňůra nemůže hořet pozpátku: úsek hned za plamenem právě dohořel a nemá co dát. V neuronu se tomuhle vyčerpanému úseku říká refrakterní fáze. Právě tahle krátká únava drží vlnu v pohybu vpřed a nepustí ji zpátky.
+
+Kdyby to byl celý příběh, mysleli bychom šnečím tempem. Evoluce ale našla trik na rychlost. Většinu axonu obalila tukovou izolační pochvou, myelinem, a nechala jen krátké holé úseky v pravidelných rozestupech. Vlna pak nemusí obnovovat každý kousek membrány, ale přeskakuje z jednoho holého úseku na další. Říká se tomu saltatorní vedení, z latinského saltare, skákat nebo tančit. Je mnohonásobně rychlejší než plazení po holém axonu. Když se myelin poškodí, jako u roztroušené sklerózy, vedení se zpomalí nebo selže – a podle toho vypadají i příznaky.
+
+Nech závodit myelinizovaný axon s holým. Spusť je zároveň a sleduj, jak tanec porazí plazení.
+
+**Ta vlna je skutečná: dá se změřit, načasovat i zablokovat lékem. A přesto ji tvoří jen řetěz místních událostí, z nichž každá končí ve chvíli, kdy začne další. Zpráva putuje, i když nic doopravdy neputuje.**
+
+Simulace: Saltatorní vedení. Horní axon je izolovaný myelinem (světlé úseky); vzruch přeskakuje mezi holými zářezy a letí. Spodní axon se musí obnovovat v každém bodě po celé délce, a tak se vleče. Stejný princip, úplně jiná rychlost. Proto model drátu selhává: je to štafeta, ne proud.
+
+## iv. Ta mezera
+
+A teď zvrat, který kdysi překvapil i vědce. Vlna se řítí po axonu k další buňce. Člověk by čekal, že na konci jsou obě buňky spojené jako dva dráty, aby signál mohl rovnou přejít.
+
+Nejsou spojené. Ty dráty se nedotýkají.
+
+Na konci každé větve, přesně tam, kde by se jeden neuron měl napojit na další, je mezera. Nepatrná, asi dvacet miliardtin metru – synaptická štěrbina –, ale pro elektrickou vlnu je to propast. Vzruch dorazí na okraj a dál nemůže. Buňka proto udělá něco úžasného a trochu absurdního: pošle zprávu přes mezeru jako chemii.
+
+Když vlna dorazí na zakončení, uvolní se z malých připravených váčků obláček molekul zvaných neuropřenašeče. Přeplují štěrbinu a na druhé straně je zachytí receptory, které na ně tvarem pasují jako klíč do zámku. Podle toho, o jaký přenašeč a receptor jde, posune to napětí další buňky nahoru („ano“), nebo dolů („ne“). Celé předání trvá asi tisícinu sekundy; tomu se říká synaptické zpoždění. Pak se štěrbina vyčistí a je připravená na další zprávu.
+
+> Přirovnání ze života: Představ si dva lidi na okrajích úzké rokle. Můžou na sebe volat, ale nedosáhnou na sebe. Aby si předali něco hmotného, musí to jeden z nich hodit. Synapse je ten hod: vzkaz v lahvi přes mezeru, kterou elektřina sama nepřekoná. A jestli je v lahvi „běž“, nebo „stůj“, záleží na tom, co je chytač na druhé straně připravený přijmout.
+
+Proč taková komplikace? Proč vyvinout krásně rychlou elektrickou vlnu a pak ji v rozhodující chvíli přerušit a házet chemii přes mezeru? Protože ta mezera není chyba. Je to celý smysl.
+
+Pájený spoj umí jen jedno: předat signál dál, věrně a beze změny. Mezera je ale rozhodnutí. Dá se zesílit, takže se ze šepotu stane výkřik, nebo ztlumit, takže se výkřik přeslechne. A hlavně se mění tím, jak se používá. Každá dovednost, kterou máš v rukou, každý fakt, který znáš, každá tvář, která v tobě něco rozsvítí – to všechno je fyzicky zapsané jako síla těchhle spojení. Učení se z velké části zapisuje právě do mezer mezi buňkami. (Celou příští kapitolu strávíme dole v té mezeře.)
+
+Pošli přes ni signál a sleduj, jak se změní.
+
+Simulace: Chemická štafeta. Vzruch nemůže přeskočit mezeru, a tak zakončení uvolní neuropřenašeč (unášené tečky). Ten se naváže na receptory protější buňky a postrčí ji k výstřelu (excitační), nebo od něj (inhibiční). Přepni typ a uvidíš, jak stejné doručení vyvolá opačný účinek. Právě v téhle malé mezeře se odehrává učení.
+
+## v. To spiknutí
+
+Teď ustup úplně dozadu. Všechno, co jsme zatím viděli, popisuje jednu buňku: drží náboj, sčítá hlasy, vystřelí, nebo ne, a pošle chemii přes mezeru. To je celý její repertoár. Nic moc, přiznejme si. Vypínač s pár názory a refrakterní fází.
+
+Jenže v tvé lebce jich je asi 86 miliard. (Oblíbené číslo „100 miliard“ je trochu nadsazené – někdo si nakonec sedl a pořádně je spočítal.) Propojuje je zhruba 100 bilionů takových mezer, asi tisíckrát víc, než je hvězd v Mléčné dráze. V raném dětství se nová spojení tvoří obrovským tempem a ta, která se nepoužívají, se později zase prořezávají.
+
+A teď skutečnost, která by měla ohromit každého: nikdo nevelí. Za tvýma očima nesedí žádný človíček, který sleduje obrazovku a tahá za páky. Neexistuje hlavní neuron, který rozdává rozkazy, ani podrobný plán zapojení. Geny dávají buňkám jen obecná pravidla, kam růst a čeho se chytit, a zbytek dotvoří zkušenost. Jako les, který se uspořádá bez architekta.
+
+A z těch nepatrných, místních rozhodnutí ano–ne, která probíhají všude najednou a z nichž žádné nevidí celek, se vynoří něco, co se zvenčí chová, jako by něco chtělo. Tkání se přelévají vlny aktivity. Vzorce vznikají, ustalují se, soupeří a mizí. A někde v tom počasí ze soli a napětí je celý pocit, že jsi to ty, kdo tu sedí, čte a přemýšlí, jestli tomu má věřit.
+
+Strojek níže ukazuje přesně tohle, jen zjednodušeně, a je ze všech nejdůležitější. Každý čtvereček se řídí jediným hloupým pravidlem, stejným jako neuron: když se rozsvítil soused, rozsviť se; pak zhasni a chvíli odpočívej, než se můžeš rozsvítit znovu. Nic víc. Žádný čtvereček nevidí celou mřížku, žádný nevede ostatní a žádný neví, co je spirála. Šťouchni do mřížky kamkoli a sleduj, co dav vypínačů postaví úplně sám: vlny, spirály, počasí. Řád z ničeho jiného než ze sousedů, kteří si hledí svého.
+
+**Nejsi věc, kterou tvé neurony vyrobí a předají nějakému „já“, které čeká opodál. Jsi ten vzorec. Vesmír, většinou studený a prázdný, uspořádal v tomhle jednom teplém, vlhkém koutě trochu soli tak spletitě, že se ta sůl dokáže podívat sama na sebe. A to dívání zevnitř je pocit, kterému říkáme já. Špetka soli, která na chvíli uvěřila, že je člověk – a k naší radosti jím opravdu je.**
+
+Simulace: Emergence. Každá buňka se řídí jedním pravidlem – vystřel, když vystřelil soused, pak odpočívej –, tedy pravidlem neuronu. Nic tu není řízené, a přesto vznikají souvislé vlny a rotující spirály, které se samy udržují. To je celá teze kapitoly v jednom obrázku: dej jednoduchým dílům dost bohaté uspořádání a začnou dělat věci, které by žádný z nich sám nedokázal. Vynásob to 86 miliardami a jedna z těch věcí jsi ty.
+
+## Na co se lidé opravdu ptají
+
+Tyhle otázky se pořád vracejí na Redditu, Quoře, discordových serverech i ve facebookových skupinách. Tady jsou, zodpovězené na rovinu.
+
+### Je mozek elektrický, nebo chemický?
+
+Obojí a střídá se to. Podél buňky je signál elektrický: ta vlna ze soli, která se řítí po axonu. Mezi buňkami se většinou mění na chemický: obláček neuropřenašeče přes mezeru. (Existují i elektrické synapse, kde jsou buňky propojené přímo, ale v mozku jsou v menšině.) Elektřina na cestu, chemie na přechod přes mezeru. Každá myšlenka je štafeta, která pořád mění převlek.
+
+### Jak rychlá je vlastně myšlenka?
+
+Pomalejší, než se zdá, a mnohem pomalejší než drát. Nervové signály se šíří rychlostí od zhruba půl metru až po asi 120 metrů za sekundu – rychlá myelinizovaná vlákna kolem 400 kilometrů za hodinu, pomalá vlákna bolesti zhruba rychlostí chůze. Reakce na něco, co vidíš, trvá pár desetin sekundy a většinu toho času nezabere cesta, ale mozek, který zjišťuje, na co se díváš. Přenos je levná část, čas spolkne zpracování.
+
+A protože jde o řetězovou reakci, a ne o proud, je nervový vzruch zhruba milionkrát pomalejší než elektřina v drátu.
+
+### Využíváme opravdu jen 10 % mozku?
+
+Ne. Je to úhledný mýtus a nikdo přesně neví, odkud se vzal – možná ze špatně pochopeného psychologa Williama Jamese, který psal o nevyužitém potenciálu, možná z citátu, který se připisuje Einsteinovi, ale on ho nikdy neřekl. Zobrazovací metody ukazují, že během dne se zapojuje v podstatě celý mozek, a poškození i malé oblasti vždycky něco konkrétního naruší. Používáš ho celý.
+
+Co máš, je nevyužitý potenciál, a to je jiný a mnohem pravdivější druh naděje. Nečeká v tobě nečinných 90 %, které by šlo zapnout. Čeká celoživotní zásoba spojení, která ještě nevznikla.
+
+### Kde jsou uložené vzpomínky?
+
+Ne na jednom místě a ne jako soubory na disku. Podle všeho je vzpomínka vzorec: určitá síla spojení rozprostřená přes mnoho buněk a mnoho mezer. Santiago Ramón y Cajal, který proslul svými kresbami neuronů, tuhle myšlenku nadhodil před víc než 130 lety a z velké části obstála: pamatuješ si tím, že ladíš mezery.
+
+Různé druhy paměti bydlí v různých částech mozku. Hipokampus ukládá příběh tvého dne, mozeček a bazální ganglia drží dovednost jízdy na kole, prefrontální kůra žongluje s tím, na co myslíš právě teď. Slavný pacient H. M., kterému při operaci odstranili velkou část obou hipokampů, se dokázal naučit nové dovednosti – jeho ruce se cvikem zlepšovaly –, ale vůbec si nepamatoval, že by kdy trénoval. Dva paměťové systémy, čistě oddělené jedinou operací. Někteří vědci jdou ještě dál: vzpomínka podle nich není věc, kterou si uchováváš, ale něco, co pokaždé znovu skládáš.
+
+### Je mozek v podstatě jen počítač?
+
+Je to nejlepší metafora, jakou máme, a přesto dost zavádějící – drž ji volně. Neuron není drát ani logické hradlo. Je to živá buňka, která prosakuje, přizpůsobuje se, vytváří nová spojení, prořezává stará a přepojuje se za provozu. Počítač drží hardware a software odděleně. V mozku je zapojení zároveň pamětí i programem – je to jedna a táž fyzická věc. Jako volná analogie dobré, jako popis špatně. Mozek není plošný spoj, spíš les, který si průběžně přestavuje vlastní stezky.
+
+### Když jsou neurony jen zapnuto/vypnuto, odkud se berou myšlenky a pocity?
+
+Poctivá odpověď: nikdo to úplně neví. Tohle je ta velká otevřená otázka a není náhoda, že učebnice From Neuron to Brain končí kapitolou nazvanou „Otevřené otázky“. Kdo ti tady nabízí úhlednou větu, něco ti prodává.
+
+Ale „zapnuto/vypnuto“ není celý příběh. Bohatost není v jednom vypínači, ale v tom, které buňky pálí, v jakém vzorci, jak rychle, přes kolik mezer a jak silných – to je astronomicky velký prostor možností. Jednoduché díly v dost bohatém uspořádání dělají věci, které samy neumějí; ukázala to poslední simulace, kde čtverečky bez rozumu vytvořily spirály, o kterých žádný z nich „nevěděl“. Není to vytáčka. Je to nejhlubší skutečnost, kterou tu máme, a správná reakce na ni není úhledné vysvětlení, ale vytrvalý údiv.
+
+### Kdo vlastně rozhoduje, kdy neuron vystřelí?
+
+Ne odesílatel. Když neuron vystřelí, pošle stejný hrot do všech svých cílů naráz – vybírat si nemůže. O výstřelu rozhoduje každá přijímající buňka sama: sečte svoje tisíce hlasů „ano“ a „ne“ a vystřelí jen tehdy, když „ano“ převáží natolik, že překročí práh. Volí vždycky posluchač, ne mluvčí.
+
+### Dokážou neurony dorůst? Umí se mozek uzdravit?
+
+Zčásti, a tady je hranice dnešního poznání. Dospělý mozek se neustále přepojuje: posiluje a přestavuje spojení. Tomu se říká plasticita a díky ní se po úrazu dají znovu naučit ztracené dovednosti. V několika oblastech mozku nejspíš vznikají nové neurony i v dospělosti, i když se u člověka o jejich rozsahu stále vedou spory. Rozsáhlé nahrazení ztracených neuronů a obnova dlouhých přerušených drah, třeba v přeťaté míše, jsou ale zatím většinou mimo naše možnosti. Jak přimět nervovou soustavu, aby se sama opravila, je přesně ten druh otevřeného problému, ke kterému se další kapitoly vrátí.
+
+Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mezera – a 86 miliard buněk, které se spiknou, aniž by kdokoli velel. Všechno ostatní v téhle sérii – jak vidíš, jak si pamatuješ, jak se z tebe vůbec stává někdo – jsou variace na těchhle pět tahů. Příště sestoupíme do té mezery, protože právě tam se zapisuje zkušenost. Pro dnešek stačí chvíli posedět s tou podivností. Jsi špetka soli, která se naučila přemýšlet, z čeho je. Na obyčejné úterý docela slušný trik.
+
+#### Zdroje a další čtení
+
+- Nicholls, Martin, Fuchs, Brown, Diamond a Weisblat – From Neuron to Brain, 5. vydání (Sinauer / Oxford). Páteř kapitoly: principy signalizace, postřeh Ramóna y Cajala, že tvar neuronu prozrazuje jeho úlohu, synaptická štěrbina široká asi 20 nm a synaptické zpoždění asi 1 ms, asi 10 000 vstupů na jeden motorický neuron a přes 100 000 na jednu Purkyňovu buňku (kap. 1, obr. 1.15) a závěrečná kapitola „Open Questions“ (kap. 28).
+- Počet neuronů (asi 86 miliard): Azevedo, Herculano-Houzel a kol., Journal of Comparative Neurology 2009, metodou izotropního frakcionátoru, která opravila tradičních „100 miliard“. Počet synapsí (asi 100 bilionů) a rychlosti vedení (asi 0,5–120 m/s) jsou běžně uváděné řádové hodnoty. Spotřebu sodno-draselné pumpy (19–28 % ATP v klidu) uvádějí Rolfe a Brown, Physiological Reviews 1997.
+- Mýtus o „10 % mozku“ (nejasný původ u Williama Jamese a v citátu mylně připisovaném Einsteinovi), rozprostřená povaha paměti a případ pacienta H. M. (Henry Molaison) vycházejí z populárně-vzdělávacích neurovědeckých zdrojů a z literatury o paměťových systémech. O rozsahu tvorby nových neuronů v dospělém lidském mozku se vede živá debata.
+- Všechna vysvětlení jsou zjednodušená pro laického čtenáře. Kde je věda nejednotná – hlavně u skoku od nervové aktivity k vědomému prožitku –, kapitola to říká na rovinu.
+
+---
+
+# Moře pod kůží
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html  
+Větev: Fyziologie  
+Shrnutí: Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.  
+English: Introduction to physiology: homeostasis as a steady state rather than equilibrium, negative feedback, diffusion and pumps, flow, folded surfaces and cell turnover.
+
+Obrázek: Dýchací cesty plic. Jedna trubice se rozdělí na dvě, pak znovu a znovu, zhruba třiadvacetkrát, až větve skončí asi 300 miliony drobných plicních sklípků. Větev na větvi na větvi.
+
+Právě teď má tvé tělo kolem 37 °C. Stejně tomu bylo ráno a stejně to bude i zítra, plus minus stupeň, ať strávíš den na sněhu, nebo v sauně. Krev máš zhruba stejně slanou a stejně kyselou jako před rokem, ať bylo k obědu cokoli. Nemusíš na nic z toho myslet. Něco v tobě se o to stará, každou vteřinu.
+
+Proč na tom záleží, vysvětlil už v roce 1878 francouzský fyziolog Claude Bernard. Tvé buňky se s vnějším světem vůbec nesetkají. Každá z nich je obklopená tekutinou – vodou mezi buňkami a tekutou částí krve – a ta tekutina je jediný svět, který znají. Bernard ji nazval vnitřním prostředím (milieu intérieur) a tvrdil, že právě jeho stálost umožňuje svobodný, nezávislý život. Ještěrka je za chladného rána ztuhlá a pomalá; ty si můžeš vyjít na procházku do sněhu. Rozdíl je uvnitř.
+
+A to vnitřní prostředí je slaná voda. Je zhruba stejně slaná jako fyziologický roztok v nemocniční infuzi, který se ostatně míchá právě tak, aby jí odpovídal. Mořská voda je asi čtyřikrát slanější. Tvé buňky pořád žijí jako jejich jednobuněční předkové, obklopené vodou. Jediný rozdíl je v tom, že ty tu vodu nosíš s sebou, uzavřenou v kůži.
+
+Americký fyziolog Walter Cannon dal později tomuto neustálému udržování jméno: homeostáza. Předpona homeo- znamená „podobný“, ne „stejný“, a Cannon výslovně upozorňoval, že nejde o nic pevného a nehybného. Jde o stav, který se může měnit, a přesto zůstává poměrně stálý.
+
+V učebnicích se homeostáza často popisuje jako „rovnováha“. Fyzikálně je to ale spíš naopak. Ve fyzice je rovnováha stav, kdy se všechno vyrovnalo: teploty jsou stejné, látky rovnoměrně promíchané a nic už nemá kam téct. Hrnek čaje zapomenutý na stole dospěje do rovnováhy s místností. Tělo po smrti také. Živé tělo se tam nedostane nikdy. Je teplejší než místnost, jeho buňky mají uvnitř jiné soli než venku a každou vteřinu spotřebovává energii, aby se tyhle rozdíly nevyrovnaly. To není rovnováha, ale ustálený stav. Boron a Boulpaep to říkají hned v první kapitole své učebnice: dobře regulovaná veličina není v rovnováze, ale v ustáleném stavu, a udržet ji v něm stojí energii.
+
+Fyziologie má tisíce detailů, ale stojí na hrstce myšlenek. Tady je pět z nich. Jakmile je znáš, přestanou srdce, plíce a ledviny vypadat jako samostatné kapitoly a začnou vypadat jako variace na jedno téma.
+
+> Přirovnání ze života: Představ si akvárium. Někdo musí hlídat, aby voda měla správnou teplotu, slanost a kyselost, jinak ryby uhynou. Dobré akvárium má ohřívač, filtr, čerpadlo a sadu testů. Ty máš od každého tisíce, běží ve dne v noci a nikdo se o ně starat nemusí.
+
+## i. Termostat
+
+Jak udržet něco stálé, když do toho svět pořád strká? Nastavit to jednou a odejít nejde. Musíš to neustále kontrolovat a opravovat, podobně jako když udržuješ auto v jízdním pruhu: volant nikdy nedržíš úplně rovně, jen ho pořád lehce pootáčíš doleva a doprava.
+
+Fyziologové tomu říkají negativní zpětná vazba. Potřebuje čidlo, které veličinu měří, žádanou hodnotu, se kterou ji porovná, a efektor, který ji vrátí zpátky, když se odchýlí. Boron a Boulpaep k tomu přidávají čtvrtý prvek, na který se snadno zapomíná: zesílení, tedy jak silně systém na danou odchylku zareaguje. Změřit, porovnat, opravit – pořád dokola, dokud žiješ.
+
+Přesně tak funguje termostat na stěně. Změří teplotu v místnosti, porovná ji s nastavenou hodnotou a zapne nebo vypne topení. Tvé tělo takových smyček provozuje tisíce: pro teplotu, cukr v krvi, krevní tlak, kyselost, kyslík, oxid uhličitý, vodu i sůl.
+
+> Přirovnání ze života: Nejjednodušší verzi najdeš ve splachovací nádržce na záchodě. Jak se nádržka plní, stoupá s hladinou plovák, a když je dost vysoko, zavře ventil. Žádná elektronika, žádný software, jen součástka, která pozná „plno“ a zastaví přítok. Spousta toho, co tě drží naživu, není o nic chytřejší. Jen se to opakuje tisíckrát.
+
+Teplotní smyčka má celý tým efektorů. Když je ti horko, potíš se a cévy v kůži se rozšíří, aby odvedly teplo. Když je ti zima, třeseš se, a tím vyrábíš teplo; cévy v kůži se stáhnou, aby ho udržely, a drobné svaly u kořínků chlupů se smrští. To je husí kůže, pozůstatek srsti, kterou už nemáme. Cukr v krvi funguje stejně, jen s jinými hráči. Když stoupne, slinivka vyplaví inzulin a buňky si cukr z krve vezmou; když klesne, slinivka vyplaví glukagon a játra cukr do krve vrátí.
+
+Dvě věci lidi často matou. Zaprvé, „negativní“ tu neznamená „špatná“. Znamená, že smyčka jde proti změně: když hodnotu zvedneš, stlačí ji zpátky. Zadruhé, regulovaná veličina nikdy nesedí přesně na žádané hodnotě, protože smyčka neustále opravuje drobné odchylky oběma směry. A sama žádaná hodnota se během dne posouvá: kolem čtvrté ráno máš teplotu asi o půl stupně nižší než pozdě odpoledne.
+
+Vyzkoušej si to. Pošli tělo do mrazu nebo do vedra a sleduj, jak ho smyčka vrací zpátky. Pak zpětnou vazbu vypni.
+
+Simulace: Negativní zpětná vazba. Přerušovaná čára je žádaná hodnota, 37 °C; pruh dole ukazuje teplotu okolí. V mrazu se tělo třese, ve vedru se potí a jeho teplota se drží blízko 37 °C. Když sílu korekce zvýšíš, systém začne přestřelovat a kmitat, jako sprcha, u které pořád přetáčíš kohoutek, protože voda reaguje se zpožděním. Když zpětnou vazbu vypneš, teplota těla prostě sleduje okolí.
+
+To kmitání není jen vrtoch simulace. Při těžkém srdečním selhání teče krev z plic do mozku pomalu, takže smyčka, která řídí dýchání, dostává informace pozdě. Dýchání pak přestřeluje oběma směry: zesílí, zeslábne, na chvíli se zastaví a zase se rozjede. Říká se tomu Cheyneovo-Stokesovo dýchání a je to učebnicový příklad zpětné vazby, která přichází pozdě.
+
+Existuje i pozitivní zpětná vazba, kdy změna vyvolá ještě víc téže změny. Je to ten pískot, když se mikrofon dostane moc blízko k vlastnímu reproduktoru. Tělo ji používá jen výjimečně, a to pro děje, které mají rychle doběhnout do jasného konce. Při porodu každý stah vyvolá vyplavení oxytocinu, který zesílí další stah, dokud se dítě nenarodí. Při srážení krve každý aktivovaný srážecí faktor aktivuje další. Stejně funguje i bleskový vzestup akčního potenciálu v nervu.
+
+**Tvých 37 stupňů není stav, ve kterém jsi. Je to výsledek, který tělo vyrábí znovu každou vteřinu.**
+
+## ii. Všechno jde z kopce
+
+Proč se tělo musí tolik snažit? Kvůli jednomu z nejspolehlivějších pravidel přírody: rozdíly mizí. Teplo přechází z teplejšího na chladnější, nikdy obráceně. Kapka inkoustu se ve sklenici vody rozptýlí a už se nikdy znovu neposbírá. Vůně kávy se z kuchyně dostane do všech pokojů. Když věci necháš být, každý rozdíl se vyrovná.
+
+V těle je nejdůležitější podobou tohoto pravidla difuze: molekuly se šíří z místa, kde jich je hodně, tam, kde jich je málo. Nic je netlačí. Každá molekula se pohybuje náhodně a naráží do ostatních. Dav se rozptýlí prostě proto, že způsobů, jak být rozptýlený, je nesrovnatelně víc než způsobů, jak zůstat pohromadě. Difuze nic nestojí a na krátké vzdálenosti je velmi rychlá.
+
+Osmóza je zvláštní případ, který mate skoro každého. Dej mezi sladkou a slanou vodu membránu, která propustí vodu, ale ne sůl, a voda začne přecházet na slanou stranu, jako by ji chtěla naředit. Rozpuštěné částice snižují to, čemu chemici říkají chemický potenciál vody, a voda se stejně jako všechno ostatní pohybuje z vyššího k nižšímu. Osmóza je prostě difuze vody přes membránu směrem k roztoku s více rozpuštěnými částicemi.
+
+Tohle jediné pravidlo vysvětluje spoustu věcí. Červená krvinka v čisté vodě nabobtná a praskne, v mořské vodě se scvrkne. Zvadlý salát ve studené vodě zase zkřehne a osolené okurky pustí vodu. A proto taky nemůžeš pít mořskou vodu: ledviny neumějí vyrobit moč tak slanou jako moře, takže zbavit se soli z jedné sklenice by tě stálo víc vody, než kolik jí v té sklenici bylo.
+
+Tělo toho chytře využívá. Pumpy na vodu nemá. Když potřebuje přesunout vodu, pumpuje sůl a voda jde za ní. Tak vstřebává vodu střevo a tak ji ledviny získávají zpátky. Proto také rehydratační roztoky obsahují sůl i cukr: střevo je vstřebává společně a voda jde s nimi.
+
+Kde tohle všechno putování z kopce končí? V rovnováze: všechno je rovnoměrně promíchané a žádné rozdíly nezbyly. Pro buňku to znamená smrt. Živá buňka drží sodík převážně venku a draslík uvnitř a oba jí neustále prosakují membránou. Proto pohání pumpy, především sodno-draselnou pumpu, které ionty přenášejí zpátky do kopce, proti spádu. Pumpy únik nezastaví, jen s ním drží krok. Nic se nemění, protože pumpy vracejí přesně tolik, kolik uteče. To je ustálený stav, ne rovnováha. U savců v klidu spotřebuje samotná sodno-draselná pumpa zhruba pětinu až čtvrtinu veškerého ATP, které tělo vyrobí.
+
+> Přirovnání ze života: Představ si děravý kbelík. Když do něj liješ vodu přesně tak rychle, jak vytéká, hladina zůstane stejná. Je stálá, a přitom v kbelíku nic neodpočívá, a jakmile přestaneš lít, začne klesat. To je ustálený stav. Tvé buňky jsou kbelíky, do kterých někdo nikdy nepřestane lít.
+
+Vyzkoušej si to. Nech částice rozptýlit, dokud nebudou obě strany stejné: pohybují se dál, ale na každou stranu jich přejde stejně. Pak zvol membránu, která sůl zadrží, a sleduj, jak se místo soli hýbe voda. Nakonec zapni pumpu a uvidíš, co stojí udržet rozdíl.
+
+Simulace: Difuze, osmóza a ustálený stav. Čísla ukazují koncentraci soli na každé straně. V režimu difuze membrána sůl propouští a ta se šíří, dokud nejsou obě strany stejné; v rovnováze se částice pohybují dál, ale na každou stranu jich přechází stejně. V režimu osmózy membrána sůl zadrží, takže se ke slanější straně přesouvá voda a mění se hladiny. Pumpa spotřebovává energii, aby sůl vracela do kopce. Se zapnutou pumpou rozdíl vydrží – ne proto, že by nic neunikalo, ale proto, že pumpa s únikem drží krok.
+
+**Svět tě neustále vyrovnává. Zůstat naživu znamená udržet si své rozdíly a platit za ně.**
+
+## iii. Pumpy a potrubí
+
+Difuze má háček. Na nepatrné vzdálenosti je rychlá a na dlouhé beznadějná, protože doba, kterou potřebuje, roste s druhou mocninou vzdálenosti. Šířku buňky urazí kyslík za setiny sekundy, milimetr za pár minut, centimetr za hodiny a metr za roky. Samotnou difuzí by se kyslík z plic do prstů na nohou nikdy nedostal.
+
+Cokoli silnějšího než zhruba milimetr proto potřebuje druhý způsob dopravy: proudění. Místo čekání, až molekuly někam dobloudí, se přesouvá celá tekutina, podobně jako když rostoucí město přestane spoléhat na studny a postaví vodovod. Přesně k tomu slouží srdce a cévy. Srdce dopraví krev na pár setin milimetru téměř ke každé buňce a poslední úsek obstará difuze. Plíce to dělají stejně. Dýchání dopraví vzduch hluboko do dýchacích cest a závěr cesty, včetně přechodu do krve přes bariéru tenkou asi 0,6 µm, nechává na difuzi.
+
+Kolik potrubím proteče? Fyziologie používá stejný zákon jako zahradní hadice nebo elektrický obvod: průtok se rovná tlakovému rozdílu dělenému odporem. Pustíš kohoutek víc a voda teče silněji. Hadici přimáčkneš a teče slaběji. V těle je hnací silou krevní tlak, odporem cévy a výsledkem průtok krve, v klidu asi pět litrů za minutu.
+
+Překvapivé je, jak silně odpor závisí na šířce trubky. Průtok neroste úměrně poloměru, dokonce ani jeho druhé mocnině, ale jeho čtvrté mocnině. Zmenši poloměr cévy na polovinu a průtok klesne na šestnáctinu. Rozšiř ji jen o deset procent a průtok vzroste skoro o polovinu. Proto tělo rozvádí krev hlavně tím, že mění šířku malých tepen. Nepatrné stažení svaloviny kolem nich funguje jako kohoutek. Tak se krev nahrne do svalů, když běžíš, a do tváře, když se červenáš.
+
+> Přirovnání ze života: Zkus pít hustý milkshake širokým brčkem na bubble tea a pak obyčejným brčkem, které je zhruba poloviční. Poloviční šířka, a sát musíš asi šestnáctkrát silněji.
+
+Vyzkoušej si to: když měníš tlak, průtok ho poslušně následuje. Když změníš poloměr, průtok poskočí.
+
+Simulace: Čtvrtá mocnina. Průtok roste úměrně tlaku, ale se čtvrtou mocninou poloměru. Zdvojnásob poloměr a průtok vzroste šestnáctkrát; zmenši ho na polovinu a průtok klesne na šestnáctinu. Proto tělo rozděluje krev mezi orgány hlavně změnou šířky malých tepen.
+
+**I když sedíš úplně bez hnutí, uvnitř jsi v pohybu: celý objem tvé krve oběhne tělo zhruba jednou za minutu.**
+
+## iv. Svět v záhybech
+
+Velikost přináší ještě jeden problém, geometrický. Všechno, co si tělo vyměňuje se světem (kyslík, oxid uhličitý, potrava, odpad, teplo), musí projít nějakým povrchem. Když ale něco zvětšíš, povrch roste s druhou mocninou velikosti, kdežto objem se třetí. Zdvojnásob velikost těla a bude mít čtyřikrát víc povrchu, ale osmkrát víc objemu, který je třeba živit. Čím jsi větší, tím méně povrchu připadá na každý gram.
+
+> Přirovnání ze života: Drcený led taje rychleji než kostka a brambory nakrájené na kostičky se uvaří dřív než celé: stejné množství hmoty, mnohem víc povrchu. Proto také miminka prochladnou rychleji než dospělí a potřebují čepičku, i když tobě je teplo.
+
+Velká zvířata to obcházejí skládáním. Velké povrchy vměstnají do malého objemu tak, že je větví a vrásní. Tvé dýchací cesty se větví zhruba třiadvacetkrát a končí asi 300 miliony drobných plicních sklípků o celkové ploše 50–100 m², tedy zhruba jako byt 3+1. Jediný balon o stejném objemu jako tvé plíce by měl povrch jen kolem 0,16 m², dva a půl listu papíru A4. Výstelka tenkého střeva je zřasená, řasy jsou pokryté prstovitými klky a klky mikroklky. Rozložená do roviny by měla asi 30 m², zhruba jako garsonka.
+
+Proto také buňky zůstávají malé. Buňka, která by příliš vyrostla, by měla na svůj objem málo membrány a její střed by hladověl. Když chce život být velký, má dvě možnosti: vyrobit víc malých buněk, nebo poskládat své povrchy. Obvykle dělá obojí. Dýchací cesty, cévy i výstelka střeva jsou postavené podle stejného vzoru: větev na větvi na větvi.
+
+Nech tělo v simulaci růst a sleduj, jak mu povrch přestává stačit. Pak ho nech rozvětvit.
+
+Simulace: Proč je tělo poskládané. Když tělo roste, jeho povrch roste pomaleji než objem a uprostřed vznikne oblast, která je od všech povrchů příliš daleko, než aby se dala zásobit (vybarvená). Větvení vnese povrch dovnitř těla a odříznutá oblast zmizí, aniž by se tělo jakkoli zvětšilo. V plicích jsou těmi větvemi dýchací cesty, v tkáních cévy.
+
+**Nosíš v sobě povrchy o rozloze bytu, poskládané tak, aby skoro každá buňka měla zásobování na dosah.**
+
+## v. Za plného provozu
+
+Kromě udržování stálosti musí tělo zvládat ještě jednu práci: údržbu sebe sama. Buňky se opotřebovávají a většina z nich se vyměňuje, zatímco tělo dál běží. Jako dálnice D1, která se opravuje za plného provozu, jen tělu to jde rychleji.
+
+Čísla jsou úctyhodná. Tvé tělo vymění zhruba 330 miliard buněk denně, skoro čtyři miliony každou sekundu. Výstelka střeva, která to schytává nejvíc, se obnoví každých pár dní. Svrchní vrstvě kůže to trvá zhruba čtyři týdny, červeným krvinkám asi čtyři měsíce a kostře zhruba deset let: každý rok se přestaví asi desetina tvých kostí. Látky, ze kterých se skládáš, tebou protékají ještě rychleji. Voda, která tvoří asi 60 % tvé hmotnosti, se z poloviny vymění zhruba za deset dní.
+
+Tady je zrnko pravdy v oblíbeném tvrzení, že každých sedm let máš úplně nové tělo. To tvrzení neplatí, a to zajímavým způsobem: některé buňky se nevymění nikdy. Neurony tvé mozkové kůry jsou stejně staré jako ty. Bílkoviny v jádru oční čočky vznikly dřív, než ti byly dva roky. A víc než polovina buněk srdečního svalu s tebou zůstane celý život. Víme to díky jaderným zkouškám z 50. a 60. let, které na čas zvýšily množství radioaktivního uhlíku ve vzduchu: uhlík zabudovaný do DNA buňky prozradí, kdy se buňka narodila.
+
+Obnova je nejrychlejší tam, kde je největší opotřebení. Výstelka střeva čelí kyselině, enzymům a bakteriím, kůže tření. Odvrácenou stranu vidíme v medicíně. Chemoterapie, která útočí na dělící se buňky, zasáhne nejdřív rychle se obnovující tkáně. Proto může způsobit záněty v ústech, potíže se střevy, zhoršení krevního obrazu a vypadávání vlasů.
+
+A tělo jen nereaguje. Také plánuje dopředu. Sliny se ti sbíhají už při vůni jídla, ještě před prvním soustem, a srdce zrychlí na startovní čáře dřív, než závod začne. Posunout se může i sama žádaná hodnota. Horečka není rozbitý termostat: mozek žádanou hodnotu záměrně zvýší a ty se třeseš, dokud ji nedoženeš. Homeostáza není pevně nastavený knoflík. Je to nepřetržité vyjednávání se světem.
+
+V simulaci níže je každý čtvereček jedna buňka obarvená podle stáří. Sleduj, jak různě rychle se tkáně obnovují, a pak obnovu zastav a uvidíš, které selžou první.
+
+Simulace: Obnova různou rychlostí. Světlé buňky jsou nové, šedé staré. Výstelka střeva se vymění každých pár dní, svrchní vrstva kůže zhruba za čtyři týdny, červené krvinky asi za čtyři měsíce a kost zhruba za deset let; neurony mozkové kůry se nevymění nikdy a stárnou s tebou. Když obnovu zastavíš, nejdřív selžou rychle se obnovující tkáně, a přesně tak se projevují i vedlejší účinky chemoterapie.
+
+**Většina tvých buněk ještě neslavila první narozeniny. Pár jich je přesně stejně starých jako ty.**
+
+## Na co se lidé opravdu ptají
+
+Tyhle otázky se pořád dokola objevují na Redditu, Quoře, studijních Discordech i ve facebookových skupinách. Krátce a na rovinu.
+
+### Jaký je rozdíl mezi anatomií a fyziologií?
+
+Anatomie popisuje, z jakých částí se tělo skládá a kde leží; fyziologie vysvětluje, jak fungují. Anatomie je kytara, fyziologie hudba.
+
+### Co je homeostáza, jednou větou?
+
+Udržování podmínek uvnitř těla (teploty, soli, kyselosti, cukru, tlaku) v úzkém rozmezí, které buňky potřebují, a to neustálým měřením a opravováním každé odchylky.
+
+### Jaký je rozdíl mezi difuzí a osmózou?
+
+Difuze je šíření jakékoli látky z místa, kde je jí hodně, tam, kde je jí málo, v jakémkoli prostředí: parfém v místnosti, cukr v čaji. Osmóza je zvláštní případ: voda prochází membránou směrem k roztoku s více rozpuštěnými částicemi. Obojí je pasivní a nestojí žádnou energii.
+
+### Proč je negativní zpětná vazba ta „dobrá“?
+
+„Negativní“ tu znamená „působící proti“. Negativní zpětná vazba jde proti změně, a tím věci stabilizuje. Pozitivní zpětná vazba změnu zesiluje, takže ji tělo používá jen pro děje, které mají rychle doběhnout do jasného konce, jako je porod nebo srážení krve.
+
+### Proč je udržet se naživu tak energeticky náročné?
+
+Protože všechno v tobě má sklon se vyrovnat: teplo uniká, ionty prosakují membránami, bílkoviny se opotřebovávají. Udržet rozdíly stojí práci. V klidu spotřebuje syntéza bílkovin zhruba čtvrtinu ATP, které tělo vyrobí, a sodno-draselná pumpa pětinu až čtvrtinu. Spolu s prací srdce, dýchacích svalů a dalších pump to dává bazální metabolismus: provozní náklady na život mimo rovnováhu.
+
+### Opravdu se každých sedm let vymění všechny buňky v těle?
+
+Ne. Buňky se obnovují neustále, ale velmi různou rychlostí: výstelka střeva za pár dní, svrchní vrstva kůže zhruba za čtyři týdny, červené krvinky asi za čtyři měsíce, kost zhruba za deset let. Některé buňky se nevymění vůbec: neurony mozkové kůry, jádro oční čočky a víc než polovina buněk srdečního svalu. Úplně nové tělo tedy nemáš nikdy.
+
+### Kolik vody v sobě mám?
+
+U typického dospělého muže asi 60 % tělesné hmotnosti, u žen a u lidí s větším podílem tuku o něco méně, protože tuk obsahuje málo vody. Zhruba dvě třetiny jsou uvnitř buněk a zbylá třetina mimo ně: právě to je vnitřní prostředí, o kterém je tahle kapitola. U muže vážícího 70 kg je to asi 42 litrů.
+
+### Proč je fyziologie tak těžká na učení?
+
+Protože to není seznam faktů, ale síť regulačních smyček, které se navzájem ovlivňují, a někdy si dokonce konkurují. Když běžíš v horku, smyčka, která tě chladí, tě nutí potit se. Pocení ale zmenšuje objem krve a ten hlídá jiná smyčka, pro tělo důležitější. V určité chvíli tělo pocení omezí, a když běžíš dál, hrozí úpal.
+
+Dobrá zpráva: pod tím vším se pořád vracejí stejné myšlenky. Zpětná vazba, spády, proudění, povrch a obnova.
+
+Tohle je logika fyziologie v kostce. Udržovat vnitřní prostředí stálé (zpětná vazba). Vzdorovat sklonu všeho se vyrovnat (spády a pumpy). Dopravovat věci na dlouhé vzdálenosti hromadně (proudění). Skládat povrchy tak, aby měla každá buňka zásobování na dosah (povrch). A za plného provozu se neustále přestavovat (obnova). Srdce, plíce, ledviny: každá další kapitola bude těchto pět myšlenek v nové kombinaci. To všechno jen proto, aby si přes čtyřicet litrů teplé slané vody mohlo vyjít na procházku do sněhu. Na obyčejné úterý docela slušný výkon.
+
+#### Zdroje a další čtení
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Homeostáza, ustálený stav versus rovnováha a prvky negativní zpětné vazby (kap. 1); tělesné tekutiny, ustálený stav pumpy a úniku, voda následující rozpuštěné látky (kap. 5); Poiseuilleův zákon (kap. 17); generace dýchacích cest, plocha sklípků, proudění a difuze v plicích (kap. 26); Cheyneovo-Stokesovo dýchání (box 32-2); perorální rehydratace (box 44-1).
+- Bernard C. Leçons sur les phénomènes de la vie communs aux animaux et aux végétaux, 1878. Cannon W. B. The Wisdom of the Body, 1932 (homeostáza jako stav, který se může měnit, a přesto zůstává poměrně stálý).
+- Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 1997. V klidu připadá na syntézu bílkovin asi 25–30 % a na Na⁺/K⁺-ATPázu 19–28 % spotřeby kyslíku spřažené s tvorbou ATP.
+- Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.
+- Helander H. F., Fändriks L. Surface area of the digestive tract – revisited. Scandinavian Journal of Gastroenterology 49, 2014 (tenké střevo ≈ 30 m²).
+- Sender R., Milo R. The distribution of cellular turnover in the human body. Nature Medicine 27, 2021 (≈ 330 miliard vyměněných buněk denně).
+- Spalding K. L. a kol. Retrospective birth dating of cells in humans. Cell, 2005. Bhardwaj R. D. a kol. Neocortical neurogenesis in humans is restricted to development. PNAS, 2006. Bergmann O. a kol. Evidence for cardiomyocyte renewal in humans. Science 324, 2009 (během života se vymění méně než 50 % kardiomyocytů). Lynnerup N. a kol. Radiocarbon dating of the human eye lens crystallines reveal proteins without carbon turnover throughout life. PLoS ONE 3, 2008.
+- Obnova pokožky ≈ 26–27 dní (Weinstein a Van Scott 1965; Rothberg a kol. 1961, podle BioNumbers); přestavba kostry ≈ 10 % ročně (Parfitt 1994; Manolagas, Endocrine Reviews 2000); biologický poločas tělesné vody ≈ 10 dní (Kanadská komise pro jadernou bezpečnost, informační list o tritiu); NOAA Ocean Service, „Can humans drink seawater?“.
+- Doby difuze jsou řádové odhady podle vztahu t ≈ x²/2D, kde D pro kyslík ve vodě ≈ 2–3 × 10⁻⁵ cm²/s. Všechno je tu zjednodušeno pro laického čtenáře.
+
+---
+
+# Lék je vlna
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html  
+Větev: Farmakologie  
+Shrnutí: Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.  
+English: Introduction to pharmacokinetics and pharmacodynamics: the concentration-time curve, half-life and steady state, receptors, potency and efficacy, and the therapeutic window.
+
+Vezmi si tu nejobyčejnější větu v medicíně: „Vzala jsem si prášek.“ Zní to, jako by prášek teď ležel někde v tobě jako mince v kapse a čekal, až ho použiješ. Tak to ale není. Jakmile se tableta rozpustí, přestane být věcí a stane se dějem. Nezískáš malý předmět – spustíš v krvi vlnu, která stoupne, vyvrcholí a zase opadne. Všechno zajímavé, co přijde potom, je příběh té vlny.
+
+Farmakologie proto není nauka o pilulkách, ale o vztahu: co si tělo a molekula navzájem udělají, když se setkají. A ani jeden z nich nemá úplně navrch.
+
+Lék není něco, co máš. Je to něco, co se v tobě děje, ať tomu věnuješ pozornost, nebo ne.
+
+Když tohle přijmeš, přestane být farmakologie seznamem k memorování a stane se příběhem, který můžeš sledovat. A celý ten příběh stojí na dvou otázkách.
+
+### Ty dvě otázky
+
+Zaprvé: Co dělá tělo s lékem? Jak molekulu vpustí dovnitř, rozvede ji po těle, rozloží a vyloučí. To je farmakokinetika, cestopis molekuly krajinou, kterou jsi ty.
+
+Zadruhé: Co dělá lék s tělem? Čeho se chytí a co se tím změní. To je farmakodynamika: co návštěva dělala, dokud tu byla.
+
+Kinetika je cesta, dynamika je to, co se na ní stane. Když tyhle dvě věci držíš odděleně, v oboru se neztratíš. Všechno ostatní – každá rovnice, každé varování na krabičce, každé „dvakrát denně po jídle“ – je poznámka pod čarou k jedné, nebo druhé. Začněme cestou.
+
+§1 Farmakokinetika – cesta
+
+## Dovnitř, po těle, na kusy a ven
+
+Cesta molekuly tělem má čtyři dějství a farmakologové jim říkají ADME: absorpce, distribuce, metabolismus, exkrece. Učená slova pro čtyři obyčejné věci.
+
+### Absorpce – dostat se dovnitř
+
+Spolknutá tableta je jako dav před stadionem. Dokud se nestanou dvě věci, nezmůže nic. Nejdřív se musí rozpustit – dav se rozdělí na jednotlivé diváky s lístky. Pak musí každá molekula projít stěnou střeva, tedy turniketem. Část davu se dovnitř nedostane vůbec a odejde, aniž by se vstřebala.
+
+A teď zádrhel: dřív než se dav dostane do hlavní haly – do krevního oběhu, který zásobuje zbytek těla –, projde kontrolou ve stěně střeva a hlavně v játrech, kde se část molekul hned rozloží. Tomu se říká efekt prvního průchodu a umí být nemilosrdný. Podíl dávky, který přežije rozpouštění, turniket i kontrolu a dorazí do oběhu nezměněný, je biologická dostupnost. Při spolknutí může klidně polovina léku zůstat cestou. Při injekci do žíly celou frontu přeskočíš a biologická dostupnost je z definice sto procent. Proto se některé léky dávají jen injekčně: spolknuté by je játra rozložila dřív, než by se dostaly do oběhu.
+
+### Distribuce – potulování se
+
+V krvi molekula nezůstane stát na místě. Šíří se po těle, jako se hosté z kuchyně rozejdou po celém bytě. Některé léky milují tuk a schovávají se v tukové tkáni. Jiné se pevně drží bílkovin krevní plazmy a zůstávají v krvi. Jak daleko a jak ochotně se lék rozptýlí, vyjadřuje distribuční objem – číslo, které, jak uvidíš, není ani tak objem, jako spíš míra toho, jak dobře se lék umí schovat.
+
+### Metabolismus – rozebrání
+
+A znovu játra, tentokrát jako demontážní a recyklační dvůr. Rodina enzymů cytochromu P450 (zkráceně CYP) molekulu přestaví na něco, čeho se tělo snáz zbaví: obvykle na méně účinnou látku, výjimečně na účinnější – takhle se třeba z kodeinu stává morfin. Když tyhle enzymy něco zablokuje, lék se hromadí. Když se rozjedou na vyšší obrátky, lék mizí příliš rychle. (Sklenice grapefruitové šťávy je umí zablokovat velmi účinně – víc v otázkách na konci.)
+
+### Exkrece – dveře
+
+Nakonec ledviny: filtr tak důmyslný, až je to skoro absurdní. Za den přefiltrují asi 180 litrů krevní plazmy, tedy celý její objem zhruba šedesátkrát. Co tělo potřebuje, si vezmou zpátky, a odpad rozpustný ve vodě – včetně většiny zpracovaného léku – pošlou ven močí. Východ. Opona.
+
+Čtyři dějství, ale nemusíš si je představovat odděleně, protože tělo je hraje všechna najednou. Výsledek celého představení se dá nakreslit jedinou čarou: jak koncentrace léku v krvi stoupá a klesá v čase. Ta křivka je celá cesta. Vyzkoušej si ji.
+
+Simulace: Sleduj vlnu. Jedna čára ukazuje celou cestu: vzestup je absorpce, která zatím vyhrává, vrchol je chvíle, kdy se absorpce a eliminace vyrovnají, a dlouhý pokles je eliminace, která má poslední slovo. Přepni na Injekci a vzestup zmizí: lék je v krvi naráz a není co vstřebávat.
+
+### Matematika pro zvědavé
+
+Představ si tělo jako jeden dobře promíchaný prostor o objemu V. Pro spolknutou dávku D s absorpcí prvního řádu o rychlostní konstantě k_a a eliminací s konstantou k_e je plazmatická koncentrace rozdílem dvou exponenciál – jedna plní, druhá vyprazdňuje:
+
+C(t) = [ F·D·k_a / V(k_a − k_e) ] · (e^−k_et − e^−k_at)
+
+Injekce do žíly člen absorpce úplně odstraní – lék je v krvi hned a pak už jen klesá:
+
+C(t) = (D/V) · e^−k_et kde k_e = ln 2 / t_½
+
+F je biologická dostupnost, tedy podíl dávky, který projde až do oběhu (pro injekci do žíly 1). Posuvník „rychlost vstřebávání“ nastavuje k_a, posuvník „poločas“ nastavuje k_e.
+
+§2 Poločas a ustálený stav – rytmus
+
+## Proč polovina, proč pět a k čemu je „dvakrát denně“
+
+Konec křivky se k nule nezřítí, jen pozvolna doznívá. A doznívá zvláštním způsobem, ze kterého plyne skoro všechno praktické o dávkování.
+
+Lék neodchází naráz, ale ani stejným množstvím za hodinu. Odchází stejným podílem: za určitou dobu ubude polovina toho, co v těle zrovna je. Pak polovina zbytku. Pak polovina toho.
+
+Je to jako pizza, ze které smíš sníst vždycky jen polovinu toho, co zbylo. K prázdné krabici se pořád blížíš, ale nikdy do ní úplně nedojdeš.
+
+Doba, za kterou hladina klesne na polovinu, je poločas. Protože lék odchází stále stejným podílem, poločas zůstává stejný, i když ubývá čím dál menší množství. Říká se tomu exponenciální pokles, a jakmile ho jednou uvidíš, najdeš ho všude: v chladnoucím čaji nebo ve vůni, která pomalu mizí z místnosti. Po pěti poločasech zbývají asi 3 % – tak málo, že se lék obvykle považuje za vyloučený.
+
+### Vana bez zátky – ustálený stav
+
+Teď neber jednu dávku, ale pravidelně, třeba tabletu každých osm hodin, zatímco tělo lék dál odbourává stejným tempem. Co se stane?
+
+Představ si vanu s vytaženou zátkou a puštěným kohoutkem. Voda přitéká rychleji, než odtéká, takže hladina stoupá. Čím je ale hladina vyšší, tím víc tlačí na odtok a tím rychleji voda odtéká. Hladina stoupá, dokud se přítok a odtok nevyrovnají, a pak zůstane stát – ne proto, že by se něco zastavilo, ale proto, že se přítok a odtok přesně ruší. Tomu plató se říká ustálený stav.
+
+Jak dlouho trvá, než se k plató dostaneš? Zhruba pět poločasů – stejná aritmetika jako při vyprazdňování, jen obráceně. A nezáleží na tom, jak velkou dávku bereš ani jak často. Přesně to znamená „dvakrát denně po dobu týdne“: vanu nenapustíš po okraj, ale držíš hladinu, kde přitéká stejně, jako odtéká. Nasycovací dávka – ta podivně velká první tableta na začátku některých léčeb – je trik, jak začít rovnou blízko plató, místo aby k němu hladina celé dny stoupala.
+
+Simulace: Každá dávka je šplouchnutí do vany, která se pořád vyprazdňuje. Sleduj, jak vrcholy a údolí dávku po dávce stoupají, až přestanou a usadí se ve vybarveném pásmu. To pásmo je ustálený stav: každé šplouchnutí přesně nahradí, co mezitím odteklo. Zapni nasycovací dávku a první šplouchnutí skočí rovnou do pásma.
+
+### Matematika pro zvědavé
+
+Po n poločasech zbývá z jedné dávky (½)^n. Stejně tak při pravidelném dávkování urazíš po 1, 2, 3, 4 a 5 poločasech 50, 75, 87,5, 93,75 a asi 96,9 % cesty k ustálenému stavu. To je pravidlo pěti poločasů a velikost dávky na něm nic nemění.
+
+Opakované dávkování je jen součet mnoha jednodávkových křivek, z nichž každá začíná o něco později. O kolik jsou hladiny v ustáleném stavu vyšší než po první dávce, udává akumulační faktor (pro dávkovací interval τ):
+
+R = 1 / (1 − e^−k_eτ)
+
+Průměrná koncentrace v ustáleném stavu závisí jen na tom, jak rychle lék přichází v porovnání s tím, jak rychle ho tělo odbourává:
+
+C̄_ss = F·D / (CL·τ) kde CL = k_e·V
+
+Rozumná nasycovací dávka je udržovací dávka vynásobená stejným R: vanu rovnou napustíš na hladinu, které by rozvrh stejně nakonec dosáhl.
+
+§3 Farmakodynamika – podání ruky
+
+## Jak molekula velká jako šepot změní buňce názor
+
+Lék dorazil a rozšířil se po těle. Co teď vlastně dělá? Skoro vždycky působí tak, že do něčeho zapadne: do receptoru, molekulární zdířky na buňce nebo uvnitř ní. Učebnice mluví o klíči a zámku a to stačí, ale lepší je USB konektor, který jde zasunout jen jedním směrem. Tvar je všechno. Molekula, která do zdířky nepasuje, neudělá nic, ať jí dáš kolik chceš.
+
+### Zmáčknout tlačítko, nebo ho zablokovat – agonista · antagonista
+
+Zapadnout do zdířky je jen půlka příběhu. Jde o to, jestli to zapadnutí něco udělá. Agonista do zdířky zapadne a zmáčkne tlačítko – zapne mašinerii. Antagonista zapadne stejně těsně, ale nic nespustí; jen zdířku obsadí, takže tlačítko nemůže zmáčknout nikdo jiný. Takhle funguje naloxon, lék na předávkování opioidy: opioidy z těla neodstraní, ale vytlačí je z receptorů a místo obsadí sám. Působí ale kratší dobu než mnoho opioidů, takže se příznaky předávkování můžou vrátit. A částečný agonista zmáčkne tlačítko jen napůl – ani při plném obsazení receptorů nedosáhne plného účinku.
+
+### Zmatek, který stojí za to vyléčit navždy – potence vs. účinnost
+
+Jestli si lidé u léků něco pletou – na fórech, v diskusích i u piva –, jsou to tahle dvě slova. Ujasněme si to jednou provždy.
+
+Potence říká, jak málo léku stačí. Je to poloha knoflíku hlasitosti, na kterou ho musíš otočit, aby hudba hrála dost nahlas. Velmi potentní lék zabere v nepatrné dávce, méně potentní potřebuje na stejný účinek dávku větší. Většinou je to jen otázka dávkování.
+
+Účinnost říká, jak nahlas reproduktor vůbec dokáže hrát. Je to strop – největší účinek, jakého lék dosáhne, ať dáš, kolik chceš. Žádná dávka navíc ho přes vlastní strop nedostane.
+
+Fentanyl je až stokrát potentnější než morfin: stačí ho zlomek miligramu. Oba jsou ale plní agonisté se stejně vysokým stropem. Fentanyl tedy „neumí víc“, jen mu stačí mnohem menší dávka – a právě proto je tak nebezpečný.
+
+Opačný případ je buprenorfin. Na opioidní receptor se váže velmi pevně a stačí ho málo, je tedy vysoce potentní. Jako částečný agonista ale má nižší strop: útlum dýchání s dávkou nestoupá tak strmě jako u morfinu (pokud se nekombinuje s alkoholem nebo jinými tlumivými látkami). Zaměňovat „potentnější“ za „silnější“ nebo „lepší“ je nejčastější farmakologický omyl na internetu. Po dalším obrázku ho už neuděláš, protože uvidíš, jak se ty dva pojmy rozejdou.
+
+Simulace: Dvě léčiva vedle sebe. Posuň potenci a celá křivka se posune doleva nebo doprava – doleva znamená, že léku stačí méně. Posuň účinnost a pohne se jen strop, nahoru nebo dolů. Obě vlastnosti jsou nezávislé: křivka může ležet daleko vlevo (velmi potentní lék) a přesto skončit nízko (nízký strop), nebo ležet vpravo a vystoupat až nahoru. Právě o tu nezávislost jde.
+
+### Matematika pro zvědavé
+
+Klasická sigmoida pochází z Hillovy rovnice – účinek roste s koncentrací, dokud se receptory nenasytí:
+
+E = E_max · C^n / (EC_50^n + C^n)
+
+E_max je účinnost, tedy strop, a jeho změna posouvá křivku nahoru a dolů. EC_50 je míra potence – koncentrace, při které lék dosáhne poloviny svého vlastního maxima – a její změna posouvá křivku doleva a doprava (osa je logaritmická, takže potence se mění po řádech). n je Hillův koeficient, tady roven 1. Oba parametry jsou v rovnici oddělené, a proto je obrázek dokáže tak čistě rozplést.
+
+§4 Terapeutické okno – tak akorát
+
+## Ne moc, ne málo – a nikdy stejně pro dva lidi
+
+Když dáš dohromady cestu a podání ruky, dojdeš k nejpraktičtější myšlence celé medicíny, která tiše řídí každou předepsanou dávku: aby lék pomohl, musí jeho koncentrace v krvi dopadnout do určitého pásma.
+
+Když je léku málo, nic se nestane – hladina je pod minimální účinnou koncentrací. Když je ho moc, škodí – hladina je nad maximální tolerovanou koncentrací, jako hudba puštěná tak nahlas, že reproduktory chrčí a sousedé volají policii. Mezi tím leží pásmo, kde je to tak akorát: dost na to, aby lék pomohl, a málo na to, aby škodil. Celé umění dávkování je udržet vrchol koncentrační křivky uvnitř tohoto pásma.
+
+Tady definitivně padá otázka „proč si prostě nevzít víc?“. Víc tě nedostane hlouběji do dobrého pásma. Vytlačí vrchol nahoru a ven z něj, do škody.
+
+U některých léků je pásmo široké a shovívavé. U jiných – lithium, digoxin, fenytoin – je úzké jako ostří břitvy: účinná a nebezpečná dávka leží těsně u sebe. Říká se tomu úzký terapeutický index a u takových léků se hladina pravidelně kontroluje z krve, ne odhadem.
+
+### Proč tatáž pilulka dopadá u různých lidí různě
+
+A poslední dílek. Proč tatáž dávka – stejný počet miligramů, stejná tableta – jednoho člověka sotva ovlivní a druhého složí? Protože každému odtéká vana jinou rychlostí. Rychlý metabolizátor lék odbourá rychle a vrchol zůstane nízko, třeba až příliš nízko na to, aby lék zabral. Pomalý metabolizátor ho odbourává líně a stejná dávka se mu vyšplhá až do toxického pásma. Stejná tableta, stejná čísla na krabičce, jen jiné tělo. Nejvíc se to projeví při opakovaném dávkování, kdy se lék u pomalého metabolizátora z dávky na dávku hromadí. Na obrázku níže se lék bere dvakrát denně; nech dávku na místě a měň jen rychlost odbourávání. Uvidíš, jak se ze stejného dávkování stane pro jednoho neúčinné a pro druhého nebezpečné.
+
+Simulace: Lék se tu bere dvakrát denně po tři dny. Zelená znamená pomoc, švestková škodu, zlatá žádný účinek. Zvyšuj dávku a sleduj, jak nejvyšší hladina prochází pásmy: nejdřív příliš málo, pak tak akorát, pak příliš mnoho. Pak nech dávku na místě a posouvej rychlost odbourávání: rychlý metabolizátor lék vylučuje tak rychle, že se do účinného pásma vůbec nedostane, pomalý ho dávku po dávce hromadí, až skončí v toxickém. Stejné dávkování, tři různé příběhy.
+
+### Matematika pro zvědavé
+
+Cíl dávkování, řečeno prostě, je udržet vrchol mezi dvěma čárami:
+
+MEC < C_max < MTC
+
+MEC a MTC jsou minimální účinná a maximální tolerovaná koncentrace, tedy dolní a horní hranice zeleného pásma. Terapeutický index je zhruba poměr toxické a účinné dávky; čím je menší, tím je pásmo užší. Rozdíly mezi lidmi se do výpočtu promítají hlavně přes clearance: průměrná hladina v ustáleném stavu je nepřímo úměrná tomu, jak rychle tělo lék odbourává, takže poloviční clearance zhruba zdvojnásobí hladinu, kterou stejná dávka vyvolá. Stejná D, jiná CL, jiná C.
+
+? Na co se lidé opravdu ptají
+
+## Přímé odpovědi na to, co si každý potají googlí
+
+Tyhle otázky se pořád vracejí na farmakologických fórech, ve studijních skupinách i v diskusích. Opravdové nejasnosti a přímé odpovědi.
+
+### Jaký je vlastně rozdíl mezi farmakokinetikou a farmakodynamikou?
+
+Kinetika je to, co tělo dělá s lékem; dynamika je to, co lék dělá s tělem. Kinetika je cesta – jak se molekula dostane dovnitř, rozšíří se, rozloží a odejde (příběh ADME a koncentrační křivka na obrázku 1). Dynamika je cíl – co se stane, když molekula najde svůj receptor a tlačítko zmáčkne, nebo zablokuje (obrázek 3).
+
+Kinetika ti tedy řekne, kolik léku je kde a kdy, dynamika, co to množství na místě dělá.
+
+### Proč trvá „pět poločasů“, než se dosáhne ustáleného stavu – a než lék opustí tělo?
+
+Protože každý poločas uzavře polovinu mezery, která ještě zbývá. Při pravidelném dávkování urazíš po jednom poločasu 50 % cesty, po dvou 75 %, po třech 87,5 %, po čtyřech asi 94 % a po pěti asi 97 % – a to už je plató tak blízko, že se tomu říká ustálený stav. Při vylučování platí stejná aritmetika obráceně: po pěti poločasech je pryč asi 97 %.
+
+Platí to bez ohledu na to, jak velká je dávka a jak často ji bereš; záleží jen na poločasu. Nasycovací dávka může účinek urychlit, protože hladinu rozjede rovnou blízko plató, ale samotnou aritmetiku pěti poločasů nezmění. (Obrázek 2 ukazuje přesně tohle.)
+
+Vychází z: Allucent, „Steady-State Concentration in Pharmacokinetics“; Rosenbaum, Basic Pharmacokinetics and Pharmacodynamics, kap. 11 a 12.
+
+### Potence vs. účinnost – pořád si to pletu. V čem je skutečný rozdíl?
+
+Potence říká, kolik léku potřebuješ; účinnost, kam až tě lék dokáže dostat. Potence se měří pomocí EC_50 (nebo ED_50), tedy koncentrace, která vyvolá polovinu maximálního účinku daného léku. Nižší EC_50 znamená vyšší potenci, protože stačí méně léku. Účinnost se měří pomocí E_max, největšího účinku, jakého lék dosáhne při jakékoli dávce.
+
+Jsou na sobě nezávislé, a to lidem uniká: velmi potentní lék může mít nízký strop a méně potentní lék s vysokým stropem ho při dostatečné dávce předstihne. „Potentnější“ tedy neznamená „silnější“ ani „lepší“, jen to, že stačí méně miligramů. O klinické užitečnosti obvykle rozhoduje účinnost; potence rozhoduje spíš o velikosti tablety. Na obrázku 3 si oba pojmy rozplétáš vlastníma rukama.
+
+Vychází z: Deranged Physiology; LITFL; Katzung, Basic & Clinical Pharmacology; Rosenbaum, kap. 19.
+
+### Proč mi grapefruitová šťáva rozhazuje léky?
+
+Vzpomeň si na kontrolu ve stěně střeva: enzym CYP3A4 rozloží část některých léků dřív, než se dostanou do krve. Grapefruit obsahuje látky (furanokumariny), které tenhle enzym ve střevě vyřadí, a to nevratně. Střevo musí vyrobit nový enzym, a než se to stane, může uplynout den i víc. Grapefruit navíc ovlivňuje i některé přenašeče, které léky stěnou střeva přenášejí.
+
+Bez kontroly projde prvním průchodem mnohem víc nezměněného léku, takže běžná dávka se může chovat jako mnohem větší a dostat tě do toxického pásma. Týká se to hlavně některých statinů na cholesterol, některých léků na krevní tlak a srdeční rytmus a hrstky dalších, které mají varování v příbalovém letáku. A protože každý má ve střevě jiné množství tohoto enzymu, stejná sklenice působí na různé lidi různě silně.
+
+Vychází z: U.S. FDA, „Grapefruit Juice and Some Drugs Don't Mix“; Bailey et al.; Grapefruit–drug interactions (přehled).
+
+### Jak může být „distribuční objem“ větší než celé tělo?
+
+Protože to nikdy nebyl skutečný objem. Je to přepočítávací číslo: celkové množství léku v těle dělené koncentrací, kterou naměříš v krevní plazmě. Nic ho nenutí odpovídat skutečnému objemu čehokoli.
+
+Když se lék rád schovává v tkáních – v tuku, ve svalech, v orgánech –, v plazmě ho koluje jen málo a naměřená koncentrace je nepatrná. Když běžné množství léku vydělíš nepatrnou koncentrací, vyjde obří číslo, někdy stovky nebo tisíce litrů. Velký distribuční objem proto čti jako index schovávání, ne jako velikost kbelíku: velké číslo znamená, že je lék hlavně v tkáních, malé, že zůstává v krvi.
+
+Vychází z: Certara, „Understanding Volume of Distribution“; Rosenbaum, kap. 4.
+
+### Musím opravdu dobrat celou kúru antibiotik?
+
+Tady se odborníci opravdu přou, takže si otázka zaslouží poctivou odpověď, ne heslo. Stará poučka „antibiotika se musí vždycky dobrat, jinak vznikne rezistence“ stojí na vratší půdě, než napovídá její sebejistota. Analýza v BMJ (2017) upozornila, že u mnoha běžných infekcí chybí důkazy, že by dřívější vysazení po zlepšení pěstovalo rezistenci – a že naopak zbytečně dlouhé užívání antibiotik rezistenci podporuje.
+
+Ale – a je to skutečné ale – „je mi líp“ neznamená „infekce je pryč“. Některé infekce se po předčasném vysazení vracejí a předepsaná délka léčby je nastavená na konkrétní bakterii a místo infekce. Upravovat si léčbu podle toho, jak se cítíš, je přesně cesta k návratu nemoci. Obhajitelný postoj tedy není „přestaň, kdy chceš“ ani „vždycky slepě dober“, ale: ber to, co ti bylo předepsáno, a pokud chceš skončit dřív, zeptej se lékaře, ne internetu. Výzkum se tu stále vyvíjí.
+
+Vychází z: Llewelyn et al., BMJ (2017) a debata, kterou to rozpoutalo; protiargumenty v The Conversation a PBS NewsHour.
+
+### Proč jsou některé léky jen injekční? Proč je nemůžu prostě spolknout?
+
+Obvykle proto, že by je cesta přes trávicí trubici zničila dřív, než by stihly zabrat. Viníci jsou dva. Zaprvé efekt prvního průchodu: u některých léků je kontrola v játrech tak přísná, že do oběhu skoro nic neprojde a biologická dostupnost je téměř nulová. Zadruhé některé molekuly trávicí trubici nepřežijí nebo jí neprojdou: inzulin je bílkovina, kterou trávicí enzymy rozštěpí stejně jako bílkoviny z jídla, a heparin je velký, silně nabitý polysacharid, který stěnou střeva skoro neprojde.
+
+Když jsou vstupní dveře drtička, doručí se lék za ně – do žíly, pod kůži, do svalu –, aby dorazil nedotčený. Proto křivka „Injekce“ na obrázku 1 nemá žádný vzestup: celou cestu přes trávicí trubici přeskočila.
+
+#### Zdroje a další čtení
+
+Sara E. Rosenbaum, Basic Pharmacokinetics and Pharmacodynamics, 2. vyd., Wiley 2017 – kniha, o kterou se tato kapitola opírá: terapeutické rozmezí, receptory a částeční agonisté (kap. 1), vstřebávání, distribuce a vylučování (kap. 3–5), křivka po spolknutí (kap. 9), ustálený stav a opakované dávkování (kap. 11, 12 a 14), model E_max (kap. 19) · U.S. FDA – [Grapefruit Juice and Some Drugs Don't Mix](https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix) · Certara – [Understanding Volume of Distribution](https://www.certara.com/knowledge-base/understanding-volume-of-distribution/) · Allucent – [Steady-State Concentration in Pharmacokinetics](https://www.allucent.com/resources/blog/what-steady-state-concentration-pharmacokinetics) · Deranged Physiology – [Potency and Efficacy](https://derangedphysiology.com/main/cicm-primary-exam/pharmacodynamics/Chapter-415/potency-and-efficacy) · Llewelyn a kol., BMJ 2017, k debatě o dobírání antibiotik · CDC – [fentanyl](https://www.cdc.gov/overdose-resources/search/transcripts/CDC_Fentanyl-Video-Spot_60-transcript.html) · Pfizer – [naloxon, klinická farmakologie](https://www.pfizermedical.com/naloxone/clinical-pharmacology) · Walsh a kol., Clinical Pharmacology & Therapeutics 1994, k stropu účinku buprenorfinu · Boron & Boulpaep, Medical Physiology, 3. vyd., kap. 34, k ledvinné filtraci.
+
+Žádný prášek si tedy nikdy jen tak nevezmeš. Spustíš vlnu. Stoupá, zatímco se dav protlačuje turnikety, vrcholí ve chvíli, kdy se absorpce a eliminace na okamžik vyrovnají, a klesá, jak ji tělo po polovinách odnáší pryč. Cestou se lék chytí několika receptorů, některé zapne, jiné jen zablokuje. A jestli pomůže, nebo uškodí, záleží na něčem tak obyčejném, jako je výška vrcholu té křivky.
+
+Rozhoduje tedy tvar koncentrace v čase, ne číslo na etiketě. Až se naučíš vidět za každou tabletou křivku, která stoupá a klesá, uvidíš v každém podstatném jménu z lékárničky skryté sloveso. To je v podstatě všechno. Zbytek jsou detaily a i ty jsou jen pár stejných myšlenek v jiném převleku.
+
+Příště se přestaneme dívat na celou cestu z dálky a zaměříme se na samotné podání ruky: na receptor a na malý zázrak, kterým molekula velká jako šepot přesvědčí buňku velkou jako město, aby změnila názor.
+
+– Kapitola II · příště Podání ruky zblízka Receptory, klíče, které tak úplně nesedí, a jak se „zapnuto“ a „vypnuto“ rozhoduje molekulu po molekule.
+
+---
+
+# Čtení bez čtenáře
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html  
+Větev: Molekulární biologie  
+Shrnutí: Jak se z DNA stane tělo, když v buňce nikdo nečte: opis s korekturou, mRNA a bílkoviny, genetický kód a mutace, přepínače genů. Se čtyřmi simulacemi.  
+English: Introduction to molecular biology: DNA replication with proofreading, mRNA and protein turnover, the genetic code and mutations, and gene switches (the eve stripe in fruit flies).
+
+Obrázek: Rodokmen kopií. Před každým dělením buňky se dvoušroubovice rozestoupí a ke každému vláknu se přiloží nové. Tvoje DNA je kopie kopie kopie – větev na větvi.
+
+V každé tvé buňce je uložený text dlouhý přes tři miliardy písmen, a to dvakrát: jednou od matky, jednou od otce. Vytištěný by zaplnil víc než tisíc knih tlustých jako učebnice, ze které tahle kapitola vychází. Říká se mu genom a mluví se o něm jako o knize, kterou buňka čte. Jenže v buňce není nikdo, kdo by četl.
+
+Molekulární biologie je plná slov vypůjčených od čtení a psaní. Gen se přepisuje, zpráva se překládá, buňka čte svou DNA. Jsou to užitečná slova, ale svádějí k omylu: člověk si představí malého úředníka, který listuje stránkami a rozhoduje, co je zrovna potřeba. Nikdo takový tam není. Jsou tam jen molekuly, které se v teple bez přestání pohybují a narážejí do sebe. Každá molekula v buňce se za sekundu srazí s obrovským množstvím jiných a velká bílkovina se přitom stihne zhruba milionkrát otočit kolem své osy.
+
+Když do sebe dvě molekuly narazí a jejich tvary a náboje k sobě sednou, na chvíli spolu zůstanou. To je celé „čtení“. Tahle kapitola ukazuje, jak z takových náhodných setkání vznikne něco, co navenek vypadá jako pečlivá práce s textem. Stojí na pěti myšlenkách: čtyři písmena, opis s korekturou, pracovní kopie, překlad a stejný text, který každá buňka používá jinak.
+
+> Přirovnání ze života: Představ si dva kousky puzzle v krabici, se kterou někdo pořád třese. Většinou se minou, ale jakmile do sebe narazí správnými stranami, zaklapnou – a nikdo se přitom nedíval na obrázek. V buňce se takhle setkávají molekuly. Teplo je to třesení a „čtení“ je zaklapnutí dvou tvarů, které k sobě pasují. Rozdíl je jen v tempu: tohle třesení se odehrává milionkrát za sekundu.
+
+## i. Čtyři písmena
+
+DNA je dlouhé vlákno ze čtyř druhů stavebních kamenů, nukleotidů, které se označují písmeny A, C, G a T. Dvě taková vlákna jsou stočená do dvoušroubovice a drží spolu díky jednoduchému pravidlu: A se vždy páruje s T a G s C. Kdo zná jedno vlákno, zná i druhé.
+
+Tohle pravidlo je nejdůležitější věta celé kapitoly. Každé vlákno nese otisk svého protějšku jako forma, podle které se odlévá odlitek. Při kopírování se vlákna rozestoupí a ke každému se podle pravidla přiloží nové. Žádné porozumění, jen kousky, které k sobě pasují.
+
+Lidský genom má 3,1 miliardy takových dvojic. Všechna vlákna z jediné buňky by natažená za sebou měřila asi dva metry, přitom jádro, ve kterém jsou uložená, má průměr kolem šesti mikrometrů. Jako kdyby se do tenisového míčku vešlo čtyřicet kilometrů velmi tenké nitě.
+
+A teď překvapení: stavbu bílkovin popisuje jen asi jedno procento té délky. Genů pro bílkoviny máš zhruba dvacet tisíc. Další úseky slouží jako přepínače, které určují, kdy a kde se který gen použije, z jiných vznikají molekuly RNA, které se v bílkovinu nikdy nepřeloží, a zhruba polovinu genomu tvoří úseky, které se v různých obměnách mnohokrát opakují.
+
+**Genom není výkres těla. Je to sada tvarů, které k něčemu pasují.**
+
+## ii. Opis s korekturou
+
+Než se buňka rozdělí, musí celý text opsat: 6,2 miliardy písmen, protože v jádře nese obě sady. Opisuje ho enzym DNA-polymeráza. Postupuje po rozpleteném vlákně a k jeho písmenům přidává protějšky podle párovacího pravidla. Nečte, jen zkouší, co přilne.
+
+Samo párování ale není dokonalé. Polymeráza se splete zhruba jednou za sto tisíc písmen. Při opisu celého genomu by to dělalo desítky tisíc chyb při každém dělení. Proto má buňka tři pojistky za sebou. První je samotný výběr písmene. Druhou je korektura: polymeráza umí couvnout a čerstvě přidané písmeno, které nesedí, odstřihnout, a tím chyby sníží ještě stokrát. Třetí přichází po opisu: zvláštní soustava enzymů projde nové vlákno, najde písmena, která nesedí, a opraví je, takže chyb ubude ještě tisíckrát. Dohromady se buňka splete jednou na deset miliard písmen, a to stejně spolehlivě u bakterie jako u člověka.
+
+Opisuje se rychle, ale ne dost rychle na to, aby stačil jeden stroj. Na lidské DNA postupuje opisovací aparát asi padesát písmen za sekundu. Průměrný chromozom má sto padesát milionů dvojic, takže kdyby ho opisoval jediný stroj od začátku do konce, trvalo by to asi pět týdnů. Buňka proto začne opisovat na mnoha místech najednou.
+
+Vyzkoušej si to. Pusť opisování a zapínej pojistky jednu po druhé.
+
+Simulace: Tři pojistky. Polymeráza přidává k předloze protějšky podle pravidla A–T a G–C. Chyby (červeně) jsou tu pětitisíckrát častější než ve skutečnosti, jinak by nebyly vidět. Čísla nahoře ale počítají se skutečnými poměry: bez dalších pojistek by na jeden opis genomu připadlo kolem 62 000 chyb, s korekturou kolem 620 a se všemi třemi méně než jedna.
+
+Méně než jedna chyba na celý opis ovšem není nula. Buňky se v těle dělí celý život, a tak se v nich drobné odchylky pomalu střádají. Každá tvoje buňka je proto trochu jiná kopie téhož textu.
+
+**Přesnost DNA nevzniká tím, že se nic nepokazí. Vzniká tím, že každou chybu čekají tři různé kontroly.**
+
+## iii. Pracovní kopie
+
+DNA z jádra nevychází. Když buňka potřebuje některý gen použít, vyrobí si z něj pracovní kopii z RNA. Tomu se říká přepis neboli transkripce a dělá ho enzym RNA-polymeráza. RNA se od DNA liší jen v drobnostech: místo cukru deoxyribózy má ribózu a místo písmene T písmeno U, které se ale páruje stejně, s A. Zpráva tedy zůstane stejná, jen napsaná trochu jiným písmem.
+
+Pracovní kopie se smí plést víc než originál. RNA-polymeráza udělá zhruba jednu chybu na deset tisíc písmen, asi tisíckrát víc než DNA-polymeráza s korekturou. Nevadí to, protože RNA nic trvale neuchovává: vadná kopie se spotřebuje a rozpadne a ta další bude nejspíš v pořádku. Originál zůstane netknutý.
+
+Kopie jsou zároveň zesilovač. Z jednoho genu může vzniknout mnoho kopií a podle každé mnoho molekul bílkoviny. I bílkovina, které je v buňce obrovské množství, tak může pocházet z genu, který je v genomu jen jednou.
+
+A každá kopie má omezenou životnost. U bakterií má většina kopií poločas jen pár minut. V našich buňkách vydrží déle, ale většina má poločas kratší než půl hodiny. Některé žijí mnohem déle: kopie genu pro β-globin, bílkovinu krevního barviva, má poločas přes deset hodin. Životnost kopie je stejně silný ovladač jako rychlost přepisu, protože čím déle kopie vydrží, tím víc bílkoviny podle ní vznikne.
+
+Vyzkoušej si to. Měň rychlost přepisu, životnost kopie a rychlost výroby bílkoviny a sleduj, kolik jí se nastřádá. Pak gen vypni.
+
+Simulace: Jeden gen, mnoho molekul. Gen vlevo vyrábí kopie RNA, které po čase zanikají. Podle každé vznikají molekuly bílkoviny (zlaté tečky), které také postupně mizí. Obě hladiny se ustálí tam, kde výroba vyrovná zánik. Jedna sekunda tu odpovídá hodině. Když gen vypneš, kopie zmizí za pár sekund, ale bílkovina vydrží mnohem déle: buňka má krátkou paměť na příkazy a dlouhou na jejich výsledky.
+
+## iv. Překlad
+
+Teď přijde nejpodivnější krok. Bílkoviny se skládají z dvaceti druhů aminokyselin, kdežto RNA má jen čtyři písmena. Jak napsat dvacet věcí čtyřmi znaky? Po trojicích. Čtyři písmena dávají 4 × 4 × 4 = 64 trojic, takzvaných kodonů. To je víc, než je potřeba, a tak většinu aminokyselin kóduje několik různých trojic. Tři trojice znamenají „konec“ a jedna, AUG, zároveň „začátek“ i aminokyselinu methionin.
+
+Bílkovinu skládá ribozom, stroj z více než padesáti bílkovin a několika molekul RNA. Jenže ani ribozom nečte. Skutečnými překladateli jsou malé molekuly tRNA, které fungují jako adaptéry. Na jednom konci nesou aminokyselinu, na druhém trojici písmen, která se páruje s kodonem. Ribozom drží zprávu a posouvá ji, a když se k ní přiloží tRNA se správnou trojicí, připojí její aminokyselinu k rostoucímu řetězci. Zase párování, zase zaklapnutí.
+
+Ribozom v našich buňkách přidá asi čtyři aminokyseliny za sekundu a splete se zhruba jednou na deset tisíc. Výroba většiny bílkovin trvá od dvaceti sekund do několika minut. Po jedné kopii přitom jede za sebou víc ribozomů, třeba jen osmdesát písmen od sebe, takže podle ní vzniká několik molekul najednou.
+
+Pořadí aminokyselin pak určuje, jak se hotový řetězec složí do prostorového tvaru, a tvar určuje, co bílkovina umí. Proto stačí jedno změněné písmeno. U srpkovité anémie stojí na šestém místě řetězce β-globinu valin místo kyseliny glutamové. Ta drobnost vytvoří na povrchu hemoglobinu lepkavé místo. Když hemoglobin odevzdá kyslík, molekuly se jím slepují do dlouhých vláken a ta deformují červené krvinky.
+
+Stejně důležité je, odkud se začne číst. Mezi trojicemi nejsou mezery, a kdyby čtení začalo o písmeno vedle, dával by celý zbytek zprávy úplně jiná slova. Správný začátek, a tím i celý čtecí rámec, určí startovní AUG.
+
+Vyzkoušej si to. Ťukni na písmeno a změň ho, nebo jedno vlož či vyjmi, a sleduj, co se stane s bílkovinou.
+
+Simulace: Kód po trojicích. Tenhle krátký úsek DNA kóduje startovní methionin a začátek řetězce β-globinu: Val-His-Leu-Thr-Pro-Glu-Glu-Lys. Záměna jednoho písmene obvykle změní jednu aminokyselinu, nebo žádnou, protože mnoho trojic znamená totéž. Srpkovitá záměna změní A na T a kyselinu glutamovou na šestém místě na valin. Vložené nebo vyjmuté písmeno ale posune čtecí rámec a změní všechno, co následuje.
+
+## v. Stejný text, jiné čtení
+
+Neuron ze sítnice a buňka z jater vypadají, jako by patřily dvěma různým tvorům. Neuron se větví do dálky a vede elektrické signály, jaterní buňka zpracovává živiny a odbourává alkohol a léky. A přitom obě nesou úplně stejný text.
+
+Jak to víme? Když se z žabího vajíčka odstraní jádro a místo něj se vloží jádro z hotové, specializované buňky žáby, vyroste z vajíčka normální pulec. Specializovaná buňka tedy neztratila nic, co je potřeba ke stavbě celého těla. Později se totéž povedlo u ovcí, myší, prasat, koz, psů i skotu. Rozdíl mezi buňkami není v textu, ale v tom, které jeho části se používají. V těle máš přes dvě stě pojmenovaných typů buněk a všechny vznikly ze stejného genomu.
+
+O tom, který gen se přepíše, rozhodují regulační bílkoviny, které nasedají na krátké úseky DNA poblíž genů. Zase žádné čtení, jen tvar, který na určité pořadí písmen pasuje. A rozhodují ve skupinách. Pěkně je to vidět na genu eve octomilky. Jeho přepínač pro druhý proužek reaguje na čtyři regulační bílkoviny: dvě ho zapínají (Bicoid a Hunchback), dvě vypínají (Krüppel a Giant). Gen se zapne jen tam, kde jsou oba zapínače a žádný vypínač. Taková kombinace se v raném zárodku vyskytuje jen na jednom místě, a tak vznikne ostrý proužek.
+
+Vyzkoušej si to. Vypínej jednotlivé regulační bílkoviny, jako by je mušce chyběly, a sleduj, co se stane s proužkem.
+
+Simulace: Logika z bílkovin. Křivky ukazují, kde v zárodku je kterých regulačních bílkovin hodně (zjednodušeno podle obrázku 7–32 v Albertsovi). Gen eve se zapne jen v jádrech, kde jsou oba zapínače a žádný vypínač. Bez Krüppelu se proužek rozšíří dozadu, bez Giantu dopředu, bez zapínačů zmizí. Celý přepínač genu eve přitom váže přes dvacet různých regulačních bílkovin a sedm jejich kombinací vytvoří sedm proužků.
+
+Takhle se z jednoho textu stane přes dvě stě různých buněk. Žádná nedostane jiný návod. Dostane jinou kombinaci přepínačů a ta pak vydrží i po dělení: buňka, která se jednou rozhodla, čím bude, si tu volbu pamatuje po mnoho generací. Říká se tomu buněčná paměť a bez ní by nevznikla žádná tkáň.
+
+**Gen sám nic neříká. Říká něco jen v kombinaci s tím, co se kolem něj zrovna vznáší.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem DNA pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Jak dlouhá je moje DNA?
+
+DNA z jedné buňky by natažená za sebou měřila asi dva metry. Všech 46 chromozomů se přitom vejde do jádra o průměru kolem šesti mikrometrů. Aby se nezamotaly, jsou navinuté na bílkovinné cívky a mnohokrát poskládané.
+
+### Je většina DNA odpad?
+
+„Odpad“ je silné slovo. Bílkoviny kóduje asi 1 % genomu. Dalších asi 3,5 % se během evoluce změnilo tak málo, že nejspíš něco důležitého dělá, a zhruba 45 % se přepisuje do RNA. Asi polovinu genomu tvoří úseky, které se mnohokrát opakují. O části DNA víme, že je nezbytná, o části, že na ní moc nezáleží, a o velkém zbytku zatím nevíme dost.
+
+### Kolik mám genů?
+
+Asi dvacet tisíc genů pro bílkoviny (podle Albertse přesně 19 116, plus stovky genů pro velmi krátké bílkoviny) a kolem pěti tisíc genů pro jiné druhy RNA. To je méně, než se před přečtením genomu čekalo. Jeden gen ale může dát několik různých bílkovin, protože se jeho kopie dá různě sestříhat.
+
+### Je DNA ve všech mých buňkách stejná?
+
+Skoro. Při každém dělení vznikne v celém genomu v průměru méně než jedna nová chyba, ale buňky se dělí celý život, takže se drobné rozdíly střádají. Úmyslnou výjimkou jsou lymfocyty, bílé krvinky imunity: ty si část DNA samy přeskládají, aby každá z nich poznávala něco jiného. Víc o tom v kapitole [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+
+### Kdo tedy tu DNA čte?
+
+Nikdo. Buňka je nacpaná molekulami, které se v teple neustále pohybují. Místo na enzymu, kam zapadá jeho cílová molekula, s ní u hojné látky narazí asi pětsetkrát za tisícinu sekundy. Většina srážek nic nezpůsobí, ale když se potkají dva tvary, které k sobě pasují, chvíli spolu vydrží, a to stačí. „Čtení“ je statistika obrovského množství náhodných setkání.
+
+Tohle je logika molekulární biologie v kostce. Text o čtyřech písmenech, který se opisuje pod trojí kontrolou. Pracovní kopie, které se smějí plést, protože jsou na jedno použití. Překlad po trojicích, kde zase rozhoduje jen to, co k čemu pasuje. A stejný text, ze kterého každá buňka používá jiné stránky. Nikde v tom celém není čtenář. Je tam jen chemie, která se chová, jako by četla.
+
+#### Zdroje a další čtení
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Pohyb a srážky molekul v buňce (kap. 2, s. 65–66); pořadí aminokyselin určuje tvar bílkoviny (kap. 3, s. 140); párování bází, délka DNA v jádře, „víc než tisíc knih“ a tabulka 4–1 se základními čísly lidského genomu (kap. 4, s. 186–194); přesnost a rychlost replikace, tabulka 5–1 (kap. 5, s. 255–275); RNA, přesnost přepisu, zesílení, genetický kód, tRNA, ribozom a polyribozomy (kap. 6, s. 324–375); stejný genom v různých buňkách, klonování z jádra specializované buňky, buněčná paměť a gen eve (kap. 7, s. 397–425); poločasy mRNA (kap. 7, s. 459); přes dvě stě typů buněk (kap. 22, s. 1279); přestavba DNA v lymfocytech (kap. 24, s. 1377–1378).
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Pořadí aminokyselin v řetězci β-globinu a hemoglobin srpkovité anémie (kap. 10).
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Srpkovitá anémie a slepování hemoglobinu do vláken (kap. 5); záměna kyseliny glutamové za valin jedním písmenem kodonu (kap. 27, úloha 14).
+- Simulace jsou zjednodušené modely. V simulaci 02 jsou rychlosti a poločasy nastavitelné jen pro ilustraci; poločasy RNA odpovídají Albertsovým rozsahům (bakterie minuty, většina lidských kopií pod půl hodiny, β-globin přes deset hodin).
+
+---
+
+# Darwin v mízní uzlině
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html  
+Větev: Imunologie  
+Shrnutí: Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.  
+English: Introduction to immunology: pattern recognition, V(D)J recombination, thymic selection, clonal selection and affinity maturation in germinal centres, and immune memory.
+
+Obrázek: Klonální výběr. Lymfocytů je obrovská zásoba a každý má jiný receptor. Když přijde vetřelec, namnoží se jen ty, které do něj zapadnou – z jediné buňky vyroste celý klon, větev na větvi.
+
+Pro bakterii je tvoje tělo ráj. Stálé teplo, voda a všude kolem cukry, tuky a bílkoviny. Bakterie, která se dělí jednou za hodinu, může za jediný den mít skoro dvacet milionů potomků. A tělo nemá jak vědět, kdo zrovna přijde: bakterie, virus, houba, nebo parazit, letos jiný než loni.
+
+Přesto většina nákaz skončí dřív, než o nich vůbec víš. Imunitní systém na to má dvě strategie. Starší, kterou mají všechny mnohobuněčné organismy, pozná mikroby podle obecných znaků, které naše buňky nemají. Je rychlá, ale hrubá. Novější se objevila u obratlovců s čelistmi a Alberts o ní mluví jako o „velkém třesku“ v evoluci obrany. Nesnaží se nepřátele předvídat. Předem vyrobí náhodné receptory v astronomickém počtu a pak namnoží ty, které se hodí.
+
+Je to Darwinův princip náhodné rozmanitosti a přísného výběru, jenže uvnitř jednoho těla a během pár dní. Kapitola stojí na pěti myšlenkách: poplach podle vzoru, generátor náhody, škola v brzlíku, výběr a paměť.
+
+> Přirovnání ze života: Představ si zámečnickou dílnu, která neví, jaké zámky k ní přijdou. Vyrobí si proto předem přes bilion náhodně vybroušených klíčů. Když se objeví neznámý zámek, zkusí se všechny. Klíč, který jde aspoň trochu pootočit, se nechá okopírovat v tisících kusů a kopie se dál drobně přibrušují, dokud nesedí úplně. Klíče, které by odemykaly dveře samotné dílny, se mezitím vyhodí. Přesně takhle pracuje adaptivní imunita.
+
+## i. Poplach podle vzoru
+
+První obranou je obyčejná hradba. Kůži tvoří silná vrstva zrohovatělých buněk a mazové žlázy na ní vylučují mastné kyseliny a kyselinu mléčnou, které brzdí růst bakterií. Dýchací cesty a střevo pokrývá hlen, na kterém mikroby špatně drží, řasinky v dýchacích cestách ho neustále posouvají ven a pohyby střeva brání mikrobům se uchytit. Buňky na povrchu vylučují defenziny, krátké kladně nabité peptidy, které rozrušují membrány bakterií, hub i obalených virů. A kůži i střevo obývají neškodné mikroby, které těm nebezpečným konkurují o potravu.
+
+Když mikrob hradbu prorazí, čekají za ní buňky vrozené imunity, třeba makrofágy. Nemají seznam nepřátel. Mají receptory, které rozpoznávají molekulární vzory: stavební prvky společné celým skupinám mikrobů, které v našem těle chybějí nebo jsou ukryté. Receptor TLR4 pozná lipopolysacharid z obalu gramnegativních bakterií, TLR5 bílkovinu bakteriálního bičíku, TLR3 dvouvláknovou RNA virů a Dectin-1 β-glukan z buněčné stěny hub. TLR9 se chytá úseků DNA bez methylových skupin, které jsou běžné u bakterií, virů a prvoků, ale v DNA obratlovců vzácné. Jen receptorů rodiny TLR má člověk nejméně deset.
+
+První takový receptor objevili u octomilky. Jmenuje se Toll a biologové ho znali z vývoje mušího zárodku, kde pomáhá určit, kde bude břicho a kde záda. Pak se ukázalo, že bez něj moucha nevyrobí obranné peptidy proti houbám: mušku bez Tollu houba doslova prorostla. Podobné receptory mají rostliny i živočichové.
+
+Když receptor zabere, buňka spustí poplach. Vylučuje cytokiny a další signální molekuly a ty rozjedou zánět. Cévy v okolí se rozšíří a začnou propouštět tekutinu a bílkoviny a z krve se do tkáně derou bílé krvinky, nejdřív neutrofily, později monocyty a lymfocyty. Proto zanícené místo bolí, je červené, teplé a oteklé. Některé cytokiny doputují až do mozku a zvednou teplotu celého těla: horečka pomáhá některým imunitním buňkám v boji.
+
+Vrozená imunita zasahuje během hodin, ale má dvě slabiny. Je hrubá: pozná „nějakou bakterii“, ne konkrétního vetřelce. A její odpověď je krátká, trvalou ochranu nezanechá. Proto potřebujeme ještě druhou obranu, pomalejší a mnohem přesnější. Tu spouští právě vrozená imunita: bez jejího poplachu se adaptivní imunita do ničeho nepustí.
+
+Vyzkoušej si to. Do tkáně pronikají bakterie, houby a viry. Vypínej receptory makrofágů a sleduj, kdo projde.
+
+Simulace: Poplach podle vzoru. Makrofágy nesou čtyři druhy receptorů (barevné výběžky). Každý pozná jeden molekulární vzor, a tím celou skupinu mikrobů. Bakterie mají dva vzory, lipopolysacharid i bičík, takže projdou, až když vypneš oba receptory. Viry se množí jen uvnitř buněk tkáně. Receptory pro virovou RNA mají i ony: nakažená buňka pak vyšle signály, které v okolí brzdí množení viru (zlatavý nádech), a bez nich se nákaza šíří tkání. Vlastní buňky žádný z těch vzorů nemají a makrofágy je nechají být. Když receptor zabere, rozjede se zánět a z cévy dorazí posily. Vypni receptor pro houby a dopadne to jako u mušky bez Tollu.
+
+**Vrozená imunita nepozná, kdo přišel. Pozná, z čeho je postavený.**
+
+## ii. Generátor náhody
+
+Adaptivní imunitu obstarávají lymfocyty, bílé krvinky dvou hlavních druhů. B-lymfocyty vyrábějí protilátky, T-lymfocyty zabíjejí nakažené buňky nebo řídí ostatní imunitní buňky. V těle jich máš asi dva biliony, takže imunitní systém je co do hmoty buněk srovnatelný s játry nebo mozkem. Každý lymfocyt nese na povrchu receptory jediného tvaru a ten si vybral dřív, než se s čímkoli setkal. B-lymfocyty dohromady umějí vyrobit víc než bilion různých protilátek. Receptory přitom rozliší i dvě bílkoviny, které se liší jedinou aminokyselinou.
+
+Jenže genů pro bílkoviny máš jen asi dvacet tisíc. Jak z nich vznikne bilion receptorů? Lymfocyt si svůj receptor poskládá z dílků. Gen pro těžký řetězec protilátky není v DNA uložený vcelku, ale jako tři zásobníky úseků: 40 úseků V, asi 23 úseků D a 6 úseků J. Dospívající B-lymfocyt vybere náhodně po jednom z každého zásobníku, DNA mezi nimi vystřihne a vybrané úseky spojí. To dává 40 × 23 × 6 = 5520 možností. Lehký řetězec se skládá stejně, jen ze dvou úseků, a má 295 variant. Vazebné místo tvoří oba řetězce společně, takže kombinací je přes 1,6 milionu.
+
+Tím to nekončí. Spoje mezi úseky jsou nepřesné: na koncích se pár písmen ztratí a pár náhodných přibude. Tím se rozmanitost znásobí ještě deset- až stomilionkrát, a to právě v nejproměnlivější části vazebného místa. Celá mašinerie má zajímavý původ. Stejným mechanismem se z DNA vystřihují transpozony, skákající geny, a imunitní generátor náhody z nich nejspíš vznikl.
+
+Za náhodu se platí. Délka spoje je nahodilá, a protože se genetický kód čte po trojicích, zhruba dva spoje ze tří posunou čtecí rámec. Za spojem pak vznikne nesmysl, stejně jako po vloženém nebo vyjmutém písmenu v dekodéru z kapitoly [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Buňka, která nesestaví funkční protilátku, v kostní dřeni zahyne.
+
+Dvě věci stojí za povšimnutí. Lymfocyt si DNA přeskládá natrvalo, takže je výjimkou z pravidla, že všechny buňky těla nesou stejný text. A receptor vznikne dřív, než lymfocyt cokoli potká. Generátor nemá tušení, co je venku, a tak vyrábí receptory na dnešní mikroby, na jejich budoucí mutanty – a taky na vlastní tělo.
+
+Vyzkoušej si to. Pusť automat a sleduj, jak si lymfocyt skládá těžký řetězec protilátky.
+
+Simulace: Automat na receptory. Každé zmáčknutí je jeden dospívající B-lymfocyt, který si skládá gen pro těžký řetězec protilátky: náhodně vybere úsek V, D a J, DNA mezi nimi vystřihne a na spojích pár písmen ubere a pár náhodných přidá (zlatá písmena). Když délka úseku mezi V a J není dělitelná třemi, posune se čtecí rámec a řetězec je k ničemu. Obrys dole naznačuje tvar vazebného místa: u každé buňky je jiný. Lehký řetězec se skládá stejně, z úseků V a J, a celkem je podle Albertse přes 1,6 milionu kombinací a s nepřesnými spoji víc než bilion různých receptorů.
+
+**Imunitní systém nepředvídá, kdo přijde. Připraví se na všechno najednou – i na sebe sama.**
+
+## iii. Škola v brzlíku
+
+Generátor, který vyrábí receptory na všechno, je nebezpečný. Kdyby lymfocyty namířené proti vlastním bílkovinám volně kolovaly tělem, napadly by ho. Tělo se proto musí naučit, co k němu patří. Že jde opravdu o učení, ukazuje pokus s myšmi. Normální myš proti své vlastní krevní bílkovině C5 imunitní odpověď nevytvoří. Myš, které gen pro C5 chybí, proti ní reaguje snadno. A když se C5 dospělé myši pokusně odebere, začne proti ní za pár týdnů nebo měsíců reagovat také: mezitím totiž dozrají nové lymfocyty, které se s C5 nikdy nesetkaly.
+
+Hlavní škola je v brzlíku, kde dozrávají T-lymfocyty. Zkoušky jsou dvě. Při první musí receptor aspoň slabě poznat vlastní molekuly MHC, na kterých buňky vystavují úlomky svých bílkovin. T-lymfocyt totiž vidí cizí úlomky jen na vlastních MHC, takže buňka, která MHC nepozná vůbec, by byla k ničemu. Nedostane signál k přežití, a tak tiše zahyne. Při druhé zkoušce dopadne opačně buňka, která se na vlastní úlomky váže příliš silně. Ta by byla nebezpečná, a proto dostane signál zemřít. Říká se tomu negativní selekce.
+
+Buňky s vazbou někde mezi tím přežijí a odcházejí do krve jako hotové pomocné nebo cytotoxické T-lymfocyty. Některé z těch, které se k vlastním úlomkům vážou docela silně, ale ještě ne dost na vyřazení, se stanou regulačními T-lymfocyty. Ty pak v těle tlumí jiné lymfocyty namířené proti vlastním tkáním – pojistka pro případ, že někdo školou proklouzne.
+
+Zbývá háček. Jak může brzlík vyřadit lymfocyty namířené proti inzulinu, když inzulin vyrábějí jen β-buňky slinivky? Pomáhá mu bílkovina AIRE. V části buněk dřeně brzlíku spustí slabý přepis 75–90 % všech genů, včetně těch, které jinak fungují jen v jediném orgánu. Dospívající lymfocyty tak v brzlíku potkají vzorky skoro celého těla. Lidé i myši s nefunkčním genem AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a vznikne cukrovka 1. typu.
+
+B-lymfocyty mají podobnou školu v kostní dřeni. Ty, které se na vlastní molekuly vážou silně, dostanou ještě jednu šanci: přeskládají si lehký řetězec a zkusí to s novým receptorem. Když se to nepovede, zahynou. A pro lymfocyty, které přesto proklouznou, má tělo další pojistky. Lymfocyt se aktivuje, jen když mu kromě antigenu dá druhý signál jiná buňka, a ta ho dává hlavně tehdy, když vrozená imunita hlásí poplach. Lymfocyt, který potká svůj antigen bez poplachu, se místo aktivace obvykle vypne, zahyne, nebo ho utlumí regulační T-lymfocyt.
+
+Vyzkoušej si to. Nastav, jak přísně má brzlík vyřazovat, a sleduj, co projde do krve. Pak vypni AIRE.
+
+Simulace: Škola s nejistým výsledkem. Dospívající T-lymfocyty procházejí brzlíkem zleva doprava. Šedé zahynou bez signálu k přežití, protože vlastní MHC nepoznají vůbec. Červené se na vlastní úlomky vážou příliš silně a brzlík je vyřadí. Sloupce dole ukazují osud buněk podle síly vazby (zlatý trojúhelník je práh). Výběr ale není dokonalý, a tak je každé nastavení kompromis: přísná škola vyřadí i užitečné buňky, mírná pustí do těla víc buněk namířených proti němu. Bez AIRE brzlík neukáže bílkoviny jednotlivých orgánů a buňky namířené proti nim projdou i přísnou školou. Poměry v modelu jsou jen ilustrační.
+
+**Vlastní není to, co máš zapsané v genech. Vlastní je to, s čím se imunitní systém setkal, když se učil.**
+
+## iv. Výběr
+
+Lymfocyty, které školou projdou, neustále kolují. Krví se dostanou do mízní uzliny, protáhnou se jí, mízními cévami pokračují do další a nakonec se vrátí do krve. Jedno kolo trvá asi půl dne až den. Do uzlin mezitím dendritické buňky přinášejí z místa nákazy úlomky mikrobů. To kolování je nutné, protože konkrétní antigen pozná jen jeden lymfocyt z deseti tisíc až z milionu. Každý tak obchází uzlinu za uzlinou a hledá ten svůj.
+
+Když lymfocyt svůj antigen najde a dostane i druhý signál, rozběhne se klonální výběr. Buňka se začne dělit a z jediného lymfocytu nebo z hrstky jich vznikne obrovský klon buněk se stejným receptorem. Část z nich se změní v buňky, které bojují: z B-lymfocytů jsou plazmatické buňky, které chrlí protilátky, z T-lymfocytů buňky, které zabíjejí nakažené buňky nebo pomáhají ostatním. Antigen tedy nic nevyrábí ani neučí. Jen vybírá z toho, co už v těle je.
+
+Pak přijde nejdarwinovštější část imunity. V mízních uzlinách vznikají zárodečná centra, kde se aktivované B-lymfocyty rychle dělí a přitom řízeně mutují. Enzym AID mění v genech pro vazebné místo cytosin na uracil a oprava takových míst nechává chyby. V úseku pro vazebné místo tak při každém dělení přibude asi jedna mutace, zhruba milionkrát víc, než je u jiných genů běžné. Většina mutací vazbu zhorší a takové buňky zahynou. Antigen ale přednostně podporuje ty vzácné, které se na něj vážou pevněji, a ty se dělí dál. Čím méně antigenu zbývá, tím je výběr přísnější.
+
+Je to evoluce v plném smyslu slova: dědičná rozmanitost, výběr podle toho, kdo pasuje, a množení vítězů. Jen místo milionů let jí stačí jedna nemoc. Protilátky na začátku odpovědi se na antigen vážou slabě, s afinitou kolem 10^5 až 10^7 l/mol. Po kolech mutací a výběru mohou dosáhnout až 10^11 l/mol, tedy vázat se deset tisíckrát až milionkrát pevněji.
+
+Vyzkoušej si to. Pusť do těla patogen A a sleduj, které klony se namnoží a jak sílí vazba protilátek. Až nákaza odezní, pusť stejný patogen znovu, nebo zkus jiný.
+
+Simulace: Evoluce v mízní uzlině. Každý kroužek je klon B-lymfocytů. Velikost ukazuje počet buněk, barva to, jak pevně se jeho receptor váže na poslední patogen (šedá slabě, zlatá pevně). Patogen nejdřív roste a vrozená imunita ho jen brzdí. Po několika dnech se namnoží klony, které na něj pasují, a jejich protilátky ho zlikvidují (graf má logaritmickou stupnici). S hypermutací z vybraných klonů vznikají mutanti, nejlepší z nich přerostou své rodiče a vazba protilátek během odpovědi sílí. Po nákaze zůstanou paměťové buňky (světlý lem). Jeden den tu trvá půl sekundy a jednotky jsou jen relativní.
+
+**Imunita nevymýšlí protilátky na míru. Pěstuje je – mutací a výběrem, tak jako evoluce pěstuje druhy.**
+
+## v. Paměť
+
+Když nákaza odezní, většina bojujících buněk zahyne. Z namnoženého klonu ale zůstanou paměťové buňky, které žijí dlouho, někdy celý život, i když svůj antigen už nikdy nepotkají. Některé paměťové T-lymfocyty zůstanou natrvalo přímo v místě, kudy mikrob vnikl. A část plazmatických buněk se přesune do kostní dřeně, kde přežívá roky a dál vylučuje protilátky do krve.
+
+Při druhém setkání proto imunita nezačíná od nuly. Buněk, které antigen poznají, je mnohem víc, reagují ochotněji a jejich receptory už prošly výběrem. Odpověď přijde dřív, je silnější a protilátky se vážou pevněji. Přesně to je vidět v simulaci, když stejný patogen přijde podruhé: protilátky vyskočí během pár dní a patogen se skoro nestihne rozmnožit. Jiný patogen ale začíná úplně od začátku. Kdo prodělá spalničky nebo je proti nim očkovaný, je proti nim chráněný celý život – proti příušnicím nebo planým neštovicím ho to ale neochrání. Paměť je stejně specifická jako receptory, na kterých stojí.
+
+Na paměti stojí očkování. Jeho moderní éra začala v roce 1796, kdy Edward Jenner popsal, že materiál z kravských neštovic chrání lidi před pravými neštovicemi. Pravé neštovice zabily ve sto letech před svým koncem zhruba půl miliardy lidí. V roce 1980 byly díky celosvětovému očkování vymýceny. Vakcína ukáže imunitnímu systému antigen, aniž by přišla nemoc. Musí přitom spustit i poplach vrozené imunity, jinak by se adaptivní imunita do ničeho nepustila. Celé mikroby nebo jejich výtažky ho spustí samy, vakcínám z čistých bílkovin se proto přidává adjuvans – látka, která receptory vrozené imunity aktivuje.
+
+Paměť má ovšem slabé místo: pamatuje si tvar. Mikrob, který tvar změní, jí unikne. Trypanozoma, prvok, který způsobuje africkou spavou nemoc, má asi tisíc genů pro různé povrchové bílkoviny a průběžně je střídá, takže několik jejích buněk protilátkám vždycky unikne a nemoc se vrací ve vlnách. Chřipkový virus zase mění své povrchové bílkoviny drobnými mutacemi a občas si celé úseky genomu vymění s viry ptáků nebo prasat.
+
+**Imunitní paměť není záznam v archivu. Je to změněná populace buněk: vítězové výběru zůstanou v těle jako stálá posádka.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem imunity pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Proč mě vlastní imunita nenapadne?
+
+Protože se to naučila. Lymfocyty, které se na vlastní molekuly vážou příliš silně, se vyřadí už při dozrávání v brzlíku a v kostní dřeni. Ty, které proklouznou, se v těle obvykle neaktivují, protože jim chybí druhý signál, který jiné buňky dávají hlavně při nákaze, a hlídají je regulační T-lymfocyty. Když tyhle pojistky selžou, vznikne autoimunitní onemocnění – například cukrovka 1. typu, při které T-lymfocyty zničí β-buňky slinivky.
+
+### Proč můžu dostat chřipku znovu, ale spalničky jen jednou?
+
+Prodělané spalničky i očkování proti nim chrání celý život. Chřipkový virus ale své hlavní povrchové bílkoviny, hemaglutinin a neuraminidázu, průběžně mění drobnými mutacemi a čas od času si vymění celé úseky genomu s chřipkovými viry ptáků nebo prasat. Paměťové buňky z minulé nákazy pak na novou verzi sedí hůř nebo vůbec. Když se objeví kmen, se kterým se lidé ještě nesetkali, šíří se populací bez imunity. Tak vznikla pandemie španělské chřipky v roce 1918, která zabila 20 až 50 milionů lidí, i pozdější pandemie.
+
+### Kolik lidí musí být imunních, aby se nemoc nešířila?
+
+Záleží na nemoci. U spalniček je to asi 95 % populace, u covidu-19 se odhad pohybuje mezi 65 a 90 % podle varianty viru. Říká se tomu kolektivní imunita. Brzdí šíření nákazy, protože ubývá lidí, které lze nakazit, a tím chrání i ty, kdo imunitu nemají.
+
+### Způsobuje očkování autismus?
+
+Ne. Obavy vyvolal článek z roku 1998, který spojoval očkování proti spalničkám, příušnicím a zarděnkám s autismem. Ukázal se jako nepravdivý a podvodný a časopis The Lancet ho v roce 2010 stáhl. Škody už ale napáchal: v Británii po něm ubylo očkovaných dětí a epidemie spalniček byly častější a větší. Velká dánská studie pak sledovala přes 650 tisíc dětí a u očkovaných žádné vyšší riziko autismu nenašla.
+
+### Kde vlastně imunitní systém je?
+
+Všude. Lymfocyty vznikají v kostní dřeni a T-lymfocyty dozrávají v brzlíku. Pracují hlavně v mízních uzlinách, slezině, mandlích a v lymfatické tkáni střeva, dýchacích cest a kůže a mezi nimi neustále kolují krví a mízou. Dohromady jich je asi dva biliony, takže imunitní systém je co do hmoty buněk srovnatelný s játry nebo mozkem.
+
+Tohle je logika imunity v kostce. Rychlý poplach podle znaků, které mikroby prozradí. Generátor náhody, který předem vyrobí receptory na cokoli. Škola, ve které se vyřadí ty namířené proti vlastnímu tělu. Výběr, který namnoží ty, co pasují, a mutacemi je dál vybrousí. A paměť, díky které je druhé setkání kratší. Darwin popsal, jak náhoda a výběr během milionů let tvarují druhy. Tvoje mízní uzliny dělají totéž s buňkami během jediné nemoci.
+
+#### Zdroje a další čtení
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Vrozená imunita: bariéry, molekulární vzory a receptory, které je rozpoznávají (tabulka 24–1), receptor Toll a moucha bez něj (obr. 24–3), zánět a horečka (kap. 24, s. 1353–1357); Toll ve vývoji octomilky (kap. 21, s. 1230 a 1236); „velký třesk“ adaptivní imunity, počet lymfocytů, klonální výběr, primární a sekundární odpověď (obr. 24–16), paměťové buňky, kolování lymfocytů a imunologická tolerance včetně pokusu s C5 (kap. 24, s. 1364–1371); skládání genů pro protilátky z úseků V, D a J, nepřesné spoje a posun čtecího rámce, přeskládání receptoru, somatická hypermutace a afinita protilátek (kap. 24, s. 1377–1379); pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE (kap. 24, s. 1389–1391 a 1401); očkování, Jenner a pravé neštovice, adjuvans, kolektivní imunita a podvodná zpráva o autismu (kap. 24, s. 1397–1401); původ mechanismu přeskládání v transpozonech (kap. 5, s. 309); antigenní variabilita trypanozom a chřipky, pandemie z roku 1918 (kap. 23, s. 1342–1344).
+- The Lancet. Retraction – Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children. Lancet 375, 445 (2010).
+- Hviid A., Hansen J. V., Frisch M., Melbye M. Measles, mumps, rubella vaccination and autism: a nationwide cohort study. Annals of Internal Medicine 170, 513–520 (2019).
+- Simulace jsou zjednodušené modely. V simulaci 01 jsou rychlosti mikrobů a buněk zvolené tak, aby bylo dění vidět. V simulaci 03 je rozdělení síly vazby vymyšlené pro ilustraci. Simulace 04 má věrně jen tvar odpovědí: zpoždění primární odpovědi o několik dní, rychlejší a silnější odpověď při druhém setkání se stejným antigenem a afinitu, která sílí jen s hypermutací. Afinitu převádí do Albertsova rozsahu 10^5–10^11 l/mol.
+
+---
+
+# Tělo, které se postavilo samo
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html  
+Větev: Vývojová biologie  
+Shrnutí: Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.  
+English: Introduction to developmental biology: morphogen gradients and thresholds, Delta-Notch lateral inhibition, the segmentation clock and wavefront, and programmed cell death.
+
+Obrázek: Díl po dílu. Páteř obratlovce vzniká jako tenhle stonek: na rostoucím konci přibývá v pravidelném rytmu jeden pár za druhým, větev na větvi.
+
+Na začátku je jediná buňka, oplozené vajíčko. Na konci tělo z víc než deseti bilionů buněk více než dvou set typů. Každá je na svém místě: nervové buňky v mozku, svalové buňky na kostech, na každé ruce pět prstů. Nikde přitom není výkres, podle kterého by se stavělo, ani stavbyvedoucí, který by ho četl.
+
+Vývoj stojí podle Albertse na třech procesech: buňky se množí, specializují se a přeskupují se do tkání a orgánů. A pak je tu překvapení. Člověk by nečekal, že červa, blechu, orla a krakatici obrovskou staví tytéž mechanismy, stejně jako by nečekal, že se stejným postupem vyrábí bota a letadlo. Ve skutečnosti je základní mašinerie vývoje u všech živočichů v podstatě stejná. Všichni berou nástroje ze stejné skříně.
+
+Kapitola stojí na pěti myšlenkách: rozcestí za rozcestím, spád a práh, soused říká ne, hodiny a vlna a sochař, který ubírá.
+
+> Přirovnání ze života: Představ si stadion, kde diváci skládají obří obrazec z barevných kartiček. Nikdo z nich obrazec nevidí. Každý má jen jednoduché pravidlo: podle čísla řady a sedadla zvedni tuhle barvu. Obrazec vznikne, protože každý ví, kde sedí. Zárodek funguje podobně, jen buňky musí svoje „číslo sedadla“ zjistit samy – z koncentrace signálů, od sousedů a z rytmu vlastních hodin.
+
+## i. Rozcestí za rozcestím
+
+Oplozené vajíčko se nejdřív mnohokrát rozdělí. Pak začne každá buňka volit: z několika málo možností, které jí zbývají, vybere jednu, a další volba už přichází z užší nabídky. Vývojová dráha buňky se tak větví rozcestí za rozcestím, podobně jako rozhodnutí v lidském životě. A buňka se při každé volbě řídí tím, co si nese z minulosti, a tím, co jí právě říkají sousedé.
+
+Minulost je v buňce zapsaná jako buněčná paměť: ve stavu chromatinu a v sadě regulačních bílkovin a RNA, které zrovna obsahuje. Víc o tom, jak ze stejného textu vznikají různé buňky, je v kapitole [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Dvě buňky s jinou historií proto odpovědí na stejný signál každá jinak. A odpověď závisí i na tom, jaké další signály přicházejí zároveň. Zárodek si tak vystačí s hrstkou signálních drah a používá je znovu a znovu, pokaždé s jiným výsledkem.
+
+Dceřiné buňky se mohou lišit dvojím způsobem. Buď se narodí jiné, protože mateřská buňka při dělení rozdělí některé molekuly nerovnoměrně. Nebo se narodí stejné a rozdílné je udělají až signály, které dostanou potom.
+
+Některé volby spouští jediná řídicí bílkovina. Když se u octomilky zapne gen eyeless v buňkách, ze kterých má vzniknout noha, vyroste na noze oko. Stejně zafunguje i jeho obdoba z olihně. U obratlovců se tomuto genu říká Pax6 a lidé s jeho mutacemi se rodí bez duhovky.
+
+**Buňka nedostane plán celého těla. Dostane jen další rozcestí – a pamatuje si, kudy už šla.**
+
+## ii. Spád a práh
+
+Jak ale buňka pozná, kde je? Nejjednodušší cesta vede přes morfogen. Skupinka buněk ho na jednom místě vyrábí, molekuly se od zdroje šíří difuzí a cestou se rozkládají. Vznikne spád koncentrace: u zdroje je morfogenu hodně, dál od něj čím dál méně. Takhle morfogeny působí nanejvýš zhruba na milimetr.
+
+Buňky pak čtou, kolik morfogenu k nim doputuje, a odpovídají přes prahy. Cílový gen se zapne jen tam, kde koncentrace překročí určitou hodnotu, a pod ní zůstane vypnutý. Plynulý spád se tak rozpadne na několik ostrých pásem: vysoká koncentrace pošle buňky jednou cestou, střední jinou a nízká třetí. Jediná vylučovaná bílkovina tak v poli buněk vytvoří několik různých osudů.
+
+Tvar spádu přitom určují dvě obyčejné fyzikální veličiny: jak rychle se morfogen šíří a jak dlouho vydrží. Morfogen, který difunduje rychleji, dosáhne dál, ale u zdroje ho pak bude méně. Delší poločas zvedne koncentraci všude. A spád se nevytvoří hned: s poločasem kolem tří hodin a difuzí typickou pro malou bílkovinu se ustaluje celé hodiny.
+
+Spád a prahy už znáš z kapitoly [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Proužek genu eve u octomilky vzniká přesně takhle, z prahů několika spádů najednou.
+
+Vyzkoušej si to. Měň poločas, difuzi a produkci morfogenu a sleduj, kam se posunou hranice mezi pásmy. Pak odstraň zdroj, nejdřív bez paměti buněk a potom s ní.
+
+Simulace: Spád a prahy. Zdroj vlevo vyrábí morfogen, který se šíří tkání a rozkládá se. Buňky dole dostanou podle koncentrace jeden ze tří osudů. Výchozí poločas 170 minut a difuze 1 µm²/s odpovídají Albertsovu příkladu a posuvníky je mění až trojnásobně oběma směry. Rychlejší difuze posune hranice dál, ale u zdroje koncentraci sníží. Delší poločas ji zvedne všude. Bez paměti buňky po odstranění zdroje svůj osud ztratí, s pamětí si ho udrží, pokud byly nad prahem aspoň hodinu. Jedna sekunda tu odpovídá dvaceti minutám.
+
+**Buňka nepotřebuje mapu. Stačí jí změřit koncentraci a porovnat ji s prahem.**
+
+## iii. Soused říká ne
+
+Spád potřebuje zdroj, tedy nerovnost, která už v zárodku je. Vzorec ale umí vzniknout i z buněk, které jsou na začátku všechny stejné. Stačí, aby si sousedé navzájem bránili udělat totéž. Říká se tomu laterální inhibice.
+
+Funguje přes dvojici bílkovin na povrchu buněk. Delta na jedné buňce se váže na receptor Notch na buňce sousední a říká jí: nespecializuj se. Buňka s aktivovaným Notch navíc vyrábí méně vlastní Delty, a tak méně tlumí své sousedy. Kdo má na začátku o chlup víc Delty, utlumí sousedy o něco víc, ti pak tlumí jeho o něco méně – a malý rozdíl se sám zesiluje, až jedna buňka vyhraje a ostatní kolem ní ustoupí. Jako počáteční rozdíl stačí i náhodný šum.
+
+Takhle vznikají štětinky na hřbetě octomilky. Každá je drobný smyslový orgán a vyrůstá z jediné buňky, která zvítězila ve skupince podobných buněk. Štětinky jsou proto rozmístěné pravidelně, s odstupy, ačkoli je nikdo neodměřoval. Vítězná buňka dokonce umí tlumit i buňky, kterých se přímo nedotýká: natáhne k nim dlouhé výběžky. Když signalizace přes Notch nefunguje, vznikne obrovský nadbytek nervových buněk na úkor buněk pokožky a zárodek nepřežije.
+
+Vyzkoušej si to. Každá buňka začíná se skoro stejným množstvím Delty a rozdíl dělá jen náhoda. Spusť to několikrát za sebou a sleduj, že vzorec je pokaždé jiný, ale odstupy zůstávají stejné.
+
+Simulace: Mozaika z ničeho. Každý šestiúhelník je buňka. Čím je zlatější, tím víc má Delty a tím víc tlumí sousedy. Z náhodného šumu za pár okamžiků vznikne pravidelná mozaika: vítězné buňky (s čárkou budoucí štětinky) obklopené buňkami, které ustoupily. S delším dosahem signálu jsou vítězové řidší. Když Notch nefunguje, nikdo nikoho netlumí a specializují se všechny buňky. Model laterální inhibice podle Colliera a kol. (1996).
+
+**Na pravidelnost není potřeba pravítko. Stačí, aby každý trochu bránil sousedovi.**
+
+## iv. Hodiny a vlna
+
+Tělo obratlovců se opakuje: obratel za obratlem, žebro za žebrem, sval za svalem. V zárodku se zakládají jako somity, bloky buněk po obou stranách osy těla. Nevznikají najednou, ale jeden pár po druhém, od hlavy k ocasu, v pravidelném rytmu. Podle druhu jich nakonec je od necelých čtyřiceti u žáby nebo dánia pruhovaného po víc než tři sta u hada.
+
+Rytmus udávají molekulární hodiny. V buňkách na zadním konci zárodku kmitá exprese několika genů. Gen se zapne, jeho bílkovina se nahromadí a vypne ho, pak se rozpadne – a gen se zase zapne. Jeden kmit trvá u dánia 30 minut, u kuřete 90, u myši 120 a u člověka 300 minut. Délku kmitu určují hlavně zpoždění v té smyčce, tedy to, jak dlouho trvá vyrobit mRNA a bílkovinu a jak dlouho vydrží. Perioda je zhruba dvojnásobek celkového zpoždění.
+
+Hodiny samy somit neudělají. Druhou složkou je vlna. Zadní konec zárodku neustále roste a buňky, které zůstávají pozadu, se postupně dostávají z dosahu signálů z ocasu. Jejich hodiny se zpomalí a zastaví a buňka zamrzne ve fázi, ve které ji to zastihlo. Časový rytmus se tak otiskne do prostoru jako pruhy a každý kmit hodin přidá jeden pár somitů. Velikost somitu je prostě to, o kolik osa za jeden kmit naroste. Když hodiny nejdou, buňky se nakonec do skupin stejně rozpadnou, jenže nepravidelně.
+
+Vyzkoušej si to. Nastav periodu podle různých živočichů, změň rychlost růstu a sleduj, kolik somitů se na osu vejde. Pak hodiny zastav.
+
+Simulace: Hodiny a vlna. Vpravo roste ocas. Buňky v pásu před ním kmitají (zlatě svítí v jedné fázi cyklu) a směrem dopředu se jejich kmity zpomalují. Tečkovaná čára je místo, kde se hodiny zastaví: buňky, které ji minou, zamrznou a za každý kmit vznikne jeden pár somitů. Periody dánia, kuřete, myši a člověka jsou podle Albertse, rychlost růstu je jen relativní. Kratší perioda nebo pomalejší růst dají víc menších somitů. Jedna sekunda tu odpovídá 50 minutám.
+
+**Páteř je čas převedený na délku: každý obratel je jeden tik hodin.**
+
+## v. Sochař, který ubírá
+
+Tělo se nestaví jen přidáváním. Velkou část práce odvede smrt. Ruce a nohy začínají jako lopatky a prsty se od sebe oddělí teprve tehdy, když buňky mezi nimi spáchají sebevraždu. Stejně zmizí ocas pulce při přeměně v žábu, na pokyn hormonu štítné žlázy (o hormonech víc v kapitole [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Tomuhle řízenému zániku se říká apoptóza, z řeckého slova pro opadávání listů ze stromu.
+
+Obrázek: Prsty z lopatky. Tlapka myšího zárodku: umírající buňky (oranžové tečky) jsou soustředěné mezi budoucími prsty. O den později je tkáň mezi nimi pryč. Zjednodušeno podle obrázku 18–2 v Albertsovi.
+
+Apoptóza je úhledná. Buňka se zmenší, rozpadne se na balíčky obalené membránou a sousední buňka nebo makrofág ji pozře dřív, než by se její obsah vylil a vyvolal zánět. Proto je mrtvých buněk v tkáni vidět málo, i když jich umírá spousta. V těle dospělého člověka jich takhle zanikne nejméně milion za sekundu a dělení je průběžně nahrazuje.
+
+Nejvíc stojí za pozornost, k čemu je smrt dobrá v nervové soustavě. Mnoho nervových buněk vznikne do zásoby. Jejich výběžky dorostou k cílové tkáni, třeba ke svalu, a ta vylučuje jen omezené množství faktoru přežití. Neurony o něj soupeří: ty, které ho dostanou dost, přežijí, ostatní spáchají apoptózu. Počet neuronů se tak sám přizpůsobí velikosti cíle a nikdo ho nemusí předem spočítat. Viktor Hamburger a jeho kolegové zjistili, že ve vyvíjející se končetině zahyne 40 až 70 % motoneuronů, které do ní vyslaly výběžky. S přidanou končetinou jich zahynulo méně, po odstranění pupenu končetiny víc.
+
+První takový faktor objevila Rita Levi-Montalciniová se spolupracovníky. Je to nervový růstový faktor, zkráceně NGF. Když se jeho účinek novorozeným myším zablokoval protilátkami, zahynuly skoro všechny jejich sympatické neurony.
+
+Vyzkoušej si to. Šedesát neuronů soupeří o faktor ze svalu. Změň velikost svalu a spusť nový pokus.
+
+Simulace: Soutěž o přežití. Neurony vlevo posílají výběžky do svalu vpravo. Sval vylučuje omezené množství faktoru přežití (zlaté tečky putují po výběžcích zpátky k neuronům) a dělí se mezi neurony podle toho, jak silné s ním mají spojení. Neuron, kterému faktor dlouho nestačí, zahyne (červeně). Přežije jich zhruba tolik, kolik jich sval uživí: s normálním svalem asi polovina, s větším víc, s menším méně. Čísla jsou ilustrační, ale drží se rozsahu, který změřil Hamburger.
+
+**Vývoj nepočítá dopředu. Vyrobí nadbytek a nechá přežít to, co se hodí – stejně jako imunita v kapitole [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem vývoje pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Jak buňka ví, kde v těle je?
+
+Předem to neví. Zjistí to z okolí: z koncentrace signálů, které se šíří od zdrojů, ze signálů od sousedů a z toho, čím už prošla. Výsledkem je sada zapnutých genů, která pak rozhoduje, čím buňka bude. Pěkný příklad jsou geny Hox. Myš má asi 65 obratlů: 7 krčních, 13 hrudních s žebry, 6 bederních, 4 křížové a asi 35 ocasních. Jaký který bude, určují právě geny Hox. Když se gen HoxA10, který normálně pracuje v bederní oblasti, zapne podél celé páteře, ztratí krční a hrudní obratle žebra a vypadají jako bederní.
+
+### Proč mají hadi tolik obratlů?
+
+Počet somitů, a tím i obratlů, závisí na tom, kolik kmitů segmentační hodiny stihnou, než se zásoba buněk na zadním konci zárodku vyčerpá. U hada je to přes tři sta. Jeho hodiny přitom nejdou o moc rychleji než kuřecí, jeden pár somitů vznikne zhruba za sto minut. Celý hadí zárodek se ale vyvíjí několikrát pomaleji. Vzhledem k růstu osy těla tedy hodiny tikají mnohem častěji a vznikne víc menších somitů.
+
+### Vymění se mi každých sedm let všechny buňky?
+
+Ne, různé tkáně se obnovují úplně jinak rychle. Buňky výstelky tenkého střeva vznikají z kmenových buněk na dně krypt a za tři až pět dní doputují na špičku klku, kde se odloupnou. Krvinky celý život doplňují kmenové buňky v kostní dřeni. Neurony mozkové kůry se ale v dospělosti skoro netvoří. Ukázala to nečekaná stopa: uhlík-14 z jaderných zkoušek v letech 1955–1963 se zabudoval do DNA buněk, které tehdy vznikly. U lidí narozených v té době zůstává v neuronech kůry celý život, kdežto z gliových buněk a buněk cév postupně mizí, protože je nahrazují nové.
+
+### Proč člověku nedoroste ruka jako mlokovi?
+
+Mloci, čolci a axolotlové to umějí: na místě amputace jim vznikne blastém, malý pupen podobný zárodečnému pupenu končetiny, a z něj končetina doroste. Lidské tělo takhle opravuje jen některé tkáně. Když se potkanovi odeberou dvě třetiny jater, dorostou skoro do původní velikosti asi za dva týdny. Odumřelý srdeční sval ale nahradí jizva a neurony, které zahynou třeba při Alzheimerově nemoci, se nenahradí vůbec.
+
+Tohle je logika vývoje v kostce. Rozcestí za rozcestím, kde buňka volí podle své minulosti a okolí. Spád, který se přes prahy rozpadne na pásma. Sousedé, kteří si navzájem brání udělat totéž, a tak se rozestoupí. Hodiny, jejichž tikot se otiskne do páteře. A smrt, která odstraní, co přebývá. Žádný z těch mechanismů nezná výsledek. Každá buňka dělá svou malou věc na svém místě – a tělo se postaví samo.
+
+#### Zdroje a další čtení
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Lidské tělo z víc než 10^13 buněk (kap. 1, s. 2); Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); apoptóza, oddělování prstů (obr. 18–2), ocas pulce a hormon štítné žlázy, nejméně milion zaniklých buněk za sekundu, faktory přežití a počet neuronů (kap. 18, s. 1089–1090 a 1098–1099); tři procesy vývoje a větvení voleb, stejná mašinerie u všech živočichů (kap. 21, s. 1217); eyeless a Pax6 (kap. 21, s. 1218 a 1242–1243); buněčná paměť, kombinace signálů, morfogeny a prahy (obr. 21–8 a 21–9), laterální inhibice a nerovnoměrné dělení (kap. 21, s. 1222–1224); geny Hox a obratle myši (kap. 21, s. 1242); štětinky octomilky (kap. 21, s. 1243–1244); somity a segmentační hodiny (kap. 21, s. 1249–1250); přes dvě stě typů buněk, kmenové buňky střeva a krve, regenerace jater, srdce a končetin mloků (kap. 22, s. 1279, 1282, 1286, 1289, 1296 a 1298).
+- Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Uhlík-14 a neurony mozkové kůry (kap. 25, s. 544); úmrtí 40–70 % motoneuronů, NGF a pokusy Rity Levi-Montalciniové (kap. 25, s. 555).
+- Gomez C. a kol. Control of segment number in vertebrate embryos. Nature 454, 335–339 (2008).
+- Collier J. R., Monk N. A. M., Maini P. K., Lewis J. H. Pattern formation by lateral inhibition with feedback: a mathematical model of Delta-Notch intercellular signalling. Journal of Theoretical Biology 183, 429–446 (1996).
+- Simulace jsou zjednodušené modely. V simulaci 01 se morfogen šíří v jednom rozměru, prahy a hodina potřebná pro zápis do paměti jsou zvolené pro ilustraci. Simulace 02 používá Collierův model s náhodným počátečním šumem. V simulaci 03 jsou periody podle Albertse, ale růst osy a délka kmitající zóny jsou relativní. V simulaci 04 je potřeba faktoru a jeho množství nastavené tak, aby s normálním svalem zahynula zhruba polovina neuronů.
+
+---
+
+# Dopis pro všechny
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html  
+Větev: Endokrinologie  
+Shrnutí: Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.  
+English: Introduction to endocrinology: hormone concentrations and receptor affinity, the thyroid feedback loop, slow and fast hormones and half-lives, the cortisol rhythm and pulsatile GnRH.
+
+Obrázek: Dopis pro všechny. Hormon putuje cévami, které se dělí až ke každé buňce v těle – větev na větvi. Přečtou ho ale jen buňky, které mají správný receptor.
+
+Leknutí trvá zlomek sekundy, ale jeho následky cítíš ještě dlouho: srdce buší, dech se zrychlí a ruce se třesou. Mozek dal přes nervy vědět nadledvinám a ty vypustily do krve adrenalin. Ten se pak dostane ke každé buňce v těle. Přesto každá tkáň odpoví po svém: srdce bije rychleji a silněji, průdušky se rozšíří a játra uvolní do krve glukózu.
+
+Hormony jsou dopisy pro všechny. Žláza je vypustí do krve a krev je roznese po celém těle. Zprávu dostane každá buňka, ale přečte ji jen ta, která má pro ni receptor. A jak ji přečte, záleží na ní.
+
+Kapitola stojí na pěti myšlenkách: drát a rozhlas, šepot v krvi, smyčka, pomalý a rychlý a nakonec rytmus, který je sám zprávou.
+
+> Přirovnání ze života: Představ si městský rozhlas. Hlášení slyší každý, kdo je zrovna venku, ale zareagují jen ti, kterých se týká: „Majitelé modrých aut, přeparkujte.“ Zbytek města si hlášení nevšímá. A každý majitel modrého auta může zareagovat jinak – jeden přeparkuje, druhý zavolá sousedovi, aby to udělal za něj. S hormony je to stejné. Hlášení je pro všechny, ale o tom, co se stane, rozhoduje posluchač.
+
+## i. Drát a rozhlas
+
+Na velkou vzdálenost si buňky posílají zprávy hlavně dvěma cestami. Nervová buňka natáhne výběžek až k cíli a zprávu předá na synapsi, kde přenašeč přeskočí štěrbinu širokou zlomek mikrometru (o té mezeře víc v kapitole [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)). Je to jako telefonní drát: rychlé, přesné a soukromé, odpověď přijde během tisícin sekundy. Endokrinní buňka naopak vypustí hormon do krve a ten se dostane všude. Než narazí na svůj cíl, urazí klidně metr i víc.
+
+Rozdíl je hlavně v doručování, ne v molekulách. Adrenalin a noradrenalin slouží na některých synapsích jako přenašeče a v krvi jako hormony.
+
+Rozhlas má obrovskou výhodu: jedním hlášením osloví celé tělo najednou. Platí za to tím, že adresu nenese obálka, ale přijímač. Rozhoduje to, jestli buňka má pro daný hormon receptor, a také to, co je za receptorem zapojené. Alberts to říká přímo: signál sám o sobě nese málo informace a buňka na něj odpoví podle stavu, ve kterém už je – podle své historie a podle genů, které má zapnuté. Acetylcholin třeba v srdci zpomalí buňky, které udávají rytmus, ve slinné žláze spustí vylučování slin a kosterní sval přiměje ke stahu.
+
+**Hormon neříká, co se má stát. Říká jen, že je čas. Co to znamená, ví každá buňka sama.**
+
+## ii. Šepot v krvi
+
+Hormonů je v krvi neuvěřitelně málo. Mnohé kolují v koncentraci 10^−9 až 10^−12 mol/l. Při nanomolární koncentraci připadá na jednu molekulu hormonu přes padesát miliard molekul vody. A přece je buňky spolehlivě najdou.
+
+Umožňují to receptory s mimořádnou afinitou. Receptory steroidních hormonů vážou svůj hormon tak pevně, že jsou napůl obsazené už při koncentraci kolem jednoho nanomolu na litr. Receptor s tisíckrát nižší afinitou by takový šepot skoro neslyšel.
+
+Druhým trikem je zesílení. Jediná molekula hormonu na receptoru spustí enzym, který vyrobí mnoho molekul druhého posla, a každý další stupeň zprávu znásobí. Jedna molekula adrenalinu tak z glykogenu uvolní tisíce až miliony molekul glukóza-1-fosfátu. Stejně funguje i kaskáda hormonů: několik nanogramů hormonu CRH z hypotalamu uvolní z hypofýzy několik mikrogramů kortikotropinu (ACTH) a ten z nadledvin miligramy kortizolu. Zesílení je nejméně milionkrát.
+
+Třetím trikem jsou vazebné bílkoviny. Steroidní hormony a hormony štítné žlázy se krví vozí navázané na ně. Z tyroxinu je volných jen asi dvě setiny procenta, z kortizolu 3–4 %. Navázaná zásoba tlumí kolísání a prodlužuje hormonu život: navázaný tyroxin má poločas 7–8 dní, volný jen několik minut. Účinkuje přitom jen hormon volný.
+
+Vyzkoušej si to. Měň koncentraci hormonu a sleduj, kolik receptorů je obsazených. Pak receptoru afinitu sniž.
+
+Simulace: Šepot a receptor. Buňka dole nese receptory. Nahoře je krev s molekulami hormonu; jejich počet je kvůli názornosti v logaritmickém měřítku. Podíl obsazených receptorů se řídí vztahem c / (c + K_d): při koncentraci rovné disociační konstantě K_d je obsazená polovina. Zlatá křivka patří receptoru s K_d = 1 nM, jakou mívají receptory steroidních hormonů, šedá receptoru s tisíckrát nižší afinitou. Plnou čarou je vždy ten receptor, který máš právě zapnutý. Zvýrazněný pás ukazuje koncentrace, ve kterých krví koluje mnoho hormonů.
+
+**Hormon šeptá. Slyší ho jen ten, kdo na něj má citlivé ucho.**
+
+## iii. Smyčka
+
+Hormony se nevylučují naslepo. Většinu hlídá zpětná vazba: žláza sleduje, co její hormon způsobil, a podle toho přidá nebo ubere. Jak taková smyčka funguje obecně, ukazuje kapitola [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Nejjednodušší je to u inzulinu. Když stoupne glukóza v krvi, β-buňky slinivky vyloučí inzulin. Ten v játrech utlumí výrobu glukózy a ve svalech podpoří její ukládání. Glukóza klesne a β-buňky vylučování zase sníží.
+
+Složitější smyčky mají několik pater. Shora je řídí hypotalamus, oblast mozku velká asi jako hrášek. Jeho hormony putují krátkými cévami do hypofýzy a ta vylučuje vlastní hormony do krve. U štítné žlázy vypadá řetězec takhle: hypotalamus vylučuje TRH, malý peptid ze tří aminokyselin, hypofýza pak TSH a štítná žláza tyroxin (T4) a trijodtyronin (T3). Hormony štítné žlázy zpětně tlumí výrobu TRH i TSH.
+
+Ta zpětná vazba je mimořádně citlivá. Když volný T4 klesne na polovinu, TSH vyskočí na padesáti- až stonásobek. Hypofýza přitom nereaguje na okamžitý stav. Hladinu hormonů štítné žlázy spíš průměruje v čase, protože T3 na ni působí přes změnu přepisu genů, a to je pomalý děj.
+
+Smyčka se umí bránit i nedostatku. Hormony štítné žlázy jsou jediné, které potřebují jód. Když ho v potravě chybí, hladina hormonů klesne, TSH stoupne a žlázu pobízí k výkonu i k růstu. Vznikne struma, zvětšená štítná žláza. Někdy tím tělo nedostatek vyrovná, jindy ne.
+
+Smyčku lze ale i oklamat. U Gravesovy choroby tělo vyrábí protilátky, které se navážou na receptor pro TSH a napodobí ho. Na rozdíl od hypofýzy je nic nebrzdí: žláza roste a vyrábí víc a víc hormonů, zatímco TSH klesne hluboko pod normál.
+
+Vyzkoušej si to. Uber jód, přidej tablety T4, odstraň štítnou žlázu nebo zapni Gravesovu chorobu a sleduj, jak smyčka odpovídá. Jedna sekunda je tu jeden den.
+
+Simulace: Smyčka štítné žlázy. Schéma ukazuje řetězec hypotalamus–hypofýza–štítná žláza: tloušťka modré šipky odpovídá množství TSH a přerušovaná čára je zpětná vazba. Grafy ukazují volný T4 a TSH za posledních 120 dní, TSH v logaritmickém měřítku. T4 má poločas 8 dní, a tak se po každé změně ustaluje týdny. Citlivost TSH je nastavená podle Borona: pokles T4 na polovinu zvedne TSH zhruba šedesátkrát. Žláza roste, když ji něco dlouho pobízí. Všechny hodnoty jsou násobky normálu.
+
+**Žláza neví, kolik hormonu je potřeba. Pozná to podle toho, co způsobila – a opraví se.**
+
+## iv. Pomalý a rychlý
+
+Hormony se liší i rychlostí. Některé zaberou během sekund: adrenalin zrychlí srdce a glukagon spustí v játrech rozklad glykogenu. Jiné potřebují hodiny až dny: aldosteron mění zadržování soli a růstový hormon výrobu bílkovin.
+
+Rychlost závisí hlavně na tom, kudy zpráva vede. Peptidové hormony a adrenalin se váží na receptory na povrchu buňky a mění činnost bílkovin, které už v buňce jsou. Steroidní hormony a hormony štítné žlázy projdou membránou k receptorům uvnitř buňky a mění přepis genů. Kortizol tak podle Lehningera nemění činnost hotových enzymů, ale to, kolik a jakých enzymů buňka vyrobí. A to trvá.
+
+Druhým ovladačem je životnost. Po změně výroby se hladina každé molekuly ustálí až za několik poločasů. Molekula s poločasem v minutách sleduje změny skoro okamžitě, molekula s poločasem v hodinách je vyhlazuje. Odpovídá tomu i to, jak hormony krví cestují. Ty, které řídí krátkodobé děje, jako adrenalin a mnoho peptidových hormonů, plavou volně. Hormony s dlouhodobým účinkem, jako steroidy a hormony štítné žlázy, se vozí na vazebných bílkovinách.
+
+Pěkně je to vidět na kortizolu. Hypofýza vylučuje ACTH v krátkých pulzech a nadledviny na ně odpovídají kortizolem. Protože má kortizol poločas mnohem delší než ACTH, jeho výkyvy jsou delší a mělčí. Pomalý hormon funguje jako filtr, který z rychlých záblesků udělá plynulou vlnu.
+
+Vyzkoušej si to. Sleduj den kortizolu, měň jeho poločas a zkus, co udělá stres.
+
+Simulace: Den kortizolu. Hypotalamus vysílá pulzy, jejichž velikost řídí denní hodiny: největší jsou k ránu, nejmenší pozdě odpoledne a navečer. ACTH (modře) na každý pulz rychle vyskočí a zase klesne. Kortizol (zlatě) ho sleduje, ale s delším poločasem jeho výkyvy vyhlazuje. Když poločas změníš, model upraví výrobu kortizolu tak, aby průměrná hladina zůstala stejná, a mění se jen tvar křivky. Stres podle Borona zvětší pulzy, ne jejich četnost. Hodnoty jsou relativní a jedna sekunda je tu půl hodiny.
+
+**Poločas není vada. Je to nastavení, jak rychle má zpráva vyprchat.**
+
+## v. Rytmus je zpráva
+
+Mnoho hormonů se nevylučuje plynule, ale v pulzech. U hormonů hypotalamu je to pravidlo: v pulzech se vylučuje i CRH, a proto i ACTH. A někdy na rytmu záleží víc než na množství.
+
+Nejlepším příkladem je GnRH, hormon hypotalamu, který v hypofýze řídí výrobu hormonů LH a FSH a přes ně pohlavní žlázy. Normálně přichází v pulzech. Když se ale podává nepřetržitě, receptory pro GnRH v hypofýze ubudou a výroba LH i FSH se paradoxně zastaví. Medicína toho využívá: u žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit.
+
+Rytmus má i denní podobu. Vnitřní hodiny v suprachiazmatickém jádře hypotalamu dostávají signály ze sítnice a nastavují denní rytmy těla. Vylučování ACTH, a tím i kortizolu, je proto nejvyšší brzy ráno a nejnižší pozdě odpoledne a navečer.
+
+Vyzkoušej si to. Pouštěj do hypofýzy stejné množství GnRH jednou v pulzech a jednou nepřetržitě a sleduj, co se stane s receptory a s odpovědí.
+
+Simulace: Pulzy, nebo proud. Nahoře přísun GnRH, uprostřed podíl receptorů v hypofýze, které jsou k dispozici, dole vylučování LH. Obsazený receptor se postupně stahuje z povrchu a mezi pulzy se zase vrací. Při pulzech má čas se zotavit a každý pulz vyvolá odpověď. Při nepřetržitém přísunu stejného průměrného množství receptory ubývají a odpověď po počátečním vzplanutí odezní. Číslo „LH za 24 h“ je vztažené k odpovědi při pulzech. Model je zjednodušený a časová osa jen ilustrační.
+
+**U hormonů neplatí, že víc je víc. Zpráva je v rytmu, ne jen v množství.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem hormonů pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Proč mám kortizolu nejvíc ráno?
+
+Řídí to vnitřní hodiny. Suprachiazmatické jádro hypotalamu dostává signály ze sítnice a nastavuje denní rytmy těla. Přes hormony CRH a vazopresin řídí vylučování ACTH v hypofýze a to zase kortizol v nadledvinách. ACTH je nejvyšší brzy ráno a nejnižší pozdě odpoledne a navečer a kortizol ho sleduje. Na denní rytmus se přidávají pulzy. Při stresu, třeba při nízké hladině cukru v krvi, hypotalamus pulzy zvětší.
+
+### Proč se po změně dávky hormonů štítné žlázy čeká týdny?
+
+Protože tyroxin (T4) žije v krvi dlouho. Navázaný na bílkoviny má poločas kolem osmi dní a hladina se po každé změně ustaluje několik poločasů: za jeden poločas dosáhne poloviny nové rovnováhy, za 3,3 poločasu 90 % a za 4,4 poločasu 95 %. U tyroxinu to dělá zhruba pět týdnů. Stejná aritmetika platí pro každý lék, viz kapitola [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html). Pomalu odpovídá i hypofýza, protože hormony štítné žlázy na ni působí přes přepis genů.
+
+### Jak může stejný hormon něco zapnout a jinde vypnout?
+
+Protože o odpovědi rozhoduje buňka, ne hormon. Adrenalin ve slinivce povzbudí vylučování glukagonu a zároveň utlumí vylučování inzulinu. Acetylcholin v srdci zpomalí buňky, které udávají rytmus, ve slinné žláze spustí vylučování slin a kosterní sval přiměje ke stahu. Rozdíl dělají receptory a to, co je za nimi zapojené: jiné signální bílkoviny a jiné geny.
+
+### Proč se do soli přidává jód?
+
+Protože bez jódu štítná žláza nevyrobí své hormony; jsou to jediné hormony, které tenhle stopový prvek potřebují. Když jódu chybí, hormonů štítné žlázy ubude, hypofýza zvýší TSH a ten žlázu pobízí k růstu, takže vznikne struma. Pokud jód chybí v kritickém období vývoje v kojeneckém věku, těžce to poškodí mozek. Doplňování jódu do soli a pečiva nedostatek v Severní Americe prakticky odstranilo. V horských a vnitrozemských oblastech mnoha rozvojových zemí ale zůstává jednou z hlavních příčin nemocí, kterým se dá předejít.
+
+Tohle je logika hormonů v kostce. Zpráva rozeslaná všem, kterou přečtou jen buňky se správným receptorem. Šepot v nanomolárních koncentracích, který zesílí kaskády. Smyčky, ve kterých žláza pozná, kolik má vyrábět, podle toho, co způsobila. Poločasy, které rozhodují, jak rychle zpráva přijde a jak dlouho vydrží. A rytmus, který je součástí zprávy. Tělo nepotřebuje nikoho, kdo by kontroloval, jestli dopis došel. Stačí, že každá buňka ví, co si s ním počít.
+
+#### Zdroje a další čtení
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47 (Organization of Endocrine Control): koncentrace hormonů 10^−9–10^−12 M, rychlé a pomalé hormony, vazebné bílkoviny a poločas tyroxinu, zpětná vazba inzulinu a osa CRH–ACTH–kortizol, receptory steroidních hormonů s K_D kolem 1 nM, nepřetržité podávání GnRH. Kap. 49 (The Thyroid Gland): T4 a T3, poločasy 8 dní a asi 24 hodin, podíl volného T4, osa TRH–TSH, citlivost a pomalost zpětné vazby, jód a struma (box 49-1), Gravesova choroba (box 49-4). Kap. 50 (The Adrenal Gland): vazba kortizolu na bílkoviny, suprachiazmatické jádro, denní a pulzní rytmus ACTH a kortizolu (obr. 50-5), stres zvětšuje pulzy, delší poločas kortizolu tlumí jeho výkyvy.
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Čtyři způsoby signalizace mezi buňkami (kap. 15, s. 875); nízké koncentrace signálů a afinita receptorů (s. 876); stejný signál, různé odpovědi – acetylcholin (s. 877); rychlost, citlivost a zesílení odpovědi, význam rychlého obratu molekul (s. 885–887, obr. 15–15).
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Nervová a endokrinní signalizace a jejich dosah, zesílení signálu, kaskáda CRH–ACTH–kortizol se zesílením nejméně milionkrát, hypotalamus velký jako hrášek, TRH (kap. 23.1); účinky adrenalinu a kortizolu (kap. 23.3).
+- Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Podíl ustáleného stavu podle počtu poločasů (kap. 12, tab. 12.2, s. 270).
+- Simulace jsou zjednodušené modely. V simulaci 01 je počet nakreslených molekul v logaritmickém měřítku. V simulaci 02 vychází poločas T4 a citlivost TSH z Borona, ostatní parametry jsou zvolené pro názornost. V simulaci 03 je poločas kortizolu nastavitelný jen relativně k ACTH a tvar denního rytmu sleduje Boronův obr. 50-5. V simulaci 04 jsou rychlosti ubývání a návratu receptorů ilustrační.
+
+---
+
+# Spád, práh, smyčka
+
+URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/blog-spad-prah-smycka.html  
+Větev: Blog  
+Shrnutí: Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil.  
+English: Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that turn them into decisions, feedback loops, and no central controller.
+
+Wetware má osm větví a každá z nich má teď svou první kapitolu. Vznikaly každá zvlášť, z jiných učebnic, s jinými příklady a jinými simulacemi. Jedna je o tom, proč jsi spíš sloveso než podstatné jméno, jiná o tom, jak se z jediné buňky postaví tělo bez plánku, další o tom, proč se lék bere dvakrát denně. Když je ale položíš vedle sebe, začnou se rýmovat.
+
+Ve všech osmi běží tytéž tři tahy. Zaprvé spád: něčeho je někde víc než jinde, a život platí za to, aby to tak zůstalo. Zadruhé práh: buňka spád změří a udělá z něj rozhodnutí typu ano, nebo ne. Zatřetí smyčka: výsledek se vrátí na začátek a ovlivní další krok. A ve všech osmi chybí stejná věc: někdo, kdo by to celé řídil.
+
+> Přirovnání ze života: Představ si splachovací nádržku. Voda do ní teče, protože v potrubí je vyšší tlak než v nádržce. To je spád. S hladinou stoupá plovák, a když dosáhne určité výšky, zavře ventil. To je práh. A protože plovák měří právě to, co ventil ovlivňuje, po každém spláchnutí se nádržka sama dopustí na stejnou hladinu. To je smyčka. Nikdo u toho nestojí a nikdo nic nehlídá. Tělo je takových nádržek plné, jen jsou postavené z bílkovin.
+
+- [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) (Biochemie) – spád: energie živin teče z kopce, po schodech, ne z útesu; práh: energetická bariéra, kterou enzymy snižují; smyčka: konečný produkt brzdí první enzym své linky
+- [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) (Neurobiologie) – spád: sodík venku, draslík uvnitř, −70 mV na membráně; práh: vše, nebo nic: pod prahem se nestane nic; smyčka: výstřel na chvíli unaví vlastní kanály, a tak vlna nemůže zpátky
+- [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) (Fyziologie) – spád: sůl a voda; pumpy je vracejí do kopce; práh: žádaná hodnota termostatu, kterou horečka posune; smyčka: negativní zpětná vazba drží teplotu
+- [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html) (Farmakologie) – spád: hladina léku, která stoupá a opadá; práh: terapeutické okno: ne moc, ne málo; smyčka: vana bez zátky: čím je plnější, tím rychleji odtéká
+- [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) (Molekulární biologie) – spád: regulační bílkoviny podél zárodku octomilky; práh: přepínač genu: zapínačů dost, vypínačů málo; smyčka: korektura: polymeráza kontroluje, co právě přidala
+- [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) (Imunologie) – spád: síla vazby receptoru, od slabé po pevnou; práh: dvě zkoušky v brzlíku: aspoň slabě, ale ne příliš silně; smyčka: kdo se váže pevněji, množí se víc; paměť zrychlí příští odpověď
+- [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) (Vývojová biologie) – spád: morfogen, kterého od zdroje ubývá; práh: dva prahy, tři osudy; smyčka: soused říká ne: malý rozdíl se sám zesílí
+- [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) (Endokrinologie) – spád: hormon v krvi, v pikomolech až nanomolech na litr; práh: disociační konstanta: kdy je obsazená polovina receptorů; smyčka: štítná žláza a hypofýza hlídají jedna druhou
+
+## i. Spád
+
+Ve fyzice všechno teče z kopce. Teplo z teplého do studeného, látky z místa, kde jich je hodně, tam, kde jich je málo, ionty po elektrickém spádu. Až se všechno vyrovná, nastane rovnováha a nic už nemá kam téct. Kapitola [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) to říká bez obalu: pro všechno kromě živého je rovnováha tichý konec příběhu. A [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) ukazuje totéž na neuronu. Vypni pumpu a rozdíl mezi vnitřkem a vnějškem se vytratí k nule, do ploché čáry rovnováhy, což pro živou buňku znamená konec.
+
+Život proto spády udržuje, a platí za to. Sodno-draselná pumpa při každém cyklu vystrčí tři sodíkové ionty ven, vtáhne dva draslíkové dovnitř a spotřebuje jednu molekulu ATP. Na její provoz padne v klidu pětina až čtvrtina veškerého ATP, které tělo vyrobí. [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) k tomu dodává podstatnou věc: pumpy únik nezastaví, jen s ním drží krok. Ionty pořád prosakují zpátky a pumpy je pořád vracejí do kopce. Tomu se neříká rovnováha, ale ustálený stav. Navenek se nic nemění, uvnitř všechno teče.
+
+Energii na pumpy dodává jiný spád. Metabolismus z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) nechává energii živin téct z kopce a cestou ji sbírá. Ne najednou jako oheň, ale po schodech, po malých hlídaných krocích, z nichž každý vydá trochu využitelné energie. Jako přehrada s elektrárnou, která pracuje se stejnou řekou a stejným spádem jako vodopád, jen ho nenechá vyšumět.
+
+Spád ale nemusí ležet jen přes membránu. V zárodku se z jednoho místa šíří morfogen a cestou se rozpadá, takže čím dál od zdroje, tím je ho méně ([Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). V zárodku octomilky leží podél těla spády čtyř regulačních bílkovin a gen eve si z nich poskládá proužek ([Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html)). Lék po spolknutí vystoupá v krvi a zase opadne ([Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html)) a hormon koluje v koncentraci miliardtin až biliontin molu na litr ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Jednou je to spád v prostoru, jindy v čase.
+
+A tady se objeví první rým. Morfogen v zárodku a lék v krvi se řídí stejnými dvěma čísly: kolik se ho vyrobí nebo dodá a jak rychle mizí. U léku rychlost odbourávání určuje, jak vysoko vystoupá hladina při pravidelném dávkování: když ho tělo odbourává o polovinu pomaleji, hladina se zhruba zdvojnásobí. U morfogenu jeho životnost určuje, jak daleko od zdroje ho ještě bude dost. V simulaci vývojové kapitoly stačí prodloužit poločas a oba prahy se posunou dál od zdroje. Spád v prostoru je tak trochu poločas rozprostřený do délky.
+
+**Rovnováha je konec. Život je spád, za který se platí každou sekundu.**
+
+## ii. Práh
+
+Spád sám nic nerozhodne. Je to plynulá veličina: o kousek víc, o kousek míň. Buňka ale potřebuje odpovědi typu ano, nebo ne. Vystřelit, nebo mlčet. Stát se pokožkou, nebo nervem. Přežít, nebo zemřít. Mezi spádem a rozhodnutím proto stojí práh.
+
+Nejčistší příklad je neuron z kapitoly [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html). Sčítá tisíce hlasů ano a ne a pod prahem se nestane nic. Na prahu a nad ním přijde vždycky celý výstřel, stejně vysoký, ať práh sotva překročíš, nebo ho přeletíš. Plynulé napětí se tu mění v čisté ano.
+
+Zárodek si prahy rozdělí prostor. Buňky v kapitole [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) změří, kolik morfogenu k nim doputuje, a porovnají to s prahy. Dva prahy stačí na tři osudy: kde je morfogenu nad horním prahem, vydají se buňky jednou cestou, mezi prahy druhou a nejdál od zdroje třetí. Jediná vylučovaná bílkovina tak v poli buněk vytvoří několik různých osudů. V [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) dělá stejnou práci přepínač genu: druhý proužek genu eve se rozsvítí jen tam, kde je dost zapínačů Bicoid a Hunchback a málo vypínačů Krüppel a Giant. Taková kombinace se v raném zárodku vyskytuje jen na jednom místě.
+
+Dva prahy navíc tvoří okno, a okno se objevuje ve dvou kapitolách, které spolu na první pohled vůbec nesouvisí. Lék musí v krvi dopadnout do terapeutického okna: pod ním nepomáhá, nad ním škodí ([Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html)). A brzlík z kapitoly [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) zkouší každý T-lymfocyt dvakrát. Buňka, jejíž receptor nepozná vlastní molekuly ani slabě, nedostane signál k přežití a tiše zahyne. Buňka, která se na vlastní úlomky váže příliš silně, by byla nebezpečná, a tak dostane signál zemřít. Projde jen to, co je mezi. Ne moc, ne málo, v lékárně stejně jako v brzlíku.
+
+Práh přitom není daný jednou provždy. Horečka podle [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) není rozbitý termostat: mozek žádanou hodnotu záměrně zvýší. Enzymy z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) zase snižují energetickou bariéru, přes kterou musí molekula při reakci přelézt, takže reakce běží při tělesné teplotě a bez plamene. A práh receptoru se dá vyčíst z jediného čísla. V [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) je to disociační konstanta, tedy koncentrace, při které je obsazená polovina receptorů. Receptory steroidních hormonů ji mají kolem jednoho nanomolu na litr, a proto zaslechnou hormon, kterého je v krvi jen šepot.
+
+**Spád říká kolik. Práh z toho udělá ano, nebo ne.**
+
+## iii. Smyčka
+
+Rozhodnutí, které se nikam nevrací, je výstřel do tmy. Ve všech osmi kapitolách se ale výsledek vrací na začátek a ovlivní další krok. To je smyčka, jinak řečeno zpětná vazba.
+
+Nejznámější je termostat z [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Tělo měří teplotu, a když se odchýlí od žádané hodnoty, opraví ji. Negativní zpětná vazba jde proti změně, a tím věci stabilizuje. V metabolismu z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) dělá totéž konečný produkt: když ho je dost, přibrzdí první enzym své vlastní linky, a když ho ubude, brzda povolí. V [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) hlídají jedna druhou štítná žláza a hypofýza. Když volný tyroxin klesne na polovinu, hormon TSH vyskočí na padesáti- až stonásobek a žlázu popožene.
+
+Smyčka ale umí věci i rozhýbat. Pozitivní zpětná vazba změnu zesiluje, a tělo ji proto používá jen tam, kde má děj rychle doběhnout do jasného konce, jako při porodu nebo srážení krve. Ve vývojové kapitole [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) vytvoří smyčka mezi sousedy vzor z ničeho. Buňka, která má na začátku o chlup víc signálu Delta, utlumí sousedy o něco víc, ti pak tlumí ji o něco méně, a malý rozdíl se sám zesiluje, až jedna buňka vyhraje a ostatní kolem ní ustoupí. I neuron má svou malou smyčku: výstřel na chvíli unaví vlastní kanály, a právě tahle krátká únava drží vlnu v pohybu vpřed a nepustí ji zpátky ([Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)).
+
+V mízní uzlině z kapitoly [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) pak smyčka pohání evoluci. Antigen přednostně podporuje B-lymfocyty, které se na něj vážou pevněji, a ty se dělí dál. Jejich protilátky antigen likvidují, a čím méně ho zbývá, tím je výběr přísnější. Výsledek výběru tak sám zpřísňuje další kolo výběru.
+
+Jedna smyčka je přitom skrytá skoro všude a snadno se přehlédne. Vana s vytaženou zátkou z [Léku je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html): čím víc vody ve vaně je, tím rychleji odtéká. Když přitéká víc, hladina stoupne, odtok zrychlí a obojí se potká v ustáleném stavu. Je to zpětná vazba bez jediného čidla. A má jednoduchou aritmetiku, kterou sdílí polovina kapitol: každý poločas uzavře polovinu mezery, která do nové hladiny ještě zbývá. Lék je v ustáleném stavu zhruba po pěti poločasech. Tyroxin s poločasem kolem osmi dní se po změně dávky ustaluje asi pět týdnů ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Bílkovina s poločasem deset hodin, jakou má simulace v [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), se novému stavu přiblíží až zhruba za dva dny, její mRNA s poločasem půl hodiny za pár hodin. A tělo podle [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) vymění polovinu své vody zhruba za deset dní.
+
+Smyčky ovšem umějí i zlobit. Když zpětná vazba přichází pozdě, systém přestřeluje a kolísá, jako dech při Cheyneově-Stokesově dýchání ([Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html)). A když receptor dostává signál bez přestávky, smyčka na úrovni receptoru ho vypne: nepřetržitě podávaný GnRH hypofýzu umlčí, kdežto v pulzech ji nechá pracovat ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)).
+
+**Smyčka je otázka, kterou si systém klade pořád dokola: stačí to?**
+
+## iv. Nikdo to neřídí
+
+A teď to nejpodivnější. Ve všech osmi kapitolách chybí stejná věc: někdo, kdo by to celé řídil.
+
+Metabolismus se podle kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) řídí sám, podobně jako trh, přes tisíce drobných místních zpětných vazeb, a jedna z jejích částí se rovnou jmenuje Nikdo nevelí. V [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) v buňce není nikdo, kdo by četl. Jsou tam jen molekuly, které do sebe v teple bez přestání narážejí, a čtení je chvíle, kdy k sobě dva tvary zaklapnou. [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) roste bez plánku i bez stavbyvedoucího, jako obrazec z kartiček na stadionu, který nikdo z diváků nevidí. Imunita z [Darwina v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) se nesnaží nepřátele předvídat: předem vyrobí náhodné receptory v astronomickém počtu a pak namnoží ty, které se hodí. Hormon z [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) neříká, co se má stát, jen že je čas, a co to znamená, ví každá buňka sama. A v [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) se 86 miliard neuronů spikne do jednoho já, aniž by kdokoli velel.
+
+I tam, kde nějaké centrum je, nevypadá jako velitel. Termostat z [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) sedí v mozku a mozek umí jeho žádanou hodnotu posunout, ale pořád je to jen další smyčka: měří a opravuje. A lék z kapitoly [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html) neví, kam míří. Krev ho roznese po celém těle a zabere tam, kde najde receptor, do kterého zapadne. Je to další dopis pro všechny, jen ho napsal někdo zvenčí.
+
+Místo velitele jsou tu spády, prahy a smyčky, a k nim ještě jeden trik: náhoda a výběr. Imunita vyrobí náhodné receptory a nechá přežít a namnožit ty, které pasují. Do vyvíjející se končetiny vyšle výběžky víc motoneuronů, než kolik jich zůstane: sval vylučuje jen omezené množství faktoru přežití a 40 až 70 % z nich zahyne ([Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). Je to Darwin v malém, uvnitř jednoho těla: rozmanitost, práh, který rozhodne, kdo projde, a smyčka, která vítěze namnoží.
+
+**Řád bez velitele není zázrak. Je to spád, práh a smyčka, opakované miliardkrát.**
+
+Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na každém patře: v enzymu, který brzdí vlastní linku, v neuronu, který vystřelí, v zárodku, který si rozdělí prostor, ve žláze, která hlídá svůj hormon, v těle, které drží teplotu, i v celé populaci lymfocytů, která se učí. Na každém patře si život klade tytéž tři otázky. Kde je čeho víc? Je to dost? A povedlo se? Až je jednou uvidíš, začneš je nacházet všude, i v kapitolách, které teprve vzniknou.
+
+#### Zdroje a další čtení
+
+- Všechny údaje v textu pocházejí z prvních kapitol Wetware, kde je najdeš i s odkazy na učebnice a články: [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html), [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html), [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html), [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html), [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html), [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) a [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Ustálený stav versus rovnováha (kap. 1); receptory steroidních hormonů s K_D kolem 1 nM (kap. 47); citlivost zpětné vazby štítné žlázy (kap. 49).
+- Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 731–758 (1997). Podíl ATP, který spotřebuje sodno-draselná pumpa.
+- Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Poločas, ustálený stav a clearance (kap. 12).
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Morfogeny a prahy (kap. 21); výběr v brzlíku a zárodečná centra (kap. 24).

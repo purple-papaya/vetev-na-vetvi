@@ -4,7 +4,232 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>WETWARE · Kapitola první – Jsi sloveso</title>
+<title>Jsi sloveso: úvod do metabolismu | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jsi sloveso">
+<meta property="og:description" content="Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.">
+<meta property="og:url" content="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html">
+<meta property="og:image" content="https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-ch1-jsi-sloveso.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jsi sloveso – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-07-06T06:52:38+02:00">
+<meta property="article:modified_time" content="2026-10-17T11:42:27+00:00">
+<meta property="article:section" content="Biochemie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org",
+   "name": "Větev na větvi",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html#webpage",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html",
+   "name": "Jsi sloveso: úvod do metabolismu | Větev na větvi",
+   "description": "Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-ch1-jsi-sloveso.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Když zhubnu, kam se ten tuk vlastně poděje?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Většinu ho vydýcháš. Ruben Meerman a Andrew Brown v roce 2014 v časopise BMJ spočítali, kam odcházejí jednotlivé atomy: z 10 kg tuku odejde 8,4 kg plícemi jako oxid uhličitý a zbylých 1,6 kg jako voda – močí, potem, dechem a slzami. Když se zeptali 150 lékařů, dietologů a osobních trenérů, nejčastěji slyšeli, že se tuk „promění v energii“ nebo v teplo. To by ale porušilo zákon zachování hmotnosti: atomy se v energii rozplynout nemůžou. Tuk se skládá z uhlíku, vodíku a kyslíku. Když se oxiduje (to je schodiště z oddílu 04), vznikne CO_2 a H_2O a uhlík odejde s výdechem. Rychlejším dýcháním si to ale nezkrátíš. Víc CO_2 vyrobíš jen tak, že víc spálíš, tedy když se budeš hýbat. Zdroj: Meerman & Brown, BMJ 2014 (349:g7257); UNSW."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Zpomaluje se mi s věkem opravdu metabolismus? Dá se „nakopnout“?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne tak, jak se říká. Zatím největší studie svého druhu (Pontzer a kol., Science 2021) změřila skutečný denní energetický výdej u více než 6 400 lidí ve věku od 8 dní do 95 let ve 29 zemích a našla čtyři životní fáze. Po přepočtu na velikost těla je výdej nejvyšší kolem prvního roku, zhruba o polovinu vyšší než u dospělých. Během dětství a dospívání pozvolna klesá a mezi dvacítkou a šedesátkou je prakticky stálý, i v těhotenství, když se započítá přibraná hmotnost. Klesat začne až po šedesátce. Přibírání ve středním věku je tedy skutečné, jen za ním nestojí zpomalený metabolismus. A „nakopnout“ ho pilulkou nejde: klidový výdej závisí hlavně na množství beztukové tkáně. Opravdu s ním pohne jen pohyb a svaly. Zdroj: Pontzer et al., Science 2021 (373:808)."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč potřebuju kyslík? Co vlastně dělá?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Intuitivní odpověď „kyslík je palivo“ je obráceně. Kyslík nespaluješ. Je to odtok na dně elektronového vodopádu, takzvaný konečný akceptor elektronů. Když se glukóza rozkládá, odtrhávají se z ní elektrony bohaté na energii a stékají dýchacím řetězcem; jejich energie se cestou využívá k výrobě ATP. Jenže voda teče, jen když má kam odtéct. Kyslík elektrony ochotně přijímá (má velmi kladný redoxní potenciál) a spojuje se s nimi a s protony na vodu. Když odtok ucpeš – zadržíš dech –, řetězec se zastaví a s ním většina výroby ATP. Asi 90 % kyslíku, který tělo spotřebuje, skončí právě tady, v mitochondriích na konci dýchacího řetězce. Zdroje: Rolfe & Brown, Physiological Reviews 1997; Nelson & Cox, Lehninger, kap. 19."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč si tělo nemůže prostě držet velkou baterii nabitého ATP na později?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ze dvou důvodů. Prakticky: ATP je na množství energie, kterou nese, těžké. Zásoba na celý den by vážila desítky kilogramů. Tělo proto ukládá energii do úspornějších a stabilnějších forem – do glykogenu pro rychlý přístup a do tuku pro dlouhodobou rezervu – a ATP z nich vyrábí podle potřeby. Chemicky: ATP je užitečné právě tím, že je připravené reagovat. Sklad plný natažených pastí není zásoba energie, ale nehoda, která čeká, až se stane. Tělo proto drží ATP málo a obrací ho velmi rychle."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Není „metabolismus“ jen hezčí slovo pro trávení?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Trávení je nakládací rampa, metabolismus celá továrna i s rampou. Trávení rozkládá velké molekuly potravy na malé – bílkoviny na aminokyseliny, škrob na cukry –, většinou ve střevě, aby se daly vstřebat. To je jen úplný vršek katabolické nálevky. Metabolismus je všechno, co se se vstřebanými molekulami děje pak uvnitř buněk: jak se oxidují kvůli energii, jak se z nich stavějí tvé tkáně, jak se ukládají a jak slouží jako signály. Kdo má „rychlý metabolismus“, nemá rychlé trávení, ale rychleji běžící buněčnou ekonomiku."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Když energie nevzniká ani nezaniká, kam se „ztrácí“, když ji spotřebuju?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nikam – jen ztrácí na kvalitě. Nejsi spotřebitelka energie, ale její přeměňovačka. Energie do tebe vstupuje v soustředěné, kvalitní podobě (chemické vazby v potravě, ochotné reagovat s kyslíkem) a odchází v rozptýlené, málo použitelné podobě (teplo rozlité do okolí, jednoduchý odpad). Množství zůstává stejné do posledního joulu, mění se jen jeho užitečnost. A ten rozdíl je tvá platba: tím, že necháš energii spadnout z vysoké kvality na nízkou, získáš trochu řádu – právě tolik, aby tvé molekuly vydržely ve svém nepravděpodobném uspořádání o chvíli déle. Ta provize je tvůj život."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Biochemie",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-biochemie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Jsi sloveso",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html#article",
+   "headline": "Jsi sloveso",
+   "description": "Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html",
+   "mainEntityOfPage": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-ch1-jsi-sloveso.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-07-06T06:52:38+02:00",
+   "dateModified": "2026-10-17T11:42:27+00:00",
+   "author": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "metabolismus"
+    },
+    {
+     "@type": "Thing",
+     "name": "ATP"
+    },
+    {
+     "@type": "Thing",
+     "name": "enzymy"
+    },
+    {
+     "@type": "Thing",
+     "name": "aktivační energie"
+    },
+    {
+     "@type": "Thing",
+     "name": "zpětnovazebná inhibice"
+    },
+    {
+     "@type": "Thing",
+     "name": "ustálený stav"
+    }
+   ],
+   "keywords": "metabolismus, ATP, enzymy, aktivační energie, zpětnovazebná inhibice, ustálený stav",
+   "wordCount": 3041,
+   "timeRequired": "PT15M",
+   "citation": [
+    "Meerman & Brown, BMJ 2014 (349:g7257)",
+    "UNSW",
+    "Pontzer et al., Science 2021 (373:808)",
+    "Rolfe & Brown, Physiological Reviews 1997",
+    "Nelson & Cox, Lehninger, kap. 19"
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+   },
+   "articleSection": "Biochemie"
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">

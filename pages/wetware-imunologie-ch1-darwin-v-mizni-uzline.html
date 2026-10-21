@@ -4,8 +4,227 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>Darwin v mízní uzlině – Větev na větvi</title>
-<meta name="description" content="Úvod do logiky imunity: jak tělo pozná, co k němu patří, aniž by předem znalo své nepřátele – poplach podle vzoru, náhodný generátor receptorů, výběr, škola v brzlíku a paměť. Se čtyřmi interaktivními simulacemi.">
+<title>Darwin v mízní uzlině: jak funguje imunita | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Darwin v mízní uzlině">
+<meta property="og:description" content="Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.">
+<meta property="og:url" content="https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html">
+<meta property="og:image" content="https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-imunologie-ch1-darwin-v-mizni-uzline.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Darwin v mízní uzlině – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-10-21T11:00:09+00:00">
+<meta property="article:modified_time" content="2026-10-21T11:00:09+00:00">
+<meta property="article:section" content="Imunologie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org",
+   "name": "Větev na větvi",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html#webpage",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html",
+   "name": "Darwin v mízní uzlině: jak funguje imunita | Větev na větvi",
+   "description": "Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-imunologie-ch1-darwin-v-mizni-uzline.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Proč mě vlastní imunita nenapadne?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Protože se to naučila. Lymfocyty, které se na vlastní molekuly vážou příliš silně, se vyřadí už při dozrávání v brzlíku a v kostní dřeni. Ty, které proklouznou, se v těle obvykle neaktivují, protože jim chybí druhý signál, který jiné buňky dávají hlavně při nákaze, a hlídají je regulační T-lymfocyty. Když tyhle pojistky selžou, vznikne autoimunitní onemocnění – například cukrovka 1. typu, při které T-lymfocyty zničí β-buňky slinivky."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč můžu dostat chřipku znovu, ale spalničky jen jednou?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Prodělané spalničky i očkování proti nim chrání celý život. Chřipkový virus ale své hlavní povrchové bílkoviny, hemaglutinin a neuraminidázu, průběžně mění drobnými mutacemi a čas od času si vymění celé úseky genomu s chřipkovými viry ptáků nebo prasat. Paměťové buňky z minulé nákazy pak na novou verzi sedí hůř nebo vůbec. Když se objeví kmen, se kterým se lidé ještě nesetkali, šíří se populací bez imunity. Tak vznikla pandemie španělské chřipky v roce 1918, která zabila 20 až 50 milionů lidí, i pozdější pandemie."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kolik lidí musí být imunních, aby se nemoc nešířila?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Záleží na nemoci. U spalniček je to asi 95 % populace, u covidu-19 se odhad pohybuje mezi 65 a 90 % podle varianty viru. Říká se tomu kolektivní imunita. Brzdí šíření nákazy, protože ubývá lidí, které lze nakazit, a tím chrání i ty, kdo imunitu nemají."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Způsobuje očkování autismus?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne. Obavy vyvolal článek z roku 1998, který spojoval očkování proti spalničkám, příušnicím a zarděnkám s autismem. Ukázal se jako nepravdivý a podvodný a časopis The Lancet ho v roce 2010 stáhl. Škody už ale napáchal: v Británii po něm ubylo očkovaných dětí a epidemie spalniček byly častější a větší. Velká dánská studie pak sledovala přes 650 tisíc dětí a u očkovaných žádné vyšší riziko autismu nenašla."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kde vlastně imunitní systém je?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Všude. Lymfocyty vznikají v kostní dřeni a T-lymfocyty dozrávají v brzlíku. Pracují hlavně v mízních uzlinách, slezině, mandlích a v lymfatické tkáni střeva, dýchacích cest a kůže a mezi nimi neustále kolují krví a mízou. Dohromady jich je asi dva biliony, takže imunitní systém je co do hmoty buněk srovnatelný s játry nebo mozkem."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Imunologie",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Darwin v mízní uzlině",
+     "item": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html#article",
+   "headline": "Darwin v mízní uzlině",
+   "description": "Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html",
+   "mainEntityOfPage": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/assets/og/wetware-imunologie-ch1-darwin-v-mizni-uzline.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-21T11:00:09+00:00",
+   "dateModified": "2026-10-21T11:00:09+00:00",
+   "author": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "publisher": {
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "imunitní systém"
+    },
+    {
+     "@type": "Thing",
+     "name": "vrozená imunita"
+    },
+    {
+     "@type": "Thing",
+     "name": "V(D)J rekombinace"
+    },
+    {
+     "@type": "Thing",
+     "name": "brzlík"
+    },
+    {
+     "@type": "Thing",
+     "name": "klonální selekce"
+    },
+    {
+     "@type": "Thing",
+     "name": "afinitní maturace"
+    },
+    {
+     "@type": "Thing",
+     "name": "imunologická paměť"
+    }
+   ],
+   "keywords": "imunitní systém, vrozená imunita, V(D)J rekombinace, brzlík, klonální selekce, afinitní maturace, imunologická paměť",
+   "wordCount": 3272,
+   "timeRequired": "PT16M",
+   "citation": [
+    "Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Vrozená imunita: bariéry, molekulární vzory a receptory, které je rozpoznávají (tabulka 24–1), receptor Toll a moucha bez něj (obr. 24–3), zánět a horečka (kap. 24, s. 1353–1357); Toll ve vývoji octomilky (kap. 21, s. 1230 a 1236); „velký třesk“ adaptivní imunity, počet lymfocytů, klonální výběr, primární a sekundární odpověď (obr. 24–16), paměťové buňky, kolování lymfocytů a imunologická tolerance včetně pokusu s C5 (kap. 24, s. 1364–1371); skládání genů pro protilátky z úseků V, D a J, nepřesné spoje a posun čtecího rámce, přeskládání receptoru, somatická hypermutace a afinita protilátek (kap. 24, s. 1377–1379); pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE (kap. 24, s. 1389–1391 a 1401); očkování, Jenner a pravé neštovice, adjuvans, kolektivní imunita a podvodná zpráva o autismu (kap. 24, s. 1397–1401); původ mechanismu přeskládání v transpozonech (kap. 5, s. 309); antigenní variabilita trypanozom a chřipky, pandemie z roku 1918 (kap. 23, s. 1342–1344).",
+    "The Lancet. Retraction – Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children. Lancet 375, 445 (2010).",
+    "Hviid A., Hansen J. V., Frisch M., Melbye M. Measles, mumps, rubella vaccination and autism: a nationwide cohort study. Annals of Internal Medicine 170, 513–520 (2019).",
+    "Simulace jsou zjednodušené modely. V simulaci 01 jsou rychlosti mikrobů a buněk zvolené tak, aby bylo dění vidět. V simulaci 03 je rozdělení síly vazby vymyšlené pro ilustraci. Simulace 04 má věrně jen tvar odpovědí: zpoždění primární odpovědi o několik dní, rychlejší a silnější odpověď při druhém setkání se stejným antigenem a afinitu, která sílí jen s hypermutací. Afinitu převádí do Albertsova rozsahu 10^5–10^11 l/mol."
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware.html"
+   },
+   "articleSection": "Imunologie"
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
