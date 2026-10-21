@@ -26,7 +26,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = 'https://purple-papaya.github.io/vetev-na-vetvi/'   # change here if the site moves to its own domain
+SITE_URL = 'https://vetevnavetvi.cz/'   # change here if the site ever moves
 SITE_NAME = 'Větev na větvi'
 SITE_DESC = ('Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, '
              'imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.')
@@ -563,8 +563,6 @@ def write_site_files(all_dates):
                                       + '\n'.join(urls) + '\n</urlset>\n', encoding='utf-8')
     (ROOT / 'robots.txt').write_text(
         '# Větev na větvi – vyhledávače i jazykové modely jsou vítány.\n'
-        '# Pozor: na adrese github.io/<repozitář>/ čtou roboti jen robots.txt z kořene domény;\n'
-        '# tenhle soubor začne platit, až web poběží na vlastní doméně.\n'
         'User-agent: *\nAllow: /\n\n'
         f'Sitemap: {SITE_URL}sitemap.xml\n', encoding='utf-8')
 

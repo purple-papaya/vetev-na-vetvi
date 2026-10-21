@@ -8,7 +8,7 @@ Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.
 
 # Jsi sloveso
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html  
+URL: https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html  
 Větev: Biochemie  
 Shrnutí: Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.  
 English: Introduction to metabolism: why you are a process rather than a thing; ATP, stepwise release of energy and feedback inhibition without a central controller.
@@ -194,7 +194,7 @@ Nejsi oheň, který hoří. Jsi to hoření.
 
 # Jak se sůl naučila říkat já
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html  
+URL: https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html  
 Větev: Neurobiologie  
 Shrnutí: Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.  
 English: Introduction to neurobiology: resting potential and the sodium-potassium pump, threshold and the action potential, myelin, synapses and 86 billion neurons.
@@ -360,7 +360,7 @@ Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mez
 
 # Moře pod kůží
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html  
+URL: https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html  
 Větev: Fyziologie  
 Shrnutí: Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.  
 English: Introduction to physiology: homeostasis as a steady state rather than equilibrium, negative feedback, diffusion and pumps, flow, folded surfaces and cell turnover.
@@ -535,7 +535,7 @@ Tohle je logika fyziologie v kostce. Udržovat vnitřní prostředí stálé (zp
 
 # Lék je vlna
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html  
+URL: https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html  
 Větev: Farmakologie  
 Shrnutí: Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.  
 English: Introduction to pharmacokinetics and pharmacodynamics: the concentration-time curve, half-life and steady state, receptors, potency and efficacy, and the therapeutic window.
@@ -764,7 +764,7 @@ Příště se přestaneme dívat na celou cestu z dálky a zaměříme se na sam
 
 # Čtení bez čtenáře
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html  
+URL: https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html  
 Větev: Molekulární biologie  
 Shrnutí: Jak se z DNA stane tělo, když v buňce nikdo nečte: opis s korekturou, mRNA a bílkoviny, genetický kód a mutace, přepínače genů. Se čtyřmi simulacemi.  
 English: Introduction to molecular biology: DNA replication with proofreading, mRNA and protein turnover, the genetic code and mutations, and gene switches (the eve stripe in fruit flies).
@@ -871,7 +871,7 @@ Asi dvacet tisíc genů pro bílkoviny (podle Albertse přesně 19 116, plus sto
 
 ### Je DNA ve všech mých buňkách stejná?
 
-Skoro. Při každém dělení vznikne v celém genomu v průměru méně než jedna nová chyba, ale buňky se dělí celý život, takže se drobné rozdíly střádají. Úmyslnou výjimkou jsou lymfocyty, bílé krvinky imunity: ty si část DNA samy přeskládají, aby každá z nich poznávala něco jiného. Víc o tom v kapitole [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+Skoro. Při každém dělení vznikne v celém genomu v průměru méně než jedna nová chyba, ale buňky se dělí celý život, takže se drobné rozdíly střádají. Úmyslnou výjimkou jsou lymfocyty, bílé krvinky imunity: ty si část DNA samy přeskládají, aby každá z nich poznávala něco jiného. Víc o tom v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
 
 ### Kdo tedy tu DNA čte?
 
@@ -890,7 +890,7 @@ Tohle je logika molekulární biologie v kostce. Text o čtyřech písmenech, kt
 
 # Darwin v mízní uzlině
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html  
+URL: https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html  
 Větev: Imunologie  
 Shrnutí: Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.  
 English: Introduction to immunology: pattern recognition, V(D)J recombination, thymic selection, clonal selection and affinity maturation in germinal centres, and immune memory.
@@ -931,7 +931,7 @@ Jenže genů pro bílkoviny máš jen asi dvacet tisíc. Jak z nich vznikne bili
 
 Tím to nekončí. Spoje mezi úseky jsou nepřesné: na koncích se pár písmen ztratí a pár náhodných přibude. Tím se rozmanitost znásobí ještě deset- až stomilionkrát, a to právě v nejproměnlivější části vazebného místa. Celá mašinerie má zajímavý původ. Stejným mechanismem se z DNA vystřihují transpozony, skákající geny, a imunitní generátor náhody z nich nejspíš vznikl.
 
-Za náhodu se platí. Délka spoje je nahodilá, a protože se genetický kód čte po trojicích, zhruba dva spoje ze tří posunou čtecí rámec. Za spojem pak vznikne nesmysl, stejně jako po vloženém nebo vyjmutém písmenu v dekodéru z kapitoly [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Buňka, která nesestaví funkční protilátku, v kostní dřeni zahyne.
+Za náhodu se platí. Délka spoje je nahodilá, a protože se genetický kód čte po trojicích, zhruba dva spoje ze tří posunou čtecí rámec. Za spojem pak vznikne nesmysl, stejně jako po vloženém nebo vyjmutém písmenu v dekodéru z kapitoly [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Buňka, která nesestaví funkční protilátku, v kostní dřeni zahyne.
 
 Dvě věci stojí za povšimnutí. Lymfocyt si DNA přeskládá natrvalo, takže je výjimkou z pravidla, že všechny buňky těla nesou stejný text. A receptor vznikne dřív, než lymfocyt cokoli potká. Generátor nemá tušení, co je venku, a tak vyrábí receptory na dnešní mikroby, na jejich budoucí mutanty – a taky na vlastní tělo.
 
@@ -1024,7 +1024,7 @@ Tohle je logika imunity v kostce. Rychlý poplach podle znaků, které mikroby p
 
 # Tělo, které se postavilo samo
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html  
+URL: https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html  
 Větev: Vývojová biologie  
 Shrnutí: Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.  
 English: Introduction to developmental biology: morphogen gradients and thresholds, Delta-Notch lateral inhibition, the segmentation clock and wavefront, and programmed cell death.
@@ -1043,7 +1043,7 @@ Kapitola stojí na pěti myšlenkách: rozcestí za rozcestím, spád a práh, s
 
 Oplozené vajíčko se nejdřív mnohokrát rozdělí. Pak začne každá buňka volit: z několika málo možností, které jí zbývají, vybere jednu, a další volba už přichází z užší nabídky. Vývojová dráha buňky se tak větví rozcestí za rozcestím, podobně jako rozhodnutí v lidském životě. A buňka se při každé volbě řídí tím, co si nese z minulosti, a tím, co jí právě říkají sousedé.
 
-Minulost je v buňce zapsaná jako buněčná paměť: ve stavu chromatinu a v sadě regulačních bílkovin a RNA, které zrovna obsahuje. Víc o tom, jak ze stejného textu vznikají různé buňky, je v kapitole [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Dvě buňky s jinou historií proto odpovědí na stejný signál každá jinak. A odpověď závisí i na tom, jaké další signály přicházejí zároveň. Zárodek si tak vystačí s hrstkou signálních drah a používá je znovu a znovu, pokaždé s jiným výsledkem.
+Minulost je v buňce zapsaná jako buněčná paměť: ve stavu chromatinu a v sadě regulačních bílkovin a RNA, které zrovna obsahuje. Víc o tom, jak ze stejného textu vznikají různé buňky, je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Dvě buňky s jinou historií proto odpovědí na stejný signál každá jinak. A odpověď závisí i na tom, jaké další signály přicházejí zároveň. Zárodek si tak vystačí s hrstkou signálních drah a používá je znovu a znovu, pokaždé s jiným výsledkem.
 
 Dceřiné buňky se mohou lišit dvojím způsobem. Buď se narodí jiné, protože mateřská buňka při dělení rozdělí některé molekuly nerovnoměrně. Nebo se narodí stejné a rozdílné je udělají až signály, které dostanou potom.
 
@@ -1059,7 +1059,7 @@ Buňky pak čtou, kolik morfogenu k nim doputuje, a odpovídají přes prahy. C�
 
 Tvar spádu přitom určují dvě obyčejné fyzikální veličiny: jak rychle se morfogen šíří a jak dlouho vydrží. Morfogen, který difunduje rychleji, dosáhne dál, ale u zdroje ho pak bude méně. Delší poločas zvedne koncentraci všude. A spád se nevytvoří hned: s poločasem kolem tří hodin a difuzí typickou pro malou bílkovinu se ustaluje celé hodiny.
 
-Spád a prahy už znáš z kapitoly [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Proužek genu eve u octomilky vzniká přesně takhle, z prahů několika spádů najednou.
+Spád a prahy už znáš z kapitoly [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html). Proužek genu eve u octomilky vzniká přesně takhle, z prahů několika spádů najednou.
 
 Vyzkoušej si to. Měň poločas, difuzi a produkci morfogenu a sleduj, kam se posunou hranice mezi pásmy. Pak odstraň zdroj, nejdřív bez paměti buněk a potom s ní.
 
@@ -1097,7 +1097,7 @@ Simulace: Hodiny a vlna. Vpravo roste ocas. Buňky v pásu před ním kmitají (
 
 ## v. Sochař, který ubírá
 
-Tělo se nestaví jen přidáváním. Velkou část práce odvede smrt. Ruce a nohy začínají jako lopatky a prsty se od sebe oddělí teprve tehdy, když buňky mezi nimi spáchají sebevraždu. Stejně zmizí ocas pulce při přeměně v žábu, na pokyn hormonu štítné žlázy (o hormonech víc v kapitole [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Tomuhle řízenému zániku se říká apoptóza, z řeckého slova pro opadávání listů ze stromu.
+Tělo se nestaví jen přidáváním. Velkou část práce odvede smrt. Ruce a nohy začínají jako lopatky a prsty se od sebe oddělí teprve tehdy, když buňky mezi nimi spáchají sebevraždu. Stejně zmizí ocas pulce při přeměně v žábu, na pokyn hormonu štítné žlázy (o hormonech víc v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Tomuhle řízenému zániku se říká apoptóza, z řeckého slova pro opadávání listů ze stromu.
 
 Obrázek: Prsty z lopatky. Tlapka myšího zárodku: umírající buňky (oranžové tečky) jsou soustředěné mezi budoucími prsty. O den později je tkáň mezi nimi pryč. Zjednodušeno podle obrázku 18–2 v Albertsovi.
 
@@ -1111,7 +1111,7 @@ Vyzkoušej si to. Šedesát neuronů soupeří o faktor ze svalu. Změň velikos
 
 Simulace: Soutěž o přežití. Neurony vlevo posílají výběžky do svalu vpravo. Sval vylučuje omezené množství faktoru přežití (zlaté tečky putují po výběžcích zpátky k neuronům) a dělí se mezi neurony podle toho, jak silné s ním mají spojení. Neuron, kterému faktor dlouho nestačí, zahyne (červeně). Přežije jich zhruba tolik, kolik jich sval uživí: s normálním svalem asi polovina, s větším víc, s menším méně. Čísla jsou ilustrační, ale drží se rozsahu, který změřil Hamburger.
 
-**Vývoj nepočítá dopředu. Vyrobí nadbytek a nechá přežít to, co se hodí – stejně jako imunita v kapitole [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).**
+**Vývoj nepočítá dopředu. Vyrobí nadbytek a nechá přežít to, co se hodí – stejně jako imunita v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).**
 
 ## Na co se lidé opravdu ptají
 
@@ -1147,7 +1147,7 @@ Tohle je logika vývoje v kostce. Rozcestí za rozcestím, kde buňka volí podl
 
 # Dopis pro všechny
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html  
+URL: https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html  
 Větev: Endokrinologie  
 Shrnutí: Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.  
 English: Introduction to endocrinology: hormone concentrations and receptor affinity, the thyroid feedback loop, slow and fast hormones and half-lives, the cortisol rhythm and pulsatile GnRH.
@@ -1164,7 +1164,7 @@ Kapitola stojí na pěti myšlenkách: drát a rozhlas, šepot v krvi, smyčka, 
 
 ## i. Drát a rozhlas
 
-Na velkou vzdálenost si buňky posílají zprávy hlavně dvěma cestami. Nervová buňka natáhne výběžek až k cíli a zprávu předá na synapsi, kde přenašeč přeskočí štěrbinu širokou zlomek mikrometru (o té mezeře víc v kapitole [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)). Je to jako telefonní drát: rychlé, přesné a soukromé, odpověď přijde během tisícin sekundy. Endokrinní buňka naopak vypustí hormon do krve a ten se dostane všude. Než narazí na svůj cíl, urazí klidně metr i víc.
+Na velkou vzdálenost si buňky posílají zprávy hlavně dvěma cestami. Nervová buňka natáhne výběžek až k cíli a zprávu předá na synapsi, kde přenašeč přeskočí štěrbinu širokou zlomek mikrometru (o té mezeře víc v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)). Je to jako telefonní drát: rychlé, přesné a soukromé, odpověď přijde během tisícin sekundy. Endokrinní buňka naopak vypustí hormon do krve a ten se dostane všude. Než narazí na svůj cíl, urazí klidně metr i víc.
 
 Rozdíl je hlavně v doručování, ne v molekulách. Adrenalin a noradrenalin slouží na některých synapsích jako přenašeče a v krvi jako hormony.
 
@@ -1190,7 +1190,7 @@ Simulace: Šepot a receptor. Buňka dole nese receptory. Nahoře je krev s molek
 
 ## iii. Smyčka
 
-Hormony se nevylučují naslepo. Většinu hlídá zpětná vazba: žláza sleduje, co její hormon způsobil, a podle toho přidá nebo ubere. Jak taková smyčka funguje obecně, ukazuje kapitola [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Nejjednodušší je to u inzulinu. Když stoupne glukóza v krvi, β-buňky slinivky vyloučí inzulin. Ten v játrech utlumí výrobu glukózy a ve svalech podpoří její ukládání. Glukóza klesne a β-buňky vylučování zase sníží.
+Hormony se nevylučují naslepo. Většinu hlídá zpětná vazba: žláza sleduje, co její hormon způsobil, a podle toho přidá nebo ubere. Jak taková smyčka funguje obecně, ukazuje kapitola [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Nejjednodušší je to u inzulinu. Když stoupne glukóza v krvi, β-buňky slinivky vyloučí inzulin. Ten v játrech utlumí výrobu glukózy a ve svalech podpoří její ukládání. Glukóza klesne a β-buňky vylučování zase sníží.
 
 Složitější smyčky mají několik pater. Shora je řídí hypotalamus, oblast mozku velká asi jako hrášek. Jeho hormony putují krátkými cévami do hypofýzy a ta vylučuje vlastní hormony do krve. U štítné žlázy vypadá řetězec takhle: hypotalamus vylučuje TRH, malý peptid ze tří aminokyselin, hypofýza pak TSH a štítná žláza tyroxin (T4) a trijodtyronin (T3). Hormony štítné žlázy zpětně tlumí výrobu TRH i TSH.
 
@@ -1246,7 +1246,7 @@ Otázky, které se kolem hormonů pořád dokola objevují na Redditu, Quoře i 
 
 ### Proč se po změně dávky hormonů štítné žlázy čeká týdny?
 
-Protože tyroxin (T4) žije v krvi dlouho. Navázaný na bílkoviny má poločas kolem osmi dní a hladina se po každé změně ustaluje několik poločasů: za jeden poločas dosáhne poloviny nové rovnováhy, za 3,3 poločasu 90 % a za 4,4 poločasu 95 %. U tyroxinu to dělá zhruba pět týdnů. Stejná aritmetika platí pro každý lék, viz kapitola [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html). Pomalu odpovídá i hypofýza, protože hormony štítné žlázy na ni působí přes přepis genů.
+Protože tyroxin (T4) žije v krvi dlouho. Navázaný na bílkoviny má poločas kolem osmi dní a hladina se po každé změně ustaluje několik poločasů: za jeden poločas dosáhne poloviny nové rovnováhy, za 3,3 poločasu 90 % a za 4,4 poločasu 95 %. U tyroxinu to dělá zhruba pět týdnů. Stejná aritmetika platí pro každý lék, viz kapitola [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html). Pomalu odpovídá i hypofýza, protože hormony štítné žlázy na ni působí přes přepis genů.
 
 ### Jak může stejný hormon něco zapnout a jinde vypnout?
 
@@ -1270,7 +1270,7 @@ Tohle je logika hormonů v kostce. Zpráva rozeslaná všem, kterou přečtou je
 
 # Spád, práh, smyčka
 
-URL: https://purple-papaya.github.io/vetev-na-vetvi/pages/blog-spad-prah-smycka.html  
+URL: https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html  
 Větev: Blog  
 Shrnutí: Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil.  
 English: Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that turn them into decisions, feedback loops, and no central controller.
@@ -1281,24 +1281,24 @@ Ve všech osmi běží tytéž tři tahy. Zaprvé spád: něčeho je někde víc
 
 > Přirovnání ze života: Představ si splachovací nádržku. Voda do ní teče, protože v potrubí je vyšší tlak než v nádržce. To je spád. S hladinou stoupá plovák, a když dosáhne určité výšky, zavře ventil. To je práh. A protože plovák měří právě to, co ventil ovlivňuje, po každém spláchnutí se nádržka sama dopustí na stejnou hladinu. To je smyčka. Nikdo u toho nestojí a nikdo nic nehlídá. Tělo je takových nádržek plné, jen jsou postavené z bílkovin.
 
-- [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) (Biochemie) – spád: energie živin teče z kopce, po schodech, ne z útesu; práh: energetická bariéra, kterou enzymy snižují; smyčka: konečný produkt brzdí první enzym své linky
-- [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) (Neurobiologie) – spád: sodík venku, draslík uvnitř, −70 mV na membráně; práh: vše, nebo nic: pod prahem se nestane nic; smyčka: výstřel na chvíli unaví vlastní kanály, a tak vlna nemůže zpátky
-- [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) (Fyziologie) – spád: sůl a voda; pumpy je vracejí do kopce; práh: žádaná hodnota termostatu, kterou horečka posune; smyčka: negativní zpětná vazba drží teplotu
-- [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html) (Farmakologie) – spád: hladina léku, která stoupá a opadá; práh: terapeutické okno: ne moc, ne málo; smyčka: vana bez zátky: čím je plnější, tím rychleji odtéká
-- [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) (Molekulární biologie) – spád: regulační bílkoviny podél zárodku octomilky; práh: přepínač genu: zapínačů dost, vypínačů málo; smyčka: korektura: polymeráza kontroluje, co právě přidala
-- [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) (Imunologie) – spád: síla vazby receptoru, od slabé po pevnou; práh: dvě zkoušky v brzlíku: aspoň slabě, ale ne příliš silně; smyčka: kdo se váže pevněji, množí se víc; paměť zrychlí příští odpověď
-- [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) (Vývojová biologie) – spád: morfogen, kterého od zdroje ubývá; práh: dva prahy, tři osudy; smyčka: soused říká ne: malý rozdíl se sám zesílí
-- [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) (Endokrinologie) – spád: hormon v krvi, v pikomolech až nanomolech na litr; práh: disociační konstanta: kdy je obsazená polovina receptorů; smyčka: štítná žláza a hypofýza hlídají jedna druhou
+- [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) (Biochemie) – spád: energie živin teče z kopce, po schodech, ne z útesu; práh: energetická bariéra, kterou enzymy snižují; smyčka: konečný produkt brzdí první enzym své linky
+- [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) (Neurobiologie) – spád: sodík venku, draslík uvnitř, −70 mV na membráně; práh: vše, nebo nic: pod prahem se nestane nic; smyčka: výstřel na chvíli unaví vlastní kanály, a tak vlna nemůže zpátky
+- [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) (Fyziologie) – spád: sůl a voda; pumpy je vracejí do kopce; práh: žádaná hodnota termostatu, kterou horečka posune; smyčka: negativní zpětná vazba drží teplotu
+- [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html) (Farmakologie) – spád: hladina léku, která stoupá a opadá; práh: terapeutické okno: ne moc, ne málo; smyčka: vana bez zátky: čím je plnější, tím rychleji odtéká
+- [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) (Molekulární biologie) – spád: regulační bílkoviny podél zárodku octomilky; práh: přepínač genu: zapínačů dost, vypínačů málo; smyčka: korektura: polymeráza kontroluje, co právě přidala
+- [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) (Imunologie) – spád: síla vazby receptoru, od slabé po pevnou; práh: dvě zkoušky v brzlíku: aspoň slabě, ale ne příliš silně; smyčka: kdo se váže pevněji, množí se víc; paměť zrychlí příští odpověď
+- [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) (Vývojová biologie) – spád: morfogen, kterého od zdroje ubývá; práh: dva prahy, tři osudy; smyčka: soused říká ne: malý rozdíl se sám zesílí
+- [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) (Endokrinologie) – spád: hormon v krvi, v pikomolech až nanomolech na litr; práh: disociační konstanta: kdy je obsazená polovina receptorů; smyčka: štítná žláza a hypofýza hlídají jedna druhou
 
 ## i. Spád
 
-Ve fyzice všechno teče z kopce. Teplo z teplého do studeného, látky z místa, kde jich je hodně, tam, kde jich je málo, ionty po elektrickém spádu. Až se všechno vyrovná, nastane rovnováha a nic už nemá kam téct. Kapitola [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) to říká bez obalu: pro všechno kromě živého je rovnováha tichý konec příběhu. A [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) ukazuje totéž na neuronu. Vypni pumpu a rozdíl mezi vnitřkem a vnějškem se vytratí k nule, do ploché čáry rovnováhy, což pro živou buňku znamená konec.
+Ve fyzice všechno teče z kopce. Teplo z teplého do studeného, látky z místa, kde jich je hodně, tam, kde jich je málo, ionty po elektrickém spádu. Až se všechno vyrovná, nastane rovnováha a nic už nemá kam téct. Kapitola [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) to říká bez obalu: pro všechno kromě živého je rovnováha tichý konec příběhu. A [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) ukazuje totéž na neuronu. Vypni pumpu a rozdíl mezi vnitřkem a vnějškem se vytratí k nule, do ploché čáry rovnováhy, což pro živou buňku znamená konec.
 
-Život proto spády udržuje, a platí za to. Sodno-draselná pumpa při každém cyklu vystrčí tři sodíkové ionty ven, vtáhne dva draslíkové dovnitř a spotřebuje jednu molekulu ATP. Na její provoz padne v klidu pětina až čtvrtina veškerého ATP, které tělo vyrobí. [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) k tomu dodává podstatnou věc: pumpy únik nezastaví, jen s ním drží krok. Ionty pořád prosakují zpátky a pumpy je pořád vracejí do kopce. Tomu se neříká rovnováha, ale ustálený stav. Navenek se nic nemění, uvnitř všechno teče.
+Život proto spády udržuje, a platí za to. Sodno-draselná pumpa při každém cyklu vystrčí tři sodíkové ionty ven, vtáhne dva draslíkové dovnitř a spotřebuje jednu molekulu ATP. Na její provoz padne v klidu pětina až čtvrtina veškerého ATP, které tělo vyrobí. [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) k tomu dodává podstatnou věc: pumpy únik nezastaví, jen s ním drží krok. Ionty pořád prosakují zpátky a pumpy je pořád vracejí do kopce. Tomu se neříká rovnováha, ale ustálený stav. Navenek se nic nemění, uvnitř všechno teče.
 
-Energii na pumpy dodává jiný spád. Metabolismus z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) nechává energii živin téct z kopce a cestou ji sbírá. Ne najednou jako oheň, ale po schodech, po malých hlídaných krocích, z nichž každý vydá trochu využitelné energie. Jako přehrada s elektrárnou, která pracuje se stejnou řekou a stejným spádem jako vodopád, jen ho nenechá vyšumět.
+Energii na pumpy dodává jiný spád. Metabolismus z kapitoly [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) nechává energii živin téct z kopce a cestou ji sbírá. Ne najednou jako oheň, ale po schodech, po malých hlídaných krocích, z nichž každý vydá trochu využitelné energie. Jako přehrada s elektrárnou, která pracuje se stejnou řekou a stejným spádem jako vodopád, jen ho nenechá vyšumět.
 
-Spád ale nemusí ležet jen přes membránu. V zárodku se z jednoho místa šíří morfogen a cestou se rozpadá, takže čím dál od zdroje, tím je ho méně ([Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). V zárodku octomilky leží podél těla spády čtyř regulačních bílkovin a gen eve si z nich poskládá proužek ([Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html)). Lék po spolknutí vystoupá v krvi a zase opadne ([Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html)) a hormon koluje v koncentraci miliardtin až biliontin molu na litr ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Jednou je to spád v prostoru, jindy v čase.
+Spád ale nemusí ležet jen přes membránu. V zárodku se z jednoho místa šíří morfogen a cestou se rozpadá, takže čím dál od zdroje, tím je ho méně ([Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). V zárodku octomilky leží podél těla spády čtyř regulačních bílkovin a gen eve si z nich poskládá proužek ([Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html)). Lék po spolknutí vystoupá v krvi a zase opadne ([Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html)) a hormon koluje v koncentraci miliardtin až biliontin molu na litr ([Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Jednou je to spád v prostoru, jindy v čase.
 
 A tady se objeví první rým. Morfogen v zárodku a lék v krvi se řídí stejnými dvěma čísly: kolik se ho vyrobí nebo dodá a jak rychle mizí. U léku rychlost odbourávání určuje, jak vysoko vystoupá hladina při pravidelném dávkování: když ho tělo odbourává o polovinu pomaleji, hladina se zhruba zdvojnásobí. U morfogenu jeho životnost určuje, jak daleko od zdroje ho ještě bude dost. V simulaci vývojové kapitoly stačí prodloužit poločas a oba prahy se posunou dál od zdroje. Spád v prostoru je tak trochu poločas rozprostřený do délky.
 
@@ -1308,13 +1308,13 @@ A tady se objeví první rým. Morfogen v zárodku a lék v krvi se řídí stej
 
 Spád sám nic nerozhodne. Je to plynulá veličina: o kousek víc, o kousek míň. Buňka ale potřebuje odpovědi typu ano, nebo ne. Vystřelit, nebo mlčet. Stát se pokožkou, nebo nervem. Přežít, nebo zemřít. Mezi spádem a rozhodnutím proto stojí práh.
 
-Nejčistší příklad je neuron z kapitoly [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html). Sčítá tisíce hlasů ano a ne a pod prahem se nestane nic. Na prahu a nad ním přijde vždycky celý výstřel, stejně vysoký, ať práh sotva překročíš, nebo ho přeletíš. Plynulé napětí se tu mění v čisté ano.
+Nejčistší příklad je neuron z kapitoly [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html). Sčítá tisíce hlasů ano a ne a pod prahem se nestane nic. Na prahu a nad ním přijde vždycky celý výstřel, stejně vysoký, ať práh sotva překročíš, nebo ho přeletíš. Plynulé napětí se tu mění v čisté ano.
 
-Zárodek si prahy rozdělí prostor. Buňky v kapitole [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) změří, kolik morfogenu k nim doputuje, a porovnají to s prahy. Dva prahy stačí na tři osudy: kde je morfogenu nad horním prahem, vydají se buňky jednou cestou, mezi prahy druhou a nejdál od zdroje třetí. Jediná vylučovaná bílkovina tak v poli buněk vytvoří několik různých osudů. V [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) dělá stejnou práci přepínač genu: druhý proužek genu eve se rozsvítí jen tam, kde je dost zapínačů Bicoid a Hunchback a málo vypínačů Krüppel a Giant. Taková kombinace se v raném zárodku vyskytuje jen na jednom místě.
+Zárodek si prahy rozdělí prostor. Buňky v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) změří, kolik morfogenu k nim doputuje, a porovnají to s prahy. Dva prahy stačí na tři osudy: kde je morfogenu nad horním prahem, vydají se buňky jednou cestou, mezi prahy druhou a nejdál od zdroje třetí. Jediná vylučovaná bílkovina tak v poli buněk vytvoří několik různých osudů. V [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) dělá stejnou práci přepínač genu: druhý proužek genu eve se rozsvítí jen tam, kde je dost zapínačů Bicoid a Hunchback a málo vypínačů Krüppel a Giant. Taková kombinace se v raném zárodku vyskytuje jen na jednom místě.
 
-Dva prahy navíc tvoří okno, a okno se objevuje ve dvou kapitolách, které spolu na první pohled vůbec nesouvisí. Lék musí v krvi dopadnout do terapeutického okna: pod ním nepomáhá, nad ním škodí ([Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html)). A brzlík z kapitoly [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) zkouší každý T-lymfocyt dvakrát. Buňka, jejíž receptor nepozná vlastní molekuly ani slabě, nedostane signál k přežití a tiše zahyne. Buňka, která se na vlastní úlomky váže příliš silně, by byla nebezpečná, a tak dostane signál zemřít. Projde jen to, co je mezi. Ne moc, ne málo, v lékárně stejně jako v brzlíku.
+Dva prahy navíc tvoří okno, a okno se objevuje ve dvou kapitolách, které spolu na první pohled vůbec nesouvisí. Lék musí v krvi dopadnout do terapeutického okna: pod ním nepomáhá, nad ním škodí ([Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html)). A brzlík z kapitoly [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) zkouší každý T-lymfocyt dvakrát. Buňka, jejíž receptor nepozná vlastní molekuly ani slabě, nedostane signál k přežití a tiše zahyne. Buňka, která se na vlastní úlomky váže příliš silně, by byla nebezpečná, a tak dostane signál zemřít. Projde jen to, co je mezi. Ne moc, ne málo, v lékárně stejně jako v brzlíku.
 
-Práh přitom není daný jednou provždy. Horečka podle [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) není rozbitý termostat: mozek žádanou hodnotu záměrně zvýší. Enzymy z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) zase snižují energetickou bariéru, přes kterou musí molekula při reakci přelézt, takže reakce běží při tělesné teplotě a bez plamene. A práh receptoru se dá vyčíst z jediného čísla. V [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) je to disociační konstanta, tedy koncentrace, při které je obsazená polovina receptorů. Receptory steroidních hormonů ji mají kolem jednoho nanomolu na litr, a proto zaslechnou hormon, kterého je v krvi jen šepot.
+Práh přitom není daný jednou provždy. Horečka podle [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) není rozbitý termostat: mozek žádanou hodnotu záměrně zvýší. Enzymy z kapitoly [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) zase snižují energetickou bariéru, přes kterou musí molekula při reakci přelézt, takže reakce běží při tělesné teplotě a bez plamene. A práh receptoru se dá vyčíst z jediného čísla. V [Dopisu pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) je to disociační konstanta, tedy koncentrace, při které je obsazená polovina receptorů. Receptory steroidních hormonů ji mají kolem jednoho nanomolu na litr, a proto zaslechnou hormon, kterého je v krvi jen šepot.
 
 **Spád říká kolik. Práh z toho udělá ano, nebo ne.**
 
@@ -1322,15 +1322,15 @@ Práh přitom není daný jednou provždy. Horečka podle [Moře pod kůží](ht
 
 Rozhodnutí, které se nikam nevrací, je výstřel do tmy. Ve všech osmi kapitolách se ale výsledek vrací na začátek a ovlivní další krok. To je smyčka, jinak řečeno zpětná vazba.
 
-Nejznámější je termostat z [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Tělo měří teplotu, a když se odchýlí od žádané hodnoty, opraví ji. Negativní zpětná vazba jde proti změně, a tím věci stabilizuje. V metabolismu z kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) dělá totéž konečný produkt: když ho je dost, přibrzdí první enzym své vlastní linky, a když ho ubude, brzda povolí. V [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) hlídají jedna druhou štítná žláza a hypofýza. Když volný tyroxin klesne na polovinu, hormon TSH vyskočí na padesáti- až stonásobek a žlázu popožene.
+Nejznámější je termostat z [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html). Tělo měří teplotu, a když se odchýlí od žádané hodnoty, opraví ji. Negativní zpětná vazba jde proti změně, a tím věci stabilizuje. V metabolismu z kapitoly [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) dělá totéž konečný produkt: když ho je dost, přibrzdí první enzym své vlastní linky, a když ho ubude, brzda povolí. V [Dopisu pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) hlídají jedna druhou štítná žláza a hypofýza. Když volný tyroxin klesne na polovinu, hormon TSH vyskočí na padesáti- až stonásobek a žlázu popožene.
 
-Smyčka ale umí věci i rozhýbat. Pozitivní zpětná vazba změnu zesiluje, a tělo ji proto používá jen tam, kde má děj rychle doběhnout do jasného konce, jako při porodu nebo srážení krve. Ve vývojové kapitole [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) vytvoří smyčka mezi sousedy vzor z ničeho. Buňka, která má na začátku o chlup víc signálu Delta, utlumí sousedy o něco víc, ti pak tlumí ji o něco méně, a malý rozdíl se sám zesiluje, až jedna buňka vyhraje a ostatní kolem ní ustoupí. I neuron má svou malou smyčku: výstřel na chvíli unaví vlastní kanály, a právě tahle krátká únava drží vlnu v pohybu vpřed a nepustí ji zpátky ([Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)).
+Smyčka ale umí věci i rozhýbat. Pozitivní zpětná vazba změnu zesiluje, a tělo ji proto používá jen tam, kde má děj rychle doběhnout do jasného konce, jako při porodu nebo srážení krve. Ve vývojové kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) vytvoří smyčka mezi sousedy vzor z ničeho. Buňka, která má na začátku o chlup víc signálu Delta, utlumí sousedy o něco víc, ti pak tlumí ji o něco méně, a malý rozdíl se sám zesiluje, až jedna buňka vyhraje a ostatní kolem ní ustoupí. I neuron má svou malou smyčku: výstřel na chvíli unaví vlastní kanály, a právě tahle krátká únava drží vlnu v pohybu vpřed a nepustí ji zpátky ([Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html)).
 
-V mízní uzlině z kapitoly [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) pak smyčka pohání evoluci. Antigen přednostně podporuje B-lymfocyty, které se na něj vážou pevněji, a ty se dělí dál. Jejich protilátky antigen likvidují, a čím méně ho zbývá, tím je výběr přísnější. Výsledek výběru tak sám zpřísňuje další kolo výběru.
+V mízní uzlině z kapitoly [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) pak smyčka pohání evoluci. Antigen přednostně podporuje B-lymfocyty, které se na něj vážou pevněji, a ty se dělí dál. Jejich protilátky antigen likvidují, a čím méně ho zbývá, tím je výběr přísnější. Výsledek výběru tak sám zpřísňuje další kolo výběru.
 
-Jedna smyčka je přitom skrytá skoro všude a snadno se přehlédne. Vana s vytaženou zátkou z [Léku je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html): čím víc vody ve vaně je, tím rychleji odtéká. Když přitéká víc, hladina stoupne, odtok zrychlí a obojí se potká v ustáleném stavu. Je to zpětná vazba bez jediného čidla. A má jednoduchou aritmetiku, kterou sdílí polovina kapitol: každý poločas uzavře polovinu mezery, která do nové hladiny ještě zbývá. Lék je v ustáleném stavu zhruba po pěti poločasech. Tyroxin s poločasem kolem osmi dní se po změně dávky ustaluje asi pět týdnů ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Bílkovina s poločasem deset hodin, jakou má simulace v [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), se novému stavu přiblíží až zhruba za dva dny, její mRNA s poločasem půl hodiny za pár hodin. A tělo podle [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) vymění polovinu své vody zhruba za deset dní.
+Jedna smyčka je přitom skrytá skoro všude a snadno se přehlédne. Vana s vytaženou zátkou z [Léku je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html): čím víc vody ve vaně je, tím rychleji odtéká. Když přitéká víc, hladina stoupne, odtok zrychlí a obojí se potká v ustáleném stavu. Je to zpětná vazba bez jediného čidla. A má jednoduchou aritmetiku, kterou sdílí polovina kapitol: každý poločas uzavře polovinu mezery, která do nové hladiny ještě zbývá. Lék je v ustáleném stavu zhruba po pěti poločasech. Tyroxin s poločasem kolem osmi dní se po změně dávky ustaluje asi pět týdnů ([Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)). Bílkovina s poločasem deset hodin, jakou má simulace v [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), se novému stavu přiblíží až zhruba za dva dny, její mRNA s poločasem půl hodiny za pár hodin. A tělo podle [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) vymění polovinu své vody zhruba za deset dní.
 
-Smyčky ovšem umějí i zlobit. Když zpětná vazba přichází pozdě, systém přestřeluje a kolísá, jako dech při Cheyneově-Stokesově dýchání ([Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html)). A když receptor dostává signál bez přestávky, smyčka na úrovni receptoru ho vypne: nepřetržitě podávaný GnRH hypofýzu umlčí, kdežto v pulzech ji nechá pracovat ([Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)).
+Smyčky ovšem umějí i zlobit. Když zpětná vazba přichází pozdě, systém přestřeluje a kolísá, jako dech při Cheyneově-Stokesově dýchání ([Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html)). A když receptor dostává signál bez přestávky, smyčka na úrovni receptoru ho vypne: nepřetržitě podávaný GnRH hypofýzu umlčí, kdežto v pulzech ji nechá pracovat ([Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html)).
 
 **Smyčka je otázka, kterou si systém klade pořád dokola: stačí to?**
 
@@ -1338,11 +1338,11 @@ Smyčky ovšem umějí i zlobit. Když zpětná vazba přichází pozdě, systé
 
 A teď to nejpodivnější. Ve všech osmi kapitolách chybí stejná věc: někdo, kdo by to celé řídil.
 
-Metabolismus se podle kapitoly [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html) řídí sám, podobně jako trh, přes tisíce drobných místních zpětných vazeb, a jedna z jejích částí se rovnou jmenuje Nikdo nevelí. V [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) v buňce není nikdo, kdo by četl. Jsou tam jen molekuly, které do sebe v teple bez přestání narážejí, a čtení je chvíle, kdy k sobě dva tvary zaklapnou. [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) roste bez plánku i bez stavbyvedoucího, jako obrazec z kartiček na stadionu, který nikdo z diváků nevidí. Imunita z [Darwina v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) se nesnaží nepřátele předvídat: předem vyrobí náhodné receptory v astronomickém počtu a pak namnoží ty, které se hodí. Hormon z [Dopisu pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) neříká, co se má stát, jen že je čas, a co to znamená, ví každá buňka sama. A v [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) se 86 miliard neuronů spikne do jednoho já, aniž by kdokoli velel.
+Metabolismus se podle kapitoly [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html) řídí sám, podobně jako trh, přes tisíce drobných místních zpětných vazeb, a jedna z jejích částí se rovnou jmenuje Nikdo nevelí. V [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html) v buňce není nikdo, kdo by četl. Jsou tam jen molekuly, které do sebe v teple bez přestání narážejí, a čtení je chvíle, kdy k sobě dva tvary zaklapnou. [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) roste bez plánku i bez stavbyvedoucího, jako obrazec z kartiček na stadionu, který nikdo z diváků nevidí. Imunita z [Darwina v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html) se nesnaží nepřátele předvídat: předem vyrobí náhodné receptory v astronomickém počtu a pak namnoží ty, které se hodí. Hormon z [Dopisu pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html) neříká, co se má stát, jen že je čas, a co to znamená, ví každá buňka sama. A v [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html) se 86 miliard neuronů spikne do jednoho já, aniž by kdokoli velel.
 
-I tam, kde nějaké centrum je, nevypadá jako velitel. Termostat z [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) sedí v mozku a mozek umí jeho žádanou hodnotu posunout, ale pořád je to jen další smyčka: měří a opravuje. A lék z kapitoly [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html) neví, kam míří. Krev ho roznese po celém těle a zabere tam, kde najde receptor, do kterého zapadne. Je to další dopis pro všechny, jen ho napsal někdo zvenčí.
+I tam, kde nějaké centrum je, nevypadá jako velitel. Termostat z [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html) sedí v mozku a mozek umí jeho žádanou hodnotu posunout, ale pořád je to jen další smyčka: měří a opravuje. A lék z kapitoly [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html) neví, kam míří. Krev ho roznese po celém těle a zabere tam, kde najde receptor, do kterého zapadne. Je to další dopis pro všechny, jen ho napsal někdo zvenčí.
 
-Místo velitele jsou tu spády, prahy a smyčky, a k nim ještě jeden trik: náhoda a výběr. Imunita vyrobí náhodné receptory a nechá přežít a namnožit ty, které pasují. Do vyvíjející se končetiny vyšle výběžky víc motoneuronů, než kolik jich zůstane: sval vylučuje jen omezené množství faktoru přežití a 40 až 70 % z nich zahyne ([Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). Je to Darwin v malém, uvnitř jednoho těla: rozmanitost, práh, který rozhodne, kdo projde, a smyčka, která vítěze namnoží.
+Místo velitele jsou tu spády, prahy a smyčky, a k nim ještě jeden trik: náhoda a výběr. Imunita vyrobí náhodné receptory a nechá přežít a namnožit ty, které pasují. Do vyvíjející se končetiny vyšle výběžky víc motoneuronů, než kolik jich zůstane: sval vylučuje jen omezené množství faktoru přežití a 40 až 70 % z nich zahyne ([Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html)). Je to Darwin v malém, uvnitř jednoho těla: rozmanitost, práh, který rozhodne, kdo projde, a smyčka, která vítěze namnoží.
 
 **Řád bez velitele není zázrak. Je to spád, práh a smyčka, opakované miliardkrát.**
 
@@ -1350,7 +1350,7 @@ Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na k
 
 #### Zdroje a další čtení
 
-- Všechny údaje v textu pocházejí z prvních kapitol Wetware, kde je najdeš i s odkazy na učebnice a články: [Jsi sloveso](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-ch1-jsi-sloveso.html), [Jak se sůl naučila říkat já](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html), [Moře pod kůží](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-fyziologie-ch1-more-pod-kuzi.html), [Lék je vlna](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-farmakologie-ch1-lek-je-vlna.html), [Čtení bez čtenáře](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), [Darwin v mízní uzlině](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html), [Tělo, které se postavilo samo](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) a [Dopis pro všechny](https://purple-papaya.github.io/vetev-na-vetvi/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+- Všechny údaje v textu pocházejí z prvních kapitol Wetware, kde je najdeš i s odkazy na učebnice a články: [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html), [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html), [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html), [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html), [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html), [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) a [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Ustálený stav versus rovnováha (kap. 1); receptory steroidních hormonů s K_D kolem 1 nM (kap. 47); citlivost zpětné vazby štítné žlázy (kap. 49).
 - Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 731–758 (1997). Podíl ATP, který spotřebuje sodno-draselná pumpa.
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Poločas, ustálený stav a clearance (kap. 12).

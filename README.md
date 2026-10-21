@@ -72,12 +72,12 @@ python3 tools/seo.py
   Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
 - **Zástupné stránky** (O mně, Příběhy, Luštění, Zpětná vazba) a 404 mají `noindex`. Až dostanou
   obsah, změň v `PAGES` jejich `kind` ze `stub` na vhodný typ.
-- **Adresa webu** je v proměnné `SITE_URL`. Pokud web přejde na vlastní doménu, změň ji a skript
-  spusť znovu.
+- **Adresa webu** je `https://vetevnavetvi.cz/` (proměnná `SITE_URL`). Kdyby se web přestěhoval,
+  změň ji a skript spusť znovu.
 - **Data publikace a úpravy** se berou z historie gitu. Commity, jejichž zpráva začíná `SEO:`,
   se nepočítají, takže úprava metadat stránku „neomladí“.
-- **robots.txt** na adrese `github.io/vetev-na-vetvi/` roboti nečtou (berou ho jen z kořene domény).
-  Mapu webu proto odešli ručně v Google Search Console a Bing Webmaster Tools.
+- **Mapa webu** je odkázaná z `robots.txt`. Rychlejší je ale odeslat ji i ručně v Google Search Console
+  a Bing Webmaster Tools (`https://vetevnavetvi.cz/sitemap.xml`).
 
 ## Publikace přes GitHub Pages
 

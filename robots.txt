@@ -1,7 +1,5 @@
 # Větev na větvi – vyhledávače i jazykové modely jsou vítány.
-# Pozor: na adrese github.io/<repozitář>/ čtou roboti jen robots.txt z kořene domény;
-# tenhle soubor začne platit, až web poběží na vlastní doméně.
 User-agent: *
 Allow: /
 
-Sitemap: https://purple-papaya.github.io/vetev-na-vetvi/sitemap.xml
+Sitemap: https://vetevnavetvi.cz/sitemap.xml
