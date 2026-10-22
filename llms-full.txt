@@ -1473,3 +1473,31 @@ Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm
 - Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.
 - McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).
 - Obvody ve hře jsou hračky. Skutečné reflexy a rozhodování mozku zapojují mnohem víc neuronů a jejich vstupy se sčítají v čase i prostoru.
+
+---
+
+# Proužek
+
+URL: https://vetevnavetvi.cz/pages/hra-prouzek.html  
+Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Shrnutí: Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.  
+English: Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, then predict binding-site experiments.
+
+V raném zárodku octomilky je každá regulační bílkovina rozložená jinak: některé jsou hlavně vepředu, jiné uprostřed nebo vzadu. Gen eve má přepínač, krátký úsek DNA s vazebnými místy pro několik takových bílkovin. Podle toho, které z nich v jádře zrovna jsou, se gen zapne, nebo ne.
+
+Jak hrát: u každé bílkoviny nastav, kolik jejích vazebných míst bude v přepínači, od nuly do tří. Bicoid a Hunchback gen zapínají, Giant a Krüppel vypínají. Gen se zapne jen v jádrech, kde jsou oba zapínače a žádný vypínač. Víc vazebných míst znamená, že přepínač zareaguje už na menší koncentraci. Zlatá jádra na zárodku ukazují, kde se gen zapne, a čárkovaný rámeček je cíl.
+
+Hra: Proužek. Nahoře zárodek octomilky, hlava vlevo. Pod ním koncentrace čtyř regulačních bílkovin, zjednodušeně podle obrázku 7–32 v Albertsovi. Čárkovaná čára je práh, od kterého na bílkovinu přepínač reaguje: zelená plocha je tam, kde zapínač stačí, oranžová tam, kde vypínač vypne. Počty vazebných míst a prahy jsou ve hře ilustrační.
+
+## Co se tu doopravdy děje
+
+Přepínač druhého proužku genu eve je úsek asi pěti set písmen DNA a vážou se na něj všechny čtyři bílkoviny ze hry. Bicoid a Hunchback ho zapínají, a to společně: když se poškodí byť jediné vazebné místo pro některý z nich, proužek výrazně zeslábne. Giant tvoří přední okraj proužku a Krüppel zadní. Když se v přepínači zničí vazebná místa pro Giant, proužek se rozšíří dopředu.
+
+Žádná z těch bílkovin neví nic o proužcích. Každá je jen hustší na jednom konci zárodku a řidší na druhém. Proužek vznikne až z kombinace a z toho, jak citlivě na ni přepínač reaguje. Celý přepínač genu eve přitom váže přes dvacet různých regulačních bílkovin a sedm jejich kombinací vytvoří sedm proužků. Víc je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 7, obr. 7–32: přepínač druhého proužku genu eve.
+- Small S., Blair A., Levine M. Regulation of even-skipped stripe 2 in the Drosophila embryo. The EMBO Journal 11, 4047–4057 (1992).
+- Andrioli L. P., Vasisht V., Theodosopoulou E., Oberstein A., Small S. Anterior repression of a Drosophila stripe enhancer requires three position-specific mechanisms. Development 129, 4931–4940 (2002).
+- Profily bílkovin, prahy a vliv počtu vazebných míst jsou ve hře zjednodušené a ilustrační.

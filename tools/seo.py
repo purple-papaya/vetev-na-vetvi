@@ -203,6 +203,16 @@ PAGES = {
         about=['neuron', 'synapse', 'práh', 'excitace', 'inhibice', 'McCulloch–Pitts', 'logické funkce'],
         en='Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, '
            'AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.'),
+    'pages/hra-prouzek.html': dict(
+        kind='game', chapter='pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html', name='Proužek',
+        title='Proužek: skládačka o přepínačích genů | Větev na větvi',
+        desc='Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen '
+             'zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.',
+        about=['regulace genů', 'enhancer', 'even-skipped', 'Bicoid', 'gradient morfogenu', 'octomilka',
+               'regulační bílkoviny'],
+        en='Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding '
+           'sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, '
+           'then predict binding-site experiments.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

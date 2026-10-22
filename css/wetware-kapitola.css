@@ -373,3 +373,26 @@
   table.truth .bad{color:var(--terra-pale);}
   @media (max-width:640px){ .net-wrap{flex-direction:column;align-items:stretch;} table.truth{align-self:center;}
     .net .lbl{font-size:15px;} .net .syn text{font-size:14px;} .net .th text{font-size:13px;} .net .sum{font-size:17px;} .net .pin{font-size:14px;} }
+  /* Proužek: binding-site steppers and the prediction quiz */
+  .sites{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 1.4rem;padding:.85rem 1.1rem;border-top:1px solid var(--night-line);}
+  .sites[hidden],.quiz[hidden]{display:none;}
+  .site{display:flex;align-items:center;gap:.45rem;font-family:var(--sans);color:#E9E7D8;}
+  .site .nm{font-weight:600;font-size:.92rem;min-width:5.8rem;}
+  .site .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;padding:.1rem .45rem;border-radius:999px;margin-right:auto;}
+  .site .role.on{color:var(--sage-pale);border:1px solid rgba(155,176,126,.5);}
+  .site .role.off{color:var(--terra-pale);border:1px solid rgba(188,106,70,.5);}
+  .site .cnt{font-family:var(--mono);font-size:1rem;font-weight:500;color:var(--gold);min-width:1.2em;text-align:center;}
+  .site.zero .cnt{color:#6F7764;}
+  figure.game .ctrl.st{padding:.38rem .72rem;font-size:1rem;line-height:1;}
+  .quiz{padding:.85rem 1.1rem;border-top:1px solid var(--night-line);font-family:var(--sans);color:#E9E7D8;}
+  .quiz .q{margin:0 0 .75rem;font-size:.98rem;line-height:1.5;}
+  .quiz .q b{color:var(--gold);font-weight:600;}
+  .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;}
+  figure.game .opts .opt{display:flex;flex-direction:column;align-items:center;gap:.45rem;text-transform:none;letter-spacing:0;font-size:.88rem;padding:.65rem .5rem;}
+  .opts .opt svg{max-width:100%;height:auto;}
+  .opts .opt:disabled{opacity:.6;}
+  .opts .opt.right{border-color:var(--sage);background:rgba(155,176,126,.2);color:#fff;opacity:1;}
+  .opts .opt.wrong{border-color:var(--terra);background:rgba(188,106,70,.2);opacity:1;}
+  .quiz .game-feedback{border-top:0;padding:.75rem 0 .2rem;min-height:0;}
+  .quiz-next{display:flex;justify-content:flex-end;}
+  @media (max-width:560px){ .sites{grid-template-columns:1fr;} }
