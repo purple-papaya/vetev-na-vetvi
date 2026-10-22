@@ -38,7 +38,7 @@ LOGO_IMAGE = 'assets/og/logo.png'
 THEME_COLOR = '#2F5D46'
 WPM = 200   # reading speed used for timeRequired
 
-# kind: home | hub | branch | chapter | blog | post | stub | 404
+# kind: home | hub | branch | chapter | blog | post | games | game | about | stub | 404
 PAGES = {
     'index.html': dict(
         kind='home', title='Větev na větvi – terénní zápisník o biologii těla',
@@ -162,21 +162,33 @@ PAGES = {
         about=['gradient', 'práh', 'zpětná vazba', 'ustálený stav', 'samoorganizace'],
         en='Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that '
            'turn them into decisions, feedback loops, and no central controller.'),
-    # ---- placeholders, not worth indexing yet
+    # ---- games
+    'pages/hry.html': dict(
+        kind='games', name='Hry', title='Hry – minihry z biologie těla | Větev na větvi',
+        desc='Minihry na motivy kapitol Wetware: biologie těla, kterou si vyzkoušíš na vlastní kůži. Pulzy hormonů, '
+             'třídění buněk v brzlíku, dávkování léků a další.'),
+    'pages/hra-pulzy.html': dict(
+        kind='game', chapter='pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html', name='Pulzy',
+        title='Pulzy: rytmická hra o GnRH a LH | Větev na větvi',
+        desc='Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun '
+             'GnRH tvorbu LH naopak zastaví.',
+        about=['GnRH', 'LH', 'pulzní sekrece', 'desenzitizace receptorů', 'hypofýza', 'agonista GnRH'],
+        en='Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary\'s LH output in a healthy '
+           'range, then silence it like a physician with a continuous infusion (receptor desensitization).'),
+    # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
         desc='Pája vystudovala molekulární biologii a biochemii a pracuje jako datová analytička v Brně. Jak vznikají '
              'kapitoly, z jakých učebnic a s jakou rolí AI.'),
+    # ---- placeholders, not worth indexing yet
     'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
                                desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
-    'pages/hry.html': dict(kind='stub', name='Hry', title='Hry | Větev na větvi',
-                           desc='Hry a hlavolamy na motivy kapitol Wetware. Stránka se připravuje.'),
     'pages/zpetna-vazba.html': dict(kind='stub', name='Zpětná vazba', title='Zpětná vazba | Větev na větvi',
                                     desc='Napiš, co ti sedlo, co skřípalo nebo kde je chyba. Stránka se připravuje.'),
     '404.html': dict(kind='404', name='Stránka nenalezena', title='Stránka nenalezena | Větev na větvi',
                      desc='Tahle adresa na webu Větev na větvi neexistuje.'),
 }
-INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'about'}
+INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'games', 'game', 'about'}
 
 # The author, as described on the About page (pages/o-mne.html).
 AUTHOR = dict(name='Pája', job='datová analytička', locality='Brno', country='CZ',
@@ -380,7 +392,8 @@ def markdown_of(page_path, page_html):
         cap = re.search(r'<figcaption[^>]*>(.*?)</figcaption>', m.group(0), re.S)
         if not cap:
             return ' '
-        label = 'Simulace' if re.search(r'class="sim\b', m.group(0)) else 'Obrázek'
+        label = ('Hra' if re.search(r'class="sim game\b', m.group(0)) else
+                 'Simulace' if re.search(r'class="sim\b', m.group(0)) else 'Obrázek')
         return f'<p>{label}: {cap.group(1)}</p>'
 
     def triad(m):
@@ -427,7 +440,9 @@ def crumbs_of(path):
         trail.append((PAGES[meta['branch']]['name'], meta['branch']))
     if kind in ('blog', 'post'):
         trail.append(('Blog', 'pages/blog.html'))
-    if kind in ('chapter', 'post', 'stub', 'hub', 'about'):
+    if kind in ('games', 'game'):
+        trail.append(('Hry', 'pages/hry.html'))
+    if kind in ('chapter', 'post', 'game', 'stub', 'hub', 'about'):
         trail.append((meta['name'], path))
     seen, out = set(), []
     for name, p in trail:
@@ -456,7 +471,7 @@ def graph_of(path, page_html, dates):
         nodes.append({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
             {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': url_of(p)} for i, (n, p) in enumerate(crumbs)]})
         page['breadcrumb'] = {'@id': url + '#breadcrumb'}
-    if kind in ('hub', 'branch', 'blog'):
+    if kind in ('hub', 'branch', 'blog', 'games'):
         page['@type'] = 'CollectionPage'
         if kind == 'hub':
             chapters = [p for p, m in PAGES.items() if m['kind'] == 'chapter']
@@ -466,6 +481,11 @@ def graph_of(path, page_html, dates):
         if kind == 'branch':
             page['hasPart'] = [{'@id': url_of(p) + '#article'} for p, m in PAGES.items()
                                if m['kind'] == 'chapter' and m['branch'] == path]
+        if kind == 'games':
+            games = [p for p, m in PAGES.items() if m['kind'] == 'game']
+            page['mainEntity'] = {'@type': 'ItemList', 'itemListElement': [
+                {'@type': 'ListItem', 'position': i + 1, 'url': url_of(p), 'name': PAGES[p]['name']}
+                for i, p in enumerate(games)]}
         if kind == 'blog':
             posts = [p for p, m in PAGES.items() if m['kind'] == 'post']
             nodes.append({'@type': 'Blog', '@id': url + '#blog', 'name': f'Blog – {SITE_NAME}', 'url': url,
@@ -505,6 +525,25 @@ def graph_of(path, page_html, dates):
             page['@type'] = ['WebPage', 'FAQPage']
             page['mainEntity'] = [{'@type': 'Question', 'name': q,
                                    'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faqs]
+    if kind == 'game':
+        chapter = PAGES[meta['chapter']]
+        game = {'@type': ['Game', 'LearningResource'], '@id': url + '#game', 'name': meta['name'],
+                'description': meta['desc'], 'inLanguage': 'cs', 'url': url,
+                'mainEntityOfPage': {'@id': url + '#webpage'},
+                'image': {'@type': 'ImageObject', 'url': image, 'width': 1200, 'height': 630},
+                'datePublished': meta.get('date') or dates[0], 'dateModified': dates[1],
+                'author': {'@id': PERSON_ID}, 'publisher': {'@id': SITE_URL + '#org'},
+                'isAccessibleForFree': True, 'learningResourceType': 'interaktivní hra', 'interactivityType': 'active',
+                'about': [{'@type': 'Thing', 'name': a} for a in meta.get('about', [])],
+                'keywords': ', '.join(meta.get('about', [])),
+                'isBasedOn': {'@type': 'Article', 'name': chapter['name'], 'url': url_of(meta['chapter'])},
+                'isPartOf': {'@id': SITE_URL + 'pages/hry.html#webpage'}}
+        cites = sources_of(page_html)
+        if cites:
+            game['citation'] = cites
+        page['mainEntity'] = {'@id': url + '#game'}
+        nodes.append(game)
+        nodes.append(PERSON)
     if kind == 'about':
         page['@type'] = 'AboutPage'
         page['mainEntity'] = {'@id': PERSON_ID}
@@ -527,7 +566,7 @@ def head_block(path, page_html, dates):
     lines = [BEGIN,
              f'<meta name="description" content="{esc(meta["desc"])}">',
              f'<meta name="robots" content="{robots}">']
-    if kind in ('chapter', 'post', 'about'):
+    if kind in ('chapter', 'post', 'game', 'about'):
         lines.append(f'<meta name="author" content="{esc(AUTHOR["name"])}">')
     if kind != '404':
         lines.append(f'<link rel="canonical" href="{esc(url)}">')
@@ -589,6 +628,7 @@ def write_site_files(all_dates):
 
     chapters = [p for p, m in PAGES.items() if m['kind'] == 'chapter']
     posts = [p for p, m in PAGES.items() if m['kind'] == 'post']
+    games = [p for p, m in PAGES.items() if m['kind'] == 'game']
     lines = [f'# {SITE_NAME}', '', f'> {SITE_DESC}', '', f'English summary: {SITE_DESC_EN}', '',
              'Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na několika hlavních myšlenkách, přirovnáních ze '
              'života, interaktivních simulacích, odpovědích na časté otázky a zdrojích s odkazy na učebnice a články '
@@ -602,6 +642,11 @@ def write_site_files(all_dates):
     for p in posts:
         m = PAGES[p]
         lines.append(f'- [{m["name"]}]({url_of(p)}): {m["desc"]} English: {m["en"]}')
+    lines += ['', '## Hry', '']
+    for p in games:
+        m = PAGES[p]
+        lines.append(f'- [{m["name"]}]({url_of(p)}) (na motivy kapitoly {PAGES[m["chapter"]]["name"]}): {m["desc"]} '
+                     f'English: {m["en"]}')
     lines += ['', '## O autorce', '',
               f'- [O mně]({url_of("pages/o-mne.html")}): {AUTHOR["name"]} vystudovala obor {AUTHOR["education"]} '
               f'a pracuje jako {AUTHOR["job"]} ({AUTHOR["locality"]}). Kapitoly píše s pomocí AI (Claude od Anthropicu); '
@@ -609,19 +654,21 @@ def write_site_files(all_dates):
     lines += ['', '## Rozcestníky', '',
               f'- [Rozcestník]({SITE_URL}): hlavní strana webu',
               f'- [Wetware]({url_of("pages/wetware.html")}): přehled všech větví a kapitol',
-              f'- [Blog]({url_of("pages/blog.html")}): kratší texty mezi kapitolami', '',
+              f'- [Blog]({url_of("pages/blog.html")}): kratší texty mezi kapitolami',
+              f'- [Hry]({url_of("pages/hry.html")}): minihry na motivy kapitol', '',
               '## Optional', '',
-              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly a články jako prostý text v Markdownu', '']
+              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu', '']
     (ROOT / 'llms.txt').write_text('\n'.join(lines), encoding='utf-8')
 
     full = [f'# {SITE_NAME} – plné texty', '', f'> {SITE_DESC}', '',
             'Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.', '']
-    for p in chapters + posts:
+    for p in chapters + posts + games:
         m = PAGES[p]
         page_html = (ROOT / p).read_text(encoding='utf-8')
         md = markdown_of(p, page_html)
         md = re.sub(r'^# .*\n', '', md)   # the title comes from the header below
-        section = PAGES[m['branch']]['name'] if m['kind'] == 'chapter' else 'Blog'
+        section = {'chapter': lambda: PAGES[m['branch']]['name'], 'post': lambda: 'Blog',
+                   'game': lambda: 'Hry (na motivy kapitoly ' + PAGES[m['chapter']]['name'] + ')'}[m['kind']]()
         full += ['', '---', '', f'# {m["name"]}', '', f'URL: {url_of(p)}  ', f'Větev: {section}  ',
                  f'Shrnutí: {m["desc"]}  ', f'English: {m["en"]}', '', md.strip(), '']
     (ROOT / 'llms-full.txt').write_text(re.sub(r'\n{3,}', '\n\n', '\n'.join(full)).strip() + '\n', encoding='utf-8')

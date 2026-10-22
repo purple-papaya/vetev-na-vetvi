@@ -21,6 +21,10 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 
 - [Spád, práh, smyčka](https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html): Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil. English: Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that turn them into decisions, feedback loops, and no central controller.
 
+## Hry
+
+- [Pulzy](https://vetevnavetvi.cz/pages/hra-pulzy.html) (na motivy kapitoly Dopis pro všechny): Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví. English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
+
 ## O autorce
 
 - [O mně](https://vetevnavetvi.cz/pages/o-mne.html): Pája vystudovala obor Molekulární biologie a biochemie organismů a pracuje jako datová analytička (Brno). Kapitoly píše s pomocí AI (Claude od Anthropicu); fakta a čísla se ověřují proti citovaným učebnicím.
@@ -30,7 +34,8 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 - [Rozcestník](https://vetevnavetvi.cz/): hlavní strana webu
 - [Wetware](https://vetevnavetvi.cz/pages/wetware.html): přehled všech větví a kapitol
 - [Blog](https://vetevnavetvi.cz/pages/blog.html): kratší texty mezi kapitolami
+- [Hry](https://vetevnavetvi.cz/pages/hry.html): minihry na motivy kapitol
 
 ## Optional
 
-- [Plné texty](https://vetevnavetvi.cz/llms-full.txt): všechny kapitoly a články jako prostý text v Markdownu
+- [Plné texty](https://vetevnavetvi.cz/llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu

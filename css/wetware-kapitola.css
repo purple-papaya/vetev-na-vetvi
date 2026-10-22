@@ -297,3 +297,30 @@
   figure.triad dt{font-weight:600;color:var(--sage-deep);}
   figure.triad dd{margin:0;color:var(--ink-2);}
   figure.triad figcaption{grid-column:1/-1;margin-top:.3rem;}
+
+  /* ---- games (Hry) ---- */
+  figure.game .sim-panel{position:relative;}
+  .game-stage{position:relative;}
+  figure.game canvas{touch-action:none;user-select:none;-webkit-user-select:none;}
+  .game-overlay{position:absolute;inset:0;display:flex;padding:1.2rem;
+    background:rgba(28,33,25,.86);z-index:5;overflow:auto;}
+  .game-overlay[hidden]{display:none;}
+  .game-msg{max-width:32rem;margin:auto;text-align:center;color:#E9E7D8;font-family:var(--sans);}
+  .game-msg h3{font-family:var(--serif);font-weight:700;font-size:1.4rem;line-height:1.25;margin:0 0 .6rem;color:#F4F1E7;}
+  .game-msg .game-text{font-size:.96rem;line-height:1.55;color:#D9DCCB;margin:0 0 1rem;}
+  .game-msg .game-text p{margin:.35rem 0;}
+  .game-msg b{color:var(--gold);font-weight:600;}
+  .game-btns{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;}
+  figure.game .ctrl{padding:.62rem .95rem;}
+  .ctrl.go{background:var(--terra);border-color:var(--terra);color:#fff;}
+  .ctrl.go:hover{background:var(--terra-deep);border-color:var(--terra-deep);color:#fff;}
+  .levels{display:flex;gap:.4rem;flex-wrap:wrap;padding:.75rem 1.1rem;border-top:1px solid var(--night-line);background:var(--night-2);}
+  .levels::before{content:"Úroveň";font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--sage-mute);align-self:center;margin-right:.3rem;}
+  .levels .ctrl{font-size:.72rem;padding:.45rem .7rem;}
+  .levels .ctrl.done::after{content:" ✓";color:var(--gold);}
+  .levels .ctrl.is-on.done::after{color:var(--night);}
+  .ctrl.big{font-size:1rem;padding:.95rem 1.7rem;letter-spacing:.06em;}
+  .game-goal{font-family:var(--sans);font-size:.86rem;line-height:1.5;color:#D9DCCB;padding:.7rem 1.1rem;
+    border-bottom:1px solid var(--night-line);background:rgba(255,255,255,.02);}
+  .game-goal b{color:var(--gold);font-weight:600;}

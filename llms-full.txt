@@ -1355,3 +1355,31 @@ Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na k
 - Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 731–758 (1997). Podíl ATP, který spotřebuje sodno-draselná pumpa.
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Poločas, ustálený stav a clearance (kap. 12).
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Morfogeny a prahy (kap. 21); výběr v brzlíku a zárodečná centra (kap. 24).
+
+---
+
+# Pulzy
+
+URL: https://vetevnavetvi.cz/pages/hra-pulzy.html  
+Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Shrnutí: Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví.  
+English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
+
+Hypotalamus řídí hypofýzu hormonem GnRH a hypofýza podle něj vylučuje LH, jeden z hormonů, které ovládají pohlavní žlázy. Nezáleží přitom jen na tom, kolik GnRH pošleš, ale i jak: v pulzech, nebo nepřetržitě.
+
+Jak hrát: každé klepnutí na tlačítko Pulz (nebo mezerník) vypustí krátkou dávku GnRH. Sleduj, jak hypofýza odpoví vlnou LH a jak jí přitom ubývají receptory, které se mezi pulzy zase vracejí. V první úrovni udrž průměrné LH ve zdravém pásmu, ve druhé ho jako lékař umlč.
+
+Hra: Pulzy. Nahoře přísun GnRH, uprostřed podíl receptorů v hypofýze, které jsou k dispozici, dole hladina LH: tenká čára ukazuje jednotlivé pulzy, silná jejich klouzavý průměr, podle kterého se počítá pásmo. Obsazený receptor se postupně stahuje z povrchu a mezi pulzy se vrací. Čas je zrychlený a parametry modelu jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Hormony hypotalamu přicházejí v pulzech a u GnRH na rytmu záleží víc než na množství. Receptor, na kterém GnRH sedí, se postupně stahuje z povrchu buňky. Mezi pulzy má čas se vrátit, a tak každý další pulz najde dost receptorů a vyvolá odpověď. Při nepřetržitém přísunu receptory ubývají, až hypofýza přestane odpovídat a výroba LH i FSH se paradoxně zastaví.
+
+Medicína toho využívá. U žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit. Přesně to děláš ve druhé úrovni. V modelu této hry dopadnou podobně i pulzy, které jdou příliš rychle po sobě: receptory se mezi nimi nestihnou vrátit.
+
+Víc o hormonech, receptorech a rytmu je v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47: nepřetržité podávání GnRH tlumí receptory GnRH v hypofýze a dlouhodobě působící agonista GnRH navodí „medikamentózní ooforektomii“.
+- Hra je zjednodušený model. Rychlost ubývání a návratu receptorů, šířka zdravého pásma i zrychlení času jsou zvolené pro názornost.
