@@ -456,3 +456,17 @@
   .cell .fit{font-family:var(--mono);font-size:.7rem;color:#D9DCCB;white-space:nowrap;}
   .cell .dots{color:var(--gold);letter-spacing:.04em;}
   @media (max-width:560px){ .cells{grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem;padding:.6rem .8rem .9rem;} .cell .dots{display:none;} }
+  /* Štětinky: hex sheet */
+  .hexwrap{padding:1rem 1.1rem;display:flex;justify-content:center;}
+  .hexwrap svg{width:100%;max-width:460px;height:auto;display:block;}
+  .hx{cursor:pointer;outline:none;}
+  .hx polygon{fill:#2A3125;stroke:#46503C;stroke-width:1.2;transition:fill .15s ease;}
+  .hx .mark{stroke:#21271D;stroke-width:2.2;stroke-linecap:round;opacity:0;}
+  .hx.calm polygon{fill:rgba(155,176,126,.3);}
+  .hx.win polygon{fill:#D9B75A;stroke:#F1D98A;}
+  .hx.win .mark,.hx.clash .mark{opacity:1;}
+  .hx.clash polygon{fill:#D08A5E;stroke:#E0614A;stroke-width:2.2;}
+  .hx.free polygon{stroke:#D9B75A;stroke-dasharray:3 3;animation:hxblink 1.4s ease-in-out infinite;}
+  @keyframes hxblink{50%{stroke-opacity:.2;}}
+  .hx:hover polygon{stroke:#9BB07E;}
+  .hx:focus-visible polygon{stroke:#F1D98A;stroke-width:2.6;}

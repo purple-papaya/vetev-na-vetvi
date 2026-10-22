@@ -260,6 +260,15 @@ PAGES = {
         en='Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their '
            'daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted '
            'virus.'),
+    'pages/hra-stetinky.html': dict(
+        kind='game', chapter='pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html', name='Štětinky',
+        title='Štětinky: hlavolam o laterální inhibici | Větev na větvi',
+        desc='Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a '
+             'Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.',
+        about=['laterální inhibice', 'Delta–Notch', 'štětinky octomilky', 'tvorba vzorů', 'vývojová biologie'],
+        en='Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch '
+           'pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with '
+           'long-range inhibition.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

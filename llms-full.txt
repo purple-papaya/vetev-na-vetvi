@@ -1639,3 +1639,30 @@ Po nákaze zůstanou paměťové buňky, jejichž receptory už výběrem prošl
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1377–1379: somatická hypermutace, AID a afinita protilátek; kap. 23, s. 1342–1344: proměnlivost chřipky.
 - Hra je zjednodušený model. Tvar vazebného místa je tu osm sloupců a pravděpodobnosti mutací, počty buněk i přepočet na afinitu jsou zvolené pro hratelnost.
+
+---
+
+# Štětinky
+
+URL: https://vetevnavetvi.cz/pages/hra-stetinky.html  
+Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Shrnutí: Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.  
+English: Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with long-range inhibition.
+
+Štětinky na hřbetě octomilky vyrůstají každá z jediné buňky, která zvítězila ve skupince podobných buněk. Vítězná buňka má hodně bílkoviny Delta a ta přes receptor Notch říká sousedům: nespecializujte se. Výsledkem je pravidelná mozaika, ačkoli odstupy nikdo neodměřoval.
+
+Jak hrát: klepnutím na šestiúhelník z buňky uděláš budoucí štětinku, dalším klepnutím ji vrátíš. Mozaika je stabilní, když platí dvě pravidla. Dvě štětinky nesmějí sousedit, protože by se navzájem utlumily (červeně). A každá ostatní buňka musí sousedit aspoň s jednou štětinkou, jinak by ji nikdo netlumil a specializovala by se taky (blikající obrys).
+
+Hra: Štětinky. Každý šestiúhelník je buňka. Zlatá s čárkou je budoucí štětinka, zelené jsou buňky, které některá štětinka tlumí. Červená znamená dvě štětinky vedle sebe, blikající obrys buňku, kterou nikdo netlumí. Ve čtvrté úrovni sahá tlumení o buňku dál.
+
+## Co se tu doopravdy děje
+
+V zárodku nikdo štětinky nerozmisťuje. Každá buňka začíná se skoro stejným množstvím Delty a buňka s aktivovaným Notch vyrábí méně vlastní Delty, takže méně tlumí sousedy. Kdo má na začátku o chlup víc Delty, utlumí sousedy o něco víc, ti pak tlumí jeho o něco méně a malý rozdíl se sám zesiluje. Jako počáteční rozdíl stačí i náhodný šum. Z toho, co tu skládáš ručně, se tak v zárodku sám vynoří jeden z mnoha stabilních vzorců.
+
+Vítězná buňka umí tlumit i buňky, kterých se přímo nedotýká: natáhne k nim dlouhé výběžky. S delším dosahem jsou štětinky řidší, jako ve čtvrté úrovni. A když signalizace přes Notch nefunguje, nikdo nikoho netlumí: vznikne obrovský nadbytek nervových buněk na úkor buněk pokožky a zárodek nepřežije. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); laterální inhibice (kap. 21, s. 1222–1224); štětinky octomilky (kap. 21, s. 1243–1244).
+- Collier J. R., Monk N. A. M., Maini P. K., Lewis J. H. Pattern formation by lateral inhibition with feedback: a mathematical model of Delta-Notch intercellular signalling. Journal of Theoretical Biology 183, 429–446 (1996).
+- Pravidla hry jsou zjednodušená: buňka buď tlumí, nebo ne, a dosah tlumení je přesně jedna nebo dvě buňky.
