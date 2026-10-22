@@ -1724,6 +1724,38 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na p�
 
 ---
 
+# Přeskoky
+
+URL: https://vetevnavetvi.cz/pages/hra-preskoky.html  
+Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Shrnutí: Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.  
+English: Puzzle on saltatory conduction: place nodes of Ranvier on a myelinated axon so the impulse reaches the end, discover the flat optimum of internode length, and restore conduction through a demyelinated lesion.
+
+Vzruch se po axonu šíří jako štafeta: každý kousek membrány otevře sodíkové kanály a postrčí souseda. Myelin ten běh zrychlí. Axon izoluje, a tak se vzruch obnovuje jen v krátkých holých místech, Ranvierových zářezech, a mezi nimi přeskakuje. Kolik zářezů je potřeba a jak daleko od sebe?
+
+Jak hrát: klepnutím na axon přidáš zářez, klepnutím na zářez ho odebereš a tažením ho posuneš. Pak vyšli vzruch. Horní graf ukazuje napětí podél axonu: v každém zářezu vyskočí na plnou výšku a pod myelinem slábne. Do dalšího zářezu musí dorazit aspoň k prahu. Na klávesnici vybíráš místo šipkami, mezerníkem přidáváš nebo odebíráš zářez a klávesou F vzruch vyšleš.
+
+Hra: Přeskoky. Dole axon: světlé úseky jsou myelin, mezery mezi nimi zářezy a čísla pod úseky ukazují, kolik mikrosekund trval každý skok. Nahoře napětí podél axonu s prahem, který musí dosáhnout každý zářez. Délková konstanta je pod zdravým myelinem 1,5 mm a pod poškozeným 0,5 mm, ostatní čísla jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Pod myelinem se vzruch neobnovuje. Napětí se jen šíří vnitřkem axonu a cestou slábne, podobně jako tlak v děravé hadici. Jak rychle slábne, určuje délková konstanta: u myelinizovaného vlákna je dlouhá, protože myelin brání úniku proudu. V zářezu ale musí napětí dosáhnout prahu, aby se otevřely sodíkové kanály a vzruch se obnovil v plné síle.
+
+Delší skoky znamenají méně zastávek, ale slabší signál, který zářez nabíjí pomaleji. Proto má rychlost vedení ploché maximum: příliš husté zářezy zdržují a příliš řídké vedou pomalu, nebo vůbec. Teorie to předpověděla už v polovině 20. století a pokusy na myších to potvrdily: vlákna s kratšími úseky myelinu vedla pomaleji a s prodlužováním úseků rychlost rostla jen k plochému maximu.
+
+U roztroušené sklerózy imunitní systém poškozuje myelin v mozku a míše. Vedení se v takovém místě zpomalí, nebo úplně selže. Myelin se může obnovit, ale nový bývá tenčí a s kratšími úseky. Víc o vzruchu a myelinu je v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html).
+
+Hra vysvětluje princip a čísla v ní jsou ilustrační.
+
+#### Zdroje
+
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 8 (Electrical Signaling in Neurons).
+- Wu L. M. N. a kol. Increasing internodal distance in myelinated nerves accelerates nerve conduction to a flat maximum. Current Biology 22, 1957–1961 (2012).
+- Franklin R. J. M., ffrench-Constant C. Remyelination in the CNS: from biology to therapy. Nature Reviews Neuroscience 9, 839–855 (2008).
+- Hra je zjednodušený model: napětí pod myelinem klesá exponenciálně, zářez se nabíjí tím déle, čím slabší signál k němu dorazí, a všechna čísla jsou ilustrační.
+
+---
+
 # Smyčka
 
 URL: https://vetevnavetvi.cz/pages/hra-smycka.html  

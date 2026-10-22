@@ -287,6 +287,14 @@ PAGES = {
         en='Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a '
            'hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against '
            'an overdose.'),
+    'pages/hra-preskoky.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html', name='Přeskoky',
+        title='Přeskoky: hlavolam o myelinu a saltatorním vedení | Větev na větvi',
+        desc='Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. '
+             'Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.',
+        about=['myelin', 'saltatorní vedení', 'Ranvierův zářez', 'akční potenciál', 'délková konstanta', 'roztroušená skleróza'],
+        en='Puzzle on saltatory conduction: place nodes of Ranvier on a myelinated axon so the impulse reaches the end, '
+           'discover the flat optimum of internode length, and restore conduction through a demyelinated lesion.'),
     'pages/hra-smycka.html': dict(
         kind='game', chapter='pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html', name='Smyčka',
         title='Smyčka: detektivka se štítnou žlázou a TSH | Větev na větvi',
