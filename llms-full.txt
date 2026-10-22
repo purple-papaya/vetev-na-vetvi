@@ -1501,3 +1501,32 @@ Přepínač druhého proužku genu eve je úsek asi pěti set písmen DNA a vá�
 - Small S., Blair A., Levine M. Regulation of even-skipped stripe 2 in the Drosophila embryo. The EMBO Journal 11, 4047–4057 (1992).
 - Andrioli L. P., Vasisht V., Theodosopoulou E., Oberstein A., Small S. Anterior repression of a Drosophila stripe enhancer requires three position-specific mechanisms. Development 129, 4931–4940 (2002).
 - Profily bílkovin, prahy a vliv počtu vazebných míst jsou ve hře zjednodušené a ilustrační.
+
+---
+
+# Horečka
+
+URL: https://vetevnavetvi.cz/pages/hra-horecka.html  
+Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Shrnutí: Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.  
+English: Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of a fever and its break.
+
+Tělesná teplota nesedí na 37 °C sama od sebe. Udržuje ji smyčka negativní zpětné vazby: čidla teplotu změří, porovnají ji s žádanou hodnotou a efektory odchylku opraví. Ve hře jsi ta smyčka ty.
+
+Jak hrát: pět tlačítek pod grafem jsou efektory, od nejsilnějšího chlazení po nejsilnější ohřev: pot, rozšířené cévy v kůži, klid, stažené cévy a třes. Drž teplotu v zeleném pásmu kolem žádané hodnoty, zatímco se venku mění počasí. Na klávesnici přepínáš šipkami doleva a doprava nebo klávesami 1 až 5. Čas je zrychlený: jedna hra trvá necelé dvě minuty.
+
+Hra: Horečka. Nahoře tělesná teplota a zelené pásmo půl stupně kolem žádané hodnoty. Pod grafem pruh s tím, co zrovna dělají efektory (modře chlazení, oranžově ohřev), a pruh s teplotou venku. Tělo i počasí jsou zjednodušené a čas je zrychlený.
+
+## Co se tu doopravdy děje
+
+Teplotní smyčka má celý tým efektorů. Když je ti zima, cévy v kůži se stáhnou, aby teplo zůstalo uvnitř, a když to nestačí, třeseš se a svaly teplo vyrábějí. Když je ti horko, cévy v kůži se rozšíří a odvádějí teplo ven, a když to nestačí, potíš se. Regulovaná teplota přitom nikdy nesedí přesně na žádané hodnotě, protože smyčka neustále opravuje drobné odchylky oběma směry.
+
+Druhá úroveň ukazuje, proč na rychlosti zpráv záleží. Když smyčka dostává informace pozdě a opravuje silně, přestřeluje a kmitá. Přesně to se děje s dýcháním při těžkém srdečním selhání: krev nese zprávu o oxidu uhličitém z plic do mozku pomalu a dýchání střídavě sílí, slábne a na chvíli se zastaví. Říká se tomu Cheyneovo-Stokesovo dýchání.
+
+A horečka? Ta není rozbitý termostat. Mozek žádanou hodnotu záměrně zvýší a ty se třeseš, dokud ji nedoženeš, i když máš normálních 37 °C. Když horečka povolí, žádaná hodnota zase klesne a tělo se zpotí. Víc o zpětných vazbách je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Zpětná vazba, žádaná hodnota a zesílení (kap. 1); Cheyneovo-Stokesovo dýchání (box 32-2).
+- Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.
+- Hra je zjednodušený model. Teploty, rychlosti ohřevu a chladnutí, zpoždění i průběh horečky jsou zvolené pro názornost.

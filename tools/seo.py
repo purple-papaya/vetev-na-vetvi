@@ -213,6 +213,16 @@ PAGES = {
         en='Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding '
            'sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, '
            'then predict binding-site experiments.'),
+    'pages/hra-horecka.html': dict(
+        kind='game', chapter='pages/wetware-fyziologie-ch1-more-pod-kuzi.html', name='Horečka',
+        title='Horečka: hra o termoregulaci a zpětné vazbě | Větev na větvi',
+        desc='Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které '
+             'rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.',
+        about=['termoregulace', 'negativní zpětná vazba', 'žádaná hodnota', 'horečka', 'zpoždění',
+               'Cheyneovo-Stokesovo dýchání'],
+        en='Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, '
+           'see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of '
+           'a fever and its break.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
