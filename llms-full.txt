@@ -1383,3 +1383,33 @@ Víc o hormonech, receptorech a rytmu je v kapitole [Dopis pro všechny](https:/
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47: nepřetržité podávání GnRH tlumí receptory GnRH v hypofýze a dlouhodobě působící agonista GnRH navodí „medikamentózní ooforektomii“.
 - Hra je zjednodušený model. Rychlost ubývání a návratu receptorů, šířka zdravého pásma i zrychlení času jsou zvolené pro názornost.
+
+---
+
+# Brzlík
+
+URL: https://vetevnavetvi.cz/pages/hra-brzlik.html  
+Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Shrnutí: Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.  
+English: Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when AIRE fails.
+
+Každý mladý T-lymfocyt si receptor poskládal náhodně, takže nikdo neví, na co bude pasovat. Může to být mikrob, ale taky vlastní tělo. V brzlíku proto skládá dvě zkoušky: receptor musí aspoň slabě poznat vlastní molekuly MHC a nesmí se příliš silně chytat úlomků vlastních bílkovin.
+
+Jak hrát: u každé buňky uvidíš výsledek obou zkoušek. Tečky ukazují, kolika kontakty se receptor chytil úlomku vlastní bílkoviny. Urči osud tlačítkem nebo klávesou 1 až 4: buňka zahyne, projde, stane se regulační, nebo ji vyřadíš. Když nerozhodneš včas, buňka nedostane signál k přežití a zahyne, a ke konci úrovně buňky přicházejí rychleji. Kdo chce hrát bez časového limitu, zapne si Bez spěchu.
+
+Hra: Brzlík. Vlevo mladý T-lymfocyt, vpravo jeho zkoušky: jestli pozná vlastní MHC a kolika kontakty se chytí úlomků vlastních bílkovin. Rozhoduje nejsilnější vazba. Dole se sčítají buňky podle osudu, oranžové tečky v krvi jsou nebezpečné buňky, které prošly. Počty kontaktů a hranice mezi osudy jsou ve hře zjednodušené.
+
+## Co se tu doopravdy děje
+
+Receptory T-lymfocytů vznikají náhodným skládáním genů, a tak se mezi nimi najdou i takové, které se chytí vlastního těla. Brzlík proto každou dozrávající buňku zkouší. Receptor, který vlastní MHC nepozná vůbec, je k ničemu: T-lymfocyt vidí cizí úlomky jen na vlastních MHC. Taková buňka nedostane signál k přežití a tiše zahyne. Buňka, která se na úlomky vlastních bílkovin váže příliš silně, je naopak nebezpečná a dostane signál zemřít. Říká se tomu negativní selekce.
+
+Mezi tím je pásmo slabých vazeb. Takové buňky přežijí a odcházejí do krve jako pomocné nebo cytotoxické T-lymfocyty. Některé z těch, které se vážou docela silně, ale ne dost na vyřazení, se stanou regulačními T-lymfocyty. Ty pak v těle tlumí jiné lymfocyty namířené proti vlastním tkáním.
+
+Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí jen β-buňky slinivky, a přesto ho brzlík dospívajícím lymfocytům ukazuje. Stará se o to bílkovina AIRE, která v části buněk dřeně brzlíku spustí slabý přepis 75–90 % všech genů. Lidé i myši s nefunkčním AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a vznikne cukrovka 1. typu.
+
+Víc o generátoru receptorů, škole v brzlíku i o tom, co se děje potom v mízních uzlinách, je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1389–1391 a 1401: pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE.
+- Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.

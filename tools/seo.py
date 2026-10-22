@@ -175,6 +175,16 @@ PAGES = {
         about=['GnRH', 'LH', 'pulzní sekrece', 'desenzitizace receptorů', 'hypofýza', 'agonista GnRH'],
         en='Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary\'s LH output in a healthy '
            'range, then silence it like a physician with a continuous infusion (receptor desensitization).'),
+    'pages/hra-brzlik.html': dict(
+        kind='game', chapter='pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html', name='Brzlík',
+        title='Brzlík: třídicí hra o výběru T-lymfocytů | Větev na větvi',
+        desc='Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo '
+             'bude regulační. A co se stane, když přestane fungovat AIRE.',
+        about=['brzlík', 'T-lymfocyt', 'pozitivní selekce', 'negativní selekce', 'regulační T-lymfocyty', 'AIRE',
+               'autoimunita'],
+        en='Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide '
+           'binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when '
+           'AIRE fails.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

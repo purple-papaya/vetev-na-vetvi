@@ -24,6 +24,7 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 ## Hry
 
 - [Pulzy](https://vetevnavetvi.cz/pages/hra-pulzy.html) (na motivy kapitoly Dopis pro všechny): Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví. English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
+- [Brzlík](https://vetevnavetvi.cz/pages/hra-brzlik.html) (na motivy kapitoly Darwin v mízní uzlině): Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE. English: Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when AIRE fails.
 
 ## O autorce
 

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Brzlík: třídicí hra o výběru T-lymfocytů | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/hra-brzlik.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brzlík: třídicí hra o výběru T-lymfocytů | Větev na větvi">
+<meta property="og:description" content="Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/hra-brzlik.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/vetev-na-vetvi.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brzlík – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/hra-brzlik.html",
+   "name": "Brzlík: třídicí hra o výběru T-lymfocytů | Větev na větvi",
+   "description": "Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/vetev-na-vetvi.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#game"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Hry",
+     "item": "https://vetevnavetvi.cz/pages/hry.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Brzlík",
+     "item": "https://vetevnavetvi.cz/pages/hra-brzlik.html"
+    }
+   ]
+  },
+  {
+   "@type": [
+    "Game",
+    "LearningResource"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#game",
+   "name": "Brzlík",
+   "description": "Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/hra-brzlik.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-brzlik.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/vetev-na-vetvi.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-22T03:33:03+00:00",
+   "dateModified": "2026-10-22T03:33:03+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "learningResourceType": "interaktivní hra",
+   "interactivityType": "active",
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "brzlík"
+    },
+    {
+     "@type": "Thing",
+     "name": "T-lymfocyt"
+    },
+    {
+     "@type": "Thing",
+     "name": "pozitivní selekce"
+    },
+    {
+     "@type": "Thing",
+     "name": "negativní selekce"
+    },
+    {
+     "@type": "Thing",
+     "name": "regulační T-lymfocyty"
+    },
+    {
+     "@type": "Thing",
+     "name": "AIRE"
+    },
+    {
+     "@type": "Thing",
+     "name": "autoimunita"
+    }
+   ],
+   "keywords": "brzlík, T-lymfocyt, pozitivní selekce, negativní selekce, regulační T-lymfocyty, AIRE, autoimunita",
+   "isBasedOn": {
+    "@type": "Article",
+    "name": "Darwin v mízní uzlině",
+    "url": "https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html"
+   },
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/pages/hry.html#webpage"
+   },
+   "citation": [
+    "Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1389–1391 a 1401: pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE.",
+    "Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů."
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Imunologie</span><span class="sep"></span><span class="n">Třídicí hra</span></p>
+  <h1 class="title"><em>Brzlík</em></h1>
+  <p class="deck">Jsi brzlík. Z&nbsp;kostní dřeně ti chodí mladé T-lymfocyty a&nbsp;ty rozhoduješ, které pustíš do těla.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Každý mladý T-lymfocyt si receptor poskládal náhodně, takže nikdo neví, na co bude pasovat. Může to být mikrob, ale taky vlastní tělo. V&nbsp;brzlíku proto skládá dvě zkoušky: receptor musí aspoň slabě poznat vlastní molekuly MHC a&nbsp;nesmí se příliš silně chytat úlomků vlastních bílkovin.</p>
+
+  <p><b>Jak hrát:</b> u&nbsp;každé buňky uvidíš výsledek obou zkoušek. Tečky ukazují, kolika kontakty se receptor chytil úlomku vlastní bílkoviny. Urči osud tlačítkem nebo klávesou 1 až 4: buňka <b>zahyne</b>, <b>projde</b>, stane se <b>regulační</b>, nebo ji <b>vyřadíš</b>. Když nerozhodneš včas, buňka nedostane signál k&nbsp;přežití a&nbsp;zahyne, a&nbsp;ke konci úrovně buňky přicházejí rychleji. Kdo chce hrát bez časového limitu, zapne si <b>Bez spěchu</b>.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Brzlík</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">buňka</span> <b id="b-i">–</b></span>
+        <span class="rd"><span class="lo">správně</span> <b id="b-ok">–</b></span>
+        <span class="rd"><span class="lo">chyby</span> <b id="b-bad">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="b-goal">Vyber úroveň a&nbsp;začni.</div>
+      <canvas id="bgame" height="280" aria-label="Zkušebna brzlíku: vlevo mladý T-lymfocyt, vpravo výsledky zkoušek, dole buňky podle osudu."></canvas>
+      <p class="vh" id="b-desc" aria-live="polite"></p>
+      <div class="fates" id="b-fates">
+        <button class="ctrl f-neglect" type="button" data-fate="neglect"><kbd>1</kbd>Zahyne</button>
+        <button class="ctrl f-pass" type="button" data-fate="pass"><kbd>2</kbd>Projde</button>
+        <button class="ctrl f-treg" type="button" data-fate="treg"><kbd>3</kbd>Regulační</button>
+        <button class="ctrl f-delete" type="button" data-fate="delete"><kbd>4</kbd>Vyřadit</button>
+      </div>
+      <div class="game-feedback" id="b-fb" aria-live="polite"></div>
+      <div class="sim-controls">
+        <button class="ctrl" id="b-calm" type="button" aria-pressed="false">Bez spěchu</button>
+        <button class="ctrl" id="b-restart" type="button">Znovu</button>
+      </div>
+      <div class="game-overlay" id="b-ov" hidden></div>
+    </div>
+    <div class="levels" id="b-levels"></div>
+  </div>
+  <figcaption><b>Brzlík.</b> Vlevo mladý T-lymfocyt, vpravo jeho zkoušky: jestli pozná vlastní MHC a&nbsp;kolika kontakty se chytí úlomků vlastních bílkovin. Rozhoduje nejsilnější vazba. Dole se sčítají buňky podle osudu, oranžové tečky v&nbsp;krvi jsou nebezpečné buňky, které prošly. Počty kontaktů a&nbsp;hranice mezi osudy jsou ve hře zjednodušené.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Receptory T-lymfocytů vznikají náhodným skládáním genů, a&nbsp;tak se mezi nimi najdou i&nbsp;takové, které se chytí vlastního těla. Brzlík proto každou dozrávající buňku zkouší. Receptor, který vlastní MHC nepozná vůbec, je k&nbsp;ničemu: T-lymfocyt vidí cizí úlomky jen na vlastních MHC. Taková buňka nedostane signál k&nbsp;přežití a&nbsp;tiše zahyne. Buňka, která se na úlomky vlastních bílkovin váže příliš silně, je naopak nebezpečná a&nbsp;dostane signál zemřít. Říká se tomu negativní selekce.</p>
+
+  <p>Mezi tím je pásmo slabých vazeb. Takové buňky přežijí a&nbsp;odcházejí do krve jako pomocné nebo cytotoxické T-lymfocyty. Některé z&nbsp;těch, které se vážou docela silně, ale ne dost na vyřazení, se stanou regulačními T-lymfocyty. Ty pak v&nbsp;těle tlumí jiné lymfocyty namířené proti vlastním tkáním.</p>
+
+  <p>Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí jen β-buňky slinivky, a&nbsp;přesto ho brzlík dospívajícím lymfocytům ukazuje. Stará se o&nbsp;to bílkovina AIRE, která v&nbsp;části buněk dřeně brzlíku spustí slabý přepis 75–90&nbsp;% všech genů. Lidé i&nbsp;myši s&nbsp;nefunkčním AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A&nbsp;když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a&nbsp;vznikne cukrovka 1. typu.</p>
+
+  <p>Víc o&nbsp;generátoru receptorů, škole v&nbsp;brzlíku i&nbsp;o&nbsp;tom, co se děje potom v&nbsp;mízních uzlinách, je v&nbsp;kapitole <a href="wetware-imunologie-ch1-darwin-v-mizni-uzline.html">Darwin v&nbsp;mízní uzlině</a>.</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje</h4>
+  <ul>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Kap.&nbsp;24, s.&nbsp;1389–1391 a&nbsp;1401: pozitivní a&nbsp;negativní selekce v&nbsp;brzlíku, regulační T-lymfocyty a&nbsp;AIRE.</li>
+    <li>Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a&nbsp;hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a&nbsp;výběr není dokonalý. Ve hře zmizí s&nbsp;AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* =========================================================
+     BRZLÍK — the player is the thymus. Each young T cell shows two tests:
+     does its receptor recognise self MHC at all, and how strongly it binds
+     self peptides (0–6 contacts, the strongest row counts). The player
+     sends it to die by neglect, out to the blood, out as a regulatory
+     T cell, or to deletion. Level 3 loses AIRE halfway through.
+     ========================================================= */
+  var FATES = ['neglect', 'pass', 'treg', 'delete'];
+  var SHOULD = {neglect: 'Tahle buňka měla zahynout.', pass: 'Tahle buňka měla projít.',
+                treg: 'Z téhle buňky měla být regulační.', delete: 'Tahle buňka měla být vyřazena.'};
+  var DONE_CS = {neglect: 'zahynula', pass: 'prošla do krve', treg: 'odešla jako regulační', delete: 'byla vyřazena'};
+  var LEVELS = [
+    {name: 'Dvě zkoušky', time: 7, rows: ['aktin'], treg: false, maxBad: 2,
+     deck: {neglect: 3, pass: 6, delete: 5},
+     goal: 'Nejvýš <b>2 chyby</b> ze 14 buněk. Nepozná vlastní MHC → <b>zahyne</b>. Vazba na vlastní úlomek 0–3 kontakty → <b>projde</b>, 5–6 → <b>vyřadit</b>.',
+     intro: '<p>Z kostní dřeně přicházejí mladé T-lymfocyty a každý má jiný, náhodně poskládaný receptor.</p><p>První zkouška: pozná receptor aspoň slabě vlastní MHC? Druhá: kolika kontakty se chytí úlomku vlastní bílkoviny? Podle toho urči osud.</p>'},
+    {name: 'Pojistka', time: 6.5, rows: ['aktin', 'histon'], treg: true, maxBad: 2,
+     deck: {neglect: 3, pass: 7, treg: 4, delete: 4},
+     goal: 'Nejvýš <b>2 chyby</b> a regulačních buněk aspoň tolik jako nebezpečných, které proklouznou. Rozhoduje nejsilnější vazba, přesně 4 kontakty → <b>regulační</b>.',
+     intro: '<p>Buňky se teď zkoušejí na dvou vlastních bílkovinách a počítá se silnější vazba.</p><p>Buňka se 4 kontakty se váže docela silně, ale ještě ne nebezpečně. Z takové se může stát regulační T-lymfocyt, který v těle tlumí jiné lymfocyty namířené proti vlastním tkáním.</p>'},
+    {name: 'Bez AIRE', time: 6.5, rows: ['aktin', 'histon', 'inzulin'], treg: true, maxBad: 3, aire: true, failAt: 10,
+     deck: {neglect: 2, pass: 6, treg: 3, delete: 3, organ: 6},
+     goal: 'Nejvýš <b>3 chyby</b> ve 20 buňkách. Třetí řádek je <b>inzulin</b>: brzlík ho ukazuje jen díky bílkovině AIRE.',
+     intro: '<p>Inzulin vyrábějí jen β-buňky slinivky, a přesto ho brzlík dospívajícím lymfocytům ukazuje. Bílkovina AIRE totiž v části buněk dřeně brzlíku spustí slabý přepis 75–90 % všech genů.</p><p>Díky tomu poznáš a vyřadíš i buňky, které by napadly slinivku. Zatím.</p>'}
+  ];
+  function kontakty(n){ return n + NB + plural(n, 'kontakt', 'kontakty', 'kontaktů'); }
+  function ri(a, b){ return a + Math.floor(Math.random() * (b - a + 1)); }
+  function shuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function ease(t){ t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
+
+  function makeCell(kind, L){
+    var nr = L.rows.length, common = L.aire ? nr - 1 : nr, c = [], i;
+    for(i = 0; i < common; i++) c[i] = ri(0, kind === 'delete' ? 4 : 3);
+    if(kind === 'treg') c[ri(0, common - 1)] = 4;
+    if(kind === 'delete') c[ri(0, common - 1)] = ri(5, 6);
+    if(L.aire) c[nr - 1] = kind === 'organ' ? ri(5, 6) : ri(0, 3);
+    return {kind: kind, mhc: kind !== 'neglect', c: c, hue: ri(0, 3)};
+  }
+  function buildDeck(L){
+    var kinds = [];
+    Object.keys(L.deck).forEach(function(k){ if(k !== 'organ') for(var i = 0; i < L.deck[k]; i++) kinds.push(k); });
+    shuffle(kinds);
+    if(L.deck.organ){          // two insulin binders while AIRE works, the rest after it fails
+      var first = kinds.slice(0, L.failAt - 2), rest = kinds.slice(L.failAt - 2);
+      first.push('organ', 'organ');
+      for(var i = 0; i < L.deck.organ - 2; i++) rest.push('organ');
+      kinds = shuffle(first).concat(shuffle(rest));
+    }
+    return kinds.map(function(k){ return makeCell(k, L); });
+  }
+
+  makeSim('bgame', function(canvas, dim){
+    var ov = document.getElementById('b-ov'), goalEl = document.getElementById('b-goal'), fb = document.getElementById('b-fb');
+    var iEl = document.getElementById('b-i'), okEl = document.getElementById('b-ok'), badEl = document.getElementById('b-bad');
+    var desc = document.getElementById('b-desc'), bCalm = document.getElementById('b-calm');
+    var fateBtns = Array.prototype.slice.call(document.querySelectorAll('#b-fates [data-fate]'));
+    var done = store.get('hra-brzlik', [false, false, false]);
+    var calm = !!store.get('hra-brzlik-klid', false);
+    var level = 0, st = null, last = now();
+    var bar = levelBar('b-levels', LEVELS.length, LEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+    toggleBtn(bCalm, calm, 'Bez spěchu');
+
+    function now(){ return (window.performance && performance.now ? performance.now() : Date.now()) / 1000; }
+    function L(){ return LEVELS[level]; }
+    function cell(){ return st.deck[st.i]; }
+    function rowShown(i){ return !(L().aire && i === L().rows.length - 1 && !st.aireOn); }
+    function strongest(c){ var m = 0; for(var i = 0; i < c.c.length; i++) if(rowShown(i)) m = Math.max(m, c.c[i]); return m; }
+    function truth(c){
+      if(!c.mhc) return 'neglect';
+      var m = strongest(c);
+      return m >= 5 ? 'delete' : (m === 4 && L().treg ? 'treg' : 'pass');
+    }
+    function why(c){
+      if(!c.mhc) return 'Receptor vlastní MHC nepozná. Buňka nedostane signál k přežití a zahyne.';
+      var m = strongest(c), k = -1;
+      for(var i = 0; i < c.c.length; i++) if(rowShown(i) && c.c[i] === m) k = i;
+      var name = L().rows[k];
+      if(m >= 5 && name === 'inzulin') return 'Na inzulin se chytí ' + kontakty(m) + '. V těle by zničila β-buňky slinivky, proto se vyřadí.';
+      if(m >= 5) return 'Nejsilnější vazba má ' + kontakty(m) + ', to je příliš. V těle by buňka napadla vlastní tkáně, proto se vyřadí.';
+      if(m === 4 && L().treg) return 'Nejsilnější vazba má 4 kontakty: docela silná, ale ne na vyřazení. Z takové buňky se může stát regulační T-lymfocyt.';
+      return 'Pozná vlastní MHC a nejsilnější vazba má jen ' + kontakty(m) + '. Slabá vazba: buňka je užitečná a projde.';
+    }
+
+    function reset(){
+      st = {deck: buildDeck(L()), i: 0, phase: 'idle', t: 0, left: L().time, limit: L().time, ok: 0, bad: 0, out: [], aireOn: true,
+            fate: null, revealed: false};
+      fb.className = 'game-feedback'; fb.innerHTML = '';
+      setTxt(desc, '');
+    }
+    function choose(i){
+      level = i; bar.set(i); reset();
+      goalEl.innerHTML = L().goal;
+      fateBtns.forEach(function(b){ if(b.getAttribute('data-fate') === 'treg') b.hidden = !L().treg; });
+      overlay(ov, (i + 1) + '. ' + L().name, L().intro, [{label: 'Začít', cls: 'go', fn: start}]);
+      update();
+    }
+    function start(){ reset(); overlay(ov, null); enter(); }
+    function cellTime(){ return L().time * (1 - 0.4 * st.i / Math.max(1, st.deck.length - 1)); }   // speeds up towards the end
+    function enter(){ st.phase = 'enter'; st.t = 0; st.left = st.limit = cellTime(); st.fate = null; update(); }
+    function describe(){
+      var c = cell(), s = 'Buňka ' + (st.i + 1) + ' z ' + st.deck.length + '. ';
+      if(!c.mhc) s += 'Vlastní MHC nepozná.';
+      else s += 'Vlastní MHC pozná. ' + L().rows.map(function(n, i){ return n + ': ' + (rowShown(i) ? kontakty(c.c[i]) : 'neukázán'); }).join(', ') + '.';
+      setTxt(desc, s);
+    }
+    function decide(fate, timeout){
+      if(!st || (st.phase !== 'reveal' && st.phase !== 'decide')) return;
+      if(fate === 'treg' && !L().treg) return;
+      var c = cell(), tr = truth(c), ok = fate === tr;
+      c.fate = fate; c.ok = ok; c.truth = tr; c.hidden = c.kind === 'organ' && !rowShown(c.c.length - 1);
+      c.danger = (fate === 'pass' || fate === 'treg') && (tr === 'delete' || c.hidden);
+      st.out.push(c);
+      if(ok) st.ok++; else st.bad++;
+      var head = timeout ? '<b>Čas vypršel</b>, buňka nedostala signál a zahynula. ' : (ok ? '<b>Správně.</b> ' : '<b>Chyba:</b> buňka ' + DONE_CS[fate] + '. ');
+      fb.className = 'game-feedback ' + (ok ? 'ok' : 'bad');
+      fb.innerHTML = head + (ok ? why(c) : SHOULD[tr] + ' ' + why(c));
+      st.fate = fate; st.phase = 'anim'; st.t = 0;
+      update();
+    }
+    function next(){
+      st.i++;
+      if(st.i >= st.deck.length){ finish(); return; }
+      if(L().aire && st.i === L().failAt && st.aireOn){
+        st.aireOn = false; st.phase = 'event';
+        overlay(ov, 'AIRE přestal fungovat', '<p>Mutace v genu AIRE: buňky dřeně brzlíku přestaly přepisovat geny, které jinak fungují jen v jednotlivých orgánech. Inzulin ze zkoušky zmizel.</p><p>Pokračuj podle toho, co vidíš.</p>',
+          [{label: 'Pokračovat', cls: 'go', fn: function(){ overlay(ov, null); enter(); }}]);
+        return;
+      }
+      enter();
+    }
+    function count(f){ return st.out.filter(f).length; }
+    function finish(){
+      st.phase = 'end'; st.revealed = true; update();
+      var Lv = L(), n = st.deck.length, ok, text, title;
+      var useful = count(function(c){ return c.fate === 'pass' && c.truth === 'pass' && !c.hidden; });
+      var tregs = count(function(c){ return c.fate === 'treg'; });
+      var danger = count(function(c){ return c.danger; });
+      var hidden = count(function(c){ return c.hidden && (c.fate === 'pass' || c.fate === 'treg'); });
+      text = '<p>Správně <b>' + st.ok + '</b> z ' + n + (Lv.aire ? ' podle toho, co šlo vidět.' : '.') + '</p>';
+      text += '<p>Do krve: užitečné buňky <b>' + useful + '</b>' + (Lv.treg ? ', regulační <b>' + tregs + '</b>' : '')
+        + ', nebezpečné <b>' + danger + '</b>.</p>';
+      if(level === 0){
+        ok = st.bad <= Lv.maxBad;
+        if(!ok) text += '<p>Pamatuj: nejdřív MHC, pak síla vazby. Slabá vazba je v pořádku, silná je nebezpečná.</p>';
+      } else if(level === 1){
+        ok = st.bad <= Lv.maxBad && danger <= tregs;
+        text += danger ? (danger <= tregs ? '<p>Pár nebezpečných buněk proklouzlo, ale regulačních je dost, aby je v těle tlumily.</p>'
+                                          : '<p>Nebezpečných buněk proklouzlo víc, než kolik je regulačních. Hrozí autoimunita.</p>') : '';
+      } else {
+        ok = st.bad <= Lv.maxBad;
+        text += hidden ? '<p>Jenže po výpadku AIRE ' + (hidden === 1 ? 'prošla <b>1</b> buňka, která se silně chytá'
+            : hidden < 5 ? 'prošly <b>' + hidden + '</b> buňky, které se silně chytají' : 'prošlo <b>' + hidden + '</b> buněk, které se silně chytají')
+          + ' inzulinu. Brzlík neměl jak to poznat, protože mu inzulin nikdo neukázal. Takové buňky v těle ničí β-buňky slinivky a vzniká cukrovka 1. typu.</p>'
+          : '<p>Žádná buňka namířená proti inzulinu tentokrát neprošla, ale jen náhodou: po výpadku AIRE ji brzlík nemá jak poznat.</p>';
+        title = ok ? 'Konec úrovně' : 'Ještě ne';
+      }
+      if(ok){ done[level] = true; store.set('hra-brzlik', done); bar.mark(level); }
+      var btns = [{label: 'Znovu', fn: function(){ choose(level); start(); }}];
+      if(ok && level + 1 < LEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      overlay(ov, title || (ok ? 'Povedlo se' : 'Ještě ne'), text, btns);
+    }
+    function update(){
+      setTxt(iEl, st.deck ? Math.min(st.i + 1, st.deck.length) + '/' + st.deck.length : '–');
+      setTxt(okEl, String(st.ok)); setTxt(badEl, String(st.bad));
+    }
+
+    fateBtns.forEach(function(b){ b.addEventListener('click', function(){ decide(b.getAttribute('data-fate')); }); });
+    document.addEventListener('keydown', function(e){
+      if(!st || (st.phase !== 'reveal' && st.phase !== 'decide') || e.altKey || e.ctrlKey || e.metaKey) return;
+      var k = '1234'.indexOf(e.key);
+      if(k >= 0){ e.preventDefault(); decide(FATES[k]); }
+    });
+    onClick('b-calm', function(){ calm = !calm; store.set('hra-brzlik-klid', calm); toggleBtn(bCalm, calm, 'Bez spěchu'); });
+    onClick('b-restart', function(){ choose(level); });
+    choose(done[0] && !done[1] ? 1 : (done[1] && !done[2] ? 2 : 0));
+
+    var REVEAL = REDUCED ? 0 : 0.14, ENTER = REDUCED ? 0.01 : 0.3, ANIM = REDUCED ? 0.15 : 0.5;
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        if(!st) return;
+        st.t += dt;
+        if(st.phase === 'enter' && st.t >= ENTER){ st.phase = 'reveal'; st.t = 0; }
+        if(st.phase === 'reveal' && st.t >= REVEAL * (L().rows.length + 1)){ st.phase = 'decide'; st.t = 0; describe(); }
+        if(st.phase === 'decide' && !calm){ st.left -= dt; if(st.left <= 0) decide('neglect', true); }
+        if(st.phase === 'anim' && st.t >= ANIM) next();
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, Lv = L(), small = w < 480;
+        ctx.clearRect(0, 0, w, h);
+        var sw = Math.min(w - 28, 600), ox = (w - sw) / 2;
+        // timer
+        ctx.fillStyle = C.line; rr(ctx, ox, 12, sw, 4, 2); ctx.fill();
+        var tb = st.phase === 'decide' ? st.left / st.limit : (st.phase === 'enter' || st.phase === 'reveal' ? 1 : 0);
+        if(calm){ ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right'; ctx.fillText('bez časového limitu', ox + sw, 30); }
+        else if(tb > 0){ ctx.fillStyle = tb < 0.3 ? C.terra : C.sage; rr(ctx, ox, 12, sw * clamp(tb, 0, 1), 4, 2); ctx.fill(); }
+
+        var nr = Lv.rows.length + 1, rowH = 32, y0 = 46, R = small ? 24 : 30;
+        var cy = y0 + (nr - 1) * rowH / 2, cx0 = ox + R + 6;
+        var rx = cx0 + R + (small ? 34 : 56), labW = small ? 78 : 112, dotGap = small ? 15 : 18, dx = rx + labW;
+        var c = st.deck && st.deck[Math.min(st.i, st.deck.length - 1)];
+        var show = c && st.phase !== 'idle' && st.phase !== 'end';
+        // cell
+        if(show){
+          var cx = cx0, alpha = 1, rad = R, tint = null, ring = false;
+          if(st.phase === 'enter'){ var e = ease(st.t / ENTER); cx = cx0 - (1 - e) * (R * 3); alpha = e; }
+          if(st.phase === 'anim'){
+            var a = ease(st.t / ANIM);
+            if(st.fate === 'pass' || st.fate === 'treg'){ cx = cx0 + a * (w - cx0 + R * 2); alpha = 1 - a; ring = st.fate === 'treg'; }
+            if(st.fate === 'delete'){ rad = R * (1 - 0.6 * a); alpha = 1 - a; tint = C.terra; }
+            if(st.fate === 'neglect'){ alpha = 1 - a; tint = '#6F7764'; }
+          }
+          var rec = [C.blue, C.plum, C.terraBright, C.sagePale][c.hue];
+          ctx.globalAlpha = alpha;
+          // receptor pointing at the tests
+          ctx.strokeStyle = rec; ctx.lineWidth = 3; ctx.lineCap = 'round';
+          ctx.beginPath(); ctx.moveTo(cx + rad - 2, cy); ctx.lineTo(cx + rad + 12, cy);
+          ctx.moveTo(cx + rad + 12, cy); ctx.lineTo(cx + rad + 20, cy - 7); ctx.moveTo(cx + rad + 12, cy); ctx.lineTo(cx + rad + 20, cy + 7); ctx.stroke();
+          ctx.fillStyle = tint || '#3B4634'; ctx.beginPath(); ctx.arc(cx, cy, rad, 0, 2 * Math.PI); ctx.fill();
+          ctx.strokeStyle = tint ? tint : C.sagePale; ctx.lineWidth = 2; ctx.stroke();
+          ctx.fillStyle = tint ? 'rgba(0,0,0,.25)' : '#56654A'; ctx.beginPath(); ctx.arc(cx - rad * 0.15, cy + rad * 0.05, rad * 0.56, 0, 2 * Math.PI); ctx.fill();
+          if(ring){ ctx.strokeStyle = C.gold; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(cx, cy, rad + 5, 0, 2 * Math.PI); ctx.stroke(); }
+          if(st.fate === 'delete' && st.phase === 'anim'){
+            ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.beginPath();
+            ctx.moveTo(cx - rad * 0.5, cy - rad * 0.5); ctx.lineTo(cx + rad * 0.5, cy + rad * 0.5);
+            ctx.moveTo(cx + rad * 0.5, cy - rad * 0.5); ctx.lineTo(cx - rad * 0.5, cy + rad * 0.5); ctx.stroke();
+          }
+          ctx.globalAlpha = 1;
+          // dock line from receptor to the tests
+          ctx.strokeStyle = 'rgba(155,176,126,.25)'; ctx.lineWidth = 1; ctx.setLineDash([3, 4]);
+          ctx.beginPath(); ctx.moveTo(cx0 + R + 24, cy); ctx.lineTo(rx - 10, cy); ctx.stroke(); ctx.setLineDash([]);
+        }
+        // test rows
+        var nShown = !show ? 0 : (st.phase === 'enter' ? 0 : st.phase === 'reveal' ? Math.floor(st.t / Math.max(REVEAL, 0.001)) + 1 : nr);
+        for(var r = 0; r < nr; r++){
+          var y = y0 + r * rowH;
+          ctx.strokeStyle = 'rgba(70,80,60,.6)'; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(rx, y + rowH / 2 - 2); ctx.lineTo(ox + sw, y + rowH / 2 - 2); ctx.stroke();
+          var isOrgan = Lv.aire && r === nr - 1;
+          var label = r === 0 ? 'vlastní MHC' : Lv.rows[r - 1];
+          ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+          ctx.font = '600 ' + (small ? 11.5 : 12.5) + 'px ' + SANS; ctx.fillStyle = r === 0 ? C.sagePale : C.ink;
+          ctx.fillText(label, rx, y + 4);
+          if(isOrgan){
+            var lw = ctx.measureText(label).width + 6;
+            ctx.font = '600 8.5px ' + MONO; var tag = st.aireOn ? 'AIRE' : 'AIRE ✗';
+            var tw = ctx.measureText(tag).width + 8;
+            ctx.fillStyle = st.aireOn ? 'rgba(217,183,90,.18)' : 'rgba(208,138,94,.2)'; rr(ctx, rx + lw, y - 3, tw, 14, 7); ctx.fill();
+            ctx.fillStyle = st.aireOn ? C.gold : C.terra; ctx.fillText(tag, rx + lw + 4, y + 4);
+          }
+          if(r >= nShown) continue;
+          if(r === 0){
+            ctx.fillStyle = c.mhc ? C.sage : '#6F7764';
+            ctx.beginPath(); ctx.arc(dx + 6, y + 4, 8, 0, 2 * Math.PI); ctx.fill();
+            ctx.strokeStyle = C.bg; ctx.lineWidth = 2.2; ctx.beginPath();
+            if(c.mhc){ ctx.moveTo(dx + 2, y + 4); ctx.lineTo(dx + 5, y + 7); ctx.lineTo(dx + 10, y); }
+            else { ctx.moveTo(dx + 3, y + 1); ctx.lineTo(dx + 9, y + 7); ctx.moveTo(dx + 9, y + 1); ctx.lineTo(dx + 3, y + 7); }
+            ctx.stroke();
+            ctx.font = '500 ' + (small ? 10.5 : 11.5) + 'px ' + SANS; ctx.fillStyle = c.mhc ? C.sagePale : C.muted;
+            ctx.fillText(c.mhc ? 'pozná' : 'nepozná vůbec', dx + 20, y + 4);
+            continue;
+          }
+          if(!c.mhc){ ctx.font = 'italic 500 10.5px ' + SANS; ctx.fillStyle = 'rgba(154,164,140,.6)'; ctx.fillText('dál nepokračuje', dx, y + 4); continue; }
+          if(isOrgan && !st.aireOn){ ctx.font = 'italic 500 10.5px ' + SANS; ctx.fillStyle = C.muted; ctx.fillText('neukázán', dx, y + 4); continue; }
+          var n = c.c[r - 1];
+          for(var k = 0; k < 6; k++){
+            ctx.beginPath(); ctx.arc(dx + 6 + k * dotGap, y + 4, 5.2, 0, 2 * Math.PI);
+            if(k < n){ ctx.fillStyle = level > 0 ? '#E8D9A8' : (n >= 5 ? C.terraBright : '#E8D9A8'); ctx.fill(); }
+            else { ctx.strokeStyle = C.line; ctx.lineWidth = 1.4; ctx.stroke(); }
+          }
+          if(!small || w > 360){ ctx.font = '500 10px ' + MONO; ctx.fillStyle = C.muted; ctx.fillText(String(n), dx + 6 + 6 * dotGap, y + 4); }
+        }
+        ctx.textBaseline = 'alphabetic';
+        // tallies by fate
+        var ty = y0 + nr * rowH + 30, cols = [['do krve', 'pass'], ['regulační', 'treg'], ['vyřazeno', 'delete'], ['zahynulo', 'neglect']];
+        if(!Lv.treg) cols.splice(1, 1);
+        var cw = sw / cols.length;
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(ox, ty - 10); ctx.lineTo(ox + sw, ty - 10); ctx.stroke();
+        cols.forEach(function(col, ci){
+          var x = ox + ci * cw, list = st.out ? st.out.filter(function(o){ return o.fate === col[1]; }) : [];
+          ctx.font = '600 9px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'left';
+          ctx.fillText(col[0].toUpperCase() + ' ' + list.length, x, ty + 4);
+          var per = Math.max(4, Math.floor((cw - 10) / 10));
+          list.forEach(function(o, j){
+            var px = x + 4 + (j % per) * 10, py = ty + 18 + Math.floor(j / per) * 10;
+            var bad = o.danger && (st.revealed || !o.hidden);
+            var fill = {pass: C.sage, treg: C.gold, delete: C.terra, neglect: '#6F7764'}[o.fate];
+            if(o.fate === 'pass' && o.truth === 'neglect') fill = '#6F7764';
+            if(bad) fill = C.terraBright;
+            ctx.fillStyle = fill; ctx.beginPath(); ctx.arc(px, py, 3.6, 0, 2 * Math.PI); ctx.fill();
+            if(!o.ok){ ctx.strokeStyle = C.terraBright; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.arc(px, py, 5.4, 0, 2 * Math.PI); ctx.stroke(); }
+          });
+        });
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
