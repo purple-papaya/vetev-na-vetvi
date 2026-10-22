@@ -1613,3 +1613,29 @@ Slovní žebřík, při kterém se mění jedno písmeno a každý mezikrok mus�
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 6: genetický kód, tRNA a ribozom.
 - Maynard Smith J. Natural selection and the concept of a protein space. Nature 225, 563–564 (1970).
 - Ve hře se používá standardní genetický kód. Seznam slov, která se počítají jako „funkční bílkoviny“, je herní pravidlo.
+
+---
+
+# Pěstírna protilátek
+
+URL: https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html  
+Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Shrnutí: Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.  
+English: Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted virus.
+
+V zárodečných centrech mízních uzlin se aktivované B-lymfocyty rychle dělí a přitom řízeně mutují: v úseku pro vazebné místo přibude při každém dělení asi jedna mutace. Většina mutací vazbu zhorší a takové buňky zahynou. Antigen ale přednostně podporuje ty vzácné, které se na něj vážou pevněji, a ty se dělí dál.
+
+Jak hrát: každá karta je jeden B-lymfocyt. Švestkově shora visí tvar antigenu, zeleně zespodu roste receptor buňky. Kde do sebe přesně zapadnou, svítí zlatý šev. Vyber buňky, které dostanou signál k přežití, a stiskni Další kolo. Vybrané se rozdělí, jejich potomci cestou zmutují (změněný sloupec je oranžově orámovaný) a ostatní buňky zahynou.
+
+Hra: Pěstírna protilátek. Nahoře tvar úlomku mikrobu, v kartách receptory B-lymfocytů. Zlatý šev znamená místo, kde receptor přesně zapadne, červené překrytí místo, kde narazí. Čím víc zapadajících míst, tím pevnější vazba. Přepočet na afinitu v l/mol je jen ilustrační, rozsah odpovídá Albertsovi.
+
+## Co se tu doopravdy děje
+
+Mutace v zárodečném centru dělá enzym AID: mění v genech pro vazebné místo cytosin na uracil a oprava takových míst nechává chyby. Mutací je tak zhruba milionkrát víc, než je u jiných genů běžné. Výběr pak funguje jako u každé evoluce: dědičná rozmanitost, výběr podle toho, kdo pasuje, a množení vítězů. Čím méně antigenu zbývá, tím je výběr přísnější. Protilátky na začátku odpovědi se vážou s afinitou kolem 10^5 až 10^7 l/mol, po kolech mutací a výběru až 10^11 l/mol.
+
+Po nákaze zůstanou paměťové buňky, jejichž receptory už výběrem prošly, a tak druhá odpověď začíná daleko před první. Paměť si ale pamatuje tvar. Chřipkový virus své povrchové bílkoviny průběžně mění drobnými mutacemi a paměťové buňky na novou verzi sedí hůř. Víc je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1377–1379: somatická hypermutace, AID a afinita protilátek; kap. 23, s. 1342–1344: proměnlivost chřipky.
+- Hra je zjednodušený model. Tvar vazebného místa je tu osm sloupců a pravděpodobnosti mutací, počty buněk i přepočet na afinitu jsou zvolené pro hratelnost.

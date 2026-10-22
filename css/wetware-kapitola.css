@@ -442,3 +442,17 @@
   .mut.stop .res{color:var(--terra-pale);}
   .mut.bad .res{color:#8A927F;}
   @media (max-width:420px){ .codon{min-width:3.9rem;} .picker{gap:.35rem;padding:.7rem .8rem .9rem;} figure.game .ctrl.mut{padding:.45rem .4rem;} }
+  /* Pěstírna protilátek: antigen and the grid of B cells */
+  .antigen{display:flex;align-items:center;justify-content:center;gap:.8rem;padding:1rem 1.1rem .3rem;}
+  .antigen svg{width:190px;height:auto;}
+  .antigen .lab{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sage-mute);}
+  .cells{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;padding:.6rem 1.1rem 1rem;}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.5rem .35rem .4rem;border:1px solid var(--night-line);
+    border-radius:8px;background:#2A3125;cursor:pointer;font:inherit;color:#E9E7D8;transition:border-color .15s ease, background .15s ease;}
+  .cell:hover{border-color:var(--sage);}
+  .cell:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+  .cell svg{width:100%;height:auto;max-width:150px;}
+  .cell.sel{border-color:var(--gold);box-shadow:0 0 0 2px rgba(198,162,74,.4);background:#343D2D;}
+  .cell .fit{font-family:var(--mono);font-size:.7rem;color:#D9DCCB;white-space:nowrap;}
+  .cell .dots{color:var(--gold);letter-spacing:.04em;}
+  @media (max-width:560px){ .cells{grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem;padding:.6rem .8rem .9rem;} .cell .dots{display:none;} }

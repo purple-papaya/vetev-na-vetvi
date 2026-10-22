@@ -250,6 +250,16 @@ PAGES = {
         en='Word puzzle on the genetic code: make point mutations codon by codon and read the protein in '
            'one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith\'s word ladder in '
            'which every intermediate protein must work.'),
+    'pages/hra-pestirna-protilatek.html': dict(
+        kind='game', chapter='pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html', name='Pěstírna protilátek',
+        title='Pěstírna protilátek: hra o hypermutaci a výběru | Větev na větvi',
+        desc='Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, '
+             'která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.',
+        about=['somatická hypermutace', 'afinitní maturace', 'zárodečné centrum', 'B-lymfocyt', 'imunitní paměť',
+               'klonální výběr'],
+        en='Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their '
+           'daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted '
+           'virus.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
