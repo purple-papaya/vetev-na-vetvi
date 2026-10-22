@@ -1444,3 +1444,32 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Se vším, co se týk�
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Terapeutické rozmezí (kap. 1), vylučování (kap. 5), křivka po spolknutí (kap. 9), ustálený stav, opakované dávkování a nasycovací dávka (kap. 11, 12 a 14).
 - U.S. Food and Drug Administration. Grapefruit Juice and Some Drugs Don't Mix.
 - Hra je zjednodušený jednokompartmentový model. Poločasy pacientů, šířka pásem i to, že grapefruit ve hře zdvojnásobí množství léku, které se dostane do krve, jsou zvolené pro názornost.
+
+---
+
+# Spiknutí
+
+URL: https://vetevnavetvi.cz/pages/hra-spiknuti.html  
+Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Shrnutí: Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.  
+English: Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.
+
+Každý neuron sčítá, co mu přichází po synapsích. Excitační synapse přidá malé „ano“, inhibiční malé „ne“. Když součet dosáhne prahu, neuron vystřelí, jinak mlčí. Z takhle hloupých součástek se dají poskládat překvapivě chytré obvody.
+
+Jak hrát: klepnutím na synapsi měníš její sílu: +1, +2, −1, −2 a zase nic. Klepnutím na štítek práh nastavíš, kolik hlasů neuron potřebuje k výstřelu. Tabulka vpravo ukazuje všechny možné kombinace vstupů, co má výstup udělat a co opravdu dělá. Klepnutím na řádek tabulky ho přehraješ v obvodu. Úroveň je hotová, když sedí všechny řádky.
+
+Hra: Spiknutí. Vlevo vstupní neurony, vpravo výstupní. Zlatý neuron právě pálí. Číslo v neuronu je součet hlasů, které do něj přišly, štítek nad ním je práh. Zelené synapse jsou excitační, oranžové inhibiční. Neurony jsou tu zjednodušené na sčítání a práh.
+
+## Co se tu doopravdy děje
+
+Takhle zjednodušený neuron navrhli v roce 1943 Warren McCulloch a Walter Pitts: sečte vážené vstupy a vystřelí, když součet dosáhne prahu. Ukázali, že ze sítí takových jednotek se dá poskládat jakákoli logická funkce. Na tom nápadu později vyrostly umělé neuronové sítě.
+
+Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“ jediný neuron s jedním prahem nezvládne, ať nastavíš synapse jakkoli. Nejde to rozdělit jednou přímkou: dvě kombinace, které mají pálit, leží v tabulce úhlopříčně proti sobě. Pomůže až další neuron uprostřed, který pozná, že pálí oba vstupy, a výstup utiší.
+
+Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v čase, synapse se učením zesilují a zeslabují a na jeden motorický neuron v míše se sbíhá asi deset tisíc vstupů. Princip sčítání a prahu ale platí a z něj se skládá spiknutí 86 miliard buněk. Víc je v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html).
+
+#### Zdroje
+
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.
+- McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).
+- Obvody ve hře jsou hračky. Skutečné reflexy a rozhodování mozku zapojují mnohem víc neuronů a jejich vstupy se sčítají v čase i prostoru.

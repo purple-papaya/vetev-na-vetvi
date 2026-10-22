@@ -195,6 +195,14 @@ PAGES = {
         en='Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and '
            'maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and '
            'a narrow therapeutic window that needs a loading dose.'),
+    'pages/hra-spiknuti.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html', name='Spiknutí',
+        title='Spiknutí: logický hlavolam z neuronů | Větev na větvi',
+        desc='Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, '
+             'oba naráz, většina, buď, anebo.',
+        about=['neuron', 'synapse', 'práh', 'excitace', 'inhibice', 'McCulloch–Pitts', 'logické funkce'],
+        en='Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, '
+           'AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
