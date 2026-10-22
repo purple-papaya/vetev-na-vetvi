@@ -1586,3 +1586,30 @@ Celkem buňka zachytí zhruba třetinu energie glukózy a zbytek odejde jako tep
 - Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
 - Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
 - Hra je zjednodušený model. Dílky energie, výška schodu potřebná pro ATP a NADH i hodnota NADH v mincích jsou herní pravidla, ne skutečné hodnoty.
+
+---
+
+# Slovo po slovu
+
+URL: https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html  
+Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Shrnutí: Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.  
+English: Word puzzle on the genetic code: make point mutations codon by codon and read the protein in one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith's word ladder in which every intermediate protein must work.
+
+Ribozom čte zprávu po trojicích písmen a každé trojici odpovídá jedna aminokyselina. Aminokyseliny mají jednopísmenné zkratky, a tak se dá bílkovina přečíst jako slovo: L je leucin, E kyselina glutamová, S serin. Gen ATG CTT GAA TCT TAA tedy říká LES.
+
+Jak hrát: klepni na trojici a uvidíš všech devět změn, které jde udělat jedním písmenem, i to, co by z nich bílkovina řekla. Vyber jednu. Startovní ATG (methionin, M) a koncová trojice jsou pevné a slovo se čte až za methioninem. Ve většině úrovní platí pravidlo evoluce: každá bílkovina cestou musí být smysluplné slovo, jinak by buňka s nefunkční bílkovinou neprošla.
+
+Hra: Slovo po slovu. Nahoře gen po trojicích DNA a pod každou trojicí aminokyselina, kterou kóduje. Oranžové písmeno je to, které se změnilo. Pod genem cesta, kterou bílkovina zatím prošla. Slova jsou česká a bez diakritiky, protože aminokyseliny háčky ani čárky nemají.
+
+## Co se tu doopravdy děje
+
+Čtyři písmena dávají 64 trojic, ale aminokyselin je jen dvacet, a tak většinu z nich kóduje několik různých trojic. Proto je spousta změn v DNA tichých: bílkovina zůstane stejná. Většina takových změn padá na třetí písmeno trojice. Jiné změny vymění jednu aminokyselinu za jinou, jako u srpkovité anémie, kde na šestém místě β-globinu stojí valin místo kyseliny glutamové. A tři trojice znamenají konec, takže jediná změna může ribozom zastavit uprostřed zprávy.
+
+Slovní žebřík, při kterém se mění jedno písmeno a každý mezikrok musí být skutečné slovo, použil v roce 1970 evoluční biolog John Maynard Smith. Slova v něm zastupují bílkoviny a písmena aminokyseliny: evoluce bílkovin podle něj postupuje od jedné fungující bílkoviny k další. Víc o tom, jak se z DNA stane bílkovina, je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 6: genetický kód, tRNA a ribozom.
+- Maynard Smith J. Natural selection and the concept of a protein space. Nature 225, 563–564 (1970).
+- Ve hře se používá standardní genetický kód. Seznam slov, která se počítají jako „funkční bílkoviny“, je herní pravidlo.

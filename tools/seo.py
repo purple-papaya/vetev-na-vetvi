@@ -241,6 +241,15 @@ PAGES = {
         en='Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme '
            'steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without '
            'oxygen.'),
+    'pages/hra-slovo-po-slovu.html': dict(
+        kind='game', chapter='pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html', name='Slovo po slovu',
+        title='Slovo po slovu: hlavolam o genetickém kódu a mutacích | Větev na větvi',
+        desc='Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a '
+             'slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.',
+        about=['genetický kód', 'kodon', 'mutace', 'tichá mutace', 'stop kodon', 'evoluce bílkovin'],
+        en='Word puzzle on the genetic code: make point mutations codon by codon and read the protein in '
+           'one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith\'s word ladder in '
+           'which every intermediate protein must work.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
