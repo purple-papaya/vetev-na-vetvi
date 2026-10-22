@@ -278,6 +278,15 @@ PAGES = {
         en='Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with '
            'limited output, where flow scales with radius to the fourth power; blushing, running, and running in '
            'the heat.'),
+    'pages/hra-zdirka.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch1-lek-je-vlna.html', name='Zdířka',
+        title='Zdířka: hra o receptorech, potenci a antagonistech | Větev na větvi',
+        desc='Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, '
+             'částečným agonistou se stropem a antagonistou, který odezní dřív než lék.',
+        about=['farmakodynamika', 'receptor', 'agonista', 'antagonista', 'částečný agonista', 'potence', 'účinnost'],
+        en='Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a '
+           'hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against '
+           'an overdose.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

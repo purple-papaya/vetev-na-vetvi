@@ -477,3 +477,7 @@
   .tap .tn{font-family:var(--sans);font-size:.72rem;color:var(--sage-mute);text-align:center;}
   figure.game .tap .ctrl.st{width:100%;max-width:4.4rem;padding:.42rem 0;}
   @media (max-width:420px){ .taps{padding:.6rem .7rem .8rem;gap:.3rem;} .tap .rv{font-size:.78rem;} }
+  /* Zdířka: drug buttons */
+  figure.game .ctrl.drug{border-color:var(--dc);color:#F4F1E7;}
+  figure.game .ctrl.drug::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--dc);margin-right:.45rem;vertical-align:.02rem;}
+  figure.game .ctrl.drug:hover{background:rgba(255,255,255,.06);}

@@ -1692,3 +1692,32 @@ Srdce ale není bezedné, a tak si orgány o krev konkurují a regulační smyč
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 17: Poiseuilleův zákon.
 - Hra je zjednodušený model. Tlak před orgány se ve hře drží stálý, dokud srdce stačí, klidové průtoky, strop srdce a minimální průtoky mozku a ledvin jsou zvolené pro názornost.
+
+---
+
+# Zdířka
+
+URL: https://vetevnavetvi.cz/pages/hra-zdirka.html  
+Větev: Hry (na motivy kapitoly Lék je vlna)  
+Shrnutí: Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, částečným agonistou se stropem a antagonistou, který odezní dřív než lék.  
+English: Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against an overdose.
+
+Lék skoro vždycky působí tak, že do něčeho zapadne: do receptoru, molekulární zdířky na buňce. Agonista do zdířky zapadne a zmáčkne tlačítko. Antagonista zapadne stejně těsně, ale nic nespustí, jen místo obsadí. A částečný agonista zmáčkne tlačítko jen napůl. Účinek pak záleží na tom, kolik zdířek je obsazených a čím.
+
+Jak hrát: tlačítky pod obrázkem podáváš léky. Nahoře vidíš receptory a molekuly, které v nich zrovna sedí, dole křivku účinku v čase. Lék z těla postupně mizí, a tak účinek slábne. Drž ho v zeleném pásmu a nepusť ho do červeného, které znamená nebezpečně silný účinek.
+
+Hra: Zdířka. Zlatý a oranžový klíč jsou plní agonisté, zelený poloviční klíč částečný agonista, švestkový špunt antagonista. Rozsvícený receptor předává signál. Obsazenost se řídí soutěží o receptory podle jednoduchého modelu a čísla jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Potence říká, jak málo léku stačí, účinnost, jak vysoko vůbec dosáhne. Lék B je ve hře stokrát potentnější než lék A, ale strop mají stejný. Jako fentanyl a morfin: fentanyl „neumí víc“, jen mu stačí nepatrná dávka, a právě proto je tak nebezpečný. Částečný agonista má strop nižší, jako buprenorfin, u kterého útlum dýchání s dávkou nestoupá tak strmě jako u morfinu, pokud se nekombinuje s alkoholem nebo jinými tlumivými látkami.
+
+Antagonista lék z těla neodstraní, jen ho vytlačí z receptorů a místo obsadí sám. Tak funguje naloxon při předávkování opioidy. Působí ale kratší dobu než mnoho opioidů, a proto se příznaky předávkování můžou vrátit, přesně jako ve čtvrté úrovni. Víc je v kapitole [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html).
+
+Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na předávkování volej záchrannou službu.
+
+#### Zdroje
+
+- Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Receptory a částeční agonisté (kap. 1), model E_max (kap. 19).
+- Walsh S. L. a kol. Clinical pharmacology of buprenorphine: ceiling effects at high doses. Clinical Pharmacology & Therapeutics 55, 569–580 (1994).
+- Hra je zjednodušený model: léky soutěží o receptory podle zákona působení hmoty, účinek je součet signálů obsazených receptorů a poločasy i dávky jsou ilustrační.
