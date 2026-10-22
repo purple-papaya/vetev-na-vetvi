@@ -223,6 +223,15 @@ PAGES = {
         en='Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, '
            'see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of '
            'a fever and its break.'),
+    'pages/hra-hodiny-a-vlna.html': dict(
+        kind='game', chapter='pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html',
+        name='Hodiny a vlna', title='Hodiny a vlna: rytmická hra o somitech | Větev na větvi',
+        desc='Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry '
+             'somitů. Od dánia po myš a nakonec bez viditelných hodin.',
+        about=['somitogeneze', 'segmentační hodiny', 'model hodin a vlny', 'somity', 'obratle'],
+        en='Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the '
+           'determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the '
+           'rhythm without the visible clock.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

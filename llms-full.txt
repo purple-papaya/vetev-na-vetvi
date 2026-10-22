@@ -1530,3 +1530,32 @@ A horečka? Ta není rozbitý termostat. Mozek žádanou hodnotu záměrně zvý
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Zpětná vazba, žádaná hodnota a zesílení (kap. 1); Cheyneovo-Stokesovo dýchání (box 32-2).
 - Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.
 - Hra je zjednodušený model. Teploty, rychlosti ohřevu a chladnutí, zpoždění i průběh horečky jsou zvolené pro názornost.
+
+---
+
+# Hodiny a vlna
+
+URL: https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html  
+Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Shrnutí: Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry somitů. Od dánia po myš a nakonec bez viditelných hodin.  
+English: Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the rhythm without the visible clock.
+
+Somity, ze kterých vzniknou obratle, žebra a svaly zad, se zakládají jeden pár po druhém, od hlavy k ocasu. Rytmus udávají molekulární hodiny v buňkách na zadním konci zárodku. Ocas přitom roste a buňky, které zůstávají pozadu, se dostávají z dosahu signálů z ocasu. Jejich hodiny se zastaví a buňky zamrznou ve fázi, ve které je to zastihlo.
+
+Jak hrát: od ocasu k čárkované čáře připlouvají zlaté vlny kmitajících hodin. Ve chvíli, kdy vlna doběhne k čáře, klepni na tlačítko Tik, na zárodek nebo zmáčkni mezerník. V tu chvíli se oddělí další pár somitů. Když trefíš rytmus, budou somity pravidelné. Když tikneš pozdě, brzy nebo vůbec, vyjdou nestejně velké.
+
+Hra: Hodiny a vlna. Vlevo hlava, vpravo rostoucí ocas. Mezi čárkovanou čárou a ocasem buňky kmitají a zlaté vlny jejich hodin běží dopředu. Za čárou buňky zamrznou a každý tik oddělí jeden pár somitů. Velikost somitu je to, o kolik osa za jeden kmit naroste. Čas je v každé úrovni zrychlený jinak.
+
+## Co se tu doopravdy děje
+
+Segmentační hodiny jsou smyčka negativní zpětné vazby uvnitř buňky. Gen se zapne, jeho bílkovina se nahromadí a gen vypne, pak se rozpadne a gen se zapne znovu. Jeden kmit trvá u dánia pruhovaného 30 minut, u kuřete 90, u myši 120 a u člověka 300 minut. Délku kmitu určují hlavně zpoždění ve smyčce: perioda je zhruba dvojnásobek celkového zpoždění.
+
+Druhou složkou je vlna. Buňky, které zůstanou pozadu za rostoucím ocasem, se zastaví ve fázi, ve které je to zastihlo, a časový rytmus se otiskne do prostoru jako pruhy. Počet somitů tak závisí na tom, kolik kmitů hodiny stihnou, než se zásoba buněk na zadním konci vyčerpá. Dánio jich má necelých čtyřicet, myš asi 65 a had přes tři sta. Hadí hodiny přitom nejdou o moc rychleji než kuřecí, jeden pár somitů vznikne zhruba za sto minut. Celý hadí zárodek se ale vyvíjí několikrát pomaleji, a tak hodiny vzhledem k růstu osy tikají mnohem častěji a somitů je víc a jsou menší.
+
+A když hodiny nejdou? Buňky se do skupin nakonec stejně rozpadnou, jenže nepravidelně, jako tvoje somity ve třetí úrovni, když nebylo podle čeho tikat. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 21, s. 1249–1250: somity, segmentační hodiny a jejich periody u dánia, kuřete, myši a člověka.
+- Gomez C. a kol. Control of segment number in vertebrate embryos. Nature 454, 335–339 (2008).
+- Hra je zjednodušený model. Rytmus, rychlost růstu a počty somitů v úrovních jsou zvolené tak, aby se daly hrát.
