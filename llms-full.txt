@@ -1559,3 +1559,30 @@ A když hodiny nejdou? Buňky se do skupin nakonec stejně rozpadnou, jenže nep
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 21, s. 1249–1250: somity, segmentační hodiny a jejich periody u dánia, kuřete, myši a člověka.
 - Gomez C. a kol. Control of segment number in vertebrate embryos. Nature 454, 335–339 (2008).
 - Hra je zjednodušený model. Rytmus, rychlost růstu a počty somitů v úrovních jsou zvolené tak, aby se daly hrát.
+
+---
+
+# Schodiště
+
+URL: https://vetevnavetvi.cz/pages/hra-schodiste.html  
+Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Shrnutí: Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a zjisti, co se stane bez kyslíku.  
+English: Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without oxygen.
+
+Když glukóza shoří v plameni, uvolní se její energie naráz a skoro všechna odejde jako teplo. Buňka ji s kyslíkem spojí taky, jen ne jedním skokem. Jde po schodišti zhruba dvaceti malých kroků a na některých schodech si část energie uloží do ATP nebo naloží elektrony na přenašeč NADH.
+
+Jak hrát: svislá osa je energie. Klepnutím do schodiště vložíš na danou výšku nový schod, klepnutím na existující hranu ho zase odebereš. Než prst nebo myš pustíš, můžeš výšku doladit tažením nahoru a dolů. Každý schod obsluhuje jeden enzym a enzymů je omezený počet. Schod musí být dost vysoký, aby z něj šlo něco nabrat, a co se nenabere, odejde jako teplo.
+
+Hra: Schodiště. Nahoře glukóza a kyslík, dole oxid uhličitý a voda. Zlatá mince je ATP, zelený štítek NADH, oranžové plamínky teplo. Energie je ve hře rozdělená na dílky a pravidla pro to, kolik se ze schodu nabere, jsou zjednodušená.
+
+## Co se tu doopravdy děje
+
+Oheň překonává energetickou bariéru teplem, a když se jednou rozhoří, uvolní všechno naráz. Enzymy bariéru snižují, takže reakce běží při tělesné teplotě, a glukózu rozeberou po malých krocích, z nichž každý řídí jiný enzym. Na několika schodech se část uvolněné energie rovnou uloží do ATP, na jiných se naloží elektrony na NADH. Ty pak sestoupí poslední částí schodiště, dýchacím řetězcem, a na jeho konci je převezme kyslík.
+
+Celkem buňka zachytí zhruba třetinu energie glukózy a zbytek odejde jako teplo, které tě mimochodem hřeje. Bez kyslíku nemají elektrony z NADH kam odtéct, dýchací řetězec i citrátový cyklus se zastaví a zbudou jen 2 ATP z glykolýzy. Ta jede dál jen proto, že se NADH vyprázdní do pyruvátu a vznikne laktát, ve kterém zůstane většina energie na později. Víc je v kapitole [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html).
+
+#### Zdroje
+
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
+- Hra je zjednodušený model. Dílky energie, výška schodu potřebná pro ATP a NADH i hodnota NADH v mincích jsou herní pravidla, ne skutečné hodnoty.

@@ -405,3 +405,10 @@
   .ctrl.eff.warm1,.ctrl.eff.warm2{border-color:rgba(227,154,103,.55);color:#F0C3A3;}
   .ctrl.eff.cool1.is-on,.ctrl.eff.cool2.is-on{background:#7FA0C0;border-color:#7FA0C0;color:var(--night);}
   .ctrl.eff.warm1.is-on,.ctrl.eff.warm2.is-on{background:#E39A67;border-color:#E39A67;color:var(--night);}
+  /* Schodiště: legend of what a step pays */
+  .rules{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:.6rem 1.1rem;border-top:1px solid var(--night-line);font-family:var(--sans);font-size:.84rem;color:#D9DCCB;}
+  .rules span{display:inline-flex;align-items:center;gap:.45rem;}
+  .rules i{display:inline-block;width:14px;height:14px;border-radius:50%;flex:0 0 auto;}
+  .rules i.coin{background:var(--gold);}
+  .rules i.nadh{background:#9BB07E;border-radius:4px;width:22px;height:12px;}
+  .rules i.heat{background:#E39A67;width:9px;height:13px;border-radius:50% 50% 45% 45% / 65% 65% 35% 35%;}

@@ -232,6 +232,15 @@ PAGES = {
         en='Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the '
            'determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the '
            'rhythm without the visible clock.'),
+    'pages/hra-schodiste.html': dict(
+        kind='game', chapter='pages/wetware-ch1-jsi-sloveso.html', name='Schodiště',
+        title='Schodiště: skládačka o energii glukózy | Větev na větvi',
+        desc='Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a '
+             'zjisti, co se stane bez kyslíku.',
+        about=['metabolismus', 'ATP', 'NADH', 'dýchací řetězec', 'glykolýza', 'volná energie', 'laktát'],
+        en='Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme '
+           'steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without '
+           'oxygen.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
