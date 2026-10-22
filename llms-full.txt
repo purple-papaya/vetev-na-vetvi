@@ -1721,3 +1721,35 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na p�
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Receptory a částeční agonisté (kap. 1), model E_max (kap. 19).
 - Walsh S. L. a kol. Clinical pharmacology of buprenorphine: ceiling effects at high doses. Clinical Pharmacology & Therapeutics 55, 569–580 (1994).
 - Hra je zjednodušený model: léky soutěží o receptory podle zákona působení hmoty, účinek je součet signálů obsazených receptorů a poločasy i dávky jsou ilustrační.
+
+---
+
+# Smyčka
+
+URL: https://vetevnavetvi.cz/pages/hra-smycka.html  
+Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Shrnutí: Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.  
+English: Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary failure and excess tablets apart, then titrate levothyroxine and treat.
+
+Hypotalamus vylučuje TRH, hypofýza podle něj TSH a štítná žláza tyroxin (T4). Hormony štítné žlázy zpětně tlumí výrobu TRH i TSH. Když tedy T4 chybí, TSH vyskočí, a když je T4 moc, TSH klesne. Z toho, jak se ty dvě hodnoty k sobě mají, se dá vyčíst, kde se smyčka pokazila.
+
+Jak hrát: u každého pacienta vidíš volný T4, TSH a velikost štítné žlázy, všechno jako násobky normálu. Vedle je pět přepínačů smyčky. Nastav, co si myslíš, že se v těle děje, a model hned ukáže, jak by výsledky vypadaly po osmi měsících. Když se shodují s pacientem, potvrď diagnózu. V dalších úrovních stejnými přepínači léčíš.
+
+Hra: Smyčka. Tabulka porovnává pacienta s modelem, přepínače nastavují smyčku. Graf ukazuje, jak by se volný T4 (zlatě) a TSH (modře, v logaritmickém měřítku) vyvíjely po nastavené změně. Světlé pruhy jsou norma a při hledání diagnózy ukazují čárky vpravo hodnoty pacienta. Model vychází z kapitoly: T4 má poločas 8 dní a pokles T4 na polovinu zvedne TSH zhruba šedesátkrát.
+
+## Co se tu doopravdy děje
+
+Zpětná vazba štítné žlázy je mimořádně citlivá: když volný T4 klesne na polovinu, TSH vyskočí na padesáti- až stonásobek. Proto se jako první obvykle měří právě TSH. Když chybí jód, hormonů se vyrábí málo, TSH stoupne a žlázu pobízí k výkonu i k růstu. Vznikne struma a výsledky krve můžou zůstat skoro v normě. U Gravesovy choroby tělo vyrábí protilátky, které napodobí TSH. Na rozdíl od hypofýzy je nic nebrzdí: žláza roste a vyrábí víc hormonů, zatímco TSH klesne hluboko pod normál.
+
+Jenže když vázne samotná hypofýza, vyjde TSH nízko nebo nepřiměřeně normálně, i když T4 chybí. Takovou centrální hypotyreózu samotné TSH snadno přehlédne. Při léčbě pak TSH o dávce nic neřekne, a tak se hlídá přímo volný T4, který má být v horní polovině normy.
+
+Smyčka se dá i oklamat tabletami: hypofýza nepozná, odkud T4 pochází, a výrobu TSH utlumí stejně. Na tom stojí léčba po odstranění žlázy. Gravesova choroba se obvykle nejdřív léčí tyreostatiky, léky, které brzdí výrobu hormonů. Další možností je radioaktivní jód nebo operace, po kterých tělo většinou potřebuje hormon v tabletách. Víc o hormonech a smyčkách je v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+
+Hra vysvětluje princip zpětné vazby a nikomu nestanovuje diagnózu ani léčbu.
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 49 (The Thyroid Gland): poločas T4, osa TRH–TSH a citlivost zpětné vazby, jód a struma (box 49-1), Gravesova choroba (box 49-4).
+- Persani L. a kol. 2018 European Thyroid Association (ETA) Guidelines on the Diagnosis and Management of Central Hypothyroidism. European Thyroid Journal 7, 225–237 (2018).
+- Kahaly G. J. a kol. 2018 European Thyroid Association Guideline for the Management of Graves’ Hyperthyroidism. European Thyroid Journal 7, 167–186 (2018).
+- Hra je zjednodušený model: hodnoty jsou násobky normálu, selhání hypofýzy je zjednodušené na strop výroby TSH a růst žlázy i dávky tablet jsou ilustrační.

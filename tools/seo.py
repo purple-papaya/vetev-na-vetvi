@@ -287,6 +287,14 @@ PAGES = {
         en='Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a '
            'hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against '
            'an overdose.'),
+    'pages/hra-smycka.html': dict(
+        kind='game', chapter='pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html', name='Smyčka',
+        title='Smyčka: detektivka se štítnou žlázou a TSH | Větev na větvi',
+        desc='Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, '
+             'selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.',
+        about=['štítná žláza', 'TSH', 'tyroxin', 'zpětná vazba', 'struma', 'Gravesova choroba', 'centrální hypotyreóza'],
+        en='Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary '
+           'failure and excess tablets apart, then titrate levothyroxine and treat.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',

@@ -481,3 +481,32 @@
   figure.game .ctrl.drug{border-color:var(--dc);color:#F4F1E7;}
   figure.game .ctrl.drug::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--dc);margin-right:.45rem;vertical-align:.02rem;}
   figure.game .ctrl.drug:hover{background:rgba(255,255,255,.06);}
+  /* Smyčka: lab report and loop switches */
+  .lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem 1.6rem;padding:.9rem 1.1rem 1rem;border-top:1px solid var(--night-line);}
+  @media (max-width:660px){ .lab{grid-template-columns:minmax(0,1fr);} }
+  .patient{font-family:var(--sans);color:#E9E7D8;min-width:0;}
+  .pt-head{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#9AA48C;margin:0 0 .3rem;}
+  .pt-head b{color:var(--gold);font-weight:600;}
+  .pt-note{font-size:.88rem;line-height:1.45;color:#D9DCCB;margin:0 0 .45rem;}
+  table.labs{width:100%;border-collapse:collapse;}
+  table.labs thead th{font-weight:600;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#9AA48C;text-align:right;padding:.15rem .25rem .3rem;}
+  table.labs tbody th{font-weight:400;text-align:left;font-size:.88rem;color:#D9DCCB;padding:.36rem .25rem;border-top:1px solid var(--night-line);white-space:nowrap;}
+  table.labs td{font-family:var(--mono);font-size:.86rem;text-align:right;padding:.36rem .25rem;border-top:1px solid var(--night-line);white-space:nowrap;color:#F4F1E7;}
+  table.labs td + td{color:var(--gold);}
+  table.labs .up,table.labs .dn{color:var(--terra-pale);font-family:var(--sans);font-weight:700;}
+  .pt-norm{font-size:.74rem;color:#9AA48C;margin:.45rem 0 0;}
+  .hyp{display:flex;flex-direction:column;gap:.7rem;min-width:0;}
+  .switches{display:flex;flex-direction:column;gap:.38rem;}
+  .sw{display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-family:var(--sans);font-size:.88rem;color:#D9DCCB;min-height:2.3rem;}
+  .sw .sw-l{flex:0 1 auto;}
+  figure.game .sw .ctrl{flex:0 0 8.2rem;padding:.45rem .5rem;text-transform:none;letter-spacing:0;font-size:.86rem;}
+  figure.game .sw .ctrl.alt{border-color:rgba(227,154,103,.7);color:#F0C3A3;background:rgba(227,154,103,.1);}
+  .sw.locked{opacity:.5;}
+  .sw.dose input[type=range]{-webkit-appearance:none;appearance:none;flex:1 1 auto;min-width:4rem;height:4px;border-radius:2px;background:var(--night-line);outline:none;cursor:pointer;margin:0 .2rem;}
+  .sw.dose input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold);border:2px solid var(--night);cursor:pointer;}
+  .sw.dose input[type=range]::-moz-range-thumb{width:16px;height:16px;border:none;border-radius:50%;background:var(--gold);cursor:pointer;}
+  .sw.dose input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
+  .sw.dose input[type=range]:disabled{cursor:default;}
+  .sw.dose output{font-family:var(--mono);font-size:.86rem;color:var(--gold);flex:0 0 3.4rem;text-align:right;}
+  .hyp-btns{display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap;}
+  figure.game canvas#ygame{border-top:1px solid var(--night-line);}
