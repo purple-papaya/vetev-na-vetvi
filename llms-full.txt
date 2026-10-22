@@ -1666,3 +1666,29 @@ Vítězná buňka umí tlumit i buňky, kterých se přímo nedotýká: natáhne
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); laterální inhibice (kap. 21, s. 1222–1224); štětinky octomilky (kap. 21, s. 1243–1244).
 - Collier J. R., Monk N. A. M., Maini P. K., Lewis J. H. Pattern formation by lateral inhibition with feedback: a mathematical model of Delta-Notch intercellular signalling. Journal of Theoretical Biology 183, 429–446 (1996).
 - Pravidla hry jsou zjednodušená: buňka buď tlumí, nebo ne, a dosah tlumení je přesně jedna nebo dvě buňky.
+
+---
+
+# Kohoutky
+
+URL: https://vetevnavetvi.cz/pages/hra-kohoutky.html  
+Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Shrnutí: Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých tepen. Ruměnec, běh a běh v horku.  
+English: Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with limited output, where flow scales with radius to the fourth power; blushing, running, and running in the heat.
+
+Tělo rozvádí krev hlavně tím, že mění šířku malých tepen. Nepatrné stažení svaloviny kolem nich funguje jako kohoutek, protože průtok trubkou roste se čtvrtou mocninou jejího poloměru. Rozšiř cévu o deset procent a proteče jí skoro o polovinu víc.
+
+Jak hrát: u každého orgánu nastavíš tlačítky plus a minus, jak široká je jeho přívodní tepénka. Srdce dodá nejvýš 9 litrů krve za minutu. Když orgány chtějí víc, klesne tlak a ubude krve všem, i mozku. Splň cíle úrovně a přitom drž mozek aspoň na 90 % a ledviny aspoň na polovině klidového průtoku.
+
+Hra: Kohoutky. Orgány jsou zapojené souběžně a tlak před nimi udržuje srdce. Průtok každou větví je úměrný čtvrté mocnině poloměru její tepénky. Klidové průtoky (dohromady asi 5 l/min) a strop srdce jsou ve hře ilustrační.
+
+## Co se tu doopravdy děje
+
+Průtok se rovná tlakovému rozdílu dělenému odporem, a odpor trubky klesá se čtvrtou mocninou poloměru. Zmenši poloměr cévy na polovinu a průtok klesne na šestnáctinu. Tak se krev nahrne do svalů, když běžíš, a do tváře, když se červenáš, aniž by se muselo cokoli jiného přestavět.
+
+Srdce ale není bezedné, a tak si orgány o krev konkurují a regulační smyčky si někdy jdou proti sobě. Když běžíš v horku, smyčka, která tě chladí, žene krev do kůže a nutí tě potit se, zatímco svaly chtějí krev pro sebe. Pocení navíc zmenšuje objem krve, který hlídá jiná smyčka, pro tělo důležitější. Víc je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 17: Poiseuilleův zákon.
+- Hra je zjednodušený model. Tlak před orgány se ve hře drží stálý, dokud srdce stačí, klidové průtoky, strop srdce a minimální průtoky mozku a ledvin jsou zvolené pro názornost.

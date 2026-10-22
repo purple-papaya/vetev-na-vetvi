@@ -269,6 +269,15 @@ PAGES = {
         en='Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch '
            'pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with '
            'long-range inhibition.'),
+    'pages/hra-kohoutky.html': dict(
+        kind='game', chapter='pages/wetware-fyziologie-ch1-more-pod-kuzi.html', name='Kohoutky',
+        title='Kohoutky: hra o průtoku krve a čtvrté mocnině poloměru | Větev na větvi',
+        desc='Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých '
+             'tepen. Ruměnec, běh a běh v horku.',
+        about=['průtok krve', 'Poiseuilleův zákon', 'cévní odpor', 'srdeční výdej', 'termoregulace'],
+        en='Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with '
+           'limited output, where flow scales with radius to the fourth power; blushing, running, and running in '
+           'the heat.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
