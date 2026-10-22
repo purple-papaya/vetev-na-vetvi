@@ -1724,6 +1724,37 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na p�
 
 ---
 
+# Plný sklad
+
+URL: https://vetevnavetvi.cz/pages/hra-plny-sklad.html  
+Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Shrnutí: Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.  
+English: Game on feedback inhibition: choose which enzyme a full store should brake in a linear pathway, a branched pathway with sequential feedback, and opposing breakdown and synthesis routes controlled by AMP.
+
+Metabolismus nemá ředitele. Řídí se tisíci drobných zpětných vazeb: když se nahromadí konečný produkt dráhy, naváže se na některý z jejích enzymů a zpomalí ho. Záleží ale na tom, na který.
+
+Jak hrát: nahoře je dráha. Sloupce jsou sklady a meziprodukty, štítky mezi nimi enzymy. V nabídkách pod obrázkem vybereš, který enzym má který sklad brzdit, a spustíš den. Dole se ukáže, jak se během dne měnily zásoby. Nic nesmí přetéct a produkty mají většinu dne zůstat v zeleném pásmu.
+
+Hra: Plný sklad. Sloupce ukazují, kolik čeho je, a přetečou, když se hladina dostane nad okraj. Čárkovaná čára zakončená příčkou je brzda: sklad, ze kterého vychází, zpomaluje enzym, u kterého končí. Ve třetí úrovni štítky AMP ▲ a AMP ▼ ukazují, kterou silnici AMP zrychlí a kterou zpomalí. V grafu je zeleně pásmo, ve kterém mají produkty zůstat, a nad ním popis, co se v které části dne děje.
+
+## Co se tu doopravdy děje
+
+Většina metabolických drah začíná krokem, který uvolní hodně energie a je prakticky nevratný. Když konečný produkt brzdí právě ten, řídí celou dráhu jediným ventilem a meziprodukty se nehromadí. Produkt se přitom obvykle neváže do aktivního místa enzymu, ale jinam, a mění tvar celé molekuly. Takové alosterické enzymy často reagují strmě: malá změna v množství produktu je přepne z plného chodu skoro do klidu.
+
+Rozvětvené dráhy to mají těžší, protože plný sklad jedné větve nesmí zastavit výrobu druhé. Buňky to řeší několika způsoby. Každá větev může mít vlastní brzdu a společný začátek pak hlídá meziprodukt na rozcestí. Jindy má buňka víc verzí prvního enzymu a každou brzdí jiný produkt.
+
+Rozklad a stavba stejné látky jezdí po různých silnicích s různými enzymy, a tak se dají řídit zvlášť. Kdyby jely obě naráz, buňka by jen pálila ATP naprázdno. Proto je tytéž signály řídí opačně: AMP, kterého přibývá, když energie dochází, rozklad povzbudí a stavbu přibrzdí. Víc o tom, jak se metabolismus řídí sám, je v kapitole [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html).
+
+Hra vysvětluje princip a čísla v ní jsou ilustrační.
+
+#### Zdroje
+
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
+- Hra je zjednodušený model: enzymy mají ilustrační rychlosti, brzdy působí strmě (s Hillovým koeficientem 4) a energie i palivo jsou herní jednotky.
+
+---
+
 # Přeskoky
 
 URL: https://vetevnavetvi.cz/pages/hra-preskoky.html  

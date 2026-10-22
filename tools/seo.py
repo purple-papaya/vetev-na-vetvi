@@ -287,6 +287,14 @@ PAGES = {
         en='Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a '
            'hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against '
            'an overdose.'),
+    'pages/hra-plny-sklad.html': dict(
+        kind='game', chapter='pages/wetware-ch1-jsi-sloveso.html', name='Plný sklad',
+        title='Plný sklad: hra o zpětnovazebné inhibici v metabolismu | Větev na větvi',
+        desc='Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, '
+             'po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.',
+        about=['zpětnovazebná inhibice', 'alosterická regulace', 'metabolická dráha', 'rozvětvená dráha', 'marný cyklus', 'AMP'],
+        en='Game on feedback inhibition: choose which enzyme a full store should brake in a linear pathway, a branched '
+           'pathway with sequential feedback, and opposing breakdown and synthesis routes controlled by AMP.'),
     'pages/hra-preskoky.html': dict(
         kind='game', chapter='pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html', name='Přeskoky',
         title='Přeskoky: hlavolam o myelinu a saltatorním vedení | Větev na větvi',

@@ -510,3 +510,9 @@
   .sw.dose output{font-family:var(--mono);font-size:.86rem;color:var(--gold);flex:0 0 3.4rem;text-align:right;}
   .hyp-btns{display:flex;gap:.5rem;justify-content:flex-end;flex-wrap:wrap;}
   figure.game canvas#ygame{border-top:1px solid var(--night-line);}
+  /* Plný sklad: brake selectors */
+  .wires{display:flex;flex-wrap:wrap;gap:.55rem 1.2rem;padding:.8rem 1.1rem;border-top:1px solid var(--night-line);}
+  .wire{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.88rem;color:#D9DCCB;}
+  .wire select{font-family:var(--sans);font-size:.88rem;color:#F4F1E7;background:var(--night-2);border:1px solid var(--night-line);border-radius:6px;padding:.42rem .55rem;cursor:pointer;min-width:5.6rem;}
+  .wire select:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+  @media (max-width:560px){ .wire{width:100%;justify-content:space-between;} }
