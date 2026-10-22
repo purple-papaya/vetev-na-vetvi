@@ -301,7 +301,9 @@
   /* ---- games (Hry) ---- */
   figure.game .sim-panel{position:relative;}
   .game-stage{position:relative;}
-  figure.game canvas{touch-action:none;user-select:none;-webkit-user-select:none;}
+  figure.game canvas{user-select:none;-webkit-user-select:none;}
+  figure.game canvas.drag{touch-action:pan-y;cursor:crosshair;}
+  figure.game canvas:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
   .game-overlay{position:absolute;inset:0;display:flex;padding:1.2rem;
     background:rgba(28,33,25,.86);z-index:5;overflow:auto;}
   .game-overlay[hidden]{display:none;}

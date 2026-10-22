@@ -25,6 +25,7 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 
 - [Pulzy](https://vetevnavetvi.cz/pages/hra-pulzy.html) (na motivy kapitoly Dopis pro všechny): Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví. English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
 - [Brzlík](https://vetevnavetvi.cz/pages/hra-brzlik.html) (na motivy kapitoly Darwin v mízní uzlině): Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE. English: Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when AIRE fails.
+- [Vana bez zátky](https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html) (na motivy kapitoly Lék je vlna): Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, slabé ledviny, grapefruit a nasycovací dávka. English: Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and a narrow therapeutic window that needs a loading dose.
 
 ## O autorce
 

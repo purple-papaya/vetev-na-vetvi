@@ -185,6 +185,16 @@ PAGES = {
         en='Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide '
            'binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when '
            'AIRE fails.'),
+    'pages/hra-vana-bez-zatky.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch1-lek-je-vlna.html', name='Vana bez zátky',
+        title='Vana bez zátky: hra na dávkování léků | Větev na větvi',
+        desc='Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, '
+             'slabé ledviny, grapefruit a nasycovací dávka.',
+        about=['farmakokinetika', 'poločas', 'ustálený stav', 'terapeutické rozmezí', 'nasycovací dávka',
+               'grapefruit', 'CYP3A4'],
+        en='Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and '
+           'maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and '
+           'a narrow therapeutic window that needs a loading dose.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
