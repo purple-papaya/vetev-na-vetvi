@@ -315,7 +315,13 @@ PAGES = {
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
         desc='Pája vystudovala molekulární biologii a biochemii a pracuje jako datová analytička v Brně. Jak vznikají '
-             'kapitoly, z jakých učebnic a s jakou rolí AI.'),
+             'kapitoly, z jakých učebnic a s jakou rolí AI.',
+        # the intro video embedded on the page (described as a VideoObject)
+        video=dict(name='Větev na větvi za dvacet vteřin', file='assets/video/vetev-na-vetvi-intro.mp4',
+                   poster='assets/video/vetev-na-vetvi-intro.jpg', duration='PT20S', date='2026-10-23',
+                   width=1920, height=1080,
+                   desc='Úvodní video bez zvuku: terénní zápisník o tom, jak živé věci fungují, osm větví Wetware '
+                        'a tři hry v akci – Přeskoky, Plný sklad a Vana bez zátky.')),
     # ---- placeholders, not worth indexing yet
     'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
                                desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
@@ -526,12 +532,13 @@ def markdown_of(page_path, page_html):
                   lambda m: '<pre>' + m.group(2).replace(r'# ', '# ', 1) + '</pre>', body, flags=re.S)
     body = re.sub(r'<span class="k">(.*?)</span>', r' – \1', body, flags=re.S)
 
-    def fig(m):   # keep only the caption of figures (simulations, illustrations, branch art)
+    def fig(m):   # keep only the caption of figures (simulations, illustrations, branch art, video)
         cap = re.search(r'<figcaption[^>]*>(.*?)</figcaption>', m.group(0), re.S)
         if not cap:
             return ' '
         label = ('Hra' if re.search(r'class="sim game\b', m.group(0)) else
-                 'Simulace' if re.search(r'class="sim\b', m.group(0)) else 'Obrázek')
+                 'Simulace' if re.search(r'class="sim\b', m.group(0)) else
+                 'Video' if '<video' in m.group(0) else 'Obrázek')
         return f'<p>{label}: {cap.group(1)}</p>'
 
     def triad(m):
@@ -688,6 +695,14 @@ def graph_of(path, page_html, dates):
         page['@type'] = 'AboutPage'
         page['mainEntity'] = {'@id': PERSON_ID}
         nodes.append(PERSON)
+    video = meta.get('video')
+    if video:
+        nodes.append({'@type': 'VideoObject', '@id': url + '#video', 'name': video['name'],
+                      'description': video['desc'], 'thumbnailUrl': SITE_URL + video['poster'],
+                      'contentUrl': SITE_URL + video['file'], 'uploadDate': video['date'],
+                      'duration': video['duration'], 'width': video['width'], 'height': video['height'],
+                      'inLanguage': 'cs', 'publisher': {'@id': SITE_URL + '#org'}})
+        page['video'] = {'@id': url + '#video'}
     nodes.insert(2, page)
     return {'@context': 'https://schema.org', '@graph': nodes}
 
