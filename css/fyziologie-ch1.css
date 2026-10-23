@@ -239,10 +239,21 @@
   .sim-controls input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--sage);border:2px solid var(--night);cursor:pointer;}
   .sim-controls input[type=range]::-moz-range-thumb{width:14px;height:14px;border:none;border-radius:50%;background:var(--sage);cursor:pointer;}
 
-/* link to the feedback page under every chapter and game (inserted by tools/seo.py) */
+/* link to the feedback page (and the coffee button) under every chapter and game, inserted by tools/seo.py */
 .fv-line{box-sizing:border-box;max-width:calc(var(--measure,42rem) - 3rem);
   margin:2.4rem max(1.5rem,calc((100% - var(--measure,42rem)) / 2 + 1.5rem)) 1.4rem;padding:.8rem 1rem;
   border-radius:10px;background:rgba(191,106,63,.08);border-left:3px solid #BF6A3F;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem 1rem;
   font-family:var(--sans,var(--font-sans,Inter,system-ui,sans-serif));font-size:.95rem;line-height:1.55;color:#4A4F42;}
-.fv-line a{color:#9E5230;font-weight:600;text-decoration:none;white-space:nowrap;}
-.fv-line a:hover,.fv-line a:focus-visible{text-decoration:underline;}
+.fv-line p{margin:0;}
+.fv-line p a{color:#9E5230;font-weight:600;text-decoration:none;white-space:nowrap;}
+.fv-line p a:hover,.fv-line p a:focus-visible{text-decoration:underline;}
+/* "Kup mi kafe": a plain link to Ko-fi, no third-party script */
+.kafe{display:inline-flex;align-items:center;gap:.45rem;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:.9rem;
+  line-height:1.2;font-style:normal;color:#9E5230;background:#FFF8F1;border:1.5px solid #BF6A3F;border-radius:999px;padding:.42rem .95rem;
+  text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;}
+.kafe:hover,.kafe:focus-visible{background:#BF6A3F;color:#fff;}
+.kafe:focus-visible{outline:2px solid #BF6A3F;outline-offset:2px;}
+.kafe svg{width:1.1em;height:1.1em;flex:none;}
+.kafe-radek{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem;}
+.coda .kafe-radek{justify-content:center;}

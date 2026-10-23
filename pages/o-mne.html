@@ -184,7 +184,7 @@
 <section class="prose">
   <h2>Jak se <em>ozvat</em></h2>
 
-  <p>Napsat mi půjde přes stránku <a href="zpetna-vazba.html">Zpětná vazba</a>, která se právě připravuje.</p>
+  <p>Napsat mi můžeš přes stránku <a href="zpetna-vazba.html">Zpětná vazba</a>.</p>
 </section>
 
 <div class="rule" aria-hidden="true">
@@ -193,6 +193,9 @@
 
 <section class="coda">
   <p>Díky, že čteš.</p>
+  <!-- kafe:veta:begin – generuje tools/seo.py -->
+<p class="kafe-radek">Jestli ti dává smysl, co tu dělám, budu ráda za kafe. <a class="kafe" href="https://ko-fi.com/vetevnavetvi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg><span>Kup mi kafe</span></a></p>
+<!-- kafe:veta:end -->
   <p class="sign">Pája</p>
 </section>
 
@@ -289,6 +292,45 @@
   }
   function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
   function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
 
   /* render loop that pauses when the canvas scrolls out of view */
   function makeSim(id, init){

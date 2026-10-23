@@ -236,3 +236,15 @@ a.twig-link:hover .twig-name{color:var(--terra-deep);}
   .pop.p1{animation-delay:1.05s;} .pop.p2{animation-delay:1.2s;} .pop.p3{animation-delay:1.35s;}
   @keyframes pop{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
 }
+
+/* "Kup mi kafe": a plain link to Ko-fi, no third-party script */
+.kafe{display:inline-flex;align-items:center;gap:.45rem;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:.9rem;
+  line-height:1.2;font-style:normal;color:#9E5230;background:#FFF8F1;border:1.5px solid #BF6A3F;border-radius:999px;padding:.42rem .95rem;
+  text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;}
+.kafe:hover,.kafe:focus-visible{background:#BF6A3F;color:#fff;}
+.kafe:focus-visible{outline:2px solid #BF6A3F;outline-offset:2px;}
+.kafe svg{width:1.1em;height:1.1em;flex:none;}
+.kafe-radek{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem;}
+.foot .kafe{margin-left:auto;}
+.foot:has(.kafe) > span:nth-of-type(2){flex:1 1 14rem;min-width:0;}
+@media (max-width:640px){ .foot .kafe{margin-left:0;} }

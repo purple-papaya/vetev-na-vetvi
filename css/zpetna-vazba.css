@@ -55,3 +55,4 @@ h2.sec{font-family:Merriweather,Georgia,serif;font-weight:700;font-size:1.35rem;
 .log b{color:var(--forest-deep);font-weight:600;}
 .priv{color:var(--ink-soft);font-size:.98rem;line-height:1.65;max-width:44rem;padding-left:1.2rem;}
 .priv li{margin:.3rem 0;}
+.kafe-text{color:var(--ink-soft);font-size:.98rem;line-height:1.65;max-width:44rem;margin:0 0 1rem;}
