@@ -319,12 +319,13 @@ PAGES = {
     # ---- placeholders, not worth indexing yet
     'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
                                desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
-    'pages/zpetna-vazba.html': dict(kind='stub', name='Zpětná vazba', title='Zpětná vazba | Větev na větvi',
-                                    desc='Napiš, co ti sedlo, co skřípalo nebo kde je chyba. Stránka se připravuje.'),
+    'pages/zpetna-vazba.html': dict(kind='contact', name='Zpětná vazba', title='Zpětná vazba | Větev na větvi',
+                                    desc='Napiš, co ti sedlo, co skřípalo nebo kde je v textu chyba. Formulář pro opravy, '
+                                         'nápady i pochvalu a seznam oprav, které se na webu udělaly.'),
     '404.html': dict(kind='404', name='Stránka nenalezena', title='Stránka nenalezena | Větev na větvi',
                      desc='Tahle adresa na webu Větev na větvi neexistuje.'),
 }
-INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'games', 'game', 'about'}
+INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'games', 'game', 'about', 'contact'}
 
 # The author, as described on the About page (pages/o-mne.html).
 AUTHOR = dict(name='Pája', job='datová analytička', locality='Brno', country='CZ',
@@ -514,6 +515,7 @@ class _Md(HTMLParser):
 
 def markdown_of(page_path, page_html):
     body = page_html[page_html.find('<body'):]
+    body = re.sub(re.escape(FB_BEGIN) + r'.*?' + re.escape(FB_END), ' ', body, flags=re.S)
     body = re.sub(r'<(script|style|svg|canvas|nav|button|select|template|noscript)\b.*?</\1>', ' ', body, flags=re.S | re.I)
     body = re.sub(r'<(header|footer)\b.*?</\1>', ' ', body, flags=re.S | re.I)
     body = re.sub(r'<label\b.*?</label>|<input\b[^>]*>', ' ', body, flags=re.S | re.I)
@@ -578,7 +580,7 @@ def crumbs_of(path):
         trail.append(('Blog', 'pages/blog.html'))
     if kind in ('games', 'game'):
         trail.append(('Hry', 'pages/hry.html'))
-    if kind in ('chapter', 'post', 'game', 'stub', 'hub', 'about'):
+    if kind in ('chapter', 'post', 'game', 'stub', 'hub', 'about', 'contact'):
         trail.append((meta['name'], path))
     seen, out = set(), []
     for name, p in trail:
@@ -680,6 +682,8 @@ def graph_of(path, page_html, dates):
         page['mainEntity'] = {'@id': url + '#game'}
         nodes.append(game)
         nodes.append(PERSON)
+    if kind == 'contact':
+        page['@type'] = 'ContactPage'
     if kind == 'about':
         page['@type'] = 'AboutPage'
         page['mainEntity'] = {'@id': PERSON_ID}
@@ -748,6 +752,61 @@ def apply(path):
     return dates
 
 
+# ------------------------------------------------------------------ feedback links
+# Every chapter, game and blog post ends with a line that opens the feedback form with the page
+# already chosen, and the form's list of pages is kept in sync with PAGES. Both are rewritten on
+# every run, so edit them here, not in the pages.
+FB_BEGIN, FB_END = '<!-- zpetna-vazba:begin – generuje tools/seo.py -->', '<!-- zpetna-vazba:end -->'
+OPT_BEGIN, OPT_END = '<!-- stranky:begin – generuje tools/seo.py -->', '<!-- stranky:end -->'
+FEEDBACK_PAGE = 'pages/zpetna-vazba.html'
+
+
+def feedback_line(path):
+    stem = Path(path).stem
+    return (f'{FB_BEGIN}\n<p class="fv-line">Vidíš chybu, nebo ti tu něco nesedí? '
+            f'<a href="zpetna-vazba.html?stranka={stem}">Napiš mi&nbsp;&#8594;</a></p>\n{FB_END}\n')
+
+
+def apply_feedback_line(path):
+    f = ROOT / path
+    s = f.read_text(encoding='utf-8')
+    # the line goes in as the block plus one blank line, so it comes out the same way
+    s = re.sub(re.escape(FB_BEGIN) + r'.*?' + re.escape(FB_END) + r'\n\n?', '', s, flags=re.S)
+    m = (re.search(r'^[ \t]*<(section|div) class="sources"', s, re.M)
+         or re.search(r'^[ \t]*<footer class="foot"', s, re.M))
+    if not m:
+        print(f'Pozor, {path}: nenašel jsem, kam dát odkaz na zpětnou vazbu.', file=sys.stderr)
+        return
+    f.write_text(s[:m.start()] + feedback_line(path) + '\n' + s[m.start():], encoding='utf-8')
+
+
+def page_options():
+    order = re.findall(r'data-game="(hra-[a-z0-9-]+)"', (ROOT / 'pages' / 'hry.html').read_text(encoding='utf-8'))
+    rank = lambda p: order.index(Path(p).stem) if Path(p).stem in order else len(order)
+    of = lambda kind: [p for p, m in PAGES.items() if m['kind'] == kind]
+    opt = lambda p, label: f'<option value="{Path(p).stem}">{html.escape(label)}</option>'
+    out = ['<option value="obecne">Obecně, nikde konkrétně</option>', '<optgroup label="Kapitoly Wetware">']
+    out += [opt(p, f'{PAGES[p]["name"]} · {PAGES[PAGES[p]["branch"]]["name"]}') for p in of('chapter')]
+    out += ['</optgroup>', '<optgroup label="Hry">'] + [opt(p, PAGES[p]['name']) for p in sorted(of('game'), key=rank)]
+    out += ['</optgroup>', '<optgroup label="Blog">'] + [opt(p, PAGES[p]['name']) for p in of('post')]
+    out += ['</optgroup>', '<optgroup label="Ostatní">']
+    out += [opt(p, label) for p, label in [('index.html', 'Rozcestník'), ('pages/wetware.html', 'Wetware'),
+                                           ('pages/hry.html', 'Hry'), ('pages/blog.html', 'Blog'), ('pages/o-mne.html', 'O mně')]]
+    out += ['</optgroup>']
+    return '\n'.join(out)
+
+
+def apply_page_options():
+    f = ROOT / FEEDBACK_PAGE
+    s = f.read_text(encoding='utf-8')
+    new, n = re.subn(re.escape(OPT_BEGIN) + r'.*?' + re.escape(OPT_END),
+                     lambda m: OPT_BEGIN + '\n' + page_options() + '\n' + OPT_END, s, flags=re.S)
+    if not n:
+        print(f'Pozor, {FEEDBACK_PAGE}: chybí značky pro seznam stránek.', file=sys.stderr)
+        return
+    f.write_text(new, encoding='utf-8')
+
+
 # ------------------------------------------------------------------ site files
 def write_site_files(all_dates):
     urls = []
@@ -791,7 +850,8 @@ def write_site_files(all_dates):
               f'- [Rozcestník]({SITE_URL}): hlavní strana webu',
               f'- [Wetware]({url_of("pages/wetware.html")}): přehled všech větví a kapitol',
               f'- [Blog]({url_of("pages/blog.html")}): kratší texty mezi kapitolami',
-              f'- [Hry]({url_of("pages/hry.html")}): minihry na motivy kapitol', '',
+              f'- [Hry]({url_of("pages/hry.html")}): minihry na motivy kapitol',
+              f'- [Zpětná vazba]({url_of("pages/zpetna-vazba.html")}): formulář pro opravy a nápady a seznam oprav', '',
               '## Optional', '',
               f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu', '']
     (ROOT / 'llms.txt').write_text('\n'.join(lines), encoding='utf-8')
@@ -815,6 +875,10 @@ def main():
                      - set(PAGES))
     if missing:
         print('Pozor, tyto stránky nejsou v PAGES a zůstaly beze změny:', ', '.join(missing), file=sys.stderr)
+    for path, meta in PAGES.items():
+        if meta['kind'] in ('chapter', 'game', 'post'):
+            apply_feedback_line(path)
+    apply_page_options()
     all_dates = {}
     for path in PAGES:
         all_dates[path] = apply(path)

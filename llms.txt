@@ -50,6 +50,7 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 - [Wetware](https://vetevnavetvi.cz/pages/wetware.html): přehled všech větví a kapitol
 - [Blog](https://vetevnavetvi.cz/pages/blog.html): kratší texty mezi kapitolami
 - [Hry](https://vetevnavetvi.cz/pages/hry.html): minihry na motivy kapitol
+- [Zpětná vazba](https://vetevnavetvi.cz/pages/zpetna-vazba.html): formulář pro opravy a nápady a seznam oprav
 
 ## Optional
 

@@ -22,11 +22,12 @@ css/
   fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
   wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie
                             a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace);
-                            používá je i článek na blogu
+                            používá je i článek na blogu a hry
+  zpetna-vazba.css         formulář zpětné vazby, seznam oprav a poznámka o soukromí
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
-  og/                      náhledové obrázky pro sdílení (1200×630, jeden na kapitolu a článek) a logo
+  og/                      náhledové obrázky pro sdílení (1200×630, jeden na kapitolu, článek a hru) a logo
 tools/
   seo.py                   metadata pro vyhledávače a jazykové modely (viz níž)
 sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
@@ -44,7 +45,10 @@ pages/
   blog.html                Blog — rozcestník kratších textů mezi kapitolami
   blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
   o-mne.html               O mně — kdo web píše a jak kapitoly vznikají
-  pribehy.html, hry.html, zpetna-vazba.html                                zástupné stránky
+  hry.html                 Hry — rozcestník miniher podle větví Wetware
+  hra-*.html               16 miniher, dvě na každou větev (každá na motivy jedné první kapitoly)
+  zpetna-vazba.html        Zpětná vazba — formulář, seznam oprav a co se se zprávou stane (viz níž)
+  pribehy.html             zástupná stránka
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
   wetware-imunologie.html, wetware-vyvojova-biologie.html,
@@ -71,8 +75,12 @@ python3 tools/seo.py
   (titulek, popis, kanonická adresa, Open Graph, strukturovaná data JSON-LD včetně častých otázek
   a zdrojů kapitol) a v kořeni `sitemap.xml`, `robots.txt`, `llms.txt` a `llms-full.txt`.
   Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
-- **Zástupné stránky** (Příběhy, Hry, Zpětná vazba) a 404 mají `noindex`. Až dostanou
-  obsah, změň v `PAGES` jejich `kind` ze `stub` na vhodný typ.
+- **Zástupná stránka** Příběhy a 404 mají `noindex`. Až Příběhy dostanou obsah, změň v `PAGES`
+  jejich `kind` ze `stub` na vhodný typ.
+- **Odkaz na zpětnou vazbu**: pod každou kapitolu, hru a článek vloží skript řádek „Vidíš chybu…
+  Napiš mi →“ (mezi komentáři `zpetna-vazba:begin` a `zpetna-vazba:end`) a do formuláře na
+  `zpetna-vazba.html` doplní seznam stránek (mezi `stranky:begin` a `stranky:end`). Obojí se při
+  každém spuštění přepíše, takže nová kapitola nebo hra se v obou objeví sama.
 - **Adresa webu** je `https://vetevnavetvi.cz/` (proměnná `SITE_URL`). Kdyby se web přestěhoval,
   změň ji a skript spusť znovu.
 - **Data publikace a úpravy** se berou z historie gitu. Commity, jejichž zpráva začíná `SEO:`,
@@ -106,4 +114,14 @@ pak spustit `git push`. GitHub Pages se zapíná v **Settings → Pages** (viz v
 ## Až budeš chtít pokračovat
 
 Zástupné stránky stačí přepsat obsahem — názvy souborů i odkazy už sedí.
-`zpetna-vazba.html` se dá klidně nahradit odkazem `mailto:` nebo formulářem.
+
+## Zpětná vazba
+
+- **Odesílání**: formulář posílá zprávy přes [Web3Forms](https://web3forms.com/) na e-mail, ke kterému
+  patří přístupový klíč. Klíč patří do atributu `data-key` u `<form id="fv-form">` v `pages/zpetna-vazba.html`.
+  Klíč smí být veřejný, Web3Forms s ním počítá. Bez klíče formulář nic neodešle a napíše, že se
+  odesílání teprve zapíná.
+- **Uchování zpráv**: stránka slibuje, že zprávy zůstanou na serverech Web3Forms nejvýš 7 dní. Stejnou
+  dobu nastav u formuláře v administraci Web3Forms, nebo text v sekci „Co se se zprávou stane“ uprav.
+- **Seznam oprav**: novou opravu přidej do seznamu „Opraveno“ nahoru jako další `<li>` s datem,
+  názvem stránky a jednou větou o tom, co se změnilo.
