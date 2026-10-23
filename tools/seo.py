@@ -763,8 +763,53 @@ FEEDBACK_PAGE = 'pages/zpetna-vazba.html'
 
 def feedback_line(path):
     stem = Path(path).stem
-    return (f'{FB_BEGIN}\n<p class="fv-line">Vidíš chybu, nebo ti tu něco nesedí? '
-            f'<a href="zpetna-vazba.html?stranka={stem}">Napiš mi&nbsp;&#8594;</a></p>\n{FB_END}\n')
+    return (f'{FB_BEGIN}\n<div class="fv-line"><p>Vidíš chybu, nebo ti tu něco nesedí? '
+            f'<a href="zpetna-vazba.html?stranka={stem}">Napiš mi&nbsp;&#8594;</a></p>{kafe_button()}</div>\n{FB_END}\n')
+
+
+# ------------------------------------------------------------------ "Kup mi kafe"
+# The Ko-fi page. While it is empty, no coffee button appears anywhere. The button is a plain link,
+# no Ko-fi script, so the site keeps its promise of no cookies and no tracking.
+KOFI_URL = ''
+CUP = ('<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+       'stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>'
+       '<path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg>')
+
+
+def kafe_button():
+    if not KOFI_URL:
+        return ''
+    return (f'<a class="kafe" href="{html.escape(KOFI_URL, quote=True)}" target="_blank" rel="noopener">'
+            f'{CUP}<span>Kup mi kafe</span></a>')
+
+
+def kafe_block(variant):
+    btn = kafe_button()
+    if not btn:
+        return ''
+    if variant == 'tlacitko':
+        return btn
+    if variant == 'veta':
+        return f'<p class="kafe-radek">Jestli ti dává smysl, co tu dělám, budu ráda za kafe. {btn}</p>'
+    if variant == 'sekce':
+        return ('<h2 class="sec" id="kafe">Podpoř web</h2>\n'
+                '<p class="kafe-text">Větev na větvi nemá reklamy ani předplatné. Jestli ti dává smysl, můžeš mi koupit '
+                'kafe. Odkaz vede na Ko-fi, kde platbu zpracuje Stripe nebo PayPal.</p>\n'
+                f'<p>{btn}</p>')
+    raise SystemExit(f'Neznámá varianta tlačítka na kafe: {variant}')
+
+
+def apply_kafe(path):
+    # pages ask for a button with <!-- kafe:VARIANTA:begin ... --> ... <!-- kafe:VARIANTA:end -->
+    f = ROOT / path
+    s = f.read_text(encoding='utf-8')
+    if '<!-- kafe:' not in s:
+        return
+    new = re.sub(r'(<!-- kafe:(\w+):begin[^>]*-->)(.*?)(<!-- kafe:\2:end -->)',
+                 lambda m: m.group(1) + '\n' + (kafe_block(m.group(2)) + '\n' if kafe_block(m.group(2)) else '') + m.group(4),
+                 s, flags=re.S)
+    if new != s:
+        f.write_text(new, encoding='utf-8')
 
 
 def apply_feedback_line(path):
@@ -879,6 +924,8 @@ def main():
         if meta['kind'] in ('chapter', 'game', 'post'):
             apply_feedback_line(path)
     apply_page_options()
+    for path in PAGES:
+        apply_kafe(path)
     all_dates = {}
     for path in PAGES:
         all_dates[path] = apply(path)
