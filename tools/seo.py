@@ -38,7 +38,7 @@ LOGO_IMAGE = 'assets/og/logo.png'
 THEME_COLOR = '#2F5D46'
 WPM = 200   # reading speed used for timeRequired
 
-# kind: home | hub | branch | chapter | blog | post | stub | 404
+# kind: home | hub | branch | chapter | blog | post | games | game | about | stub | 404
 PAGES = {
     'index.html': dict(
         kind='home', title='Větev na větvi – terénní zápisník o biologii těla',
@@ -162,21 +162,169 @@ PAGES = {
         about=['gradient', 'práh', 'zpětná vazba', 'ustálený stav', 'samoorganizace'],
         en='Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that '
            'turn them into decisions, feedback loops, and no central controller.'),
-    # ---- placeholders, not worth indexing yet
+    # ---- games
+    'pages/hry.html': dict(
+        kind='games', name='Hry', title='Hry – minihry z biologie těla | Větev na větvi',
+        desc='Minihry na motivy kapitol Wetware: biologie těla, kterou si vyzkoušíš na vlastní kůži. Pulzy hormonů, '
+             'třídění buněk v brzlíku, dávkování léků a další.'),
+    'pages/hra-pulzy.html': dict(
+        kind='game', chapter='pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html', name='Pulzy',
+        title='Pulzy: rytmická hra o GnRH a LH | Větev na větvi',
+        desc='Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun '
+             'GnRH tvorbu LH naopak zastaví.',
+        about=['GnRH', 'LH', 'pulzní sekrece', 'desenzitizace receptorů', 'hypofýza', 'agonista GnRH'],
+        en='Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary\'s LH output in a healthy '
+           'range, then silence it like a physician with a continuous infusion (receptor desensitization).'),
+    'pages/hra-brzlik.html': dict(
+        kind='game', chapter='pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html', name='Brzlík',
+        title='Brzlík: třídicí hra o výběru T-lymfocytů | Větev na větvi',
+        desc='Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo '
+             'bude regulační. A co se stane, když přestane fungovat AIRE.',
+        about=['brzlík', 'T-lymfocyt', 'pozitivní selekce', 'negativní selekce', 'regulační T-lymfocyty', 'AIRE',
+               'autoimunita'],
+        en='Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide '
+           'binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when '
+           'AIRE fails.'),
+    'pages/hra-vana-bez-zatky.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch1-lek-je-vlna.html', name='Vana bez zátky',
+        title='Vana bez zátky: hra na dávkování léků | Větev na větvi',
+        desc='Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, '
+             'slabé ledviny, grapefruit a nasycovací dávka.',
+        about=['farmakokinetika', 'poločas', 'ustálený stav', 'terapeutické rozmezí', 'nasycovací dávka',
+               'grapefruit', 'CYP3A4'],
+        en='Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and '
+           'maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and '
+           'a narrow therapeutic window that needs a loading dose.'),
+    'pages/hra-spiknuti.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html', name='Spiknutí',
+        title='Spiknutí: logický hlavolam z neuronů | Větev na větvi',
+        desc='Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, '
+             'oba naráz, většina, buď, anebo.',
+        about=['neuron', 'synapse', 'práh', 'excitace', 'inhibice', 'McCulloch–Pitts', 'logické funkce'],
+        en='Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, '
+           'AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.'),
+    'pages/hra-prouzek.html': dict(
+        kind='game', chapter='pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html', name='Proužek',
+        title='Proužek: skládačka o přepínačích genů | Větev na větvi',
+        desc='Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen '
+             'zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.',
+        about=['regulace genů', 'enhancer', 'even-skipped', 'Bicoid', 'gradient morfogenu', 'octomilka',
+               'regulační bílkoviny'],
+        en='Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding '
+           'sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, '
+           'then predict binding-site experiments.'),
+    'pages/hra-horecka.html': dict(
+        kind='game', chapter='pages/wetware-fyziologie-ch1-more-pod-kuzi.html', name='Horečka',
+        title='Horečka: hra o termoregulaci a zpětné vazbě | Větev na větvi',
+        desc='Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které '
+             'rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.',
+        about=['termoregulace', 'negativní zpětná vazba', 'žádaná hodnota', 'horečka', 'zpoždění',
+               'Cheyneovo-Stokesovo dýchání'],
+        en='Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, '
+           'see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of '
+           'a fever and its break.'),
+    'pages/hra-hodiny-a-vlna.html': dict(
+        kind='game', chapter='pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html',
+        name='Hodiny a vlna', title='Hodiny a vlna: rytmická hra o somitech | Větev na větvi',
+        desc='Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry '
+             'somitů. Od dánia po myš a nakonec bez viditelných hodin.',
+        about=['somitogeneze', 'segmentační hodiny', 'model hodin a vlny', 'somity', 'obratle'],
+        en='Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the '
+           'determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the '
+           'rhythm without the visible clock.'),
+    'pages/hra-schodiste.html': dict(
+        kind='game', chapter='pages/wetware-ch1-jsi-sloveso.html', name='Schodiště',
+        title='Schodiště: skládačka o energii glukózy | Větev na větvi',
+        desc='Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a '
+             'zjisti, co se stane bez kyslíku.',
+        about=['metabolismus', 'ATP', 'NADH', 'dýchací řetězec', 'glykolýza', 'volná energie', 'laktát'],
+        en='Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme '
+           'steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without '
+           'oxygen.'),
+    'pages/hra-slovo-po-slovu.html': dict(
+        kind='game', chapter='pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html', name='Slovo po slovu',
+        title='Slovo po slovu: hlavolam o genetickém kódu a mutacích | Větev na větvi',
+        desc='Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a '
+             'slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.',
+        about=['genetický kód', 'kodon', 'mutace', 'tichá mutace', 'stop kodon', 'evoluce bílkovin'],
+        en='Word puzzle on the genetic code: make point mutations codon by codon and read the protein in '
+           'one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith\'s word ladder in '
+           'which every intermediate protein must work.'),
+    'pages/hra-pestirna-protilatek.html': dict(
+        kind='game', chapter='pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html', name='Pěstírna protilátek',
+        title='Pěstírna protilátek: hra o hypermutaci a výběru | Větev na větvi',
+        desc='Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, '
+             'která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.',
+        about=['somatická hypermutace', 'afinitní maturace', 'zárodečné centrum', 'B-lymfocyt', 'imunitní paměť',
+               'klonální výběr'],
+        en='Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their '
+           'daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted '
+           'virus.'),
+    'pages/hra-stetinky.html': dict(
+        kind='game', chapter='pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html', name='Štětinky',
+        title='Štětinky: hlavolam o laterální inhibici | Větev na větvi',
+        desc='Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a '
+             'Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.',
+        about=['laterální inhibice', 'Delta–Notch', 'štětinky octomilky', 'tvorba vzorů', 'vývojová biologie'],
+        en='Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch '
+           'pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with '
+           'long-range inhibition.'),
+    'pages/hra-kohoutky.html': dict(
+        kind='game', chapter='pages/wetware-fyziologie-ch1-more-pod-kuzi.html', name='Kohoutky',
+        title='Kohoutky: hra o průtoku krve a čtvrté mocnině poloměru | Větev na větvi',
+        desc='Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých '
+             'tepen. Ruměnec, běh a běh v horku.',
+        about=['průtok krve', 'Poiseuilleův zákon', 'cévní odpor', 'srdeční výdej', 'termoregulace'],
+        en='Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with '
+           'limited output, where flow scales with radius to the fourth power; blushing, running, and running in '
+           'the heat.'),
+    'pages/hra-zdirka.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch1-lek-je-vlna.html', name='Zdířka',
+        title='Zdířka: hra o receptorech, potenci a antagonistech | Větev na větvi',
+        desc='Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, '
+             'částečným agonistou se stropem a antagonistou, který odezní dřív než lék.',
+        about=['farmakodynamika', 'receptor', 'agonista', 'antagonista', 'částečný agonista', 'potence', 'účinnost'],
+        en='Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a '
+           'hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against '
+           'an overdose.'),
+    'pages/hra-plny-sklad.html': dict(
+        kind='game', chapter='pages/wetware-ch1-jsi-sloveso.html', name='Plný sklad',
+        title='Plný sklad: hra o zpětnovazebné inhibici v metabolismu | Větev na větvi',
+        desc='Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, '
+             'po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.',
+        about=['zpětnovazebná inhibice', 'alosterická regulace', 'metabolická dráha', 'rozvětvená dráha', 'marný cyklus', 'AMP'],
+        en='Game on feedback inhibition: choose which enzyme a full store should brake in a linear pathway, a branched '
+           'pathway with sequential feedback, and opposing breakdown and synthesis routes controlled by AMP.'),
+    'pages/hra-preskoky.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html', name='Přeskoky',
+        title='Přeskoky: hlavolam o myelinu a saltatorním vedení | Větev na větvi',
+        desc='Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. '
+             'Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.',
+        about=['myelin', 'saltatorní vedení', 'Ranvierův zářez', 'akční potenciál', 'délková konstanta', 'roztroušená skleróza'],
+        en='Puzzle on saltatory conduction: place nodes of Ranvier on a myelinated axon so the impulse reaches the end, '
+           'discover the flat optimum of internode length, and restore conduction through a demyelinated lesion.'),
+    'pages/hra-smycka.html': dict(
+        kind='game', chapter='pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html', name='Smyčka',
+        title='Smyčka: detektivka se štítnou žlázou a TSH | Větev na větvi',
+        desc='Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, '
+             'selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.',
+        about=['štítná žláza', 'TSH', 'tyroxin', 'zpětná vazba', 'struma', 'Gravesova choroba', 'centrální hypotyreóza'],
+        en='Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary '
+           'failure and excess tablets apart, then titrate levothyroxine and treat.'),
+    # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
         desc='Pája vystudovala molekulární biologii a biochemii a pracuje jako datová analytička v Brně. Jak vznikají '
              'kapitoly, z jakých učebnic a s jakou rolí AI.'),
+    # ---- placeholders, not worth indexing yet
     'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
                                desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
-    'pages/hry.html': dict(kind='stub', name='Hry', title='Hry | Větev na větvi',
-                           desc='Hry a hlavolamy na motivy kapitol Wetware. Stránka se připravuje.'),
     'pages/zpetna-vazba.html': dict(kind='stub', name='Zpětná vazba', title='Zpětná vazba | Větev na větvi',
                                     desc='Napiš, co ti sedlo, co skřípalo nebo kde je chyba. Stránka se připravuje.'),
     '404.html': dict(kind='404', name='Stránka nenalezena', title='Stránka nenalezena | Větev na větvi',
                      desc='Tahle adresa na webu Větev na větvi neexistuje.'),
 }
-INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'about'}
+INDEXABLE = {'home', 'hub', 'branch', 'chapter', 'blog', 'post', 'games', 'game', 'about'}
 
 # The author, as described on the About page (pages/o-mne.html).
 AUTHOR = dict(name='Pája', job='datová analytička', locality='Brno', country='CZ',
@@ -380,7 +528,8 @@ def markdown_of(page_path, page_html):
         cap = re.search(r'<figcaption[^>]*>(.*?)</figcaption>', m.group(0), re.S)
         if not cap:
             return ' '
-        label = 'Simulace' if re.search(r'class="sim\b', m.group(0)) else 'Obrázek'
+        label = ('Hra' if re.search(r'class="sim game\b', m.group(0)) else
+                 'Simulace' if re.search(r'class="sim\b', m.group(0)) else 'Obrázek')
         return f'<p>{label}: {cap.group(1)}</p>'
 
     def triad(m):
@@ -427,7 +576,9 @@ def crumbs_of(path):
         trail.append((PAGES[meta['branch']]['name'], meta['branch']))
     if kind in ('blog', 'post'):
         trail.append(('Blog', 'pages/blog.html'))
-    if kind in ('chapter', 'post', 'stub', 'hub', 'about'):
+    if kind in ('games', 'game'):
+        trail.append(('Hry', 'pages/hry.html'))
+    if kind in ('chapter', 'post', 'game', 'stub', 'hub', 'about'):
         trail.append((meta['name'], path))
     seen, out = set(), []
     for name, p in trail:
@@ -456,7 +607,7 @@ def graph_of(path, page_html, dates):
         nodes.append({'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
             {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': url_of(p)} for i, (n, p) in enumerate(crumbs)]})
         page['breadcrumb'] = {'@id': url + '#breadcrumb'}
-    if kind in ('hub', 'branch', 'blog'):
+    if kind in ('hub', 'branch', 'blog', 'games'):
         page['@type'] = 'CollectionPage'
         if kind == 'hub':
             chapters = [p for p, m in PAGES.items() if m['kind'] == 'chapter']
@@ -466,6 +617,11 @@ def graph_of(path, page_html, dates):
         if kind == 'branch':
             page['hasPart'] = [{'@id': url_of(p) + '#article'} for p, m in PAGES.items()
                                if m['kind'] == 'chapter' and m['branch'] == path]
+        if kind == 'games':
+            games = [p for p, m in PAGES.items() if m['kind'] == 'game']
+            page['mainEntity'] = {'@type': 'ItemList', 'itemListElement': [
+                {'@type': 'ListItem', 'position': i + 1, 'url': url_of(p), 'name': PAGES[p]['name']}
+                for i, p in enumerate(games)]}
         if kind == 'blog':
             posts = [p for p, m in PAGES.items() if m['kind'] == 'post']
             nodes.append({'@type': 'Blog', '@id': url + '#blog', 'name': f'Blog – {SITE_NAME}', 'url': url,
@@ -505,6 +661,25 @@ def graph_of(path, page_html, dates):
             page['@type'] = ['WebPage', 'FAQPage']
             page['mainEntity'] = [{'@type': 'Question', 'name': q,
                                    'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faqs]
+    if kind == 'game':
+        chapter = PAGES[meta['chapter']]
+        game = {'@type': ['Game', 'LearningResource'], '@id': url + '#game', 'name': meta['name'],
+                'description': meta['desc'], 'inLanguage': 'cs', 'url': url,
+                'mainEntityOfPage': {'@id': url + '#webpage'},
+                'image': {'@type': 'ImageObject', 'url': image, 'width': 1200, 'height': 630},
+                'datePublished': meta.get('date') or dates[0], 'dateModified': dates[1],
+                'author': {'@id': PERSON_ID}, 'publisher': {'@id': SITE_URL + '#org'},
+                'isAccessibleForFree': True, 'learningResourceType': 'interaktivní hra', 'interactivityType': 'active',
+                'about': [{'@type': 'Thing', 'name': a} for a in meta.get('about', [])],
+                'keywords': ', '.join(meta.get('about', [])),
+                'isBasedOn': {'@type': 'Article', 'name': chapter['name'], 'url': url_of(meta['chapter'])},
+                'isPartOf': {'@id': SITE_URL + 'pages/hry.html#webpage'}}
+        cites = sources_of(page_html)
+        if cites:
+            game['citation'] = cites
+        page['mainEntity'] = {'@id': url + '#game'}
+        nodes.append(game)
+        nodes.append(PERSON)
     if kind == 'about':
         page['@type'] = 'AboutPage'
         page['mainEntity'] = {'@id': PERSON_ID}
@@ -527,7 +702,7 @@ def head_block(path, page_html, dates):
     lines = [BEGIN,
              f'<meta name="description" content="{esc(meta["desc"])}">',
              f'<meta name="robots" content="{robots}">']
-    if kind in ('chapter', 'post', 'about'):
+    if kind in ('chapter', 'post', 'game', 'about'):
         lines.append(f'<meta name="author" content="{esc(AUTHOR["name"])}">')
     if kind != '404':
         lines.append(f'<link rel="canonical" href="{esc(url)}">')
@@ -589,6 +764,7 @@ def write_site_files(all_dates):
 
     chapters = [p for p, m in PAGES.items() if m['kind'] == 'chapter']
     posts = [p for p, m in PAGES.items() if m['kind'] == 'post']
+    games = [p for p, m in PAGES.items() if m['kind'] == 'game']
     lines = [f'# {SITE_NAME}', '', f'> {SITE_DESC}', '', f'English summary: {SITE_DESC_EN}', '',
              'Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na několika hlavních myšlenkách, přirovnáních ze '
              'života, interaktivních simulacích, odpovědích na časté otázky a zdrojích s odkazy na učebnice a články '
@@ -602,6 +778,11 @@ def write_site_files(all_dates):
     for p in posts:
         m = PAGES[p]
         lines.append(f'- [{m["name"]}]({url_of(p)}): {m["desc"]} English: {m["en"]}')
+    lines += ['', '## Hry', '']
+    for p in games:
+        m = PAGES[p]
+        lines.append(f'- [{m["name"]}]({url_of(p)}) (na motivy kapitoly {PAGES[m["chapter"]]["name"]}): {m["desc"]} '
+                     f'English: {m["en"]}')
     lines += ['', '## O autorce', '',
               f'- [O mně]({url_of("pages/o-mne.html")}): {AUTHOR["name"]} vystudovala obor {AUTHOR["education"]} '
               f'a pracuje jako {AUTHOR["job"]} ({AUTHOR["locality"]}). Kapitoly píše s pomocí AI (Claude od Anthropicu); '
@@ -609,19 +790,21 @@ def write_site_files(all_dates):
     lines += ['', '## Rozcestníky', '',
               f'- [Rozcestník]({SITE_URL}): hlavní strana webu',
               f'- [Wetware]({url_of("pages/wetware.html")}): přehled všech větví a kapitol',
-              f'- [Blog]({url_of("pages/blog.html")}): kratší texty mezi kapitolami', '',
+              f'- [Blog]({url_of("pages/blog.html")}): kratší texty mezi kapitolami',
+              f'- [Hry]({url_of("pages/hry.html")}): minihry na motivy kapitol', '',
               '## Optional', '',
-              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly a články jako prostý text v Markdownu', '']
+              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu', '']
     (ROOT / 'llms.txt').write_text('\n'.join(lines), encoding='utf-8')
 
     full = [f'# {SITE_NAME} – plné texty', '', f'> {SITE_DESC}', '',
             'Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.', '']
-    for p in chapters + posts:
+    for p in chapters + posts + games:
         m = PAGES[p]
         page_html = (ROOT / p).read_text(encoding='utf-8')
         md = markdown_of(p, page_html)
         md = re.sub(r'^# .*\n', '', md)   # the title comes from the header below
-        section = PAGES[m['branch']]['name'] if m['kind'] == 'chapter' else 'Blog'
+        section = {'chapter': lambda: PAGES[m['branch']]['name'], 'post': lambda: 'Blog',
+                   'game': lambda: 'Hry (na motivy kapitoly ' + PAGES[m['chapter']]['name'] + ')'}[m['kind']]()
         full += ['', '---', '', f'# {m["name"]}', '', f'URL: {url_of(p)}  ', f'Větev: {section}  ',
                  f'Shrnutí: {m["desc"]}  ', f'English: {m["en"]}', '', md.strip(), '']
     (ROOT / 'llms-full.txt').write_text(re.sub(r'\n{3,}', '\n\n', '\n'.join(full)).strip() + '\n', encoding='utf-8')

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Spiknutí: logický hlavolam z neuronů | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/hra-spiknuti.html">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spiknutí: logický hlavolam z neuronů | Větev na větvi">
+<meta property="og:description" content="Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/hra-spiknuti.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/hra-spiknuti.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Spiknutí – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/hra-spiknuti.html",
+   "name": "Spiknutí: logický hlavolam z neuronů | Větev na větvi",
+   "description": "Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-spiknuti.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#game"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Hry",
+     "item": "https://vetevnavetvi.cz/pages/hry.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Spiknutí",
+     "item": "https://vetevnavetvi.cz/pages/hra-spiknuti.html"
+    }
+   ]
+  },
+  {
+   "@type": [
+    "Game",
+    "LearningResource"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#game",
+   "name": "Spiknutí",
+   "description": "Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/hra-spiknuti.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-spiknuti.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-spiknuti.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-22T03:49:32+00:00",
+   "dateModified": "2026-10-22T03:49:32+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "learningResourceType": "interaktivní hra",
+   "interactivityType": "active",
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "neuron"
+    },
+    {
+     "@type": "Thing",
+     "name": "synapse"
+    },
+    {
+     "@type": "Thing",
+     "name": "práh"
+    },
+    {
+     "@type": "Thing",
+     "name": "excitace"
+    },
+    {
+     "@type": "Thing",
+     "name": "inhibice"
+    },
+    {
+     "@type": "Thing",
+     "name": "McCulloch–Pitts"
+    },
+    {
+     "@type": "Thing",
+     "name": "logické funkce"
+    }
+   ],
+   "keywords": "neuron, synapse, práh, excitace, inhibice, McCulloch–Pitts, logické funkce",
+   "isBasedOn": {
+    "@type": "Article",
+    "name": "Jak se sůl naučila říkat já",
+    "url": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"
+   },
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/pages/hry.html#webpage"
+   },
+   "citation": [
+    "Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.",
+    "McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).",
+    "Obvody ve hře jsou hračky. Skutečné reflexy a rozhodování mozku zapojují mnohem víc neuronů a jejich vstupy se sčítají v čase i prostoru."
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Logický hlavolam</span></p>
+  <h1 class="title"><em>Spiknutí</em></h1>
+  <p class="deck">Neuron umí jen sečíst hlasy a&nbsp;buď vystřelit, nebo mlčet. Zapoj jich pár tak, aby spolu rozhodovaly.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Každý neuron sčítá, co mu přichází po synapsích. Excitační synapse přidá malé „ano“, inhibiční malé „ne“. Když součet dosáhne prahu, neuron vystřelí, jinak mlčí. Z&nbsp;takhle hloupých součástek se dají poskládat překvapivě chytré obvody.</p>
+
+  <p><b>Jak hrát:</b> klepnutím na synapsi měníš její sílu: +1, +2, −1, −2 a&nbsp;zase nic. Klepnutím na štítek <b>práh</b> nastavíš, kolik hlasů neuron potřebuje k&nbsp;výstřelu. Tabulka vpravo ukazuje všechny možné kombinace vstupů, co má výstup udělat a&nbsp;co opravdu dělá. Klepnutím na řádek tabulky ho přehraješ v&nbsp;obvodu. Úroveň je hotová, když sedí všechny řádky.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Spiknutí</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">sedí</span> <b id="s-rows">–</b></span>
+        <span class="rd"><span class="lo">synapsí</span> <b id="s-syn">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="s-goal">Vyber úroveň a&nbsp;začni.</div>
+      <div class="net-wrap">
+        <div class="net" id="s-net"></div>
+        <table class="truth" id="s-table" aria-label="Pravdivostní tabulka"></table>
+      </div>
+      <p class="vh" id="s-desc" aria-live="polite"></p>
+      <div class="sim-controls">
+        <button class="ctrl" id="s-reset" type="button">Vynulovat</button>
+        <span class="hint" id="s-hint"></span>
+      </div>
+      <div class="game-overlay" id="s-ov" hidden></div>
+    </div>
+    <div class="levels" id="s-levels"></div>
+  </div>
+  <figcaption><b>Spiknutí.</b> Vlevo vstupní neurony, vpravo výstupní. Zlatý neuron právě pálí. Číslo v&nbsp;neuronu je součet hlasů, které do něj přišly, štítek nad ním je práh. Zelené synapse jsou excitační, oranžové inhibiční. Neurony jsou tu zjednodušené na sčítání a&nbsp;práh.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Takhle zjednodušený neuron navrhli v&nbsp;roce 1943 Warren McCulloch a&nbsp;Walter Pitts: sečte vážené vstupy a&nbsp;vystřelí, když součet dosáhne prahu. Ukázali, že ze sítí takových jednotek se dá poskládat jakákoli logická funkce. Na tom nápadu později vyrostly umělé neuronové sítě.</p>
+
+  <p>Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“ jediný neuron s&nbsp;jedním prahem nezvládne, ať nastavíš synapse jakkoli. Nejde to rozdělit jednou přímkou: dvě kombinace, které mají pálit, leží v&nbsp;tabulce úhlopříčně proti sobě. Pomůže až další neuron uprostřed, který pozná, že pálí oba vstupy, a&nbsp;výstup utiší.</p>
+
+  <p>Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v&nbsp;čase, synapse se učením zesilují a&nbsp;zeslabují a&nbsp;na jeden motorický neuron v&nbsp;míše se sbíhá asi deset tisíc vstupů. Princip sčítání a&nbsp;prahu ale platí a&nbsp;z&nbsp;něj se skládá spiknutí 86&nbsp;miliard buněk. Víc je v&nbsp;kapitole <a href="wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html">Jak se sůl naučila říkat já</a>.</p>
+</section>
+
+<section class="sources">
+  <h4>Zdroje</h4>
+  <ul>
+    <li>Nicholls J.&nbsp;G. a&nbsp;kol. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;1: excitační a&nbsp;inhibiční vstupy, práh a&nbsp;asi 10&nbsp;000 vstupů na jeden motorický neuron.</li>
+    <li>McCulloch W.&nbsp;S., Pitts W. A&nbsp;logical calculus of the ideas immanent in nervous activity. <em>Bulletin of Mathematical Biophysics</em> 5, 115–133 (1943).</li>
+    <li>Obvody ve hře jsou hračky. Skutečné reflexy a&nbsp;rozhodování mozku zapojují mnohem víc neuronů a&nbsp;jejich vstupy se sčítají v&nbsp;čase i&nbsp;prostoru.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* =========================================================
+     SPIKNUTÍ — wire a few threshold neurons (McCulloch–Pitts units)
+     so that the output gives the required answer for every input
+     combination. Synapses cycle 0, +1, +2, −1, −2; thresholds 1–3.
+     ========================================================= */
+  (function(){
+    var host = document.getElementById('s-net');
+    if(!host) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var CYCLE = [0, 1, 2, -1, -2];
+    var MINUS = '−';
+    var LEVELS = [
+      {name: 'Kterýkoli', inputs: ['A', 'B'], pos: {A: [62, 70], B: [62, 230], O: [340, 150]},
+       edges: [['A', 'O'], ['B', 'O']], labels: {A: 'palec', B: 'ukazováček', O: 'ucuknout'},
+       want: function(v){ return v.A || v.B; },
+       goal: 'Ruka má <b>ucuknout</b>, když pálí palec, ukazováček, nebo oba.',
+       intro: '<p>Dva neurony hlásí, že pálí prst. Výstupní neuron má ruku stáhnout, když se ozve kterýkoli z nich.</p><p>Klepni na synapsi a dej jí sílu, klepnutím na štítek nastavíš práh.</p>',
+       win: 'Stačí jedno „ano“, když je práh nízko. Výstupní neuron se ozve na kterýkoli vstup.'},
+      {name: 'Souběh', inputs: ['A', 'B'], pos: {A: [62, 70], B: [62, 230], O: [340, 150]},
+       edges: [['A', 'O'], ['B', 'O']], labels: {A: 'vstup A', B: 'vstup B', O: 'souběh'},
+       want: function(v){ return v.A && v.B; },
+       goal: 'Detektor souběhu se má ozvat, jen když <b>oba vstupy pálí naráz</b>.',
+       intro: '<p>Tenhle neuron hlídá, jestli dva signály přišly současně. Jedno „ano“ nesmí stačit.</p>',
+       win: 'Dvě slabá „ano“ a práh 2: výstřel přijde, jen když se hlasy sejdou.'},
+      {name: 'Ano, ale', inputs: ['A', 'B'], pos: {A: [62, 70], B: [62, 230], O: [340, 150]},
+       edges: [['A', 'O'], ['B', 'O']], labels: {A: 'jídlo', B: 'plný žaludek', O: 'jíst'},
+       want: function(v){ return v.A && !v.B; },
+       goal: 'Jez, když je <b>jídlo</b> na dosah, ale <b>ne</b>, když je žaludek plný.',
+       intro: '<p>Jeden vstup říká „jídlo“, druhý „už stačí“. Druhý má umět prvního přehlasovat.</p><p>Na to je inhibiční synapse se záporným hlasem.</p>',
+       win: 'Inhibiční synapse umí „ano“ přehlasovat: jedno „ne“ smaže jedno „ano“.'},
+      {name: 'Tichý strážce', inputs: ['A', 'B'], tonic: true, pos: {A: [62, 55], B: [62, 150], T: [62, 245], O: [340, 150]},
+       edges: [['A', 'O'], ['B', 'O'], ['T', 'O']], labels: {A: 'signál A', B: 'signál B', T: 'pálí stále', O: 'výstup'},
+       want: function(v){ return !v.A && !v.B; },
+       goal: 'Výstup má <b>pálit pořád</b> a zmlknout, jakmile se ozve A nebo B.',
+       intro: '<p>Bez vstupů má výstupní neuron pálit. Sám od sebe to neumí, ale dole máš neuron, který pálí pořád.</p>',
+       win: 'Stálý neuron drží výstup v chodu a kterýkoli tlumivý signál ho utiší. Neurony, které pálí samy od sebe, v nervové soustavě opravdu jsou.'},
+      {name: 'Většina', inputs: ['A', 'B', 'C'], pos: {A: [62, 55], B: [62, 150], C: [62, 245], O: [340, 150]},
+       edges: [['A', 'O'], ['B', 'O'], ['C', 'O']], labels: {A: 'hlas 1', B: 'hlas 2', C: 'hlas 3', O: 'rozhodnutí'},
+       want: function(v){ return v.A + v.B + v.C >= 2; },
+       goal: 'Parlament šepotů: výstup se ozve, když pálí <b>aspoň dva ze tří</b> vstupů.',
+       intro: '<p>Tři vstupy hlasují. Výstup se má ozvat, když jsou pro aspoň dva z nich, a mlčet, když je pro jen jeden.</p>',
+       win: 'Tři slabá „ano“ a práh 2: rozhodne většina a žádný hlas sám nestačí.'},
+      {name: 'Buď, anebo', inputs: ['A', 'B'], pos: {A: [62, 42], B: [62, 258], H: [205, 150], O: [350, 150]},
+       ts: {'A>H': 0.6, 'B>H': 0.6, 'A>O': 0.75, 'B>O': 0.75, 'H>O': 0.36},
+       edges: [['A', 'H'], ['B', 'H'], ['A', 'O'], ['B', 'O'], ['H', 'O']], labels: {A: 'vstup A', B: 'vstup B', H: 'pomocník', O: 'výstup'},
+       want: function(v){ return v.A !== v.B; },
+       goal: 'Výstup se má ozvat, když pálí <b>jen jeden</b> ze vstupů, ne oba.',
+       intro: '<p>Tohle jediný neuron s prahem nezvládne, ať zkusíš cokoli. Uprostřed proto máš pomocníka, který může mluvit do výstupu.</p><p>Nápověda: co kdyby pomocník poznal, že pálí oba?</p>',
+       win: 'Pomocník pozná, že pálí oba vstupy, a výstup utiší. Jediný neuron tohle nedokáže: potřebuje spiklence.'}
+    ];
+
+    var ov = document.getElementById('s-ov'), goalEl = document.getElementById('s-goal'), table = document.getElementById('s-table');
+    var rowsEl = document.getElementById('s-rows'), synEl = document.getElementById('s-syn'), desc = document.getElementById('s-desc'), hint = document.getElementById('s-hint');
+    var done = store.get('hra-spiknuti', LEVELS.map(function(){ return false; }));
+    var level = 0, W = {}, TH = {}, sel = 0, won = false, svg = null, parts = {};
+    var ticket = 0;
+    function allOk(){ return patterns().every(function(v){ return !!evalNet(v).O === !!L().want(v); }); }
+    var bar = levelBar('s-levels', LEVELS.length, LEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function mk(tag, attrs, parent){
+      var e = document.createElementNS(NS, tag);
+      for(var k in attrs) e.setAttribute(k, attrs[k]);
+      if(parent) parent.appendChild(e);
+      return e;
+    }
+    function L(){ return LEVELS[level]; }
+    function patterns(){
+      var ins = L().inputs, n = ins.length, out = [];
+      for(var m = 0; m < (1 << n); m++){
+        var v = {};
+        ins.forEach(function(k, i){ v[k] = (m >> (n - 1 - i)) & 1; });
+        out.push(v);
+      }
+      return out;
+    }
+    function sgn(w){ return w > 0 ? '+' + w : (w < 0 ? MINUS + (-w) : '·'); }
+    function evalNet(v){
+      var o = {T: 1}; for(var k in v) o[k] = v[k];
+      ['H', 'O'].forEach(function(n){
+        if(!L().pos[n]) return;
+        var s = 0;
+        L().edges.forEach(function(e){ if(e[1] === n && o[e[0]]) s += W[e[0] + '>' + n] || 0; });
+        o['s' + n] = s; o[n] = s >= TH[n] ? 1 : 0;
+      });
+      return o;
+    }
+    function name(k){ return L().labels[k] || k; }
+
+    function build(){
+      host.innerHTML = '';
+      var Lv = L();
+      svg = mk('svg', {viewBox: '0 0 410 314', role: 'group', 'aria-label': 'Obvod z neuronů'}, host);
+      parts = {edges: {}, syn: {}, nodes: {}, th: {}};
+      Lv.edges.forEach(function(e){
+        var a = Lv.pos[e[0]], b = Lv.pos[e[1]], key = e[0] + '>' + e[1];
+        var dx = b[0] - a[0], dy = b[1] - a[1], len = Math.sqrt(dx * dx + dy * dy), ux = dx / len, uy = dy / len;
+        var line = mk('line', {x1: a[0] + ux * 26, y1: a[1] + uy * 26, x2: b[0] - ux * 30, y2: b[1] - uy * 30, 'stroke-width': 2.2, 'stroke-linecap': 'round'}, svg);
+        var t = (Lv.ts && Lv.ts[key]) || (Lv.inputs.length > 2 || Lv.tonic ? 0.58 : 0.62);
+        var cx = a[0] + dx * t, cy = a[1] + dy * t;
+        var g = mk('g', {class: 'syn', tabindex: 0, role: 'button'}, svg);
+        mk('circle', {cx: cx, cy: cy, r: 15}, g);
+        var tx = mk('text', {x: cx, y: cy + 4.5, 'text-anchor': 'middle'}, g);
+        g.addEventListener('click', function(){ cycle(key); });
+        g.addEventListener('keydown', function(ev){ if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); cycle(key); } });
+        parts.edges[key] = line; parts.syn[key] = {g: g, c: g.firstChild, t: tx, e: e};
+      });
+      Object.keys(Lv.pos).forEach(function(k){
+        var p = Lv.pos[k], g = mk('g', {class: 'neuron'}, svg);
+        var c = mk('circle', {cx: p[0], cy: p[1], r: 24, 'stroke-width': 2.5}, g);
+        var s = mk('text', {x: p[0], y: p[1] + 5.5, 'text-anchor': 'middle', class: 'sum'}, g);
+        var lb = mk('text', {x: p[0], y: p[1] + 42, 'text-anchor': 'middle', class: 'lbl'}, g);
+        lb.textContent = name(k);
+        parts.nodes[k] = {c: c, s: s};
+        if(k === 'H' || k === 'O'){
+          var tg = mk('g', {class: 'th', tabindex: 0, role: 'button'}, svg);
+          var bx = p[0] - 30, by = p[1] - 52;
+          mk('rect', {x: bx, y: by, width: 60, height: 20, rx: 10}, tg);
+          var tt = mk('text', {x: p[0], y: by + 14, 'text-anchor': 'middle'}, tg);
+          tg.addEventListener('click', function(){ cycleTh(k); });
+          tg.addEventListener('keydown', function(ev){ if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); cycleTh(k); } });
+          parts.th[k] = {g: tg, t: tt};
+        }
+      });
+      // truth table
+      var ins = Lv.inputs, head = '<thead><tr>' + ins.map(function(k){ return '<th scope="col">' + k + '</th>'; }).join('') + '<th scope="col">má</th><th scope="col">dělá</th></tr></thead><tbody>';
+      patterns().forEach(function(v, i){
+        head += '<tr tabindex="0" data-i="' + i + '">' + ins.map(function(k){ return '<td class="' + (v[k] ? 'on' : 'off') + '">' + (v[k] ? '●' : '○') + '</td>'; }).join('')
+          + '<td class="' + (Lv.want(v) ? 'on' : 'off') + '">' + (Lv.want(v) ? '●' : '○') + '</td><td class="res"></td></tr>';
+      });
+      table.innerHTML = head + '</tbody>';
+      Array.prototype.forEach.call(table.querySelectorAll('tbody tr'), function(tr){
+        function pick(){ sel = +tr.getAttribute('data-i'); update(); }
+        tr.addEventListener('click', pick);
+        tr.addEventListener('keydown', function(ev){ if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); pick(); } });
+      });
+      // the input letters next to the input neurons
+      ins.forEach(function(k){ var p = Lv.pos[k]; var t = mk('text', {x: p[0], y: p[1] - 32, 'text-anchor': 'middle', class: 'pin'}, svg); t.textContent = k; });
+    }
+    function cycle(key){
+      if(!ov.hidden) return;
+      W[key] = CYCLE[(CYCLE.indexOf(W[key] || 0) + 1) % CYCLE.length];
+      var e = parts.syn[key].e;
+      setTxt(desc, 'Synapse z ' + name(e[0]) + ' do ' + name(e[1]) + ': ' + (W[key] ? (W[key] > 0 ? 'excitační ' : 'inhibiční ') + sgn(W[key]) : 'žádná') + '.');
+      update(true);
+    }
+    function cycleTh(k){
+      if(!ov.hidden) return;
+      TH[k] = TH[k] % 3 + 1;
+      setTxt(desc, 'Práh neuronu ' + name(k) + ': ' + TH[k] + '.');
+      update(true);
+    }
+    function update(changed){
+      var Lv = L(), pats = patterns(), okRows = 0, firstBad = -1;
+      var rows = table.querySelectorAll('tbody tr');
+      pats.forEach(function(v, i){
+        var o = evalNet(v), ok = !!o.O === !!Lv.want(v);
+        if(ok) okRows++; else if(firstBad < 0) firstBad = i;
+        var td = rows[i].querySelector('.res');
+        td.className = 'res ' + (ok ? 'ok' : 'bad');
+        td.textContent = (o.O ? '●' : '○') + ' ' + (ok ? '✓' : '✗');
+        rows[i].classList.toggle('sel', i === sel);
+        rows[i].setAttribute('aria-label', Lv.inputs.map(function(k){ return k + ' ' + (v[k] ? 'pálí' : 'mlčí'); }).join(', ') + '; výstup má ' + (Lv.want(v) ? 'pálit' : 'mlčet') + ', ' + (o.O ? 'pálí' : 'mlčí') + (ok ? ', sedí' : ', nesedí'));
+      });
+      var o = evalNet(pats[sel]);
+      Object.keys(parts.syn).forEach(function(key){
+        var sp = parts.syn[key], w = W[key] || 0, src = sp.e[0], live = o[src] && w;
+        sp.c.setAttribute('fill', w > 0 ? 'rgba(155,176,126,' + (live ? '.95' : '.35') + ')' : w < 0 ? 'rgba(208,138,94,' + (live ? '.95' : '.35') + ')' : '#2A3125');
+        sp.c.setAttribute('stroke', w > 0 ? C.sage : w < 0 ? C.terra : C.line);
+        sp.c.setAttribute('stroke-width', w ? 2 : 1.5);
+        sp.c.setAttribute('r', Math.abs(w) === 2 ? 16 : 14);
+        sp.t.textContent = sgn(w);
+        sp.t.setAttribute('fill', live ? '#21271D' : (w ? '#E9E7D8' : C.muted));
+        sp.g.setAttribute('aria-label', 'Synapse z ' + name(sp.e[0]) + ' do ' + name(sp.e[1]) + ': ' + (w ? sgn(w) : 'žádná') + '. Změnit.');
+        var ln = parts.edges[key];
+        ln.setAttribute('stroke', live ? (w > 0 ? C.sage : C.terra) : (w ? 'rgba(155,176,126,.35)' : 'rgba(70,80,60,.9)'));
+        ln.setAttribute('stroke-dasharray', w ? '' : '4 5');
+      });
+      Object.keys(parts.nodes).forEach(function(k){
+        var nd = parts.nodes[k], on = k === 'T' ? 1 : o[k];
+        nd.c.setAttribute('fill', on ? C.gold : '#2A3125');
+        nd.c.setAttribute('stroke', on ? '#F1D98A' : C.sagePale);
+        nd.s.setAttribute('fill', on ? '#21271D' : '#E9E7D8');
+        nd.s.textContent = (k === 'H' || k === 'O') ? String(o['s' + k]).replace('-', MINUS) : (k === 'T' ? '' : '');
+      });
+      Object.keys(parts.th).forEach(function(k){
+        parts.th[k].t.textContent = 'práh ' + TH[k];
+        parts.th[k].g.setAttribute('aria-label', 'Práh neuronu ' + name(k) + ': ' + TH[k] + '. Změnit.');
+      });
+      var nsyn = Object.keys(W).filter(function(k){ return W[k]; }).length;
+      setTxt(rowsEl, okRows + '/' + pats.length); setTxt(synEl, String(nsyn));
+      setTxt(hint, okRows === pats.length ? 'Všechny řádky sedí.' : (firstBad >= 0 ? 'Nesedí řádek ' + (firstBad + 1) + '.' : ''));
+      if(changed && okRows === pats.length && !won){
+        won = true;
+        var lv = level, stamp = ++ticket;
+        setTimeout(function(){
+          if(stamp !== ticket || lv !== level || !allOk()) return;   // changed again in the meantime
+          done[lv] = true; store.set('hra-spiknuti', done); bar.mark(lv);
+          var n = Object.keys(W).filter(function(k){ return W[k]; }).length;
+          var btns = [{label: 'Zůstat tady', fn: function(){ overlay(ov, null); }}];
+          if(lv + 1 < LEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(lv + 1); }});
+          overlay(ov, 'Povedlo se', '<p>' + Lv.win + '</p><p>Synapsí: <b>' + n + '</b>.</p>', btns);
+        }, REDUCED ? 0 : 450);
+      }
+      if(changed && okRows < pats.length){ won = false; ticket++; }
+    }
+    function choose(i){
+      level = i; bar.set(i); W = {}; TH = {H: 1, O: 1}; sel = 0; won = false;
+      goalEl.innerHTML = L().goal;
+      build(); update(false);
+      overlay(ov, (i + 1) + '. ' + L().name, L().intro, [{label: 'Začít', cls: 'go', fn: function(){ overlay(ov, null); }}]);
+    }
+    onClick('s-reset', function(){ W = {}; TH = {H: 1, O: 1}; won = false; update(false); setTxt(desc, 'Obvod vynulován.'); });
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+  })();
+})();
+</script>
+</body>
+</html>

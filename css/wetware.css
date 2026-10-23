@@ -29,3 +29,6 @@
 .no-chapters .twig-name{
   font-family:"Fira Code", monospace;font-weight:600;font-size:.92rem;color:var(--sage);
 }
+
+/* Hry hub: levels finished, read from the games' localStorage keys */
+.status.progress{color:var(--forest);border-color:var(--sage);background:var(--paper-2);}

@@ -1355,3 +1355,464 @@ Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na k
 - Rolfe D. F. S., Brown G. C. Cellular energy utilization and molecular origin of standard metabolic rate in mammals. Physiological Reviews 77, 731–758 (1997). Podíl ATP, který spotřebuje sodno-draselná pumpa.
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Poločas, ustálený stav a clearance (kap. 12).
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Morfogeny a prahy (kap. 21); výběr v brzlíku a zárodečná centra (kap. 24).
+
+---
+
+# Pulzy
+
+URL: https://vetevnavetvi.cz/pages/hra-pulzy.html  
+Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Shrnutí: Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví.  
+English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
+
+Hypotalamus řídí hypofýzu hormonem GnRH a hypofýza podle něj vylučuje LH, jeden z hormonů, které ovládají pohlavní žlázy. Nezáleží přitom jen na tom, kolik GnRH pošleš, ale i jak: v pulzech, nebo nepřetržitě.
+
+Jak hrát: každé klepnutí na tlačítko Pulz (nebo mezerník) vypustí krátkou dávku GnRH. Sleduj, jak hypofýza odpoví vlnou LH a jak jí přitom ubývají receptory, které se mezi pulzy zase vracejí. V první úrovni udrž průměrné LH ve zdravém pásmu, ve druhé ho jako lékař umlč.
+
+Hra: Pulzy. Nahoře přísun GnRH, uprostřed podíl receptorů v hypofýze, které jsou k dispozici, dole hladina LH: tenká čára ukazuje jednotlivé pulzy, silná jejich klouzavý průměr, podle kterého se počítá pásmo. Obsazený receptor se postupně stahuje z povrchu a mezi pulzy se vrací. Čas je zrychlený a parametry modelu jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Hormony hypotalamu přicházejí v pulzech a u GnRH na rytmu záleží víc než na množství. Receptor, na kterém GnRH sedí, se postupně stahuje z povrchu buňky. Mezi pulzy má čas se vrátit, a tak každý další pulz najde dost receptorů a vyvolá odpověď. Při nepřetržitém přísunu receptory ubývají, až hypofýza přestane odpovídat a výroba LH i FSH se paradoxně zastaví.
+
+Medicína toho využívá. U žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit. Přesně to děláš ve druhé úrovni. V modelu této hry dopadnou podobně i pulzy, které jdou příliš rychle po sobě: receptory se mezi nimi nestihnou vrátit.
+
+Víc o hormonech, receptorech a rytmu je v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47: nepřetržité podávání GnRH tlumí receptory GnRH v hypofýze a dlouhodobě působící agonista GnRH navodí „medikamentózní ooforektomii“.
+- Hra je zjednodušený model. Rychlost ubývání a návratu receptorů, šířka zdravého pásma i zrychlení času jsou zvolené pro názornost.
+
+---
+
+# Brzlík
+
+URL: https://vetevnavetvi.cz/pages/hra-brzlik.html  
+Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Shrnutí: Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.  
+English: Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when AIRE fails.
+
+Každý mladý T-lymfocyt si receptor poskládal náhodně, takže nikdo neví, na co bude pasovat. Může to být mikrob, ale taky vlastní tělo. V brzlíku proto skládá dvě zkoušky: receptor musí aspoň slabě poznat vlastní molekuly MHC a nesmí se příliš silně chytat úlomků vlastních bílkovin.
+
+Jak hrát: u každé buňky uvidíš výsledek obou zkoušek. Tečky ukazují, kolika kontakty se receptor chytil úlomku vlastní bílkoviny. Urči osud tlačítkem nebo klávesou 1 až 4: buňka zahyne, projde, stane se regulační, nebo ji vyřadíš. Když nerozhodneš včas, buňka nedostane signál k přežití a zahyne, a ke konci úrovně buňky přicházejí rychleji. Kdo chce hrát bez časového limitu, zapne si Bez spěchu.
+
+Hra: Brzlík. Vlevo mladý T-lymfocyt, vpravo jeho zkoušky: jestli pozná vlastní MHC a kolika kontakty se chytí úlomků vlastních bílkovin. Rozhoduje nejsilnější vazba. Dole se sčítají buňky podle osudu, oranžové tečky v krvi jsou nebezpečné buňky, které prošly. Počty kontaktů a hranice mezi osudy jsou ve hře zjednodušené.
+
+## Co se tu doopravdy děje
+
+Receptory T-lymfocytů vznikají náhodným skládáním genů, a tak se mezi nimi najdou i takové, které se chytí vlastního těla. Brzlík proto každou dozrávající buňku zkouší. Receptor, který vlastní MHC nepozná vůbec, je k ničemu: T-lymfocyt vidí cizí úlomky jen na vlastních MHC. Taková buňka nedostane signál k přežití a tiše zahyne. Buňka, která se na úlomky vlastních bílkovin váže příliš silně, je naopak nebezpečná a dostane signál zemřít. Říká se tomu negativní selekce.
+
+Mezi tím je pásmo slabých vazeb. Takové buňky přežijí a odcházejí do krve jako pomocné nebo cytotoxické T-lymfocyty. Některé z těch, které se vážou docela silně, ale ne dost na vyřazení, se stanou regulačními T-lymfocyty. Ty pak v těle tlumí jiné lymfocyty namířené proti vlastním tkáním.
+
+Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí jen β-buňky slinivky, a přesto ho brzlík dospívajícím lymfocytům ukazuje. Stará se o to bílkovina AIRE, která v části buněk dřeně brzlíku spustí slabý přepis 75–90 % všech genů. Lidé i myši s nefunkčním AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a vznikne cukrovka 1. typu.
+
+Víc o generátoru receptorů, škole v brzlíku i o tom, co se děje potom v mízních uzlinách, je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1389–1391 a 1401: pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE.
+- Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.
+
+---
+
+# Vana bez zátky
+
+URL: https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html  
+Větev: Hry (na motivy kapitoly Lék je vlna)  
+Shrnutí: Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, slabé ledviny, grapefruit a nasycovací dávka.  
+English: Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and a narrow therapeutic window that needs a loading dose.
+
+Tělo se s lékem chová jako vana s vytaženou zátkou. Každá tableta je šplouchnutí z kohoutku a odtok odvádí tím víc, čím výš je hladina. Lék pomáhá, jen když hladina leží v pásmu mezi minimální účinnou a maximální tolerovanou koncentrací. Pod ním nedělá nic, nad ním škodí.
+
+Jak hrát: klepni na časovou osu a v tu hodinu přibude tableta. Když prstem nebo myší popojedeš do strany, vybereš přesnou hodinu. Klepnutím na tabletu ji odebereš, tažením ji přesuneš. Přepínačem zvolíš celou tabletu, nebo půlku. Křivka se přepočítává hned. Až bude plán hotový, stiskni Podat pacientovi a sleduj, jak se vana plní a vypouští. Na klávesnici: šipky posouvají kurzor po hodinách, Enter přidá tabletu a Delete ji odebere.
+
+Hra: Vana bez zátky. Vana vlevo a křivka vpravo ukazují totéž: koncentraci léku v krvi. Žluté pásmo je bez účinku, zelené účinné, švestkové toxické. Šedě je začátek, který se do hodnocení nepočítá. Model je jednokompartmentový s ilustračními parametry: tableta se vstřebá zhruba za dvě hodiny a lék pak ubývá po poločasech.
+
+## Co se tu doopravdy děje
+
+Při pravidelném dávkování se hladina léku dávku po dávce zvedá, až se ustálí. Odtok z vany totiž roste s výškou hladiny, a tak nakonec každá tableta jen nahradí, co mezitím odteklo. K tomu ustálenému stavu se hladina dostane zhruba za pět poločasů, ať je dávka jakkoli velká.
+
+Stejná tableta přitom u různých lidí dopadne různě. Kdo lék odbourává rychle, potřebuje dávky častěji, jinak mu vana mezi nimi vyteče. Kdo ho vylučuje pomalu, třeba kvůli slabým ledvinám, tomu se lék hromadí, a rozvrh z příbalového letáku ho může dostat až do toxického pásma. Grapefruit nevratně vyřadí enzym CYP3A4 ve stěně střeva, takže se do krve dostane víc léku, a než střevo vyrobí nový enzym, může uplynout den i víc. U léků s úzkým terapeutickým indexem, jako je lithium, digoxin nebo fenytoin, leží účinná a toxická hladina těsně u sebe a hladina se kontroluje z krve.
+
+A nasycovací dávka? Ta větší první tableta na začátku některých léčeb napustí vanu rovnou k hladině, ke které by se jinak pomalu propracovávala. Víc o křivkách, poločasech i o tom, proč tatáž pilulka dopadá u různých lidí různě, je v kapitole [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html).
+
+Hra vysvětluje princip a nikomu neradí s dávkováním. Se vším, co se týká skutečného předpisu, se obrať na toho, kdo ho napsal.
+
+#### Zdroje
+
+- Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Terapeutické rozmezí (kap. 1), vylučování (kap. 5), křivka po spolknutí (kap. 9), ustálený stav, opakované dávkování a nasycovací dávka (kap. 11, 12 a 14).
+- U.S. Food and Drug Administration. Grapefruit Juice and Some Drugs Don't Mix.
+- Hra je zjednodušený jednokompartmentový model. Poločasy pacientů, šířka pásem i to, že grapefruit ve hře zdvojnásobí množství léku, které se dostane do krve, jsou zvolené pro názornost.
+
+---
+
+# Spiknutí
+
+URL: https://vetevnavetvi.cz/pages/hra-spiknuti.html  
+Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Shrnutí: Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.  
+English: Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.
+
+Každý neuron sčítá, co mu přichází po synapsích. Excitační synapse přidá malé „ano“, inhibiční malé „ne“. Když součet dosáhne prahu, neuron vystřelí, jinak mlčí. Z takhle hloupých součástek se dají poskládat překvapivě chytré obvody.
+
+Jak hrát: klepnutím na synapsi měníš její sílu: +1, +2, −1, −2 a zase nic. Klepnutím na štítek práh nastavíš, kolik hlasů neuron potřebuje k výstřelu. Tabulka vpravo ukazuje všechny možné kombinace vstupů, co má výstup udělat a co opravdu dělá. Klepnutím na řádek tabulky ho přehraješ v obvodu. Úroveň je hotová, když sedí všechny řádky.
+
+Hra: Spiknutí. Vlevo vstupní neurony, vpravo výstupní. Zlatý neuron právě pálí. Číslo v neuronu je součet hlasů, které do něj přišly, štítek nad ním je práh. Zelené synapse jsou excitační, oranžové inhibiční. Neurony jsou tu zjednodušené na sčítání a práh.
+
+## Co se tu doopravdy děje
+
+Takhle zjednodušený neuron navrhli v roce 1943 Warren McCulloch a Walter Pitts: sečte vážené vstupy a vystřelí, když součet dosáhne prahu. Ukázali, že ze sítí takových jednotek se dá poskládat jakákoli logická funkce. Na tom nápadu později vyrostly umělé neuronové sítě.
+
+Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“ jediný neuron s jedním prahem nezvládne, ať nastavíš synapse jakkoli. Nejde to rozdělit jednou přímkou: dvě kombinace, které mají pálit, leží v tabulce úhlopříčně proti sobě. Pomůže až další neuron uprostřed, který pozná, že pálí oba vstupy, a výstup utiší.
+
+Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v čase, synapse se učením zesilují a zeslabují a na jeden motorický neuron v míše se sbíhá asi deset tisíc vstupů. Princip sčítání a prahu ale platí a z něj se skládá spiknutí 86 miliard buněk. Víc je v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html).
+
+#### Zdroje
+
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.
+- McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).
+- Obvody ve hře jsou hračky. Skutečné reflexy a rozhodování mozku zapojují mnohem víc neuronů a jejich vstupy se sčítají v čase i prostoru.
+
+---
+
+# Proužek
+
+URL: https://vetevnavetvi.cz/pages/hra-prouzek.html  
+Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Shrnutí: Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.  
+English: Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, then predict binding-site experiments.
+
+V raném zárodku octomilky je každá regulační bílkovina rozložená jinak: některé jsou hlavně vepředu, jiné uprostřed nebo vzadu. Gen eve má přepínač, krátký úsek DNA s vazebnými místy pro několik takových bílkovin. Podle toho, které z nich v jádře zrovna jsou, se gen zapne, nebo ne.
+
+Jak hrát: u každé bílkoviny nastav, kolik jejích vazebných míst bude v přepínači, od nuly do tří. Bicoid a Hunchback gen zapínají, Giant a Krüppel vypínají. Gen se zapne jen v jádrech, kde jsou oba zapínače a žádný vypínač. Víc vazebných míst znamená, že přepínač zareaguje už na menší koncentraci. Zlatá jádra na zárodku ukazují, kde se gen zapne, a čárkovaný rámeček je cíl.
+
+Hra: Proužek. Nahoře zárodek octomilky, hlava vlevo. Pod ním koncentrace čtyř regulačních bílkovin, zjednodušeně podle obrázku 7–32 v Albertsovi. Čárkovaná čára je práh, od kterého na bílkovinu přepínač reaguje: zelená plocha je tam, kde zapínač stačí, oranžová tam, kde vypínač vypne. Počty vazebných míst a prahy jsou ve hře ilustrační.
+
+## Co se tu doopravdy děje
+
+Přepínač druhého proužku genu eve je úsek asi pěti set písmen DNA a vážou se na něj všechny čtyři bílkoviny ze hry. Bicoid a Hunchback ho zapínají, a to společně: když se poškodí byť jediné vazebné místo pro některý z nich, proužek výrazně zeslábne. Giant tvoří přední okraj proužku a Krüppel zadní. Když se v přepínači zničí vazebná místa pro Giant, proužek se rozšíří dopředu.
+
+Žádná z těch bílkovin neví nic o proužcích. Každá je jen hustší na jednom konci zárodku a řidší na druhém. Proužek vznikne až z kombinace a z toho, jak citlivě na ni přepínač reaguje. Celý přepínač genu eve přitom váže přes dvacet různých regulačních bílkovin a sedm jejich kombinací vytvoří sedm proužků. Víc je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 7, obr. 7–32: přepínač druhého proužku genu eve.
+- Small S., Blair A., Levine M. Regulation of even-skipped stripe 2 in the Drosophila embryo. The EMBO Journal 11, 4047–4057 (1992).
+- Andrioli L. P., Vasisht V., Theodosopoulou E., Oberstein A., Small S. Anterior repression of a Drosophila stripe enhancer requires three position-specific mechanisms. Development 129, 4931–4940 (2002).
+- Profily bílkovin, prahy a vliv počtu vazebných míst jsou ve hře zjednodušené a ilustrační.
+
+---
+
+# Horečka
+
+URL: https://vetevnavetvi.cz/pages/hra-horecka.html  
+Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Shrnutí: Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.  
+English: Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of a fever and its break.
+
+Tělesná teplota nesedí na 37 °C sama od sebe. Udržuje ji smyčka negativní zpětné vazby: čidla teplotu změří, porovnají ji s žádanou hodnotou a efektory odchylku opraví. Ve hře jsi ta smyčka ty.
+
+Jak hrát: pět tlačítek pod grafem jsou efektory, od nejsilnějšího chlazení po nejsilnější ohřev: pot, rozšířené cévy v kůži, klid, stažené cévy a třes. Drž teplotu v zeleném pásmu kolem žádané hodnoty, zatímco se venku mění počasí. Na klávesnici přepínáš šipkami doleva a doprava nebo klávesami 1 až 5. Čas je zrychlený: jedna hra trvá necelé dvě minuty.
+
+Hra: Horečka. Nahoře tělesná teplota a zelené pásmo půl stupně kolem žádané hodnoty. Pod grafem pruh s tím, co zrovna dělají efektory (modře chlazení, oranžově ohřev), a pruh s teplotou venku. Tělo i počasí jsou zjednodušené a čas je zrychlený.
+
+## Co se tu doopravdy děje
+
+Teplotní smyčka má celý tým efektorů. Když je ti zima, cévy v kůži se stáhnou, aby teplo zůstalo uvnitř, a když to nestačí, třeseš se a svaly teplo vyrábějí. Když je ti horko, cévy v kůži se rozšíří a odvádějí teplo ven, a když to nestačí, potíš se. Regulovaná teplota přitom nikdy nesedí přesně na žádané hodnotě, protože smyčka neustále opravuje drobné odchylky oběma směry.
+
+Druhá úroveň ukazuje, proč na rychlosti zpráv záleží. Když smyčka dostává informace pozdě a opravuje silně, přestřeluje a kmitá. Přesně to se děje s dýcháním při těžkém srdečním selhání: krev nese zprávu o oxidu uhličitém z plic do mozku pomalu a dýchání střídavě sílí, slábne a na chvíli se zastaví. Říká se tomu Cheyneovo-Stokesovo dýchání.
+
+A horečka? Ta není rozbitý termostat. Mozek žádanou hodnotu záměrně zvýší a ty se třeseš, dokud ji nedoženeš, i když máš normálních 37 °C. Když horečka povolí, žádaná hodnota zase klesne a tělo se zpotí. Víc o zpětných vazbách je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Zpětná vazba, žádaná hodnota a zesílení (kap. 1); Cheyneovo-Stokesovo dýchání (box 32-2).
+- Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.
+- Hra je zjednodušený model. Teploty, rychlosti ohřevu a chladnutí, zpoždění i průběh horečky jsou zvolené pro názornost.
+
+---
+
+# Hodiny a vlna
+
+URL: https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html  
+Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Shrnutí: Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry somitů. Od dánia po myš a nakonec bez viditelných hodin.  
+English: Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the rhythm without the visible clock.
+
+Somity, ze kterých vzniknou obratle, žebra a svaly zad, se zakládají jeden pár po druhém, od hlavy k ocasu. Rytmus udávají molekulární hodiny v buňkách na zadním konci zárodku. Ocas přitom roste a buňky, které zůstávají pozadu, se dostávají z dosahu signálů z ocasu. Jejich hodiny se zastaví a buňky zamrznou ve fázi, ve které je to zastihlo.
+
+Jak hrát: od ocasu k čárkované čáře připlouvají zlaté vlny kmitajících hodin. Ve chvíli, kdy vlna doběhne k čáře, klepni na tlačítko Tik, na zárodek nebo zmáčkni mezerník. V tu chvíli se oddělí další pár somitů. Když trefíš rytmus, budou somity pravidelné. Když tikneš pozdě, brzy nebo vůbec, vyjdou nestejně velké.
+
+Hra: Hodiny a vlna. Vlevo hlava, vpravo rostoucí ocas. Mezi čárkovanou čárou a ocasem buňky kmitají a zlaté vlny jejich hodin běží dopředu. Za čárou buňky zamrznou a každý tik oddělí jeden pár somitů. Velikost somitu je to, o kolik osa za jeden kmit naroste. Čas je v každé úrovni zrychlený jinak.
+
+## Co se tu doopravdy děje
+
+Segmentační hodiny jsou smyčka negativní zpětné vazby uvnitř buňky. Gen se zapne, jeho bílkovina se nahromadí a gen vypne, pak se rozpadne a gen se zapne znovu. Jeden kmit trvá u dánia pruhovaného 30 minut, u kuřete 90, u myši 120 a u člověka 300 minut. Délku kmitu určují hlavně zpoždění ve smyčce: perioda je zhruba dvojnásobek celkového zpoždění.
+
+Druhou složkou je vlna. Buňky, které zůstanou pozadu za rostoucím ocasem, se zastaví ve fázi, ve které je to zastihlo, a časový rytmus se otiskne do prostoru jako pruhy. Počet somitů tak závisí na tom, kolik kmitů hodiny stihnou, než se zásoba buněk na zadním konci vyčerpá. Dánio jich má necelých čtyřicet, myš asi 65 a had přes tři sta. Hadí hodiny přitom nejdou o moc rychleji než kuřecí, jeden pár somitů vznikne zhruba za sto minut. Celý hadí zárodek se ale vyvíjí několikrát pomaleji, a tak hodiny vzhledem k růstu osy tikají mnohem častěji a somitů je víc a jsou menší.
+
+A když hodiny nejdou? Buňky se do skupin nakonec stejně rozpadnou, jenže nepravidelně, jako tvoje somity ve třetí úrovni, když nebylo podle čeho tikat. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 21, s. 1249–1250: somity, segmentační hodiny a jejich periody u dánia, kuřete, myši a člověka.
+- Gomez C. a kol. Control of segment number in vertebrate embryos. Nature 454, 335–339 (2008).
+- Hra je zjednodušený model. Rytmus, rychlost růstu a počty somitů v úrovních jsou zvolené tak, aby se daly hrát.
+
+---
+
+# Schodiště
+
+URL: https://vetevnavetvi.cz/pages/hra-schodiste.html  
+Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Shrnutí: Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a zjisti, co se stane bez kyslíku.  
+English: Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without oxygen.
+
+Když glukóza shoří v plameni, uvolní se její energie naráz a skoro všechna odejde jako teplo. Buňka ji s kyslíkem spojí taky, jen ne jedním skokem. Jde po schodišti zhruba dvaceti malých kroků a na některých schodech si část energie uloží do ATP nebo naloží elektrony na přenašeč NADH.
+
+Jak hrát: svislá osa je energie. Klepnutím do schodiště vložíš na danou výšku nový schod, klepnutím na existující hranu ho zase odebereš. Než prst nebo myš pustíš, můžeš výšku doladit tažením nahoru a dolů. Každý schod obsluhuje jeden enzym a enzymů je omezený počet. Schod musí být dost vysoký, aby z něj šlo něco nabrat, a co se nenabere, odejde jako teplo.
+
+Hra: Schodiště. Nahoře glukóza a kyslík, dole oxid uhličitý a voda. Zlatá mince je ATP, zelený štítek NADH, oranžové plamínky teplo. Energie je ve hře rozdělená na dílky a pravidla pro to, kolik se ze schodu nabere, jsou zjednodušená.
+
+## Co se tu doopravdy děje
+
+Oheň překonává energetickou bariéru teplem, a když se jednou rozhoří, uvolní všechno naráz. Enzymy bariéru snižují, takže reakce běží při tělesné teplotě, a glukózu rozeberou po malých krocích, z nichž každý řídí jiný enzym. Na několika schodech se část uvolněné energie rovnou uloží do ATP, na jiných se naloží elektrony na NADH. Ty pak sestoupí poslední částí schodiště, dýchacím řetězcem, a na jeho konci je převezme kyslík.
+
+Celkem buňka zachytí zhruba třetinu energie glukózy a zbytek odejde jako teplo, které tě mimochodem hřeje. Bez kyslíku nemají elektrony z NADH kam odtéct, dýchací řetězec i citrátový cyklus se zastaví a zbudou jen 2 ATP z glykolýzy. Ta jede dál jen proto, že se NADH vyprázdní do pyruvátu a vznikne laktát, ve kterém zůstane většina energie na později. Víc je v kapitole [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html).
+
+#### Zdroje
+
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
+- Hra je zjednodušený model. Dílky energie, výška schodu potřebná pro ATP a NADH i hodnota NADH v mincích jsou herní pravidla, ne skutečné hodnoty.
+
+---
+
+# Slovo po slovu
+
+URL: https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html  
+Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Shrnutí: Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.  
+English: Word puzzle on the genetic code: make point mutations codon by codon and read the protein in one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith's word ladder in which every intermediate protein must work.
+
+Ribozom čte zprávu po trojicích písmen a každé trojici odpovídá jedna aminokyselina. Aminokyseliny mají jednopísmenné zkratky, a tak se dá bílkovina přečíst jako slovo: L je leucin, E kyselina glutamová, S serin. Gen ATG CTT GAA TCT TAA tedy říká LES.
+
+Jak hrát: klepni na trojici a uvidíš všech devět změn, které jde udělat jedním písmenem, i to, co by z nich bílkovina řekla. Vyber jednu. Startovní ATG (methionin, M) a koncová trojice jsou pevné a slovo se čte až za methioninem. Ve většině úrovní platí pravidlo evoluce: každá bílkovina cestou musí být smysluplné slovo, jinak by buňka s nefunkční bílkovinou neprošla.
+
+Hra: Slovo po slovu. Nahoře gen po trojicích DNA a pod každou trojicí aminokyselina, kterou kóduje. Oranžové písmeno je to, které se změnilo. Pod genem cesta, kterou bílkovina zatím prošla. Slova jsou česká a bez diakritiky, protože aminokyseliny háčky ani čárky nemají.
+
+## Co se tu doopravdy děje
+
+Čtyři písmena dávají 64 trojic, ale aminokyselin je jen dvacet, a tak většinu z nich kóduje několik různých trojic. Proto je spousta změn v DNA tichých: bílkovina zůstane stejná. Většina takových změn padá na třetí písmeno trojice. Jiné změny vymění jednu aminokyselinu za jinou, jako u srpkovité anémie, kde na šestém místě β-globinu stojí valin místo kyseliny glutamové. A tři trojice znamenají konec, takže jediná změna může ribozom zastavit uprostřed zprávy.
+
+Slovní žebřík, při kterém se mění jedno písmeno a každý mezikrok musí být skutečné slovo, použil v roce 1970 evoluční biolog John Maynard Smith. Slova v něm zastupují bílkoviny a písmena aminokyseliny: evoluce bílkovin podle něj postupuje od jedné fungující bílkoviny k další. Víc o tom, jak se z DNA stane bílkovina, je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 6: genetický kód, tRNA a ribozom.
+- Maynard Smith J. Natural selection and the concept of a protein space. Nature 225, 563–564 (1970).
+- Ve hře se používá standardní genetický kód. Seznam slov, která se počítají jako „funkční bílkoviny“, je herní pravidlo.
+
+---
+
+# Pěstírna protilátek
+
+URL: https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html  
+Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Shrnutí: Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.  
+English: Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted virus.
+
+V zárodečných centrech mízních uzlin se aktivované B-lymfocyty rychle dělí a přitom řízeně mutují: v úseku pro vazebné místo přibude při každém dělení asi jedna mutace. Většina mutací vazbu zhorší a takové buňky zahynou. Antigen ale přednostně podporuje ty vzácné, které se na něj vážou pevněji, a ty se dělí dál.
+
+Jak hrát: každá karta je jeden B-lymfocyt. Švestkově shora visí tvar antigenu, zeleně zespodu roste receptor buňky. Kde do sebe přesně zapadnou, svítí zlatý šev. Vyber buňky, které dostanou signál k přežití, a stiskni Další kolo. Vybrané se rozdělí, jejich potomci cestou zmutují (změněný sloupec je oranžově orámovaný) a ostatní buňky zahynou.
+
+Hra: Pěstírna protilátek. Nahoře tvar úlomku mikrobu, v kartách receptory B-lymfocytů. Zlatý šev znamená místo, kde receptor přesně zapadne, červené překrytí místo, kde narazí. Čím víc zapadajících míst, tím pevnější vazba. Přepočet na afinitu v l/mol je jen ilustrační, rozsah odpovídá Albertsovi.
+
+## Co se tu doopravdy děje
+
+Mutace v zárodečném centru dělá enzym AID: mění v genech pro vazebné místo cytosin na uracil a oprava takových míst nechává chyby. Mutací je tak zhruba milionkrát víc, než je u jiných genů běžné. Výběr pak funguje jako u každé evoluce: dědičná rozmanitost, výběr podle toho, kdo pasuje, a množení vítězů. Čím méně antigenu zbývá, tím je výběr přísnější. Protilátky na začátku odpovědi se vážou s afinitou kolem 10^5 až 10^7 l/mol, po kolech mutací a výběru až 10^11 l/mol.
+
+Po nákaze zůstanou paměťové buňky, jejichž receptory už výběrem prošly, a tak druhá odpověď začíná daleko před první. Paměť si ale pamatuje tvar. Chřipkový virus své povrchové bílkoviny průběžně mění drobnými mutacemi a paměťové buňky na novou verzi sedí hůř. Víc je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1377–1379: somatická hypermutace, AID a afinita protilátek; kap. 23, s. 1342–1344: proměnlivost chřipky.
+- Hra je zjednodušený model. Tvar vazebného místa je tu osm sloupců a pravděpodobnosti mutací, počty buněk i přepočet na afinitu jsou zvolené pro hratelnost.
+
+---
+
+# Štětinky
+
+URL: https://vetevnavetvi.cz/pages/hra-stetinky.html  
+Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Shrnutí: Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.  
+English: Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with long-range inhibition.
+
+Štětinky na hřbetě octomilky vyrůstají každá z jediné buňky, která zvítězila ve skupince podobných buněk. Vítězná buňka má hodně bílkoviny Delta a ta přes receptor Notch říká sousedům: nespecializujte se. Výsledkem je pravidelná mozaika, ačkoli odstupy nikdo neodměřoval.
+
+Jak hrát: klepnutím na šestiúhelník z buňky uděláš budoucí štětinku, dalším klepnutím ji vrátíš. Mozaika je stabilní, když platí dvě pravidla. Dvě štětinky nesmějí sousedit, protože by se navzájem utlumily (červeně). A každá ostatní buňka musí sousedit aspoň s jednou štětinkou, jinak by ji nikdo netlumil a specializovala by se taky (blikající obrys).
+
+Hra: Štětinky. Každý šestiúhelník je buňka. Zlatá s čárkou je budoucí štětinka, zelené jsou buňky, které některá štětinka tlumí. Červená znamená dvě štětinky vedle sebe, blikající obrys buňku, kterou nikdo netlumí. Ve čtvrté úrovni sahá tlumení o buňku dál.
+
+## Co se tu doopravdy děje
+
+V zárodku nikdo štětinky nerozmisťuje. Každá buňka začíná se skoro stejným množstvím Delty a buňka s aktivovaným Notch vyrábí méně vlastní Delty, takže méně tlumí sousedy. Kdo má na začátku o chlup víc Delty, utlumí sousedy o něco víc, ti pak tlumí jeho o něco méně a malý rozdíl se sám zesiluje. Jako počáteční rozdíl stačí i náhodný šum. Z toho, co tu skládáš ručně, se tak v zárodku sám vynoří jeden z mnoha stabilních vzorců.
+
+Vítězná buňka umí tlumit i buňky, kterých se přímo nedotýká: natáhne k nim dlouhé výběžky. S delším dosahem jsou štětinky řidší, jako ve čtvrté úrovni. A když signalizace přes Notch nefunguje, nikdo nikoho netlumí: vznikne obrovský nadbytek nervových buněk na úkor buněk pokožky a zárodek nepřežije. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
+
+#### Zdroje
+
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); laterální inhibice (kap. 21, s. 1222–1224); štětinky octomilky (kap. 21, s. 1243–1244).
+- Collier J. R., Monk N. A. M., Maini P. K., Lewis J. H. Pattern formation by lateral inhibition with feedback: a mathematical model of Delta-Notch intercellular signalling. Journal of Theoretical Biology 183, 429–446 (1996).
+- Pravidla hry jsou zjednodušená: buňka buď tlumí, nebo ne, a dosah tlumení je přesně jedna nebo dvě buňky.
+
+---
+
+# Kohoutky
+
+URL: https://vetevnavetvi.cz/pages/hra-kohoutky.html  
+Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Shrnutí: Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých tepen. Ruměnec, běh a běh v horku.  
+English: Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with limited output, where flow scales with radius to the fourth power; blushing, running, and running in the heat.
+
+Tělo rozvádí krev hlavně tím, že mění šířku malých tepen. Nepatrné stažení svaloviny kolem nich funguje jako kohoutek, protože průtok trubkou roste se čtvrtou mocninou jejího poloměru. Rozšiř cévu o deset procent a proteče jí skoro o polovinu víc.
+
+Jak hrát: u každého orgánu nastavíš tlačítky plus a minus, jak široká je jeho přívodní tepénka. Srdce dodá nejvýš 9 litrů krve za minutu. Když orgány chtějí víc, klesne tlak a ubude krve všem, i mozku. Splň cíle úrovně a přitom drž mozek aspoň na 90 % a ledviny aspoň na polovině klidového průtoku.
+
+Hra: Kohoutky. Orgány jsou zapojené souběžně a tlak před nimi udržuje srdce. Průtok každou větví je úměrný čtvrté mocnině poloměru její tepénky. Klidové průtoky (dohromady asi 5 l/min) a strop srdce jsou ve hře ilustrační.
+
+## Co se tu doopravdy děje
+
+Průtok se rovná tlakovému rozdílu dělenému odporem, a odpor trubky klesá se čtvrtou mocninou poloměru. Zmenši poloměr cévy na polovinu a průtok klesne na šestnáctinu. Tak se krev nahrne do svalů, když běžíš, a do tváře, když se červenáš, aniž by se muselo cokoli jiného přestavět.
+
+Srdce ale není bezedné, a tak si orgány o krev konkurují a regulační smyčky si někdy jdou proti sobě. Když běžíš v horku, smyčka, která tě chladí, žene krev do kůže a nutí tě potit se, zatímco svaly chtějí krev pro sebe. Pocení navíc zmenšuje objem krve, který hlídá jiná smyčka, pro tělo důležitější. Víc je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 17: Poiseuilleův zákon.
+- Hra je zjednodušený model. Tlak před orgány se ve hře drží stálý, dokud srdce stačí, klidové průtoky, strop srdce a minimální průtoky mozku a ledvin jsou zvolené pro názornost.
+
+---
+
+# Zdířka
+
+URL: https://vetevnavetvi.cz/pages/hra-zdirka.html  
+Větev: Hry (na motivy kapitoly Lék je vlna)  
+Shrnutí: Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, částečným agonistou se stropem a antagonistou, který odezní dřív než lék.  
+English: Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against an overdose.
+
+Lék skoro vždycky působí tak, že do něčeho zapadne: do receptoru, molekulární zdířky na buňce. Agonista do zdířky zapadne a zmáčkne tlačítko. Antagonista zapadne stejně těsně, ale nic nespustí, jen místo obsadí. A částečný agonista zmáčkne tlačítko jen napůl. Účinek pak záleží na tom, kolik zdířek je obsazených a čím.
+
+Jak hrát: tlačítky pod obrázkem podáváš léky. Nahoře vidíš receptory a molekuly, které v nich zrovna sedí, dole křivku účinku v čase. Lék z těla postupně mizí, a tak účinek slábne. Drž ho v zeleném pásmu a nepusť ho do červeného, které znamená nebezpečně silný účinek.
+
+Hra: Zdířka. Zlatý a oranžový klíč jsou plní agonisté, zelený poloviční klíč částečný agonista, švestkový špunt antagonista. Rozsvícený receptor předává signál. Obsazenost se řídí soutěží o receptory podle jednoduchého modelu a čísla jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Potence říká, jak málo léku stačí, účinnost, jak vysoko vůbec dosáhne. Lék B je ve hře stokrát potentnější než lék A, ale strop mají stejný. Jako fentanyl a morfin: fentanyl „neumí víc“, jen mu stačí nepatrná dávka, a právě proto je tak nebezpečný. Částečný agonista má strop nižší, jako buprenorfin, u kterého útlum dýchání s dávkou nestoupá tak strmě jako u morfinu, pokud se nekombinuje s alkoholem nebo jinými tlumivými látkami.
+
+Antagonista lék z těla neodstraní, jen ho vytlačí z receptorů a místo obsadí sám. Tak funguje naloxon při předávkování opioidy. Působí ale kratší dobu než mnoho opioidů, a proto se příznaky předávkování můžou vrátit, přesně jako ve čtvrté úrovni. Víc je v kapitole [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html).
+
+Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na předávkování volej záchrannou službu.
+
+#### Zdroje
+
+- Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Receptory a částeční agonisté (kap. 1), model E_max (kap. 19).
+- Walsh S. L. a kol. Clinical pharmacology of buprenorphine: ceiling effects at high doses. Clinical Pharmacology & Therapeutics 55, 569–580 (1994).
+- Hra je zjednodušený model: léky soutěží o receptory podle zákona působení hmoty, účinek je součet signálů obsazených receptorů a poločasy i dávky jsou ilustrační.
+
+---
+
+# Plný sklad
+
+URL: https://vetevnavetvi.cz/pages/hra-plny-sklad.html  
+Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Shrnutí: Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.  
+English: Game on feedback inhibition: choose which enzyme a full store should brake in a linear pathway, a branched pathway with sequential feedback, and opposing breakdown and synthesis routes controlled by AMP.
+
+Metabolismus nemá ředitele. Řídí se tisíci drobných zpětných vazeb: když se nahromadí konečný produkt dráhy, naváže se na některý z jejích enzymů a zpomalí ho. Záleží ale na tom, na který.
+
+Jak hrát: nahoře je dráha. Sloupce jsou sklady a meziprodukty, štítky mezi nimi enzymy. V nabídkách pod obrázkem vybereš, který enzym má který sklad brzdit, a spustíš den. Dole se ukáže, jak se během dne měnily zásoby. Nic nesmí přetéct a produkty mají většinu dne zůstat v zeleném pásmu.
+
+Hra: Plný sklad. Sloupce ukazují, kolik čeho je, a přetečou, když se hladina dostane nad okraj. Čárkovaná čára zakončená příčkou je brzda: sklad, ze kterého vychází, zpomaluje enzym, u kterého končí. Ve třetí úrovni štítky AMP ▲ a AMP ▼ ukazují, kterou silnici AMP zrychlí a kterou zpomalí. V grafu je zeleně pásmo, ve kterém mají produkty zůstat, a nad ním popis, co se v které části dne děje.
+
+## Co se tu doopravdy děje
+
+Většina metabolických drah začíná krokem, který uvolní hodně energie a je prakticky nevratný. Když konečný produkt brzdí právě ten, řídí celou dráhu jediným ventilem a meziprodukty se nehromadí. Produkt se přitom obvykle neváže do aktivního místa enzymu, ale jinam, a mění tvar celé molekuly. Takové alosterické enzymy často reagují strmě: malá změna v množství produktu je přepne z plného chodu skoro do klidu.
+
+Rozvětvené dráhy to mají těžší, protože plný sklad jedné větve nesmí zastavit výrobu druhé. Buňky to řeší několika způsoby. Každá větev může mít vlastní brzdu a společný začátek pak hlídá meziprodukt na rozcestí. Jindy má buňka víc verzí prvního enzymu a každou brzdí jiný produkt.
+
+Rozklad a stavba stejné látky jezdí po různých silnicích s různými enzymy, a tak se dají řídit zvlášť. Kdyby jely obě naráz, buňka by jen pálila ATP naprázdno. Proto je tytéž signály řídí opačně: AMP, kterého přibývá, když energie dochází, rozklad povzbudí a stavbu přibrzdí. Víc o tom, jak se metabolismus řídí sám, je v kapitole [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html).
+
+Hra vysvětluje princip a čísla v ní jsou ilustrační.
+
+#### Zdroje
+
+- Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
+- Hra je zjednodušený model: enzymy mají ilustrační rychlosti, brzdy působí strmě (s Hillovým koeficientem 4) a energie i palivo jsou herní jednotky.
+
+---
+
+# Přeskoky
+
+URL: https://vetevnavetvi.cz/pages/hra-preskoky.html  
+Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Shrnutí: Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.  
+English: Puzzle on saltatory conduction: place nodes of Ranvier on a myelinated axon so the impulse reaches the end, discover the flat optimum of internode length, and restore conduction through a demyelinated lesion.
+
+Vzruch se po axonu šíří jako štafeta: každý kousek membrány otevře sodíkové kanály a postrčí souseda. Myelin ten běh zrychlí. Axon izoluje, a tak se vzruch obnovuje jen v krátkých holých místech, Ranvierových zářezech, a mezi nimi přeskakuje. Kolik zářezů je potřeba a jak daleko od sebe?
+
+Jak hrát: klepnutím na axon přidáš zářez, klepnutím na zářez ho odebereš a tažením ho posuneš. Pak vyšli vzruch. Horní graf ukazuje napětí podél axonu: v každém zářezu vyskočí na plnou výšku a pod myelinem slábne. Do dalšího zářezu musí dorazit aspoň k prahu. Na klávesnici vybíráš místo šipkami, mezerníkem přidáváš nebo odebíráš zářez a klávesou F vzruch vyšleš.
+
+Hra: Přeskoky. Dole axon: světlé úseky jsou myelin, mezery mezi nimi zářezy a čísla pod úseky ukazují, kolik mikrosekund trval každý skok. Nahoře napětí podél axonu s prahem, který musí dosáhnout každý zářez. Délková konstanta je pod zdravým myelinem 1,5 mm a pod poškozeným 0,5 mm, ostatní čísla jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Pod myelinem se vzruch neobnovuje. Napětí se jen šíří vnitřkem axonu a cestou slábne, podobně jako tlak v děravé hadici. Jak rychle slábne, určuje délková konstanta: u myelinizovaného vlákna je dlouhá, protože myelin brání úniku proudu. V zářezu ale musí napětí dosáhnout prahu, aby se otevřely sodíkové kanály a vzruch se obnovil v plné síle.
+
+Delší skoky znamenají méně zastávek, ale slabší signál, který zářez nabíjí pomaleji. Proto má rychlost vedení ploché maximum: příliš husté zářezy zdržují a příliš řídké vedou pomalu, nebo vůbec. Teorie to předpověděla už v polovině 20. století a pokusy na myších to potvrdily: vlákna s kratšími úseky myelinu vedla pomaleji a s prodlužováním úseků rychlost rostla jen k plochému maximu.
+
+U roztroušené sklerózy imunitní systém poškozuje myelin v mozku a míše. Vedení se v takovém místě zpomalí, nebo úplně selže. Myelin se může obnovit, ale nový bývá tenčí a s kratšími úseky. Víc o vzruchu a myelinu je v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html).
+
+Hra vysvětluje princip a čísla v ní jsou ilustrační.
+
+#### Zdroje
+
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 8 (Electrical Signaling in Neurons).
+- Wu L. M. N. a kol. Increasing internodal distance in myelinated nerves accelerates nerve conduction to a flat maximum. Current Biology 22, 1957–1961 (2012).
+- Franklin R. J. M., ffrench-Constant C. Remyelination in the CNS: from biology to therapy. Nature Reviews Neuroscience 9, 839–855 (2008).
+- Hra je zjednodušený model: napětí pod myelinem klesá exponenciálně, zářez se nabíjí tím déle, čím slabší signál k němu dorazí, a všechna čísla jsou ilustrační.
+
+---
+
+# Smyčka
+
+URL: https://vetevnavetvi.cz/pages/hra-smycka.html  
+Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Shrnutí: Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.  
+English: Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary failure and excess tablets apart, then titrate levothyroxine and treat.
+
+Hypotalamus vylučuje TRH, hypofýza podle něj TSH a štítná žláza tyroxin (T4). Hormony štítné žlázy zpětně tlumí výrobu TRH i TSH. Když tedy T4 chybí, TSH vyskočí, a když je T4 moc, TSH klesne. Z toho, jak se ty dvě hodnoty k sobě mají, se dá vyčíst, kde se smyčka pokazila.
+
+Jak hrát: u každého pacienta vidíš volný T4, TSH a velikost štítné žlázy, všechno jako násobky normálu. Vedle je pět přepínačů smyčky. Nastav, co si myslíš, že se v těle děje, a model hned ukáže, jak by výsledky vypadaly po osmi měsících. Když se shodují s pacientem, potvrď diagnózu. V dalších úrovních stejnými přepínači léčíš.
+
+Hra: Smyčka. Tabulka porovnává pacienta s modelem, přepínače nastavují smyčku. Graf ukazuje, jak by se volný T4 (zlatě) a TSH (modře, v logaritmickém měřítku) vyvíjely po nastavené změně. Světlé pruhy jsou norma a při hledání diagnózy ukazují čárky vpravo hodnoty pacienta. Model vychází z kapitoly: T4 má poločas 8 dní a pokles T4 na polovinu zvedne TSH zhruba šedesátkrát.
+
+## Co se tu doopravdy děje
+
+Zpětná vazba štítné žlázy je mimořádně citlivá: když volný T4 klesne na polovinu, TSH vyskočí na padesáti- až stonásobek. Proto se jako první obvykle měří právě TSH. Když chybí jód, hormonů se vyrábí málo, TSH stoupne a žlázu pobízí k výkonu i k růstu. Vznikne struma a výsledky krve můžou zůstat skoro v normě. U Gravesovy choroby tělo vyrábí protilátky, které napodobí TSH. Na rozdíl od hypofýzy je nic nebrzdí: žláza roste a vyrábí víc hormonů, zatímco TSH klesne hluboko pod normál.
+
+Jenže když vázne samotná hypofýza, vyjde TSH nízko nebo nepřiměřeně normálně, i když T4 chybí. Takovou centrální hypotyreózu samotné TSH snadno přehlédne. Při léčbě pak TSH o dávce nic neřekne, a tak se hlídá přímo volný T4, který má být v horní polovině normy.
+
+Smyčka se dá i oklamat tabletami: hypofýza nepozná, odkud T4 pochází, a výrobu TSH utlumí stejně. Na tom stojí léčba po odstranění žlázy. Gravesova choroba se obvykle nejdřív léčí tyreostatiky, léky, které brzdí výrobu hormonů. Další možností je radioaktivní jód nebo operace, po kterých tělo většinou potřebuje hormon v tabletách. Víc o hormonech a smyčkách je v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
+
+Hra vysvětluje princip zpětné vazby a nikomu nestanovuje diagnózu ani léčbu.
+
+#### Zdroje
+
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 49 (The Thyroid Gland): poločas T4, osa TRH–TSH a citlivost zpětné vazby, jód a struma (box 49-1), Gravesova choroba (box 49-4).
+- Persani L. a kol. 2018 European Thyroid Association (ETA) Guidelines on the Diagnosis and Management of Central Hypothyroidism. European Thyroid Journal 7, 225–237 (2018).
+- Kahaly G. J. a kol. 2018 European Thyroid Association Guideline for the Management of Graves’ Hyperthyroidism. European Thyroid Journal 7, 167–186 (2018).
+- Hra je zjednodušený model: hodnoty jsou násobky normálu, selhání hypofýzy je zjednodušené na strop výroby TSH a růst žlázy i dávky tablet jsou ilustrační.
