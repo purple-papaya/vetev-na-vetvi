@@ -43,7 +43,8 @@ pages/
   wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
   blog.html                Blog — rozcestník kratších textů mezi kapitolami
   blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
-  o-mne.html, pribehy.html, lusteni.html, zpetna-vazba.html                 zástupné stránky
+  o-mne.html               O mně — kdo web píše a jak kapitoly vznikají
+  pribehy.html, hry.html, zpetna-vazba.html                                zástupné stránky
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
   wetware-imunologie.html, wetware-vyvojova-biologie.html,
@@ -70,7 +71,7 @@ python3 tools/seo.py
   (titulek, popis, kanonická adresa, Open Graph, strukturovaná data JSON-LD včetně častých otázek
   a zdrojů kapitol) a v kořeni `sitemap.xml`, `robots.txt`, `llms.txt` a `llms-full.txt`.
   Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
-- **Zástupné stránky** (O mně, Příběhy, Luštění, Zpětná vazba) a 404 mají `noindex`. Až dostanou
+- **Zástupné stránky** (Příběhy, Hry, Zpětná vazba) a 404 mají `noindex`. Až dostanou
   obsah, změň v `PAGES` jejich `kind` ze `stub` na vhodný typ.
 - **Adresa webu** je `https://vetevnavetvi.cz/` (proměnná `SITE_URL`). Kdyby se web přestěhoval,
   změň ji a skript spusť znovu.
