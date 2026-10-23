@@ -770,7 +770,7 @@ def feedback_line(path):
 # ------------------------------------------------------------------ "Kup mi kafe"
 # The Ko-fi page. While it is empty, no coffee button appears anywhere. The button is a plain link,
 # no Ko-fi script, so the site keeps its promise of no cookies and no tracking.
-KOFI_URL = ''
+KOFI_URL = 'https://ko-fi.com/vetevnavetvi'
 CUP = ('<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
        'stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/>'
        '<path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg>')
