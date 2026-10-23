@@ -32,8 +32,13 @@ assets/
                             záložní WebM (VP9) pro prohlížeče bez H.264 a náhledový obrázek
 tools/
   seo.py                   metadata pro vyhledávače a jazykové modely (viz níž)
+  indexnow.py              pošle změněné stránky vyhledávačům přes IndexNow (viz níž)
+.github/workflows/
+  indexnow.yml             po každém nasazení webu spustí tools/indexnow.py
 sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
+feed.xml                 kanál Atom s kapitolami, hrami a články (generuje tools/seo.py)
 llms.txt, llms-full.txt  přehled a plné texty pro jazykové modely (generuje tools/seo.py)
+b4ec072007d36d5db2a78fad120b85fb.txt            klíč pro IndexNow (název souboru = obsah); nemazat
 pages/
   wetware.html             Wetware hub — rozcestník všech podvětví a jejich kapitol
   wetware-ch1-jsi-sloveso.html          Biochemie · Kapitola první — Jsi sloveso (hotová kapitola)
@@ -74,9 +79,15 @@ python3 tools/seo.py
 - **Nová stránka**: přidej ji do slovníku `PAGES` v `tools/seo.py` (titulek, popis, u kapitol témata
   a anglické shrnutí). Stránky, které tam chybí, skript vypíše a nechá beze změny.
 - **Co se generuje**: v hlavičce každé stránky blok mezi komentáři `seo:begin` a `seo:end`
-  (titulek, popis, kanonická adresa, Open Graph, strukturovaná data JSON-LD včetně častých otázek
-  a zdrojů kapitol) a v kořeni `sitemap.xml`, `robots.txt`, `llms.txt` a `llms-full.txt`.
-  Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
+  (titulek, popis, kanonická adresa, Open Graph, odkaz na kanál, strukturovaná data JSON-LD včetně
+  častých otázek, zdrojů kapitol, profilu autorky a videa) a v kořeni `sitemap.xml`, `feed.xml`,
+  `robots.txt`, `llms.txt` a `llms-full.txt`. Blok v hlavičce needituj ručně, při dalším spuštění se přepíše.
+- **Autorka a data pod titulkem**: pod titulek každé kapitoly, hry a článku vloží skript řádek
+  „Pája · vyšlo … · aktualizováno …“ (mezi `datum:begin` a `datum:end`). Data jsou stejná jako ve
+  strukturovaných datech; Google chce viditelné datum, které s nimi souhlasí.
+- **Hry u kapitol**: na konec každé kapitoly vloží skript rámeček „Zahraj si“ s jejími dvěma hrami
+  a na stránky větví Wetware řádek s odkazy na ně (mezi `hry:begin` a `hry:end`). Hra patří ke
+  kapitole podle pole `chapter` v `PAGES`, popisek si skript bere z hlavičky stránky hry.
 - **Zástupná stránka** Příběhy a 404 mají `noindex`. Až Příběhy dostanou obsah, změň v `PAGES`
   jejich `kind` ze `stub` na vhodný typ.
 - **Odkaz na zpětnou vazbu**: pod každou kapitolu, hru a článek vloží skript řádek „Vidíš chybu…
@@ -87,8 +98,24 @@ python3 tools/seo.py
   změň ji a skript spusť znovu.
 - **Data publikace a úpravy** se berou z historie gitu. Commity, jejichž zpráva začíná `SEO:`,
   se nepočítají, takže úprava metadat stránku „neomladí“.
-- **Mapa webu** je odkázaná z `robots.txt`. Rychlejší je ale odeslat ji i ručně v Google Search Console
-  a Bing Webmaster Tools (`https://vetevnavetvi.cz/sitemap.xml`).
+- **Mapa webu** a kanál `feed.xml` jsou odkázané z `robots.txt`. Rychlejší je ale odeslat mapu
+  i ručně v Google Search Console a Bing Webmaster Tools (`https://vetevnavetvi.cz/sitemap.xml`).
+- **IndexNow**: po každém nasazení webu pošle workflow `.github/workflows/indexnow.yml` adresy
+  změněných stránek Bingu, Seznamu, Yandexu a dalším vyhledávačům s IndexNow, takže si pro ně přijdou
+  hned. Klíč je v souboru `b4ec072007d36d5db2a78fad120b85fb.txt` v kořeni webu (nemazat). Všechny stránky najednou pošleš
+  ručně: Actions → IndexNow → Run workflow → zaškrtni „Poslat všechny stránky“. Z příkazové řádky:
+  `python3 tools/indexnow.py --all` (s `--dry-run` jen vypíše adresy).
+- **Ověření webu ve webmasterských nástrojích**: kód z Google Search Console, Bing Webmaster Tools
+  nebo Seznam Webmaster vlož do slovníku `VERIFY` v `tools/seo.py` a skript spusť; značka se objeví
+  v hlavičce úvodní stránky. Google jde ověřit i přes DNS (doménová služba), Bing umí web převzít
+  z Google Search Console, Seznam potřebuje značku nebo soubor.
+- **Roboti jazykových modelů**: web pouští všechny, i vyhledávání s AI (OAI-SearchBot pro ChatGPT,
+  Claude-SearchBot, PerplexityBot) a roboty, kteří sbírají texty pro trénování modelů (GPTBot,
+  ClaudeBot, Google-Extended…). Kdyby texty neměly sloužit k trénování, nastav v `tools/seo.py`
+  `BLOCK_TRAINING = True`: vyhledávání to neovlivní, jen Google-Extended zároveň skryje web
+  z odpovědí Gemini.
+- **llms.txt** zůstává pro jazykové modely a agenty, které ho čtou. Google ho podle své dokumentace
+  nepoužívá (pro AI přehledy stačí běžné SEO), škodit ale nemůže.
 
 ## Publikace přes GitHub Pages
 

@@ -1,0 +1,30 @@
+# After every deploy of the site to GitHub Pages, tells the search engines that use IndexNow
+# (Bing, Seznam, Yandex and others) which pages changed. Run it by hand (Actions → IndexNow →
+# Run workflow, tick "all") to send every page in the sitemap, for example the first time.
+name: IndexNow
+
+on:
+  workflow_run:
+    workflows: [pages-build-deployment]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Poslat všechny stránky z mapy webu
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+      - name: Poslat změněné stránky
+        run: python3 tools/indexnow.py ${{ inputs.all && '--all' || '' }}

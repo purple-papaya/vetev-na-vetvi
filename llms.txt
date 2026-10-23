@@ -55,3 +55,4 @@ Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na někol
 ## Optional
 
 - [Plné texty](https://vetevnavetvi.cz/llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu
+- [Novinky](https://vetevnavetvi.cz/feed.xml): kanál Atom s kapitolami, hrami a články a daty jejich vydání a úprav

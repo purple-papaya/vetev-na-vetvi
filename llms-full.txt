@@ -10,6 +10,7 @@ Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.
 
 URL: https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html  
 Větev: Biochemie  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-17  
 Shrnutí: Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.  
 English: Introduction to metabolism: why you are a process rather than a thing; ATP, stepwise release of energy and feedback inhibition without a central controller.
 
@@ -196,6 +197,7 @@ Nejsi oheň, který hoří. Jsi to hoření.
 
 URL: https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html  
 Větev: Neurobiologie  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-21  
 Shrnutí: Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.  
 English: Introduction to neurobiology: resting potential and the sodium-potassium pump, threshold and the action potential, myelin, synapses and 86 billion neurons.
 
@@ -349,7 +351,7 @@ Zčásti, a tady je hranice dnešního poznání. Dospělý mozek se neustále p
 
 Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mezera – a 86 miliard buněk, které se spiknou, aniž by kdokoli velel. Všechno ostatní v téhle sérii – jak vidíš, jak si pamatuješ, jak se z tebe vůbec stává někdo – jsou variace na těchhle pět tahů. Příště sestoupíme do té mezery, protože právě tam se zapisuje zkušenost. Pro dnešek stačí chvíli posedět s tou podivností. Jsi špetka soli, která se naučila přemýšlet, z čeho je. Na obyčejné úterý docela slušný trik.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Nicholls, Martin, Fuchs, Brown, Diamond a Weisblat – From Neuron to Brain, 5. vydání (Sinauer / Oxford). Páteř kapitoly: principy signalizace, postřeh Ramóna y Cajala, že tvar neuronu prozrazuje jeho úlohu, synaptická štěrbina široká asi 20 nm a synaptické zpoždění asi 1 ms, asi 10 000 vstupů na jeden motorický neuron a přes 100 000 na jednu Purkyňovu buňku (kap. 1, obr. 1.15) a závěrečná kapitola „Open Questions“ (kap. 28).
 - Počet neuronů (asi 86 miliard): Azevedo, Herculano-Houzel a kol., Journal of Comparative Neurology 2009, metodou izotropního frakcionátoru, která opravila tradičních „100 miliard“. Počet synapsí (asi 100 bilionů) a rychlosti vedení (asi 0,5–120 m/s) jsou běžně uváděné řádové hodnoty. Spotřebu sodno-draselné pumpy (19–28 % ATP v klidu) uvádějí Rolfe a Brown, Physiological Reviews 1997.
@@ -362,6 +364,7 @@ Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mez
 
 URL: https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html  
 Větev: Fyziologie  
+Autorka: Pája, vyšlo 2026-10-17, aktualizováno 2026-10-21  
 Shrnutí: Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.  
 English: Introduction to physiology: homeostasis as a steady state rather than equilibrium, negative feedback, diffusion and pumps, flow, folded surfaces and cell turnover.
 
@@ -519,7 +522,7 @@ Dobrá zpráva: pod tím vším se pořád vracejí stejné myšlenky. Zpětná 
 
 Tohle je logika fyziologie v kostce. Udržovat vnitřní prostředí stálé (zpětná vazba). Vzdorovat sklonu všeho se vyrovnat (spády a pumpy). Dopravovat věci na dlouhé vzdálenosti hromadně (proudění). Skládat povrchy tak, aby měla každá buňka zásobování na dosah (povrch). A za plného provozu se neustále přestavovat (obnova). Srdce, plíce, ledviny: každá další kapitola bude těchto pět myšlenek v nové kombinaci. To všechno jen proto, aby si přes čtyřicet litrů teplé slané vody mohlo vyjít na procházku do sněhu. Na obyčejné úterý docela slušný výkon.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Homeostáza, ustálený stav versus rovnováha a prvky negativní zpětné vazby (kap. 1); tělesné tekutiny, ustálený stav pumpy a úniku, voda následující rozpuštěné látky (kap. 5); Poiseuilleův zákon (kap. 17); generace dýchacích cest, plocha sklípků, proudění a difuze v plicích (kap. 26); Cheyneovo-Stokesovo dýchání (box 32-2); perorální rehydratace (box 44-1).
 - Bernard C. Leçons sur les phénomènes de la vie communs aux animaux et aux végétaux, 1878. Cannon W. B. The Wisdom of the Body, 1932 (homeostáza jako stav, který se může měnit, a přesto zůstává poměrně stálý).
@@ -537,6 +540,7 @@ Tohle je logika fyziologie v kostce. Udržovat vnitřní prostředí stálé (zp
 
 URL: https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html  
 Větev: Farmakologie  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-21  
 Shrnutí: Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.  
 English: Introduction to pharmacokinetics and pharmacodynamics: the concentration-time curve, half-life and steady state, receptors, potency and efficacy, and the therapeutic window.
 
@@ -748,7 +752,7 @@ Obvykle proto, že by je cesta přes trávicí trubici zničila dřív, než by 
 
 Když jsou vstupní dveře drtička, doručí se lék za ně – do žíly, pod kůži, do svalu –, aby dorazil nedotčený. Proto křivka „Injekce“ na obrázku 1 nemá žádný vzestup: celou cestu přes trávicí trubici přeskočila.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 Sara E. Rosenbaum, Basic Pharmacokinetics and Pharmacodynamics, 2. vyd., Wiley 2017 – kniha, o kterou se tato kapitola opírá: terapeutické rozmezí, receptory a částeční agonisté (kap. 1), vstřebávání, distribuce a vylučování (kap. 3–5), křivka po spolknutí (kap. 9), ustálený stav a opakované dávkování (kap. 11, 12 a 14), model E_max (kap. 19) · U.S. FDA – [Grapefruit Juice and Some Drugs Don't Mix](https://www.fda.gov/consumers/consumer-updates/grapefruit-juice-and-some-drugs-dont-mix) · Certara – [Understanding Volume of Distribution](https://www.certara.com/knowledge-base/understanding-volume-of-distribution/) · Allucent – [Steady-State Concentration in Pharmacokinetics](https://www.allucent.com/resources/blog/what-steady-state-concentration-pharmacokinetics) · Deranged Physiology – [Potency and Efficacy](https://derangedphysiology.com/main/cicm-primary-exam/pharmacodynamics/Chapter-415/potency-and-efficacy) · Llewelyn a kol., BMJ 2017, k debatě o dobírání antibiotik · CDC – [fentanyl](https://www.cdc.gov/overdose-resources/search/transcripts/CDC_Fentanyl-Video-Spot_60-transcript.html) · Pfizer – [naloxon, klinická farmakologie](https://www.pfizermedical.com/naloxone/clinical-pharmacology) · Walsh a kol., Clinical Pharmacology & Therapeutics 1994, k stropu účinku buprenorfinu · Boron & Boulpaep, Medical Physiology, 3. vyd., kap. 34, k ledvinné filtraci.
 
@@ -766,6 +770,7 @@ Příště se přestaneme dívat na celou cestu z dálky a zaměříme se na sam
 
 URL: https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html  
 Větev: Molekulární biologie  
+Autorka: Pája, vyšlo 2026-10-21, aktualizováno 2026-10-21  
 Shrnutí: Jak se z DNA stane tělo, když v buňce nikdo nečte: opis s korekturou, mRNA a bílkoviny, genetický kód a mutace, přepínače genů. Se čtyřmi simulacemi.  
 English: Introduction to molecular biology: DNA replication with proofreading, mRNA and protein turnover, the genetic code and mutations, and gene switches (the eve stripe in fruit flies).
 
@@ -879,7 +884,7 @@ Nikdo. Buňka je nacpaná molekulami, které se v teple neustále pohybují. Mí
 
 Tohle je logika molekulární biologie v kostce. Text o čtyřech písmenech, který se opisuje pod trojí kontrolou. Pracovní kopie, které se smějí plést, protože jsou na jedno použití. Překlad po trojicích, kde zase rozhoduje jen to, co k čemu pasuje. A stejný text, ze kterého každá buňka používá jiné stránky. Nikde v tom celém není čtenář. Je tam jen chemie, která se chová, jako by četla.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Pohyb a srážky molekul v buňce (kap. 2, s. 65–66); pořadí aminokyselin určuje tvar bílkoviny (kap. 3, s. 140); párování bází, délka DNA v jádře, „víc než tisíc knih“ a tabulka 4–1 se základními čísly lidského genomu (kap. 4, s. 186–194); přesnost a rychlost replikace, tabulka 5–1 (kap. 5, s. 255–275); RNA, přesnost přepisu, zesílení, genetický kód, tRNA, ribozom a polyribozomy (kap. 6, s. 324–375); stejný genom v různých buňkách, klonování z jádra specializované buňky, buněčná paměť a gen eve (kap. 7, s. 397–425); poločasy mRNA (kap. 7, s. 459); přes dvě stě typů buněk (kap. 22, s. 1279); přestavba DNA v lymfocytech (kap. 24, s. 1377–1378).
 - Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Pořadí aminokyselin v řetězci β-globinu a hemoglobin srpkovité anémie (kap. 10).
@@ -892,6 +897,7 @@ Tohle je logika molekulární biologie v kostce. Text o čtyřech písmenech, kt
 
 URL: https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html  
 Větev: Imunologie  
+Autorka: Pája, vyšlo 2026-10-21, aktualizováno 2026-10-21  
 Shrnutí: Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.  
 English: Introduction to immunology: pattern recognition, V(D)J recombination, thymic selection, clonal selection and affinity maturation in germinal centres, and immune memory.
 
@@ -1013,7 +1019,7 @@ Všude. Lymfocyty vznikají v kostní dřeni a T-lymfocyty dozrávají v brzlík
 
 Tohle je logika imunity v kostce. Rychlý poplach podle znaků, které mikroby prozradí. Generátor náhody, který předem vyrobí receptory na cokoli. Škola, ve které se vyřadí ty namířené proti vlastnímu tělu. Výběr, který namnoží ty, co pasují, a mutacemi je dál vybrousí. A paměť, díky které je druhé setkání kratší. Darwin popsal, jak náhoda a výběr během milionů let tvarují druhy. Tvoje mízní uzliny dělají totéž s buňkami během jediné nemoci.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Vrozená imunita: bariéry, molekulární vzory a receptory, které je rozpoznávají (tabulka 24–1), receptor Toll a moucha bez něj (obr. 24–3), zánět a horečka (kap. 24, s. 1353–1357); Toll ve vývoji octomilky (kap. 21, s. 1230 a 1236); „velký třesk“ adaptivní imunity, počet lymfocytů, klonální výběr, primární a sekundární odpověď (obr. 24–16), paměťové buňky, kolování lymfocytů a imunologická tolerance včetně pokusu s C5 (kap. 24, s. 1364–1371); skládání genů pro protilátky z úseků V, D a J, nepřesné spoje a posun čtecího rámce, přeskládání receptoru, somatická hypermutace a afinita protilátek (kap. 24, s. 1377–1379); pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE (kap. 24, s. 1389–1391 a 1401); očkování, Jenner a pravé neštovice, adjuvans, kolektivní imunita a podvodná zpráva o autismu (kap. 24, s. 1397–1401); původ mechanismu přeskládání v transpozonech (kap. 5, s. 309); antigenní variabilita trypanozom a chřipky, pandemie z roku 1918 (kap. 23, s. 1342–1344).
 - The Lancet. Retraction – Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children. Lancet 375, 445 (2010).
@@ -1026,6 +1032,7 @@ Tohle je logika imunity v kostce. Rychlý poplach podle znaků, které mikroby p
 
 URL: https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html  
 Větev: Vývojová biologie  
+Autorka: Pája, vyšlo 2026-10-21, aktualizováno 2026-10-21  
 Shrnutí: Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.  
 English: Introduction to developmental biology: morphogen gradients and thresholds, Delta-Notch lateral inhibition, the segmentation clock and wavefront, and programmed cell death.
 
@@ -1135,7 +1142,7 @@ Mloci, čolci a axolotlové to umějí: na místě amputace jim vznikne blastém
 
 Tohle je logika vývoje v kostce. Rozcestí za rozcestím, kde buňka volí podle své minulosti a okolí. Spád, který se přes prahy rozpadne na pásma. Sousedé, kteří si navzájem brání udělat totéž, a tak se rozestoupí. Hodiny, jejichž tikot se otiskne do páteře. A smrt, která odstraní, co přebývá. Žádný z těch mechanismů nezná výsledek. Každá buňka dělá svou malou věc na svém místě – a tělo se postaví samo.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Lidské tělo z víc než 10^13 buněk (kap. 1, s. 2); Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); apoptóza, oddělování prstů (obr. 18–2), ocas pulce a hormon štítné žlázy, nejméně milion zaniklých buněk za sekundu, faktory přežití a počet neuronů (kap. 18, s. 1089–1090 a 1098–1099); tři procesy vývoje a větvení voleb, stejná mašinerie u všech živočichů (kap. 21, s. 1217); eyeless a Pax6 (kap. 21, s. 1218 a 1242–1243); buněčná paměť, kombinace signálů, morfogeny a prahy (obr. 21–8 a 21–9), laterální inhibice a nerovnoměrné dělení (kap. 21, s. 1222–1224); geny Hox a obratle myši (kap. 21, s. 1242); štětinky octomilky (kap. 21, s. 1243–1244); somity a segmentační hodiny (kap. 21, s. 1249–1250); přes dvě stě typů buněk, kmenové buňky střeva a krve, regenerace jater, srdce a končetin mloků (kap. 22, s. 1279, 1282, 1286, 1289, 1296 a 1298).
 - Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Uhlík-14 a neurony mozkové kůry (kap. 25, s. 544); úmrtí 40–70 % motoneuronů, NGF a pokusy Rity Levi-Montalciniové (kap. 25, s. 555).
@@ -1149,6 +1156,7 @@ Tohle je logika vývoje v kostce. Rozcestí za rozcestím, kde buňka volí podl
 
 URL: https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html  
 Větev: Endokrinologie  
+Autorka: Pája, vyšlo 2026-10-21, aktualizováno 2026-10-21  
 Shrnutí: Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.  
 English: Introduction to endocrinology: hormone concentrations and receptor affinity, the thyroid feedback loop, slow and fast hormones and half-lives, the cortisol rhythm and pulsatile GnRH.
 
@@ -1258,7 +1266,7 @@ Protože bez jódu štítná žláza nevyrobí své hormony; jsou to jediné hor
 
 Tohle je logika hormonů v kostce. Zpráva rozeslaná všem, kterou přečtou jen buňky se správným receptorem. Šepot v nanomolárních koncentracích, který zesílí kaskády. Smyčky, ve kterých žláza pozná, kolik má vyrábět, podle toho, co způsobila. Poločasy, které rozhodují, jak rychle zpráva přijde a jak dlouho vydrží. A rytmus, který je součástí zprávy. Tělo nepotřebuje nikoho, kdo by kontroloval, jestli dopis došel. Stačí, že každá buňka ví, co si s ním počít.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47 (Organization of Endocrine Control): koncentrace hormonů 10^−9–10^−12 M, rychlé a pomalé hormony, vazebné bílkoviny a poločas tyroxinu, zpětná vazba inzulinu a osa CRH–ACTH–kortizol, receptory steroidních hormonů s K_D kolem 1 nM, nepřetržité podávání GnRH. Kap. 49 (The Thyroid Gland): T4 a T3, poločasy 8 dní a asi 24 hodin, podíl volného T4, osa TRH–TSH, citlivost a pomalost zpětné vazby, jód a struma (box 49-1), Gravesova choroba (box 49-4). Kap. 50 (The Adrenal Gland): vazba kortizolu na bílkoviny, suprachiazmatické jádro, denní a pulzní rytmus ACTH a kortizolu (obr. 50-5), stres zvětšuje pulzy, delší poločas kortizolu tlumí jeho výkyvy.
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Čtyři způsoby signalizace mezi buňkami (kap. 15, s. 875); nízké koncentrace signálů a afinita receptorů (s. 876); stejný signál, různé odpovědi – acetylcholin (s. 877); rychlost, citlivost a zesílení odpovědi, význam rychlého obratu molekul (s. 885–887, obr. 15–15).
@@ -1272,6 +1280,7 @@ Tohle je logika hormonů v kostce. Zpráva rozeslaná všem, kterou přečtou je
 
 URL: https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html  
 Větev: Blog  
+Autorka: Pája, vyšlo 2026-10-21, aktualizováno 2026-10-21  
 Shrnutí: Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil.  
 English: Essay: what all eight first chapters share. Gradients kept away from equilibrium, thresholds that turn them into decisions, feedback loops, and no central controller.
 
@@ -1348,7 +1357,7 @@ Místo velitele jsou tu spády, prahy a smyčky, a k nim ještě jeden trik: ná
 
 Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na každém patře: v enzymu, který brzdí vlastní linku, v neuronu, který vystřelí, v zárodku, který si rozdělí prostor, ve žláze, která hlídá svůj hormon, v těle, které drží teplotu, i v celé populaci lymfocytů, která se učí. Na každém patře si život klade tytéž tři otázky. Kde je čeho víc? Je to dost? A povedlo se? Až je jednou uvidíš, začneš je nacházet všude, i v kapitolách, které teprve vzniknou.
 
-#### Zdroje a další čtení
+## Zdroje a další čtení
 
 - Všechny údaje v textu pocházejí z prvních kapitol Wetware, kde je najdeš i s odkazy na učebnice a články: [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html), [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html), [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html), [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html), [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html), [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html), [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html) a [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Ustálený stav versus rovnováha (kap. 1); receptory steroidních hormonů s K_D kolem 1 nM (kap. 47); citlivost zpětné vazby štítné žlázy (kap. 49).
@@ -1362,6 +1371,7 @@ Proto se tenhle web jmenuje Větev na větvi. Stejné tři tahy se opakují na k
 
 URL: https://vetevnavetvi.cz/pages/hra-pulzy.html  
 Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví.  
 English: Rhythm game: as the hypothalamus, release GnRH pulses that keep the pituitary's LH output in a healthy range, then silence it like a physician with a continuous infusion (receptor desensitization).
 
@@ -1379,7 +1389,7 @@ Medicína toho využívá. U žen před menopauzou, které mají nádor prsu cit
 
 Víc o hormonech, receptorech a rytmu je v kapitole [Dopis pro všechny](https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html).
 
-#### Zdroje
+## Zdroje
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 47: nepřetržité podávání GnRH tlumí receptory GnRH v hypofýze a dlouhodobě působící agonista GnRH navodí „medikamentózní ooforektomii“.
 - Hra je zjednodušený model. Rychlost ubývání a návratu receptorů, šířka zdravého pásma i zrychlení času jsou zvolené pro názornost.
@@ -1390,6 +1400,7 @@ Víc o hormonech, receptorech a rytmu je v kapitole [Dopis pro všechny](https:/
 
 URL: https://vetevnavetvi.cz/pages/hra-brzlik.html  
 Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.  
 English: Sorting game: as the thymus, decide the fate of young T cells from self-MHC recognition and self-peptide binding (death by neglect, negative selection, regulatory T cells), then watch what slips through when AIRE fails.
 
@@ -1409,7 +1420,7 @@ Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí 
 
 Víc o generátoru receptorů, škole v brzlíku i o tom, co se děje potom v mízních uzlinách, je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1389–1391 a 1401: pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE.
 - Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.
@@ -1420,6 +1431,7 @@ Víc o generátoru receptorů, škole v brzlíku i o tom, co se děje potom v m�
 
 URL: https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html  
 Větev: Hry (na motivy kapitoly Lék je vlna)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, slabé ledviny, grapefruit a nasycovací dávka.  
 English: Dosing game: schedule three days of tablets to keep the drug level between the minimum effective and maximum tolerated concentration for patients with different half-lives, a grapefruit interaction and a narrow therapeutic window that needs a loading dose.
 
@@ -1439,7 +1451,7 @@ A nasycovací dávka? Ta větší první tableta na začátku některých léče
 
 Hra vysvětluje princip a nikomu neradí s dávkováním. Se vším, co se týká skutečného předpisu, se obrať na toho, kdo ho napsal.
 
-#### Zdroje
+## Zdroje
 
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Terapeutické rozmezí (kap. 1), vylučování (kap. 5), křivka po spolknutí (kap. 9), ustálený stav, opakované dávkování a nasycovací dávka (kap. 11, 12 a 14).
 - U.S. Food and Drug Administration. Grapefruit Juice and Some Drugs Don't Mix.
@@ -1451,6 +1463,7 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Se vším, co se týk�
 
 URL: https://vetevnavetvi.cz/pages/hra-spiknuti.html  
 Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.  
 English: Logic puzzle: wire threshold neurons with excitatory and inhibitory synapses so the circuit computes OR, AND, A-and-not-B, NOR with a tonically active neuron, majority, and XOR, which needs a hidden neuron.
 
@@ -1468,7 +1481,7 @@ Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“
 
 Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v čase, synapse se učením zesilují a zeslabují a na jeden motorický neuron v míše se sbíhá asi deset tisíc vstupů. Princip sčítání a prahu ale platí a z něj se skládá spiknutí 86 miliard buněk. Víc je v kapitole [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html).
 
-#### Zdroje
+## Zdroje
 
 - Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.
 - McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).
@@ -1480,6 +1493,7 @@ Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm
 
 URL: https://vetevnavetvi.cz/pages/hra-prouzek.html  
 Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.  
 English: Puzzle: build the even-skipped stripe 2 enhancer from Bicoid, Hunchback, Giant and Krüppel binding sites so the gene is on in a single stripe of the fly embryo, tune binding-site numbers to narrow it, then predict binding-site experiments.
 
@@ -1495,7 +1509,7 @@ Přepínač druhého proužku genu eve je úsek asi pěti set písmen DNA a vá�
 
 Žádná z těch bílkovin neví nic o proužcích. Každá je jen hustší na jednom konci zárodku a řidší na druhém. Proužek vznikne až z kombinace a z toho, jak citlivě na ni přepínač reaguje. Celý přepínač genu eve přitom váže přes dvacet různých regulačních bílkovin a sedm jejich kombinací vytvoří sedm proužků. Víc je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 7, obr. 7–32: přepínač druhého proužku genu eve.
 - Small S., Blair A., Levine M. Regulation of even-skipped stripe 2 in the Drosophila embryo. The EMBO Journal 11, 4047–4057 (1992).
@@ -1508,6 +1522,7 @@ Přepínač druhého proužku genu eve je úsek asi pěti set písmen DNA a vá�
 
 URL: https://vetevnavetvi.cz/pages/hra-horecka.html  
 Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.  
 English: Control game: act as the thermoregulatory feedback loop with skin blood flow, sweating and shivering, see how delayed information makes the loop overshoot and oscillate, and follow the raised set point of a fever and its break.
 
@@ -1525,7 +1540,7 @@ Druhá úroveň ukazuje, proč na rychlosti zpráv záleží. Když smyčka dost
 
 A horečka? Ta není rozbitý termostat. Mozek žádanou hodnotu záměrně zvýší a ty se třeseš, dokud ji nedoženeš, i když máš normálních 37 °C. Když horečka povolí, žádaná hodnota zase klesne a tělo se zpotí. Víc o zpětných vazbách je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
 
-#### Zdroje
+## Zdroje
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Zpětná vazba, žádaná hodnota a zesílení (kap. 1); Cheyneovo-Stokesovo dýchání (box 32-2).
 - Francis D. P. a kol. Quantitative general theory for periodic breathing in heart failure and its clinical implications. Circulation, 2000.
@@ -1537,6 +1552,7 @@ A horečka? Ta není rozbitý termostat. Mozek žádanou hodnotu záměrně zvý
 
 URL: https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html  
 Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry somitů. Od dánia po myš a nakonec bez viditelných hodin.  
 English: Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the determination front to lay down regular pairs of somites, from zebrafish to mouse, then keep the rhythm without the visible clock.
 
@@ -1554,7 +1570,7 @@ Druhou složkou je vlna. Buňky, které zůstanou pozadu za rostoucím ocasem, s
 
 A když hodiny nejdou? Buňky se do skupin nakonec stejně rozpadnou, jenže nepravidelně, jako tvoje somity ve třetí úrovni, když nebylo podle čeho tikat. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 21, s. 1249–1250: somity, segmentační hodiny a jejich periody u dánia, kuřete, myši a člověka.
 - Gomez C. a kol. Control of segment number in vertebrate embryos. Nature 454, 335–339 (2008).
@@ -1566,6 +1582,7 @@ A když hodiny nejdou? Buňky se do skupin nakonec stejně rozpadnou, jenže nep
 
 URL: https://vetevnavetvi.cz/pages/hra-schodiste.html  
 Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a zjisti, co se stane bez kyslíku.  
 English: Puzzle on metabolism as a staircase, not a cliff: split the free-energy drop of glucose into enzyme steps that pay out ATP or load NADH for the respiratory chain, then see how little is left without oxygen.
 
@@ -1581,7 +1598,7 @@ Oheň překonává energetickou bariéru teplem, a když se jednou rozhoří, uv
 
 Celkem buňka zachytí zhruba třetinu energie glukózy a zbytek odejde jako teplo, které tě mimochodem hřeje. Bez kyslíku nemají elektrony z NADH kam odtéct, dýchací řetězec i citrátový cyklus se zastaví a zbudou jen 2 ATP z glykolýzy. Ta jede dál jen proto, že se NADH vyprázdní do pyruvátu a vznikne laktát, ve kterém zůstane většina energie na později. Víc je v kapitole [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html).
 
-#### Zdroje
+## Zdroje
 
 - Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
 - Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
@@ -1593,6 +1610,7 @@ Celkem buňka zachytí zhruba třetinu energie glukózy a zbytek odejde jako tep
 
 URL: https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html  
 Větev: Hry (na motivy kapitoly Čtení bez čtenáře)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.  
 English: Word puzzle on the genetic code: make point mutations codon by codon and read the protein in one-letter amino acid code; silent, missense and nonsense changes, then Maynard Smith's word ladder in which every intermediate protein must work.
 
@@ -1608,7 +1626,7 @@ Hra: Slovo po slovu. Nahoře gen po trojicích DNA a pod každou trojicí aminok
 
 Slovní žebřík, při kterém se mění jedno písmeno a každý mezikrok musí být skutečné slovo, použil v roce 1970 evoluční biolog John Maynard Smith. Slova v něm zastupují bílkoviny a písmena aminokyseliny: evoluce bílkovin podle něj postupuje od jedné fungující bílkoviny k další. Víc o tom, jak se z DNA stane bílkovina, je v kapitole [Čtení bez čtenáře](https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 6: genetický kód, tRNA a ribozom.
 - Maynard Smith J. Natural selection and the concept of a protein space. Nature 225, 563–564 (1970).
@@ -1620,6 +1638,7 @@ Slovní žebřík, při kterém se mění jedno písmeno a každý mezikrok mus�
 
 URL: https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html  
 Větev: Hry (na motivy kapitoly Darwin v mízní uzlině)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.  
 English: Breeding game on affinity maturation: pick which germinal-centre B cells survive each round while their daughters hypermutate, sharpen selection as antigen runs out, and re-adapt memory cells to a drifted virus.
 
@@ -1635,7 +1654,7 @@ Mutace v zárodečném centru dělá enzym AID: mění v genech pro vazebné mí
 
 Po nákaze zůstanou paměťové buňky, jejichž receptory už výběrem prošly, a tak druhá odpověď začíná daleko před první. Paměť si ale pamatuje tvar. Chřipkový virus své povrchové bílkoviny průběžně mění drobnými mutacemi a paměťové buňky na novou verzi sedí hůř. Víc je v kapitole [Darwin v mízní uzlině](https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1377–1379: somatická hypermutace, AID a afinita protilátek; kap. 23, s. 1342–1344: proměnlivost chřipky.
 - Hra je zjednodušený model. Tvar vazebného místa je tu osm sloupců a pravděpodobnosti mutací, počty buněk i přepočet na afinitu jsou zvolené pro hratelnost.
@@ -1646,6 +1665,7 @@ Po nákaze zůstanou paměťové buňky, jejichž receptory už výběrem prošl
 
 URL: https://vetevnavetvi.cz/pages/hra-stetinky.html  
 Větev: Hry (na motivy kapitoly Tělo, které se postavilo samo)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.  
 English: Logic puzzle on lateral inhibition: place fly bristle precursors on a hexagonal sheet so the Delta–Notch pattern is stable (no two neighbouring winners, no uninhibited cell), densest, sparsest, and with long-range inhibition.
 
@@ -1661,7 +1681,7 @@ V zárodku nikdo štětinky nerozmisťuje. Každá buňka začíná se skoro ste
 
 Vítězná buňka umí tlumit i buňky, kterých se přímo nedotýká: natáhne k nim dlouhé výběžky. S delším dosahem jsou štětinky řidší, jako ve čtvrté úrovni. A když signalizace přes Notch nefunguje, nikdo nikoho netlumí: vznikne obrovský nadbytek nervových buněk na úkor buněk pokožky a zárodek nepřežije. Víc je v kapitole [Tělo, které se postavilo samo](https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html).
 
-#### Zdroje
+## Zdroje
 
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Notch, Delta a nadbytek nervových buněk při poruše signalizace (kap. 15, s. 928); laterální inhibice (kap. 21, s. 1222–1224); štětinky octomilky (kap. 21, s. 1243–1244).
 - Collier J. R., Monk N. A. M., Maini P. K., Lewis J. H. Pattern formation by lateral inhibition with feedback: a mathematical model of Delta-Notch intercellular signalling. Journal of Theoretical Biology 183, 429–446 (1996).
@@ -1673,6 +1693,7 @@ Vítězná buňka umí tlumit i buňky, kterých se přímo nedotýká: natáhne
 
 URL: https://vetevnavetvi.cz/pages/hra-kohoutky.html  
 Větev: Hry (na motivy kapitoly Moře pod kůží)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých tepen. Ruměnec, běh a běh v horku.  
 English: Puzzle on blood flow distribution: set arteriole radii of five parallel organ beds behind a heart with limited output, where flow scales with radius to the fourth power; blushing, running, and running in the heat.
 
@@ -1688,7 +1709,7 @@ Průtok se rovná tlakovému rozdílu dělenému odporem, a odpor trubky klesá 
 
 Srdce ale není bezedné, a tak si orgány o krev konkurují a regulační smyčky si někdy jdou proti sobě. Když běžíš v horku, smyčka, která tě chladí, žene krev do kůže a nutí tě potit se, zatímco svaly chtějí krev pro sebe. Pocení navíc zmenšuje objem krve, který hlídá jiná smyčka, pro tělo důležitější. Víc je v kapitole [Moře pod kůží](https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html).
 
-#### Zdroje
+## Zdroje
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 17: Poiseuilleův zákon.
 - Hra je zjednodušený model. Tlak před orgány se ve hře drží stálý, dokud srdce stačí, klidové průtoky, strop srdce a minimální průtoky mozku a ledvin jsou zvolené pro názornost.
@@ -1699,6 +1720,7 @@ Srdce ale není bezedné, a tak si orgány o krev konkurují a regulační smyč
 
 URL: https://vetevnavetvi.cz/pages/hra-zdirka.html  
 Větev: Hry (na motivy kapitoly Lék je vlna)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, částečným agonistou se stropem a antagonistou, který odezní dřív než lék.  
 English: Pharmacodynamics game: drugs compete for receptors; keep the effect in range with a full agonist, a hundredfold more potent one, a partial agonist with a ceiling, and a short-acting antagonist against an overdose.
 
@@ -1716,7 +1738,7 @@ Antagonista lék z těla neodstraní, jen ho vytlačí z receptorů a místo obs
 
 Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na předávkování volej záchrannou službu.
 
-#### Zdroje
+## Zdroje
 
 - Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Receptory a částeční agonisté (kap. 1), model E_max (kap. 19).
 - Walsh S. L. a kol. Clinical pharmacology of buprenorphine: ceiling effects at high doses. Clinical Pharmacology & Therapeutics 55, 569–580 (1994).
@@ -1728,6 +1750,7 @@ Hra vysvětluje princip a nikomu neradí s dávkováním. Při podezření na p�
 
 URL: https://vetevnavetvi.cz/pages/hra-plny-sklad.html  
 Větev: Hry (na motivy kapitoly Jsi sloveso)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.  
 English: Game on feedback inhibition: choose which enzyme a full store should brake in a linear pathway, a branched pathway with sequential feedback, and opposing breakdown and synthesis routes controlled by AMP.
 
@@ -1747,7 +1770,7 @@ Rozklad a stavba stejné látky jezdí po různých silnicích s různými enzym
 
 Hra vysvětluje princip a čísla v ní jsou ilustrační.
 
-#### Zdroje
+## Zdroje
 
 - Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021.
 - Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011.
@@ -1759,6 +1782,7 @@ Hra vysvětluje princip a čísla v ní jsou ilustrační.
 
 URL: https://vetevnavetvi.cz/pages/hra-preskoky.html  
 Větev: Hry (na motivy kapitoly Jak se sůl naučila říkat já)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.  
 English: Puzzle on saltatory conduction: place nodes of Ranvier on a myelinated axon so the impulse reaches the end, discover the flat optimum of internode length, and restore conduction through a demyelinated lesion.
 
@@ -1778,7 +1802,7 @@ U roztroušené sklerózy imunitní systém poškozuje myelin v mozku a míše. 
 
 Hra vysvětluje princip a čísla v ní jsou ilustrační.
 
-#### Zdroje
+## Zdroje
 
 - Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 8 (Electrical Signaling in Neurons).
 - Wu L. M. N. a kol. Increasing internodal distance in myelinated nerves accelerates nerve conduction to a flat maximum. Current Biology 22, 1957–1961 (2012).
@@ -1791,6 +1815,7 @@ Hra vysvětluje princip a čísla v ní jsou ilustrační.
 
 URL: https://vetevnavetvi.cz/pages/hra-smycka.html  
 Větev: Hry (na motivy kapitoly Dopis pro všechny)  
+Autorka: Pája, vyšlo 2026-10-22, aktualizováno 2026-10-22  
 Shrnutí: Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.  
 English: Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary failure and excess tablets apart, then titrate levothyroxine and treat.
 
@@ -1810,7 +1835,7 @@ Smyčka se dá i oklamat tabletami: hypofýza nepozná, odkud T4 pochází, a v�
 
 Hra vysvětluje princip zpětné vazby a nikomu nestanovuje diagnózu ani léčbu.
 
-#### Zdroje
+## Zdroje
 
 - Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 49 (The Thyroid Gland): poločas T4, osa TRH–TSH a citlivost zpětné vazby, jód a struma (box 49-1), Gravesova choroba (box 49-4).
 - Persani L. a kol. 2018 European Thyroid Association (ETA) Guidelines on the Diagnosis and Management of Central Hypothyroidism. European Thyroid Journal 7, 225–237 (2018).

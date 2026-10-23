@@ -1,5 +1,8 @@
 # Větev na větvi – vyhledávače i jazykové modely jsou vítány.
+# Vyhledávání s AI (OAI-SearchBot pro ChatGPT, Claude-SearchBot, PerplexityBot) má přístup všude.
+# Pouštíme i roboty, kteří sbírají texty pro trénování modelů; zakázat se dají v tools/seo.py (BLOCK_TRAINING).
 User-agent: *
 Allow: /
 
 Sitemap: https://vetevnavetvi.cz/sitemap.xml
+Sitemap: https://vetevnavetvi.cz/feed.xml

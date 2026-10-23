@@ -7,10 +7,13 @@ Run from the repository root after adding or changing a page:
 
 What it does:
   * writes a managed block into the <head> of every page listed in PAGES: title, description,
-    canonical URL, robots, Open Graph and Twitter card, and JSON-LD structured data
+    canonical URL, robots, Open Graph and Twitter card, feed link, and JSON-LD structured data
     (WebSite, CollectionPage, Article + LearningResource with citations, FAQPage, BlogPosting,
-    BreadcrumbList). The block sits between the "seo:begin" and "seo:end" comments.
-  * writes sitemap.xml, robots.txt, llms.txt and llms-full.txt to the repository root.
+    BreadcrumbList, ProfilePage, VideoObject). The block sits between the "seo:begin" and "seo:end" comments.
+  * puts a visible byline with the publication and update dates under the title of every chapter,
+    game and blog post (the same dates as in the structured data), and links each chapter and
+    Wetware branch to its games.
+  * writes sitemap.xml, feed.xml (Atom), robots.txt, llms.txt and llms-full.txt to the repository root.
 
 Titles, descriptions and topics live in PAGES below. FAQs, sources and reading time are read
 from the page itself, dates from git history (commits whose message starts with "SEO:" are
@@ -37,6 +40,24 @@ DEFAULT_IMAGE = 'assets/og/vetev-na-vetvi.jpg'
 LOGO_IMAGE = 'assets/og/logo.png'
 THEME_COLOR = '#2F5D46'
 WPM = 200   # reading speed used for timeRequired
+FEED = 'feed.xml'   # Atom feed of chapters, games and blog posts
+# Other places that represent the site itself (structured data "sameAs").
+SITE_PROFILES = ['https://ko-fi.com/vetevnavetvi']
+
+# Verification codes for webmaster tools. Paste a code here and run the script: the tag appears in
+# the <head> of the home page. Google can also be verified through DNS (Search Console, domain
+# property), Bing can import a site from Google Search Console; Seznam needs the tag or a file.
+VERIFY = {
+    'google-site-verification': '',   # Google Search Console
+    'msvalidate.01': '',              # Bing Webmaster Tools
+    'seznam-wmt': '',                 # Seznam Webmaster
+}
+
+# Robots that collect text to train language models. Blocking them does not change search results,
+# not even AI search: OAI-SearchBot (ChatGPT search), Claude-SearchBot and PerplexityBot stay allowed.
+# Google-Extended also covers grounding in Gemini, so blocking it hides the site from Gemini answers.
+TRAINING_BOTS = ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'CCBot', 'meta-externalagent']
+BLOCK_TRAINING = False   # True = the texts may not be used for training
 
 # kind: home | hub | branch | chapter | blog | post | games | game | about | stub | 404
 PAGES = {
@@ -521,7 +542,8 @@ class _Md(HTMLParser):
 
 def markdown_of(page_path, page_html):
     body = page_html[page_html.find('<body'):]
-    body = re.sub(re.escape(FB_BEGIN) + r'.*?' + re.escape(FB_END), ' ', body, flags=re.S)
+    for begin, end in ((FB_BEGIN, FB_END), (DL_BEGIN, DL_END), (HRY_BEGIN, HRY_END)):   # generated blocks
+        body = re.sub(re.escape(begin) + r'.*?' + re.escape(end), ' ', body, flags=re.S)
     body = re.sub(r'<(script|style|svg|canvas|nav|button|select|template|noscript)\b.*?</\1>', ' ', body, flags=re.S | re.I)
     body = re.sub(r'<(header|footer)\b.*?</\1>', ' ', body, flags=re.S | re.I)
     body = re.sub(r'<label\b.*?</label>|<input\b[^>]*>', ' ', body, flags=re.S | re.I)
@@ -563,7 +585,8 @@ def markdown_of(page_path, page_html):
 
 # ------------------------------------------------------------------ JSON-LD
 ORG = {'@type': 'Organization', '@id': SITE_URL + '#org', 'name': SITE_NAME, 'url': SITE_URL,
-       'logo': {'@type': 'ImageObject', 'url': SITE_URL + LOGO_IMAGE, 'width': 512, 'height': 512}}
+       'logo': {'@type': 'ImageObject', 'url': SITE_URL + LOGO_IMAGE, 'width': 512, 'height': 512},
+       'sameAs': SITE_PROFILES}
 PERSON_ID = SITE_URL + 'pages/o-mne.html#person'
 PERSON = {'@type': 'Person', '@id': PERSON_ID, 'name': AUTHOR['name'], 'url': SITE_URL + 'pages/o-mne.html',
           'jobTitle': AUTHOR['job'], 'knowsAbout': AUTHOR['knows'],
@@ -692,8 +715,10 @@ def graph_of(path, page_html, dates):
     if kind == 'contact':
         page['@type'] = 'ContactPage'
     if kind == 'about':
-        page['@type'] = 'AboutPage'
+        # an "About me" page of a blog is what Google's ProfilePage markup is for
+        page['@type'] = ['AboutPage', 'ProfilePage']
         page['mainEntity'] = {'@id': PERSON_ID}
+        page['dateCreated'], page['dateModified'] = dates
         nodes.append(PERSON)
     video = meta.get('video')
     if video:
@@ -701,7 +726,7 @@ def graph_of(path, page_html, dates):
                       'description': video['desc'], 'thumbnailUrl': SITE_URL + video['poster'],
                       'contentUrl': SITE_URL + video['file'], 'uploadDate': video['date'],
                       'duration': video['duration'], 'width': video['width'], 'height': video['height'],
-                      'inLanguage': 'cs', 'publisher': {'@id': SITE_URL + '#org'}})
+                      'inLanguage': 'cs', 'creator': {'@id': PERSON_ID}, 'publisher': {'@id': SITE_URL + '#org'}})
         page['video'] = {'@id': url + '#video'}
     nodes.insert(2, page)
     return {'@context': 'https://schema.org', '@graph': nodes}
@@ -725,6 +750,10 @@ def head_block(path, page_html, dates):
         lines.append(f'<meta name="author" content="{esc(AUTHOR["name"])}">')
     if kind != '404':
         lines.append(f'<link rel="canonical" href="{esc(url)}">')
+        lines.append(f'<link rel="alternate" type="application/atom+xml" title="{SITE_NAME} – nové kapitoly, hry a články" '
+                     f'href="{SITE_URL}{FEED}">')
+    if path == 'index.html':
+        lines += [f'<meta name="{name}" content="{esc(code)}">' for name, code in VERIFY.items() if code]
     lines += [f'<meta name="theme-color" content="{THEME_COLOR}">',
               f'<meta property="og:site_name" content="{SITE_NAME}">',
               '<meta property="og:locale" content="cs_CZ">',
@@ -751,12 +780,11 @@ def head_block(path, page_html, dates):
     return '\n'.join(lines)
 
 
-def apply(path):
+def apply(path, dates):
     f = ROOT / path
     s = f.read_text(encoding='utf-8')
     s = re.sub(re.escape(BEGIN) + r'.*?' + re.escape(END) + r'\n?', '', s, flags=re.S)
     s = re.sub(r'<meta name="description"[^>]*>\n?', '', s)
-    dates = git_dates(path)
     title = html.escape(PAGES[path]['title'], quote=False)
     s, n = re.subn(r'<title>.*?</title>', f'<title>{title}</title>', s, count=1, flags=re.S)
     if not n:
@@ -765,6 +793,112 @@ def apply(path):
     s = s[:i] + '\n' + head_block(path, s, dates) + s[i:]
     f.write_text(s, encoding='utf-8')
     return dates
+
+
+# ------------------------------------------------------------------ byline and dates
+# Under the title of every chapter, game and blog post: who wrote it, when it came out and when it
+# was last updated. Google asks for a visible, labelled date that matches the structured data, so
+# the line is built from the same git dates as datePublished and dateModified.
+DL_BEGIN, DL_END = '<!-- datum:begin – generuje tools/seo.py -->', '<!-- datum:end -->'
+
+
+def cz_date(iso):
+    y, m, d = iso[:10].split('-')
+    return f'{int(d)}.&nbsp;{int(m)}.&nbsp;{y}'
+
+
+def published_of(path, dates):
+    return PAGES[path].get('date') or dates[0]
+
+
+def dateline(path, dates):
+    pub, mod = published_of(path, dates)[:10], dates[1][:10]
+    parts = [f'<a href="o-mne.html" rel="author">{AUTHOR["name"]}</a>',
+             f'<span class="dl">vyšlo <time datetime="{pub}">{cz_date(pub)}</time></span>']
+    if mod > pub:
+        parts.append(f'<span class="dl">aktualizováno <time datetime="{mod}">{cz_date(mod)}</time></span>')
+    return f'{DL_BEGIN}<p class="dateline">' + ' <span aria-hidden="true">·</span> '.join(parts) + f'</p>{DL_END}'
+
+
+def apply_dateline(path, dates):
+    f = ROOT / path
+    s = f.read_text(encoding='utf-8')
+    s = re.sub(r'\n[ \t]*' + re.escape(DL_BEGIN) + r'.*?' + re.escape(DL_END), '', s, flags=re.S)
+    head = re.search(r'<header\b[^>]*>.*?</header>', s, re.S)
+    anchor = None
+    if head:   # after the byline or meta line if the header has one, otherwise after the deck under the title
+        for pattern in (r'<p class="(?:byline|meta)"[^>]*>.*?</p>', r'<p class="(?:deck|dek|subtitle)"[^>]*>.*?</p>'):
+            found = list(re.finditer(pattern, head.group(0), re.S))
+            if found:
+                anchor = found[-1]
+                break
+    if not anchor:
+        print(f'Pozor, {path}: nenašel jsem pod titulkem místo pro datum.', file=sys.stderr)
+        return
+    start, end = head.start() + anchor.start(), head.start() + anchor.end()
+    indent = re.match(r'[ \t]*', s[s.rfind('\n', 0, start) + 1:]).group(0)
+    f.write_text(s[:end] + '\n' + indent + dateline(path, dates) + s[end:], encoding='utf-8')
+
+
+# ------------------------------------------------------------------ games for chapters and branches
+# Each chapter ends with links to its two games and each Wetware branch page lists them too, so
+# readers (and crawlers) get from the text to the games and back. Rewritten on every run.
+HRY_BEGIN, HRY_END = '<!-- hry:begin – generuje tools/seo.py -->', '<!-- hry:end -->'
+
+
+def games_of(chapter):
+    order = re.findall(r'data-game="(hra-[a-z0-9-]+)"', (ROOT / 'pages' / 'hry.html').read_text(encoding='utf-8'))
+    games = [p for p, m in PAGES.items() if m['kind'] == 'game' and m['chapter'] == chapter]
+    return sorted(games, key=lambda p: order.index(Path(p).stem) if Path(p).stem in order else len(order))
+
+
+def teaser_of(game):
+    """The game's own genre and pitch, taken from the header of its page."""
+    head = re.search(r'<header class="hero">(.*?)</header>', (ROOT / game).read_text(encoding='utf-8'), re.S)
+    head = head.group(1) if head else ''
+    genre = re.search(r'<span class="n">(.*?)</span>', head, re.S)
+    deck = re.search(r'<p class="deck">(.*?)</p>', head, re.S)
+    return (genre.group(1).strip() if genre else ''), (deck.group(1).strip() if deck else html.escape(PAGES[game]['desc']))
+
+
+def games_block(chapter):
+    items = []
+    for g in games_of(chapter):
+        genre, deck = teaser_of(g)
+        items.append(f'<li><a href="{Path(g).name}">{html.escape(PAGES[g]["name"])}</a> <span class="druh">{genre}</span>'
+                     f'<span class="co">{deck}</span></li>')
+    return (f'{HRY_BEGIN}\n<aside class="hry-blok" aria-labelledby="zahraj-si">\n<h2 id="zahraj-si">Zahraj si</h2>\n'
+            '<ul>\n' + '\n'.join(items) + f'\n</ul>\n</aside>\n{HRY_END}\n')
+
+
+def apply_games_block(path):
+    f = ROOT / path
+    s = f.read_text(encoding='utf-8')
+    s = re.sub(re.escape(HRY_BEGIN) + r'.*?' + re.escape(HRY_END) + r'\n\n?', '', s, flags=re.S)
+    m = (re.search(r'^[ \t]*' + re.escape(FB_BEGIN), s, re.M)
+         or re.search(r'^[ \t]*<(section|div) class="sources"', s, re.M))
+    if not games_of(path) or not m:
+        if games_of(path):
+            print(f'Pozor, {path}: nenašel jsem, kam dát odkazy na hry.', file=sys.stderr)
+        f.write_text(s, encoding='utf-8')
+        return
+    f.write_text(s[:m.start()] + games_block(path) + '\n' + s[m.start():], encoding='utf-8')
+
+
+def apply_branch_games(path):
+    f = ROOT / path
+    s = f.read_text(encoding='utf-8')
+    s = re.sub(r'^[ \t]*' + re.escape(HRY_BEGIN) + r'.*?' + re.escape(HRY_END) + r'\n', '', s, flags=re.S | re.M)
+    games = [g for c, m in PAGES.items() if m['kind'] == 'chapter' and m['branch'] == path for g in games_of(c)]
+    read = re.search(r'^([ \t]*)<a class="read"[^>]*>.*?</a>\n', s, re.S | re.M)
+    if games and read:
+        links = ' <span aria-hidden="true">·</span> '.join(f'<a href="{Path(g).name}">{html.escape(PAGES[g]["name"])}</a>'
+                                                          for g in games)
+        block = f'{read.group(1)}{HRY_BEGIN}<p class="hry-odkazy">Zahraj si: {links}</p>{HRY_END}\n'
+        s = s[:read.end()] + block + s[read.end():]
+    elif games:
+        print(f'Pozor, {path}: nenašel jsem odkaz na kapitolu, za který patří hry.', file=sys.stderr)
+    f.write_text(s, encoding='utf-8')
 
 
 # ------------------------------------------------------------------ feedback links
@@ -876,10 +1010,16 @@ def write_site_files(all_dates):
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + '\n'.join(urls) + '\n</urlset>\n', encoding='utf-8')
-    (ROOT / 'robots.txt').write_text(
-        '# Větev na větvi – vyhledávače i jazykové modely jsou vítány.\n'
-        'User-agent: *\nAllow: /\n\n'
-        f'Sitemap: {SITE_URL}sitemap.xml\n', encoding='utf-8')
+    robots = ['# Větev na větvi – vyhledávače i jazykové modely jsou vítány.',
+              '# Vyhledávání s AI (OAI-SearchBot pro ChatGPT, Claude-SearchBot, PerplexityBot) má přístup všude.']
+    if BLOCK_TRAINING:
+        robots += ['# Roboti, kteří sbírají texty pro trénování jazykových modelů, sem nesmí (BLOCK_TRAINING v tools/seo.py).',
+                   *[f'User-agent: {bot}' for bot in TRAINING_BOTS], 'Disallow: /', '']
+    else:
+        robots += ['# Pouštíme i roboty, kteří sbírají texty pro trénování modelů; zakázat se dají v tools/seo.py (BLOCK_TRAINING).']
+    robots += ['User-agent: *', 'Allow: /', '', f'Sitemap: {SITE_URL}sitemap.xml', f'Sitemap: {SITE_URL}{FEED}', '']
+    (ROOT / 'robots.txt').write_text('\n'.join(robots), encoding='utf-8')
+    write_feed(all_dates)
 
     chapters = [p for p, m in PAGES.items() if m['kind'] == 'chapter']
     posts = [p for p, m in PAGES.items() if m['kind'] == 'post']
@@ -913,7 +1053,8 @@ def write_site_files(all_dates):
               f'- [Hry]({url_of("pages/hry.html")}): minihry na motivy kapitol',
               f'- [Zpětná vazba]({url_of("pages/zpetna-vazba.html")}): formulář pro opravy a nápady a seznam oprav', '',
               '## Optional', '',
-              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu', '']
+              f'- [Plné texty]({SITE_URL}llms-full.txt): všechny kapitoly, články a popisy her jako prostý text v Markdownu',
+              f'- [Novinky]({SITE_URL}{FEED}): kanál Atom s kapitolami, hrami a články a daty jejich vydání a úprav', '']
     (ROOT / 'llms.txt').write_text('\n'.join(lines), encoding='utf-8')
 
     full = [f'# {SITE_NAME} – plné texty', '', f'> {SITE_DESC}', '',
@@ -925,9 +1066,39 @@ def write_site_files(all_dates):
         md = re.sub(r'^# .*\n', '', md)   # the title comes from the header below
         section = {'chapter': lambda: PAGES[m['branch']]['name'], 'post': lambda: 'Blog',
                    'game': lambda: 'Hry (na motivy kapitoly ' + PAGES[m['chapter']]['name'] + ')'}[m['kind']]()
+        pub, mod = published_of(p, all_dates[p])[:10], all_dates[p][1][:10]
         full += ['', '---', '', f'# {m["name"]}', '', f'URL: {url_of(p)}  ', f'Větev: {section}  ',
+                 f'Autorka: {AUTHOR["name"]}, vyšlo {pub}, aktualizováno {mod}  ',
                  f'Shrnutí: {m["desc"]}  ', f'English: {m["en"]}', '', md.strip(), '']
     (ROOT / 'llms-full.txt').write_text(re.sub(r'\n{3,}', '\n\n', '\n'.join(full)).strip() + '\n', encoding='utf-8')
+
+
+def write_feed(all_dates):
+    """Atom feed of chapters, games and blog posts, newest change first. Feed readers use it, and
+    Google and Bing accept it as a second sitemap that lists what changed recently."""
+    x = lambda t: html.escape(t, quote=True)
+    entries = [p for p, m in PAGES.items() if m['kind'] in ('chapter', 'post', 'game')]
+    entries.sort(key=lambda p: (all_dates[p][1], p), reverse=True)
+
+    def stamp(value, fallback):   # Atom wants full timestamps; a date alone gets the time of the first commit
+        return value if 'T' in value else value + fallback[10:]
+
+    out = ['<?xml version="1.0" encoding="utf-8"?>', '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="cs">',
+           f'  <title>{x(SITE_NAME)}</title>', f'  <subtitle>{x(SITE_DESC)}</subtitle>',
+           f'  <link rel="self" type="application/atom+xml" href="{SITE_URL}{FEED}"/>',
+           f'  <link rel="alternate" type="text/html" href="{SITE_URL}"/>',
+           f'  <id>{SITE_URL}</id>', f'  <updated>{max(all_dates[p][1] for p in entries)}</updated>',
+           f'  <author><name>{x(AUTHOR["name"])}</name><uri>{SITE_URL}pages/o-mne.html</uri></author>',
+           f'  <icon>{SITE_URL}{LOGO_IMAGE}</icon>']
+    for p in entries:
+        m, (first, last) = PAGES[p], all_dates[p]
+        section = {'chapter': lambda: PAGES[m['branch']]['name'], 'post': lambda: 'Blog', 'game': lambda: 'Hry'}[m['kind']]()
+        out += ['  <entry>', f'    <title>{x(m["name"])}</title>',
+                f'    <link rel="alternate" type="text/html" href="{x(url_of(p))}"/>', f'    <id>{x(url_of(p))}</id>',
+                f'    <published>{stamp(published_of(p, all_dates[p]), first)}</published>', f'    <updated>{last}</updated>',
+                f'    <category term="{x(section)}"/>', f'    <summary>{x(m["desc"])}</summary>', '  </entry>']
+    out.append('</feed>')
+    (ROOT / FEED).write_text('\n'.join(out) + '\n', encoding='utf-8')
 
 
 def main():
@@ -935,17 +1106,22 @@ def main():
                      - set(PAGES))
     if missing:
         print('Pozor, tyto stránky nejsou v PAGES a zůstaly beze změny:', ', '.join(missing), file=sys.stderr)
+    all_dates = {path: git_dates(path) for path in PAGES}
     for path, meta in PAGES.items():
         if meta['kind'] in ('chapter', 'game', 'post'):
             apply_feedback_line(path)
+            apply_dateline(path, all_dates[path])
+        if meta['kind'] == 'chapter':
+            apply_games_block(path)
+        if meta['kind'] == 'branch':
+            apply_branch_games(path)
     apply_page_options()
     for path in PAGES:
         apply_kafe(path)
-    all_dates = {}
     for path in PAGES:
-        all_dates[path] = apply(path)
+        apply(path, all_dates[path])
     write_site_files(all_dates)
-    print(f'{len(PAGES)} stránek, sitemap.xml, robots.txt, llms.txt a llms-full.txt hotové.')
+    print(f'{len(PAGES)} stránek, sitemap.xml, {FEED}, robots.txt, llms.txt a llms-full.txt hotové.')
 
 
 if __name__ == '__main__':
