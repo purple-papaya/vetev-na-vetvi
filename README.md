@@ -28,6 +28,8 @@ assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
                             vykreslované přes <use> místo kopírování SVG na každou stránku
   og/                      náhledové obrázky pro sdílení (1200×630, jeden na kapitolu, článek a hru) a logo
+  video/                   úvodní video webu (20 s, 1920×1080, bez zvuku) na stránce O mně: MP4 (H.264),
+                            záložní WebM (VP9) pro prohlížeče bez H.264 a náhledový obrázek
 tools/
   seo.py                   metadata pro vyhledávače a jazykové modely (viz níž)
 sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
@@ -44,7 +46,7 @@ pages/
   wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
   blog.html                Blog — rozcestník kratších textů mezi kapitolami
   blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
-  o-mne.html               O mně — kdo web píše a jak kapitoly vznikají
+  o-mne.html               O mně — kdo web píše, jak kapitoly vznikají a úvodní video
   hry.html                 Hry — rozcestník miniher podle větví Wetware
   hra-*.html               16 miniher, dvě na každou větev (každá na motivy jedné první kapitoly)
   zpetna-vazba.html        Zpětná vazba — formulář, seznam oprav a co se se zprávou stane (viz níž)

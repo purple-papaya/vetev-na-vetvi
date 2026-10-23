@@ -69,6 +69,9 @@
    },
    "mainEntity": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "video": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#video"
    }
   },
   {
@@ -106,6 +109,22 @@
     "@type": "PostalAddress",
     "addressLocality": "Brno",
     "addressCountry": "CZ"
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#video",
+   "name": "Větev na větvi za dvacet vteřin",
+   "description": "Úvodní video bez zvuku: terénní zápisník o tom, jak živé věci fungují, osm větví Wetware a tři hry v akci – Přeskoky, Plný sklad a Vana bez zátky.",
+   "thumbnailUrl": "https://vetevnavetvi.cz/assets/video/vetev-na-vetvi-intro.jpg",
+   "contentUrl": "https://vetevnavetvi.cz/assets/video/vetev-na-vetvi-intro.mp4",
+   "uploadDate": "2026-10-23",
+   "duration": "PT20S",
+   "width": 1920,
+   "height": 1080,
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
    }
   }
  ]
@@ -178,8 +197,20 @@
 <section class="prose">
   <h2>Co tu <em>najdeš</em></h2>
 
-  <p><a href="wetware.html">Wetware</a> je ilustrovaný terénní průvodce biologií těla v&nbsp;osmi větvích: biochemie, neurobiologie, fyziologie, farmakologie, molekulární biologie, imunologie, vývojová biologie a&nbsp;endokrinologie. Každá větev má zatím první kapitolu. <a href="blog.html">Blog</a> přináší kratší texty mezi kapitolami. Příběhy a&nbsp;Hry zatím rostou.</p>
+  <p><a href="wetware.html">Wetware</a> je ilustrovaný terénní průvodce biologií těla v&nbsp;osmi větvích: biochemie, neurobiologie, fyziologie, farmakologie, molekulární biologie, imunologie, vývojová biologie a&nbsp;endokrinologie. Každá větev má zatím první kapitolu. Na motivy kapitol vzniklo šestnáct <a href="hry.html">her a&nbsp;hlavolamů</a>, dva na každou větev. <a href="blog.html">Blog</a> přináší kratší texty mezi kapitolami. Příběhy zatím rostou.</p>
 </section>
+
+<figure class="video">
+  <div class="video-frame">
+    <video controls preload="none" playsinline width="1920" height="1080" poster="../assets/video/vetev-na-vetvi-intro.jpg" aria-describedby="video-popis">
+      <source src="../assets/video/vetev-na-vetvi-intro.mp4" type="video/mp4">
+      <source src="../assets/video/vetev-na-vetvi-intro.webm" type="video/webm">
+      <a href="../assets/video/vetev-na-vetvi-intro.mp4">Stáhnout video (MP4, 2,7 MB)</a>
+    </video>
+    <button class="video-play" type="button" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.8v10.4L13 8z" fill="currentColor"/></svg>Přehrát <span class="len">20&nbsp;s</span></button>
+  </div>
+  <figcaption id="video-popis"><b>Větev na větvi za dvacet vteřin.</b> Video bez zvuku: úvodní stránka, osm větví Wetware a&nbsp;tři hry v&nbsp;akci – Přeskoky, Plný sklad a&nbsp;Vana bez zátky.</figcaption>
+</figure>
 
 <section class="prose">
   <h2>Jak se <em>ozvat</em></h2>
@@ -366,7 +397,22 @@
     return sim;
   }
 
-
+  /* ---------- intro video: a play pill on the poster, the browser's own controls once it plays ----------
+     Without JavaScript the video keeps its native controls and the pill stays hidden. */
+  var vf = document.querySelector('figure.video');
+  var vid = vf && vf.querySelector('video'), vplay = vf && vf.querySelector('.video-play');
+  if(vid && vplay){
+    vid.removeAttribute('controls');
+    vplay.hidden = false;
+    var started = function(){ vplay.hidden = true; vid.setAttribute('controls', ''); };
+    vplay.addEventListener('click', function(){
+      started();
+      var p = vid.play();
+      if(p && p.catch) p.catch(function(){});
+      vid.focus({preventScroll: true});
+    });
+    vid.addEventListener('play', started);
+  }
 })();
 </script>
 </body>
