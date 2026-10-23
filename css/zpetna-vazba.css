@@ -1,0 +1,57 @@
+/* Zpětná vazba — the feedback form, the corrections log and the privacy note.
+   Builds on base.css, home.css (topbar, kicker, footer) and wetware.css (page-head). */
+
+.fv-grid{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
+.loop svg{width:100%;height:auto;display:block;}
+@media (max-width:760px){
+  .fv-grid{grid-template-columns:minmax(0,1fr);}
+  .loop{order:-1;max-width:220px;}
+}
+
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:14px;padding:clamp(1.1rem,3vw,1.6rem);}
+.card fieldset{border:0;margin:0 0 1.25rem;padding:0;min-width:0;}
+.card legend,.card .lab{font-family:"Fira Code",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--terra-deep);margin:0 0 .6rem;padding:0;display:block;}
+.card .lab .opt{text-transform:none;letter-spacing:0;}
+
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;}
+.chip{position:relative;display:inline-block;}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;}
+.chip span{display:inline-block;font-family:Inter,system-ui,sans-serif;font-size:.9rem;padding:.42rem .8rem;
+  border:1px solid var(--rule);border-radius:999px;background:var(--paper-2);color:var(--ink-soft);cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;}
+.chip:hover span{border-color:var(--sage);}
+.chip input:checked + span{background:var(--forest);border-color:var(--forest);color:var(--paper);}
+.chip input:focus-visible + span{outline:2px solid var(--terra);outline-offset:2px;}
+
+.field{margin:0 0 1.15rem;}
+.field[hidden]{display:none;}
+.card select,.card textarea,.card input[type=text],.card input[type=email]{width:100%;font-family:Inter,system-ui,sans-serif;
+  font-size:.98rem;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:10px;padding:.65rem .75rem;}
+.card select:focus-visible,.card textarea:focus-visible,.card input:focus-visible{outline:2px solid var(--terra);outline-offset:1px;border-color:var(--terra);}
+.card textarea{min-height:8.5rem;resize:vertical;line-height:1.5;}
+.hint{font-size:.85rem;color:var(--ink-soft);margin:.35rem 0 0;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 .9rem;}
+@media (max-width:560px){ .two{grid-template-columns:1fr;} }
+.hp{position:absolute !important;left:-9999px;width:1px;height:1px;overflow:hidden;}
+
+.send{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:.4rem;}
+.btn{font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:.95rem;background:var(--terra);color:#fff;border:0;
+  border-radius:10px;padding:.75rem 1.3rem;cursor:pointer;transition:background .15s;}
+.btn:hover{background:var(--terra-deep);}
+.btn:disabled{opacity:.6;cursor:default;}
+.send p{margin:0;font-size:.85rem;color:var(--ink-soft);max-width:30rem;}
+.status-msg{margin:1rem 0 0;padding:.75rem .9rem;border-radius:10px;font-size:.95rem;line-height:1.5;}
+.status-msg[hidden]{display:none;}
+.status-msg.ok{background:rgba(94,133,112,.12);border:1px solid rgba(94,133,112,.45);color:var(--forest-deep);}
+.status-msg.bad{background:rgba(191,106,63,.10);border:1px solid rgba(191,106,63,.45);color:var(--terra-deep);}
+
+h2.sec{font-family:Merriweather,Georgia,serif;font-weight:700;font-size:1.35rem;margin:clamp(2.4rem,6vw,3.4rem) 0 .9rem;color:var(--ink);}
+.log{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);}
+.log li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:.3rem 1rem;padding:.75rem 0;border-bottom:1px solid var(--rule-soft);}
+@media (max-width:560px){ .log li{grid-template-columns:1fr;} }
+.log time{font-family:"Fira Code",monospace;font-size:.8rem;color:var(--sage);padding-top:.15rem;}
+.log p{margin:0;color:var(--ink-soft);font-size:.96rem;}
+.log b{color:var(--forest-deep);font-weight:600;}
+.priv{color:var(--ink-soft);font-size:.98rem;line-height:1.65;max-width:44rem;padding-left:1.2rem;}
+.priv li{margin:.3rem 0;}
