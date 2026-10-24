@@ -5,9 +5,27 @@
   <link rel="self" type="application/atom+xml" href="https://vetevnavetvi.cz/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/"/>
   <id>https://vetevnavetvi.cz/</id>
-  <updated>2026-10-24T15:36:40+00:00</updated>
+  <updated>2026-10-24T15:56:57+00:00</updated>
   <author><name>Pája</name><uri>https://vetevnavetvi.cz/pages/o-mne.html</uri></author>
   <icon>https://vetevnavetvi.cz/assets/og/logo.png</icon>
+  <entry>
+    <title>Podání ruky zblízka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html</id>
+    <published>2026-10-24T15:36:26+00:00</published>
+    <updated>2026-10-24T15:56:57+00:00</updated>
+    <category term="Farmakologie"/>
+    <summary>Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>První rameno schodiště</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html</id>
+    <published>2026-10-24T15:36:26+00:00</published>
+    <updated>2026-10-24T15:56:57+00:00</updated>
+    <category term="Biochemie"/>
+    <summary>Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.</summary>
+  </entry>
   <entry>
     <title>Jak se sůl naučila říkat já</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"/>
@@ -27,15 +45,6 @@
     <summary>Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a do synapsí se zapisuje učení. Se čtyřmi simulacemi.</summary>
   </entry>
   <entry>
-    <title>Podání ruky zblízka</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html</id>
-    <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-24T15:36:26+00:00</updated>
-    <category term="Farmakologie"/>
-    <summary>Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
     <title>Lék je vlna</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html</id>
@@ -52,15 +61,6 @@
     <updated>2026-10-24T15:36:26+00:00</updated>
     <category term="Biochemie"/>
     <summary>Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>První rameno schodiště</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html</id>
-    <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-24T15:36:26+00:00</updated>
-    <category term="Biochemie"/>
-    <summary>Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.</summary>
   </entry>
   <entry>
     <title>Zdířka</title>
