@@ -39,6 +39,8 @@ sitemap.xml, robots.txt  mapa webu a pravidla pro roboty (generuje tools/seo.py)
 feed.xml                 kanál Atom s kapitolami, hrami a články (generuje tools/seo.py)
 llms.txt, llms-full.txt  přehled a plné texty pro jazykové modely (generuje tools/seo.py)
 b4ec072007d36d5db2a78fad120b85fb.txt            klíč pro IndexNow (název souboru = obsah); nemazat
+seznam-wmt-Xjx7VmUPWoinYZqY4N3iizOrw5e6D8TY.txt   ověření webu v Seznam Webmasteru; Seznam ho občas
+                                                kontroluje znovu, takže nemazat
 pages/
   wetware.html             Wetware hub — rozcestník všech podvětví a jejich kapitol
   wetware-ch1-jsi-sloveso.html          Biochemie · Kapitola první — Jsi sloveso (hotová kapitola)
