@@ -77,7 +77,7 @@ PAGES = {
     'pages/wetware-neurobiologie.html': dict(
         kind='branch', name='Neurobiologie', title='Neurobiologie – Wetware | Větev na větvi',
         desc='Nervy, signály a to, jak se z 86 miliard neuronů vynoří já. Kapitoly o akčním potenciálu a o chemické '
-             'synapsi, do které se zapisuje učení.'),
+             'synapsi, která si pamatuje, co přes ni prošlo.'),
     'pages/wetware-fyziologie.html': dict(
         kind='branch', name='Fyziologie', title='Fyziologie – Wetware | Větev na větvi',
         desc='Jak spolu orgány a soustavy spolupracují. První kapitola Moře pod kůží: zpětná vazba, spády a pumpy, '
@@ -134,7 +134,7 @@ PAGES = {
         kind='chapter', branch='pages/wetware-neurobiologie.html', name='Dole v mezeře',
         title='Dole v mezeře: chemická synapse zblízka | Větev na větvi',
         desc='Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč '
-             'chodí po kvantech a do synapsí se zapisuje učení. Se čtyřmi simulacemi.',
+             'chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.',
         about=['synapse', 'nervosvalová ploténka', 'acetylcholin', 'kvantové uvolňování', 'synaptická plasticita',
                'dlouhodobá potenciace', 'receptor NMDA'],
         en='The chemical synapse, following From Neuron to Brain: the end plate, reversal potential and excitation '
