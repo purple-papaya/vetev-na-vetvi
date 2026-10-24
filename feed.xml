@@ -5,9 +5,63 @@
   <link rel="self" type="application/atom+xml" href="https://vetevnavetvi.cz/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/"/>
   <id>https://vetevnavetvi.cz/</id>
-  <updated>2026-10-22T08:59:19+00:00</updated>
+  <updated>2026-10-24T15:36:40+00:00</updated>
   <author><name>Pája</name><uri>https://vetevnavetvi.cz/pages/o-mne.html</uri></author>
   <icon>https://vetevnavetvi.cz/assets/og/logo.png</icon>
+  <entry>
+    <title>Jak se sůl naučila říkat já</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-24T15:36:40+00:00</updated>
+    <category term="Neurobiologie"/>
+    <summary>Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Dole v mezeře</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html</id>
+    <published>2026-10-24T15:36:26+00:00</published>
+    <updated>2026-10-24T15:36:26+00:00</updated>
+    <category term="Neurobiologie"/>
+    <summary>Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a do synapsí se zapisuje učení. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Podání ruky zblízka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html</id>
+    <published>2026-10-24T15:36:26+00:00</published>
+    <updated>2026-10-24T15:36:26+00:00</updated>
+    <category term="Farmakologie"/>
+    <summary>Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Lék je vlna</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-24T15:36:26+00:00</updated>
+    <category term="Farmakologie"/>
+    <summary>Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Jsi sloveso</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-24T15:36:26+00:00</updated>
+    <category term="Biochemie"/>
+    <summary>Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>První rameno schodiště</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html</id>
+    <published>2026-10-24T15:36:26+00:00</published>
+    <updated>2026-10-24T15:36:26+00:00</updated>
+    <category term="Biochemie"/>
+    <summary>Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.</summary>
+  </entry>
   <entry>
     <title>Zdířka</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-zdirka.html"/>
@@ -171,15 +225,6 @@
     <summary>Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.</summary>
   </entry>
   <entry>
-    <title>Jak se sůl naučila říkat já</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Neurobiologie"/>
-    <summary>Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.</summary>
-  </entry>
-  <entry>
     <title>Čtení bez čtenáře</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html</id>
@@ -214,23 +259,5 @@
     <updated>2026-10-21T11:00:09+00:00</updated>
     <category term="Endokrinologie"/>
     <summary>Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Lék je vlna</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-21T05:38:04+00:00</updated>
-    <category term="Farmakologie"/>
-    <summary>Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Jsi sloveso</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-17T11:42:27+00:00</updated>
-    <category term="Biochemie"/>
-    <summary>Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.</summary>
   </entry>
 </feed>
