@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Dole v mezeře: chemická synapse zblízka | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html">
+<link rel="alternate" type="application/atom+xml" title="Větev na větvi – nové kapitoly, hry a články" href="https://vetevnavetvi.cz/feed.xml">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dole v mezeře">
+<meta property="og:description" content="Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/wetware-neurobiologie-ch2-dole-v-mezere.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Dole v mezeře – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-10-24T15:36:26+00:00">
+<meta property="article:modified_time" content="2026-10-24T16:15:45+00:00">
+<meta property="article:section" content="Neurobiologie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://ko-fi.com/vetevnavetvi"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html",
+   "name": "Dole v mezeře: chemická synapse zblízka | Větev na větvi",
+   "description": "Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-neurobiologie-ch2-dole-v-mezere.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Je dopamin hormon štěstí?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne, i když se tak často píše. Dopaminové neurony ve středním mozku hlásí hlavně rozdíl mezi tím, co přišlo, a tím, co se čekalo. Když odměna přijde větší, než se čekalo, vypálí víc. Když přijde přesně podle očekávání, nezmění se. Když je menší, jejich aktivita poklesne. Dopamin tedy slouží spíš k učení a motivaci, k tomu, co stojí za to hledat, než k samotnému potěšení. Výzkum systémů potěšení v mozku dokonce naznačuje, že mezolimbický dopaminový systém, dlouho učebnicový kandidát, potěšení sám nevytváří."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč antidepresiva SSRI zabírají až po týdnech?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Přesně se to neví. Samotný mechanismus je rychlý: léky jako fluoxetin zablokují serotoninový transportér, bílkovinu, která serotonin vrací ze štěrbiny zpátky do zakončení, a serotonin tak ve štěrbině vydrží déle. To se stane během hodin, zlepšení nálady ale přichází za dny až týdny. Jedno vysvětlení je, že nejdřív musí znecitlivět receptory, kterými si serotoninové neurony samy brzdí výdej. Druhé, že léky postupně mění plasticitu mozku, tedy právě to, jak se synapse přestavují. Text vysvětluje, jak léky působí, a nikomu neradí s léčbou."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mění se mozek fyzicky, když se učím?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ano. Při dlouhodobé potenciaci přibývají v synapsích receptory, trny dendritů se zvětšují a nové trny vyrůstají. U myší, které se učily novou pohybovou dovednost, se pod mikroskopem objevily nové trny během hodin a část z nich vydržela měsíce. Paměť tedy nejspíš není uložená v jednom místě jako soubor na disku, ale v tom, jak silná jsou spojení mezi buňkami."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Jak funguje botox?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Botox je velmi zředěný botulotoxin typu A. Ten rozstříhá bílkovinu SNAP-25, bez které se váčky s acetylcholinem nemůžou vylít, a sval, do kterého se vpíchne, ochabne. Na obličeji tak vyhladí vrásky a v lékařství se jím léčí svalové křeče nebo šilhání. Účinek trvá tři až šest měsíců, dokud zakončení nervu nevyraší nové výběžky a sval znovu nenapojí."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Co je synaptické prořezávání?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Vyvíjející se nervová soustava vytvoří víc spojení, než si nakonec nechá, a ta, která prohrají soutěž, zaniknou. Na svalové vlákno novorozence je například napojeno víc motorických axonů a postupně zůstane jen jeden. O tom, které spojení vydrží, rozhoduje aktivita. V lidské předčelní kůře je hustota trnů v dětství dvakrát až třikrát vyšší než v dospělosti. Začne klesat v pubertě a přestavba pokračuje ještě ve dvacátých letech života."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://vetevnavetvi.cz/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Neurobiologie",
+     "item": "https://vetevnavetvi.cz/pages/wetware-neurobiologie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Dole v mezeře",
+     "item": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html#article",
+   "headline": "Dole v mezeře",
+   "description": "Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-neurobiologie-ch2-dole-v-mezere.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-24T15:36:26+00:00",
+   "dateModified": "2026-10-24T16:15:45+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "synapse"
+    },
+    {
+     "@type": "Thing",
+     "name": "nervosvalová ploténka"
+    },
+    {
+     "@type": "Thing",
+     "name": "acetylcholin"
+    },
+    {
+     "@type": "Thing",
+     "name": "kvantové uvolňování"
+    },
+    {
+     "@type": "Thing",
+     "name": "synaptická plasticita"
+    },
+    {
+     "@type": "Thing",
+     "name": "dlouhodobá potenciace"
+    },
+    {
+     "@type": "Thing",
+     "name": "receptor NMDA"
+    }
+   ],
+   "keywords": "synapse, nervosvalová ploténka, acetylcholin, kvantové uvolňování, synaptická plasticita, dlouhodobá potenciace, receptor NMDA",
+   "wordCount": 4450,
+   "timeRequired": "PT22M",
+   "citation": [
+    "Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kostra kapitoly. Kap. 11 (Mechanisms of Direct Synaptic Transmission): rámeček 11.1 o sporu elektřiny a chemie, Loewiho sen, Dale 1936 a Eccles (s. 187–188), štěrbina asi 30 nm a ploténkový potenciál vyšší, než je potřeba (s. 188–189), kurare (s. 189), brzdy acetylcholinesterázy (rámeček 11.2, s. 190), hustota receptorů (s. 195), obratové napětí kolem nuly a vážený průměr (s. 196–198), dvě molekuly acetylcholinu (s. 197), 20 000 kationtů do buňky za milisekundu a hořčík v receptoru NMDA (s. 199), jeden EPSP nestačí (s. 200), vzruch a útlum podle obratového napětí (s. 201), chloridové kanály (s. 202), elektrické synapse (s. 207–209). Kap. 12: muskarinový receptor, G-bílkovina a draselné kanály v srdci (s. 217–221), klidový vápník kolem 100 nM (s. 235), rychlost receptorů spřažených s G-bílkovinou (s. 239). Kap. 13 (Release of Neurotransmitters): zpoždění 0,5 ms a 7 ms při 2,5 °C, vápník nutný a hořčík brzdou (s. 245–246), 100–200 µM u kanálů a čidlo do 100 nm (s. 247–248), uvolněný vápník stačí (s. 249), 7000 molekul v kvantu (s. 250), miniaturní potenciály asi 1 mV a tisíc receptorů (s. 251), stupňovité odpovědi Fatta a Katze, selhání a 200 kvant (s. 252, obr. 13.9), Poissonův test del Castilla a Katze (s. 252–254, obr. 13.10), kvanta v mozku a míše (s. 255), myastenie (s. 257), zmrazení na 4 K a počet otevřených váčků (s. 260–261), SNARE, synaptotagmin a komplexin (s. 264), recyklace váčků a doplnění zásob za minutu a za čtvrt hodiny (s. 266–270). Kap. 14: GABA a glycin, NMDA jako detektor shody (s. 279), SSRI (s. 289). Kap. 15: acetylcholinesteráza (s. 313–314). Kap. 16 (Synaptic Plasticity): facilitace, deprese, jejich mechanismy a posttetanická potenciace (s. 318–322), třetí až čtvrtá mocnina přítoku vápníku (s. 320), Bliss a Lømo (s. 323–325), blokátory NMDA (s. 326), němé synapse a trny (s. 326–328), CaMKII (s. 328), dlouhodobý útlum a množství vápníku (s. 330–331), Hebbovo pravidlo (s. 332), opatrnost ohledně paměti (s. 333). Kap. 25: prořezávání spojení (s. 560–561).",
+    "Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 8: Vagusstoff a Nobelova cena 1936 (s. 205), miniaturní potenciály asi 0,4 mV (s. 214–215), průměrně 2,3 kvanta u Boyda a Martina (s. 215.e1), vápník, hořčík a měření Dodge a Rahamimoffa (obr. 8-11, s. 216), Nobelova cena 2013 (s. 221), myastenie (rámeček 8-1, s. 223), botulotoxin a tetanotoxin (rámeček 8-2 a tab. 8-2, s. 224–225), botox (s. 225). Kap. 13: trny u víc než 90 % vzrušujících synapsí (s. 310), elektrické synapse nezesilují (s. 314), velikost EPSP v mozku (s. 319), hořčík začne vypadávat nad −60 mV (s. 324), 10 až 100 synapsí k výstřelu (s. 327), synapse jako místo paměti (s. 328), LTP, LTD a dráždění 1 Hz (s. 329–331).",
+    "Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 11: chloridové kanály tlumí depolarizaci (s. 670), mírný vápník zapíná fosfatázy a dlouhodobý útlum (s. 678). Kap. 13: komplexin jako brzda, kterou uvolní synaptotagmin (s. 783).",
+    "Dodge F. A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. Journal of Physiology 193(2): 419–432, 1967. Strmost uvolňování podle vápníku.",
+    "Markram H., Gerstner W., Sjöström P. J. A history of spike-timing-dependent plasticity. Frontiers in Synaptic Neuroscience 3: 4, 2011. Doslovné znění Hebbova pravidla z roku 1949.",
+    "Jahr C. E., Stevens C. F. Voltage dependence of NMDA-activated macroscopic conductances predicted by single-channel kinetics. Journal of Neuroscience 10(9): 3178–3182, 1990. Závislost hořčíkového bloku na napětí v simulaci 04.",
+    "Tsodyks M. V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. PNAS 94(2): 719–723, 1997. Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. PNAS 95(9): 5323–5328, 1998. Model útlumu a facilitace synapse v simulaci 03.",
+    "Schultz W. Dopamine reward prediction error coding. Dialogues in Clinical Neuroscience, 2016. Berridge K. C., Kringelbach M. L. Pleasure systems in the brain. Neuron 86(3): 646–664, 2015.",
+    "Harmer C. J., Duman R. S., Cowen P. J. How do antidepressants work? New perspectives for refining future treatment approaches. Lancet Psychiatry 4(5): 409–418, 2017.",
+    "Xu T. a kol. Rapid formation and selective stabilization of synapses for enduring motor memories. Nature 462: 915–919, 2009. Yang G., Pan F., Gan W.-B. Stably maintained dendritic spines are associated with lifelong memories. Nature 462: 920–924, 2009.",
+    "Petanjek Z. a kol. Extraordinary neoteny of synaptic spines in the human prefrontal cortex. PNAS 108(32): 13281–13286, 2011.",
+    "Simulace jsou zjednodušené modely. V simulaci 01 je rezerva ploténky (3,5násobek prahu), rychlost vyčerpání váčků a podíl receptorů při myastenii a kurare ilustrační; neostigmin zvětší odpověď 1,7krát, uprostřed rozmezí, které uvádí Nicholls. V simulaci 02 je velikost kvanta 0,4 mV a průměr kolem dvou kvant jako u Boyda a Martina, při běžném vápníku 200 kvant a mezi tím čtvrtá mocnina. V simulaci 03 vzniká útlum jen vyčerpáním váčků. Facilitace vyprchává s časovou konstantou 0,1 s a váčky se doplňují s časovou konstantou 0,8 s; silná synapse vylije napoprvé 55 % připravených váčků, slabá 3 %. V simulaci 04 je tvar hořčíkového bloku podle Jahra a Stevense, prahy vápníku a velikost změn jsou ilustrační."
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://vetevnavetvi.cz/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://vetevnavetvi.cz/pages/wetware.html"
+   },
+   "articleSection": "Neurobiologie"
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-neurobiologie.html">Neurobiologie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Logika nervové soustavy</span><span class="sep"></span><span class="n">Kapitola druhá</span></p>
+  <h1 class="title">Dole<br>v&nbsp;<em>mezeře</em></h1>
+  <p class="deck">Co se děje v&nbsp;úzké štěrbině mezi dvěma neurony – a&nbsp;jak se na jejích březích nejspíš zapisuje to, co se naučíš.</p>
+  <p class="byline">Synapse zblízka: šest myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b>&nbsp;učebnice <i>Nicholls a&nbsp;kol., From Neuron to Brain</i> (5.&nbsp;vydání), kapitoly 11, 13 a&nbsp;16.</p>
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-24">24.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Zakončení axonu plné váčků proti trnu na dendritu. Mezi nimi úzká štěrbina s několika molekulami přenašeče. Z dendritu vyrůstají další trny.">
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="3" stroke-linecap="round">
+        <path d="M20,156 C110,150 200,138 300,128"/>
+        <path d="M640,240 C636,170 628,100 642,0"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M300,128 C306,92 344,74 384,78 C418,82 432,100 432,122 C432,146 418,164 384,168 C344,172 306,160 300,128"/>
+        <path d="M634,150 C600,146 560,138 520,130 C500,126 492,124 486,124"/>
+        <path d="M486,124 C470,106 456,104 456,124 C456,144 470,142 486,124"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage-mute)" stroke-width="1.6" stroke-linecap="round">
+        <path d="M636,206 C668,204 690,198 708,188"/><path d="M638,96 C670,92 690,84 706,72"/><path d="M632,60 C604,52 590,44 576,32"/>
+        <path d="M636,40 C664,30 676,20 684,8"/><path d="M638,226 C610,224 594,218 580,208"/>
+      </g>
+      <g class="draw" fill="var(--sage-mute)" stroke="none">
+        <circle cx="712" cy="185" r="4.5"/><circle cx="710" cy="69" r="4.5"/><circle cx="572" cy="29" r="4.5"/><circle cx="686" cy="5" r="4"/><circle cx="576" cy="205" r="4.5"/>
+      </g>
+      <g class="draw" fill="var(--paper-warm)" stroke="var(--sage)" stroke-width="1.4">
+        <circle cx="340" cy="110" r="7"/><circle cx="362" cy="96" r="7"/><circle cx="386" cy="104" r="7"/><circle cx="352" cy="134" r="7"/>
+        <circle cx="378" cy="146" r="7"/><circle cx="322" cy="130" r="6"/><circle cx="406" cy="126" r="7"/><circle cx="420" cy="112" r="6.5"/>
+        <circle cx="420" cy="138" r="6.5"/>
+      </g>
+      <g class="draw leaf" stroke="none">
+        <circle cx="442" cy="116" r="2.6" fill="var(--gold)"/><circle cx="446" cy="128" r="2.6" fill="var(--gold)"/><circle cx="440" cy="138" r="2.6" fill="var(--gold)"/>
+        <circle cx="451" cy="110" r="2.6" fill="var(--gold)"/>
+        <rect x="455" y="112" width="4" height="8" rx="1.5" fill="var(--terra)"/><rect x="455" y="128" width="4" height="8" rx="1.5" fill="var(--terra)"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Synapse. Zakončení axonu (vlevo) je plné váčků s&nbsp;přenašečem. Od trnu na dendritu další buňky (vpravo) ho dělí štěrbina široká asi třicet nanometrů. Když dorazí vzruch, pár váčků se vylije do štěrbiny a&nbsp;přenašeč dosedne na receptory. Dendrity mnoha neuronů jsou trny posázené a&nbsp;ty se mění podle toho, jak se používají: <em>větev na větvi</em>.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">V&nbsp;roce 1921 se farmakologovi Ottovi Loewimu zdál sen o&nbsp;pokusu. Uprostřed noci si ho zapsal, jenže ráno své písmo nedokázal přečíst. Sen se naštěstí vrátil a&nbsp;Loewi tentokrát nic neriskoval: běžel rovnou do laboratoře. Žabímu srdci, které dál bilo v&nbsp;roztoku, dráždil bloudivý nerv, a&nbsp;srdce se zpomalilo. Pak roztok, který srdcem protékal, přelil k&nbsp;druhému srdci. Jeho nerv nikdo nedráždil, a&nbsp;přesto se zpomalilo i&nbsp;ono. Nerv tedy se srdcem nemluvil elektřinou, ale látkou, kterou vypustil do roztoku. Loewi jí říkal Vagusstoff, látka bloudivého nervu. Později se ukázalo, že je to <span class="kw">acetylcholin</span>.</p>
+
+  <p>Loewi po letech přiznal, že za střízlivého ranního světla by se do pokusu nepustil. Zdálo se mu příliš nepravděpodobné, že by nerv vyloučil tolik látky, aby po zředění zpomalila ještě jiné srdce. V&nbsp;první kapitole, <a href="wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html">Jak se sůl naučila říkat já</a>, jsme došli k&nbsp;tomu, že vzruch doběhne na konec axonu a&nbsp;dál nemůže: mezi buňkami je mezera. Tahle kapitola do ní sestoupí a&nbsp;půjde stejnou cestou jako učebnice. Nejdřív to, jak přenašeč na druhé straně otevře kanály a&nbsp;co rozhoduje, jestli zpráva znamená „ano“, nebo „ne“. Pak to, jak se přenašeč uvolňuje: vápník jako spoušť a&nbsp;balíčky stejné velikosti. A&nbsp;nakonec to, jak si synapse pamatuje, co přes ni prošlo, na desetiny sekundy i&nbsp;na dny.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    <b>Pěšina přes louku</b> nevznikne podle plánu. Vyšlapou ji lidé, kteří tudy chodí, a&nbsp;čím častěji tudy někdo projde, tím je zřetelnější. Když ji přestanou používat, zaroste. Synapse se chovají podobně: spojení, kterým prochází zpráva právě ve chvíli, kdy je druhá buňka sama v&nbsp;pohybu, sílí. Spojení, která mlčí, zatímco jiná pracují, slábnou.
+  </aside>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== §1 POLÉVKA, NEBO JISKRA ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Polévka, nebo <em>jiskra</em></h2>
+
+  <p>Spor o&nbsp;to, jestli si nervové buňky předávají zprávy elektřinou, nebo chemií, se táhl přes sto let. Elektřina vypadala jako jediná dost rychlá: mezi podrážděním nervu a&nbsp;stahem svalu uplyne jen zlomek sekundy a&nbsp;zdálo se, že tak krátký čas chemii nestačí. Stačí. Synapse dovolí cílové buňce odpovědět do milisekundy od příchodu vzruchu. Loewiho pokus rozhodl o&nbsp;srdci. Henry Dale s&nbsp;kolegy v&nbsp;roce 1936 ukázali, že acetylcholin uvolňují i&nbsp;nervy kosterních svalů a&nbsp;že kurare zablokuje jeho účinek stejně jako účinek nervu. Mezi neurony v&nbsp;mozku se chemie prosadila nejpomaleji. Jeden z&nbsp;nejhorlivějších zastánců elektrické teorie, John Eccles, změnil názor, až když s&nbsp;kolegy měřil napětí uvnitř motoneuronů v&nbsp;kočičí míše. Vzrušující nervová vlákna měnila napětí buňky jedním směrem, brzdící opačným, a&nbsp;ten opačný směr elektrická teorie vysvětlit nedokázala.</p>
+
+  <p>Nejlépe prozkoumaná chemická synapse je <span class="kw">nervosvalová ploténka</span>, spojení motorického nervu se svalem. Je velká, snadno přístupná a&nbsp;pracuje s&nbsp;jediným přenašečem, acetylcholinem. Zakončení nervu leží v&nbsp;mělkém žlábku na povrchu svalového vlákna. Od membrány svalu ho dělí štěrbina široká asi třicet nanometrů a&nbsp;membrána svalu je pod ním poskládaná do záhybů. Proti ústím záhybů leží v&nbsp;zakončení aktivní zóny, místa, kde čekají váčky s&nbsp;přenašečem. V&nbsp;mozku jsou synapse mnohem menší. U&nbsp;víc než devíti desetin vzrušujících synapsí leží přijímající strana na <span class="kw">trnu</span>, drobném výběžku dendritu kratším než mikrometr.</p>
+
+  <p>Proč by si tělo komplikovalo život chemií, když elektřina jde rovnou? Protože chemická synapse umí věci, které drát neumí. Zesílí: malé zakončení nervu rozhýbe obrovské svalové vlákno, protože přenašeč otevře tisíce kanálů. Obrátí znaménko: stejný vzruch jednu buňku popožene a&nbsp;jinou utiší. A&nbsp;dá se ladit, zesílit, zeslabit a&nbsp;přepsat. Proto je nejlepším kandidátem na místo, kam se ukládá paměť.</p>
+
+  <p class="punch">Mezera mezi neurony není chyba vedení. Je to <b>místo, kde se dá rozhodovat</b>.</p>
+</section>
+
+<!-- ===================== §2 KANÁL ROZHODNE ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span>Kanál <em>rozhodne</em></h2>
+
+  <p>Acetylcholin přepluje štěrbinu a&nbsp;dosedne na receptory na membráně svalu. Ty jsou nahuštěné přesně tam, kam přenašeč padá: na hřebenech záhybů jich je asi deset tisíc na čtvereční mikrometr, kdežto o&nbsp;kus dál jen asi pět. Receptor je zároveň iontový kanál. Když se na něj navážou dvě molekuly acetylcholinu, otevře se asi na milisekundu a&nbsp;pustí do buňky kolem dvaceti tisíc kladných iontů, hlavně sodných. Membrána svalu se v&nbsp;okolí ploténky depolarizuje: vznikne <span class="kw">ploténkový potenciál</span>. Normálně je mnohem vyšší, než je potřeba ke spuštění akčního potenciálu, a&nbsp;sval se tak spolehlivě stáhne při každém vzruchu.</p>
+
+  <p>Přenašeč ve štěrbině dlouho nezůstane. Enzym acetylcholinesteráza, kterým jsou záhyby vystlané, rozloží jednu molekulu acetylcholinu za desetinu milisekundy. Už zlomek milisekundy po vylití proto skoro nehrozí, že by zbylý acetylcholin otevřel další kanál, a&nbsp;každý vzruch dostane čistý start.</p>
+
+  <p>Proč zrovna depolarizace? Když vědci měnili napětí svalu, proud tekoucí kanály změnil směr zhruba u&nbsp;nuly, u&nbsp;takzvaného obratového napětí. To není rovnovážné napětí žádného jednotlivého iontu, ale vážený průměr rovnovážných napětí sodíku a&nbsp;draslíku. Kanál tedy musí propouštět oba. A&nbsp;tím se dostáváme k&nbsp;hlavnímu pravidlu synapsí: <b>jestli je zpráva „ano“, nebo „ne“, nerozhoduje přenašeč, ale kanál, který otevře</b>. Kanál, jehož obratové napětí leží nad prahem, táhne buňku k&nbsp;výstřelu: takový kanál vzrušuje. Kanál, jehož obratové napětí leží pod prahem, ji drží dole. To dělají receptory pro GABA a&nbsp;glycin, dva hlavní brzdící přenašeče mozku a&nbsp;míchy. Otevírají kanály pro chloridové ionty a&nbsp;drží napětí kolem −70 až −80&nbsp;mV. Často ho skoro nezmění, ale membrána je pak propustnější a&nbsp;proud, který by buňku tlačil k&nbsp;prahu, z&nbsp;ní uteče.</p>
+
+  <p>Loewiho srdce je stejný případ obráceně. Tentýž acetylcholin, který sval rozhýbe, srdce zpomalí, protože tam dosedá na jiný, muskarinový receptor. Ten není kanálem: aktivuje G-bílkovinu, jejíž část otevře draselné kanály. Je to pomalejší cesta, ne milisekundy, ale stovky milisekund až sekundy. V&nbsp;mozku je to podobné s&nbsp;glutamátem, nejčastějším vzrušujícím přenašečem. Jeho receptory AMPA otevírají kanál rychle, receptory NMDA pomaleji a&nbsp;jen za zvláštních podmínek, ke kterým se vrátíme na konci. Jeden vzrušující potenciál v&nbsp;mozku je ale malý, od setin milivoltu po pár milivoltů, kdežto na ploténce desítky milivoltů. Neuron proto musí sečíst odpovědi zhruba deseti až sta synapsí, než vypálí.</p>
+
+  <p>Vedle chemických synapsí existují i&nbsp;elektrické. Dvě buňky jsou tam spojené kanálky mezerových spojů z&nbsp;bílkovin konexinů a&nbsp;proud teče přímo z&nbsp;jedné do druhé, bez zpoždění a&nbsp;většinou oběma směry. Jsou rychlejší a&nbsp;spolehlivější a&nbsp;pomáhají skupinám neuronů vypálit naráz. Signál ale umějí jen předat dál, zesílit ho nedokážou.</p>
+
+  <p>Na ploténce se dobře ukazuje, jak na synapse působí jedy a&nbsp;léky. Kurare obsadí receptory pro acetylcholin, aniž je otevře, a&nbsp;když ho je dost, klesne ploténkový potenciál pod práh a&nbsp;sval ochrne. Při myastenii gravis tělo vyrábí protilátky proti vlastním receptorům a&nbsp;těch postupně ubývá. Neostigmin brzdí acetylcholinesterázu, takže acetylcholin ve štěrbině vydrží déle a&nbsp;ploténkový potenciál je vyšší a&nbsp;delší.</p>
+
+  <p>Vyzkoušej si to. Pošli do ploténky sérii deseti vzruchů a&nbsp;pak ji oslab.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Ploténka</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">první odpověď</span> <b id="s3-safety">–</b></span>
+        <span class="rd"><span class="lo">stahů svalu</span> <b id="s3-fired">–</b></span>
+      </div>
+    </div>
+    <canvas id="ssim3" height="290" aria-label="Sloupce ukazují velikost ploténkového potenciálu pro deset vzruchů za sebou a přerušovaná čára práh. Pod nimi se rozsvítí svalové vlákno, když se stáhne."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl spark" id="s3-go">Série 10 vzruchů</button>
+      <span class="gap"></span>
+      <button class="ctrl" id="s3-mg" aria-pressed="false">Myastenie: ne</button>
+      <button class="ctrl" id="s3-cur" aria-pressed="false">Kurare: ne</button>
+      <button class="ctrl" id="s3-neo" aria-pressed="false">Neostigmin: ne</button>
+    </div>
+  </div>
+  <figcaption><b>Ploténka.</b> Deset vzruchů za sebou, dvacet za sekundu. Zdravá ploténka má velkou rezervu: první ploténkový potenciál je tu zhruba třiapůlkrát vyšší než práh a&nbsp;sval se stáhne při každém vzruchu, i&nbsp;když s&nbsp;každým dalším ubývá připravených váčků a&nbsp;odpovědi slábnou. Myastenie ubere receptory: první vzruchy ještě projdou, další už ne, a&nbsp;sval během námahy slábne. Kurare obsadí receptory a&nbsp;neprojde nic. Neostigmin prodlouží život acetylcholinu ve štěrbině a&nbsp;oslabenou ploténku podrží. Velikost rezervy a&nbsp;pokles během série jsou ilustrační. Učebnice uvádějí jen to, že ploténkový potenciál je normálně mnohem vyšší, než je potřeba, a&nbsp;že brzda acetylcholinesterázy zvýší ploténkový potenciál 1,5- až 2krát a&nbsp;prodlouží ho 3- až 5krát.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Zprávu nedělá přenašeč, ale <b>kanál, který otevře</b>.</p>
+</section>
+
+<!-- ===================== §3 VÁPNÍKOVÁ SPOUŠŤ ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span>Vápníková <em>spoušť</em></h2>
+
+  <p>Mezi příchodem vzruchu do zakončení a&nbsp;odpovědí druhé buňky uplyne <span class="kw">synaptické zpoždění</span>, na žabí ploténce při pokojové teplotě asi půl milisekundy. Když se sval ochladí na 2,5&nbsp;°C, natáhne se až na sedm milisekund. Přes štěrbinu by přenašeč přeplul za pár desítek mikrosekund, takže čas nespotřebuje cesta. Spotřebuje ho samotné uvolnění.</p>
+
+  <p>A&nbsp;to potřebuje vápník. Přenašeč se vylije, jen když je vápník v&nbsp;okolním roztoku přítomný právě ve chvíli, kdy vzruch zakončení depolarizuje. Hořčík a&nbsp;další ionty, které vápníku zablokují cestu, uvolňování brzdí. Vzruch otevře v&nbsp;zakončení napěťově řízené vápníkové kanály a&nbsp;vápník se do něj vlije. Uvnitř buňky ho je v&nbsp;klidu asi desetitisíckrát méně než venku, kolem sta nanomolů, ale u&nbsp;otevřených kanálů vyskočí jeho koncentrace na okamžik na sto až dvě stě mikromolů. Čidlo, které váček vylije, proto musí sedět sotva sto nanometrů od kanálu. A&nbsp;vápník sám stačí: když se ho do zakončení pokusně uvolní stejné množství bez vzruchu, přenašeč se vylije úplně stejně.</p>
+
+  <p>Uvolňování přitom roste s&nbsp;přítokem vápníku nesmírně strmě, zhruba se třetí až čtvrtou mocninou. Dvojnásobek vápníku tedy znamená osmkrát až šestnáctkrát víc přenašeče. Vykládá se to tak, že se na čidlo musí navázat několik iontů vápníku naráz. Frederick Dodge a&nbsp;Rami Rahamimoff, kteří tu strmost v&nbsp;roce 1967 změřili, svou práci nazvali „Spolupráce vápníkových iontů při uvolňování přenašeče na nervosvalové ploténce“ (<i lang="en">Co-operative action of calcium ions in transmitter release at the neuromuscular junction</i>). Strmost má smysl. V&nbsp;klidu je vápníku v&nbsp;zakončení málo a&nbsp;váčky se vylévají jen výjimečně. Při vzruchu se pravděpodobnost na okamžik mnohonásobně zvýší. V&nbsp;další simulaci to uvidíš na posuvníku: kvant přibývá mnohem rychleji než vápníku.</p>
+
+  <p class="punch">Vápník je spoušť a&nbsp;<b>počítá v&nbsp;mocninách</b>: o&nbsp;trochu víc vápníku znamená mnohem víc zprávy.</p>
+</section>
+
+<!-- ===================== §4 PO BALÍČCÍCH ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Po <em>balíčcích</em></h2>
+
+  <p>Na začátku padesátých let si Paul Fatt a&nbsp;Bernard Katz všimli, že na svalu, jehož nerv nikdo nedráždí, občas naskočí drobná depolarizace, velká asi půl milivoltu až milivolt. Objevovala se jen v&nbsp;místě ploténky, kurare ji potlačilo, brzda acetylcholinesterázy zvětšila a&nbsp;botulotoxin zrušil. Šlo tedy o&nbsp;acetylcholin, který zakončení pouští samo od sebe, a&nbsp;to vždycky po stejně velkých dávkách. Jedna taková dávka otevře asi tisíc receptorů.</p>
+
+  <p>Fatt a&nbsp;Katz pak snížili v&nbsp;roztoku vápník a&nbsp;přidali hořčík, aby vzruch uvolňoval jen málo přenašeče. Odpovědi svalu se začaly měnit od pokusu k&nbsp;pokusu, ale ne plynule. Byly velké jako jeden, dva, tři nebo čtyři drobné potenciály, nebo žádné. Přenašeč tedy odchází v&nbsp;<span class="kw">kvantech</span>, balíčcích stejné velikosti. Vzruch neurčí přesně, kolik balíčků se vylije. Každý se vylije jen s&nbsp;určitou pravděpodobností a&nbsp;jejich počet kolísá jako počet šestek při hodu hrstí kostek.</p>
+
+  <p>José del Castillo a&nbsp;Katz to pak ověřili chytře. Když je pravděpodobnost malá a&nbsp;balíčků k&nbsp;dispozici hodně, řídí se jejich počet Poissonovým rozdělením. To předpovídá, jak často se nevylije žádný: podíl selhání je e<sup>−m</sup>, kde m je průměrný počet kvant na vzruch. Spočítali m dvěma nezávislými způsoby, z&nbsp;velikosti odpovědí a&nbsp;z&nbsp;počtu selhání, a&nbsp;oba odhady se shodly. Za normálních podmínek uvolní vzruch na žabí ploténce asi dvě stě kvant naráz, a&nbsp;proto vypadá odpověď plynule. V&nbsp;mozku a&nbsp;míše je to jinak: na mnoha synapsích se uvolní průměrně jen asi jedno kvantum. Neznamená to ale, že by přenos většinou selhával. Na synapsi mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše čeká na vzruch zhruba jediné kvantum, zato se vylije asi v&nbsp;devíti případech z&nbsp;deseti.</p>
+
+  <p>Jedno kvantum je obsah jednoho <span class="kw">váčku</span>, na ploténce asi sedm tisíc molekul acetylcholinu. Vědci to viděli doslova. Nerv svalu podráždili elektrickým šokem a&nbsp;milisekundy nato nechali sval dopadnout na měděný blok chlazený kapalným heliem na 4&nbsp;K. Mráz zastavil váčky uprostřed vylévání. V&nbsp;elektronovém mikroskopu se ukázalo, že počet otevřených váčků roste úměrně počtu uvolněných kvant a&nbsp;že nejvíc se jich otevírá právě ve chvíli, kdy ve svalu vrcholí proud.</p>
+
+  <p>Samotné vylití obstarává sada bílkovin SNARE. Synaptobrevin na váčku a&nbsp;syntaxin se SNAP-25 na membráně zakončení se do sebe zaplétají jako zip a&nbsp;přitahují váček k&nbsp;membráně. Komplexin ten zip jako brzda zastaví těsně před dokončením. Když přijde vápník, naváže se na synaptotagmin, ten brzdu uvolní a&nbsp;obě membrány splynou. Za výzkum dopravy váčků v&nbsp;buňkách, včetně splývání synaptických váčků s&nbsp;membránou, dostali James Rothman, Randy Schekman a&nbsp;Thomas Südhof v&nbsp;roce 2013 Nobelovu cenu za fyziologii a&nbsp;lékařství. Prázdný váček se pak zase vtáhne dovnitř a&nbsp;znovu naplní. Když ploténku silné dráždění úplně vyčerpá, doplní se váčky připravené k&nbsp;okamžitému vylití asi za minutu a&nbsp;zásobní váčky za čtvrt hodiny.</p>
+
+  <p>Na stejnou mašinerii míří nejsilnější jed, jaký příroda zná. Botulotoxin a&nbsp;tetanotoxin z&nbsp;bakterií rodu <i>Clostridium</i> jsou enzymy, které bílkoviny SNARE rozstříhají, a&nbsp;teoreticky stačí jediná molekula, aby jedno zakončení přestalo vylévat váčky. Botulotoxin zastaví výdej acetylcholinu na ploténkách a&nbsp;svaly ochabnou. Tetanotoxin putuje po nervech do míchy a&nbsp;zastaví tam brzdící neurony, které uvolňují GABA a&nbsp;glycin. Svaly pak naopak křečovitě ztuhnou.</p>
+
+  <p>Vyzkoušej si to. Posílej vzruchy do ploténky v&nbsp;roztoku chudém na vápník a&nbsp;sleduj, jak se odpovědi skládají z&nbsp;balíčků.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Kvanta</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">vzruchů</span> <b id="s1-n">0</b></span>
+        <span class="rd"><span class="lo">selhání</span> <b id="s1-fail">–</b></span>
+        <span class="rd"><span class="lo">kvant na vzruch</span> <b id="s1-m">–</b></span>
+      </div>
+    </div>
+    <canvas id="ssim1" height="320" aria-label="Vlevo překrývající se odpovědi svalu na jednotlivé vzruchy, vpravo histogram jejich velikostí se špičkami u násobků jednoho kvanta a křivka Poissonovy předpovědi."></canvas>
+    <div class="sim-controls">
+      <label>Vápník <input type="range" id="s1-ca" min="0" max="100" value="21" aria-label="Koncentrace vápníku v roztoku"><span class="v" id="s1-ca-v"></span></label>
+      <button class="ctrl spark" id="s1-one">Vzruch</button>
+      <button class="ctrl" id="s1-many">50 vzruchů</button>
+      <button class="ctrl" id="s1-reset">Vynulovat</button>
+    </div>
+  </div>
+  <figcaption><b>Kvanta.</b> Vlevo (na telefonu nahoře) posledních deset odpovědí svalu přes sebe, jak je kdysi kreslil Katz. Vpravo (na telefonu dole) histogram velikostí všech odpovědí od vynulování: sloupce se kupí u&nbsp;nuly (selhání) a&nbsp;u&nbsp;násobků jednoho kvanta. Zlatá křivka je předpověď Poissonova rozdělení pro stejný průměrný počet kvant a&nbsp;údaj nahoře porovnává pozorovaná selhání s&nbsp;předpovězenými. Velikost kvanta 0,4&nbsp;mV a&nbsp;průměr kolem dvou kvant odpovídají pokusu Boyda a&nbsp;Martina na savčím svalu (Nicholls, obr.&nbsp;13.10). Uvolňování tu roste se čtvrtou mocninou vápníku. Při normálním vápníku vyjde asi dvě stě kvant najednou a&nbsp;jednotlivé balíčky se slijí v&nbsp;jednu velkou odpověď.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Synapse nemluví plynule. Mluví <b>po balíčcích</b> a&nbsp;s&nbsp;každým vzruchem si hází kostkou.</p>
+</section>
+
+<!-- ===================== §5 KRÁTKÁ PAMĚŤ ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span>Krátká <em>paměť</em></h2>
+
+  <p>Synapse si pamatuje, co přes ni před chvílí prošlo. Když přijde několik vzruchů rychle za sebou, odpovědi rostou a&nbsp;zvětšená je ještě odpověď na vzruch, který přijde skoro čtvrt sekundy po konci série. Říká se tomu <span class="kw">facilitace</span>. Klasické vysvětlení nabídli Bernard Katz a&nbsp;Ricardo Miledi: vápník z&nbsp;předchozích vzruchů se ze zakončení nestihne úplně odčerpat a&nbsp;přičte se k&nbsp;novému. Novější pokusy ukázaly, že nahromaděný vápník navíc usnadní otevírání vápníkových kanálů, takže s&nbsp;každým dalším vzruchem vteče do zakončení víc vápníku. Facilitace vyprchá během desítek až stovek milisekund.</p>
+
+  <p>Opačně působí <span class="kw">deprese</span>. Synapse, která uvolňuje hodně váčků naráz, během série slábne, po dlouhé sérii i&nbsp;pod pětinu původní odpovědi, a&nbsp;útlum vydrží několik sekund. Při velmi rychlém dráždění jde až polovina útlumu na vrub vyčerpaným připraveným váčkům. Zbytek, a&nbsp;při pomalejším dráždění většinu, má na svědomí zase vápník: když se ho v&nbsp;zakončení nahromadí hodně, začne vápníkové kanály naopak tlumit. A&nbsp;když po dlouhé rychlé sérii útlum odezní, zůstane synapse ještě minuty zesílená, protože v&nbsp;zakončení zbude vápníku víc a&nbsp;váčků je připravených víc. Tomu se říká posttetanická potenciace.</p>
+
+  <p>Která síla vyhraje, záleží na synapsi. Synapse s&nbsp;malou pravděpodobností vylití se během série rozjíždí, protože vápník přibývá a&nbsp;váčků je dost. Synapse s&nbsp;velkou pravděpodobností slábne, protože jí váčky docházejí a&nbsp;vápník ji začne brzdit. Synapse tak dál neposílá jen to, že přišel vzruch, ale i&nbsp;to, jak rychle a&nbsp;v&nbsp;jakém sledu vzruchy chodí. Je to filtr: jedna synapse zachytí hlavně začátek série, jiná hlavně shluk vzruchů.</p>
+
+  <p>Vyzkoušej si to. Pošli sérii deseti vzruchů silnou a&nbsp;slabou synapsí a&nbsp;měň, jak rychle jdou za sebou.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Krátká paměť synapse</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">desátá odpověď proti první</span> <b id="s2-ratio">–</b></span>
+      </div>
+    </div>
+    <canvas id="ssim2" height="250" aria-label="Sloupce velikosti deseti odpovědí synapse na sérii vzruchů vůči první odpovědi."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl" id="s2-strong">Silná synapse</button>
+      <button class="ctrl" id="s2-weak">Slabá synapse</button>
+      <label>Frekvence <input type="range" id="s2-f" min="0" max="100" value="60" aria-label="Kolik vzruchů za sekundu"><span class="v" id="s2-f-v"></span></label>
+      <button class="ctrl spark" id="s2-go">Znovu</button>
+    </div>
+  </div>
+  <figcaption><b>Krátká paměť synapse.</b> Sloupce jsou odpovědi na deset vzruchů vůči první odpovědi. Silná synapse při každém vzruchu vylije velkou část připravených váčků, takže jí rychle docházejí (modře). Slabá vylije jen málo a&nbsp;zbytkový vápník jí mezitím pravděpodobnost vylití zvyšuje (zlatě). Čím rychleji vzruchy jdou, tím víc se oba jevy projeví. Když jdou za sekundu jen dva nebo tři vzruchy, facilitace mezi nimi vyprchá a&nbsp;mírně slábne i&nbsp;slabá synapse. Jde o&nbsp;zjednodušený model podle Tsodykse a&nbsp;Markrama, ve kterém útlum obstarává jen vyčerpání váčků: facilitace vyprchává s&nbsp;časovou konstantou desetiny sekundy a&nbsp;váčky se doplňují s&nbsp;časovou konstantou necelé sekundy, takže se synapse zotaví za pár sekund, jak uvádí Nicholls. Skutečné synapse se v&nbsp;obou časech liší.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Synapse nepřenáší jednotlivé vzruchy. Přenáší <b>rytmus</b> a&nbsp;každá ho čte po svém.</p>
+</section>
+
+<!-- ===================== §6 DLOUHÁ PAMĚŤ ===================== -->
+<section class="prose">
+  <h2><span class="num">vi</span>Dlouhá <em>paměť</em></h2>
+
+  <p>V&nbsp;roce 1949 navrhl psycholog Donald Hebb pravidlo, které od té doby nese jeho jméno. Když axon buňky A&nbsp;opakovaně pomáhá přivést buňku B k&nbsp;výstřelu, něco se v&nbsp;jedné z&nbsp;nich nebo v&nbsp;obou změní, takže A&nbsp;k&nbsp;tomu pak přispívá účinněji. Dvacet čtyři let nato Timothy Bliss a&nbsp;Terje Lømo našli přesně takovou změnu v&nbsp;hipokampu uspaného králíka. Po krátké sérii rychlých vzruchů odpovídaly synapse silněji a&nbsp;zesílení vydrželo hodiny, někdy i&nbsp;dny. Jevu se říká <span class="kw">dlouhodobá potenciace</span>.</p>
+
+  <p>Klíčem je receptor <span class="kw">NMDA</span>, jeden ze dvou hlavních receptorů pro glutamát. Receptor AMPA se otevře, kdykoli na něj glutamát dosedne. Receptor NMDA potřebuje víc: jeho pór v&nbsp;klidu ucpává iont hořčíku z&nbsp;okolního roztoku a&nbsp;ten začne vypadávat, až když je membrána sama depolarizovaná zhruba nad −60&nbsp;mV. Čím víc je depolarizovaná, tím víc kanálů je volných. Receptor NMDA tedy pustí proud, jen když se sejdou dvě věci naráz: glutamát od buňky, která posílá, a&nbsp;depolarizace buňky, která přijímá. Je to detektor shody, Hebbovo pravidlo v&nbsp;jedné molekule. Proto se slabý vstup zesílí, když přijde zároveň se silným, který buňku rozhýbe.</p>
+
+  <p>Otevřeným receptorem NMDA proudí do trnu dendritu vápník. Ten zapne enzymy, hlavně kinázu CaMKII, a&nbsp;do membrány trnu přibudou další receptory AMPA. Některé synapse předtím neměly receptory AMPA vůbec a&nbsp;byly „němé“. Trny se přitom zvětšují a&nbsp;přibývají nové. Blokátory receptoru NMDA vzniku potenciace zabrání, ale už vzniklou nezruší. Menší a&nbsp;pomalejší přísun vápníku, třeba při dráždění jedním vzruchem za sekundu, vede naopak k&nbsp;<span class="kw">dlouhodobému útlumu</span>: zapnou se fosfatázy a&nbsp;receptory AMPA z&nbsp;membrány ubývají. O&nbsp;směru změny tedy rozhoduje, kolik vápníku do trnu vteklo.</p>
+
+  <p>Je to nejlépe prozkoumaný kandidát na fyzickou stopu paměti. Nicholls přitom upozorňuje, že jednoznačné spojení mezi těmito změnami a&nbsp;vznikem vzpomínek zatím prokázané není. Jiné učebnice, třeba Boron a&nbsp;Boulpaep, jsou odvážnější. Jisté je, že synapse umějí zesílit a&nbsp;zeslábnout podle toho, jak se používají, a&nbsp;že to vydrží hodiny až dny.</p>
+
+  <p>Vyzkoušej si to. Pusť na synapsi glutamát, depolarizuj buňku, nebo obojí naráz a&nbsp;sleduj, co si synapse zapamatuje.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Detektor shody</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">síla synapse</span> <b id="s4-w">100&nbsp;%</b></span>
+        <span class="rd"><span class="lo">vápník v&nbsp;trnu</span> <b id="s4-ca">0</b></span>
+      </div>
+    </div>
+    <canvas id="ssim4" height="320" aria-label="Membrána trnu dendritu s receptorem NMDA ucpaným hořčíkem a s receptory AMPA. Vpravo průchodnost receptoru NMDA podle napětí a síla synapse po jednotlivých pokusech."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl" id="s4-glu">Jen glutamát</button>
+      <button class="ctrl" id="s4-dep">Jen depolarizace</button>
+      <button class="ctrl spark" id="s4-both">Obojí naráz</button>
+      <button class="ctrl" id="s4-slow">Pomalé dráždění</button>
+    </div>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="s4-mg" aria-pressed="true">Hořčík v&nbsp;roztoku: ano</button>
+      <button class="ctrl" id="s4-ap5" aria-pressed="false">Blokátor NMDA: ne</button>
+      <button class="ctrl" id="s4-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Detektor shody.</b> Receptor NMDA (uprostřed membrány) pustí vápník, jen když je na něm glutamát a&nbsp;zároveň je membrána depolarizovaná, takže z&nbsp;póru vypadne hořčík. Velký přísun vápníku synapsi zesílí, protože přibudou receptory AMPA. Pomalé dráždění pustí dovnitř jen málo vápníku a&nbsp;synapsi zeslabí. Bez hořčíku v&nbsp;roztoku vteče vápníku hodně, takže synapsi zesílí samotný glutamát i&nbsp;pomalé dráždění. S&nbsp;blokátorem NMDA se síla synapse nezmění. Závislost průchodnosti na napětí (graf vpravo nahoře, na telefonu pod membránou) má tvar, který z&nbsp;měření jednotlivých kanálů odvodili Jahr a&nbsp;Stevens. Prahy vápníku a&nbsp;velikost změn jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Učení není nahrávka. Je to <b>stopa po shodě</b>: spojení zesílí, když se obě strany rozsvítí naráz.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem synapsí a&nbsp;přenašečů pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Je dopamin hormon štěstí?</summary>
+    <div class="answer">
+      <p>Ne, i&nbsp;když se tak často píše. Dopaminové neurony ve středním mozku hlásí hlavně rozdíl mezi tím, co přišlo, a&nbsp;tím, co se čekalo. Když odměna přijde větší, než se čekalo, vypálí víc. Když přijde přesně podle očekávání, nezmění se. Když je menší, jejich aktivita poklesne. Dopamin tedy slouží spíš k&nbsp;učení a&nbsp;motivaci, k&nbsp;tomu, co stojí za to hledat, než k&nbsp;samotnému potěšení. Výzkum systémů potěšení v&nbsp;mozku dokonce naznačuje, že mezolimbický dopaminový systém, dlouho učebnicový kandidát, potěšení sám nevytváří.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč antidepresiva SSRI zabírají až po týdnech?</summary>
+    <div class="answer">
+      <p>Přesně se to neví. Samotný mechanismus je rychlý: léky jako fluoxetin zablokují serotoninový transportér, bílkovinu, která serotonin vrací ze štěrbiny zpátky do zakončení, a&nbsp;serotonin tak ve štěrbině vydrží déle. To se stane během hodin, zlepšení nálady ale přichází za dny až týdny. Jedno vysvětlení je, že nejdřív musí znecitlivět receptory, kterými si serotoninové neurony samy brzdí výdej. Druhé, že léky postupně mění plasticitu mozku, tedy právě to, jak se synapse přestavují. Text vysvětluje, jak léky působí, a&nbsp;nikomu neradí s&nbsp;léčbou.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Mění se mozek fyzicky, když se učím?</summary>
+    <div class="answer">
+      <p>Ano. Při dlouhodobé potenciaci přibývají v&nbsp;synapsích receptory, trny dendritů se zvětšují a&nbsp;nové trny vyrůstají. U&nbsp;myší, které se učily novou pohybovou dovednost, se pod mikroskopem objevily nové trny během hodin a&nbsp;část z&nbsp;nich vydržela měsíce. Paměť tedy nejspíš není uložená v&nbsp;jednom místě jako soubor na disku, ale v&nbsp;tom, jak silná jsou spojení mezi buňkami.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Jak funguje botox?</summary>
+    <div class="answer">
+      <p>Botox je velmi zředěný botulotoxin typu A. Ten rozstříhá bílkovinu SNAP-25, bez které se váčky s&nbsp;acetylcholinem nemůžou vylít, a&nbsp;sval, do kterého se vpíchne, ochabne. Na obličeji tak vyhladí vrásky a&nbsp;v&nbsp;lékařství se jím léčí svalové křeče nebo šilhání. Účinek trvá tři až šest měsíců, dokud zakončení nervu nevyraší nové výběžky a&nbsp;sval znovu nenapojí.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Co je synaptické prořezávání?</summary>
+    <div class="answer">
+      <p>Vyvíjející se nervová soustava vytvoří víc spojení, než si nakonec nechá, a&nbsp;ta, která prohrají soutěž, zaniknou. Na svalové vlákno novorozence je například napojeno víc motorických axonů a&nbsp;postupně zůstane jen jeden. O&nbsp;tom, které spojení vydrží, rozhoduje aktivita. V&nbsp;lidské předčelní kůře je hustota trnů v&nbsp;dětství dvakrát až třikrát vyšší než v&nbsp;dospělosti. Začne klesat v&nbsp;pubertě a&nbsp;přestavba pokračuje ještě ve dvacátých letech života.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<section class="coda">
+  <p>Tohle je synapse v&nbsp;kostce. Chemie místo drátu, protože chemie se dá zesílit, obrátit a&nbsp;přepsat. Kanál, který o&nbsp;zprávě rozhodne podle toho, kam táhne napětí. Vápník, který spouští uvolnění a&nbsp;počítá v&nbsp;mocninách. Balíčky přenašeče, se kterými si synapse při každém vzruchu hází kostkou. Krátká paměť ve zbytcích vápníku a&nbsp;v&nbsp;docházejících váčcích. A&nbsp;dlouhá paměť v&nbsp;receptoru, který se otevře jen při shodě dvou buněk. Většina toho, co umíš, je nejspíš zapsaná v&nbsp;synapsích kolem mezer užších než vlnová délka světla.</p>
+  <p class="sign">Konec druhé kapitoly</p>
+</section>
+
+<!-- zpetna-vazba:begin – generuje tools/seo.py -->
+<div class="fv-line"><p>Vidíš chybu, nebo ti tu něco nesedí? <a href="zpetna-vazba.html?stranka=wetware-neurobiologie-ch2-dole-v-mezere">Napiš mi&nbsp;&#8594;</a></p><a class="kafe" href="https://ko-fi.com/vetevnavetvi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg><span>Kup mi kafe</span></a></div>
+<!-- zpetna-vazba:end -->
+
+<section class="sources">
+  <h2>Zdroje a&nbsp;další čtení</h2>
+  <ul>
+    <li>Nicholls J.&nbsp;G., Martin A.&nbsp;R., Fuchs P.&nbsp;A., Brown D.&nbsp;A., Diamond M.&nbsp;E., Weisblat D.&nbsp;A. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kostra kapitoly. Kap.&nbsp;11 (Mechanisms of Direct Synaptic Transmission): rámeček 11.1 o&nbsp;sporu elektřiny a&nbsp;chemie, Loewiho sen, Dale 1936 a&nbsp;Eccles (s.&nbsp;<span class="nw">187–188</span>), štěrbina asi 30&nbsp;nm a&nbsp;ploténkový potenciál vyšší, než je potřeba (s.&nbsp;<span class="nw">188–189</span>), kurare (s.&nbsp;189), brzdy acetylcholinesterázy (rámeček 11.2, s.&nbsp;190), hustota receptorů (s.&nbsp;195), obratové napětí kolem nuly a&nbsp;vážený průměr (s.&nbsp;<span class="nw">196–198</span>), dvě molekuly acetylcholinu (s.&nbsp;197), 20&nbsp;000 kationtů do buňky za milisekundu a&nbsp;hořčík v&nbsp;receptoru NMDA (s.&nbsp;199), jeden EPSP nestačí (s.&nbsp;200), vzruch a&nbsp;útlum podle obratového napětí (s.&nbsp;201), chloridové kanály (s.&nbsp;202), elektrické synapse (s.&nbsp;<span class="nw">207–209</span>). Kap.&nbsp;12: muskarinový receptor, G-bílkovina a&nbsp;draselné kanály v&nbsp;srdci (s.&nbsp;<span class="nw">217–221</span>), klidový vápník kolem 100&nbsp;nM (s.&nbsp;235), rychlost receptorů spřažených s&nbsp;G-bílkovinou (s.&nbsp;239). Kap.&nbsp;13 (Release of Neurotransmitters): zpoždění 0,5&nbsp;ms a&nbsp;7&nbsp;ms při 2,5&nbsp;°C, vápník nutný a&nbsp;hořčík brzdou (s.&nbsp;<span class="nw">245–246</span>), <span class="nw">100–200</span>&nbsp;µM u&nbsp;kanálů a&nbsp;čidlo do 100&nbsp;nm (s.&nbsp;<span class="nw">247–248</span>), uvolněný vápník stačí (s.&nbsp;249), 7000 molekul v&nbsp;kvantu (s.&nbsp;250), miniaturní potenciály asi 1&nbsp;mV a&nbsp;tisíc receptorů (s.&nbsp;251), stupňovité odpovědi Fatta a&nbsp;Katze, selhání a&nbsp;200 kvant (s.&nbsp;252, obr.&nbsp;13.9), Poissonův test del Castilla a&nbsp;Katze (s.&nbsp;<span class="nw">252–254</span>, obr.&nbsp;13.10), kvanta v&nbsp;mozku a&nbsp;míše (s.&nbsp;255), myastenie (s.&nbsp;257), zmrazení na 4&nbsp;K&nbsp;a&nbsp;počet otevřených váčků (s.&nbsp;<span class="nw">260–261</span>), SNARE, synaptotagmin a&nbsp;komplexin (s.&nbsp;264), recyklace váčků a&nbsp;doplnění zásob za minutu a&nbsp;za čtvrt hodiny (s.&nbsp;<span class="nw">266–270</span>). Kap.&nbsp;14: GABA a&nbsp;glycin, NMDA jako detektor shody (s.&nbsp;279), SSRI (s.&nbsp;289). Kap.&nbsp;15: acetylcholinesteráza (s.&nbsp;<span class="nw">313–314</span>). Kap.&nbsp;16 (Synaptic Plasticity): facilitace, deprese, jejich mechanismy a&nbsp;posttetanická potenciace (s.&nbsp;<span class="nw">318–322</span>), třetí až čtvrtá mocnina přítoku vápníku (s.&nbsp;320), Bliss a&nbsp;Lømo (s.&nbsp;<span class="nw">323–325</span>), blokátory NMDA (s.&nbsp;326), němé synapse a&nbsp;trny (s.&nbsp;<span class="nw">326–328</span>), CaMKII (s.&nbsp;328), dlouhodobý útlum a&nbsp;množství vápníku (s.&nbsp;<span class="nw">330–331</span>), Hebbovo pravidlo (s.&nbsp;332), opatrnost ohledně paměti (s.&nbsp;333). Kap.&nbsp;25: prořezávání spojení (s.&nbsp;<span class="nw">560–561</span>).</li>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Kap.&nbsp;8: Vagusstoff a&nbsp;Nobelova cena 1936 (s.&nbsp;205), miniaturní potenciály asi 0,4&nbsp;mV (s.&nbsp;<span class="nw">214–215</span>), průměrně 2,3 kvanta u&nbsp;Boyda a&nbsp;Martina (s.&nbsp;215.e1), vápník, hořčík a&nbsp;měření Dodge a&nbsp;Rahamimoffa (obr.&nbsp;<span class="nw">8-11</span>, s.&nbsp;216), Nobelova cena 2013 (s.&nbsp;221), myastenie (rámeček <span class="nw">8-1</span>, s.&nbsp;223), botulotoxin a&nbsp;tetanotoxin (rámeček <span class="nw">8-2</span> a&nbsp;tab.&nbsp;<span class="nw">8-2</span>, s.&nbsp;<span class="nw">224–225</span>), botox (s.&nbsp;225). Kap.&nbsp;13: trny u&nbsp;víc než 90&nbsp;% vzrušujících synapsí (s.&nbsp;310), elektrické synapse nezesilují (s.&nbsp;314), velikost EPSP v&nbsp;mozku (s.&nbsp;319), hořčík začne vypadávat nad −60&nbsp;mV (s.&nbsp;324), 10 až 100 synapsí k&nbsp;výstřelu (s.&nbsp;327), synapse jako místo paměti (s.&nbsp;328), LTP, LTD a&nbsp;dráždění 1&nbsp;Hz (s.&nbsp;<span class="nw">329–331</span>).</li>
+    <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Kap.&nbsp;11: chloridové kanály tlumí depolarizaci (s.&nbsp;670), mírný vápník zapíná fosfatázy a&nbsp;dlouhodobý útlum (s.&nbsp;678). Kap.&nbsp;13: komplexin jako brzda, kterou uvolní synaptotagmin (s.&nbsp;783).</li>
+    <li>Dodge F.&nbsp;A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. <em>Journal of Physiology</em> 193(2): <span class="nw">419–432</span>, 1967. Strmost uvolňování podle vápníku.</li>
+    <li>Markram H., Gerstner W., Sjöström P.&nbsp;J. A&nbsp;history of spike-timing-dependent plasticity. <em>Frontiers in Synaptic Neuroscience</em> 3: 4, 2011. Doslovné znění Hebbova pravidla z&nbsp;roku 1949.</li>
+    <li>Jahr C.&nbsp;E., Stevens C.&nbsp;F. Voltage dependence of NMDA-activated macroscopic conductances predicted by single-channel kinetics. <em>Journal of Neuroscience</em> 10(9): <span class="nw">3178–3182</span>, 1990. Závislost hořčíkového bloku na napětí v&nbsp;simulaci 04.</li>
+    <li>Tsodyks M.&nbsp;V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. <em>PNAS</em> 94(2): <span class="nw">719–723</span>, 1997. Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. <em>PNAS</em> 95(9): <span class="nw">5323–5328</span>, 1998. Model útlumu a&nbsp;facilitace synapse v&nbsp;simulaci 03.</li>
+    <li>Schultz W. Dopamine reward prediction error coding. <em>Dialogues in Clinical Neuroscience</em>, 2016. Berridge K.&nbsp;C., Kringelbach M.&nbsp;L. Pleasure systems in the brain. <em>Neuron</em> 86(3): <span class="nw">646–664</span>, 2015.</li>
+    <li>Harmer C.&nbsp;J., Duman R.&nbsp;S., Cowen P.&nbsp;J. How do antidepressants work? New perspectives for refining future treatment approaches. <em>Lancet Psychiatry</em> 4(5): <span class="nw">409–418</span>, 2017.</li>
+    <li>Xu T. a&nbsp;kol. Rapid formation and selective stabilization of synapses for enduring motor memories. <em>Nature</em> 462: <span class="nw">915–919</span>, 2009. Yang G., Pan F., Gan W.-B. Stably maintained dendritic spines are associated with lifelong memories. <em>Nature</em> 462: <span class="nw">920–924</span>, 2009.</li>
+    <li>Petanjek Z. a&nbsp;kol. Extraordinary neoteny of synaptic spines in the human prefrontal cortex. <em>PNAS</em> 108(32): <span class="nw">13281–13286</span>, 2011.</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 01 je rezerva ploténky (3,5násobek prahu), rychlost vyčerpání váčků a&nbsp;podíl receptorů při myastenii a&nbsp;kurare ilustrační; neostigmin zvětší odpověď 1,7krát, uprostřed rozmezí, které uvádí Nicholls. V&nbsp;simulaci 02 je velikost kvanta 0,4&nbsp;mV a&nbsp;průměr kolem dvou kvant jako u&nbsp;Boyda a&nbsp;Martina, při běžném vápníku 200 kvant a&nbsp;mezi tím čtvrtá mocnina. V&nbsp;simulaci 03 vzniká útlum jen vyčerpáním váčků. Facilitace vyprchává s&nbsp;časovou konstantou 0,1&nbsp;s&nbsp;a&nbsp;váčky se doplňují s&nbsp;časovou konstantou 0,8&nbsp;s; silná synapse vylije napoprvé 55&nbsp;% připravených váčků, slabá 3&nbsp;%. V&nbsp;simulaci 04 je tvar hořčíkového bloku podle Jahra a&nbsp;Stevense, prahy vápníku a&nbsp;velikost změn jsou ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  function poisson(m){                                     // Knuth for small m, normal approximation for large m
+    if(m > 30) return Math.max(0, Math.round(m + Math.sqrt(m) * gauss()));
+    var L = Math.exp(-m), k = 0, p = 1;
+    do { k++; p *= Math.random(); } while(p > L);
+    return k - 1;
+  }
+  function fact(n){ var f = 1; for(var i = 2; i <= n; i++) f *= i; return f; }
+
+  /* =========================================================
+     SIM 02 — quanta (canvas ssim1). Each nerve impulse releases a random
+     number of vesicles; in low Ca²⁺ the number follows Poisson statistics
+     with mean m (del Castillo & Katz). Release rises with about the 4th
+     power of Ca²⁺ (Dodge & Rahamimoff; NMB ch. 16 "third or fourth power").
+     About 200 quanta at the normal 1.8 mM of a frog end plate (NMB ch. 13).
+     Quantal size 0.4 mV and m ≈ 2 as in Boyd & Martin (NMB Fig. 13.10).
+     ========================================================= */
+  var Q1 = {q: 0.4, cv: 0.2, noise: 0.03, mNorm: 200, caNorm: 1.8};
+  makeSim('ssim1', function(canvas, dim){
+    var ca = 0.6, m = 1, hist = [], traces = [], n = 0, fails = 0, last = now(), miniT = 0, mini = [];
+    var sCa = document.getElementById('s1-ca'), vCa = document.getElementById('s1-ca-v');
+    var nEl = document.getElementById('s1-n'), fEl = document.getElementById('s1-fail'), mEl = document.getElementById('s1-m');
+    function read(){
+      ca = 0.2 + (sCa ? +sCa.value : 40) / 100 * 1.8;
+      m = Q1.mNorm * Math.pow(ca / Q1.caNorm, 4);
+      setTxt(vCa, num(ca, 2) + NB + 'mM');
+      setTxt(mEl, m < 10 ? num(m, 2) : grp(m));
+      readout();
+    }
+    function readout(){
+      setTxt(nEl, String(n));
+      setTxt(fEl, n ? fails + ' / čekáno ' + num(n * Math.exp(-m), n * Math.exp(-m) < 10 ? 1 : 0) : '–');
+    }
+    function stim(){
+      var k = poisson(m), amp = 0;
+      for(var i = 0; i < k; i++) amp += Q1.q * (1 + Q1.cv * gauss());
+      amp = Math.max(0, amp + Q1.noise * gauss());
+      n++; if(k === 0) fails++;
+      hist.push(amp); traces.push({amp: amp, k: k, age: 0}); if(traces.length > 10) traces.shift();
+    }
+    function reset(){ hist = []; traces = []; n = 0; fails = 0; readout(); }
+    if(sCa) sCa.addEventListener('input', function(){ read(); reset(); });
+    onClick('s1-one', function(){ stim(); readout(); });
+    onClick('s1-many', function(){ for(var i = 0; i < 50; i++) stim(); readout(); });
+    onClick('s1-reset', reset);
+    read();
+    function epp(t, amp){ return t < 0 ? 0 : amp * (1 - Math.exp(-t / 0.6)) * Math.exp(-t / 4); }     // ms
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        miniT -= dt; if(miniT < 0){ miniT = 0.6 + Math.random() * 1.6; mini.push({amp: Q1.q * (1 + Q1.cv * gauss()), x: 0}); }
+        mini.forEach(function(q){ q.x += dt * 0.25; }); mini = mini.filter(function(q){ return q.x < 1; });
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, narrow = w < 600;
+        ctx.clearRect(0, 0, w, h);
+        var big = m > 6;
+        var vmax = big ? Math.max(5, Q1.q * m * 1.4) : 2.2;
+        // ---- traces (superimposed, like Katz's records)
+        var T = narrow ? frame(40, 18, w - 54, h * 0.38, 0, 20, -0.2, vmax) : frame(48, 18, w * 0.4 - 40, h - 52, 0, 20, -0.2, vmax);
+        axes(ctx, T, {xt: [[0, '0'], [10, '10'], [20, '20 ms']], yt: [[0, '0'], [vmax > 4 ? Math.floor(vmax / 2) : 1, (vmax > 4 ? Math.floor(vmax / 2) : 1) + ' mV']], yl: 'odpovědi svalu'});
+        traces.forEach(function(tr, i){
+          ctx.strokeStyle = i === traces.length - 1 ? C.gold : 'rgba(199,214,172,.45)'; ctx.lineWidth = i === traces.length - 1 ? 2 : 1.2;
+          ctx.beginPath();
+          for(var j = 0; j <= 80; j++){ var t = j / 4, v = epp(t - 2, tr.amp); if(j === 0) ctx.moveTo(T.X(t), T.Y(v)); else ctx.lineTo(T.X(t), T.Y(v)); }
+          ctx.stroke();
+        });
+        if(!traces.length) label(ctx, 'zmáčkni Vzruch', T.x0 + 10, T.y0 + T.h * 0.5, C.muted);
+        // ---- histogram of amplitudes with the Poisson prediction
+        var Hx = narrow ? 40 : w * 0.4 + 40, Hy = narrow ? h * 0.38 + 64 : 18, Hw = narrow ? w - 54 : w * 0.6 - 56, Hh = narrow ? h * 0.62 - 92 : h - 52;
+        if(big){
+          label(ctx, 'Při ' + num(ca, 1) + ' mM vápníku se uvolní asi ' + grp(m) + ' kvant najednou.', Hx, Hy + 30, C.ink, 'left', '600 12px ' + SANS);
+          label(ctx, 'Jednotlivé balíčky se slijí v jednu velkou odpověď.', Hx, Hy + 48, C.muted, 'left', '500 11px ' + SANS);
+          label(ctx, 'Sniž vápník a uvidíš, z čeho se skládá.', Hx, Hy + 66, C.muted, 'left', '500 11px ' + SANS);
+          return;
+        }
+        var BW = 0.05, NB2 = Math.round(2.2 / BW), bins = new Array(NB2).fill(0);
+        hist.forEach(function(a){ var b = Math.floor(a / BW); if(b >= 0 && b < NB2) bins[b]++; });
+        var ymax = Math.max(4, Math.max.apply(null, bins), n * Math.exp(-m) / 2 + 2);
+        var H = frame(Hx, Hy, Hw, Hh, 0, 2.2, 0, ymax * 1.1);
+        axes(ctx, H, {xt: [[0, '0'], [0.4, '0,4'], [0.8, '0,8'], [1.2, '1,2'], [1.6, '1,6'], [2, '2 mV']], yt: [[0, '0']]});
+        label(ctx, 'kolikrát která velikost odpovědi', H.x0 + H.w, H.y0 - 4, C.muted, 'right');
+        ctx.fillStyle = 'rgba(155,176,126,.75)';
+        bins.forEach(function(c, i){ if(c){ var x = H.X(i * BW), y = H.Y(c); ctx.fillRect(x + 0.5, y, Math.max(1, H.X(BW) - H.X(0) - 1), H.y0 + H.h - y); } });
+        // expected counts: k quanta give a gaussian around k·q
+        if(n){
+          ctx.strokeStyle = C.gold; ctx.lineWidth = 1.8; ctx.beginPath();
+          for(var j = 0; j <= 220; j++){
+            var a = j / 100, e = 0;
+            for(var k = 0; k <= 8; k++){
+              var pk = Math.exp(-m) * Math.pow(m, k) / fact(k), sd = k === 0 ? Q1.noise : Math.sqrt(k * Math.pow(Q1.q * Q1.cv, 2) + Q1.noise * Q1.noise);
+              e += pk * Math.exp(-Math.pow(a - k * Q1.q, 2) / (2 * sd * sd)) / (sd * 2.5066);
+            }
+            var y = H.Y(Math.min(ymax * 1.1, n * BW * e));
+            if(j === 0) ctx.moveTo(H.X(a), y); else ctx.lineTo(H.X(a), y);
+          }
+          ctx.stroke();
+        }
+        for(var kk = 1; kk <= 4; kk++) label(ctx, kk + ' kv.', H.X(kk * Q1.q), H.y0 + 14, C.muted, 'center', '500 9px ' + MONO);
+        label(ctx, '0 = selhání', H.X(0) + 6, H.y0 + 28, C.terraBright, 'left', '600 9.5px ' + SANS);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — short-term memory of a synapse (canvas ssim2). Tsodyks & Markram
+     1997, with facilitation as in Markram, Wang & Tsodyks 1998 (depression
+     comes from depletion only): each spike releases a fraction u of the ready vesicles R; R
+     recovers with τD = 0.8 s, u is raised by residual Ca²⁺ and decays back
+     to U with τF = 0.1 s (facilitation lasts tens to hundreds of ms and
+     depression recovers within seconds: NMB ch. 16). Illustrative values.
+     ========================================================= */
+  makeSim('ssim2', function(canvas, dim){
+    var U = 0.5, f = 20, tauD = 0.8, tauF = 0.25, resp = [], last = now(), anim = 0, kind = 0;
+    var sF = document.getElementById('s2-f'), vF = document.getElementById('s2-f-v');
+    var rEl = document.getElementById('s2-ratio');
+    var PRE = [{U: 0.55, tauD: 0.8, tauF: 0.1}, {U: 0.03, tauD: 0.8, tauF: 0.1}];
+    function run(){
+      var p = PRE[kind]; U = p.U; tauD = p.tauD; tauF = p.tauF;
+      var R = 1, u = U, dt = 1 / f; resp = [];
+      for(var i = 0; i < 10; i++){
+        if(i > 0){
+          R = 1 - (1 - R) * Math.exp(-dt / tauD);
+          u = U + (u - U) * Math.exp(-dt / tauF);
+        }
+        var uEff = i === 0 ? U : u;
+        resp.push(uEff * R);
+        R -= uEff * R;
+        u = uEff + U * (1 - uEff);          // residual Ca²⁺ raises the next release probability
+      }
+      anim = 0;
+      var r = resp[9] / resp[0];
+      setTxt(rEl, num(r, r < 10 ? 2 : 1) + '×');
+    }
+    function read(){ f = Math.round(Math.pow(10, 0.3 + (sF ? +sF.value : 50) / 100 * 1.7)); setTxt(vF, f + NB + 'Hz'); run(); }
+    if(sF) sF.addEventListener('input', read);
+    choice(['s2-strong', 's2-weak'], null, 0, function(i){ kind = i; run(); });
+    onClick('s2-go', run);
+    read();
+    return {
+      step: function(){ var t = now(), dt = Math.min(0.1, t - last); last = t; anim = Math.min(10, anim + dt * (REDUCED ? 4 : 2.2) * Math.max(1, f / 20)); },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, narrow = w < 600;
+        ctx.clearRect(0, 0, w, h);
+        var first = resp[0], mx = Math.max.apply(null, resp) / first;
+        var F = frame(46, 20, w - 62, h - 56, 0, 10, 0, Math.max(1.3, mx * 1.15));
+        axes(ctx, F, {yt: [[0, '0'], [1, '1×']], yl: 'odpověď vůči první'});
+        line(ctx, F.x0, F.Y(1), F.x0 + F.w, F.Y(1), C.line, 1, [3, 4]);
+        var bw = F.w / 10 * 0.56;
+        for(var i = 0; i < 10; i++){
+          if(i >= anim) break;
+          var v = resp[i] / first, x = F.X(i + 0.5) - bw / 2, y = F.Y(v);
+          ctx.fillStyle = v > 1.02 ? C.gold : (v < 0.98 ? C.blue : C.sagePale);
+          rr(ctx, x, y, bw, F.y0 + F.h - y, 3); ctx.fill();
+          ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'center'; ctx.fillText(String(i + 1), F.X(i + 0.5), F.y0 + F.h + 13);
+        }
+        label(ctx, 'vzruch v sérii', F.x0 + F.w, F.y0 + F.h + 26, C.muted, 'right');
+        label(ctx, kind === 0 ? 'Silná synapse: váčky docházejí' : 'Slabá synapse: zbytkový vápník pomáhá', F.x0 + F.w, F.y0 + 10, kind === 0 ? C.blue : C.gold, 'right', '700 ' + (narrow ? 10.5 : 12) + 'px ' + SANS);
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 01 — the end plate (canvas ssim3). A train of 10 impulses at 20 Hz.
+     Each releases a fraction U of the ready vesicles R, which recover with
+     τD. The first end-plate potential of a healthy junction is 3.5 times
+     threshold (the books only say "much larger than needed"). Myasthenia
+     leaves 35 % of the receptors, curare 20 %, neostigmine makes each
+     potential 1.7 times larger (NMB: 1.5 to 2 times). Illustrative.
+     ========================================================= */
+  makeSim('ssim3', function(canvas, dim){
+    var mg = false, cur = false, neo = false, eps = [], fired = [], last = now(), anim = 99;
+    var THR = 1, SAFE = 3.5, sEl = document.getElementById('s3-safety'), fEl = document.getElementById('s3-fired');
+    function run(){
+      var R = 1, U = 0.1, tauD = 0.5, dt = 0.05; eps = []; fired = [];
+      var rec = (mg ? 0.35 : 1) * (cur ? 0.2 : 1);                   // receptors available
+      var boost = neo ? 1.7 : 1;                                     // ACh lingers without its enzyme
+      for(var i = 0; i < 10; i++){
+        if(i > 0) R = 1 - (1 - R) * Math.exp(-dt / tauD);
+        var rel = U * R; R -= rel;
+        var e = SAFE * THR * (rel / U) * rec * boost;
+        eps.push(e); fired.push(e >= THR);
+      }
+      anim = 0;
+      setTxt(sEl, num(eps[0] / THR, 1) + '×' + NB + 'práh');
+      setTxt(fEl, fired.filter(Boolean).length + ' z 10');
+    }
+    var bM = onClick('s3-mg', function(){ mg = !mg; toggleBtn(bM, mg, 'Myastenie: ' + (mg ? 'ano' : 'ne')); run(); });
+    var bC = onClick('s3-cur', function(){ cur = !cur; toggleBtn(bC, cur, 'Kurare: ' + (cur ? 'ano' : 'ne')); run(); });
+    var bN = onClick('s3-neo', function(){ neo = !neo; toggleBtn(bN, neo, 'Neostigmin: ' + (neo ? 'ano' : 'ne')); run(); });
+    onClick('s3-go', run);
+    run();
+    return {
+      step: function(){ var t = now(), dt = Math.min(0.1, t - last); last = t; anim = Math.min(10, anim + dt * (REDUCED ? 6 : 4)); },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h;
+        ctx.clearRect(0, 0, w, h);
+        var top = Math.max.apply(null, eps.concat([THR * 1.6]));
+        var F = frame(52, 18, w - 66, h - 92, 0, 10, 0, top * 1.1);
+        axes(ctx, F, {yt: [[0, '0'], [THR, 'práh']], yl: 'ploténkový potenciál'});
+        line(ctx, F.x0, F.Y(THR), F.x0 + F.w, F.Y(THR), C.terraBright, 1.2, [5, 4]);
+        var bw = F.w / 10 * 0.5;
+        for(var i = 0; i < 10 && i < anim; i++){
+          var x = F.X(i + 0.5) - bw / 2, y = F.Y(eps[i]);
+          ctx.fillStyle = fired[i] ? C.sagePale : C.muted; rr(ctx, x, y, bw, F.y0 + F.h - y, 3); ctx.fill();
+          // the muscle fibre under each impulse
+          var fy = F.y0 + F.h + 30;
+          ctx.fillStyle = fired[i] ? C.terraBright : C.panel; rr(ctx, F.X(i + 0.5) - bw / 2, fy, bw, 12, 6); ctx.fill();
+        }
+        label(ctx, 'sval:', F.x0 - 8, F.y0 + F.h + 40, C.muted, 'right');
+        label(ctx, '10 vzruchů, 20 za sekundu', F.x0 + F.w, F.y0 + F.h + 62, C.muted, 'right');
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — a coincidence detector. NMDA receptors pass Ca²⁺ only when
+     glutamate is bound AND the membrane is depolarised enough to expel
+     Mg²⁺ from the pore. Block: B(V) = 1 / (1 + [Mg²⁺]/3.57 · e^(−0.062·V))
+     (Jahr & Stevens 1990). Much Ca²⁺ inserts more AMPA receptors (LTP);
+     slow stimulation lets in a little and removes some (LTD). Thresholds
+     and step sizes are illustrative.
+     ========================================================= */
+  makeSim('ssim4', function(canvas, dim){
+    var w8 = 1, hist = [1], mgIn = true, ap5 = false, V = -70, lastCa = 0, glu = 0, dep = 0, flash = 0, last = now(), note = '';
+    var wEl = document.getElementById('s4-w'), cEl = document.getElementById('s4-ca');
+    function sizeFor(d){                       // on phones the panels stack, so the canvas needs more height
+      var want = d.w < 600 ? 460 : 320;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    sizeFor(dim);
+    function block(v){ return 1 / (1 + (mgIn ? 1 : 0.0001) / 3.57 * Math.exp(-0.062 * v)); }
+    function pulse(g, depol, slow){
+      var v = slow ? -40 : (depol ? -10 : -70 + 3 * w8 * (g ? 1 : 0));
+      var ca = g && !ap5 ? block(v) : 0;
+      lastCa = ca; glu = g ? 1 : 0; dep = depol || slow ? 1 : 0; flash = 1; V = v;
+      if(ca > 0.35){
+        note = w8 >= 3 ? 'Vápníku proudí hodně, ale synapse už je zesílená naplno.' : 'Vápníku proudí hodně: synapse zesílila.';
+        w8 = Math.min(3, w8 + 0.35);
+      }
+      else if(slow && ca > 0.1){
+        note = w8 <= 0.3 ? 'Vápníku vteklo jen trochu, ale slabší už synapse nebude.' : 'Vápníku vteklo jen trochu: synapse zeslábla.';
+        w8 = Math.max(0.3, w8 - 0.15);
+      }
+      else if(g && ap5){ note = slow ? 'Blokátor NMDA: vápník neprojde, nezapíše se ani útlum.' : 'Blokátor NMDA: vápník neprojde, nic se nezapíše.'; }
+      else if(g && !depol){ note = 'Glutamát je navázaný, ale pór ucpává hořčík.'; }
+      else if(!g && depol){ note = 'Pór je volný, ale chybí glutamát.'; }
+      hist.push(w8); if(hist.length > 14) hist.shift();
+      setTxt(wEl, Math.round(w8 * 100) + NB + '%');
+      setTxt(cEl, ca > 0.01 ? Math.round(ca * 100) + NB + '%' : '0');
+    }
+    onClick('s4-glu', function(){ pulse(true, false); });
+    onClick('s4-dep', function(){ pulse(false, true); });
+    onClick('s4-both', function(){ pulse(true, true); });
+    onClick('s4-slow', function(){ pulse(true, false, true); });
+    var bMg = onClick('s4-mg', function(){ mgIn = !mgIn; toggleBtn(bMg, mgIn, 'Hořčík v roztoku: ' + (mgIn ? 'ano' : 'ne')); });
+    var bAp = onClick('s4-ap5', function(){ ap5 = !ap5; toggleBtn(bAp, ap5, 'Blokátor NMDA: ' + (ap5 ? 'ano' : 'ne')); });
+    onClick('s4-reset', function(){ w8 = 1; hist = [1]; lastCa = 0; note = ''; setTxt(wEl, '100' + NB + '%'); setTxt(cEl, '0'); });
+    setTxt(wEl, '100' + NB + '%'); setTxt(cEl, '0');
+    return {
+      resize: sizeFor,
+      step: function(){ var t = now(), dt = Math.min(0.1, t - last); last = t; flash = Math.max(0, flash - dt * (REDUCED ? 0.6 : 0.9)); },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, narrow = w < 600;
+        ctx.clearRect(0, 0, w, h);
+        // ---- the spine membrane with one NMDA channel and AMPA receptors
+        var sx = 14, sw = narrow ? w - 28 : w * 0.46, my = 104;
+        ctx.fillStyle = 'rgba(208,138,94,.08)'; rr(ctx, sx, 14, sw, my - 22, 8); ctx.fill();
+        label(ctx, 'štěrbina', sx + 8, 28, C.muted);
+        ctx.fillStyle = 'rgba(155,176,126,.10)'; rr(ctx, sx, my + 10, sw, 74, 8); ctx.fill();
+        label(ctx, 'trn dendritu', sx + 8, my + 78, C.muted);
+        line(ctx, sx, my, sx + sw, my, C.sagePale, 3);
+        var nx = sx + sw * 0.5, open = glu && flash > 0;
+        // NMDA channel
+        ctx.fillStyle = C.sageDeep; rr(ctx, nx - 18, my - 16, 12, 32, 3); ctx.fill(); rr(ctx, nx + 6, my - 16, 12, 32, 3); ctx.fill();
+        label(ctx, 'NMDA', nx, my + 26, C.ink, 'center', '700 10px ' + SANS);     // below the membrane, clear of Mg²⁺ and glutamate
+        var mgUp = mgIn && !(dep && flash > 0), mgY = mgUp ? my : my - 34;
+        if(mgIn) { dot(ctx, nx, mgY, 6, C.blue); label(ctx, 'Mg²⁺', nx + (mgUp ? 22 : 10), mgY + (mgUp ? -6 : 4), C.blue, 'left', '600 9px ' + SANS); }
+        if(ap5){ ctx.fillStyle = C.plum; rr(ctx, nx - 7, my - 28, 14, 7, 3); ctx.fill(); }
+        if(glu && flash > 0){ dot(ctx, nx - 12, my - 22, 4, C.gold); dot(ctx, nx + 12, my - 22, 4, C.gold); }
+        if(lastCa > 0.05 && flash > 0){
+          for(var i = 0; i < Math.round(lastCa * 10); i++) dot(ctx, nx + (i % 5 - 2) * 9, my + 40 + Math.floor(i / 5) * 10 + (1 - flash) * 14, 3, C.terraBright);
+          label(ctx, 'Ca²⁺', nx + 30, my + 50, C.terraBright, 'left', '700 10px ' + SANS);
+        }
+        // AMPA receptors: their number is the strength of the synapse
+        var na = Math.round(3 * w8);
+        for(var a = 0; a < na; a++){
+          var ax = sx + 22 + a * 16; if(ax > nx - 30) ax = nx + 52 +(a - Math.floor((nx - 30 - sx - 22) / 16) - 1) * 16;
+          ctx.fillStyle = C.sage; rr(ctx, ax - 4, my - 9, 8, 18, 2); ctx.fill();
+        }
+        label(ctx, 'AMPA', sx + 22, my + 26, C.sage, 'left', '600 9.5px ' + SANS);
+        if(note) label(ctx, note, sx + 4, narrow ? my + 104 : h - 12, C.ink, 'left', '600 ' + (narrow ? 10.5 : 11.5) + 'px ' + SANS);
+        // ---- right: Mg²⁺ block vs voltage, and strength over the trials
+        var F = narrow ? frame(52, my + 134, w - 66, 70, -80, 0, 0, 1) : frame(w * 0.5 + 46, 22, w * 0.5 - 62, 92, -80, 0, 0, 1);
+        axes(ctx, F, {xt: [[-80, '−80'], [-40, '−40'], [0, '0 mV']], yt: [[0, '0'], [1, '1']], yl: 'NMDA průchodný'});
+        ctx.strokeStyle = C.blue; ctx.lineWidth = 2; curve(ctx, F, block, -80, 0, 80);
+        dot(ctx, F.X(V), F.Y(block(V)), 4.5, C.terraBright);
+        var G = narrow ? frame(52, my + 236, w - 66, h - my - 262, 0, 14, 0, 3.2) : frame(w * 0.5 + 46, 150, w * 0.5 - 62, h - 182, 0, 14, 0, 3.2);
+        axes(ctx, G, {yt: [[1, '100 %'], [3, '300 %']], yl: 'síla synapse'});
+        ctx.fillStyle = C.gold;
+        hist.forEach(function(v, i){ var x = G.X(i + 0.5); dot(ctx, x, G.Y(v), 3.5, C.gold); if(i) line(ctx, G.X(i - 0.5), G.Y(hist[i - 1]), x, G.Y(v), 'rgba(217,183,90,.5)', 1.2); });
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

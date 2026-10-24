@@ -10,7 +10,7 @@ Simulace jsou nahrazené svými popisky. Zdroje jsou na konci každého textu.
 
 URL: https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html  
 Větev: Biochemie  
-Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-17  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-24  
 Shrnutí: Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.  
 English: Introduction to metabolism: why you are a process rather than a thing; ATP, stepwise release of energy and feedback inhibition without a central controller.
 
@@ -189,7 +189,182 @@ Všechno, co jsme probrali, jsou strany jednoho faktu. Dynamický ustálený sta
 
 Nejsi oheň, který hoří. Jsi to hoření.
 
-– Dále v terénním průvodci Kapitola druhá – První rameno schodiště. Sledujeme jednu molekulu cukru po prvních schodech glykolýzy a díváme se na nejstarší trik biochemie: utratit trochu ATP, aby se ho vyrobilo víc.
+– Dále v terénním průvodci Kapitola druhá – [První rameno schodiště](https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html). Sledujeme jednu molekulu cukru po prvních schodech glykolýzy a díváme se na nejstarší trik biochemie: utratit trochu ATP, aby se ho vyrobilo víc.
+
+---
+
+# První rameno schodiště
+
+URL: https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html  
+Větev: Biochemie  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Shrnutí: Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.  
+English: Glycolysis step by step, following Lehninger: the two-ATP investment and four-ATP payoff, phosphoryl transfer potential, free energy in red blood cells, feeder pathways, fermentation and NAD+ recycling, and regulation of hexokinase, PFK-1 and pyruvate kinase.
+
+Obrázek: Glykolýza. Glukóza (šestiúhelník) dostane na prvních schodech dva fosfáty z ATP (terakotové tečky), pak se rozlomí a obě poloviny sestoupí po pěti schodech až k pyruvátu. Cestou naloží dvě NADH (světlé) a vrátí čtyři ATP (zlaté). Z jedné větve dvě, větev na větvi.
+
+Většina buněk tvého těla nikdy nedýchá. Z asi třiceti bilionů lidských buněk připadá zhruba pětadvacet bilionů na červené krvinky a ty nemají jádro ani mitochondrie. Celý život roznášejí kyslík, ale samy ho k získávání energie nepoužijí. Jediným zdrojem energie je pro ně deset reakcí, které rozštípnou glukózu na dvě poloviny a vytěží z ní pár molekul ATP. Těm deseti reakcím se říká glykolýza.
+
+V první kapitole, [Jsi sloveso](https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html), jsme viděli, že buňka glukózu nespálí naráz jako zápalka, ale sestoupí s ní po schodišti zhruba dvaceti kroků. Glykolýza je jeho první rameno. Běží v cytoplazmě skoro každé buňky, od kvasinky po tvůj neuron, a kyslík k ní potřeba není. Učebnice připomíná, že první buňky žily v atmosféře, ve které kyslík skoro nebyl, a energii z paliv musely brát bez něj. Chemie glykolýzy se během evoluce zachovala beze změny: její enzymy jsou u obratlovců stavbou velmi podobné enzymům kvasinky i špenátu.
+
+A hned na prvních schodech předvede trik, který zná každý podnikatel: aby vydělala, musí nejdřív investovat. Buňka do glukózy vloží dvě molekuly ATP a teprve pak z ní dostane čtyři. Kapitola jde po stejných krocích jako učebnice: dvě fáze dráhy, vklad, výplata, účetní bilance, přítoky z jiných cukrů, osud pyruvátu a nakonec tři ventily, kterými buňka celou dráhu řídí.
+
+> Přirovnání ze života: Stará pumpa na zahradě nejde, dokud do ní nenaleješ trochu vody. Ta voda se nevyplýtvá: utěsní píst, a když pak zapumpuješ, vyteče jí mnohem víc, než kolik do pumpy přišlo. Dvě ATP na začátku glykolýzy jsou taková voda do pumpy.
+
+## i. Dvě fáze
+
+Glykolýza rozštípne jednu molekulu glukózy se šesti uhlíky na dvě molekuly pyruvátu se třemi uhlíky. Dělá to v deseti krocích a každý obstará jiný enzym. Byla to první metabolická dráha, kterou se podařilo celou rozluštit. Začalo to v roce 1897, kdy Eduard Buchner zjistil, že cukr dokáže zkvasit i pouhý výtažek z kvasinek, ve kterém už není jediná živá buňka. Do třicátých let dvacátého století pak biochemici složili celou dráhu krok za krokem, v kvasinkách i ve svalu. Podle tří z nich, Gustava Embdena, Otty Meyerhofa a Jakuba Parnase, se jí dodnes říká také dráha Embdenova–Meyerhofova–Parnasova. A ukázalo se, že se reakce života dají vysvětlit chemií, bez jakékoli tajemné životní síly.
+
+Dráha má dvě fáze. V přípravné fázi (kroky 1 až 5) buňka glukózu dvakrát označí fosfátem z ATP, přestaví ji na fruktózu a rozlomí ji na dvě tříuhlíkové poloviny. Obě skončí jako stejná molekula, glyceraldehyd-3-fosfát. Ve výplatní fázi (kroky 6 až 10) projde každá polovina stejnými pěti kroky až k pyruvátu a buňka z ní cestou získá dvě ATP a jedno NADH. Poloviny jsou dvě, takže výplata vynese čtyři ATP a dvě NADH. Po odečtení vkladu zbydou na každou glukózu dvě ATP a dvě NADH.
+
+Učebnice upozorňuje na tři druhy dějů, které v dráze stojí za pozornost. Uhlíková kostra glukózy se rozkládá na pyruvát. Meziprodukty s vysokým potenciálem přenosu fosfátu, které vzniknou cestou, předají fosfát na ADP a vznikne ATP. A v jednom kroku přejde na NAD⁺ hydridový iont, tedy vodík se dvěma elektrony, a NAD⁺ se tím změní na NADH.
+
+Glykolýza přitom uvolní jen malý díl energie, kterou glukóza skrývá. Rozklad glukózy na dva pyruváty, i s předáním elektronů na NAD⁺, má standardní změnu volné energie −146 kJ/mol. Úplné spálení glukózy na oxid uhličitý a vodu má −2840 kJ/mol. Většinu energie si tedy pyruvát odnese s sebou a s kyslíkem si ji vyberou mitochondrie. Bez kyslíku ale zůstane buňce na výrobu ATP jen glykolýza.
+
+Všech devět meziproduktů mezi glukózou a pyruvátem nese fosfátovou skupinu a Lehninger k tomu uvádí tři důvody. Zaprvé past: membrána nemá přenašeče pro fosforylované cukry, takže meziprodukty z buňky neutečou a buňka nemusí vydávat další energii, aby je v sobě udržela. Zadruhé úspory: z fosfátů navázaných na meziprodukty později vzniknou nové ATP. Zatřetí držadla: fosfátové skupiny se navážou do aktivních míst enzymů a energie té vazby pomáhá snížit aktivační energii a zvýšit specifičnost reakce. Většina enzymů glykolýzy k tomu potřebuje hořečnaté ionty.
+
+**Glykolýza není spalování. Je to přestavba: z jednoho šestiuhlíkového cukru dva tříuhlíkové zbytky a cestou dvě ATP navíc.**
+
+## ii. Vklad
+
+Že na začátku glykolýzy stojí fosfáty, se zjistilo náhodou. V roce 1906 přidali Arthur Harden a William Young do kvasničného výtažku krevní sérum. Čekali, že látky ze séra, které brzdí enzymy štěpící bílkoviny, ochrání kvasné enzymy, a kvašení se opravdu zrychlilo. Pak udělali kontrolní pokus: sérum převařili, aby ukázali, že po povaření účinek zmizí. Nezmizel. Převařené sérum kvašení zrychlilo stejně, protože to dělal obyčejný anorganický fosfát. Harden s Youngem pak našli ve výtažku hexózu se dvěma fosfáty, ze které se později vyklubal fruktóza-1,6-bisfosfát. Tím začalo dlouhé zkoumání toho, co v biochemii dělají fosfáty, a Harden za výzkum kvašení dostal v roce 1929 Nobelovu cenu.
+
+Krok 1. Glukóza vstoupí do buňky přenašečem v membráně a hned za prahem ji hexokináza označí: přenese na její šestý uhlík koncovou fosfátovou skupinu z ATP. Vznikne glukóza-6-fosfát a v buňce je ta reakce nevratná. Hexokináza se přitom kolem glukózy sevře. Když naváže ATP, přiblíží se její dvě části asi o osm ångströmů, necelý nanometr. Tím přisune ATP ke glukóze a vytlačí z aktivního místa vodu, která by jinak mohla ATP rozštípnout naprázdno. Fosfát na glukóze pak funguje jako zámek: pro fosforylovaný cukr membrána přenašeč nemá, takže glukóza zůstane v buňce.
+
+Krok 2. Fosfohexózaizomeráza přestaví glukóza-6-fosfát na fruktóza-6-fosfát: kruh se otevře, karbonylová skupina se přesune z prvního uhlíku na druhý a kruh se zase zavře. Vypadá to jako zbytečná práce, ale bez ní by nešel hlavně čtvrtý krok. Karbonylová skupina na druhém uhlíku je přesně to, co aldoláza potřebuje, aby molekulu rozlomila mezi třetím a čtvrtým uhlíkem, tedy v půli. Z glukózy by vznikly dva nestejně dlouhé kusy. Fruktóza navíc má na prvním uhlíku volnou hydroxylovou skupinu mimo kruh, na kterou ve třetím kroku přijde druhý fosfát.
+
+Krok 3. Fosfofruktokináza-1 (PFK-1) přenese druhý fosfát z ATP, tentokrát na první uhlík. Vznikne fruktóza-1,6-bisfosfát. (Bis-, protože dva fosfáty sedí každý na jiném uhlíku. Difosfát by znamenal dva fosfáty spojené za sebou, jako v ADP.) Tohle je rozhodující krok: glukóza-6-fosfát i fruktóza-6-fosfát ještě můžou odbočit do jiných drah, fruktóza-1,6-bisfosfát už jen do glykolýzy. A v buňce je krok prakticky nevratný. Proto na něm buňka glykolýzu nejvíc řídí, jak uvidíme v poslední části.
+
+Krok 4. Aldoláza rozlomí šestiuhlíkovou molekulu na dvě tříuhlíkové: dihydroxyacetonfosfát a glyceraldehyd-3-fosfát. Za standardních podmínek by reakce šla silně opačným směrem (ΔG′° = +23,8 kJ/mol). V buňce jsou ale koncentrace látek tak nízké, že skutečná změna volné energie je malá a reakce snadno běží oběma směry. Protože produkty pořád odtékají dál, běží v glykolýze dopředu.
+
+Krok 5. Dál se hodí jen glyceraldehyd-3-fosfát. Triózafosfátizomeráza proto přestaví dihydroxyacetonfosfát na druhou molekulu glyceraldehyd-3-fosfátu. Svou reakci urychlí asi miliardkrát a pracuje tak rychle, že ho brzdí už jen to, jak rychle k němu molekuly doputují. Po pátém kroku má buňka místo jedné glukózy dvě stejné poloviny, každou s jedním fosfátem, a uhlíky z horní a dolní půlky glukózy už od sebe chemicky nerozeznáš.
+
+**Vklad není ztráta. Dva fosfáty z ATP chytí cukr do pasti a připraví ho k rozlomení.**
+
+## iii. Výplata
+
+Krok 6 je srdce celé dráhy. Glyceraldehyd-3-fosfátdehydrogenáza odebere aldehydové skupině dva elektrony s vodíkem a předá je NAD⁺, které se změní na NADH. Energie, kterou oxidace uvolní, se přitom neztratí jako teplo. Enzym ji použije na připojení fosfátu z roztoku, tedy fosfátu, za který buňka nezaplatila žádným ATP. Vznikne 1,3-bisfosfoglycerát, molekula s acylfosfátovou skupinou, ve které je fosfát vázaný velmi volně. NAD⁺ má buňka mnohem méně než glukózy, kterou za pár minut zpracuje. Kdyby NADH z tohohle kroku neměnila pořád zpátky na NAD⁺, glykolýza by se brzy zastavila. K tomu se vrátíme v šesté části.
+
+Jak důležitý je ten fosfát z roztoku, ukazují dvě úlohy o arseničnanu na konci Lehningerovy kapitoly. Arseničnan se fosfátu podobá natolik, že ho enzym připojí místo fosfátu, jenže vzniklý acylarseničnan se hned sám rozpadne. Glykolýza pak běží dál, sedmý krok se ale přeskočí, ATP z něj nevznikne a čistý zisk bez kyslíku klesne na nulu.
+
+Krok 7. Fosfoglycerátkináza přenese volně držený fosfát z 1,3-bisfosfoglycerátu na ADP. Vznikne první ATP z každé poloviny a 3-fosfoglycerát. Kroky 6 a 7 tak dohromady spřáhnou oxidaci aldehydu s výrobou ATP a jejich společná ΔG′° je asi −12 kJ/mol: silně z kopce jde sedmý krok a táhne za sebou šestý. Výrobě ATP přímo z meziproduktu se říká fosforylace na úrovni substrátu. Obstarávají ji rozpustné enzymy, v glykolýze v cytoplazmě. Většina ATP v mitochondriích naopak vzniká na membráně díky toku protonů.
+
+Kroky 8 a 9. Fosfoglycerátmutáza přesune zbylý fosfát ze třetího uhlíku na druhý a enoláza z molekuly odebere vodu. Vznikne fosfoenolpyruvát (PEP). Na pohled se skoro nic nezměnilo: stejná tříuhlíková kostra, pořád jeden fosfát. Jenže odtržení fosfátu z 2-fosfoglycerátu uvolní 17,6 kJ/mol, z fosfoenolpyruvátu 61,9 kJ/mol a na výrobu ATP z ADP je potřeba 30,5 kJ/mol. Fosfát teď drží molekulu v podobě enolu, která by se ráda přeskupila na stabilnější tvar a nemůže. Enoláza nic nevyrobí, jen přerozdělí energii uvnitř molekuly tak, aby se dala vybrat.
+
+Krok 10. Pyruvátkináza přenese fosfát z fosfoenolpyruvátu na ADP. Vznikne druhé ATP z každé poloviny a pyruvát, nejdřív v podobě enolu, která se hned sama přeskupí do stabilnější ketoformy. Zhruba polovina energie se uloží do ATP. Zbytek, −31,4 kJ/mol, žene reakci dopředu tak silně, že je v buňce nevratná.
+
+Vyzkoušej si to. Vyber dárce a příjemce fosfátu a sleduj, kterým směrem by přenos šel sám.
+
+Simulace: Žebříček fosfátů. Sloučeniny jsou seřazené podle potenciálu přenosu fosfátu, tedy podle toho, kolik volné energie se uvolní, když fosfát pustí do vody (záporně vzatá standardní volná energie hydrolýzy). Za standardních podmínek fosfát sám od sebe „padá“ jen dolů, od výš postavené sloučeniny k níž postavené. Fosfoenolpyruvát a 1,3-bisfosfoglycerát stojí nad ATP, a proto z nich glykolýza ATP vyrobí. Glukóza-6-fosfát stojí pod ATP, a proto hexokináza může glukózu fosforylovat. ATP je uprostřed jako prostředník, přesně jak popisuje první kapitola. Enzym o směru nerozhoduje, jen otevře cestu. V buňce mají slovo i koncentrace: když sval odpočívá a ATP má dost, přenese kreatinkináza fosfát z ATP na kreatin a sval si tak doplní zásobu fosfokreatinu, i když je to za standardních podmínek do kopce. Hodnoty z Lehningera, tabulka 13-6; glukóza-1-fosfát podle Voeta, tabulka 16-3.
+
+**ATP nevzniká z ničeho. Buňka nejdřív molekulu přestaví tak, aby fosfát držela co nejhůř, a pak ho nechá spadnout na ADP.**
+
+## iv. Účetní kniha
+
+Teď už můžeme sestavit účetní knihu. Lehninger v ní sleduje tři věci: kam se podějí uhlíky glukózy; kolik fosfátu a ADP vejde a kolik ATP vyjde; a kudy putují elektrony. Na levou stranu napíše všechno, co do dráhy vstoupí, na pravou všechno, co z ní vyjde, a škrtne, co je na obou stranách. Zbyde tohle:
+
+glukóza + 2 NAD⁺ + 2 ADP + 2 P_i → 2 pyruvát + 2 NADH + 2 H⁺ + 2 ATP + 2 H_2O
+
+Jedna glukóza dá dva pyruváty: to je cesta uhlíku. Dvě ADP a dva fosfáty se změní na dvě ATP: cesta fosfátu. A čtyři elektrony, ve dvou hydridových iontech, přejdou ze dvou molekul glyceraldehyd-3-fosfátu na dvě NAD⁺: cesta elektronů. Celková standardní změna volné energie, i s výrobou dvou ATP, je asi −85 kJ/mol. Dráha je jako celek silně z kopce a běží jedním směrem.
+
+Zajímavější je, jak vypadá schodiště uvnitř buňky. Hodnoty ΔG′° v tabulkách platí pro standardní podmínky, kdy je každé látky jeden mol na litr. V buňce jsou koncentrace úplně jiné a skutečná změna volné energie ΔG se od standardní liší, někdy i znaménkem. Lehninger se k tomu vrací v oddílu 14.4 a uvádí ΔG všech deseti kroků spočítané z koncentrací meziproduktů, které se naměřily v červených krvinkách. Výsledek je překvapivý. Sedm z deseti kroků má ΔG blízko nuly: jsou skoro v rovnováze a můžou běžet oběma směry podle toho, kam zrovna odtéká víc látky. Jen tři kroky, hexokináza, fosfofruktokináza-1 a pyruvátkináza, jsou daleko od rovnováhy a běží jen dopředu. Proto taky glukoneogeneze, která v játrech vyrábí glukózu z laktátu a jiných látek, projde sedm kroků glykolýzy pozpátku a obejde jen ty tři.
+
+Vyzkoušej si to. Projdi dráhu krok za krokem a sleduj účet ATP a NADH. Pak přepni na standardní podmínky.
+
+Simulace: Deset schodů. Vlevo (na telefonu dole) uhlíková kostra molekuly po každém kroku: terakotové kroužky jsou fosfáty, zlaté jsou fosfáty s vysokým potenciálem přenosu, které se vzápětí přenesou na ADP. Od čtvrtého kroku jsou molekuly dvě. Vpravo (na telefonu nahoře) schodiště volné energie na jednu glukózu, v červené krvince a za standardních podmínek. Kroky 6 až 10 se počítají dvakrát, protože je projdou obě poloviny. Za standardních podmínek vede několik schodů do kopce. V buňce jsou skoro všechny ploché a strmé jsou jen tři. Hodnoty ΔG′° i ΔG v červených krvinkách jsou z Lehningerovy tabulky 14-2. U sedmi kroků blízko rovnováhy uvádí tabulka jen rozmezí a simulace je kreslí jako ploché. Pro enolázu bereme standardní hodnotu −3,2 kJ/mol z Lehningerovy tabulky 13-10: s ní vyjde součet všech kroků −83 kJ/mol, blízko celkových −85, kdežto s hodnotou +7,5 kJ/mol z tabulky 14-2 jen −62.
+
+**V buňce je schodiště skoro celé ploché. Strmé jsou jen tři schody a právě na nich se rozhoduje, jak rychle dráha poteče.**
+
+## v. Přítoky
+
+Glukóza není jediný cukr, který do glykolýzy vtéká. Glykogen ve svalech a v játrech je rozvětvený řetězec glukóz a buňka ho nerozkládá vodou, ale fosfátem. Glykogenfosforyláza odštípne glukózu rovnou jako glukóza-1-fosfát a fosfoglukomutáza z něj udělá glukóza-6-fosfát. Hexokináza tak nemusí utratit ATP a glukóza z glykogenu dá místo dvou ATP tři.
+
+Škrob z jídla má skoro stejnou stavbu jako glykogen, jenže v trávicí trubici ho štěpí voda. Začne s tím slinná amyláza v ústech, pokračuje amyláza ze slinivky v tenkém střevě a dvojcukry nakonec rozštěpí enzymy na povrchu střevní sliznice. Do těla se vstřebají jen jednotlivé cukry.
+
+Mléčný cukr laktózu štěpí laktáza na glukózu a galaktózu. Po odstavení jí ale u většiny lidí ubude: zhruba dvě třetiny dospělých na světě tráví laktózu špatně. Laktázu si do dospělosti drží hlavně lidé ze severní Evropy a z některých částí Afriky. Ostatním laktóza projde do tlustého střeva, kde ji rozkládají bakterie, a nestrávený cukr navíc táhne do střeva vodu. Odtud křeče a průjem.
+
+Galaktóza doputuje krví do jater a tam ji enzymy přes několik kroků přestaví na glukóza-1-fosfát, stejný jako z glykogenu. Když některý z těch enzymů chybí, vznikne galaktosemie. Při nejmírnější formě se v oční čočce ukládá galaktitol a už u kojenců se tvoří šedý zákal. Nejvážnější forma brzdí růst i vývoj řeči a rozumu a poškozuje játra, a to i když se galaktóza z jídla vyřadí.
+
+Fruktóza z ovoce a ze sacharózy má dvě cesty. Ve svalech a ledvinách ji hexokináza fosforyluje na šestém uhlíku a vzniklý fruktóza-6-fosfát pokračuje glykolýzou. V játrech ji fruktokináza fosforyluje na prvním uhlíku. Fruktóza-1-fosfát se pak rozštěpí na dvě triózy a obě skončí jako glyceraldehyd-3-fosfát. Do glykolýzy tak vstoupí až za třetím krokem, tedy za fosfofruktokinázou-1, o které bude řeč v poslední části. Podobně vchází manóza: hexokináza z ní udělá manóza-6-fosfát a izomeráza ho přestaví na fruktóza-6-fosfát.
+
+**Do glykolýzy vede víc vchodů než jeden. Všechny ale ústí do stejného schodiště.**
+
+## vi. Kam s pyruvátem
+
+Pyruvát má tři cesty. S kyslíkem jde do mitochondrií, kde z něj vznikne acetylkoenzym A a v citrátovém cyklu oxid uhličitý. Glykolýza je pak jen první rameno schodiště. Bez kyslíku ale nastane potíž, která s energií nesouvisí. Šestý krok spotřebovává NAD⁺ a buňka ho má tak málo, že by se glykolýza bez jeho vracení brzy zastavila. S kyslíkem odvezou elektrony z NADH mitochondrie. Bez něj je buňka musí uložit jinam a nejbližší místo je samotný pyruvát. Tomu se říká kvašení: buňka získá ATP, nespotřebuje kyslík a množství NAD⁺ ani NADH se nezmění.
+
+Při mléčném kvašení předá laktátdehydrogenáza elektrony z NADH na pyruvát a vznikne laktát. NAD⁺ se vrátí do šestého kroku a glykolýza jede dál. Takhle žijí červené krvinky, které laktát vyrábějí i s kyslíkem, a takhle pracují svaly při sprintu, kdy krev nestihne kyslík dovézt dost rychle. Laktát pak krev odnese do jater, kde se z něj znovu stane glukóza. Tomu koloběhu se podle manželů Coriových říká Coriho cyklus. Vytrénovaný sportovec se ze stometrového sprintu vzpamatuje do půl hodiny. Aligátor, jinak líné zvíře, se umí bleskově vrhnout do útoku, ale pak potřebuje na odbourání laktátu a doplnění glykogenu mnoho hodin.
+
+Výtěžek kvašení je skromný: dvě ATP na glukózu místo třiceti nebo dvaatřiceti s kyslíkem. Louis Pasteur si všiml, že kvasinky bez kyslíku spotřebují cukru mnohonásobně víc, a stejně se chová sval. Aby buňka bez kyslíku vyrobila stejné množství ATP, musí podle Lehningera zpracovat asi patnáctkrát víc glukózy. Tomu se říká Pasteurův efekt. Hned vedle něj popisuje Lehninger efekt Warburgův: nádory, ve kterých glykolýza běží rychle i s kyslíkem. Víc o něm v otázkách na konci kapitoly.
+
+Při alkoholovém kvašení kvasinky pyruvát nejdřív zbaví oxidu uhličitého a vzniklý acetaldehyd teprve alkoholdehydrogenáza redukuje na ethanol. Enzym, který oxid uhličitý odštěpí, pyruvátdekarboxyláza, potřebuje thiaminpyrofosfát, koenzym vyrobený z vitaminu B_1. Odtud bublinky v šampaňském i kynuté těsto. V tkáních obratlovců tenhle enzym chybí. Alkoholdehydrogenázu ale máme a v játrech s ní ethanol odbouráváme, stejnou reakcí obráceně.
+
+Kvašení lidé využívají tisíce let. Bakterie mléčného kvašení dělají z mléka jogurt: kyselina mléčná sníží pH, bílkoviny mléka se vysrážejí a jogurt zhoustne a zkysne. Kyselé prostředí navíc jídlo konzervuje, protože většina mikrobů, které ho kazí, v něm neroste. Podobně vzniká kysané zelí, kvašené okurky nebo kimči.
+
+Vyzkoušej si to. Vypínej kyslík a laktátdehydrogenázu a měň, jak tvrdě sval pracuje.
+
+Simulace: Kolotoč NAD⁺. Molekuly NAD⁺ (světlé) se v šestém kroku mění na NADH (tmavé) a musí se vrátit. S kyslíkem je vracejí mitochondrie, bez něj laktátdehydrogenáza, která elektrony uloží do laktátu. Když nefunguje ani jedno, NAD⁺ dojde a glykolýza se zastaví, i když je glukózy dost. Při sprintu mitochondrie nestíhají a část pyruvátu skončí jako laktát i s kyslíkem. S kyslíkem dává v simulaci jedna glukóza 32 ATP, bez něj 2, a sval jí proto spotřebuje šestnáctkrát víc, blízko zhruba patnáctinásobku, který uvádí Lehninger. Ostatní jednotky jsou ilustrační.
+
+**Bez kyslíku hrozí glykolýze dřív nedostatek NAD⁺ než nedostatek cukru. Kvašení je způsob, jak NAD⁺ vrátit.**
+
+## vii. Tři ventily
+
+Zbývá otázka, kterou otevřel Pasteur: jak buňka pozná, že má glykolýzu zrychlit? Odpověď leží na třech strmých schodech ze simulace Deset schodů. Jen kroky daleko od rovnováhy běží jedním směrem a jen na nich má smysl brzdit. Lehninger to rozebírá až v oddílu 14.5, spolu s glukoneogenezí, protože játra musí glykolýzu a výrobu glukózy řídit proti sobě.
+
+Prvním ventilem je hexokináza. Člověk má čtyři její varianty, izoenzymy. Svalová hexokináza je napůl nasycená už při 0,1 mM glukózy, kdežto v krvi je glukózy 4 až 5 mM, takže pracuje skoro naplno. Brzdí ji ale její vlastní produkt: když se glukóza-6-fosfát hromadí, hexokináza zpomalí. Jaterní hexokináza IV, neboli glukokináza, je napůl nasycená až kolem 10 mM a glukóza-6-fosfát ji nebrzdí. Játra tak berou glukózu hlavně tehdy, když je jí v krvi hodně.
+
+Hlavním ventilem je fosfofruktokináza-1. Je to alosterický enzym: kromě aktivního místa má další místa, na která sedají molekuly hlásící, jak na tom buňka je. ATP, konečný produkt dráhy, ji brzdí, protože snižuje její afinitu k substrátu, fruktóza-6-fosfátu. Citrát, meziprodukt spalování pyruvátu, tuků i aminokyselin, brzdu zesiluje: hlásí, že buňka má energie dost z jiných zdrojů. ADP a AMP, kterých přibývá, když se ATP spotřebovává rychleji, než vzniká, brzdu uvolňují. Je to plný sklad z první kapitoly: hotový výrobek sám brzdí výrobu.
+
+Proč zrovna AMP? Protože je to citlivější ukazatel než samotné ATP. Když sval ATP spotřebovává, vzniká z něj nejdřív ADP a enzym adenylátkináza pak ze dvou ADP udělá ATP a AMP. Lehninger to ukazuje na příkladu: když ATP klesne o desetinu, z 5,0 na 4,5 mM, AMP stoupne šestkrát, z 0,1 na 0,6 mM. Malá změna zásoby se tak promění ve velký signál. AMP navíc zapne kinázu AMPK, která zrychlí příjem glukózy i glykolýzu a přibrzdí syntézy, které ATP spotřebovávají.
+
+V játrech má fosfofruktokináza-1 ještě jeden, nejsilnější spínač: fruktóza-2,6-bisfosfát. Bez něj je enzym při běžných koncentracích substrátu i ostatních regulátorů skoro nečinný. Jeho množství řídí hormony. Když glukózy v krvi ubývá, glukagon ho v játrech sníží a játra přestanou glukózu rozkládat a začnou ji vyrábět. Když je jí dost, inzulin ho zvýší.
+
+Třetím ventilem je pyruvátkináza. Brzdí ji ATP, acetylkoenzym A a mastné kyseliny s dlouhým řetězcem, tedy znamení, že energie je dost. Zrychluje ji fruktóza-1,6-bisfosfát, produkt třetího kroku, který jí dopředu ohlásí, co se k ní valí. Jaterní varianta se navíc dá vypnout fosforylací, když glukagon hlásí nedostatek glukózy.
+
+Vyzkoušej si to. Zvyšuj spotřebu ATP, sleduj AMP a fosfofruktokinázu-1 a pak přidej fruktóza-2,6-bisfosfát.
+
+Simulace: Plyn a brzda. Vlevo (na telefonu nahoře) zásoba adeninových nukleotidů v klidu a teď: ATP (zlatá), ADP (zelená) a AMP (terakotová). Krajní hodnoty jsou z Lehningerova příkladu v tabulce 13-11: ATP klesne z 5,0 na 4,5 mM a AMP stoupne z 0,1 na 0,6 mM. Vpravo (na telefonu dole) aktivita fosfofruktokinázy-1 podle koncentrace jejího substrátu, fruktóza-6-fosfátu. Bez fruktóza-2,6-bisfosfátu je enzym napůl aktivní při 2 mM substrátu, s ním už při 0,08 mM (Lehninger, obr. 14-24). Méně ATP a víc AMP posouvá křivku doleva. Velikost posunu je v simulaci ilustrační, nastavená tak, aby při největší spotřebě enzym zrychlil zhruba desetkrát, jak uvádí Voet. Svislá čára označuje stálou koncentraci substrátu, 0,5 mM, a tečka ukazuje, jak rychle při ní enzym pracuje. Fruktóza-2,6-bisfosfát je hlavně spínač jaterního enzymu; v simulaci je na stejné křivce jen pro srovnání.
+
+**Buňka nehlídá jen to, kolik má ATP. Hlídá, kolik ho právě ztrácí, a AMP jí to ohlásí nahlas.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem cukru a svalů pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Způsobuje kyselina mléčná svalovou horečku?
+
+Podle dnešních poznatků ne. Hladina laktátu se po výkonu vrátí na klidovou zhruba do hodiny, kdežto svalová horečka se rozjíždí několik hodin a vrcholí zhruba za jeden až tři dny. Objevuje se hlavně po nezvyklé zátěži s brzdivými, takzvaně excentrickými pohyby, při kterých se sval pod zátěží natahuje, třeba při běhu z kopce. Proč přesně bolí, se pořád zkoumá. Mluví se o drobném poškození svalových vláken a pojivové tkáně, o zánětu a podle novější hypotézy i o mikropoškození nervových zakončení. Teorii, že za svalovou horečku může kyselina mléčná, přehledové práce převážně odmítají. Pálení přímo během sprintu má podle Voetovy učebnice na svědomí spíš kyselost, která glykolýzu provází, než laktát sám. A laktát není odpad: játra z něj vyrábějí zpátky glukózu a mnoho tkání ho spaluje jako palivo.
+
+### Proč se glykolýze říká anaerobní, když běží i s kyslíkem?
+
+Anaerobní tu znamená jen to, že kyslík nepotřebuje, ne že s ním neběží. Glykolýza běží ve tvých buňkách pořád. S kyslíkem pokračuje pyruvát do mitochondrií a NADH předá elektrony dýchacímu řetězci. Bez kyslíku, nebo když mitochondrie nestíhají, skončí pyruvát jako laktát. Červené krvinky ho vyrábějí i s kyslíkem a dnes se ví, že laktát v těle vzniká nepřetržitě i za dostatku kyslíku. Dráha je v obou případech stejná, liší se jen to, co je za ní.
+
+### Kolik ATP dá jedna glukóza?
+
+Glykolýza sama dvě. Když pyruvát i NADH dokončí cestu v mitochondriích, je to celkem 30 nebo 32. Záleží na tom, jakou cestou se elektrony z NADH v cytoplazmě dostanou do mitochondrií. Starší učebnice uváděly 38, protože počítaly s celými čísly: 3 ATP na každé NADH a 2 na FADH_2. Přesnější měření dávají asi 2,5 a 1,5 a nic nenutí, aby to byla celá čísla. ATP totiž vzniká z toku protonů a počet protonů na jedno ATP celé číslo být nemusí.
+
+### Proč nádory spotřebují tolik glukózy?
+
+V mnoha nádorech běží příjem glukózy a glykolýza asi desetkrát rychleji než ve zdravé tkáni a velká část pyruvátu skončí jako laktát. Část nádorových buněk má málo kyslíku, protože jsou daleko od vlásečnic, ale Otto Warburg si ve dvacátých letech všiml, že nádory jedou na glykolýzu i tam, kde kyslík mají. Lékaři toho využívají při vyšetření PET. Pacient dostane obdobu glukózy se značeným fluorem, fluorodeoxyglukózu. Hexokináza ji fosforyluje, ale další enzym si s ní neporadí, a tak se hromadí v buňkách, které hodně glukózy berou. Na snímku pak nádor svítí.
+
+### Je v ATP „vysokoenergetická vazba“?
+
+Ne v tom smyslu, jak to zní, a Lehninger to označení rovnou nazývá nesprávným a zavádějícím. Přetrhnout jakoukoli vazbu energii stojí, neuvolní ji. Volná energie se při hydrolýze ATP uvolní proto, že produkty jsou stabilnější než ATP: záporné náboje se od sebe vzdálí, uvolněný fosfát má víc rezonančních forem a produkty se lépe obklopí vodou. U fosfoenolpyruvátu se k tomu přidá přeskupení pyruvátu z enolu na stabilnější ketoformu, a proto je na žebříčku úplně nahoře.
+
+Tohle je první rameno schodiště v kostce. Dvě fáze, vklad a výplata. Dva fosfáty, které cukr chytí do pasti a připraví k rozlomení. Výplata, při které buňka molekulu přestaví tak, aby fosfát pustila na ADP. Účet se čtyřmi ATP na straně příjmů a dvěma na straně výdajů a schodiště, které je v buňce skoro celé ploché. Přítoky z glykogenu, škrobu, mléka i ovoce. Kolotoč NAD⁺, který se nesmí zastavit, a proto si buňka bez kyslíku pomůže laktátem nebo ethanolem. A tři ventily pod dohledem AMP a hormonů. Deset reakcí, které umí skoro každá buňka na Zemi a které tvým červeným krvinkám stačí na celý život.
+
+## Zdroje a další čtení
+
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kostra kapitoly. Úvod kap. 14: úplné spálení glukózy −2840 kJ/mol. Kap. 14.1 (Glycolysis): první rozluštěná dráha, Buchner 1897, jediný zdroj energie červených krvinek, zachovaná chemie, dvě fáze (obr. 14-2), tři druhy dějů, −146 a −85 kJ/mol, energie zbylá v pyruvátu, tři úlohy fosfátů, pokus Hardena a Younga, kroky 1–10 s jejich ΔG′° (hexokináza a 8 Å, aldoláza, triózafosfátizomeráza a obr. 14-6, NAD⁺ a GAPDH, spřažení kroků 6 a 7, fosforylace na úrovni substrátu, 2-fosfoglycerát a PEP, pyruvátkináza), účetní bilance. Kap. 14.2 (Feeder Pathways): fosforolýza glykogenu a řešená úloha 14-1, trávení škrobu, laktózová intolerance, galaktóza a galaktosemie (obr. 14-10), fruktóza a manóza (obr. 14-9). Kap. 14.3 (Fates of Pyruvate): obr. 14-11, Pasteurův a Warburgův efekt, rámeček 14-1 (nádory a PET), mléčné kvašení a definice kvašení, rámeček 14-2 (sprint, kyslíkový dluh, Coriho cyklus, aligátoři), alkoholové kvašení a thiaminpyrofosfát, kvašené potraviny. Kap. 14.4: tři nevratné kroky a tab. 14-2 (ΔG v erytrocytech). Kap. 14.5: izoenzymy hexokinázy, regulace PFK-1 (obr. 14-22, 14-23), fruktóza-2,6-bisfosfát (obr. 14-24), regulace pyruvátkinázy. Kap. 14, úlohy 10 a 11 a jejich řešení (arzeničnan). Dále kap. 13.3 (tab. 13-6, obr. 13-11, „vysokoenergetická vazba“, fosfokreatin), kap. 13.5 (tab. 13-10 a 13-11, AMPK), tab. 6-5 (zrychlení reakce triózafosfátizomerázou) a kap. 19.2–19.3 (P/O 2,5 a 1,5; 30 nebo 32 ATP na glukózu). E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a tabulky.
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Dráha Embdenova–Meyerhofova–Parnasova (s. 595); důvod izomerace ve druhém kroku (s. 600); triózafosfátizomeráza jako „dokonalý enzym“ (s. 606); kyselost, ne laktát, při únavě a pálení svalu (s. 615); ATP se mezi klidem a námahou mění o méně než 10 % a fosfofruktokináza zrychlí asi desetkrát (s. 627–628); glukóza-1-fosfát v tab. 16-3 (s. 579); 38 proti 32 ATP na glukózu (s. 832–833).
+- Sender R., Fuchs S., Milo R. Revised estimates for the number of human and bacteria cells in the body. PLoS Biology 14(8): e1002533, 2016. Asi 3×10^13 lidských buněk, z toho 2,5×10^13 červených krvinek.
+- Sonkodi B. Should we void lactate in the pathophysiology of delayed onset muscle soreness? Not so fast! Let’s see a neurocentric view! Metabolites 12(9): 857, 2022. Laktát se vrátí na klidovou hladinu do hodiny, excentrická zátěž, přehled vysvětlení a nervová hypotéza.
+- Wilke J., Behringer M. Is „Delayed Onset Muscle Soreness“ a false friend? The potential implication of the fascial connective tissue in post-exercise discomfort. International Journal of Molecular Sciences 22(17): 9482, 2021. Teorie kyseliny mléčné je převážně odmítnutá, příznaky vrcholí za jeden až tři dny.
+- Storhaug C. L., Fosse S. K., Fadnes L. T. Country, regional, and global estimates for lactose malabsorption in adults: a systematic review and meta-analysis. The Lancet Gastroenterology & Hepatology 2(10), 2017. Laktózu špatně tráví asi 68 % dospělých na světě.
+- Brooks G. A. The science and translation of lactate shuttle theory. Cell Metabolism 27(4): 757–785, 2018. Laktát vzniká nepřetržitě i za dostatku kyslíku a je významným zdrojem energie i hlavní surovinou pro glukoneogenezi.
+- Hinkle P. C. P/O ratios of mitochondrial oxidative phosphorylation. Biochimica et Biophysica Acta 1706: 1–11, 2005. Asi 2,5 ATP na NADH a 1,5 na sukcinát.
+- Nobelova cena za chemii 1929, Arthur Harden a Hans von Euler-Chelpin, za výzkum kvašení cukru a kvasných enzymů (nobelprize.org).
+- Simulace jsou zjednodušené modely. V simulaci 01 jsou standardní hodnoty z tabulek. V simulaci 02 jsou ΔG′° a ΔG z Lehningerovy tab. 14-2, kroky blízko rovnováhy kreslíme jako ploché a ΔG′° enolázy bereme z tab. 13-10. V simulaci 03 odpovídá 32 ATP na glukózu s kyslíkem Lehningerovi, ostatní rychlosti jsou ilustrační. V simulaci 04 jsou krajní hodnoty nukleotidů z tab. 13-11 a polohy křivek bez fruktóza-2,6-bisfosfátu a s ním z obr. 14-24; mezi krajními hodnotami interpolujeme, tvar křivek a velikost posunu vlivem ATP a AMP jsou ilustrační.
 
 ---
 
@@ -197,7 +372,7 @@ Nejsi oheň, který hoří. Jsi to hoření.
 
 URL: https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html  
 Větev: Neurobiologie  
-Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-21  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-24  
 Shrnutí: Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.  
 English: Introduction to neurobiology: resting potential and the sodium-potassium pump, threshold and the action potential, myelin, synapses and 86 billion neurons.
 
@@ -275,7 +450,7 @@ A teď zvrat, který kdysi překvapil i vědce. Vlna se řítí po axonu k dalš
 
 Nejsou spojené. Ty dráty se nedotýkají.
 
-Na konci každé větve, přesně tam, kde by se jeden neuron měl napojit na další, je mezera. Nepatrná, asi dvacet miliardtin metru – synaptická štěrbina –, ale pro elektrickou vlnu je to propast. Vzruch dorazí na okraj a dál nemůže. Buňka proto udělá něco úžasného a trochu absurdního: pošle zprávu přes mezeru jako chemii.
+Na konci každé větve, přesně tam, kde by se jeden neuron měl napojit na další, je mezera. Nepatrná, asi třicet miliardtin metru – synaptická štěrbina –, ale pro elektrickou vlnu je to propast. Vzruch dorazí na okraj a dál nemůže. Buňka proto udělá něco úžasného a trochu absurdního: pošle zprávu přes mezeru jako chemii.
 
 Když vlna dorazí na zakončení, uvolní se z malých připravených váčků obláček molekul zvaných neuropřenašeče. Přeplují štěrbinu a na druhé straně je zachytí receptory, které na ně tvarem pasují jako klíč do zámku. Podle toho, o jaký přenašeč a receptor jde, posune to napětí další buňky nahoru („ano“), nebo dolů („ne“). Celé předání trvá asi tisícinu sekundy; tomu se říká synaptické zpoždění. Pak se štěrbina vyčistí a je připravená na další zprávu.
 
@@ -283,7 +458,7 @@ Když vlna dorazí na zakončení, uvolní se z malých připravených váčků 
 
 Proč taková komplikace? Proč vyvinout krásně rychlou elektrickou vlnu a pak ji v rozhodující chvíli přerušit a házet chemii přes mezeru? Protože ta mezera není chyba. Je to celý smysl.
 
-Pájený spoj umí jen jedno: předat signál dál, věrně a beze změny. Mezera je ale rozhodnutí. Dá se zesílit, takže se ze šepotu stane výkřik, nebo ztlumit, takže se výkřik přeslechne. A hlavně se mění tím, jak se používá. Každá dovednost, kterou máš v rukou, každý fakt, který znáš, každá tvář, která v tobě něco rozsvítí – to všechno je fyzicky zapsané jako síla těchhle spojení. Učení se z velké části zapisuje právě do mezer mezi buňkami. (Celou příští kapitolu strávíme dole v té mezeře.)
+Pájený spoj umí jen jedno: předat signál dál, věrně a beze změny. Mezera je ale rozhodnutí. Dá se zesílit, takže se ze šepotu stane výkřik, nebo ztlumit, takže se výkřik přeslechne. A hlavně se mění tím, jak se používá. Každá dovednost, kterou máš v rukou, každý fakt, který znáš, každá tvář, která v tobě něco rozsvítí – to všechno je fyzicky zapsané jako síla těchhle spojení. Učení se z velké části zapisuje právě do mezer mezi buňkami. (Celou příští kapitolu, [Dole v mezeře](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html), strávíme právě tam.)
 
 Pošli přes ni signál a sleduj, jak se změní.
 
@@ -353,10 +528,159 @@ Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mez
 
 ## Zdroje a další čtení
 
-- Nicholls, Martin, Fuchs, Brown, Diamond a Weisblat – From Neuron to Brain, 5. vydání (Sinauer / Oxford). Páteř kapitoly: principy signalizace, postřeh Ramóna y Cajala, že tvar neuronu prozrazuje jeho úlohu, synaptická štěrbina široká asi 20 nm a synaptické zpoždění asi 1 ms, asi 10 000 vstupů na jeden motorický neuron a přes 100 000 na jednu Purkyňovu buňku (kap. 1, obr. 1.15) a závěrečná kapitola „Open Questions“ (kap. 28).
+- Nicholls, Martin, Fuchs, Brown, Diamond a Weisblat – From Neuron to Brain, 5. vydání (Sinauer / Oxford). Páteř kapitoly: principy signalizace, postřeh Ramóna y Cajala, že tvar neuronu prozrazuje jeho úlohu, synaptické zpoždění asi 1 ms, asi 10 000 vstupů na jeden motorický neuron a přes 100 000 na jednu Purkyňovu buňku (kap. 1, obr. 1.15), synaptická štěrbina široká asi 30 nm (kap. 11, s. 188) a závěrečná kapitola „Open Questions“ (kap. 28).
 - Počet neuronů (asi 86 miliard): Azevedo, Herculano-Houzel a kol., Journal of Comparative Neurology 2009, metodou izotropního frakcionátoru, která opravila tradičních „100 miliard“. Počet synapsí (asi 100 bilionů) a rychlosti vedení (asi 0,5–120 m/s) jsou běžně uváděné řádové hodnoty. Spotřebu sodno-draselné pumpy (19–28 % ATP v klidu) uvádějí Rolfe a Brown, Physiological Reviews 1997.
 - Mýtus o „10 % mozku“ (nejasný původ u Williama Jamese a v citátu mylně připisovaném Einsteinovi), rozprostřená povaha paměti a případ pacienta H. M. (Henry Molaison) vycházejí z populárně-vzdělávacích neurovědeckých zdrojů a z literatury o paměťových systémech. O rozsahu tvorby nových neuronů v dospělém lidském mozku se vede živá debata.
 - Všechna vysvětlení jsou zjednodušená pro laického čtenáře. Kde je věda nejednotná – hlavně u skoku od nervové aktivity k vědomému prožitku –, kapitola to říká na rovinu.
+
+---
+
+# Dole v mezeře
+
+URL: https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html  
+Větev: Neurobiologie  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Shrnutí: Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.  
+English: The chemical synapse, following From Neuron to Brain: the end plate, reversal potential and excitation versus inhibition, calcium-triggered release, quantal release and Poisson statistics, SNARE proteins, short-term plasticity, and LTP and LTD with the NMDA receptor as a coincidence detector.
+
+Obrázek: Synapse. Zakončení axonu (vlevo) je plné váčků s přenašečem. Od trnu na dendritu další buňky (vpravo) ho dělí štěrbina široká asi třicet nanometrů. Když dorazí vzruch, pár váčků se vylije do štěrbiny a přenašeč dosedne na receptory. Dendrity mnoha neuronů jsou trny posázené a ty se mění podle toho, jak se používají: větev na větvi.
+
+V roce 1921 se farmakologovi Ottovi Loewimu zdál sen o pokusu. Uprostřed noci si ho zapsal, jenže ráno své písmo nedokázal přečíst. Sen se naštěstí vrátil a Loewi tentokrát nic neriskoval: běžel rovnou do laboratoře. Žabímu srdci, které dál bilo v roztoku, dráždil bloudivý nerv, a srdce se zpomalilo. Pak roztok, který srdcem protékal, přelil k druhému srdci. Jeho nerv nikdo nedráždil, a přesto se zpomalilo i ono. Nerv tedy se srdcem nemluvil elektřinou, ale látkou, kterou vypustil do roztoku. Loewi jí říkal Vagusstoff, látka bloudivého nervu. Později se ukázalo, že je to acetylcholin.
+
+Loewi po letech přiznal, že za střízlivého ranního světla by se do pokusu nepustil. Zdálo se mu příliš nepravděpodobné, že by nerv vyloučil tolik látky, aby po zředění zpomalila ještě jiné srdce. V první kapitole, [Jak se sůl naučila říkat já](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html), jsme došli k tomu, že vzruch doběhne na konec axonu a dál nemůže: mezi buňkami je mezera. Tahle kapitola do ní sestoupí a půjde stejnou cestou jako učebnice. Nejdřív to, jak přenašeč na druhé straně otevře kanály a co rozhoduje, jestli zpráva znamená „ano“, nebo „ne“. Pak to, jak se přenašeč uvolňuje: vápník jako spoušť a balíčky stejné velikosti. A nakonec to, jak si synapse pamatuje, co přes ni prošlo, na desetiny sekundy i na dny.
+
+> Přirovnání ze života: Pěšina přes louku nevznikne podle plánu. Vyšlapou ji lidé, kteří tudy chodí, a čím častěji tudy někdo projde, tím je zřetelnější. Když ji přestanou používat, zaroste. Synapse se chovají podobně: spojení, kterým prochází zpráva právě ve chvíli, kdy je druhá buňka sama v pohybu, sílí. Spojení, která mlčí, zatímco jiná pracují, slábnou.
+
+## i. Polévka, nebo jiskra
+
+Spor o to, jestli si nervové buňky předávají zprávy elektřinou, nebo chemií, se táhl přes sto let. Elektřina vypadala jako jediná dost rychlá: mezi podrážděním nervu a stahem svalu uplyne jen zlomek sekundy a zdálo se, že tak krátký čas chemii nestačí. Stačí. Synapse dovolí cílové buňce odpovědět do milisekundy od příchodu vzruchu. Loewiho pokus rozhodl o srdci. Henry Dale s kolegy v roce 1936 ukázali, že acetylcholin uvolňují i nervy kosterních svalů a že kurare zablokuje jeho účinek stejně jako účinek nervu. Mezi neurony v mozku se chemie prosadila nejpomaleji. Jeden z nejhorlivějších zastánců elektrické teorie, John Eccles, změnil názor, až když s kolegy měřil napětí uvnitř motoneuronů v kočičí míše. Vzrušující nervová vlákna měnila napětí buňky jedním směrem, brzdící opačným, a ten opačný směr elektrická teorie vysvětlit nedokázala.
+
+Nejlépe prozkoumaná chemická synapse je nervosvalová ploténka, spojení motorického nervu se svalem. Je velká, snadno přístupná a pracuje s jediným přenašečem, acetylcholinem. Zakončení nervu leží v mělkém žlábku na povrchu svalového vlákna. Od membrány svalu ho dělí štěrbina široká asi třicet nanometrů a membrána svalu je pod ním poskládaná do záhybů. Proti ústím záhybů leží v zakončení aktivní zóny, místa, kde čekají váčky s přenašečem. V mozku jsou synapse mnohem menší. U víc než devíti desetin vzrušujících synapsí leží přijímající strana na trnu, drobném výběžku dendritu kratším než mikrometr.
+
+Proč by si tělo komplikovalo život chemií, když elektřina jde rovnou? Protože chemická synapse umí věci, které drát neumí. Zesílí: malé zakončení nervu rozhýbe obrovské svalové vlákno, protože přenašeč otevře tisíce kanálů. Obrátí znaménko: stejný vzruch jednu buňku popožene a jinou utiší. A dá se ladit, zesílit, zeslabit a přepsat. Proto je nejlepším kandidátem na místo, kam se ukládá paměť.
+
+**Mezera mezi neurony není chyba vedení. Je to místo, kde se dá rozhodovat.**
+
+## ii. Kanál rozhodne
+
+Acetylcholin přepluje štěrbinu a dosedne na receptory na membráně svalu. Ty jsou nahuštěné přesně tam, kam přenašeč padá: na hřebenech záhybů jich je asi deset tisíc na čtvereční mikrometr, kdežto o kus dál jen asi pět. Receptor je zároveň iontový kanál. Když se na něj navážou dvě molekuly acetylcholinu, otevře se asi na milisekundu a pustí do buňky kolem dvaceti tisíc kladných iontů, hlavně sodných. Membrána svalu se v okolí ploténky depolarizuje: vznikne ploténkový potenciál. Normálně je mnohem vyšší, než je potřeba ke spuštění akčního potenciálu, a sval se tak spolehlivě stáhne při každém vzruchu.
+
+Přenašeč ve štěrbině dlouho nezůstane. Enzym acetylcholinesteráza, kterým jsou záhyby vystlané, rozloží jednu molekulu acetylcholinu za desetinu milisekundy. Už zlomek milisekundy po vylití proto skoro nehrozí, že by zbylý acetylcholin otevřel další kanál, a každý vzruch dostane čistý start.
+
+Proč zrovna depolarizace? Když vědci měnili napětí svalu, proud tekoucí kanály změnil směr zhruba u nuly, u takzvaného obratového napětí. To není rovnovážné napětí žádného jednotlivého iontu, ale vážený průměr rovnovážných napětí sodíku a draslíku. Kanál tedy musí propouštět oba. A tím se dostáváme k hlavnímu pravidlu synapsí: jestli je zpráva „ano“, nebo „ne“, nerozhoduje přenašeč, ale kanál, který otevře. Kanál, jehož obratové napětí leží nad prahem, táhne buňku k výstřelu: takový kanál vzrušuje. Kanál, jehož obratové napětí leží pod prahem, ji drží dole. To dělají receptory pro GABA a glycin, dva hlavní brzdící přenašeče mozku a míchy. Otevírají kanály pro chloridové ionty a drží napětí kolem −70 až −80 mV. Často ho skoro nezmění, ale membrána je pak propustnější a proud, který by buňku tlačil k prahu, z ní uteče.
+
+Loewiho srdce je stejný případ obráceně. Tentýž acetylcholin, který sval rozhýbe, srdce zpomalí, protože tam dosedá na jiný, muskarinový receptor. Ten není kanálem: aktivuje G-bílkovinu, jejíž část otevře draselné kanály. Je to pomalejší cesta, ne milisekundy, ale stovky milisekund až sekundy. V mozku je to podobné s glutamátem, nejčastějším vzrušujícím přenašečem. Jeho receptory AMPA otevírají kanál rychle, receptory NMDA pomaleji a jen za zvláštních podmínek, ke kterým se vrátíme na konci. Jeden vzrušující potenciál v mozku je ale malý, od setin milivoltu po pár milivoltů, kdežto na ploténce desítky milivoltů. Neuron proto musí sečíst odpovědi zhruba deseti až sta synapsí, než vypálí.
+
+Vedle chemických synapsí existují i elektrické. Dvě buňky jsou tam spojené kanálky mezerových spojů z bílkovin konexinů a proud teče přímo z jedné do druhé, bez zpoždění a většinou oběma směry. Jsou rychlejší a spolehlivější a pomáhají skupinám neuronů vypálit naráz. Signál ale umějí jen předat dál, zesílit ho nedokážou.
+
+Na ploténce se dobře ukazuje, jak na synapse působí jedy a léky. Kurare obsadí receptory pro acetylcholin, aniž je otevře, a když ho je dost, klesne ploténkový potenciál pod práh a sval ochrne. Při myastenii gravis tělo vyrábí protilátky proti vlastním receptorům a těch postupně ubývá. Neostigmin brzdí acetylcholinesterázu, takže acetylcholin ve štěrbině vydrží déle a ploténkový potenciál je vyšší a delší.
+
+Vyzkoušej si to. Pošli do ploténky sérii deseti vzruchů a pak ji oslab.
+
+Simulace: Ploténka. Deset vzruchů za sebou, dvacet za sekundu. Zdravá ploténka má velkou rezervu: první ploténkový potenciál je tu zhruba třiapůlkrát vyšší než práh a sval se stáhne při každém vzruchu, i když s každým dalším ubývá připravených váčků a odpovědi slábnou. Myastenie ubere receptory: první vzruchy ještě projdou, další už ne, a sval během námahy slábne. Kurare obsadí receptory a neprojde nic. Neostigmin prodlouží život acetylcholinu ve štěrbině a oslabenou ploténku podrží. Velikost rezervy a pokles během série jsou ilustrační. Učebnice uvádějí jen to, že ploténkový potenciál je normálně mnohem vyšší, než je potřeba, a že brzda acetylcholinesterázy zvýší ploténkový potenciál 1,5- až 2krát a prodlouží ho 3- až 5krát.
+
+**Zprávu nedělá přenašeč, ale kanál, který otevře.**
+
+## iii. Vápníková spoušť
+
+Mezi příchodem vzruchu do zakončení a odpovědí druhé buňky uplyne synaptické zpoždění, na žabí ploténce při pokojové teplotě asi půl milisekundy. Když se sval ochladí na 2,5 °C, natáhne se až na sedm milisekund. Přes štěrbinu by přenašeč přeplul za pár desítek mikrosekund, takže čas nespotřebuje cesta. Spotřebuje ho samotné uvolnění.
+
+A to potřebuje vápník. Přenašeč se vylije, jen když je vápník v okolním roztoku přítomný právě ve chvíli, kdy vzruch zakončení depolarizuje. Hořčík a další ionty, které vápníku zablokují cestu, uvolňování brzdí. Vzruch otevře v zakončení napěťově řízené vápníkové kanály a vápník se do něj vlije. Uvnitř buňky ho je v klidu asi desetitisíckrát méně než venku, kolem sta nanomolů, ale u otevřených kanálů vyskočí jeho koncentrace na okamžik na sto až dvě stě mikromolů. Čidlo, které váček vylije, proto musí sedět sotva sto nanometrů od kanálu. A vápník sám stačí: když se ho do zakončení pokusně uvolní stejné množství bez vzruchu, přenašeč se vylije úplně stejně.
+
+Uvolňování přitom roste s přítokem vápníku nesmírně strmě, zhruba se třetí až čtvrtou mocninou. Dvojnásobek vápníku tedy znamená osmkrát až šestnáctkrát víc přenašeče. Vykládá se to tak, že se na čidlo musí navázat několik iontů vápníku naráz. Frederick Dodge a Rami Rahamimoff, kteří tu strmost v roce 1967 změřili, svou práci nazvali „Spolupráce vápníkových iontů při uvolňování přenašeče na nervosvalové ploténce“ (Co-operative action of calcium ions in transmitter release at the neuromuscular junction). Strmost má smysl. V klidu je vápníku v zakončení málo a váčky se vylévají jen výjimečně. Při vzruchu se pravděpodobnost na okamžik mnohonásobně zvýší. V další simulaci to uvidíš na posuvníku: kvant přibývá mnohem rychleji než vápníku.
+
+**Vápník je spoušť a počítá v mocninách: o trochu víc vápníku znamená mnohem víc zprávy.**
+
+## iv. Po balíčcích
+
+Na začátku padesátých let si Paul Fatt a Bernard Katz všimli, že na svalu, jehož nerv nikdo nedráždí, občas naskočí drobná depolarizace, velká asi půl milivoltu až milivolt. Objevovala se jen v místě ploténky, kurare ji potlačilo, brzda acetylcholinesterázy zvětšila a botulotoxin zrušil. Šlo tedy o acetylcholin, který zakončení pouští samo od sebe, a to vždycky po stejně velkých dávkách. Jedna taková dávka otevře asi tisíc receptorů.
+
+Fatt a Katz pak snížili v roztoku vápník a přidali hořčík, aby vzruch uvolňoval jen málo přenašeče. Odpovědi svalu se začaly měnit od pokusu k pokusu, ale ne plynule. Byly velké jako jeden, dva, tři nebo čtyři drobné potenciály, nebo žádné. Přenašeč tedy odchází v kvantech, balíčcích stejné velikosti. Vzruch neurčí přesně, kolik balíčků se vylije. Každý se vylije jen s určitou pravděpodobností a jejich počet kolísá jako počet šestek při hodu hrstí kostek.
+
+José del Castillo a Katz to pak ověřili chytře. Když je pravděpodobnost malá a balíčků k dispozici hodně, řídí se jejich počet Poissonovým rozdělením. To předpovídá, jak často se nevylije žádný: podíl selhání je e^−m, kde m je průměrný počet kvant na vzruch. Spočítali m dvěma nezávislými způsoby, z velikosti odpovědí a z počtu selhání, a oba odhady se shodly. Za normálních podmínek uvolní vzruch na žabí ploténce asi dvě stě kvant naráz, a proto vypadá odpověď plynule. V mozku a míše je to jinak: na mnoha synapsích se uvolní průměrně jen asi jedno kvantum. Neznamená to ale, že by přenos většinou selhával. Na synapsi mezi vláknem ze svalového vřeténka a motoneuronem v míše čeká na vzruch zhruba jediné kvantum, zato se vylije asi v devíti případech z deseti.
+
+Jedno kvantum je obsah jednoho váčku, na ploténce asi sedm tisíc molekul acetylcholinu. Vědci to viděli doslova. Nerv svalu podráždili elektrickým šokem a milisekundy nato nechali sval dopadnout na měděný blok chlazený kapalným heliem na 4 K. Mráz zastavil váčky uprostřed vylévání. V elektronovém mikroskopu se ukázalo, že počet otevřených váčků roste úměrně počtu uvolněných kvant a že nejvíc se jich otevírá právě ve chvíli, kdy ve svalu vrcholí proud.
+
+Samotné vylití obstarává sada bílkovin SNARE. Synaptobrevin na váčku a syntaxin se SNAP-25 na membráně zakončení se do sebe zaplétají jako zip a přitahují váček k membráně. Komplexin ten zip jako brzda zastaví těsně před dokončením. Když přijde vápník, naváže se na synaptotagmin, ten brzdu uvolní a obě membrány splynou. Za výzkum dopravy váčků v buňkách, včetně splývání synaptických váčků s membránou, dostali James Rothman, Randy Schekman a Thomas Südhof v roce 2013 Nobelovu cenu za fyziologii a lékařství. Prázdný váček se pak zase vtáhne dovnitř a znovu naplní. Když ploténku silné dráždění úplně vyčerpá, doplní se váčky připravené k okamžitému vylití asi za minutu a zásobní váčky za čtvrt hodiny.
+
+Na stejnou mašinerii míří nejsilnější jed, jaký příroda zná. Botulotoxin a tetanotoxin z bakterií rodu Clostridium jsou enzymy, které bílkoviny SNARE rozstříhají, a teoreticky stačí jediná molekula, aby jedno zakončení přestalo vylévat váčky. Botulotoxin zastaví výdej acetylcholinu na ploténkách a svaly ochabnou. Tetanotoxin putuje po nervech do míchy a zastaví tam brzdící neurony, které uvolňují GABA a glycin. Svaly pak naopak křečovitě ztuhnou.
+
+Vyzkoušej si to. Posílej vzruchy do ploténky v roztoku chudém na vápník a sleduj, jak se odpovědi skládají z balíčků.
+
+Simulace: Kvanta. Vlevo (na telefonu nahoře) posledních deset odpovědí svalu přes sebe, jak je kdysi kreslil Katz. Vpravo (na telefonu dole) histogram velikostí všech odpovědí od vynulování: sloupce se kupí u nuly (selhání) a u násobků jednoho kvanta. Zlatá křivka je předpověď Poissonova rozdělení pro stejný průměrný počet kvant a údaj nahoře porovnává pozorovaná selhání s předpovězenými. Velikost kvanta 0,4 mV a průměr kolem dvou kvant odpovídají pokusu Boyda a Martina na savčím svalu (Nicholls, obr. 13.10). Uvolňování tu roste se čtvrtou mocninou vápníku. Při normálním vápníku vyjde asi dvě stě kvant najednou a jednotlivé balíčky se slijí v jednu velkou odpověď.
+
+**Synapse nemluví plynule. Mluví po balíčcích a s každým vzruchem si hází kostkou.**
+
+## v. Krátká paměť
+
+Synapse si pamatuje, co přes ni před chvílí prošlo. Když přijde několik vzruchů rychle za sebou, odpovědi rostou a zvětšená je ještě odpověď na vzruch, který přijde skoro čtvrt sekundy po konci série. Říká se tomu facilitace. Klasické vysvětlení nabídli Bernard Katz a Ricardo Miledi: vápník z předchozích vzruchů se ze zakončení nestihne úplně odčerpat a přičte se k novému. Novější pokusy ukázaly, že nahromaděný vápník navíc usnadní otevírání vápníkových kanálů, takže s každým dalším vzruchem vteče do zakončení víc vápníku. Facilitace vyprchá během desítek až stovek milisekund.
+
+Opačně působí deprese. Synapse, která uvolňuje hodně váčků naráz, během série slábne, po dlouhé sérii i pod pětinu původní odpovědi, a útlum vydrží několik sekund. Při velmi rychlém dráždění jde až polovina útlumu na vrub vyčerpaným připraveným váčkům. Zbytek, a při pomalejším dráždění většinu, má na svědomí zase vápník: když se ho v zakončení nahromadí hodně, začne vápníkové kanály naopak tlumit. A když po dlouhé rychlé sérii útlum odezní, zůstane synapse ještě minuty zesílená, protože v zakončení zbude vápníku víc a váčků je připravených víc. Tomu se říká posttetanická potenciace.
+
+Která síla vyhraje, záleží na synapsi. Synapse s malou pravděpodobností vylití se během série rozjíždí, protože vápník přibývá a váčků je dost. Synapse s velkou pravděpodobností slábne, protože jí váčky docházejí a vápník ji začne brzdit. Synapse tak dál neposílá jen to, že přišel vzruch, ale i to, jak rychle a v jakém sledu vzruchy chodí. Je to filtr: jedna synapse zachytí hlavně začátek série, jiná hlavně shluk vzruchů.
+
+Vyzkoušej si to. Pošli sérii deseti vzruchů silnou a slabou synapsí a měň, jak rychle jdou za sebou.
+
+Simulace: Krátká paměť synapse. Sloupce jsou odpovědi na deset vzruchů vůči první odpovědi. Silná synapse při každém vzruchu vylije velkou část připravených váčků, takže jí rychle docházejí (modře). Slabá vylije jen málo a zbytkový vápník jí mezitím pravděpodobnost vylití zvyšuje (zlatě). Čím rychleji vzruchy jdou, tím víc se oba jevy projeví. Když jdou za sekundu jen dva nebo tři vzruchy, facilitace mezi nimi vyprchá a mírně slábne i slabá synapse. Jde o zjednodušený model podle Tsodykse a Markrama, ve kterém útlum obstarává jen vyčerpání váčků: facilitace vyprchává s časovou konstantou desetiny sekundy a váčky se doplňují s časovou konstantou necelé sekundy, takže se synapse zotaví za pár sekund, jak uvádí Nicholls. Skutečné synapse se v obou časech liší.
+
+**Synapse nepřenáší jednotlivé vzruchy. Přenáší rytmus a každá ho čte po svém.**
+
+## vi. Dlouhá paměť
+
+V roce 1949 navrhl psycholog Donald Hebb pravidlo, které od té doby nese jeho jméno. Když axon buňky A opakovaně pomáhá přivést buňku B k výstřelu, něco se v jedné z nich nebo v obou změní, takže A k tomu pak přispívá účinněji. Dvacet čtyři let nato Timothy Bliss a Terje Lømo našli přesně takovou změnu v hipokampu uspaného králíka. Po krátké sérii rychlých vzruchů odpovídaly synapse silněji a zesílení vydrželo hodiny, někdy i dny. Jevu se říká dlouhodobá potenciace.
+
+Klíčem je receptor NMDA, jeden ze dvou hlavních receptorů pro glutamát. Receptor AMPA se otevře, kdykoli na něj glutamát dosedne. Receptor NMDA potřebuje víc: jeho pór v klidu ucpává iont hořčíku z okolního roztoku a ten začne vypadávat, až když je membrána sama depolarizovaná zhruba nad −60 mV. Čím víc je depolarizovaná, tím víc kanálů je volných. Receptor NMDA tedy pustí proud, jen když se sejdou dvě věci naráz: glutamát od buňky, která posílá, a depolarizace buňky, která přijímá. Je to detektor shody, Hebbovo pravidlo v jedné molekule. Proto se slabý vstup zesílí, když přijde zároveň se silným, který buňku rozhýbe.
+
+Otevřeným receptorem NMDA proudí do trnu dendritu vápník. Ten zapne enzymy, hlavně kinázu CaMKII, a do membrány trnu přibudou další receptory AMPA. Některé synapse předtím neměly receptory AMPA vůbec a byly „němé“. Trny se přitom zvětšují a přibývají nové. Blokátory receptoru NMDA vzniku potenciace zabrání, ale už vzniklou nezruší. Menší a pomalejší přísun vápníku, třeba při dráždění jedním vzruchem za sekundu, vede naopak k dlouhodobému útlumu: zapnou se fosfatázy a receptory AMPA z membrány ubývají. O směru změny tedy rozhoduje, kolik vápníku do trnu vteklo.
+
+Je to nejlépe prozkoumaný kandidát na fyzickou stopu paměti. Nicholls přitom upozorňuje, že jednoznačné spojení mezi těmito změnami a vznikem vzpomínek zatím prokázané není. Jiné učebnice, třeba Boron a Boulpaep, jsou odvážnější. Jisté je, že synapse umějí zesílit a zeslábnout podle toho, jak se používají, a že to vydrží hodiny až dny.
+
+Vyzkoušej si to. Pusť na synapsi glutamát, depolarizuj buňku, nebo obojí naráz a sleduj, co si synapse zapamatuje.
+
+Simulace: Detektor shody. Receptor NMDA (uprostřed membrány) pustí vápník, jen když je na něm glutamát a zároveň je membrána depolarizovaná, takže z póru vypadne hořčík. Velký přísun vápníku synapsi zesílí, protože přibudou receptory AMPA. Pomalé dráždění pustí dovnitř jen málo vápníku a synapsi zeslabí. Bez hořčíku v roztoku vteče vápníku hodně, takže synapsi zesílí samotný glutamát i pomalé dráždění. S blokátorem NMDA se síla synapse nezmění. Závislost průchodnosti na napětí (graf vpravo nahoře, na telefonu pod membránou) má tvar, který z měření jednotlivých kanálů odvodili Jahr a Stevens. Prahy vápníku a velikost změn jsou ilustrační.
+
+**Učení není nahrávka. Je to stopa po shodě: spojení zesílí, když se obě strany rozsvítí naráz.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem synapsí a přenašečů pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu.
+
+### Je dopamin hormon štěstí?
+
+Ne, i když se tak často píše. Dopaminové neurony ve středním mozku hlásí hlavně rozdíl mezi tím, co přišlo, a tím, co se čekalo. Když odměna přijde větší, než se čekalo, vypálí víc. Když přijde přesně podle očekávání, nezmění se. Když je menší, jejich aktivita poklesne. Dopamin tedy slouží spíš k učení a motivaci, k tomu, co stojí za to hledat, než k samotnému potěšení. Výzkum systémů potěšení v mozku dokonce naznačuje, že mezolimbický dopaminový systém, dlouho učebnicový kandidát, potěšení sám nevytváří.
+
+### Proč antidepresiva SSRI zabírají až po týdnech?
+
+Přesně se to neví. Samotný mechanismus je rychlý: léky jako fluoxetin zablokují serotoninový transportér, bílkovinu, která serotonin vrací ze štěrbiny zpátky do zakončení, a serotonin tak ve štěrbině vydrží déle. To se stane během hodin, zlepšení nálady ale přichází za dny až týdny. Jedno vysvětlení je, že nejdřív musí znecitlivět receptory, kterými si serotoninové neurony samy brzdí výdej. Druhé, že léky postupně mění plasticitu mozku, tedy právě to, jak se synapse přestavují. Text vysvětluje, jak léky působí, a nikomu neradí s léčbou.
+
+### Mění se mozek fyzicky, když se učím?
+
+Ano. Při dlouhodobé potenciaci přibývají v synapsích receptory, trny dendritů se zvětšují a nové trny vyrůstají. U myší, které se učily novou pohybovou dovednost, se pod mikroskopem objevily nové trny během hodin a část z nich vydržela měsíce. Paměť tedy nejspíš není uložená v jednom místě jako soubor na disku, ale v tom, jak silná jsou spojení mezi buňkami.
+
+### Jak funguje botox?
+
+Botox je velmi zředěný botulotoxin typu A. Ten rozstříhá bílkovinu SNAP-25, bez které se váčky s acetylcholinem nemůžou vylít, a sval, do kterého se vpíchne, ochabne. Na obličeji tak vyhladí vrásky a v lékařství se jím léčí svalové křeče nebo šilhání. Účinek trvá tři až šest měsíců, dokud zakončení nervu nevyraší nové výběžky a sval znovu nenapojí.
+
+### Co je synaptické prořezávání?
+
+Vyvíjející se nervová soustava vytvoří víc spojení, než si nakonec nechá, a ta, která prohrají soutěž, zaniknou. Na svalové vlákno novorozence je například napojeno víc motorických axonů a postupně zůstane jen jeden. O tom, které spojení vydrží, rozhoduje aktivita. V lidské předčelní kůře je hustota trnů v dětství dvakrát až třikrát vyšší než v dospělosti. Začne klesat v pubertě a přestavba pokračuje ještě ve dvacátých letech života.
+
+Tohle je synapse v kostce. Chemie místo drátu, protože chemie se dá zesílit, obrátit a přepsat. Kanál, který o zprávě rozhodne podle toho, kam táhne napětí. Vápník, který spouští uvolnění a počítá v mocninách. Balíčky přenašeče, se kterými si synapse při každém vzruchu hází kostkou. Krátká paměť ve zbytcích vápníku a v docházejících váčcích. A dlouhá paměť v receptoru, který se otevře jen při shodě dvou buněk. Většina toho, co umíš, je nejspíš zapsaná v synapsích kolem mezer užších než vlnová délka světla.
+
+## Zdroje a další čtení
+
+- Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kostra kapitoly. Kap. 11 (Mechanisms of Direct Synaptic Transmission): rámeček 11.1 o sporu elektřiny a chemie, Loewiho sen, Dale 1936 a Eccles (s. 187–188), štěrbina asi 30 nm a ploténkový potenciál vyšší, než je potřeba (s. 188–189), kurare (s. 189), brzdy acetylcholinesterázy (rámeček 11.2, s. 190), hustota receptorů (s. 195), obratové napětí kolem nuly a vážený průměr (s. 196–198), dvě molekuly acetylcholinu (s. 197), 20 000 kationtů do buňky za milisekundu a hořčík v receptoru NMDA (s. 199), jeden EPSP nestačí (s. 200), vzruch a útlum podle obratového napětí (s. 201), chloridové kanály (s. 202), elektrické synapse (s. 207–209). Kap. 12: muskarinový receptor, G-bílkovina a draselné kanály v srdci (s. 217–221), klidový vápník kolem 100 nM (s. 235), rychlost receptorů spřažených s G-bílkovinou (s. 239). Kap. 13 (Release of Neurotransmitters): zpoždění 0,5 ms a 7 ms při 2,5 °C, vápník nutný a hořčík brzdou (s. 245–246), 100–200 µM u kanálů a čidlo do 100 nm (s. 247–248), uvolněný vápník stačí (s. 249), 7000 molekul v kvantu (s. 250), miniaturní potenciály asi 1 mV a tisíc receptorů (s. 251), stupňovité odpovědi Fatta a Katze, selhání a 200 kvant (s. 252, obr. 13.9), Poissonův test del Castilla a Katze (s. 252–254, obr. 13.10), kvanta v mozku a míše (s. 255), myastenie (s. 257), zmrazení na 4 K a počet otevřených váčků (s. 260–261), SNARE, synaptotagmin a komplexin (s. 264), recyklace váčků a doplnění zásob za minutu a za čtvrt hodiny (s. 266–270). Kap. 14: GABA a glycin, NMDA jako detektor shody (s. 279), SSRI (s. 289). Kap. 15: acetylcholinesteráza (s. 313–314). Kap. 16 (Synaptic Plasticity): facilitace, deprese, jejich mechanismy a posttetanická potenciace (s. 318–322), třetí až čtvrtá mocnina přítoku vápníku (s. 320), Bliss a Lømo (s. 323–325), blokátory NMDA (s. 326), němé synapse a trny (s. 326–328), CaMKII (s. 328), dlouhodobý útlum a množství vápníku (s. 330–331), Hebbovo pravidlo (s. 332), opatrnost ohledně paměti (s. 333). Kap. 25: prořezávání spojení (s. 560–561).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 8: Vagusstoff a Nobelova cena 1936 (s. 205), miniaturní potenciály asi 0,4 mV (s. 214–215), průměrně 2,3 kvanta u Boyda a Martina (s. 215.e1), vápník, hořčík a měření Dodge a Rahamimoffa (obr. 8-11, s. 216), Nobelova cena 2013 (s. 221), myastenie (rámeček 8-1, s. 223), botulotoxin a tetanotoxin (rámeček 8-2 a tab. 8-2, s. 224–225), botox (s. 225). Kap. 13: trny u víc než 90 % vzrušujících synapsí (s. 310), elektrické synapse nezesilují (s. 314), velikost EPSP v mozku (s. 319), hořčík začne vypadávat nad −60 mV (s. 324), 10 až 100 synapsí k výstřelu (s. 327), synapse jako místo paměti (s. 328), LTP, LTD a dráždění 1 Hz (s. 329–331).
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 11: chloridové kanály tlumí depolarizaci (s. 670), mírný vápník zapíná fosfatázy a dlouhodobý útlum (s. 678). Kap. 13: komplexin jako brzda, kterou uvolní synaptotagmin (s. 783).
+- Dodge F. A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. Journal of Physiology 193(2): 419–432, 1967. Strmost uvolňování podle vápníku.
+- Markram H., Gerstner W., Sjöström P. J. A history of spike-timing-dependent plasticity. Frontiers in Synaptic Neuroscience 3: 4, 2011. Doslovné znění Hebbova pravidla z roku 1949.
+- Jahr C. E., Stevens C. F. Voltage dependence of NMDA-activated macroscopic conductances predicted by single-channel kinetics. Journal of Neuroscience 10(9): 3178–3182, 1990. Závislost hořčíkového bloku na napětí v simulaci 04.
+- Tsodyks M. V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. PNAS 94(2): 719–723, 1997. Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. PNAS 95(9): 5323–5328, 1998. Model útlumu a facilitace synapse v simulaci 03.
+- Schultz W. Dopamine reward prediction error coding. Dialogues in Clinical Neuroscience, 2016. Berridge K. C., Kringelbach M. L. Pleasure systems in the brain. Neuron 86(3): 646–664, 2015.
+- Harmer C. J., Duman R. S., Cowen P. J. How do antidepressants work? New perspectives for refining future treatment approaches. Lancet Psychiatry 4(5): 409–418, 2017.
+- Xu T. a kol. Rapid formation and selective stabilization of synapses for enduring motor memories. Nature 462: 915–919, 2009. Yang G., Pan F., Gan W.-B. Stably maintained dendritic spines are associated with lifelong memories. Nature 462: 920–924, 2009.
+- Petanjek Z. a kol. Extraordinary neoteny of synaptic spines in the human prefrontal cortex. PNAS 108(32): 13281–13286, 2011.
+- Simulace jsou zjednodušené modely. V simulaci 01 je rezerva ploténky (3,5násobek prahu), rychlost vyčerpání váčků a podíl receptorů při myastenii a kurare ilustrační; neostigmin zvětší odpověď 1,7krát, uprostřed rozmezí, které uvádí Nicholls. V simulaci 02 je velikost kvanta 0,4 mV a průměr kolem dvou kvant jako u Boyda a Martina, při běžném vápníku 200 kvant a mezi tím čtvrtá mocnina. V simulaci 03 vzniká útlum jen vyčerpáním váčků. Facilitace vyprchává s časovou konstantou 0,1 s a váčky se doplňují s časovou konstantou 0,8 s; silná synapse vylije napoprvé 55 % připravených váčků, slabá 3 %. V simulaci 04 je tvar hořčíkového bloku podle Jahra a Stevense, prahy vápníku a velikost změn jsou ilustrační.
 
 ---
 
@@ -540,7 +864,7 @@ Tohle je logika fyziologie v kostce. Udržovat vnitřní prostředí stálé (zp
 
 URL: https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html  
 Větev: Farmakologie  
-Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-21  
+Autorka: Pája, vyšlo 2026-07-06, aktualizováno 2026-10-24  
 Shrnutí: Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.  
 English: Introduction to pharmacokinetics and pharmacodynamics: the concentration-time curve, half-life and steady state, receptors, potency and efficacy, and the therapeutic window.
 
@@ -762,7 +1086,155 @@ Rozhoduje tedy tvar koncentrace v čase, ne číslo na etiketě. Až se naučí�
 
 Příště se přestaneme dívat na celou cestu z dálky a zaměříme se na samotné podání ruky: na receptor a na malý zázrak, kterým molekula velká jako šepot přesvědčí buňku velkou jako město, aby změnila názor.
 
-– Kapitola II · příště Podání ruky zblízka Receptory, klíče, které tak úplně nesedí, a jak se „zapnuto“ a „vypnuto“ rozhoduje molekulu po molekule.
+[ – Kapitola II · čti dál Podání ruky zblízka Receptory, klíče, které tak úplně nesedí, a jak se „zapnuto“ a „vypnuto“ rozhoduje molekulu po molekule. ](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html)
+
+---
+
+# Podání ruky zblízka
+
+URL: https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html  
+Větev: Farmakologie  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Shrnutí: Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.  
+English: Drug receptors, following Rosenbaum: mass-action binding and residence time, affinity and efficacy, partial agonists and spare receptors, the Emax model and why effects outlast drugs, competitive and noncompetitive antagonism, and tolerance, desensitization and rebound.
+
+Obrázek: Receptor. Molekula léku se do receptoru na chvíli posadí a zase odejde. Když receptor přepne do aktivního stavu, rozběhne pod membránou kaskádu, ve které většina stupňů zapne mnoho dalších molekul, větev na větvi. Proto někdy stačí obsadit jen malou část receptorů.
+
+Šálek kávy ti nepřidá ani kapku energie. Čím déle bdíš, tím víc se v mozku hromadí adenosin. Přes své receptory tlumí neurony, které tě drží vzhůru, a chystá tak spánek. Kofein se na adenosinové receptory váže, ale nic v nich nespustí. Jen je obsadí, takže se k nim adenosin nedostane. Myši, kterým chybí adenosinový receptor A_2A, na povzbuzující účinek kofeinu nereagují. Kofein tedy nepřidává plyn. Ubírá brzdu.
+
+V první kapitole, [Lék je vlna](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html), jsme sledovali lék z dálky: jak se vstřebá, rozlije po těle a zase zmizí. Na konci jsme ho nechali u receptoru. Tahle kapitola si k receptoru sedne a půjde zhruba stejnou cestou jako učebnice. Nejdřív to, co je receptor a jak se na něj lék váže, molekulu po molekule. Pak proč některé klíče pasují, ale neotočí se úplně, a proč buňce často stačí obsadit pár receptorů. Jak z toho vznikne křivka účinku a proč účinek někdy přetrvá lék. Jak spolu léky o receptor soupeří. A proč tělo na lék, který člověk bere dlouho, odpoví tím, že si receptory přestaví.
+
+> Přirovnání ze života: Zvonek u dveří má tlačítko. Někdo zazvoní krátce, někdo podrží prst, někdo jen sáhne a nezmáčkne. Kdo je uvnitř, nevidí, kdo stojí venku; slyší jen zvonění. Receptor je takový zvonek: buňka neví, která molekula na něm sedí, ví jen, jak často a jak dlouho zvoní.
+
+## i. Látky nepůsobí, dokud se neváží
+
+Že lék musí mít v těle něco, na co se naváže, je stará myšlenka. Paul Ehrlich v roce 1900 zavedl slovo receptor, zprvu jen pro místa, na která se vážou toxiny a živiny. Na léky ho rozšířil až v roce 1907 a jeho heslo Corpora non agunt nisi fixata, látky nepůsobí, dokud se neváží, platí dodnes. John Newport Langley si zase všiml, že sval je v okolí nervových zakončení zvlášť citlivý na nikotin, a usoudil, že tam nese „přijímající látku“. Byl to odvážný závěr, protože nikotin ve svalu žádnou přirozenou roli nemá. Dnes víme, že Langleyho přijímající látka je nikotinový receptor pro acetylcholin.
+
+Receptor je velká molekula, na kterou lék dosedne, a ve víc než devadesáti pěti procentech případů je to bílkovina. Vazba ji přiměje změnit tvar, ze změny tvaru vznikne podnět a z podnětu nakonec biochemická nebo fyziologická odpověď. Většinou je vazba vratná: lék dosedne, chvíli sedí a zase odejde. Když tělo lék odbourá nebo vyloučí a lék z okolí receptoru zmizí, receptor zůstane nezměněný a účinek odezní. Výjimky se vážou natrvalo. Aspirin se kovalentně naváže na cyklooxygenázu krevních destiček a vyřadí ji, omeprazol stejně vyřadí protonové pumpy žaludku. Jejich účinek trvá, dokud tělo nevyrobí nové molekuly enzymu, u aspirinu dokonce nové destičky.
+
+Receptor je vybíravý. Pozná i rozdíl mezi dvěma zrcadlovými podobami téže molekuly: jedna podoba warfarinu, označovaná S, je dvakrát až pětkrát aktivnější než druhá. Receptory přitom tělo nemá kvůli lékům. Má je pro vlastní přenašeče a hormony a léky si je jen vypůjčí: buď přirozenou látku napodobí, nebo jí zacloní cestu. Adrenalin roztahuje průdušky přes receptory β_2 a lék salbutamol dělá na stejných receptorech totéž. Acetylcholin předává zprávu přes nikotinový receptor a nikotin ho napodobí. Jen pár léků receptor nepotřebuje: uhličitan vápenatý proti pálení žáhy prostě zneutralizuje kyselinu v žaludku.
+
+Většina receptorů sedí na povrchu buňky, protože membrána většinu látek dovnitř nepustí. Receptor proto musí zprávu přenést dovnitř a cestou se zpráva může zesílit, nebo zeslabit. Rosenbaum popisuje čtyři cesty. Receptor může být sám iontový kanál, jako nikotinový receptor, který po navázání acetylcholinu pustí do buňky sodík. Může aktivovat G-bílkovinu, která rozběhne výrobu druhého posla, třeba cyklického AMP. Takhle pracují receptory β pro adrenalin, muskarinové receptory pro acetylcholin i většina receptorů pro serotonin. Může zapnout enzym tyrozinkinázu, jako receptor pro inzulin. A látky, které projdou membránou, jako steroidní hormony a hormony štítné žlázy, mají receptory přímo uvnitř buňky. Cesty se liší rychlostí: kanál změní napětí membrány za milisekundy, odpověď přes fosforylaci bílkovin přijde za sekundy až minuty a přes zapínání genů za desítky minut až hodiny.
+
+Nejpočetnější rodinou jsou receptory spřažené s G-bílkovinami. Lidský genom jich kóduje něco přes osm set a podle Lehningera na ně míří víc než třetina léků na americkém trhu. Patří k nim betablokátory i antihistaminika.
+
+**Lék sám nic nevyrábí. Jen se na chvíli posadí na receptor, který tělo má pro něco jiného.**
+
+## ii. Molekulu po molekule
+
+Vazbu léku popisuje stejný zákon působení hmoty jako kteroukoli chemickou rovnováhu. Volný lék a volný receptor se potkávají tím častěji, čím víc léku je kolem (rychlostní konstanta k_on), a hotový komplex se rozpadá (rychlostní konstanta k_off). V rovnováze je podíl obsazených receptorů C/(K_d + C), kde C je koncentrace léku a K_d = k_off/k_on je disociační konstanta. Je to přesně ta koncentrace, při které je obsazená polovina receptorů. Čím menší K_d, tím pevnější vazba a tím větší afinita.
+
+Křivka obsazení je zpočátku skoro přímka a pak se ohne k nasycení, protože receptorů je jen omezený počet. Lehninger k tomu přidává užitečnou pomůcku: aby bylo obsazeno devadesát procent receptorů, musí být koncentrace léku devětkrát vyšší než K_d. U receptorů pro hormony a přenašeče bývá K_d 10^−7 mol na litr nebo méně. Receptor β má pro adrenalin K_d asi 5 µmol/l, pro syntetického agonistu izoprenalin 0,4 µmol/l a pro betablokátor propranolol 4,6 nmol/l. Propranolol tedy drží zhruba tisíckrát pevněji než adrenalin.
+
+Rovnice ale popisuje průměr. Jednotlivý receptor je v každé chvíli buď obsazený, nebo volný, a molekula na něm sedí náhodně dlouho. „Polovina receptorů obsazená“ znamená, že každý receptor je obsazený zhruba polovinu času. Stejnou K_d přitom můžou mít léky, které se na receptoru rychle střídají, i léky, které sedí dlouho a odcházejí pomalu. Tubokurarin, účinná látka kurare, sedí na receptoru pro acetylcholin asi stokrát déle než acetylcholin sám. Dlouhý pobyt na receptoru někdy vysvětluje dlouhý účinek: tiotropium, lék na rozšíření průdušek, se podává jednou denně a dlouho působí nejspíš proto, že se od svých receptorů odpojuje velmi pomalu. Jindy to neplatí. Indakaterol se od receptoru odpojí rychleji než salmeterol, a přesto se podává jednou denně, kdežto salmeterol dvakrát.
+
+Vyzkoušej si to. Měň koncentraci a porovnej lék, který se rychle střídá, s lékem, který dlouho sedí. Pak lék vymyj.
+
+Simulace: Molekulu po molekule. Šedesát receptorů na membráně. Každý je v každé chvíli buď volný (zelený), nebo obsazený (zlatý), a molekuly na něm sedí náhodně dlouho. Graf dole ukazuje podíl obsazených receptorů za posledních třicet sekund a čárkovaná čára předpověď zákona působení hmoty, C/(K_d + C) (Rosenbaum, rovnice 19.4). Oba léky mají stejnou K_d, a tedy stejné průměrné obsazení, ale jeden na receptoru sedí průměrně půl sekundy a druhý dvacet sekund. Pomalý lék se mezi receptory přelévá líněji, a když se vymyje, drží se na nich mnohem déle. Časy jsou ilustrační.
+
+**Obsazení receptorů je pravděpodobnost, ne stav. Každý receptor si s lékem hraje na schovávanou.**
+
+## iii. Klíče, které úplně nesedí
+
+Obsadit receptor ještě neznamená ho zapnout. Rosenbaum odlišuje dvě vlastnosti léku. Afinita říká, jak ochotně se lék váže, a určuje, kolik receptorů při dané koncentraci obsadí. Vnitřní účinnost říká, jak silný podnět vznikne z jednoho obsazeného receptoru. Agonista receptor obsadí i zapne. Antagonista ho obsadí a nezapne, takže jen zaclání. A mezi nimi stojí částeční agonisté: obsadí třeba všechny receptory, a přesto vyvolají jen část odpovědi, kterou systém umí.
+
+Nejjednodušší model navrhl v roce 1954 nizozemský farmakolog Everhardus Ariëns. Bere odpověď jako úměrnou obsazení receptorů a konstantě úměrnosti říká vnitřní aktivita. Plný agonista ji má rovnou jedné, částečný mezi nulou a jedničkou a antagonista nulovou. Lék, který dokáže vyvolat nanejvýš šedesát procent největší možné odpovědi, má vnitřní aktivitu 0,6.
+
+Jenže někteří agonisté vyvolají plnou odpověď, i když obsadí jen malou část receptorů. Zbylým receptorům se říká rezervní. Model účinnosti, kterým na Ariënse navázali Stephenson v roce 1956 a Robert Furchgott v roce 1966, to vysvětluje ve dvou krocích. Nejdřív z obsazených receptorů vznikne podnět S = e · R_C/R_T, kde R_C/R_T je podíl obsazených receptorů a e účinnost léku. Pak tkáň podnět převede na odpověď, která má svůj strop: E/E_m = S/(1 + S). Silný podnět se tak dá získat ze zlomku receptorů. Účinnost přitom závisí i na tkáni. Platí e = ε · R_T, kde ε je vnitřní účinnost léku na jeden receptor a R_T počet receptorů, které tkáň má. Proto může být tentýž lék v jedné tkáni plným a v jiné částečným agonistou.
+
+Rezervní receptory jde prokázat pokusem: část receptorů se nevratně zničí a sleduje se, jestli agonista ještě dosáhne plné odpovědi. Pokud ano, receptorů bylo nazbyt. Částeční agonisté se naopak hodí jako tlumiče, které systém nikdy nerozjedou naplno. Buprenorfin je částečný agonista opioidních receptorů μ, dýchání tlumí méně než morfin, a proto se považuje za bezpečnější. Mezi betablokátory je částečným agonistou třeba pindolol. A vareniklin, částečný agonista nikotinových receptorů, pomáhá s odvykáním kouření.
+
+Vyzkoušej si to. Vyber lék podle účinnosti a uber tkáni receptory.
+
+Simulace: Klíče a rezerva. Čtyři léky se stejnou afinitou a s účinností 1000, 100, 10 a 1, jako na obrázku 19.5 v učebnici. Čárkovaně obsazení receptorů, které je pro všechny čtyři stejné. Zlatě odpověď vybraného léku, šedě ostatních. Svislá čárka spojuje polovinu stropu vybraného léku s tím, kolik receptorů je při ní obsazeno. Léku s účinností 100 stačí k poloviční odpovědi asi jedno procento receptorů. Léky s účinností 10 a 1 jsou částeční agonisté, protože stropu systému nedosáhnou, ani když obsadí všechny receptory. Posuvník ubírá tkáni receptory a s nimi účinnost e = ε · R_T. Plnému agonistovi se křivka nejdřív jen posune doprava a strop klesne až později, částečnému klesne strop hned. Model: E/E_m = S/(1 + S), S = e · C/(K_d + C) (Rosenbaum, rovnice 19.7 až 19.13).
+
+**O odpovědi nerozhoduje jen lék. Rozhoduje afinita, účinnost a to, kolik receptorů tkáň má.**
+
+## iv. Křivka a čas
+
+V lidském těle se koncentrace léku u receptoru ani obsazení receptorů většinou přímo změřit nedají, a tak farmakologové obvykle sáhnou po prostším, empirickém modelu E_max: E = E_max · C/(EC_50 + C). E_max je největší účinek, jakého lék dosáhne, a EC_50 koncentrace, která vyvolá jeho polovinu. Když je křivka strmější, přidá se exponent n, Hillův koeficient. Kdysi se v něm hledal počet molekul navázaných na receptor. Učebnice ho ale doporučuje brát jen jako číslo, které zlepší shodu s měřením, protože často vychází neceločíselně.
+
+Z modelu plynou dva pojmy, které se často pletou. Potence říká, jak málo léku stačí, a měří se jako EC_50. Účinnost říká, jak velký účinek lék vůbec dokáže vyvolat; v modelu ji zastupuje E_max. E_max ale závisí i na tkáni a léky s účinností e = 100 a 1000 z předchozí simulace mají strop skoro stejný. Pod dvaceti procenty stropu roste účinek s koncentrací skoro přímo úměrně, mezi dvaceti a osmdesáti procenty s logaritmem koncentrace. Křivky účinku se kreslí na logaritmické ose, aby se do grafu vešel velký rozsah koncentrací, a mají pak tvar písmene S.
+
+Křivka má i méně zřejmý důsledek. Lék z krve ubývá stále stejným tempem, za každý poločas na polovinu, ale účinek ubývá jinak. Když je koncentrace stokrát vyšší než EC_50, odpověď je u stropu a úbytek léku se na ní dlouho neprojeví. Během prvního poločasu klesne účinek jen asi o procento a na polovinu spadne až za šest až sedm poločasů. Proto se atenolol s poločasem asi šest hodin může brát jednou denně: dávky drží jeho účinek blízko stropu. Lék, jehož koncentrace je hluboko pod EC_50, naopak ztrácí účinek zhruba stejně rychle, jako mizí z krve.
+
+Ještě déle vydrží účinek léků, které se vážou natrvalo. Aspirin má v krvi poločas kolem čtvrt hodiny, ale cyklooxygenázu v destičce vyřadí na celý její život, a tak se bere jednou denně. Omeprazol s poločasem pod hodinu vyřadí protonové pumpy žaludku a ty se obnovují déle než den.
+
+**Účinek není otisk koncentrace. Odpověď u stropu si úbytku léku dlouho nevšimne.**
+
+## v. Soupeři
+
+Když se o stejný receptor ucházejí dvě látky, rozhoduje jejich koncentrace, afinita a účinnost. Kompetitivní antagonista receptor obsadí, nezapne ho a zabírá místo agonistovi. Agonista ho ale může přetlačit: když se agonisty přidá dost, dosáhne stejného účinku jako bez antagonisty, jen při vyšší koncentraci. Křivka účinku se posune doprava a strop zůstane. Učebnice to vyjadřuje jednoduše: antagonista v koncentraci, při které by sám obsadil polovinu receptorů, zdvojnásobí EC_50 agonisty.
+
+Posun jde změřit a ověřit. Poměr koncentrací agonisty, které s antagonistou a bez něj vyvolají stejný účinek, se jmenuje dávkový poměr a musí splňovat Schildovu rovnici: dávkový poměr − 1 = [B]/K_B, kde [B] je koncentrace antagonisty a K_B jeho disociační konstanta. Donald Jenkinson ji v roce 1960 vyzkoušel na žabím svalu s acetylcholinem a tubokurarinem a přímka vydržela přes tisícinásobný rozsah koncentrací tubokurarinu. Přesvědčivý důkaz, že tubokurarin s acetylcholinem opravdu soupeří o stejné místo.
+
+Na tomhle principu zachraňuje život naloxon. Je to antagonista opioidních receptorů s vysokou afinitou a po injekci rychle zvedne EC_50 opioidu nad koncentraci, která pacientovi tlumila dýchání. Učebnice ale upozorňuje, že jedna dávka působí jen dočasně. Naloxonu v těle ubývá, a když opioid vydrží déle, třeba z náplasti nebo jako dlouho působící metadon, musí se dávky naloxonu opakovat.
+
+Částečný agonista se chová obojetně. Když jsou receptory prázdné, trochu je zapne. Když na ně už tlačí silný agonista, část receptorů mu zabere a celkový účinek sníží, nanejvýš až na svůj vlastní strop. Buprenorfin se navíc z receptorů vytlačuje těžko: odpojuje se pomalu, s poločasem asi 37 minut, a jím vyvolaný útlum dechu naloxon zvrátí hůř.
+
+Jinak působí antagonisté, které agonista přetlačit nemůže. Nevratný antagonista receptor vyřadí natrvalo: buď se na něj naváže kovalentně, jako fenoxybenzamin na receptory α pro noradrenalin, nebo tak pevně, že se už neuvolní, jako α-bungarotoxin z hadího jedu, kterým se dají receptory pro acetylcholin spočítat. Nekompetitivní antagonista se vůbec neváže na místo agonisty, ale brzdí receptor nebo odpověď za ním. U obou nakonec klesne strop a přidávání agonisty to nespraví; při rezervě receptorů se křivka nejdřív jen posune doprava. Látky se na receptoru ale můžou i doplňovat, jak ukazují benzodiazepiny v otázkách na konci kapitoly.
+
+Vyzkoušej si to. K silnému agonistovi přidej kompetitivního antagonistu, částečného agonistu nebo nekompetitivního antagonistu a sleduj, co se stane s křivkou.
+
+Simulace: Soupeři. Šedě křivka silného agonisty samotného, s účinností 100, zlatě se soupeřem v nastavené koncentraci. Kompetitivní antagonista posune křivku doprava 1 + [B]/K_B krát, jak říká Schildova rovnice, a strop nechá být: při koncentraci rovné K_B je posun přesně dvojnásobný. Částečný agonista s účinností 1 vyvolá sám až polovinu odpovědi, a proto křivka začíná výš, ale silnému agonistovi ubere a křivku také posune. Nekompetitivní antagonista nechá křivku na místě a sníží strop, stejným vzorcem, jakým učebnice popisuje toleranci na nikotin (rovnice 20.24). Model: Rosenbaum, rovnice 19.26 a 19.27, v podobě s účinností.
+
+**Soupeř, kterého jde přetlačit, posouvá křivku. Soupeř, kterého přetlačit nejde, snižuje strop.**
+
+## vi. Unavené receptory
+
+Učebnice definuje toleranci jako pokles odpovědi na stejnou koncentraci léku po opakovaném podávání. Vylučuje z ní případ, kdy si lék sám zrychlí odbourávání, protože pak jen klesne koncentrace. Tolerance v užším smyslu znamená, že se změnila buňka.
+
+Nejrychleji nastupuje desenzitizace. Lehninger ji popisuje na receptoru β pro adrenalin. Když receptor zůstává obsazený, kináza βARK ho fosforyluje, na fosfáty se naváže bílkovina β-arrestin a zablokuje místo, kterým receptor zapíná G-bílkovinu. Arrestin navíc pomůže receptor stáhnout z membrány do váčku uvnitř buňky, kde je pro adrenalin nedosažitelný. Později se receptor zbaví fosfátů a vrátí se na povrch. To vše se odehraje během minut. Když podnět trvá hodiny až dny, buňka receptory navíc rozkládá v lysozomech a jejich počet klesne. Tomu se říká down-regulace.
+
+Učebnice toleranci popisuje dvěma modely. V prvním lék nebo jeho účinek vyvolá protiregulaci; model ji zastupuje hypotetickým antagonistou, který přibývá a ubývá s vlastním poločasem. Tak se popsala tolerance na zrychlení tepu po nikotinu: druhá dávka dala vyšší koncentraci nikotinu v krvi, a přesto menší zrychlení. Tolerance podle modelu naroste i odezní zhruba za tři až pět poločasů protiregulace a stejně se popisuje tolerance na nitroglycerin, kofein nebo morfin. Ve druhém modelu lék vyčerpá zásobu látky, ze které odpověď vzniká. Další dávka pak zabere méně, a když lék přestane působit, odpověď na chvíli klesne pod výchozí hodnotu, dokud se zásoba neobnoví. Tomu se říká rebound, odraz na druhou stranu.
+
+Platí to i obráceně. Když receptory dlouho blokuje antagonista, buňka si jich přidá, a po vysazení je jich víc, než má být. Příklad s betablokátory je v otázkách na konci kapitoly. Nejkrajnější případ je sval bez nervu: začne si vyrábět receptory pro acetylcholin po celém svém povrchu a je na acetylcholin asi tisíckrát citlivější.
+
+Vyzkoušej si to. Nasaď stálého agonistu nebo antagonistu, počkej, až se receptory přizpůsobí, a pak lék vysaď.
+
+Simulace: Unavené receptory. Světle zelená čára je počet receptorů, zlatá účinek na buňku vůči výchozímu stavu, žlutý podklad doba, kdy se lék bere, třikrát denně. Buňka počet receptorů pomalu přizpůsobuje tomu, jak silně je každý receptor drážděn, s poločasem dvou dnů, a vyrovná tak část změny. Stálý agonista receptory ubírá: účinek během léčby slábne, to je tolerance, a po vysazení chvíli zůstane pod výchozím stavem. Stálý antagonista je přidává, asi o 45 %, a po náhlém vysazení vyskočí účinek vlastního přenašeče nad normál. Přizpůsobení tu naroste i odezní zhruba za tři až pět poločasů, jako v modelu protiregulace z učebnice. Časy a síla přizpůsobení jsou ilustrační.
+
+**Tělo bere lék jako změnu počasí. Přizpůsobí se mu, a když lék zmizí, chvíli trvá, než se přizpůsobí zpátky.**
+
+## Na co se lidé opravdu ptají
+
+Otázky, které se kolem léků a receptorů pořád dokola objevují na Redditu, Quoře i ve studijních skupinách. Krátce a na rovinu. Text vysvětluje, jak léky působí, a nikomu neradí s léčbou.
+
+### Je silnější lék ten, kterého stačí méně?
+
+Ne nutně. Farmakologie rozlišuje potenci a účinnost. Potence říká, jak malá koncentrace stačí k danému účinku, a měří se jako EC_50. Účinnost říká, jak velký účinek lék vůbec dokáže vyvolat, a v praxi se odhaduje jako E_max. Potence závisí na afinitě léku i na jeho vnitřní účinnosti a také na tkáni, na tom, kolik má receptorů a jak signál zesiluje. Lék s nižší EC_50 tedy stačí v menší dávce, ale silnější být nemusí. Částečný agonista s vysokou afinitou může být velmi potentní, a přesto nikdy nedosáhne stropu plného agonisty.
+
+### Proč mají léky vedlejší účinky, když míří na jeden receptor?
+
+Protože tentýž receptor nesedí jen tam, kde se hodí, a přirozené látky mívají celé rodiny receptorů. Adrenalin aktivuje nejméně devět různých receptorů spřažených s G-bílkovinami, acetylcholin dalších pět a serotonin nejméně čtrnáct. Lék, který rozezná jen některé z nich, zasáhne všechny tkáně, kde ty receptory jsou. Betablokátory se proto předepisují na vysoký tlak, poruchy srdečního rytmu, zelený zákal, úzkost i migrénu. Co je v jedné tkáni léčba, je v jiné vedlejší účinek.
+
+### Proč se betablokátory nesmějí vysadit najednou?
+
+Protože si na ně tělo zvykne tím, že si přidá receptory. Když lidé brali propranolol, měli za pět dní v lymfocytech o 43 % víc receptorů β a po vysazení trvalo několik dní, než se jejich počet vrátil. Mezitím vlastní adrenalin působí přes víc receptorů, než je zvykem. Výrobce propranololu proto varuje, že náhlé vysazení může zhoršit nedokrevnost srdečního svalu, a doporučuje dávky snižovat postupně během jednoho až dvou týdnů. O vysazení léku rozhoduje lékař, text jen vysvětluje, proč na tom záleží.
+
+### Proč se benzodiazepiny nemají kombinovat s alkoholem?
+
+Protože oba posilují stejný brzdící receptor. Benzodiazepiny se na receptor GABA_A vážou na jiném místě než GABA a zvyšují jeho citlivost k ní: GABA se z receptoru odpojuje pomaleji. Část účinků alkoholu má na svědomí také zesílení proudů receptorem GABA_A. Oba se tak sčítají na stejném kanálu, a Nichollsova učebnice neurobiologie proto výslovně píše, že se alkohol s benzodiazepiny míchat nemá.
+
+### Co je inverzní agonista?
+
+Látka, která receptor nejen nezapne, ale stlumí i jeho samovolnou aktivitu. Mnoho receptorů spřažených s G-bílkovinami je trochu aktivních i bez jakékoli látky a inverzní agonista stabilizuje jejich neaktivní podobu. Je to častější, než by se čekalo: přehled 380 látek vedených jako antagonisté u 73 receptorů našel 322 inverzních agonistů a jen 58 neutrálních antagonistů. Inverzními agonisty jsou i všechna dosud zkoumaná antihistaminika H_1. Kde receptor sám od sebe aktivní není, chová se inverzní agonista jako obyčejný kompetitivní antagonista. Učebnice, ze které kapitola vychází, tenhle pojem nezná; její škála končí u antagonisty s nulovou účinností.
+
+Tohle je receptor zblízka. Lék, který nepůsobí, dokud se neváže, a vazba, která je hrou náhody, molekulu po molekule. Afinita, která rozhoduje, kolik receptorů lék obsadí, a účinnost, která rozhoduje, co z toho vznikne. Rezervní receptory, díky kterým stačí obsadit zlomek. Křivka, na jejímž stropu si receptory úbytku léku dlouho nevšimnou. Soupeři, které jde přetlačit, a soupeři, které ne. A buňka, která si na lék zvykne tím, že si receptory přestaví. Podání ruky často trvá jen zlomek sekundy, ale buňka si ho pamatuje dny.
+
+## Zdroje a další čtení
+
+- Rosenbaum S. E. (ed.) Basic Pharmacokinetics and Pharmacodynamics: An Integrated Textbook and Computer Simulations, 2. vyd. Wiley, 2017. Kostra kapitoly. Kap. 1 (S. E. Rosenbaum), oddíl 1.2 (s. 3–9): receptor a vratná vazba, víc než 95 % receptorů jsou bílkoviny, aspirin, omeprazol a S-warfarin, adrenalin a albuterol (salbutamol), nikotin, antacida, čtyři cesty přenosu signálu (obr. 1.3), agonisté a antagonisté, rezervní receptory, afinita a vnitřní účinnost, částeční agonisté (pindolol, buprenorfin). Kap. 19 (D. Mould, P. Hutson): oddíl 19.2 (s. 393–402): Clark, Ariëns, Stephenson a Furchgott, vazba a K_d (rovnice 19.1–19.4), model vnitřní aktivity (19.5–19.6), model účinnosti a rezervní receptory (19.7–19.14, obr. 19.5), potence a účinnost (s. 400–402); oddíl 19.3 (s. 402–406): modely E_max a sigmoidní E_max, Hillův koeficient, lineární a logaritmický úsek; oddíl 19.4 (s. 406–409): účinek přetrvá lék, atenolol; oddíl 19.5 (s. 410–411): soupeření dvou léků, zdvojnásobení EC_50, naloxon. Kap. 20 (D. Mould, P. Hutson): oddíl 20.6 (s. 442–450): definice tolerance, desenzitizace a down-regulace v modelech, model protiregulace a nikotin (obr. 20.23–20.24), model vyčerpané zásoby a rebound (obr. 20.25–20.26); oddíl 20.7 (s. 450): nevratně působící léky, aspirin a omeprazol.
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kap. 5.1: vazba ligandu a 90 % obsazení při devítinásobku K_d. Kap. 12.1: K_d receptorů 10^−7 M a méně. Kap. 12.2: přes 800 receptorů spřažených s G-bílkovinami, víc než třetina léků, betablokátory, K_d adrenalinu, izoprenalinu a propranololu (obr. 12-3), desenzitizace kinázou βARK a β-arrestinem (obr. 12-9 a 12-10). E-kniha nemá tištěná čísla stran, citujeme proto oddíly a obrázky.
+- Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 15: rychlost odpovědí přes kanály, fosforylaci a geny (s. 886), receptory pro adrenalin, acetylcholin a serotonin (s. 892), rozklad receptorů v lysozomech (s. 909–910).
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. α-bungarotoxin (s. 190); rámeček 11.3: Schildova rovnice, Jenkinsonův pokus a tubokurarin, který sedí na receptoru stokrát déle než acetylcholin (s. 191); Langleyho přijímající látka (s. 192–193); benzodiazepiny a alkohol na receptoru GABA_A (s. 280); vareniklin (s. 284); adenosin, ospalost a kofein (s. 292); denervovaný sval (s. 592).
+- Maehle A.-H. A binding question: the evolution of the receptor concept. Endeavour 33(4): 134–139, 2009. Ehrlichovo slovo receptor (1900) a Langleyho pojetí z roku 1905.
+- Kenakin T. Efficacy as a vector: the relative prevalence and paucity of inverse agonism. Molecular Pharmacology 65(1): 2–11, 2004. Leurs R., Church M. K., Taglialatela M. H_1-antihistamines: inverse agonism, anti-inflammatory actions and cardiac effects. Clinical and Experimental Allergy 32: 489–498, 2002.
+- Sykes D. A., Charlton S. J. Slow receptor dissociation is not a key factor in the duration of action of inhaled long-acting β_2-adrenoceptor agonists. British Journal of Pharmacology 165: 2672–2683, 2012. Australský úřad TGA: souhrn údajů o přípravku Spiriva Respimat (tiotropium), 2015.
+- Olofsen E. a kol. Modeling buprenorphine reduction of fentanyl-induced respiratory depression. JCI Insight 7: e156973, 2022.
+- Aarons R. D. a kol. Elevation of β-adrenergic receptor density in human lymphocytes after propranolol administration. Journal of Clinical Investigation 65(5): 949–957, 1980. Informace pro předepisující lékaře k přípravku Inderal XL (propranolol) o vysazování.
+- Rajagopal S., Shenoy S. K. GPCR desensitization: acute and prolonged phases. Cellular Signalling 41: 9–16, 2018. Desenzitizace během minut, down-regulace během hodin až dnů.
+- Simulace jsou zjednodušené modely. V simulaci 01 jsou časy vazby ilustrační, průměr odpovídá rovnici 19.4. V simulaci 02 jsou účinnosti z obr. 19.5 a model z rovnic 19.7–19.13. V simulaci 03 má silný agonista účinnost 100 a částečný 1, nekompetitivní antagonista dělí odpověď jako v rovnici 20.24. V simulaci 04 je poločas přizpůsobení dva dny a síla přizpůsobení zvolená tak, aby antagonista přidal receptory zhruba o 45 %, podobně jako u Aaronse a kol. (43 %).
 
 ---
 
