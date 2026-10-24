@@ -68,24 +68,24 @@ PAGES = {
     'pages/wetware.html': dict(
         kind='hub', name='Wetware', title='Wetware – interaktivní průvodce biologií těla | Větev na větvi',
         desc='Osm větví biologie těla, od biochemie a neurobiologie po imunologii a endokrinologii. Každá s první '
-             'kapitolou, simulacemi a zdroji.'),
+             'kapitolou, tři už i s druhou, se simulacemi a zdroji.'),
     # ---- branches
     'pages/wetware-biochemie.html': dict(
         kind='branch', name='Biochemie', title='Biochemie – Wetware | Větev na větvi',
-        desc='Chemie života: energie, molekuly a reakce. První kapitola Jsi sloveso vysvětluje metabolismus, ATP '
-             'a zpětné vazby se simulacemi.'),
+        desc='Chemie života: energie, molekuly a reakce. Kapitoly Jsi sloveso o metabolismu a ATP a První rameno '
+             'schodiště o glykolýze, se simulacemi.'),
     'pages/wetware-neurobiologie.html': dict(
         kind='branch', name='Neurobiologie', title='Neurobiologie – Wetware | Větev na větvi',
-        desc='Nervy, signály a to, jak se z 86 miliard neuronů vynoří já. První kapitola: klidový potenciál, práh, '
-             'akční potenciál a synapse.'),
+        desc='Nervy, signály a to, jak se z 86 miliard neuronů vynoří já. Kapitoly o akčním potenciálu a o chemické '
+             'synapsi, do které se zapisuje učení.'),
     'pages/wetware-fyziologie.html': dict(
         kind='branch', name='Fyziologie', title='Fyziologie – Wetware | Větev na větvi',
         desc='Jak spolu orgány a soustavy spolupracují. První kapitola Moře pod kůží: zpětná vazba, spády a pumpy, '
              'proudění, povrchy a obnova.'),
     'pages/wetware-farmakologie.html': dict(
         kind='branch', name='Farmakologie', title='Farmakologie – Wetware | Větev na větvi',
-        desc='Léky jako vlna v krvi. První kapitola Lék je vlna: farmakokinetika a farmakodynamika, poločas, '
-             'ustálený stav a terapeutické okno.'),
+        desc='Léky jako vlna v krvi a podání ruky s receptorem. Kapitoly o farmakokinetice a poločasu a o receptorech, '
+             'afinitě, účinnosti a toleranci.'),
     'pages/wetware-molekularni-biologie.html': dict(
         kind='branch', name='Molekulární biologie', title='Molekulární biologie – Wetware | Větev na větvi',
         desc='DNA, RNA a bílkoviny bez zjednodušování. První kapitola Čtení bez čtenáře: opis s korekturou, '
@@ -111,6 +111,16 @@ PAGES = {
         about=['metabolismus', 'ATP', 'enzymy', 'aktivační energie', 'zpětnovazebná inhibice', 'ustálený stav'],
         en='Introduction to metabolism: why you are a process rather than a thing; ATP, stepwise release of energy '
            'and feedback inhibition without a central controller.'),
+    'pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html': dict(
+        kind='chapter', branch='pages/wetware-biochemie.html', name='První rameno schodiště',
+        title='První rameno schodiště: glykolýza krok za krokem | Větev na větvi',
+        desc='Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, '
+             'přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.',
+        about=['glykolýza', 'ATP', 'NAD⁺', 'fosfofruktokináza', 'mléčné kvašení', 'alkoholové kvašení',
+               'Pasteurův efekt'],
+        en='Glycolysis step by step, following Lehninger: the two-ATP investment and four-ATP payoff, phosphoryl '
+           'transfer potential, free energy in red blood cells, feeder pathways, fermentation and NAD+ recycling, '
+           'and regulation of hexokinase, PFK-1 and pyruvate kinase.'),
     'pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html': dict(
         kind='chapter', branch='pages/wetware-neurobiologie.html', name='Jak se sůl naučila říkat já',
         title='Jak se sůl naučila říkat já: úvod do neurobiologie | Větev na větvi',
@@ -120,6 +130,16 @@ PAGES = {
                'myelin'],
         en='Introduction to neurobiology: resting potential and the sodium-potassium pump, threshold and the '
            'action potential, myelin, synapses and 86 billion neurons.'),
+    'pages/wetware-neurobiologie-ch2-dole-v-mezere.html': dict(
+        kind='chapter', branch='pages/wetware-neurobiologie.html', name='Dole v mezeře',
+        title='Dole v mezeře: chemická synapse zblízka | Větev na větvi',
+        desc='Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč '
+             'chodí po kvantech a do synapsí se zapisuje učení. Se čtyřmi simulacemi.',
+        about=['synapse', 'nervosvalová ploténka', 'acetylcholin', 'kvantové uvolňování', 'synaptická plasticita',
+               'dlouhodobá potenciace', 'receptor NMDA'],
+        en='The chemical synapse, following From Neuron to Brain: the end plate, reversal potential and excitation '
+           'versus inhibition, calcium-triggered release, quantal release and Poisson statistics, SNARE proteins, '
+           'short-term plasticity, and LTP and LTD with the NMDA receptor as a coincidence detector.'),
     'pages/wetware-fyziologie-ch1-more-pod-kuzi.html': dict(
         kind='chapter', branch='pages/wetware-fyziologie.html', name='Moře pod kůží',
         title='Moře pod kůží: úvod do fyziologie | Větev na větvi',
@@ -137,6 +157,16 @@ PAGES = {
                'receptor'],
         en='Introduction to pharmacokinetics and pharmacodynamics: the concentration-time curve, half-life and '
            'steady state, receptors, potency and efficacy, and the therapeutic window.'),
+    'pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html': dict(
+        kind='chapter', branch='pages/wetware-farmakologie.html', name='Podání ruky zblízka',
+        title='Podání ruky zblízka: jak léky působí na receptory | Větev na větvi',
+        desc='Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, '
+             'křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.',
+        about=['receptor', 'farmakodynamika', 'afinita', 'účinnost léku', 'částečný agonista', 'antagonista',
+               'tolerance'],
+        en='Drug receptors, following Rosenbaum: mass-action binding and residence time, affinity and efficacy, '
+           'partial agonists and spare receptors, the Emax model and why effects outlast drugs, competitive and '
+           'noncompetitive antagonism, and tolerance, desensitization and rebound.'),
     'pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html': dict(
         kind='chapter', branch='pages/wetware-molekularni-biologie.html', name='Čtení bez čtenáře',
         title='Čtení bez čtenáře: úvod do molekulární biologie | Větev na větvi',
@@ -890,7 +920,8 @@ def apply_branch_games(path):
     s = f.read_text(encoding='utf-8')
     s = re.sub(r'^[ \t]*' + re.escape(HRY_BEGIN) + r'.*?' + re.escape(HRY_END) + r'\n', '', s, flags=re.S | re.M)
     games = [g for c, m in PAGES.items() if m['kind'] == 'chapter' and m['branch'] == path for g in games_of(c)]
-    read = re.search(r'^([ \t]*)<a class="read"[^>]*>.*?</a>\n', s, re.S | re.M)
+    reads = list(re.finditer(r'^([ \t]*)<a class="read"[^>]*>.*?</a>\n', s, re.S | re.M))
+    read = reads[-1] if reads else None   # the games go under the last chapter link of the branch
     if games and read:
         links = ' <span aria-hidden="true">·</span> '.join(f'<a href="{Path(g).name}">{html.escape(PAGES[g]["name"])}</a>'
                                                           for g in games)
@@ -1029,7 +1060,7 @@ def write_site_files(all_dates):
              'života, interaktivních simulacích, odpovědích na časté otázky a zdrojích s odkazy na učebnice a články '
              '(Alberts, Boron a Boulpaep, Lehninger, Rosenbaum a další). Parametry simulací jsou u každé kapitoly '
              'popsané jako ilustrační tam, kde nejsou převzaté ze zdrojů.', '',
-             '## Wetware – první kapitoly', '']
+             '## Wetware – kapitoly', '']
     for p in chapters:
         m = PAGES[p]
         lines.append(f'- [{m["name"]}]({url_of(p)}) ({PAGES[m["branch"]]["name"]}): {m["desc"]} English: {m["en"]}')

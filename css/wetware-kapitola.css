@@ -576,3 +576,10 @@
   .video-play:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
   @media (max-width:560px){ .video-play{font-size:.8rem;gap:.4rem;padding:.42rem .8rem .42rem .65rem;bottom:8%;}
     .video-play svg{width:.8rem;height:.8rem;} .video-play .len{font-size:.7rem;} }
+
+/* ---------- second chapters: a reaction written out on its own line ---------- */
+.prose .eqn{font-family:var(--mono);font-size:.86rem;line-height:1.7;text-align:center;color:var(--sage-deep);
+  background:var(--sage-mist);border-radius:6px;padding:.7rem .9rem;}
+.prose .eqn .side{display:inline-block;white-space:nowrap;}
+@media (max-width:480px){ .prose .eqn{font-size:.76rem;padding:.6rem .5rem;} }
+.nw{white-space:nowrap;}

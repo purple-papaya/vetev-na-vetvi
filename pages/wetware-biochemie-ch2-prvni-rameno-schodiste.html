@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>První rameno schodiště: glykolýza krok za krokem | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html">
+<link rel="alternate" type="application/atom+xml" title="Větev na větvi – nové kapitoly, hry a články" href="https://vetevnavetvi.cz/feed.xml">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="První rameno schodiště">
+<meta property="og:description" content="Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/wetware-biochemie-ch2-prvni-rameno-schodiste.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="První rameno schodiště – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="article:published_time" content="2026-10-24T15:36:15+00:00">
+<meta property="article:modified_time" content="2026-10-24T15:36:15+00:00">
+<meta property="article:section" content="Biochemie">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://ko-fi.com/vetevnavetvi"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": [
+    "WebPage",
+    "FAQPage"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html",
+   "name": "První rameno schodiště: glykolýza krok za krokem | Větev na větvi",
+   "description": "Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-biochemie-ch2-prvni-rameno-schodiste.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html#breadcrumb"
+   },
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Způsobuje kyselina mléčná svalovou horečku?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne. Hladina laktátu se po výkonu vrátí na klidovou zhruba do hodiny, kdežto svalová horečka se rozjíždí několik hodin a vrcholí za jeden až dva dny. Objevuje se hlavně po nezvyklé zátěži s brzdivými, takzvaně excentrickými pohyby, při kterých se sval pod zátěží natahuje, třeba při běhu z kopce. Proč přesně bolí, se pořád zkoumá. Mluví se o drobném poškození svalových vláken a pojivové tkáně, o zánětu a nověji i o poškození nervových zakončení, laktát mezi vysvětleními dávno nevede. Pálení přímo během sprintu má podle Voetovy učebnice na svědomí spíš kyselost, která glykolýzu provází, než laktát sám. A laktát není odpad: játra z něj vyrábějí zpátky glukózu a mnoho tkání ho spaluje jako palivo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč se glykolýze říká anaerobní, když běží i s kyslíkem?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Anaerobní tu znamená jen to, že kyslík nepotřebuje, ne že s ním neběží. Glykolýza běží v tvých buňkách pořád. S kyslíkem pokračuje pyruvát do mitochondrií a NADH předá elektrony dýchacímu řetězci. Bez kyslíku, nebo když mitochondrie nestíhají, skončí pyruvát jako laktát. Červené krvinky ho vyrábějí i s kyslíkem a dnes se ví, že laktát v těle vzniká nepřetržitě i za dostatku kyslíku. Dráha je v obou případech stejná, liší se jen to, co je za ní."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kolik ATP dá jedna glukóza?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Glykolýza sama dvě. Když pyruvát i NADH dokončí cestu v mitochondriích, je to celkem 30 nebo 32. Záleží na tom, jakou cestou se elektrony z NADH v cytoplazmě dostanou do mitochondrií. Starší učebnice uváděly 38, protože počítaly s celými čísly: 3 ATP na každé NADH a 2 na FADH_2. Přesnější měření dávají asi 2,5 a 1,5 a nic nenutí, aby to byla celá čísla. ATP totiž vzniká z toku protonů a počet protonů na jedno ATP celé číslo být nemusí."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Proč nádory spotřebují tolik glukózy?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "V mnoha nádorech běží příjem glukózy a glykolýza asi desetkrát rychleji než ve zdravé tkáni a velká část pyruvátu skončí jako laktát. Část nádorových buněk má málo kyslíku, protože jsou daleko od vlásečnic, ale Otto Warburg si ve dvacátých letech všiml, že nádory jedou na glykolýzu i tam, kde kyslík mají. Lékaři toho využívají při vyšetření PET. Pacient dostane obdobu glukózy se značeným fluorem, fluorodeoxyglukózu. Hexokináza ji fosforyluje, ale další enzym si s ní neporadí, a tak se hromadí v buňkách, které hodně glukózy berou. Na snímku pak nádor svítí."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Je v ATP „vysokoenergetická vazba“?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne v tom smyslu, jak to zní, a Lehninger to označení rovnou nazývá nesprávným a zavádějícím. Přetrhnout jakoukoli vazbu energii stojí, neuvolní ji. Volná energie se při hydrolýze ATP uvolní proto, že produkty jsou stabilnější než ATP: záporné náboje se od sebe vzdálí, uvolněný fosfát má víc rezonančních forem a produkty se lépe obklopí vodou. U fosfoenolpyruvátu se k tomu přidá přeskupení pyruvátu z enolu na stabilnější ketoformu, a proto je na žebříčku úplně nahoře."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Wetware",
+     "item": "https://vetevnavetvi.cz/pages/wetware.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Biochemie",
+     "item": "https://vetevnavetvi.cz/pages/wetware-biochemie.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "První rameno schodiště",
+     "item": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"
+    }
+   ]
+  },
+  {
+   "@id": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html#article",
+   "headline": "První rameno schodiště",
+   "description": "Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/wetware-biochemie-ch2-prvni-rameno-schodiste.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-24T15:36:15+00:00",
+   "dateModified": "2026-10-24T15:36:15+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "glykolýza"
+    },
+    {
+     "@type": "Thing",
+     "name": "ATP"
+    },
+    {
+     "@type": "Thing",
+     "name": "NAD⁺"
+    },
+    {
+     "@type": "Thing",
+     "name": "fosfofruktokináza"
+    },
+    {
+     "@type": "Thing",
+     "name": "mléčné kvašení"
+    },
+    {
+     "@type": "Thing",
+     "name": "alkoholové kvašení"
+    },
+    {
+     "@type": "Thing",
+     "name": "Pasteurův efekt"
+    }
+   ],
+   "keywords": "glykolýza, ATP, NAD⁺, fosfofruktokináza, mléčné kvašení, alkoholové kvašení, Pasteurův efekt",
+   "wordCount": 4834,
+   "timeRequired": "PT24M",
+   "citation": [
+    "Nelson D. L., Cox M. M. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kostra kapitoly. Kap. 14.1 (Glycolysis): první rozluštěná dráha, Buchner 1897, jediný zdroj energie červených krvinek, zachovaná chemie, dvě fáze (obr. 14-2), tři druhy dějů, −146 a −85 kJ/mol, energie zbylá v pyruvátu, tři úlohy fosfátů, pokus Hardena a Younga, kroky 1–10 s jejich ΔG′° (hexokináza a 8 Å, aldoláza, triózafosfátizomeráza a obr. 14-6, NAD⁺ a GAPDH, spřažení kroků 6 a 7, fosforylace na úrovni substrátu, 2-fosfoglycerát a PEP, pyruvátkináza), účetní bilance. Kap. 14.2 (Feeder Pathways): fosforolýza glykogenu a řešená úloha 14-1, trávení škrobu, laktózová intolerance, galaktóza a galaktosemie (obr. 14-10), fruktóza a manóza (obr. 14-9). Kap. 14.3 (Fates of Pyruvate): obr. 14-11, Pasteurův a Warburgův efekt, rámeček 14-1 (nádory a PET), mléčné kvašení a definice kvašení, rámeček 14-2 (sprint, kyslíkový dluh, Coriho cyklus, aligátoři), alkoholové kvašení a thiaminpyrofosfát, kvašené potraviny. Kap. 14.4: tři nevratné kroky a tab. 14-2 (ΔG v erytrocytech). Kap. 14.5: izoenzymy hexokinázy, regulace PFK-1 (obr. 14-22, 14-23), fruktóza-2,6-bisfosfát (obr. 14-24), regulace pyruvátkinázy. Kap. 14, úlohy 10 a 11 a jejich řešení (arzeničnan). Dále kap. 13.3 (tab. 13-6, obr. 13-11, „vysokoenergetická vazba“, fosfokreatin), kap. 13.5 (tab. 13-10 a 13-11, AMPK), tab. 6-5 (zrychlení reakce triózafosfátizomerázou) a kap. 19.2–19.3 (P/O 2,5 a 1,5; 30 nebo 32 ATP na glukózu). E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a tabulky.",
+    "Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Dráha Embdenova–Meyerhofova–Parnasova (s. 595); důvod izomerace ve druhém kroku (s. 600); triózafosfátizomeráza jako „dokonalý enzym“ (s. 606); kyselost, ne laktát, při únavě a pálení svalu (s. 615); ATP se mezi klidem a námahou mění o méně než 10 % a fosfofruktokináza zrychlí asi desetkrát (s. 627–628); glukóza-1-fosfát v tab. 16-3 (s. 579); 38 proti 32 ATP na glukózu (s. 832–833).",
+    "Sender R., Fuchs S., Milo R. Revised estimates for the number of human and bacteria cells in the body. PLoS Biology 14(8): e1002533, 2016. Asi 3×10^13 lidských buněk, z toho 2,5×10^13 červených krvinek.",
+    "Sonkodi B. Should we void lactate in the pathophysiology of delayed onset muscle soreness? Not so fast! Let’s see a neurocentric view! Metabolites 12(9): 857, 2022. Laktát se vrátí na klidovou hladinu do hodiny, nástup a vrchol svalové horečky, excentrická zátěž, přehled vysvětlení.",
+    "Brooks G. A. The science and translation of lactate shuttle theory. Cell Metabolism 27(4): 757–785, 2018. Laktát vzniká nepřetržitě i za dostatku kyslíku a je hlavním palivem i hlavní surovinou pro glukoneogenezi.",
+    "Hinkle P. C. P/O ratios of mitochondrial oxidative phosphorylation. Biochimica et Biophysica Acta 1706: 1–11, 2005. Asi 2,5 ATP na NADH a 1,5 na sukcinát.",
+    "Nobelova cena za chemii 1929, Arthur Harden a Hans von Euler-Chelpin, za výzkum kvašení cukru a kvasných enzymů (nobelprize.org).",
+    "Simulace jsou zjednodušené modely. V simulaci 01 jsou standardní hodnoty z tabulek. V simulaci 02 jsou ΔG′° a ΔG z Lehningera, kroky blízko rovnováhy kreslíme jako ploché a enolázu bereme z tab. 13-10. V simulaci 03 odpovídá 32 ATP na glukózu s kyslíkem Lehningerovi, ostatní rychlosti jsou ilustrační. V simulaci 04 jsou krajní hodnoty nukleotidů z tab. 13-11 a polohy křivek bez fruktóza-2,6-bisfosfátu a s ním z obr. 14-24; mezi krajními hodnotami interpolujeme, tvar křivek a velikost posunu po ATP a AMP jsou ilustrační."
+   ],
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "learningResourceType": "kapitola s interaktivními simulacemi",
+   "interactivityType": "mixed",
+   "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "@id": "https://vetevnavetvi.cz/pages/wetware.html#series",
+    "name": "Wetware",
+    "url": "https://vetevnavetvi.cz/pages/wetware.html"
+   },
+   "articleSection": "Biochemie"
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="wetware.html">Wetware</a> <span class="sep-slash">/</span> <a href="wetware-biochemie.html">Biochemie</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Logika metabolismu</span><span class="sep"></span><span class="n">Kapitola druhá</span></p>
+  <h1 class="title">První rameno<br><em>schodiště</em></h1>
+  <p class="deck">Jak buňka vytěží z&nbsp;cukru první ATP – a&nbsp;proč do něj nejdřív musí dvě vložit.</p>
+  <p class="byline">Glykolýza krok za krokem: sedm myšlenek, přirovnání ze života a&nbsp;čtyři simulace na hraní. <b>Vychází z</b> učebnice <i>Nelson a&nbsp;Cox, Lehninger Principles of Biochemistry</i> (8.&nbsp;vydání), kapitola&nbsp;14: oddíly 14.1 až 14.3 a&nbsp;z&nbsp;oddílů 14.4 a&nbsp;14.5 to, jak se dráha řídí.</p>
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-24">24.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+</header>
+
+<div class="branch-wrap">
+  <figure class="branch-fig">
+    <svg viewBox="0 0 900 240" role="img" aria-label="Schodiště, které se v polovině rozdvojí. Na horním rameni dostane šestiúhelník glukózy dva fosfáty, pak se rozlomí a obě poloviny sestupují po pěti schodech, na kterých přibývají zlaté mince ATP.">
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M96,30 L110,38 L110,54 L96,62 L82,54 L82,38 Z"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage-deep)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M118,60 H178 V74 H238 V88 H298 V102 H358 V116 H418 V130 H430"/>
+      </g>
+      <g class="draw" fill="none" stroke="var(--sage)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M430,130 C444,130 452,124 466,124 H512 V134 H558 V144 H604 V154 H650 V164 H696 V174 H760"/>
+        <path d="M430,130 C444,130 452,142 466,146 H512 V160 H558 V174 H604 V188 H650 V202 H696 V216 H760"/>
+      </g>
+      <g class="draw" fill="var(--sage-mute)" stroke="none">
+        <circle cx="96" cy="30" r="3"/><circle cx="110" cy="38" r="3"/><circle cx="110" cy="54" r="3"/>
+        <circle cx="96" cy="62" r="3"/><circle cx="82" cy="54" r="3"/><circle cx="82" cy="38" r="3"/>
+        <circle cx="776" cy="174" r="3.4"/><circle cx="788" cy="174" r="3.4"/><circle cx="800" cy="174" r="3.4"/>
+        <circle cx="776" cy="216" r="3.4"/><circle cx="788" cy="216" r="3.4"/><circle cx="800" cy="216" r="3.4"/>
+      </g>
+      <g class="draw leaf" stroke="none">
+        <circle cx="148" cy="50" r="5" fill="var(--terra)"/><circle cx="268" cy="78" r="5" fill="var(--terra)"/>
+        <circle cx="489" cy="114" r="4.5" fill="var(--sage-pale)"/><circle cx="489" cy="136" r="4.5" fill="var(--sage-pale)"/>
+        <circle cx="535" cy="124" r="5" fill="var(--gold)"/><circle cx="535" cy="150" r="5" fill="var(--gold)"/>
+        <circle cx="673" cy="154" r="5" fill="var(--gold)"/><circle cx="673" cy="192" r="5" fill="var(--gold)"/>
+      </g>
+    </svg>
+    <figcaption class="branch-cap">Glykolýza. Glukóza (šestiúhelník) dostane na prvních schodech dva fosfáty z&nbsp;ATP (terakotové tečky), pak se rozlomí a&nbsp;obě poloviny sestoupí po pěti schodech až k&nbsp;pyruvátu. Cestou naloží dvě NADH (světlé) a&nbsp;vrátí čtyři ATP (zlaté). Z&nbsp;jedné větve dvě, <em>větev na větvi</em>.</figcaption>
+  </figure>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Většina buněk tvého těla nikdy nedýchá. Z&nbsp;asi třiceti bilionů lidských buněk připadá zhruba pětadvacet bilionů na červené krvinky a&nbsp;ty nemají jádro ani mitochondrie. Celý život roznášejí kyslík, ale samy ho k&nbsp;získávání energie nepoužijí. Jediným zdrojem energie je pro ně deset reakcí, které rozštípnou glukózu na dvě poloviny a&nbsp;vytěží z&nbsp;ní pár molekul ATP. Těm deseti reakcím se říká <span class="kw">glykolýza</span>.</p>
+
+  <p>V&nbsp;první kapitole, <a href="wetware-ch1-jsi-sloveso.html">Jsi sloveso</a>, jsme viděli, že buňka glukózu nespálí naráz jako zápalka, ale sestoupí s&nbsp;ní po schodišti zhruba dvaceti kroků. Glykolýza je jeho první rameno. Běží v&nbsp;cytoplazmě skoro každé buňky, od kvasinky po tvůj neuron, a&nbsp;kyslík k&nbsp;ní potřeba není. Učebnice připomíná, že první buňky žily v&nbsp;atmosféře, ve které kyslík skoro nebyl, a&nbsp;energii z&nbsp;paliv musely brát bez něj. Chemie glykolýzy se od té doby zachovala: její enzymy jsou u&nbsp;obratlovců stavbou velmi podobné enzymům kvasinky i&nbsp;špenátu.</p>
+
+  <p>A&nbsp;hned na prvních schodech předvede trik, který zná každý podnikatel: aby vydělala, musí nejdřív investovat. Buňka do glukózy vloží dvě molekuly ATP a&nbsp;teprve pak z&nbsp;ní dostane čtyři. Kapitola jde po stejných krocích jako učebnice: dvě fáze dráhy, vklad, výplata, účetní bilance, přítoky z&nbsp;jiných cukrů, osud pyruvátu a&nbsp;nakonec tři ventily, kterými buňka celou dráhu řídí.</p>
+
+  <aside class="note">
+    <div class="tag"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1 C5 4 3 6 3 9 a5 5 0 0 0 10 0 C13 6 11 4 8 1z"/></svg>Přirovnání ze života</div>
+    Stará <b>pumpa na zahradě</b> nejde, dokud do ní nenaleješ trochu vody. Ta voda se nevyplýtvá: utěsní píst, a&nbsp;když pak zapumpuješ, vyteče jí víc, než kolik jí do pumpy padlo. Dvě ATP na začátku glykolýzy jsou taková voda do pumpy.
+  </aside>
+</section>
+
+<!-- ===================== §1 DVĚ FÁZE (L 14.1, přehled) ===================== -->
+<section class="prose">
+  <h2><span class="num">i</span>Dvě <em>fáze</em></h2>
+
+  <p>Glykolýza rozštípne jednu molekulu glukózy se šesti uhlíky na dvě molekuly pyruvátu se třemi uhlíky. Dělá to v&nbsp;deseti krocích a&nbsp;každý obstará jiný enzym. Byla to první metabolická dráha, kterou se podařilo celou rozluštit. Začalo to v&nbsp;roce 1897, kdy Eduard Buchner zjistil, že cukr zkvasí i&nbsp;výtažek z&nbsp;kvasinek, ve kterém už není jediná živá buňka. Do třicátých let dvacátého století pak biochemici složili celou dráhu krok za krokem, v&nbsp;kvasinkách i&nbsp;ve svalu. Podle tří z&nbsp;nich, Gustava Embdena, Otty Meyerhofa a&nbsp;Jakuba Parnase, se jí dodnes říká také dráha Embdenova–Meyerhofova–Parnasova. A&nbsp;ukázalo se, že se reakce života dají vysvětlit chemií, bez jakékoli tajemné životní síly.</p>
+
+  <p>Dráha má dvě fáze. V&nbsp;<span class="kw">přípravné fázi</span> (kroky 1 až 5) buňka glukózu dvakrát označí fosfátem z&nbsp;ATP, přestaví ji na fruktózu a&nbsp;rozlomí ji na dvě tříuhlíkové poloviny. Obě skončí jako stejná molekula, glyceraldehyd-3-fosfát. Ve <span class="kw">výplatní fázi</span> (kroky 6 až 10) projde každá polovina stejnými pěti kroky až k&nbsp;pyruvátu a&nbsp;buňka z&nbsp;ní cestou získá dvě ATP a&nbsp;jedno NADH. Polovin je dvě, takže výplata vynese čtyři ATP a&nbsp;dvě NADH. Po odečtení vkladu zbydou na každou glukózu dvě ATP a&nbsp;dvě NADH.</p>
+
+  <p>Učebnice upozorňuje na tři druhy dějů, které v&nbsp;dráze stojí za pozornost. Uhlíková kostra glukózy se rozkládá na pyruvát. Meziprodukty s&nbsp;vysokým potenciálem přenosu fosfátu, které vzniknou cestou, předají fosfát na ADP a&nbsp;vznikne ATP. A&nbsp;v&nbsp;jednom kroku přejde na NAD⁺ hydridový iont, tedy vodík se dvěma elektrony, a&nbsp;NAD⁺ se tím změní na NADH.</p>
+
+  <p>Glykolýza přitom uvolní jen malý díl energie, kterou glukóza skrývá. Rozklad glukózy na dva pyruváty, i&nbsp;s&nbsp;předáním elektronů na NAD⁺, má standardní změnu volné energie −146&nbsp;kJ/mol. Úplné spálení glukózy na oxid uhličitý a&nbsp;vodu má −2840&nbsp;kJ/mol. Většinu energie si tedy pyruvát odnese s&nbsp;sebou a&nbsp;s&nbsp;kyslíkem si ji vyberou mitochondrie. Bez kyslíku ale zůstane buňce na výrobu ATP jen glykolýza.</p>
+
+  <p>Všech devět meziproduktů mezi glukózou a&nbsp;pyruvátem nese fosfátovou skupinu a&nbsp;Lehninger k&nbsp;tomu uvádí tři důvody. Zaprvé <b>past</b>: membrána nemá přenašeče pro fosforylované cukry, takže meziprodukty z&nbsp;buňky neutečou a&nbsp;buňka je nemusí v&nbsp;sobě držet žádnou další energií. Zadruhé <b>úspory</b>: z&nbsp;fosfátů navázaných na meziprodukty později vzniknou nové ATP. Zatřetí <b>držadla</b>: fosfátové skupiny se navážou do aktivních míst enzymů a&nbsp;energie té vazby pomáhá snížit aktivační energii a&nbsp;zvýšit přesnost reakce. Většina enzymů glykolýzy k&nbsp;tomu potřebuje hořečnaté ionty.</p>
+
+  <p class="punch">Glykolýza není spalování. Je to <b>přestavba</b>: z&nbsp;jednoho šestiuhlíkového cukru dva tříuhlíkové zbytky a&nbsp;mezi tím dvě ATP navíc.</p>
+</section>
+
+<!-- ===================== §2 VKLAD (L 14.1, přípravná fáze) ===================== -->
+<section class="prose">
+  <h2><span class="num">ii</span><em>Vklad</em></h2>
+
+  <p>Že na začátku glykolýzy stojí fosfáty, se zjistilo náhodou. V&nbsp;roce 1906 přidali Arthur Harden a&nbsp;William Young do kvasničného výtažku krevní sérum. Čekali, že látky ze séra, které brzdí enzymy štěpící bílkoviny, ochrání kvasné enzymy, a&nbsp;kvašení se opravdu zrychlilo. Pak udělali kontrolní pokus: sérum převařili, aby ukázali, že po povaření účinek zmizí. Nezmizel. Převařené sérum kvašení zrychlilo stejně, protože to dělal obyčejný anorganický fosfát. Harden s&nbsp;Youngem pak našli ve výtažku hexózu se dvěma fosfáty, ze které se později vyklubal fruktóza-1,6-bisfosfát. Tím začalo dlouhé zkoumání toho, co v&nbsp;biochemii dělají fosfáty, a&nbsp;Harden za výzkum kvašení dostal v&nbsp;roce 1929 Nobelovu cenu.</p>
+
+  <p><b>Krok 1.</b> Glukóza vstoupí do buňky přenašečem v&nbsp;membráně a&nbsp;hned za prahem ji <span class="kw">hexokináza</span> označí: přenese na její šestý uhlík koncovou fosfátovou skupinu z&nbsp;ATP. Vznikne glukóza-6-fosfát a&nbsp;v&nbsp;buňce je ta reakce nevratná. Hexokináza se přitom kolem glukózy sevře. Když naváže ATP, přiblíží se její dvě části asi o&nbsp;osm ångströmů, necelý nanometr. Tím přisune ATP ke glukóze a&nbsp;vytlačí z&nbsp;aktivního místa vodu, která by jinak mohla ATP rozštípnout naprázdno. Fosfát na glukóze pak funguje jako zámek: pro fosforylovaný cukr membrána přenašeč nemá, takže glukóza zůstane v&nbsp;buňce.</p>
+
+  <p><b>Krok 2.</b> Fosfohexózaizomeráza přestaví glukóza-6-fosfát na fruktóza-6-fosfát: kruh se otevře, karbonylová skupina se přesune z&nbsp;prvního uhlíku na druhý a&nbsp;kruh se zase zavře. Vypadá to jako zbytečná práce, ale bez ní by nešly další dva kroky. Fruktóza má na prvním uhlíku volnou skupinu, na kterou jde připojit druhý fosfát. A&nbsp;karbonylová skupina na druhém uhlíku je přesně to, co aldoláza ve čtvrtém kroku potřebuje, aby molekulu rozlomila mezi třetím a&nbsp;čtvrtým uhlíkem, tedy v&nbsp;půli. Z&nbsp;glukózy by vznikly dva nestejně dlouhé kusy.</p>
+
+  <p><b>Krok 3.</b> <span class="kw">Fosfofruktokináza-1</span> (PFK-1) přenese druhý fosfát z&nbsp;ATP, tentokrát na první uhlík. Vznikne fruktóza-1,6-bisfosfát. (Bis-, protože dva fosfáty sedí každý na jiném uhlíku. Difosfát by znamenal dva fosfáty spojené za sebou, jako v&nbsp;ADP.) Tohle je rozhodující krok: glukóza-6-fosfát i&nbsp;fruktóza-6-fosfát ještě můžou odbočit do jiných drah, fruktóza-1,6-bisfosfát už jen do glykolýzy. A&nbsp;v&nbsp;buňce je krok prakticky nevratný. Proto na něm buňka glykolýzu nejvíc řídí, jak uvidíme v&nbsp;poslední části.</p>
+
+  <p><b>Krok 4.</b> <span class="kw">Aldoláza</span> rozlomí šestiuhlíkovou molekulu na dvě tříuhlíkové: dihydroxyacetonfosfát a&nbsp;glyceraldehyd-3-fosfát. Za standardních podmínek by reakce šla silně opačným směrem (ΔG′° = +23,8&nbsp;kJ/mol). V&nbsp;buňce jsou ale koncentrace látek tak nízké, že skutečná změna volné energie je malá a&nbsp;reakce snadno běží oběma směry. Protože produkty pořád odtékají dál, běží v&nbsp;glykolýze dopředu.</p>
+
+  <p><b>Krok 5.</b> Dál se hodí jen glyceraldehyd-3-fosfát. Triózafosfátizomeráza proto přestaví dihydroxyacetonfosfát na druhou molekulu glyceraldehyd-3-fosfátu. Je to jeden z&nbsp;nejrychlejších enzymů vůbec: svou reakci urychlí asi miliardkrát, natolik, že ji brzdí už jen to, jak rychle k&nbsp;němu molekuly doputují. Po pátém kroku má buňka místo jedné glukózy dvě stejné poloviny, každou s&nbsp;jedním fosfátem, a&nbsp;uhlíky z&nbsp;horní a&nbsp;dolní půlky glukózy už od sebe chemicky nerozeznáš.</p>
+
+  <p class="punch">Vklad není ztráta. Dva fosfáty z&nbsp;ATP <b>chytí cukr do pasti a&nbsp;připraví ho k&nbsp;rozlomení</b>.</p>
+</section>
+
+<!-- ===================== §3 VÝPLATA (L 14.1, výplatní fáze) ===================== -->
+<section class="prose">
+  <h2><span class="num">iii</span><em>Výplata</em></h2>
+
+  <p><b>Krok 6</b> je srdce celé dráhy. <span class="kw">Glyceraldehyd-3-fosfátdehydrogenáza</span> odebere aldehydové skupině dva elektrony s&nbsp;vodíkem a&nbsp;předá je NAD⁺, které se změní na NADH. Energie, kterou oxidace uvolní, se přitom neztratí jako teplo. Enzym ji použije na připojení fosfátu z&nbsp;roztoku, tedy fosfátu, za který buňka nezaplatila žádným ATP. Vznikne 1,3-bisfosfoglycerát, molekula s&nbsp;acylfosfátem, který drží fosfát hodně volně. NAD⁺ má buňka mnohem méně než glukózy, kterou za pár minut zpracuje. Kdyby NADH z&nbsp;tohohle kroku neměnila pořád zpátky na NAD⁺, glykolýza by se brzy zastavila. K&nbsp;tomu se vrátíme v&nbsp;šesté části.</p>
+
+  <p>Jak důležitý je ten fosfát z&nbsp;roztoku, ukazují úlohy na konci Lehningerovy kapitoly na arzeničnanu. Podobá se fosfátu natolik, že ho enzym připojí místo něj, jenže vzniklý acylarzeničnan se hned sám rozpadne. Glykolýza běží dál, jenže sedmý krok se přeskočí, ATP z&nbsp;něj nevznikne a&nbsp;čistý zisk bez kyslíku klesne na nulu.</p>
+
+  <p><b>Krok 7.</b> <span class="kw">Fosfoglycerátkináza</span> přenese volně držený fosfát z&nbsp;1,3-bisfosfoglycerátu na ADP. Vznikne první ATP z&nbsp;každé poloviny a&nbsp;3-fosfoglycerát. Kroky 6 a&nbsp;7 tak dohromady spřáhnou oxidaci aldehydu s&nbsp;výrobou ATP a&nbsp;jejich společná ΔG′° je asi −12&nbsp;kJ/mol: silně z&nbsp;kopce jde sedmý krok a&nbsp;táhne za sebou šestý. Výrobě ATP přímo z&nbsp;meziproduktu se říká <span class="kw">fosforylace na úrovni substrátu</span>. Obstarávají ji enzymy rozpuštěné v&nbsp;cytoplazmě, na rozdíl od mitochondrií, kde ATP vzniká na membráně díky toku protonů.</p>
+
+  <p><b>Kroky 8 a&nbsp;9.</b> Fosfoglycerátmutáza přesune zbylý fosfát ze třetího uhlíku na druhý a&nbsp;enoláza z&nbsp;molekuly odebere vodu. Vznikne <span class="kw">fosfoenolpyruvát</span> (PEP). Na pohled se skoro nic nezměnilo: stejné atomy, jeden fosfát. Jenže odtržení fosfátu z&nbsp;2-fosfoglycerátu uvolní 17,6&nbsp;kJ/mol, z&nbsp;fosfoenolpyruvátu 61,9&nbsp;kJ/mol, a&nbsp;na výrobu ATP z&nbsp;ADP je potřeba 30,5. Fosfát teď drží molekulu v&nbsp;podobě enolu, která by se ráda přeskupila na stabilnější tvar a&nbsp;nemůže. Enoláza nic nevyrobí, jen přerozdělí energii uvnitř molekuly tak, aby se dala vybrat.</p>
+
+  <p><b>Krok 10.</b> <span class="kw">Pyruvátkináza</span> přenese fosfát z&nbsp;fosfoenolpyruvátu na ADP. Vznikne druhé ATP z&nbsp;každé poloviny a&nbsp;pyruvát, nejdřív v&nbsp;podobě enolu, která se hned sama přeskupí do stabilnější ketoformy. Zhruba polovina energie se uloží do ATP. Zbytek, −31,4&nbsp;kJ/mol, žene reakci dopředu tak silně, že je v&nbsp;buňce nevratná.</p>
+
+  <p>Vyzkoušej si to. Vyber dárce a&nbsp;příjemce fosfátu a&nbsp;sleduj, kterým směrem by přenos šel sám.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 01</span> Žebříček fosfátů</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">reakce</span> <b id="g2-eq">–</b></span>
+        <span class="rd"><span class="lo">ΔG′°</span> <b id="g2-dg">–</b></span>
+        <span class="rd"><span class="lo">směr</span> <b id="g2-ok">–</b></span>
+      </div>
+    </div>
+    <canvas id="gsim2" height="300" aria-label="Svislý žebříček sloučenin seřazených podle toho, jak ochotně předávají fosfát. Šipka ukazuje přenos fosfátu od dárce k příjemci."></canvas>
+    <div class="sim-controls">
+      <span class="lbl">dárce</span>
+      <button class="ctrl" id="g2-d-pep">PEP</button>
+      <button class="ctrl" id="g2-d-bpg">1,3-BPG</button>
+      <button class="ctrl" id="g2-d-pcr">fosfokreatin</button>
+      <button class="ctrl" id="g2-d-atp">ATP</button>
+      <button class="ctrl" id="g2-d-g6p">glukóza-6-P</button>
+    </div>
+    <div class="sim-controls">
+      <span class="lbl">příjemce</span>
+      <button class="ctrl" id="g2-a-adp">ADP</button>
+      <button class="ctrl" id="g2-a-glc">glukóza</button>
+      <button class="ctrl" id="g2-a-cr">kreatin</button>
+      <button class="ctrl" id="g2-a-pyr">pyruvát</button>
+    </div>
+  </div>
+  <figcaption><b>Žebříček fosfátů.</b> Sloučeniny jsou seřazené podle potenciálu přenosu fosfátu, tedy podle toho, kolik volné energie se uvolní, když fosfát pustí do vody (záporně vzatá standardní volná energie hydrolýzy). Za standardních podmínek fosfát sám od sebe „padá“ jen dolů, od výš postavené sloučeniny k&nbsp;níž postavené. Fosfoenolpyruvát a&nbsp;1,3-bisfosfoglycerát stojí nad ATP, a&nbsp;proto z&nbsp;nich glykolýza ATP vyrobí. Glukóza-6-fosfát stojí pod ATP, a&nbsp;proto hexokináza může glukózu fosforylovat. ATP je uprostřed jako prostředník, přesně jak popisuje první kapitola. Enzym o&nbsp;směru nerozhoduje, jen otevře cestu. V&nbsp;buňce mají slovo i&nbsp;koncentrace: když sval odpočívá a&nbsp;ATP má dost, přenese kreatinkináza fosfát z&nbsp;ATP na kreatin a&nbsp;doplní si fosfokreatin, i&nbsp;když je to za standardních podmínek do kopce. Hodnoty z&nbsp;Lehningera, tabulka <span class="nw">13-6</span>; glukóza-1-fosfát podle Voeta, tabulka <span class="nw">16-3</span>.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">ATP nevzniká z&nbsp;ničeho. Buňka nejdřív molekulu <b>přestaví tak, aby fosfát držela co nejhůř</b>, a&nbsp;pak ho nechá spadnout na ADP.</p>
+</section>
+
+<!-- ===================== §4 ÚČETNÍ KNIHA (L 14.1, bilance; ΔG z L 14.4) ===================== -->
+<section class="prose">
+  <h2><span class="num">iv</span>Účetní <em>kniha</em></h2>
+
+  <p>Teď už můžeme sestavit účetní knihu. Lehninger v&nbsp;ní sleduje tři věci: kam se podějí uhlíky glukózy, kolik fosfátu a&nbsp;ADP vejde a&nbsp;kolik ATP vyjde a&nbsp;kudy putují elektrony. Na levou stranu napíše všechno, co do dráhy vstoupí, na pravou všechno, co z&nbsp;ní vyjde, a&nbsp;škrtne, co je na obou stranách. Zbyde tohle:</p>
+  <p class="eqn"><span class="side">glukóza + 2 NAD⁺ + 2 ADP + 2 P<sub>i</sub> →</span> <span class="side">2 pyruvát + 2 NADH + 2 H⁺ + 2 ATP + 2 H<sub>2</sub>O</span></p>
+  <p>Jedna glukóza dá dva pyruváty: to je cesta uhlíku. Dvě ADP a&nbsp;dva fosfáty se změní na dvě ATP: cesta fosfátu. A&nbsp;čtyři elektrony, ve dvou hydridových iontech, přejdou ze dvou molekul glyceraldehyd-3-fosfátu na dvě NAD⁺: cesta elektronů. Celková standardní změna volné energie, i&nbsp;s&nbsp;výrobou dvou ATP, je asi −85&nbsp;kJ/mol. Dráha je jako celek silně z&nbsp;kopce a&nbsp;běží jedním směrem.</p>
+
+  <p>Zajímavější je, jak vypadá schodiště uvnitř buňky. Hodnoty ΔG′° v&nbsp;tabulkách platí pro standardní podmínky, kdy je každé látky jeden mol na litr. V&nbsp;buňce jsou koncentrace úplně jiné a&nbsp;skutečná změna volné energie ΔG se od standardní liší, někdy i&nbsp;znaménkem. Lehninger se k&nbsp;tomu vrací v&nbsp;oddílu 14.4 a&nbsp;uvádí ΔG všech deseti kroků spočítané z&nbsp;koncentrací meziproduktů, které se naměřily v&nbsp;červených krvinkách. Výsledek je překvapivý. Sedm z&nbsp;deseti kroků má ΔG blízko nuly: jsou skoro v&nbsp;rovnováze a&nbsp;můžou běžet oběma směry podle toho, kam zrovna odtéká víc látky. Jen tři kroky, hexokináza, fosfofruktokináza-1 a&nbsp;pyruvátkináza, jsou daleko od rovnováhy a&nbsp;běží jen dopředu. Proto taky glukoneogeneze, která v&nbsp;játrech vyrábí glukózu z&nbsp;laktátu a&nbsp;jiných látek, projde sedm kroků glykolýzy pozpátku a&nbsp;obejde jen ty tři.</p>
+
+  <p>Vyzkoušej si to. Projdi dráhu krok za krokem a&nbsp;sleduj účet ATP a&nbsp;NADH. Pak přepni na standardní podmínky.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 02</span> Deset schodů</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">krok</span> <b id="g1-step">–</b></span>
+        <span class="rd"><span class="lo">ΔG kroku</span> <b id="g1-dg">–</b></span>
+        <span class="rd"><span class="lo">ATP</span> <b id="g1-atp">0</b></span>
+        <span class="rd"><span class="lo">NADH</span> <b id="g1-nadh">0</b></span>
+      </div>
+    </div>
+    <canvas id="gsim1" height="330" aria-label="Schodiště volné energie glykolýzy krok za krokem a vedle něj uhlíková kostra molekuly s navázanými fosfáty."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl" id="g1-prev">&#8592; Zpět</button>
+      <button class="ctrl spark" id="g1-next">Další krok &#8594;</button>
+      <button class="ctrl" id="g1-play">Celá cesta</button>
+      <span class="gap"></span>
+      <button class="ctrl is-on" id="g1-mode" aria-pressed="true">Podmínky: v&nbsp;červené krvince</button>
+    </div>
+  </div>
+  <figcaption><b>Deset schodů.</b> Vlevo uhlíková kostra molekuly po každém kroku: terakotové kroužky jsou fosfáty, zlaté jsou fosfáty s&nbsp;vysokým potenciálem přenosu, které se vzápětí přenesou na ADP. Od čtvrtého kroku jsou molekuly dvě. Vpravo schodiště volné energie na jednu glukózu, v&nbsp;červené krvince a&nbsp;za standardních podmínek. Kroky 6 až 10 se počítají dvakrát, protože je projdou obě poloviny. Za standardních podmínek vede několik schodů do kopce. V&nbsp;buňce jsou skoro všechny ploché a&nbsp;strmé jsou jen tři. Hodnoty z&nbsp;Lehningera: ΔG′° z&nbsp;oddílu 14.1, ΔG v&nbsp;červených krvinkách z&nbsp;tabulky <span class="nw">14-2</span>. U&nbsp;sedmi kroků blízko rovnováhy uvádí tabulka jen rozmezí a&nbsp;simulace je kreslí jako ploché. Pro enolázu bereme standardní hodnotu −3,2&nbsp;kJ/mol z&nbsp;Lehningerovy tabulky <span class="nw">13-10</span>, protože s&nbsp;hodnotou +7,5&nbsp;kJ/mol z&nbsp;tabulky <span class="nw">14-2</span> by součet všech kroků nevyšel na celkových −85&nbsp;kJ/mol.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">V&nbsp;buňce je schodiště skoro celé ploché. Strmé jsou <b>jen tři schody</b> a&nbsp;právě na nich se rozhoduje, jak rychle dráha poteče.</p>
+</section>
+
+<!-- ===================== §5 PŘÍTOKY (L 14.2) ===================== -->
+<section class="prose">
+  <h2><span class="num">v</span><em>Přítoky</em></h2>
+
+  <p>Glukóza není jediný cukr, který do glykolýzy vtéká. Glykogen ve svalech a&nbsp;v&nbsp;játrech je dlouhý řetězec glukóz a&nbsp;buňka ho nerozkládá vodou, ale fosfátem. Glykogenfosforyláza odštípne glukózu rovnou jako glukóza-1-fosfát a&nbsp;fosfoglukomutáza z&nbsp;něj udělá glukóza-6-fosfát. Hexokináza tak nemusí utratit ATP a&nbsp;glukóza z&nbsp;glykogenu dá místo dvou ATP tři.</p>
+
+  <p>Škrob z&nbsp;jídla má skoro stejnou stavbu jako glykogen, jenže v&nbsp;trávicí trubici ho štěpí voda. Začne s&nbsp;tím slinná amyláza v&nbsp;ústech, pokračuje amyláza ze slinivky v&nbsp;tenkém střevě a&nbsp;dvojcukry nakonec rozštěpí enzymy na povrchu střevní sliznice. Do těla se vstřebají jen jednotlivé cukry.</p>
+
+  <p>Mléčný cukr laktózu štěpí laktáza na glukózu a&nbsp;galaktózu. Po odstavení jí ale u&nbsp;většiny lidí ubude a&nbsp;v&nbsp;dospělosti ji má zhruba jen třetina, hlavně v&nbsp;severní Evropě a&nbsp;v&nbsp;některých částech Afriky. Ostatním laktóza projde do tlustého střeva, kde ji rozkládají bakterie, a&nbsp;nestrávený cukr navíc táhne do střeva vodu. Odtud křeče a&nbsp;průjem.</p>
+
+  <p>Galaktóza doputuje krví do jater a&nbsp;tam ji enzymy přes několik kroků přestaví na glukóza-1-fosfát, stejný jako z&nbsp;glykogenu. Když některý z&nbsp;těch enzymů chybí, vznikne galaktosemie. Při nejmírnější formě se v&nbsp;oční čočce ukládá galaktitol a&nbsp;už u&nbsp;kojenců se tvoří šedý zákal. Nejvážnější forma brzdí růst i&nbsp;vývoj řeči a&nbsp;rozumu a&nbsp;poškozuje játra, a&nbsp;to i&nbsp;když se galaktóza z&nbsp;jídla vyřadí.</p>
+
+  <p>Fruktóza z&nbsp;ovoce a&nbsp;ze sacharózy má dvě cesty. Ve svalech a&nbsp;ledvinách ji hexokináza fosforyluje na šestém uhlíku a&nbsp;vzniklý fruktóza-6-fosfát pokračuje glykolýzou. V&nbsp;játrech ji fruktokináza fosforyluje na prvním uhlíku. Fruktóza-1-fosfát se pak rozštěpí na dvě triózy a&nbsp;obě skončí jako glyceraldehyd-3-fosfát. Do glykolýzy tak vstoupí až za třetím krokem, tedy za fosfofruktokinázou-1, o&nbsp;které bude řeč v&nbsp;poslední části. Podobně vchází manóza: hexokináza ji fosforyluje a&nbsp;izomeráza přestaví na fruktóza-6-fosfát.</p>
+
+  <p class="punch">Do glykolýzy vede víc vchodů než jeden. Všechny ale <b>ústí do stejného schodiště</b>.</p>
+</section>
+
+<!-- ===================== §6 KAM S PYRUVÁTEM (L 14.3) ===================== -->
+<section class="prose">
+  <h2><span class="num">vi</span>Kam s&nbsp;<em>pyruvátem</em></h2>
+
+  <p>Pyruvát má tři cesty. S&nbsp;kyslíkem jde do mitochondrií, kde z&nbsp;něj vznikne acetylkoenzym A&nbsp;a&nbsp;v&nbsp;citrátovém cyklu oxid uhličitý. Glykolýza je pak jen první rameno schodiště. Bez kyslíku ale nastane potíž, která s&nbsp;energií nesouvisí. Šestý krok spotřebovává NAD⁺ a&nbsp;buňka ho má tak málo, že by se glykolýza bez jeho vracení brzy zastavila. S&nbsp;kyslíkem odvezou elektrony z&nbsp;NADH mitochondrie. Bez něj je buňka musí uložit jinam a&nbsp;nejbližší místo je samotný pyruvát. Tomu se říká <span class="kw">kvašení</span>: buňka získá ATP, nespotřebuje kyslík a&nbsp;množství NAD⁺ ani NADH se nezmění.</p>
+
+  <p>Při <span class="kw">mléčném kvašení</span> předá laktátdehydrogenáza elektrony z&nbsp;NADH na pyruvát a&nbsp;vznikne laktát. NAD⁺ se vrátí do šestého kroku a&nbsp;glykolýza jede dál. Takhle žijí červené krvinky, které laktát vyrábějí i&nbsp;s&nbsp;kyslíkem, a&nbsp;takhle pracují svaly při sprintu, kdy krev nestihne kyslík dovézt dost rychle. Laktát pak krev odnese do jater, kde se z&nbsp;něj znovu stane glukóza. Tomu koloběhu se podle manželů Coriových říká <span class="kw">Coriho cyklus</span>. Vytrénovaný sportovec se ze stometrového sprintu vzpamatuje do půl hodiny. Aligátor, jinak líné zvíře, se umí bleskově vrhnout do útoku, ale pak potřebuje na odbourání laktátu a&nbsp;doplnění glykogenu mnoho hodin.</p>
+
+  <p>Výtěžek kvašení je skromný: dvě ATP na glukózu místo třiceti až dvaatřiceti s&nbsp;kyslíkem. Louis Pasteur si všiml, že kvasinky bez kyslíku spotřebují cukru mnohonásobně víc, a&nbsp;stejně se chová sval. Aby buňka bez kyslíku vyrobila stejně ATP, musí zpracovat asi patnáctkrát víc glukózy. Tomu se říká Pasteurův efekt. Hned vedle něj popisuje Lehninger efekt Warburgův: nádory, ve kterých glykolýza běží rychle i&nbsp;s&nbsp;kyslíkem. Víc o&nbsp;něm v&nbsp;otázkách na konci kapitoly.</p>
+
+  <p>Při <span class="kw">alkoholovém kvašení</span> kvasinky pyruvát nejdřív zbaví oxidu uhličitého a&nbsp;vzniklý acetaldehyd teprve alkoholdehydrogenáza redukuje na ethanol. Enzym, který oxid uhličitý odštěpí, pyruvátdekarboxyláza, potřebuje thiaminpyrofosfát, koenzym vyrobený z&nbsp;vitaminu B<sub>1</sub>. Odtud bublinky v&nbsp;šampaňském i&nbsp;kynuté těsto. V&nbsp;tkáních obratlovců tenhle enzym chybí. Alkoholdehydrogenázu ale máme a&nbsp;v&nbsp;játrech s&nbsp;ní ethanol odbouráváme, stejnou reakcí obráceně.</p>
+
+  <p>Kvašení lidé využívají tisíce let. Bakterie mléčného kvašení dělají z&nbsp;mléka jogurt: kyselina mléčná sníží pH, bílkoviny mléka se vysrážejí a&nbsp;jogurt zhoustne a&nbsp;zkysne. Kyselé prostředí navíc jídlo konzervuje, protože většina mikrobů, které ho kazí, v&nbsp;něm neroste. Podobně vzniká kysané zelí, nakládané okurky nebo kimči.</p>
+
+  <p>Vyzkoušej si to. Vypínej kyslík a&nbsp;laktátdehydrogenázu a&nbsp;měň, jak tvrdě sval pracuje.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 03</span> Kolotoč NAD⁺</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">ATP pro sval</span> <b id="g3-atp">–</b></span>
+        <span class="rd"><span class="lo">glukóza</span> <b id="g3-glc">–</b></span>
+        <span class="rd"><span class="lo">NAD⁺</span> <b id="g3-nad">–</b></span>
+        <span class="rd"><span class="lo">laktát</span> <b id="g3-lac">–</b></span>
+      </div>
+    </div>
+    <canvas id="gsim3" height="300" aria-label="Kolotoč molekul NAD⁺ a NADH mezi glykolýzou, mitochondriemi a laktátdehydrogenázou a vedle něj sloupce dodávky ATP a laktátu."></canvas>
+    <div class="sim-controls">
+      <button class="ctrl is-on" id="g3-o2" aria-pressed="true">Kyslík: je</button>
+      <button class="ctrl is-on" id="g3-ldh" aria-pressed="true">Laktátdehydrogenáza: pracuje</button>
+      <span class="gap"></span>
+      <span class="lbl">sval</span>
+      <button class="ctrl" id="g3-rest">v&nbsp;klidu</button>
+      <button class="ctrl" id="g3-walk">chůze</button>
+      <button class="ctrl" id="g3-run">sprint</button>
+      <button class="ctrl" id="g3-reset">Od začátku</button>
+    </div>
+  </div>
+  <figcaption><b>Kolotoč NAD⁺.</b> Molekuly NAD⁺ (světlé) se v&nbsp;šestém kroku mění na NADH (tmavé) a&nbsp;musí se vrátit. S&nbsp;kyslíkem je vracejí mitochondrie, bez něj laktátdehydrogenáza, která elektrony uloží do laktátu. Když nefunguje ani jedno, NAD⁺ dojde a&nbsp;glykolýza se zastaví, i&nbsp;když je glukózy dost. Při sprintu mitochondrie nestíhají a&nbsp;část pyruvátu skončí jako laktát i&nbsp;s&nbsp;kyslíkem. S&nbsp;kyslíkem dává v&nbsp;simulaci jedna glukóza 32 ATP, bez něj 2, a&nbsp;sval jí proto spotřebuje šestnáctkrát víc, blízko Pasteurovým patnácti. Ostatní jednotky jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Glykolýzu nezastaví nedostatek cukru, ale <b>nedostatek NAD⁺</b>. Kvašení je způsob, jak ho vrátit.</p>
+</section>
+
+<!-- ===================== §7 TŘI VENTILY (L 14.4, 14.5; 13.5) ===================== -->
+<section class="prose">
+  <h2><span class="num">vii</span>Tři <em>ventily</em></h2>
+
+  <p>Zbývá otázka, kterou otevřel Pasteur: jak buňka pozná, že má glykolýzu zrychlit? Odpověď leží na třech strmých schodech ze simulace Deset schodů. Jen kroky daleko od rovnováhy běží jedním směrem a&nbsp;jen na nich má smysl brzdit. Lehninger to rozebírá až v&nbsp;oddílu 14.5, spolu s&nbsp;glukoneogenezí, protože játra musí glykolýzu a&nbsp;výrobu glukózy řídit proti sobě.</p>
+
+  <p>Prvním ventilem je <span class="kw">hexokináza</span>. Člověk má čtyři její varianty, izoenzymy. Svalová hexokináza je napůl nasycená už při 0,1&nbsp;mM glukózy, kdežto v&nbsp;krvi je glukózy 4 až 5&nbsp;mM, takže pracuje skoro naplno. Brzdí ji ale její vlastní produkt: když se glukóza-6-fosfát hromadí, hexokináza zpomalí. Jaterní hexokináza IV, neboli glukokináza, je napůl nasycená až kolem 10&nbsp;mM a&nbsp;glukóza-6-fosfát ji nebrzdí. Játra tak berou glukózu hlavně tehdy, když je jí v&nbsp;krvi hodně.</p>
+
+  <p>Hlavním ventilem je <span class="kw">fosfofruktokináza-1</span>. Je to alosterický enzym: kromě aktivního místa má další místa, na která sedají molekuly hlásící, jak na tom buňka je. ATP, hlavní produkt dráhy, ji brzdí, protože snižuje její afinitu k&nbsp;substrátu, fruktóza-6-fosfátu. Citrát, meziprodukt spalování pyruvátu, tuků i&nbsp;aminokyselin, brzdu zesiluje: hlásí, že buňka má energie dost z&nbsp;jiných zdrojů. ADP a&nbsp;AMP, kterých přibývá, když se ATP spotřebovává rychleji, než vzniká, brzdu uvolňují. Je to plný sklad z&nbsp;první kapitoly: hotový výrobek sám brzdí výrobu.</p>
+
+  <p>Proč zrovna AMP? Protože je to citlivější ukazatel než samotné ATP. Když sval ATP spotřebovává, vzniká z&nbsp;něj nejdřív ADP a&nbsp;enzym adenylátkináza pak ze dvou ADP udělá ATP a&nbsp;AMP. Lehninger to ukazuje na příkladu: když ATP klesne o&nbsp;desetinu, z&nbsp;5,0 na 4,5&nbsp;mM, AMP stoupne šestkrát, z&nbsp;0,1 na 0,6&nbsp;mM. Malá změna zásoby se tak promění ve velký signál. AMP navíc zapne kinázu AMPK, která zrychlí příjem glukózy i&nbsp;glykolýzu a&nbsp;přibrzdí stavbu zásob.</p>
+
+  <p>V&nbsp;játrech má fosfofruktokináza-1 ještě jeden, nejsilnější spínač: <span class="kw">fruktóza-2,6-bisfosfát</span>. Bez něj je enzym při běžných koncentracích substrátu i&nbsp;ostatních regulátorů skoro nečinný. Jeho množství řídí hormony. Když glukózy v&nbsp;krvi ubývá, glukagon ho v&nbsp;játrech sníží a&nbsp;játra přestanou glukózu spalovat a&nbsp;začnou ji vyrábět. Když je jí dost, inzulin ho zvýší.</p>
+
+  <p>Třetím ventilem je <span class="kw">pyruvátkináza</span>. Brzdí ji ATP, acetylkoenzym A&nbsp;a&nbsp;mastné kyseliny s&nbsp;dlouhým řetězcem, tedy znamení, že energie je dost. Zrychluje ji fruktóza-1,6-bisfosfát, produkt třetího kroku, který jí dopředu ohlásí, co se k&nbsp;ní valí. Jaterní varianta se navíc dá vypnout fosforylací, když glukagon hlásí nedostatek glukózy.</p>
+
+  <p>Vyzkoušej si to. Zvyšuj spotřebu ATP, sleduj AMP a&nbsp;fosfofruktokinázu-1 a&nbsp;pak přidej fruktóza-2,6-bisfosfát.</p>
+</section>
+
+<figure class="sim">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">SIM 04</span> Plyn a&nbsp;brzda</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">ATP</span> <b id="g4-atp">–</b></span>
+        <span class="rd"><span class="lo">AMP</span> <b id="g4-amp">–</b></span>
+        <span class="rd"><span class="lo">PFK-1</span> <b id="g4-pfk">–</b></span>
+      </div>
+    </div>
+    <canvas id="gsim4" height="300" aria-label="Vlevo zásoba ATP, ADP a AMP v klidu a teď, vpravo aktivita fosfofruktokinázy-1 v závislosti na koncentraci fruktóza-6-fosfátu."></canvas>
+    <div class="sim-controls">
+      <label>Spotřeba ATP <input type="range" id="g4-use" min="0" max="100" value="0" aria-label="Jak rychle sval spotřebovává ATP"><span class="v" id="g4-use-v"></span></label>
+      <button class="ctrl" id="g4-f26" aria-pressed="false">Fruktóza-2,6-bisfosfát: chybí</button>
+    </div>
+  </div>
+  <figcaption><b>Plyn a&nbsp;brzda.</b> Vlevo zásoba adeninových nukleotidů v&nbsp;klidu a&nbsp;teď: ATP (zlatá), ADP (zelená) a&nbsp;AMP (terakotová). Krajní hodnoty jsou z&nbsp;Lehningerova příkladu v&nbsp;tabulce <span class="nw">13-11</span>: ATP klesne z&nbsp;5,0 na 4,5&nbsp;mM a&nbsp;AMP stoupne z&nbsp;0,1 na 0,6&nbsp;mM. Vpravo aktivita fosfofruktokinázy-1 podle koncentrace jejího substrátu, fruktóza-6-fosfátu. Bez fruktóza-2,6-bisfosfátu je enzym napůl aktivní při 2&nbsp;mM substrátu, s&nbsp;ním už při 0,08&nbsp;mM (Lehninger, obr. <span class="nw">14-24</span>). Méně ATP a&nbsp;víc AMP posouvá křivku doleva. Jak moc, je v&nbsp;simulaci ilustrační, nastavené tak, aby při největší spotřebě enzym zrychlil zhruba desetkrát, jak uvádí Voet. Svislá čára drží koncentraci substrátu stále stejnou, 0,5&nbsp;mM, a&nbsp;tečka ukazuje, jak rychle enzym při ní pracuje.</figcaption>
+</figure>
+
+<section class="prose">
+  <p class="punch">Buňka nehlídá jen to, kolik má ATP. Hlídá, <b>kolik ho právě ztrácí</b>, a&nbsp;AMP jí to ohlásí nahlas.</p>
+</section>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<!-- ===================== OTÁZKY ===================== -->
+<section class="prose">
+  <h2>Na co se lidé <em>opravdu</em> ptají</h2>
+  <p class="faq-intro">Otázky, které se kolem cukru a&nbsp;svalů pořád dokola objevují na Redditu, Quoře i&nbsp;ve studijních skupinách. Krátce a&nbsp;na rovinu.</p>
+</section>
+
+<div class="block">
+  <details class="q">
+    <summary>Způsobuje kyselina mléčná svalovou horečku?</summary>
+    <div class="answer">
+      <p>Ne. Hladina laktátu se po výkonu vrátí na klidovou zhruba do hodiny, kdežto svalová horečka se rozjíždí několik hodin a&nbsp;vrcholí za jeden až dva dny. Objevuje se hlavně po nezvyklé zátěži s&nbsp;brzdivými, takzvaně excentrickými pohyby, při kterých se sval pod zátěží natahuje, třeba při běhu z&nbsp;kopce. Proč přesně bolí, se pořád zkoumá. Mluví se o&nbsp;drobném poškození svalových vláken a&nbsp;pojivové tkáně, o&nbsp;zánětu a&nbsp;nověji i&nbsp;o&nbsp;poškození nervových zakončení, laktát mezi vysvětleními dávno nevede. Pálení přímo během sprintu má podle Voetovy učebnice na svědomí spíš kyselost, která glykolýzu provází, než laktát sám. A&nbsp;laktát není odpad: játra z&nbsp;něj vyrábějí zpátky glukózu a&nbsp;mnoho tkání ho spaluje jako palivo.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč se glykolýze říká anaerobní, když běží i&nbsp;s&nbsp;kyslíkem?</summary>
+    <div class="answer">
+      <p>Anaerobní tu znamená jen to, že kyslík nepotřebuje, ne že s&nbsp;ním neběží. Glykolýza běží v&nbsp;tvých buňkách pořád. S&nbsp;kyslíkem pokračuje pyruvát do mitochondrií a&nbsp;NADH předá elektrony dýchacímu řetězci. Bez kyslíku, nebo když mitochondrie nestíhají, skončí pyruvát jako laktát. Červené krvinky ho vyrábějí i&nbsp;s&nbsp;kyslíkem a&nbsp;dnes se ví, že laktát v&nbsp;těle vzniká nepřetržitě i&nbsp;za dostatku kyslíku. Dráha je v&nbsp;obou případech stejná, liší se jen to, co je za ní.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Kolik ATP dá jedna glukóza?</summary>
+    <div class="answer">
+      <p>Glykolýza sama dvě. Když pyruvát i&nbsp;NADH dokončí cestu v&nbsp;mitochondriích, je to celkem 30 nebo 32. Záleží na tom, jakou cestou se elektrony z&nbsp;NADH v&nbsp;cytoplazmě dostanou do mitochondrií. Starší učebnice uváděly 38, protože počítaly s&nbsp;celými čísly: 3&nbsp;ATP na každé NADH a&nbsp;2 na FADH<sub>2</sub>. Přesnější měření dávají asi 2,5 a&nbsp;1,5 a&nbsp;nic nenutí, aby to byla celá čísla. ATP totiž vzniká z&nbsp;toku protonů a&nbsp;počet protonů na jedno ATP celé číslo být nemusí.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Proč nádory spotřebují tolik glukózy?</summary>
+    <div class="answer">
+      <p>V&nbsp;mnoha nádorech běží příjem glukózy a&nbsp;glykolýza asi desetkrát rychleji než ve zdravé tkáni a&nbsp;velká část pyruvátu skončí jako laktát. Část nádorových buněk má málo kyslíku, protože jsou daleko od vlásečnic, ale Otto Warburg si ve dvacátých letech všiml, že nádory jedou na glykolýzu i&nbsp;tam, kde kyslík mají. Lékaři toho využívají při vyšetření PET. Pacient dostane obdobu glukózy se značeným fluorem, fluorodeoxyglukózu. Hexokináza ji fosforyluje, ale další enzym si s&nbsp;ní neporadí, a&nbsp;tak se hromadí v&nbsp;buňkách, které hodně glukózy berou. Na snímku pak nádor svítí.</p>
+    </div>
+  </details>
+
+  <details class="q">
+    <summary>Je v&nbsp;ATP „vysokoenergetická vazba“?</summary>
+    <div class="answer">
+      <p>Ne v&nbsp;tom smyslu, jak to zní, a&nbsp;Lehninger to označení rovnou nazývá nesprávným a&nbsp;zavádějícím. Přetrhnout jakoukoli vazbu energii stojí, neuvolní ji. Volná energie se při hydrolýze ATP uvolní proto, že produkty jsou stabilnější než ATP: záporné náboje se od sebe vzdálí, uvolněný fosfát má víc rezonančních forem a&nbsp;produkty se lépe obklopí vodou. U&nbsp;fosfoenolpyruvátu se k&nbsp;tomu přidá přeskupení pyruvátu z&nbsp;enolu na stabilnější ketoformu, a&nbsp;proto je na žebříčku úplně nahoře.</p>
+    </div>
+  </details>
+</div>
+
+<div class="rule" aria-hidden="true">
+  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 13 C13 8 9 5 3 4 M13 13 C13 8 17 5 23 4 M13 13 V2"/></svg>
+</div>
+
+<section class="coda">
+  <p>Tohle je první rameno schodiště v&nbsp;kostce. Dvě fáze, vklad a&nbsp;výplata. Dva fosfáty, které cukr chytí do pasti a&nbsp;připraví k&nbsp;rozlomení. Výplata, při které buňka molekulu přestaví tak, aby fosfát pustila na ADP. Účet se čtyřmi ATP na straně příjmů a&nbsp;dvěma na straně výdajů a&nbsp;schodiště, které je v&nbsp;buňce skoro celé ploché. Přítoky z&nbsp;glykogenu, škrobu, mléka i&nbsp;ovoce. Kolotoč NAD⁺, který se nesmí zastavit, a&nbsp;proto si buňka bez kyslíku pomůže laktátem nebo ethanolem. A&nbsp;tři ventily, které hlídají AMP a&nbsp;hormony. Deset reakcí, které umí skoro každá buňka na Zemi a&nbsp;které tvým červeným krvinkám stačí na celý život.</p>
+  <p class="sign">Konec druhé kapitoly</p>
+</section>
+
+<!-- zpetna-vazba:begin – generuje tools/seo.py -->
+<div class="fv-line"><p>Vidíš chybu, nebo ti tu něco nesedí? <a href="zpetna-vazba.html?stranka=wetware-biochemie-ch2-prvni-rameno-schodiste">Napiš mi&nbsp;&#8594;</a></p><a class="kafe" href="https://ko-fi.com/vetevnavetvi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg><span>Kup mi kafe</span></a></div>
+<!-- zpetna-vazba:end -->
+
+<section class="sources">
+  <h2>Zdroje a&nbsp;další čtení</h2>
+  <ul>
+    <li>Nelson D.&nbsp;L., Cox M.&nbsp;M. <em>Lehninger Principles of Biochemistry</em>, 8.&nbsp;vyd. W.&nbsp;H.&nbsp;Freeman, 2021. Kostra kapitoly. Kap.&nbsp;14.1 (Glycolysis): první rozluštěná dráha, Buchner 1897, jediný zdroj energie červených krvinek, zachovaná chemie, dvě fáze (obr.&nbsp;<span class="nw">14-2</span>), tři druhy dějů, −146 a&nbsp;−85&nbsp;kJ/mol, energie zbylá v&nbsp;pyruvátu, tři úlohy fosfátů, pokus Hardena a&nbsp;Younga, kroky <span class="nw">1–10</span>&nbsp;s&nbsp;jejich ΔG′° (hexokináza a&nbsp;8&nbsp;Å, aldoláza, triózafosfátizomeráza a&nbsp;obr.&nbsp;<span class="nw">14-6</span>, NAD⁺ a&nbsp;GAPDH, spřažení kroků 6 a&nbsp;7, fosforylace na úrovni substrátu, 2-fosfoglycerát a&nbsp;PEP, pyruvátkináza), účetní bilance. Kap.&nbsp;14.2 (Feeder Pathways): fosforolýza glykogenu a&nbsp;řešená úloha <span class="nw">14-1</span>, trávení škrobu, laktózová intolerance, galaktóza a&nbsp;galaktosemie (obr.&nbsp;<span class="nw">14-10</span>), fruktóza a&nbsp;manóza (obr.&nbsp;<span class="nw">14-9</span>). Kap.&nbsp;14.3 (Fates of Pyruvate): obr.&nbsp;<span class="nw">14-11</span>, Pasteurův a&nbsp;Warburgův efekt, rámeček <span class="nw">14-1</span> (nádory a&nbsp;PET), mléčné kvašení a&nbsp;definice kvašení, rámeček <span class="nw">14-2</span> (sprint, kyslíkový dluh, Coriho cyklus, aligátoři), alkoholové kvašení a&nbsp;thiaminpyrofosfát, kvašené potraviny. Kap.&nbsp;14.4: tři nevratné kroky a&nbsp;tab.&nbsp;<span class="nw">14-2</span> (ΔG v&nbsp;erytrocytech). Kap.&nbsp;14.5: izoenzymy hexokinázy, regulace PFK-1 (obr.&nbsp;<span class="nw">14-22</span>, <span class="nw">14-23</span>), fruktóza-2,6-bisfosfát (obr.&nbsp;<span class="nw">14-24</span>), regulace pyruvátkinázy. Kap.&nbsp;14, úlohy 10 a&nbsp;11 a&nbsp;jejich řešení (arzeničnan). Dále kap.&nbsp;13.3 (tab.&nbsp;<span class="nw">13-6</span>, obr.&nbsp;<span class="nw">13-11</span>, „vysokoenergetická vazba“, fosfokreatin), kap.&nbsp;13.5 (tab.&nbsp;<span class="nw">13-10</span> a&nbsp;<span class="nw">13-11</span>, AMPK), tab.&nbsp;<span class="nw">6-5</span> (zrychlení reakce triózafosfátizomerázou) a&nbsp;kap.&nbsp;<span class="nw">19.2–19.3</span> (P/O&nbsp;2,5 a&nbsp;1,5; 30 nebo 32 ATP na glukózu). E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a&nbsp;tabulky.</li>
+    <li>Voet D., Voet J.&nbsp;G. <em>Biochemistry</em>, 4.&nbsp;vyd. Wiley, 2011. Dráha Embdenova–Meyerhofova–Parnasova (s.&nbsp;595); důvod izomerace ve druhém kroku (s.&nbsp;600); triózafosfátizomeráza jako „dokonalý enzym“ (s.&nbsp;606); kyselost, ne laktát, při únavě a&nbsp;pálení svalu (s.&nbsp;615); ATP se mezi klidem a&nbsp;námahou mění o&nbsp;méně než 10&nbsp;% a&nbsp;fosfofruktokináza zrychlí asi desetkrát (s.&nbsp;<span class="nw">627–628</span>); glukóza-1-fosfát v&nbsp;tab.&nbsp;<span class="nw">16-3</span> (s.&nbsp;579); 38 proti 32 ATP na glukózu (s.&nbsp;<span class="nw">832–833</span>).</li>
+    <li>Sender R., Fuchs S., Milo R. Revised estimates for the number of human and bacteria cells in the body. <em>PLoS Biology</em> 14(8): e1002533, 2016. Asi 3×10<sup>13</sup> lidských buněk, z&nbsp;toho 2,5×10<sup>13</sup> červených krvinek.</li>
+    <li>Sonkodi B. Should we void lactate in the pathophysiology of delayed onset muscle soreness? Not so fast! Let’s&nbsp;see a&nbsp;neurocentric view! <em>Metabolites</em> 12(9): 857, 2022. Laktát se vrátí na klidovou hladinu do hodiny, nástup a&nbsp;vrchol svalové horečky, excentrická zátěž, přehled vysvětlení.</li>
+    <li>Brooks G.&nbsp;A. The science and translation of lactate shuttle theory. <em>Cell Metabolism</em> 27(4): <span class="nw">757–785</span>, 2018. Laktát vzniká nepřetržitě i&nbsp;za dostatku kyslíku a&nbsp;je hlavním palivem i&nbsp;hlavní surovinou pro glukoneogenezi.</li>
+    <li>Hinkle P.&nbsp;C. P/O&nbsp;ratios of mitochondrial oxidative phosphorylation. <em>Biochimica et Biophysica Acta</em> 1706: <span class="nw">1–11</span>, 2005. Asi 2,5 ATP na NADH a&nbsp;1,5 na sukcinát.</li>
+    <li>Nobelova cena za chemii 1929, Arthur Harden a&nbsp;Hans von Euler-Chelpin, za výzkum kvašení cukru a&nbsp;kvasných enzymů (nobelprize.org).</li>
+    <li>Simulace jsou zjednodušené modely. V&nbsp;simulaci 01 jsou standardní hodnoty z&nbsp;tabulek. V&nbsp;simulaci 02 jsou ΔG′° a&nbsp;ΔG z&nbsp;Lehningera, kroky blízko rovnováhy kreslíme jako ploché a&nbsp;enolázu bereme z&nbsp;tab.&nbsp;<span class="nw">13-10</span>. V&nbsp;simulaci 03 odpovídá 32 ATP na glukózu s&nbsp;kyslíkem Lehningerovi, ostatní rychlosti jsou ilustrační. V&nbsp;simulaci 04 jsou krajní hodnoty nukleotidů z&nbsp;tab.&nbsp;<span class="nw">13-11</span> a&nbsp;polohy křivek bez fruktóza-2,6-bisfosfátu a&nbsp;s&nbsp;ním z&nbsp;obr.&nbsp;<span class="nw">14-24</span>; mezi krajními hodnotami interpolujeme, tvar křivek a&nbsp;velikost posunu po ATP a&nbsp;AMP jsou ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     SIM 02 — ten steps (canvas gsim1). For every reaction of glycolysis
+     the standard free-energy change ΔG′° and the actual ΔG in human
+     erythrocytes (Lehninger 8e: ΔG′° from §14.1, ΔG from Table 14-2).
+     Table 14-2 gives seven steps only as a range; Lehninger calls them
+     "near 0", so they are drawn flat. Enolase ΔG′° is −3.2 kJ/mol from
+     Lehninger's Table 13-10: with the +7.5 of Table 14-2 the ten steps
+     would not add up to the −85 kJ/mol of the whole pathway.
+     Per glucose, steps 6–10 run twice (two trioses), step 5 once.
+     ========================================================= */
+  var GLY = [
+    // e: enzyme, g0: ΔG′° (kJ/mol), g: ΔG in erythrocytes (kJ/mol), n: times per glucose, ledger per run
+    {e: 'hexokináza', g0: -16.7, g: -33.4, n: 1, atp: -1, nadh: 0},
+    {e: 'fosfohexózaizomeráza', g0: 1.7, g: 0, n: 1, atp: 0, nadh: 0},
+    {e: 'fosfofruktokináza-1', g0: -14.2, g: -22.2, n: 1, atp: -1, nadh: 0},
+    {e: 'aldoláza', g0: 23.8, g: 0, n: 1, atp: 0, nadh: 0},
+    {e: 'triózafosfátizomeráza', g0: 7.5, g: 0, n: 1, atp: 0, nadh: 0},
+    {e: 'glyceraldehyd-3-fosfátdehydrogenáza', g0: 6.3, g: 0, n: 2, atp: 0, nadh: 1},
+    {e: 'fosfoglycerátkináza', g0: -18.8, g: 0, n: 2, atp: 1, nadh: 0},
+    {e: 'fosfoglycerátmutáza', g0: 4.4, g: 0, n: 2, atp: 0, nadh: 0},
+    {e: 'enoláza', g0: -3.2, g: 0, n: 2, atp: 0, nadh: 0},
+    {e: 'pyruvátkináza', g0: -31.4, g: -16.7, n: 2, atp: 1, nadh: 0}
+  ];
+  /* the carbon skeleton after each step: chains of carbons, phosphate positions, high-energy phosphates */
+  var MOL = [
+    [{n: 6, P: [], hi: [], ring: true, nm: 'glukóza'}],
+    [{n: 6, P: [6], hi: [], nm: 'glukóza-6-P'}],
+    [{n: 6, P: [6], hi: [], nm: 'fruktóza-6-P'}],
+    [{n: 6, P: [1, 6], hi: [], nm: 'fruktóza-1,6-bisP'}],
+    [{n: 3, P: [1], hi: [], nm: 'DHAP'}, {n: 3, P: [3], hi: [], nm: 'glyceraldehyd-3-P'}],
+    [{n: 3, P: [3], hi: [], nm: 'glyceraldehyd-3-P'}, {n: 3, P: [3], hi: [], nm: 'glyceraldehyd-3-P'}],
+    [{n: 3, P: [1, 3], hi: [1], nm: '1,3-bisfosfoglycerát'}, {n: 3, P: [1, 3], hi: [1], nm: '1,3-bisfosfoglycerát'}],
+    [{n: 3, P: [3], hi: [], nm: '3-fosfoglycerát'}, {n: 3, P: [3], hi: [], nm: '3-fosfoglycerát'}],
+    [{n: 3, P: [2], hi: [], nm: '2-fosfoglycerát'}, {n: 3, P: [2], hi: [], nm: '2-fosfoglycerát'}],
+    [{n: 3, P: [2], hi: [2], nm: 'fosfoenolpyruvát'}, {n: 3, P: [2], hi: [2], nm: 'fosfoenolpyruvát'}],
+    [{n: 3, P: [], hi: [], nm: 'pyruvát'}, {n: 3, P: [], hi: [], nm: 'pyruvát'}]
+  ];
+
+  makeSim('gsim1', function(canvas, dim){
+    var k = 0, shown = 0, real = true, play = false, tPlay = 0, last = now();
+    var stEl = document.getElementById('g1-step'), dgEl = document.getElementById('g1-dg');
+    var atpEl = document.getElementById('g1-atp'), nadhEl = document.getElementById('g1-nadh');
+    function cum(key){ var out = [0], s = 0; GLY.forEach(function(r){ s += r[key] * r.n; out.push(s); }); return out; }
+    var C0 = cum('g0'), CR = cum('g');
+    var lo = Math.min.apply(null, C0.concat(CR)) - 8, hi = Math.max.apply(null, C0.concat(CR)) + 8;
+    function ledger(upto){ var a = 0, n = 0; for(var i = 0; i < upto; i++){ a += GLY[i].atp * GLY[i].n; n += GLY[i].nadh * GLY[i].n; } return {atp: a, nadh: n}; }
+    function read(){
+      var l = ledger(k);
+      setTxt(stEl, k === 0 ? 'glukóza' : k + NB + '· ' + GLY[k - 1].e);
+      if(k === 0) setTxt(dgEl, '–');
+      else { var r = GLY[k - 1], v = (real ? r.g : r.g0) * r.n; setTxt(dgEl, (Math.abs(v) < 0.05 ? '≈' + NB + '0' : sgn(v)) + NB + 'kJ/mol'); }
+      setTxt(atpEl, (l.atp > 0 ? '+' : (l.atp < 0 ? '−' : '')) + Math.abs(l.atp));
+      setTxt(nadhEl, (l.nadh > 0 ? '+' : '') + l.nadh);
+    }
+    function go(d){ k = clamp(k + d, 0, 10); read(); }
+    onClick('g1-next', function(){ play = false; go(1); });
+    onClick('g1-prev', function(){ play = false; go(-1); });
+    var bPlay = onClick('g1-play', function(){ if(k >= 10) k = 0; play = true; tPlay = 0; read(); });
+    var bMode = onClick('g1-mode', function(){ real = !real; toggleBtn(bMode, real, real ? 'Podmínky: v červené krvince' : 'Podmínky: standardní'); read(); });
+    read();
+
+    function layout(d){
+      return d.w >= 600 ? {mx: 10, my: 30, mw: d.w * 0.36, mh: d.h - 40, px: d.w * 0.36 + 70, py: 26, pw: d.w * 0.64 - 84, ph: d.h - 70}
+                        : {px: 52, py: 22, pw: d.w - 64, ph: d.h * 0.52, mx: 6, my: d.h * 0.52 + 58, mw: d.w - 12, mh: d.h * 0.48 - 64};
+    }
+    function chain(ctx, c, x, y, w, alpha){
+      var n = c.n, gap = Math.min(30, w / (n + 0.5)), x0 = x - gap * (n - 1) / 2;
+      ctx.globalAlpha = alpha;
+      line(ctx, x0, y, x0 + gap * (n - 1), y, C.sageDeep, 2.4);
+      if(c.ring){ ctx.strokeStyle = C.sageDeep; ctx.lineWidth = 1.4; ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(x0, y); ctx.quadraticCurveTo(x0 + gap * (n - 1) / 2, y + 24, x0 + gap * (n - 1), y); ctx.stroke(); ctx.setLineDash([]); }
+      for(var i = 1; i <= n; i++){
+        var cx = x0 + gap * (i - 1);
+        dot(ctx, cx, y, 6.5, C.sagePale);
+        ctx.font = '600 8.5px ' + MONO; ctx.fillStyle = C.bg; ctx.textAlign = 'center'; ctx.fillText('C', cx, y + 3);
+        if(c.P.indexOf(i) >= 0){
+          var high = c.hi.indexOf(i) >= 0;
+          line(ctx, cx, y - 6, cx, y - 17, high ? C.gold : C.terra, 1.6);
+          if(high){ ctx.fillStyle = 'rgba(217,183,90,.25)'; ctx.beginPath(); ctx.arc(cx, y - 24, 11, 0, 6.2832); ctx.fill(); }
+          dot(ctx, cx, y - 24, 7, high ? C.gold : C.terra);
+          ctx.font = '700 8.5px ' + SANS; ctx.fillStyle = C.bg; ctx.fillText('P', cx, y - 21);
+        }
+      }
+      label(ctx, c.nm, x, y + 26, C.muted, 'center', '600 10px ' + SANS);
+      ctx.globalAlpha = 1;
+    }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        if(play){ tPlay += dt; if(tPlay > (REDUCED ? 1.6 : 1.0)){ tPlay = 0; go(1); if(k >= 10) play = false; } }
+        shown += (k - shown) * Math.min(1, dt * (REDUCED ? 20 : 7));
+      },
+      draw: function(ctx, d){
+        var L = layout(d), w = d.w, h = d.h, i, cum = real ? CR : C0;
+        ctx.clearRect(0, 0, w, h);
+        // ---- the staircase: cumulative free energy per glucose
+        var F = frame(L.px, L.py, L.pw, L.ph, 0, 10, lo, hi);
+        var yt = []; for(var v = Math.ceil(lo / 20) * 20; v <= hi; v += 20) yt.push([v, v === 0 ? '0' : fmt(v, 0)]);
+        axes(ctx, F, {yt: yt, yl: 'volná energie (kJ/mol na glukózu)'});
+        line(ctx, F.x0, F.Y(0), F.x0 + F.w, F.Y(0), C.line, 1, [3, 4]);
+        for(i = 0; i < 10; i++){
+          var xa = F.X(i), xb = F.X(i + 1), ya = F.Y(cum[i]), yb = F.Y(cum[i + 1]), r = GLY[i];
+          var steep = real && (i === 0 || i === 2 || i === 9);
+          var col = i < k ? (steep ? C.terraBright : C.sage) : 'rgba(155,176,126,.28)';
+          line(ctx, xa, ya, xb - (xb - xa) * 0.35, ya, col, i < k ? 2.6 : 1.6);
+          line(ctx, xb - (xb - xa) * 0.35, ya, xb - (xb - xa) * 0.35, yb, col, i < k ? 2.6 : 1.6);
+          line(ctx, xb - (xb - xa) * 0.35, yb, xb, yb, col, i < k ? 2.6 : 1.6);
+          ctx.font = '500 9px ' + MONO; ctx.fillStyle = i < k ? C.ink : C.muted; ctx.textAlign = 'center';
+          ctx.fillText(String(i + 1), (xa + xb) / 2, F.y0 + F.h + 13);
+          if(r.atp) { var cy = Math.min(ya, yb) - 12; dot(ctx, xb - (xb - xa) * 0.35, cy, 4.5, r.atp > 0 ? C.gold : C.terra); }
+          if(r.nadh) { dot(ctx, xb - (xb - xa) * 0.35, Math.min(ya, yb) - 12, 4.5, C.sagePale); }
+        }
+        if(d.w >= 420) label(ctx, 'krok', F.x0 + F.w, F.y0 + F.h + 26, C.muted, 'right');
+        // the moving molecule on the stairs (two halves after the split)
+        var fi = Math.min(9.999, shown), si = Math.floor(fi), fr = fi - si;
+        var mx = F.X(si + fr), my = F.Y(si >= 10 ? cum[10] : lerp(cum[si], cum[Math.min(10, si + 1)], fr > 0.65 ? (fr - 0.65) / 0.35 : 0));
+        if(shown >= 3.5){ dot(ctx, mx - 4, my - 7, 4, C.ink); dot(ctx, mx + 4, my - 7, 4, C.ink); }
+        else dot(ctx, mx, my - 8, 5.5, C.ink);
+        if(real){ label(ctx, 'jen tři strmé schody', F.x0 + F.w, F.y0 + 10, C.terraBright, 'right'); }
+        else { label(ctx, 'za standardních podmínek jde část schodů do kopce', F.x0 + F.w, F.y0 + 10, C.muted, 'right', '600 ' + (d.w < 420 ? 9 : 10) + 'px ' + SANS); }
+        // ---- the molecule itself
+        var mol = MOL[k], cx = L.mx + L.mw / 2;
+        label(ctx, k === 0 ? 'na začátku' : 'po kroku ' + k, cx, L.my, C.muted, 'center');
+        if(mol.length === 1) chain(ctx, mol[0], cx, L.my + L.mh * 0.5, L.mw * 0.92, 1);
+        else { chain(ctx, mol[0], cx, L.my + L.mh * 0.32, L.mw * 0.6, 1); chain(ctx, mol[1], cx, L.my + L.mh * 0.78, L.mw * 0.6, 1); }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 01 — the phosphate ladder (canvas gsim2). Standard free energy of
+     hydrolysis of phosphorylated compounds (Lehninger Table 13-6; glucose
+     1-phosphate from Voet Table 16-3, because the e-book's Table 13-6
+     mislabels that row). A transfer from donor D to acceptor A runs
+     downhill under standard conditions when ΔG′°(D) < ΔG′°(A-phosphate):
+     ΔG′° = ΔG′°(D) − ΔG′°(A-P).
+     ========================================================= */
+  var PH = [
+    // name, short label, ΔG′° of hydrolysis (kJ/mol), what is left when it gives up its phosphate
+    {id: 'pep', nm: 'fosfoenolpyruvát', s: 'PEP', g: -61.9, rest: 'pyruvát'},
+    {id: 'bpg', nm: '1,3-bisfosfoglycerát', s: '1,3-BPG', g: -49.3, rest: '3-fosfoglycerát'},
+    {id: 'pcr', nm: 'fosfokreatin', s: 'fosfokreatin', g: -43.0, rest: 'kreatin'},
+    {id: 'atp', nm: 'ATP', s: 'ATP', g: -30.5, rest: 'ADP'},
+    {id: 'g1p', nm: 'glukóza-1-fosfát', s: 'glukóza-1-P', g: -20.9, rest: 'glukóza'},
+    {id: 'g6p', nm: 'glukóza-6-fosfát', s: 'glukóza-6-P', g: -13.8, rest: 'glukóza'},
+    {id: 'gl3p', nm: 'glycerol-3-fosfát', s: 'glycerol-3-P', g: -9.2, rest: 'glycerol'}
+  ];
+  makeSim('gsim2', function(canvas, dim){
+    var don = 0, acc = 3, last = now(), pulse = 0;
+    var dgEl = document.getElementById('g2-dg'), okEl = document.getElementById('g2-ok'), eqEl = document.getElementById('g2-eq');
+    function find(id){ for(var i = 0; i < PH.length; i++) if(PH[i].id === id) return i; return 0; }
+    var dIds = ['g2-d-pep', 'g2-d-bpg', 'g2-d-pcr', 'g2-d-atp', 'g2-d-g6p'], dMap = ['pep', 'bpg', 'pcr', 'atp', 'g6p'];
+    var aIds = ['g2-a-adp', 'g2-a-glc', 'g2-a-cr', 'g2-a-pyr'], aMap = ['atp', 'g6p', 'pcr', 'pep'];
+    var cd = choice(dIds, null, 0, function(i){ don = find(dMap[i]); pulse = 0; read(); });
+    var ca = choice(aIds, null, 0, function(i){ acc = find(aMap[i]); pulse = 0; read(); });
+    function read(){
+      var D = PH[don], A = PH[acc], dg = D.g - A.g;
+      setTxt(eqEl, D.s + ' + ' + A.rest + ' → ' + D.rest + ' + ' + A.s);
+      if(don === acc){ setTxt(dgEl, '0' + NB + 'kJ/mol'); setTxt(okEl, 'nic se nezmění'); return; }
+      setTxt(dgEl, sgn(dg) + NB + 'kJ/mol');
+      setTxt(okEl, dg < 0 ? 'z kopce' : 'do kopce');
+    }
+    don = 0; acc = 3; read();
+    return {
+      step: function(){ var t = now(), dt = Math.min(0.1, t - last); last = t; pulse = (pulse + dt * (REDUCED ? 0.25 : 0.7)) % 1; },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h;
+        ctx.clearRect(0, 0, w, h);
+        var narrow = w < 560;
+        var F = frame(narrow ? 46 : 70, 26, narrow ? w * 0.36 : w * 0.3, h - 52, 0, 1, 0, 66);
+        // the ladder: higher = readier to hand its phosphate over (−ΔG′° of hydrolysis)
+        ctx.fillStyle = 'rgba(217,183,90,.07)';
+        ctx.fillRect(F.x0, F.Y(66), F.w, F.Y(30.5) - F.Y(66));
+        line(ctx, F.x0 + F.w / 2, F.Y(0), F.x0 + F.w / 2, F.Y(66), C.line, 2);
+        ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+        [0, 20, 40, 60].forEach(function(v){ ctx.fillText(String(v), F.x0 - 6, F.Y(v) + 3); line(ctx, F.x0 - 3, F.Y(v), F.x0, F.Y(v), C.line, 1); });
+        label(ctx, 'ochota předat fosfát (kJ/mol)', F.x0 - 30, 12, C.muted, 'left', '600 9.5px ' + SANS);
+        label(ctx, 'nad ATP', F.x0 + 4, F.Y(64), C.gold, 'left', '500 9px ' + SANS);
+        PH.forEach(function(p, i){
+          var y = F.Y(-p.g), isD = i === don, isA = i === acc;
+          line(ctx, F.x0 + F.w / 2 - 14, y, F.x0 + F.w / 2 + 14, y, isD ? C.terraBright : (isA ? C.sagePale : C.muted), isD || isA ? 3 : 1.5);
+          label(ctx, p.s + '  ' + num(-p.g, 1), F.x0 + F.w / 2 + 20, y + 3.5, isD ? C.terraBright : (isA ? C.sagePale : C.ink), 'left',
+                (isD || isA ? '700 ' : '500 ') + (narrow ? 9.5 : 10.5) + 'px ' + SANS);
+        });
+        // the transfer
+        var D = PH[don], A = PH[acc], dg = D.g - A.g, xA = F.x0 + F.w / 2 - 24;
+        if(don !== acc){
+          var y1 = F.Y(-D.g), y2 = F.Y(-A.g), down = dg < 0, col = down ? C.gold : C.terra;
+          ctx.strokeStyle = col; ctx.lineWidth = 2.4; ctx.setLineDash(down ? [] : [5, 4]);
+          ctx.beginPath(); ctx.moveTo(xA, y1); ctx.bezierCurveTo(xA - 46, y1, xA - 46, y2, xA - 6, y2); ctx.stroke(); ctx.setLineDash([]);
+          arrow(ctx, xA - 12, y2, xA - 4, y2, col, 2.4);
+          var t = pulse, bx = Math.pow(1 - t, 3) * xA + 3 * Math.pow(1 - t, 2) * t * (xA - 46) + 3 * (1 - t) * t * t * (xA - 46) + t * t * t * (xA - 6);
+          var by = Math.pow(1 - t, 3) * y1 + 3 * Math.pow(1 - t, 2) * t * y1 + 3 * (1 - t) * t * t * y2 + t * t * t * y2;
+          if(down){ dot(ctx, bx, by, 6, C.terra); ctx.font = '700 8px ' + SANS; ctx.fillStyle = C.bg; ctx.textAlign = 'center'; ctx.fillText('P', bx, by + 3); }
+        }
+        // the explanation panel
+        var px = narrow ? 14 : F.x0 + F.w + 150, py = narrow ? h - 0 : 40;
+        if(!narrow){
+          label(ctx, don === acc ? 'Vyber dárce a příjemce' : (dg < 0 ? 'Fosfát spadne z kopce' : 'Fosfát by musel do kopce'), px, py, dg < 0 ? C.gold : C.terraBright, 'left', '700 13px ' + SANS);
+          var lines = dg < 0 ? ['Dárce drží fosfát hůř než příjemce,', 'takže ho rád předá. Enzym jen otevře cestu.', 'Rozdíl ' + fmt(Math.abs(dg), 1) + ' kJ/mol se uvolní.']
+                             : ['Příjemce drží fosfát hůř než dárce.', 'Za standardních podmínek by sama šla', 'jen opačná reakce, ta uvolní ' + fmt(Math.abs(dg), 1) + ' kJ/mol.'];
+          if(PH[don].id === 'atp' && PH[acc].id === 'pcr') lines = ['Za standardních podmínek do kopce. V odpočívajícím', 'svalu to přesto jde: když je ATP dost', 'a fosfokreatinu málo, koncentrace reakci obrátí.'];
+          if(don === acc) lines = ['Stejná molekula na obou koncích.'];
+          lines.forEach(function(s, i){ label(ctx, s, px, py + 22 + i * 17, C.ink, 'left', '400 12px ' + SANS); });
+          label(ctx, 'ATP stojí uprostřed: fosfát umí přijmout', px, py + 96, C.muted, 'left', '400 11px ' + SANS);
+          label(ctx, 'od výš postavených molekul a předat níž.', px, py + 112, C.muted, 'left', '400 11px ' + SANS);
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 03 — the NAD⁺ carousel (canvas gsim3). Glycolysis needs NAD⁺ at the GAPDH
+     step; the cell's NAD⁺ + NADH pool is small and fixed, so NADH must be
+     reoxidised: by mitochondria (needs O₂) or by lactate dehydrogenase
+     (pyruvate → lactate). Illustrative units: per triose, glycolysis
+     gives 1 ATP; with O₂ the mitochondria add about 15 more
+     (32 ATP per glucose, Lehninger: "30 or 32"), so at equal ATP demand
+     anaerobic glycolysis burns 16× the glucose (Pasteur: "about 15 times").
+     Mitochondrial capacity is limited.
+     ========================================================= */
+  makeSim('gsim3', function(canvas, dim){
+    var O2 = true, LDH = true, dem = 1, DEM = [0.6, 2.5, 9], last = now(), clock = 0;
+    var nad = 0.8, lac = 0, atpRate = 0, glyc = 0, mito = 0, ferm = 0;       // nad = fraction of the pool that is NAD⁺
+    var MITO_MAX = 0.32, YM = 15;                                          // trioses per s the mitochondria can take, ATP per triose there
+    var tokens = []; for(var i = 0; i < 22; i++) tokens.push({a: i / 22, ox: true});
+    var aEl = document.getElementById('g3-atp'), gEl = document.getElementById('g3-glc'), lEl = document.getElementById('g3-lac'), nEl = document.getElementById('g3-nad');
+    var bO = onClick('g3-o2', function(){ O2 = !O2; toggleBtn(bO, O2, 'Kyslík: ' + (O2 ? 'je' : 'chybí')); });
+    var bL = onClick('g3-ldh', function(){ LDH = !LDH; toggleBtn(bL, LDH, 'Laktátdehydrogenáza: ' + (LDH ? 'pracuje' : 'zablokovaná')); });
+    choice(['g3-rest', 'g3-walk', 'g3-run'], null, 0, function(i){ dem = i; });
+    onClick('g3-reset', function(){ nad = 0.8; lac = 0; });
+    function tick(h){
+      var need = DEM[dem];                                                  // ATP per s the muscle asks for
+      // how many trioses per s glycolysis has to run: mitochondria first, fermentation for the rest
+      var viaMito = O2 ? Math.min(MITO_MAX, need / (1 + YM)) : 0;
+      var rest = need - viaMito * (1 + YM);
+      var want = viaMito + Math.max(0, rest);                                // trioses per s wanted
+      var cap = 3.2 * nad / (nad + 0.08);                                    // GAPDH slows when NAD⁺ runs out
+      glyc = Math.min(want, cap);
+      mito = Math.min(viaMito, glyc);
+      var spare = glyc - mito;                                               // NADH not taken by mitochondria
+      ferm = LDH ? spare : 0;
+      var dN = (mito + ferm - glyc) * 0.9;                                   // NAD⁺ made back minus NAD⁺ used (pool of ~1)
+      nad = clamp(nad + h * dN + h * (O2 ? 0.05 * (0.8 - nad) : 0), 0, 1);
+      lac = Math.max(0, lac + h * (ferm - (O2 ? 0.05 * lac : 0)));
+      atpRate = glyc + mito * YM;
+    }
+    return {
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t; var h = dt * (REDUCED ? 0.4 : 1);
+        for(var s = 0; s < 4; s++) tick(h / 4);
+        clock += h;
+        var speed = 0.08 + 0.35 * Math.min(1, glyc / 2);
+        tokens.forEach(function(tk, i){
+          tk.a = (tk.a + h * speed * (glyc > 0.005 ? 1 : 0)) % 1;
+          tk.ox = (i / tokens.length) < nad;
+        });
+        setTxt(aEl, Math.round(100 * Math.min(1, atpRate / DEM[dem])) + NB + '%');
+        setTxt(gEl, num(glyc / 2, 2) + NB + '/s');
+        setTxt(lEl, num(lac, 1));
+        setTxt(nEl, Math.round(nad * 100) + NB + '%');
+      },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, narrow = w < 600;
+        ctx.clearRect(0, 0, w, h);
+        var cx = narrow ? w / 2 : w * 0.34, cy = narrow ? 112 : h / 2 + 4, R = narrow ? Math.min(78, w * 0.22) : Math.min(98, h * 0.33);
+        // the loop
+        ring(ctx, cx, cy, R, C.line, 10);
+        label(ctx, 'GAPDH', cx, cy - R - 16, C.ink, 'center', '700 11px ' + SANS);
+        label(ctx, 'glyceraldehyd-3-P → 1,3-BPG', cx, cy - R - 4, C.muted, 'center', '500 9.5px ' + SANS);
+        label(ctx, 'mitochondrie', cx + R + 8, cy + 4, O2 ? C.sagePale : 'rgba(155,176,126,.35)', 'left', '700 11px ' + SANS);
+        if(!O2) label(ctx, 'bez O₂ stojí', cx + R + 8, cy + 18, C.terraBright, 'left', '600 9.5px ' + SANS);
+        label(ctx, 'LDH', cx - R - 8, cy + 4, LDH ? C.gold : 'rgba(217,183,90,.35)', 'right', '700 11px ' + SANS);
+        label(ctx, 'pyruvát → laktát', cx - R - 8, cy + 18, C.muted, 'right', '500 9.5px ' + SANS);
+        tokens.forEach(function(tk){
+          var a = -Math.PI / 2 + tk.a * 6.2832, x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
+          dot(ctx, x, y, 5, tk.ox ? C.sagePale : C.sageDeep);
+          if(!tk.ox) ring(ctx, x, y, 5, C.sagePale, 1);
+        });
+        label(ctx, 'NAD⁺ ' + Math.round(nad * 100) + ' %', cx, cy - 4, C.sagePale, 'center', '700 12px ' + SANS);
+        label(ctx, 'NADH ' + Math.round((1 - nad) * 100) + ' %', cx, cy + 13, C.muted, 'center', '600 11px ' + SANS);
+        // bars: ATP supply against demand, lactate
+        var bx = narrow ? 24 : w * 0.66, by = narrow ? 228 : 46, bw = narrow ? w - 48 : w * 0.3;
+        var need = DEM[dem], sup = Math.min(1, atpRate / need);
+        label(ctx, 'ATP: dodávka proti potřebě svalu', bx, by, C.muted, 'left', '600 10px ' + SANS);
+        ctx.fillStyle = C.panel; rr(ctx, bx, by + 8, bw, 14, 4); ctx.fill();
+        ctx.fillStyle = sup > 0.95 ? C.gold : C.terraBright; rr(ctx, bx, by + 8, Math.max(2, bw * sup), 14, 4); ctx.fill();
+        var lacMax = 40, lf = Math.min(1, lac / lacMax);
+        label(ctx, 'laktát ve svalu a krvi', bx, by + 46, C.muted, 'left', '600 10px ' + SANS);
+        ctx.fillStyle = C.panel; rr(ctx, bx, by + 54, bw, 14, 4); ctx.fill();
+        ctx.fillStyle = C.plum; rr(ctx, bx, by + 54, Math.max(2, bw * lf), 14, 4); ctx.fill();
+        if(!narrow){
+          label(ctx, 'glukóza spotřebovaná za sekundu', bx, by + 92, C.muted, 'left', '600 10px ' + SANS);
+          ctx.fillStyle = C.panel; rr(ctx, bx, by + 100, bw, 14, 4); ctx.fill();
+          ctx.fillStyle = C.sage; rr(ctx, bx, by + 100, Math.max(2, bw * Math.min(1, glyc / 2 / 1.6)), 14, 4); ctx.fill();
+          var msg = glyc < 0.01 ? 'Došlo NAD⁺. Glykolýza stojí.' : (mito >= glyc - 1e-6 ? 'Všechno NADH odvezou mitochondrie.' : (!LDH ? 'NADH se hromadí.' : (O2 ? 'Část pyruvátu končí jako laktát.' : 'Bez kyslíku končí jako laktát všechen pyruvát.')));
+          label(ctx, msg, bx, by + 146, glyc < 0.01 ? C.terraBright : C.ink, 'left', '600 12px ' + SANS);
+        }
+      }
+    };
+  });
+
+  /* =========================================================
+     SIM 04 — the brake and the accelerator of PFK-1 (canvas gsim4).
+     Adenine nucleotides: the end points are Lehninger's example
+     (Table 13-11: ATP 5.0 → 4.5 mM, ADP 1.0 → 1.0, AMP 0.1 → 0.6 mM),
+     interpolated linearly with ATP use. PFK-1 activity is a Hill curve of
+     fructose 6-phosphate with K0.5 = 2 mM without and 0.08 mM with
+     fructose 2,6-bisphosphate (Lehninger Fig. 14-24a). How far ATP and
+     AMP shift K0.5 is illustrative, tuned so that at the largest use the
+     enzyme runs about ten times faster at a fixed substrate level
+     (Voet p. 628: "~10-fold").
+     ========================================================= */
+  makeSim('gsim4', function(canvas, dim){
+    var ATP0 = 5.0, ADP0 = 1.0, AMP0 = 0.1, TOT = ATP0 + ADP0 + AMP0;
+    var KA = 0.47, NH = 2.5, XREF = 0.5, XMAX = 4;
+    var use = 0, f26 = false, last = now(), shown = 0;
+    var s = document.getElementById('g4-use'), vS = document.getElementById('g4-use-v');
+    var aEl = document.getElementById('g4-atp'), mEl = document.getElementById('g4-amp'), pEl = document.getElementById('g4-pfk');
+    var bF = onClick('g4-f26', function(){ f26 = !f26; toggleBtn(bF, f26, 'Fruktóza-2,6-bisfosfát: ' + (f26 ? 'přítomný' : 'chybí')); read(); });
+    function nuc(u){ return {atp: ATP0 - 0.5 * u, adp: ADP0, amp: AMP0 + 0.5 * u}; }
+    function half(n, f){ return (f ? 0.08 : 2.0) * Math.pow(n.atp / ATP0, 4) * (1 + AMP0 / KA) / (1 + n.amp / KA); }
+    function act(x, n, f){ var q = Math.pow(x / half(n, f), NH); return q / (1 + q); }
+    var REST = nuc(0);
+    function read(){
+      use = s ? +s.value : 0;
+      setTxt(vS, use === 0 ? 'klid' : (use < 40 ? 'chůze' : (use < 80 ? 'běh' : 'sprint')));
+      var n = nuc(use / 100);
+      setTxt(aEl, use === 0 ? '0' + NB + '%' : '−' + num(100 * (1 - n.atp / ATP0), 0) + NB + '%');
+      setTxt(mEl, '×' + num(n.amp / AMP0, n.amp / AMP0 < 10 ? 1 : 0));
+      setTxt(pEl, num(100 * act(XREF, n, f26), 0) + NB + '%');
+    }
+    if(s) s.addEventListener('input', read);
+    read();
+    return {
+      step: function(){ var t = now(), dt = Math.min(0.1, t - last); last = t; shown += (use - shown) * Math.min(1, dt * (REDUCED ? 20 : 6)); },
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, narrow = w < 600;
+        ctx.clearRect(0, 0, w, h);
+        var n = nuc(shown / 100), n0 = REST;
+        // left: the adenine nucleotides as stacked bars (rest vs now)
+        var bx = 16, bw = narrow ? (w - 32) : w * 0.32, by = 30, sc = bw / TOT;
+        label(ctx, 'adeninové nukleotidy (mM)', bx, by - 12, C.muted, 'left');
+        [['v klidu', n0], ['teď', n]].forEach(function(q, i){
+          var y = by + i * 34, x = bx;
+          [['ATP', q[1].atp, C.gold], ['ADP', q[1].adp, C.sage], ['AMP', q[1].amp, C.terraBright]].forEach(function(p){
+            ctx.fillStyle = p[2]; ctx.fillRect(x, y, Math.max(0.5, p[1] * sc), 18); x += p[1] * sc;
+          });
+          label(ctx, q[0] + ': ATP ' + num(q[1].atp, 1) + ', ADP ' + num(q[1].adp, 1) + ', AMP ' + num(q[1].amp, 1), bx, y + 30, C.muted, 'left', '500 9.5px ' + SANS);
+        });
+        label(ctx, 'ATP', bx + 4, by + 13, C.bg, 'left', '700 10px ' + SANS);
+        // the amplifier
+        var gy = narrow ? by + 98 : by + 104;
+        var dA = 100 * (1 - n.atp / n0.atp), fM = n.amp / n0.amp;
+        label(ctx, 'ATP ' + (dA > 0.5 ? '−' : '') + num(dA, 0) + ' %', bx, gy, C.gold, 'left', '700 12px ' + SANS);
+        arrow(ctx, bx + 74, gy - 4, bx + 104, gy - 4, C.muted, 1.4);
+        label(ctx, 'AMP ×' + num(fM, 1), bx + 112, gy, C.terraBright, 'left', '700 12px ' + SANS);
+        if(!narrow){
+          label(ctx, 'Adenylátkináza: 2 ADP ⇌ ATP + AMP.', bx, gy + 26, C.ink, 'left', '400 11.5px ' + SANS);
+          label(ctx, 'Malý pokles ATP, velký vzestup AMP.', bx, gy + 43, C.muted, 'left', '400 11.5px ' + SANS);
+        }
+        // right: PFK-1 activity against fructose 6-phosphate
+        var F = narrow ? frame(50, gy + 34, w - 66, h - gy - 64, 0, XMAX, 0, 1) : frame(w * 0.42 + 40, 22, w * 0.58 - 56, h - 60, 0, XMAX, 0, 1);
+        axes(ctx, F, {xt: [[0, '0'], [1, '1'], [2, '2'], [3, '3'], [4, '4 mM']], yt: [[0, '0'], [0.5, '½'], [1, 'max.']], xl: 'fruktóza-6-fosfát', yl: 'aktivita PFK-1'});
+        line(ctx, F.x0, F.Y(0.5), F.x0 + F.w, F.Y(0.5), 'rgba(233,231,216,.12)', 1, [2, 4]);
+        ctx.strokeStyle = C.muted; ctx.lineWidth = 1.4; ctx.setLineDash([4, 3]); curve(ctx, F, function(x){ return act(x, n0, false); }, 0.001, XMAX, 160); ctx.setLineDash([]);
+        ctx.strokeStyle = C.gold; ctx.lineWidth = 2.4; curve(ctx, F, function(x){ return act(x, n, f26); }, 0.0005, XMAX, 240);
+        var k = half(n, f26);
+        if(k < XMAX){ dot(ctx, F.X(k), F.Y(0.5), 3.2, C.gold); }
+        label(ctx, 'napůl aktivní při ' + num(k, k < 0.1 ? 2 : 1) + ' mM', F.x0 + F.w, F.y0 + F.h - 24, C.gold, 'right', '600 10px ' + SANS);
+        label(ctx, 'čárkovaně: v klidu, bez F-2,6-BP', F.x0 + F.w, F.y0 + F.h - 8, C.muted, 'right', '500 9.5px ' + SANS);
+        line(ctx, F.X(XREF), F.y0, F.X(XREF), F.y0 + F.h, 'rgba(233,231,216,.3)', 1, [2, 3]);
+        dot(ctx, F.X(XREF), F.Y(act(XREF, n, f26)), 5, C.terraBright);
+        label(ctx, num(XREF, 1) + ' mM', F.X(XREF) + 5, F.y0 + 30, C.muted, 'left', '500 9.5px ' + SANS);
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
