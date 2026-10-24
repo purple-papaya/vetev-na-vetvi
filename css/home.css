@@ -245,6 +245,3 @@ a.twig-link:hover .twig-name{color:var(--terra-deep);}
 .kafe:focus-visible{outline:2px solid #BF6A3F;outline-offset:2px;}
 .kafe svg{width:1.1em;height:1.1em;flex:none;}
 .kafe-radek{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem;}
-.foot .kafe{margin-left:auto;}
-.foot:has(.kafe) > span:nth-of-type(2){flex:1 1 14rem;min-width:0;}
-@media (max-width:640px){ .foot .kafe{margin-left:0;} }
