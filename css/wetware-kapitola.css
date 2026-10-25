@@ -613,6 +613,7 @@
     .sim-controls .bd-route input[type=range]{grid-area:s;width:100%;}
     .bd-route .bd-end{font-size:.66rem;}
   }
+  .bd-nw{white-space:nowrap;}
 
   /* Filtr: sliders for calcium, ready vesicles, refilling and residual calcium */
   .fl-knobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 1.4rem;padding:.85rem 1.1rem .9rem;border-top:1px solid var(--night-line);}
@@ -626,7 +627,7 @@
   /* Kafe: the row of day buttons above the plot */
   .kf-days{display:flex;gap:.35rem;flex-wrap:wrap;padding:.65rem 1.1rem 0;}
   .kf-days[hidden]{display:none;}
-  figure.game .kf-days .ctrl{padding:.42rem .6rem;font-size:.74rem;letter-spacing:.03em;min-width:3.2rem;}
+  figure.game .kf-days .ctrl{padding:.42rem .6rem;font-size:.74rem;letter-spacing:.03em;min-width:3.2rem;min-height:2.3rem;}
   .kf-days .ctrl.bad{border-color:rgba(227,154,103,.55);color:#F0C3A3;}
   .kf-days .ctrl.is-on{background:var(--sage);color:var(--night);border-color:var(--sage);}
   .kf-days .ctrl.is-on.bad{background:var(--terra);border-color:var(--terra);color:#fff;}
@@ -642,6 +643,7 @@
   .ko-lb{color:#E9E7D8;font-weight:600;}
   .ko-fx{font-family:var(--mono);font-size:.78rem;color:#9AA48C;overflow-wrap:anywhere;}
   .ko-val{font-family:var(--mono);font-size:.86rem;color:var(--gold);font-weight:500;white-space:nowrap;}
+  .ko-val.ko-none{white-space:normal;}
   figure.game .ctrl.ko-use{padding:.32rem .6rem;font-size:.7rem;}
   .ko-budget{font-family:var(--mono);font-size:.74rem;color:#9AA48C;margin-left:auto;}
   .ko-answer{gap:.6rem 1rem;}
@@ -658,6 +660,7 @@
     .ko-row{grid-template-columns:minmax(0,1fr) auto;}
     .ko-row .ko-lb{grid-column:1 / -1;}
     .ko-row .ko-fx{grid-column:1 / 2;}
+    .ko-row .ko-none{grid-column:1 / -1;}          /* the no-failure note gets its own line, the formula stays whole */
     .ko-budget{margin-left:0;flex-basis:100%;}
   }
   @media (max-width:560px){ .ko-ask .ko-el{flex-basis:100%;} }
@@ -665,14 +668,14 @@
   /* Neznámá látka: vials, experiments, the notebook and the verdict */
   .lt-vials{display:flex;gap:.4rem;flex-wrap:wrap;padding:.65rem 1.1rem 0;}
   .lt-vials[hidden]{display:none;}
-  figure.game .lt-vials .ctrl{padding:.45rem .7rem;font-size:.76rem;}
+  figure.game .lt-vials .ctrl{padding:.45rem .75rem;font-size:.76rem;min-height:2.3rem;}
   .lt-vials .ctrl.solved{border-color:rgba(199,214,172,.6);}
   .lt-lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:.8rem 1.4rem;padding:.8rem 1.1rem .9rem;border-top:1px solid var(--night-line);}
   @media (max-width:660px){ .lt-lab{grid-template-columns:minmax(0,1fr);} }
   .lt-exps{display:flex;flex-direction:column;gap:.45rem;align-items:stretch;}
   figure.game .lt-exps .ctrl.lt-exp{text-align:left;padding:.55rem .75rem;border-left:4px solid var(--ec);text-transform:none;letter-spacing:.01em;font-size:.86rem;}
   .lt-conc{display:flex;gap:.35rem;flex-wrap:wrap;margin:-.1rem 0 .15rem .9rem;}
-  figure.game .lt-conc .ctrl{padding:.32rem .55rem;font-size:.72rem;text-transform:none;letter-spacing:0;}
+  figure.game .lt-conc .ctrl{padding:.4rem .7rem;font-size:.76rem;text-transform:none;letter-spacing:0;min-height:2.3rem;min-width:3.6rem;}
   .lt-book{min-width:0;font-family:var(--sans);}
   .lt-head{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#9AA48C;margin:0 0 .35rem;}
   .lt-notes{margin:0;padding:0 0 0 1.6rem;font-size:.86rem;line-height:1.45;color:#D9DCCB;}
@@ -693,10 +696,17 @@
   .lt-guess output{font-family:var(--mono);color:var(--gold);min-width:2.4rem;}
 
   /* Přítoky: bench of sugars, enzyme cards, glycolysis spine */
-  .pt-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:0;border-top:1px solid var(--night-line);}
-  .pt-board canvas{border-left:1px solid var(--night-line);}
-  @media (max-width:640px){ .pt-board{grid-template-columns:minmax(0,1fr);} .pt-board canvas{border-left:0;border-top:1px solid var(--night-line);} }
-  .pt-bench{display:flex;flex-direction:column;gap:.6rem;padding:.85rem 1.1rem;font-family:var(--sans);color:#D9DCCB;min-width:0;}
+  /* wide: sugars beside the spine, cards and controls under both; phones: sugars, cards, controls, then the spine,
+     so the feedback line and the join button sit right above the cards */
+  .pt-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-areas:"bench spine" "cards cards" "ctrl ctrl";gap:0;border-top:1px solid var(--night-line);}
+  .pt-board canvas{grid-area:spine;border-left:1px solid var(--night-line);}
+  .pt-board .pt-cards{grid-area:cards;}
+  .pt-board .sim-controls{grid-area:ctrl;}
+  @media (max-width:640px){
+    .pt-board{grid-template-columns:minmax(0,1fr);grid-template-areas:"bench" "cards" "ctrl" "spine";}
+    .pt-board canvas{border-left:0;border-top:1px solid var(--night-line);}
+  }
+  .pt-bench{grid-area:bench;display:flex;flex-direction:column;gap:.6rem;padding:.85rem 1.1rem;font-family:var(--sans);color:#D9DCCB;min-width:0;}
   .pt-where{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#9AA48C;}
   .pt-where b{color:var(--gold);font-weight:500;}
   .pt-chips{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;min-height:2.4rem;}
@@ -754,6 +764,7 @@
     .sb-lbl{padding-top:0;}
     .sb-go{justify-content:flex-start;}
   }
+  .sb-nw{white-space:nowrap;}
 
   /* Pavlovův zvonek: the plan grid (inputs × 8 rounds), tempo and bath switches */
   .zv-seq{display:flex;flex-direction:column;gap:.45rem;padding:.8rem 1.1rem .9rem;border-top:1px solid var(--night-line);}

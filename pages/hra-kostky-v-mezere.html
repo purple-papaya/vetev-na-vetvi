@@ -4,8 +4,192 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>Kostky v mezeře – Větev na větvi</title>
-<meta name="description" content="Statistická hra: odhadni z nahrávek ploténky průměrný počet kvant a poznej, kdy neplatí Poisson.">
+<title>Kostky v mezeře: statistická hra o kvantech přenašeče | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html">
+<link rel="alternate" type="application/atom+xml" title="Větev na větvi – nové kapitoly, hry a články" href="https://vetevnavetvi.cz/feed.xml">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kostky v mezeře: statistická hra o kvantech přenašeče | Větev na větvi">
+<meta property="og:description" content="Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/hra-kostky-v-mezere.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kostky v mezeře – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://ko-fi.com/vetevnavetvi"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html",
+   "name": "Kostky v mezeře: statistická hra o kvantech přenašeče | Větev na větvi",
+   "description": "Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-kostky-v-mezere.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#game"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Hry",
+     "item": "https://vetevnavetvi.cz/pages/hry.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Kostky v mezeře",
+     "item": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html"
+    }
+   ]
+  },
+  {
+   "@type": [
+    "Game",
+    "LearningResource"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#game",
+   "name": "Kostky v mezeře",
+   "description": "Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-kostky-v-mezere.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-25T09:11:18+00:00",
+   "dateModified": "2026-10-25T09:11:18+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "learningResourceType": "interaktivní hra",
+   "interactivityType": "active",
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "kvantové uvolňování"
+    },
+    {
+     "@type": "Thing",
+     "name": "Poissonovo rozdělení"
+    },
+    {
+     "@type": "Thing",
+     "name": "binomické rozdělení"
+    },
+    {
+     "@type": "Thing",
+     "name": "nervosvalová ploténka"
+    },
+    {
+     "@type": "Thing",
+     "name": "statistický odhad"
+    }
+   ],
+   "keywords": "kvantové uvolňování, Poissonovo rozdělení, binomické rozdělení, nervosvalová ploténka, statistický odhad",
+   "isBasedOn": {
+    "@type": "Article",
+    "name": "Dole v mezeře",
+    "url": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"
+   },
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/pages/hry.html#webpage"
+   },
+   "citation": [
+    "Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 13 (Release of Neurotransmitters): miniaturní ploténkové potenciály (s. 251, obr. 13.8), odpovědi po skocích v roztoku s nízkým vápníkem a vysokým hořčíkem, kvantová hypotéza a asi 200 kvant za běžných podmínek (s. 252, obr. 13.9), rámeček 13.1 o binomickém a Poissonově rozdělení (s. 253), m = ln(N/n_0) a shoda obou odhadů (s. 254), histogram Boyda a Martina (s. 254, obr. 13.10), kvanta v centrální nervové soustavě a binomická synapse s p ≈ 0,9 a n ≈ 1 (s. 255).",
+    "Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Webová poznámka N8-5 ke kap. 8 (s. 215.e1): 198 vzruchů, 18 selhání, kvantum asi 0,4 mV, průměrná odpověď 0,93 mV a m = 2,3.",
+    "del Castillo J., Katz B. Quantal components of the end-plate potential. Journal of Physiology 124: 560–573, 1954.",
+    "Boyd I. A., Martin A. R. The end-plate potential in mammalian muscle. Journal of Physiology 132(1): 74–91, 1956.",
+    "Hra je zjednodušený model: každý vzruch uvolní náhodný počet kvant podle Poissonova, nebo binomického rozdělení, jedno kvantum má 0,4 mV se směrodatnou odchylkou kolem 15–20 % své velikosti, k odpovědi se přičítá šum nahrávky a velikost kvanta je známá přesně. Rozsahy m, šum a rozpočty vzruchů jsou ilustrační a chyby odhadů jsou přibližné."
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,7 +206,8 @@
 <header class="hero">
   <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Statistická hra</span></p>
   <h1 class="title"><em>Kostky</em> v&nbsp;mezeře</h1>
-  <p class="deck">Kolik balíčků přenašeče uvolní jeden vzruch? Odhadni to z&nbsp;nahrávek stejně jako del Castillo a&nbsp;Katz a&nbsp;poznej, kdy kostky neházejí podle Poissona.</p>
+  <p class="deck">Kolik balíčků přenašeče uvolní jeden vzruch? Odhadni to z&nbsp;nahrávek stejně jako del Castillo a&nbsp;Katz a&nbsp;poznej, kdy kostky nepadají podle Poissona.</p>
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -45,7 +230,7 @@
     </div>
     <div class="game-stage">
       <div class="game-goal" id="ko-goal">Vyber úroveň a&nbsp;začni.</div>
-      <canvas id="kogame" height="300" aria-label="Vlevo nebo nahoře posledních dvanáct odpovědí svalu přes sebe, vpravo nebo dole histogram velikostí všech nahraných odpovědí se zlatou křivkou předpovědi pro zadaný odhad a čárkovaným prahem, pod kterým se odpověď počítá jako selhání."></canvas>
+      <canvas id="kogame" height="300" aria-label="Vlevo (na telefonu nahoře) posledních dvanáct odpovědí svalu přes sebe, vpravo (na telefonu dole) histogram velikostí všech nahraných odpovědí se zlatou křivkou předpovědi pro zadaný odhad a přerušovaným prahem, pod kterým se odpověď počítá jako selhání."></canvas>
       <div class="ko-calc" id="ko-calc" aria-live="polite"></div>
       <p class="vh" id="ko-desc" aria-live="polite"></p>
       <div class="sim-controls">
@@ -63,27 +248,31 @@
     </div>
     <div class="levels" id="ko-levels"></div>
   </div>
-  <figcaption><b>Kostky v&nbsp;mezeře.</b> Nahoře nebo vlevo posledních dvanáct odpovědí přes sebe, nejnovější zlatě. Histogram ukazuje velikosti všech nahraných odpovědí. Zlatá křivka je předpověď pro zadaný odhad: v&nbsp;prvních čtyřech úrovních podle Poissonova rozdělení, v&nbsp;páté podle binomického. Čárkovaná čára je práh: odpověď menší než půl kvanta se počítá jako selhání. Číslo za ± je přibližná směrodatná chyba odhadu. Velikost kvanta, šum, rozsahy m a&nbsp;rozpočet vzruchů jsou ilustrační.</figcaption>
+  <figcaption><b>Kostky v&nbsp;mezeře.</b> Vlevo (na telefonu nahoře) posledních dvanáct odpovědí přes sebe, nejnovější zlatě. Histogram ukazuje velikosti všech nahraných odpovědí. Zlatá křivka je předpověď pro zadaný odhad: v&nbsp;prvních čtyřech úrovních podle Poissonova rozdělení, v&nbsp;páté podle binomického. Přerušovaná čára je práh: odpověď menší než půl kvanta se počítá jako selhání. Číslo za ± je přibližná směrodatná chyba odhadu. Velikost kvanta, šum, rozsahy m a&nbsp;rozpočet vzruchů jsou ilustrační.</figcaption>
 </figure>
 
 <section class="prose">
   <h2>Co se tu <em>doopravdy</em> děje</h2>
 
-  <p>Paul Fatt a&nbsp;Bernard Katz si na začátku padesátých let všimli, že se na ploténce i&nbsp;bez dráždění nervu objevují drobné depolarizace zhruba stejné velikosti, miniaturní ploténkové potenciály. Když pak snížili vápník a&nbsp;přidali hořčík, odpovědi na vzruch se začaly měnit po skocích: žádná, jedna, dvě, tři nebo čtyři miniaturní velikosti. Del Castillo a&nbsp;Katz přidali statistiku. Když je kvant připravených hodně a&nbsp;každé se uvolní jen s&nbsp;malou pravděpodobností, řídí se jejich počet Poissonovým rozdělením. Podíl selhání je pak e<sup>−m</sup>, takže m&nbsp;=&nbsp;ln(N/n<sub>0</sub>). Druhý odhad dá průměrná odpověď vydělená průměrnou miniaturní. Oba odhady se jim shodly, a&nbsp;to silně podpořilo myšlenku, že odpověď na vzruch skládají stejná kvanta, jaká se uvolňují samovolně. Za běžného vápníku tvoří odpověď žabí ploténky asi dvě stě kvant.</p>
+  <p>Paul Fatt a&nbsp;Bernard Katz si na začátku padesátých let všimli, že se na ploténce i&nbsp;bez dráždění nervu objevují drobné depolarizace zhruba stejné velikosti, miniaturní ploténkové potenciály. Když pak snížili vápník a&nbsp;přidali hořčík, odpovědi na vzruch se začaly měnit po skocích: byly velké jako jeden, dva, tři nebo čtyři miniaturní potenciály, nebo žádné. Del Castillo a&nbsp;Katz přidali statistiku. Když je připravených kvant hodně a&nbsp;každé se uvolní jen s&nbsp;malou pravděpodobností, řídí se počet uvolněných kvant Poissonovým rozdělením. Podíl selhání je pak e<sup>−m</sup>, takže m&nbsp;=&nbsp;ln(N/n<sub>0</sub>), kde N je počet vzruchů a&nbsp;n<sub>0</sub> počet selhání. Druhý odhad dá průměrná odpověď vydělená průměrnou velikostí miniaturního potenciálu. Oba odhady se jim shodly, a&nbsp;to silně podpořilo myšlenku, že se odpověď na vzruch skládá ze stejných kvant, jaká se uvolňují samovolně. Za běžného vápníku tvoří odpověď žabí ploténky asi dvě stě kvant.</p>
 
-  <p>Ian Boyd a&nbsp;Alan Martin pak stejně měřili na savčím svalu. Ze 198 vzruchů skončilo 18 selháním, jedno kvantum měřilo asi 0,4&nbsp;mV a&nbsp;průměrná odpověď 0,93&nbsp;mV, takže m vyšlo 2,3. Z&nbsp;podílu selhání vychází ln(198/18), zhruba 2,4. Histogram jejich odpovědí měl vrcholy právě u&nbsp;násobků jednoho kvanta.</p>
+  <p>Ian Boyd a&nbsp;Robert Martin pak totéž změřili na savčím svalu. Ze 198 vzruchů skončilo 18 selháním. Jedno kvantum mělo asi 0,4&nbsp;mV a&nbsp;průměrná odpověď měla 0,93&nbsp;mV, takže m vyšlo 2,3. Z&nbsp;podílu selhání vychází ln(198/18), zhruba 2,4. Histogram jejich odpovědí měl vrcholy právě u&nbsp;násobků jednoho kvanta.</p>
 
   <p>V&nbsp;mozku a&nbsp;míše uvolní vzruch mnohem méně kvant, někdy v&nbsp;průměru jen jedno. Neznamená to ale, že by přenos většinou selhával. Na synapsi mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše čeká na vzruch zhruba jediné kvantum, zato se uvolní asi v&nbsp;devíti případech z&nbsp;deseti. Takovou synapsi popisuje binomické rozdělení se dvěma parametry, počtem připravených kvant n a&nbsp;pravděpodobností uvolnění p. Z&nbsp;nich se dá poznat, jestli se při změně síly synapse změnil počet připravených kvant, nebo pravděpodobnost jejich uvolnění. Víc o&nbsp;kvantech je v&nbsp;kapitole <a href="wetware-neurobiologie-ch2-dole-v-mezere.html">Dole v&nbsp;mezeře</a>.</p>
 </section>
+
+<!-- zpetna-vazba:begin – generuje tools/seo.py -->
+<div class="fv-line"><p>Vidíš chybu, nebo ti tu něco nesedí? <a href="zpetna-vazba.html?stranka=hra-kostky-v-mezere">Napiš mi&nbsp;&#8594;</a></p><a class="kafe" href="https://ko-fi.com/vetevnavetvi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg><span>Kup mi kafe</span></a></div>
+<!-- zpetna-vazba:end -->
 
 <section class="sources">
   <h2>Zdroje</h2>
   <ul>
     <li>Nicholls J.&nbsp;G., Martin A.&nbsp;R., Fuchs P.&nbsp;A., Brown D.&nbsp;A., Diamond M.&nbsp;E., Weisblat D.&nbsp;A. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;13 (Release of Neurotransmitters): miniaturní ploténkové potenciály (s.&nbsp;251, obr.&nbsp;13.8), odpovědi po skocích v&nbsp;roztoku s&nbsp;nízkým vápníkem a&nbsp;vysokým hořčíkem, kvantová hypotéza a&nbsp;asi 200 kvant za běžných podmínek (s.&nbsp;252, obr.&nbsp;13.9), rámeček 13.1 o&nbsp;binomickém a&nbsp;Poissonově rozdělení (s.&nbsp;253), m&nbsp;=&nbsp;ln(N/n<sub>0</sub>) a&nbsp;shoda obou odhadů (s.&nbsp;254), histogram Boyda a&nbsp;Martina (s.&nbsp;254, obr.&nbsp;13.10), kvanta v&nbsp;centrální nervové soustavě a&nbsp;binomická synapse s&nbsp;p&nbsp;≈&nbsp;0,9 a&nbsp;n&nbsp;≈&nbsp;1 (s.&nbsp;255).</li>
-    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Webová poznámka N8-3 ke kap.&nbsp;8 (s.&nbsp;215.e1): 198 vzruchů, 18 selhání, kvantum asi 0,4&nbsp;mV, průměrná odpověď 0,93&nbsp;mV a&nbsp;m&nbsp;=&nbsp;2,3.</li>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Webová poznámka N8-5 ke kap.&nbsp;8 (s.&nbsp;215.e1): 198 vzruchů, 18 selhání, kvantum asi 0,4&nbsp;mV, průměrná odpověď 0,93&nbsp;mV a&nbsp;m&nbsp;=&nbsp;2,3.</li>
     <li>del Castillo J., Katz B. Quantal components of the end-plate potential. <em>Journal of Physiology</em> 124: 560–573, 1954.</li>
     <li>Boyd I.&nbsp;A., Martin A.&nbsp;R. The end-plate potential in mammalian muscle. <em>Journal of Physiology</em> 132(1): 74–91, 1956.</li>
-    <li>Hra je zjednodušený model: každý vzruch uvolní náhodný počet kvant podle Poissonova, nebo binomického rozdělení, kvantum měří 0,4&nbsp;mV s&nbsp;rozptylem kolem 15–20&nbsp;%, k&nbsp;odpovědi se přičítá šum nahrávky a&nbsp;velikost kvanta je známá přesně. Rozsahy m, šum a&nbsp;rozpočty vzruchů jsou ilustrační a&nbsp;chyby odhadů jsou přibližné.</li>
+    <li>Hra je zjednodušený model: každý vzruch uvolní náhodný počet kvant podle Poissonova, nebo binomického rozdělení, jedno kvantum má 0,4&nbsp;mV se směrodatnou odchylkou kolem 15–20&nbsp;% své velikosti, k&nbsp;odpovědi se přičítá šum nahrávky a&nbsp;velikost kvanta je známá přesně. Rozsahy m, šum a&nbsp;rozpočty vzruchů jsou ilustrační a&nbsp;chyby odhadů jsou přibližné.</li>
   </ul>
 </section>
 
@@ -330,19 +519,19 @@
   var KOLEVELS = [
     {name: 'Selhání', budget: 300, tol: 0.12, m: [1.0, 1.8], noise: 0.03, cv: 0.2, vmax: 2.2, hmax: 2.4,
      goal: 'Odhadni průměrný počet kvant na vzruch <b>m</b> s&nbsp;chybou nejvýš <b>12&nbsp;%</b>. Čas máš na 300 vzruchů.',
-     intro: '<p>Ploténka leží v&nbsp;roztoku chudém na vápník, a&nbsp;tak vzruch uvolní jen pár kvant, někdy žádné. Kdyby se kvanta uvolňovala nezávisle a&nbsp;každé jen s&nbsp;malou pravděpodobností, podíl selhání by byl e<sup>−m</sup>. Proto m&nbsp;=&nbsp;ln(N/n<sub>0</sub>), kde N je počet vzruchů a&nbsp;n<sub>0</sub> počet selhání.</p><p>Druhá cesta: průměrnou odpověď vyděl velikostí jednoho kvanta, kterou znáš ze samovolných miniaturních potenciálů.</p>',
-     win: 'Oba odhady vyšly podobně, stejně jako del Castillovi a&nbsp;Katzovi. A&nbsp;čím víc vzruchů, tím menší chyba odhadu: čtyřikrát víc nahrávek ji zhruba způlí.'},
-    {name: 'Málo selhání', budget: 150, tol: 0.10, m: [3.5, 4.5], noise: 0.03, cv: 0.2, vmax: 3.4, hmax: 4.4,
-     goal: 'Vápníku je víc a&nbsp;selhání ubylo. Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b>. Čas máš jen na 150 vzruchů.',
-     intro: '<p>Teď vzruch uvolní kvant víc a&nbsp;selhání přijde jen občas. Z&nbsp;pár selhání se m odhaduje nepřesně, a&nbsp;když nepřijde žádné, nejde to vůbec.</p><p>Sleduj, který z&nbsp;obou odhadů má menší chybu.</p>',
+     intro: '<p>Ploténka leží v&nbsp;roztoku chudém na vápník, a&nbsp;tak vzruch uvolní jen pár kvant, někdy žádné. Kdyby se kvanta uvolňovala nezávisle a&nbsp;každé jen s&nbsp;malou pravděpodobností, podíl selhání by byl e<sup>−m</sup>. Pak by platilo m&nbsp;=&nbsp;ln(N/n<sub>0</sub>), kde N je počet vzruchů a&nbsp;n<sub>0</sub> počet selhání.</p><p>Druhá cesta: průměrnou odpověď vyděl velikostí jednoho kvanta, kterou znáš ze samovolných miniaturních potenciálů.</p>',
+     agree: true, win: 'A&nbsp;čím víc vzruchů, tím menší chyba odhadu: čtyřikrát víc nahrávek ji zhruba způlí.'},
+    {name: 'Málo selhání', budget: 100, tol: 0.10, m: [4.5, 5.5], noise: 0.03, cv: 0.2, vmax: 4.4, hmax: 4.8,
+     goal: 'Vápníku je víc a&nbsp;selhání ubylo. Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b>. Čas máš jen na 100 vzruchů.',
+     intro: '<p>Teď vzruch uvolní kvant víc a&nbsp;selhání přijde jen výjimečně. Z&nbsp;pár selhání se m odhaduje nepřesně, a&nbsp;když nepřijde žádné, nejde to vůbec.</p><p>Sleduj, který z&nbsp;obou odhadů má menší chybu.</p>',
      win: 'Když jsou selhání vzácná, řekne jejich počet o&nbsp;m málo. Průměrná odpověď využije každou nahrávku, a&nbsp;proto dává přesnější odhad.'},
-    {name: 'Šum', budget: 500, tol: 0.10, m: [1.4, 2.2], noise: 0.3, cv: 0.2, vmax: 2.6, hmax: 2.8,
+    {name: 'Šum', budget: 500, tol: 0.10, m: [1.4, 2.2], noise: 0.35, cv: 0.2, vmax: 2.6, hmax: 2.8,
      goal: 'Nahrávka je zašuměná. Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b>. Čas máš na 500 vzruchů.',
      intro: '<p>Šum v&nbsp;nahrávce je skoro stejně velký jako jedno kvantum. Jako selhání se počítá každá odpověď menší než půl kvanta, jenže teď mezi selháním a&nbsp;jedním kvantem žádná zřetelná hranice není.</p>',
      win: 'Šum se v&nbsp;průměru vyruší, a&nbsp;tak odhad z&nbsp;průměrné odpovědi platí dál. Počet selhání ale závisí na tom, kudy vede práh, a&nbsp;šum ho zkreslí.'},
-    {name: 'Kostka, která nehraje Poissona', rec: 'odpovědi motoneuronu', budget: 200, tol: 0.10, bn: [1, 1], bp: [0.85, 0.95], noise: 0.03, cv: 0.15, vmax: 1.2, hmax: 1.6, ask: true,
+    {name: 'Kostka, která nepadá podle Poissona', rec: 'odpovědi motoneuronu', budget: 200, tol: 0.10, bn: [1, 1], bp: [0.85, 0.95], noise: 0.03, cv: 0.15, vmax: 1.2, hmax: 1.6, ask: true,
      goal: 'Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b> a&nbsp;rozhodni, jestli se tahle synapse řídí <b>Poissonovým rozdělením</b>.',
-     intro: '<p>Tahle nahrávka není z&nbsp;ploténky. Je ze synapse mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše. Kvant tu vzruch uvolní málo, a&nbsp;přesto skoro nikdy neselže.</p>',
+     intro: '<p>Tahle nahrávka není z&nbsp;ploténky. Je ze synapse mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše. Kvant tu vzruch uvolní málo, a&nbsp;přesto selže jen asi jeden vzruch z&nbsp;deseti.</p>',
      win: 'Poissonovo rozdělení platí, když je připravených kvant hodně a&nbsp;každé se uvolní jen s&nbsp;malou pravděpodobností. Tady čeká na vzruch zhruba jediné kvantum, zato se uvolní asi v&nbsp;devíti případech z&nbsp;deseti. Takovou synapsi popisuje binomické rozdělení a&nbsp;vzorec z&nbsp;podílu selhání na ni neplatí. Právě tenhle příklad uvádí Nicholls.'},
     {name: 'Kolik kvant čeká?', rec: 'odpovědi', budget: 400, bn: [2, 4], bp: [0.7, 0.9], noise: 0.03, cv: 0.15, vmax: 2.2, hmax: 2.4, fitN: true,
      goal: 'Binomická synapse: zjisti, kolik kvant <b>n</b> je připraveno k&nbsp;uvolnění. Pravděpodobnost uvolnění pak vyjde jako p&nbsp;=&nbsp;m/n.',
@@ -414,6 +603,12 @@
       return {p: p, score: 1 - tvd / 2};
     }
     function pm(v, d){ return num(v, d === undefined ? 2 : d); }
+    function agreeText(){                    // level 1: did the two estimates agree within their errors?
+      if(!S.fail || !S.n0) return 'Odhad z&nbsp;podílu selhání tu nešel spočítat, protože žádné selhání nepřišlo. Jinak by oba odhady měly vyjít podobně, stejně jako del Castillovi a&nbsp;Katzovi.';
+      var d = Math.abs(S.fail.m - S.amp.m), lim = 2 * Math.sqrt(S.fail.se * S.fail.se + S.amp.se * S.amp.se);
+      return d <= lim ? 'Oba odhady vyšly podobně, ' + pm(S.fail.m) + ' a&nbsp;' + pm(S.amp.m) + ', stejně jako del Castillovi a&nbsp;Katzovi.'
+                      : 'Oba odhady by měly vyjít podobně, stejně jako del Castillovi a&nbsp;Katzovi. Tady se rozešly víc, než odpovídá jejich chybám, a&nbsp;to se náhodou občas stane.';
+    }
 
     function reset(){
       data = []; traces = []; ans = null; S = null; playing = false;
@@ -466,7 +661,7 @@
       amp += '<button class="ctrl ko-use" type="button" data-use="a">použít</button></div>';
       var fl = '<div class="ko-row"><span class="ko-lb">z&nbsp;podílu selhání</span><span class="ko-fx">m&nbsp;=&nbsp;ln(N/n<sub>0</sub>)&nbsp;=&nbsp;ln(' + S.N + '/' + S.n0 + ')</span>';
       if(S.fail) fl += '<b class="ko-val" id="ko-mf">' + pm(S.fail.m) + ' ± ' + pm(S.fail.se) + '</b><button class="ctrl ko-use" type="button" data-use="f">použít</button></div>';
-      else fl += '<b class="ko-val" id="ko-mf">žádné selhání, nejde spočítat</b></div>';
+      else fl += '<b class="ko-val ko-none" id="ko-mf">žádné selhání, nejde spočítat</b></div>';
       return fl + amp + qline;
     }
     function update(){
@@ -502,14 +697,14 @@
         if(!ok){
           var usedFail = S.fail && Math.abs(est - S.fail.m) <= 0.02 && Math.abs(S.fail.m - S.amp.m) > 0.03;
           if(err > Lv.tol && S.N < 30) hint = 'Z&nbsp;tak málo vzruchů je odhad hodně nejistý. Nahraj jich víc a&nbsp;sleduj, jak se chyba odhadu zmenšuje.';
-          else if(err > Lv.tol && usedFail && level === 1) hint = 'Selhání bylo jen ' + S.n0 + ' a&nbsp;z&nbsp;tak malého počtu se m odhaduje nepřesně. Průměrná odpověď tu nese víc informace.';
+          else if(err > Lv.tol && usedFail && level === 1) hint = 'Selhání ' + plural(S.n0, 'bylo', 'byla', 'bylo') + ' jen ' + S.n0 + ' a&nbsp;z&nbsp;tak malého počtu se m odhaduje nepřesně. Průměrná odpověď tu nese víc informace.';
           else if(err > Lv.tol && usedFail && level === 2) hint = 'Šum rozmazal hranici mezi selháním a&nbsp;jedním kvantem, a&nbsp;tak počet selhání závisí na tom, kudy vede práh. Průměr šum nezkreslí, protože se v&nbsp;něm vyruší.';
           else if(err > Lv.tol && usedFail && level === 3) hint = 'Odhad z&nbsp;podílu selhání stojí na Poissonově rozdělení. Když neplatí, vyjde nesmysl.';
-          else if(Lv.ask && ans === 'yes' && err <= Lv.tol) hint = 'Odhad m byl dobrý, jen Poissonovo rozdělení tu neplatí.';
+          else if(Lv.ask && ans === 'yes' && err <= Lv.tol) hint = 'Odhad m byl dobrý, chyba je jen v&nbsp;odpovědi na otázku o&nbsp;rozdělení.';
           else if(err > Lv.tol) hint = 'Povolená chyba je ' + Math.round(Lv.tol * 100) + '&nbsp;%. Podívej se, který z&nbsp;obou odhadů má menší chybu, a&nbsp;nahraj víc vzruchů, pokud ještě můžeš.';
         }
       }
-      if(ok){ done[level] = true; store.set('hra-kostky-v-mezere', done); bar.mark(level); txt += '<p>' + Lv.win + '</p>'; }
+      if(ok){ done[level] = true; store.set('hra-kostky-v-mezere', done); bar.mark(level); txt += '<p>' + (Lv.agree ? agreeText() + ' ' : '') + Lv.win + '</p>'; }
       else txt += '<p>' + hint + '</p>';
       var btns = [{label: 'Znovu', fn: function(){ choose(level); start(); }}];
       if(ok && level + 1 < KOLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
