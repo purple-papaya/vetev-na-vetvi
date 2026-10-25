@@ -5,7 +5,7 @@
   <link rel="self" type="application/atom+xml" href="https://vetevnavetvi.cz/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/"/>
   <id>https://vetevnavetvi.cz/</id>
-  <updated>2026-10-24T16:15:45+00:00</updated>
+  <updated>2026-10-25T10:52:39+00:00</updated>
   <author><name>Pája</name><uri>https://vetevnavetvi.cz/pages/o-mne.html</uri></author>
   <icon>https://vetevnavetvi.cz/assets/og/logo.png</icon>
   <entry>
@@ -13,7 +13,7 @@
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-24T16:15:45+00:00</updated>
+    <updated>2026-10-25T10:52:39+00:00</updated>
     <category term="Neurobiologie"/>
     <summary>Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.</summary>
   </entry>
@@ -22,7 +22,7 @@
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-24T16:15:45+00:00</updated>
+    <updated>2026-10-25T10:52:39+00:00</updated>
     <category term="Farmakologie"/>
     <summary>Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.</summary>
   </entry>
@@ -31,9 +31,81 @@
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-24T16:15:45+00:00</updated>
+    <updated>2026-10-25T10:52:39+00:00</updated>
     <category term="Biochemie"/>
     <summary>Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Sabotáž</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-sabotaz.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-sabotaz.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničném výtažku: jodacetát, fluorid, arseničnan, nebo falešná glukóza.</summary>
+  </entry>
+  <entry>
+    <title>Přítoky</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pritoky.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-pritoky.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Přiveď do glykolýzy cukry z mléka, chleba i z glykogenu s co nejlepší bilancí ATP: galaktóza, fruktóza ve svalu a v játrech, fosforolýza a dvě galaktosemie.</summary>
+  </entry>
+  <entry>
+    <title>Pavlovův zvonek</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Nauč neuron vypálit na zvonek tím, že ho spojíš s jídlem. Pak odnauč světlo pomalým drážděním a zjisti, co se stane bez hořčíku a s blokátorem receptoru NMDA.</summary>
+  </entry>
+  <entry>
+    <title>Neznámá látka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-neznama-latka.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-neznama-latka.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Z křivek účinku na proužku tkáně zjisti, co je v lahvičce: plný, nebo částečný agonista, kompetitivní, nebo nevratný antagonista, či inverzní agonista.</summary>
+  </entry>
+  <entry>
+    <title>Kostky v mezeře</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.</summary>
+  </entry>
+  <entry>
+    <title>Kafe</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kafe.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-kafe.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Naplánuj kafe na zkoušku, na odpoledne i na celý týden. Kofein soutěží s adenosinem o receptory, tolerance roste a odvykání může bolet hlavu.</summary>
+  </entry>
+  <entry>
+    <title>Filtr</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-filtr.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-filtr.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.</summary>
+  </entry>
+  <entry>
+    <title>Bez dechu</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-bez-dechu.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-bez-dechu.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T10:52:39+00:00</updated>
+    <category term="Hry"/>
+    <summary>Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: červená krvinka bez mitochondrií, sprint, kvasnice a Pasteurův efekt a nádor, který kvasí i s kyslíkem.</summary>
   </entry>
   <entry>
     <title>Jak se sůl naučila říkat já</title>

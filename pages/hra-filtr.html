@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Filtr: hlavolam o krátkodobé plasticitě synapsí | Větev na větvi</title>
+<!-- seo:begin – generuje tools/seo.py, neupravovat ručně -->
+<meta name="description" content="Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pája">
+<link rel="canonical" href="https://vetevnavetvi.cz/pages/hra-filtr.html">
+<link rel="alternate" type="application/atom+xml" title="Větev na větvi – nové kapitoly, hry a články" href="https://vetevnavetvi.cz/feed.xml">
+<meta name="theme-color" content="#2F5D46">
+<meta property="og:site_name" content="Větev na větvi">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Filtr: hlavolam o krátkodobé plasticitě synapsí | Větev na větvi">
+<meta property="og:description" content="Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.">
+<meta property="og:url" content="https://vetevnavetvi.cz/pages/hra-filtr.html">
+<meta property="og:image" content="https://vetevnavetvi.cz/assets/og/hra-filtr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Filtr – Větev na větvi">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://vetevnavetvi.cz/#org",
+   "name": "Větev na větvi",
+   "url": "https://vetevnavetvi.cz/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "sameAs": [
+    "https://ko-fi.com/vetevnavetvi"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://vetevnavetvi.cz/#website",
+   "url": "https://vetevnavetvi.cz/",
+   "name": "Větev na větvi",
+   "description": "Český terénní zápisník o biologii těla: trpělivé výklady metabolismu, nervů, fyziologie, léků, genů, imunity, vývoje a hormonů s interaktivními simulacemi a ověřenými zdroji.",
+   "inLanguage": "cs",
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#webpage",
+   "url": "https://vetevnavetvi.cz/pages/hra-filtr.html",
+   "name": "Filtr: hlavolam o krátkodobé plasticitě synapsí | Větev na větvi",
+   "description": "Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.",
+   "inLanguage": "cs",
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/#website"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-filtr.jpg"
+   },
+   "breadcrumb": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#game"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Větev na větvi",
+     "item": "https://vetevnavetvi.cz/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Hry",
+     "item": "https://vetevnavetvi.cz/pages/hry.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Filtr",
+     "item": "https://vetevnavetvi.cz/pages/hra-filtr.html"
+    }
+   ]
+  },
+  {
+   "@type": [
+    "Game",
+    "LearningResource"
+   ],
+   "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#game",
+   "name": "Filtr",
+   "description": "Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.",
+   "inLanguage": "cs",
+   "url": "https://vetevnavetvi.cz/pages/hra-filtr.html",
+   "mainEntityOfPage": {
+    "@id": "https://vetevnavetvi.cz/pages/hra-filtr.html#webpage"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://vetevnavetvi.cz/assets/og/hra-filtr.jpg",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-25T09:11:18+00:00",
+   "dateModified": "2026-10-25T10:52:39+00:00",
+   "author": {
+    "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
+   },
+   "publisher": {
+    "@id": "https://vetevnavetvi.cz/#org"
+   },
+   "isAccessibleForFree": true,
+   "learningResourceType": "interaktivní hra",
+   "interactivityType": "active",
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "krátkodobá plasticita"
+    },
+    {
+     "@type": "Thing",
+     "name": "facilitace"
+    },
+    {
+     "@type": "Thing",
+     "name": "synaptická deprese"
+    },
+    {
+     "@type": "Thing",
+     "name": "pravděpodobnost uvolnění"
+    },
+    {
+     "@type": "Thing",
+     "name": "kvantové uvolňování"
+    },
+    {
+     "@type": "Thing",
+     "name": "binomické rozdělení"
+    }
+   ],
+   "keywords": "krátkodobá plasticita, facilitace, synaptická deprese, pravděpodobnost uvolnění, kvantové uvolňování, binomické rozdělení",
+   "isBasedOn": {
+    "@type": "Article",
+    "name": "Dole v mezeře",
+    "url": "https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"
+   },
+   "isPartOf": {
+    "@id": "https://vetevnavetvi.cz/pages/hry.html#webpage"
+   },
+   "citation": [
+    "Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 11: ploténkový potenciál mnohem vyšší, než je potřeba (s. 188). Kap. 13: asi 200 kvant na ploténce (s. 252), kvantový obsah na synapsích nervových buněk a binomické uvolňování s pravděpodobností kolem 0,9 (s. 255). Kap. 16: facilitace a deprese na ploténce, test po 230 ms, deprese pod 20 % (s. 318), časový průběh facilitace a zotavení (s. 319–320), mění se počet kvant, ne jejich velikost ani citlivost druhé strany (s. 320), zásoba připravených váčků, pravděpodobnost vylití a třetí až čtvrtá mocnina přítoku vápníku (s. 320).",
+    "Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 13: většina synapsí v mozku a míše uvolní na vzruch málo přenašeče, často jen jedno kvantum (s. 327).",
+    "Tsodyks M. V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. PNAS 94(2): 719–723, 1997.",
+    "Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. PNAS 95(9): 5323–5328, 1998.",
+    "Dodge F. A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. Journal of Physiology 193(2): 419–432, 1967.",
+    "Hra je zjednodušený model: odpověď je počet připravených váčků × pravděpodobnost vylití × podíl zásoby, který zbývá, a jedno kvantum je 2,5 % prahu. Pravděpodobnost vylití je 0,5 × (vápník / 2 mM)^4, nejvýš 0,95. V první úrovni se zásoba doplňuje s časovou konstantou 1 s, ve třetí 0,8 s. V prvních dvou úrovních zbytkový vápník doznívá s časovou konstantou 10 ms, takže facilitace skoro nehraje roli. Ve čtvrté úrovni je průměrný počet kvant pevně 0,9 a mění se jen počet míst, mezi která se dělí. Skutečné synapse mají víc mechanismů, například změny vápníkových kanálů."
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person",
+   "name": "Pája",
+   "url": "https://vetevnavetvi.cz/pages/o-mne.html",
+   "jobTitle": "datová analytička",
+   "knowsAbout": [
+    "molekulární biologie",
+    "biochemie",
+    "fyziologie",
+    "datová analýza"
+   ],
+   "description": "Vystudovala obor Molekulární biologie a biochemie organismů, pracuje jako datová analytička a píše web Větev na větvi.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brno",
+    "addressCountry": "CZ"
+   }
+  }
+ ]
+}
+</script>
+<!-- seo:end -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Hlavolam o&nbsp;krátké paměti</span></p>
+  <h1 class="title"><em>Filtr</em></h1>
+  <p class="deck">Synapse nepouští každý vzruch stejně. Nastav jí vápník, zásobu váčků a&nbsp;jejich doplňování tak, aby pustila dál přesně ty vzruchy, které má.</p>
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Vzruchy do synapse nechodí po jednom, ale v&nbsp;sériích, a&nbsp;odpovědi druhé buňky se během série mění. Synapse, která při každém vzruchu vylije velký díl připravených váčků, si zásobu rychle vyčerpá a&nbsp;slábne. Synapse s&nbsp;malou pravděpodobností vylití se během rychlé série naopak rozjíždí, protože se v&nbsp;zakončení hromadí vápník. Kolik přenašeče vzruch uvolní, záleží na velikosti zásoby připravených váčků a&nbsp;na pravděpodobnosti, že se každý z&nbsp;nich vylije. Ta roste se třetí až čtvrtou mocninou přítoku vápníku.</p>
+
+  <p><b>Jak hrát:</b> nahoře přichází série vzruchů. Sloupce ukazují, jak velkou odpověď vyvolá každý z&nbsp;nich v&nbsp;další buňce, a&nbsp;přerušovaná čára je práh, nad kterým buňka vypálí. Kroužek nad sloupcem říká, co je cílem: plný znamená, že tenhle vzruch má práh přeskočit, prázdný, že nemá. Oranžový kroužek a&nbsp;obrys sloupce znamenají, že vzruch zatím nedělá, co má. Posuvníky nastav synapsi, sloupce se mění hned. Až všechno sedí, pusť vzruchy.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Filtr</div>
+      <div class="readout" aria-live="polite">
+        <span class="rd"><span class="lo">shoda</span> <b id="fl-match">–</b></span>
+        <span class="rd" id="fl-rd-p"><span class="lo">pravděpodobnost vylití</span> <b id="fl-p">–</b></span>
+        <span class="rd" id="fl-rd-q"><span class="lo">kvant na 1.&nbsp;vzruch</span> <b id="fl-q">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="fl-goal">Vyber úroveň a&nbsp;začni.</div>
+      <canvas id="flgame" height="290" aria-label="Série vzruchů a&nbsp;pod ní sloupce velikosti odpovědi na každý vzruch s&nbsp;přerušovanou čarou prahu. Kroužky nad sloupci ukazují cíl. Pod sloupci zásoba připravených váčků a&nbsp;pravděpodobnost vylití před každým vzruchem."></canvas>
+      <p class="vh" id="fl-desc" aria-live="polite"></p>
+      <div class="fl-knobs" id="fl-knobs">
+        <label class="fl-knob" id="fl-k-ca"><span class="fl-kn">Vápník</span><input type="range" id="fl-ca" min="0.6" max="2.4" step="0.05" value="1.2" aria-label="Koncentrace vápníku v&nbsp;roztoku"><span class="fl-kv" id="fl-ca-v"></span></label>
+        <label class="fl-knob" id="fl-k-n"><span class="fl-kn">Připravené váčky</span><input type="range" id="fl-n" min="0" max="100" step="1" value="67" aria-label="Počet připravených váčků"><span class="fl-kv" id="fl-n-v"></span></label>
+        <label class="fl-knob" id="fl-k-td"><span class="fl-kn">Doplňování zásoby</span><input type="range" id="fl-td" min="0" max="100" step="1" value="70" aria-label="Časová konstanta doplňování zásoby váčků"><span class="fl-kv" id="fl-td-v"></span></label>
+        <label class="fl-knob" id="fl-k-tf"><span class="fl-kn">Doznívání vápníku</span><input type="range" id="fl-tf" min="0" max="100" step="1" value="18" aria-label="Časová konstanta doznívání zbytkového vápníku"><span class="fl-kv" id="fl-tf-v"></span></label>
+        <label class="fl-knob" id="fl-k-s"><span class="fl-kn">Místa vylití</span><input type="range" id="fl-s" min="1" max="20" step="1" value="9" aria-label="Počet míst, kde se může vylít váček"><span class="fl-kv" id="fl-s-v"></span></label>
+      </div>
+      <div class="sim-controls">
+        <button class="ctrl" type="button" id="fl-reset">Výchozí nastavení</button>
+        <button class="ctrl go" type="button" id="fl-go">Pustit vzruchy</button>
+      </div>
+      <div class="game-feedback" id="fl-fb" aria-live="polite"></div>
+      <div class="game-overlay" id="fl-ov" hidden></div>
+    </div>
+    <div class="levels" id="fl-levels"></div>
+  </div>
+  <figcaption><b>Filtr.</b> Zlaté sloupce přeskočí práh, šedozelené ne. Pod nimi je zásoba připravených váčků (modře) a&nbsp;pravděpodobnost vylití (zlatě) těsně před každým vzruchem. Měřítko pravděpodobnosti se samo přizpůsobí, aby byl vidět i&nbsp;nárůst malé pravděpodobnosti. Jde o&nbsp;zjednodušený model krátkodobé paměti synapse podle Tsodykse a&nbsp;Markrama, stejný jako v&nbsp;kapitole: vzruch vylije podíl připravených váčků daný pravděpodobností vylití, zásoba se mezi vzruchy doplňuje a&nbsp;zbytkový vápník pravděpodobnost na chvíli zvýší. Pravděpodobnost roste se čtvrtou mocninou koncentrace vápníku v&nbsp;roztoku. Velikosti, prahy a&nbsp;časy jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Na ploténce se oba jevy dají změřit přímo. Když je v&nbsp;roztoku málo vápníku a&nbsp;vzruch uvolní méně než deset kvant, odpovědi během krátké série rostou a&nbsp;zvětšená je ještě odpověď, která přijde skoro čtvrt sekundy po konci série. Když vzruch uvolní kvant hodně, odpovědi slábnou, po dlouhé sérii i&nbsp;pod pětinu původní odpovědi, a&nbsp;synapse se zotavuje několik sekund. Facilitace vyprchá hlavně během desítek milisekund (časová konstanta asi 50&nbsp;ms), menší část pomaleji (asi 250&nbsp;ms). Podle Nichollse se při tom mění počet uvolněných kvant, ne velikost jednoho kvanta ani citlivost druhé strany.</p>
+
+  <p>Synapse tak nepřenáší jen to, že přišel vzruch, ale i&nbsp;rytmus. Markram, Wang a&nbsp;Tsodyks ukázali, že tentýž axon pyramidové buňky v&nbsp;mozkové kůře tvoří na jiné pyramidové buňce synapsi, která během rychlé série slábne, a&nbsp;na interneuronu synapsi, která sílí. Zjednodušeně řečeno: jednomu sousedovi buňka hlásí hlavně začátek série, druhému hlavně to, že série trvá.</p>
+
+  <p>Ploténka je opačný extrém: vzruch na ní uvolní kolem dvou set kvant a&nbsp;ploténkový potenciál je normálně mnohem vyšší, než je potřeba k&nbsp;výstřelu svalového vlákna. Na synapsích v&nbsp;mozku a&nbsp;míše se často uvolní v&nbsp;průměru jen jedno kvantum. Na synapsi mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem přesto přenos selže jen asi u&nbsp;jednoho vzruchu z&nbsp;deseti, protože tam čeká zhruba jediné kvantum, které se vylije s&nbsp;pravděpodobností kolem 0,9. Víc je v&nbsp;kapitole <a href="wetware-neurobiologie-ch2-dole-v-mezere.html">Dole v&nbsp;mezeře</a>.</p>
+</section>
+
+<!-- zpetna-vazba:begin – generuje tools/seo.py -->
+<div class="fv-line"><p>Vidíš chybu, nebo ti tu něco nesedí? <a href="zpetna-vazba.html?stranka=hra-filtr">Napiš mi&nbsp;&#8594;</a></p><a class="kafe" href="https://ko-fi.com/vetevnavetvi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c.7.8.7 1.7 0 2.5M12 3.5c.7.8.7 1.7 0 2.5"/></svg><span>Kup mi kafe</span></a></div>
+<!-- zpetna-vazba:end -->
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Nicholls J.&nbsp;G., Martin A.&nbsp;R., Fuchs P.&nbsp;A., Brown D.&nbsp;A., Diamond M.&nbsp;E., Weisblat D.&nbsp;A. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;11: ploténkový potenciál mnohem vyšší, než je potřeba (s.&nbsp;188). Kap.&nbsp;13: asi 200 kvant na ploténce (s.&nbsp;252), kvantový obsah na synapsích nervových buněk a&nbsp;binomické uvolňování s&nbsp;pravděpodobností kolem 0,9 (s.&nbsp;255). Kap.&nbsp;16: facilitace a&nbsp;deprese na ploténce, test po 230&nbsp;ms, deprese pod 20&nbsp;% (s.&nbsp;318), časový průběh facilitace a&nbsp;zotavení (s.&nbsp;319–320), mění se počet kvant, ne jejich velikost ani citlivost druhé strany (s.&nbsp;320), zásoba připravených váčků, pravděpodobnost vylití a&nbsp;třetí až čtvrtá mocnina přítoku vápníku (s.&nbsp;320).</li>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Kap.&nbsp;13: většina synapsí v&nbsp;mozku a&nbsp;míše uvolní na vzruch málo přenašeče, často jen jedno kvantum (s.&nbsp;327).</li>
+    <li>Tsodyks M.&nbsp;V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. <em>PNAS</em> 94(2): 719–723, 1997.</li>
+    <li>Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. <em>PNAS</em> 95(9): 5323–5328, 1998.</li>
+    <li>Dodge F.&nbsp;A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. <em>Journal of Physiology</em> 193(2): 419–432, 1967.</li>
+    <li>Hra je zjednodušený model: odpověď je počet připravených váčků × pravděpodobnost vylití × podíl zásoby, který zbývá, a&nbsp;jedno kvantum je 2,5&nbsp;% prahu. Pravděpodobnost vylití je 0,5&nbsp;×&nbsp;(vápník / 2&nbsp;mM)<sup>4</sup>, nejvýš 0,95. V&nbsp;první úrovni se zásoba doplňuje s&nbsp;časovou konstantou 1&nbsp;s, ve třetí 0,8&nbsp;s. V&nbsp;prvních dvou úrovních zbytkový vápník doznívá s&nbsp;časovou konstantou 10&nbsp;ms, takže facilitace skoro nehraje roli. Ve čtvrté úrovni je průměrný počet kvant pevně 0,9 a&nbsp;mění se jen počet míst, mezi která se dělí. Skutečné synapse mají víc mechanismů, například změny vápníkových kanálů.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     FILTR — short-term plasticity as a filter (Nicholls 5e pp. 318–320;
+     the chapter's SIM 03 model: Tsodyks & Markram 1997, facilitation as in
+     Markram, Wang & Tsodyks 1998). A spike releases the fraction u·R of the
+     N ready vesicles (R = share of the pool still there); R recovers with
+     τD, residual Ca²⁺ raises u, which relaxes back to U with τF.
+     U = 0.5·(Ca / 2 mM)^4, at most 0.95 (release ∝ ~4th power of Ca²⁺,
+     Dodge & Rahamimoff 1967). Response in units of the threshold:
+     N·u·R·q with one quantum q = 1/40 of threshold.
+     Level 4: binomial release from n sites with p = 0.9/n, i.e. a fixed
+     mean of 0.9 quanta (Nicholls p. 255, the Ia synapse: n ≈ 1, p ≈ 0.9).
+     ========================================================= */
+  var FL_Q = 1 / 40, FL_VMAX = 2.4;
+  function flU(ca){ return clamp(0.5 * Math.pow(ca / 2, 4), 0.002, 0.95); }
+  function flN(s){ return Math.round(Math.pow(10, 3 * s / 100)); }
+  function flTD(s){ return 0.05 * Math.pow(60, s / 100); }
+  function flTF(s){ return 0.01 * Math.pow(50, s / 100); }
+  function flTrain(groups){ var t = []; groups.forEach(function(g){ for(var i = 0; i < g[1]; i++) t.push(+(g[0] + i * g[2]).toFixed(4)); }); return t; }
+  function flRespond(p, times){
+    var R = 1, u = p.U, out = [], last = null;
+    times.forEach(function(t){
+      var uEff = p.U;
+      if(last !== null){ var dt = t - last; R = 1 - (1 - R) * Math.exp(-dt / p.tD); u = p.U + (u - p.U) * Math.exp(-dt / p.tF); uEff = u; }
+      var rel = uEff * R;
+      out.push({v: p.N * rel * FL_Q, R: R, u: uEff});
+      R -= rel; u = uEff + p.U * (1 - uEff); last = t;
+    });
+    return out;
+  }
+  function flRand(seed){                    // small deterministic generator, so a setting always shows the same trials
+    var a = seed >>> 0;
+    return function(){ a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+  var FLL = [
+    {name: 'Ploténka', train: [[0, 10, 0.05]], want: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], knobs: ['ca', 'n'], fix: {td: 1.0, tf: 0.01},
+     start: {ca: 1.0, n: 67},
+     goal: 'Ať projde <b>všech deset vzruchů</b>, které přijdou dvacet za sekundu. Každá odpověď musí přeskočit práh.',
+     intro: '<p>Nervosvalová ploténka si nemůže dovolit vynechat. Sval se má stáhnout při každém vzruchu, i&nbsp;když jich přijde deset za půl sekundy.</p><p>Máš dva posuvníky: vápník v&nbsp;roztoku a&nbsp;počet připravených váčků. Vyčerpaná zásoba se tu doplňuje s&nbsp;časovou konstantou jedné sekundy.</p>',
+     win: '<p>Ploténka sází na velkou zásobu. Každý vzruch z&nbsp;ní část váčků spotřebuje, ale zbude jich dost, aby ani poslední odpověď série nespadla pod práh.</p><p>Skutečná ploténka uvolní na jeden vzruch kolem dvou set kvant.</p>'},
+    {name: 'Jen začátek', train: [[0, 5, 0.02], [3.08, 5, 0.02], [6.16, 5, 0.02]], want: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0], knobs: ['ca', 'n', 'td'], fix: {tf: 0.01},
+     start: {ca: 1.2, n: 57, td: 73},
+     goal: 'Vzruchy chodí ve shlucích po pěti. Ať projde jen <b>první vzruch každého shluku</b>.',
+     intro: '<p>Některé synapse hlásí hlavně to, že něco začalo. Přijdou tři shluky, v&nbsp;každém pět vzruchů padesát za sekundu, a&nbsp;mezi shluky jsou tři sekundy klidu.</p><p>Přibyl posuvník doplňování: za jak dlouho se vyčerpaná zásoba váčků zase doplní.</p>',
+     win: '<p>Vysoká pravděpodobnost vylití udělá silný první vzruch, ale spotřebuje velkou část zásoby, a&nbsp;tak další vzruchy shluku práh nepřeskočí. Během pauzy se zásoba doplní a&nbsp;další shluk zase začne silně.</p><p>Taková synapse hlásí hlavně začátek.</p>'},
+    {name: 'Jen shluky', train: [[0, 1, 1], [0.6, 1, 1], [1.2, 1, 1], [1.8, 6, 0.01], [2.6, 1, 1], [3.2, 1, 1], [3.8, 6, 0.01]],
+     want: [0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1], knobs: ['ca', 'n', 'tf'], fix: {td: 0.8},
+     start: {ca: 1.6, n: 57, tf: 18},
+     goal: 'Osamělé vzruchy ať <b>neprojdou</b>. Z&nbsp;rychlého shluku šesti vzruchů ať projde <b>třetí až šestý</b>.',
+     intro: '<p>Jiné synapse si osamělého vzruchu skoro nevšimnou a&nbsp;ozvou se, až když jich přijde víc rychle za sebou. Osamělé vzruchy tu přicházejí s&nbsp;odstupem víc než půl sekundy, shluky po šesti, sto za sekundu.</p><p>Místo doplňování teď nastavuješ, jak rychle doznívá zbytkový vápník po vzruchu.</p>',
+     win: '<p>Malá pravděpodobnost vylití nechá zásobu skoro celou a&nbsp;osamělý vzruch práh nepřeskočí. Ve shluku se ale v&nbsp;zakončení hromadí vápník a&nbsp;pravděpodobnost s&nbsp;každým vzruchem roste, takže od třetího vzruchu odpověď práh přeskočí.</p><p>Taková synapse hlásí hlavně to, že přišel shluk.</p>'},
+    {name: 'Jeden váček', mode: 'sites', knobs: ['s'], start: {s: 9}, m: 0.9, maxFail: 0.15, trials: 40,
+     goal: 'Průměr je pevně <b>0,9 kvanta</b> na vzruch. Rozděl ho mezi místa vylití tak, aby přenos selhával <b>nejvýš u&nbsp;15&nbsp;% vzruchů</b>.',
+     intro: '<p>Na synapsích v&nbsp;mozku a&nbsp;míše se často uvolní v&nbsp;průměru jen asi jedno kvantum. Neznamená to ale nutně, že přenos často selhává.</p><p>Jedna synapse je vzor: devět míst, kde se může vylít váček, každé s&nbsp;pravděpodobností 0,1. Druhá je tvoje, se stejným průměrem 0,9 kvanta. Posuvníkem ten průměr rozděl mezi víc nebo méně míst.</p>',
+     win: '<p>Synapse s&nbsp;jediným místem a&nbsp;pravděpodobností 0,9 selže jen u&nbsp;jednoho vzruchu z&nbsp;deseti. Devět míst s&nbsp;pravděpodobností 0,1 dává stejný průměr, ale přenos selže skoro u&nbsp;dvou vzruchů z&nbsp;pěti, blízko tomu, co předpovídá Poissonovo rozdělení.</p><p>Tak spolehlivě funguje synapse mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem: čeká tam zhruba jediné kvantum, které se vylije s&nbsp;pravděpodobností kolem 0,9.</p>'}
+  ];
+
+  makeSim('flgame', function(canvas, dim){
+    var ov = document.getElementById('fl-ov'), goalEl = document.getElementById('fl-goal'), desc = document.getElementById('fl-desc'), fb = document.getElementById('fl-fb');
+    var matchEl = document.getElementById('fl-match'), pEl = document.getElementById('fl-p'), qEl = document.getElementById('fl-q');
+    var rdP = document.getElementById('fl-rd-p'), rdQ = document.getElementById('fl-rd-q'), matchLo = matchEl.parentNode.querySelector('.lo');
+    var K = {ca: document.getElementById('fl-ca'), n: document.getElementById('fl-n'), td: document.getElementById('fl-td'), tf: document.getElementById('fl-tf'), s: document.getElementById('fl-s')};
+    var KV = {ca: document.getElementById('fl-ca-v'), n: document.getElementById('fl-n-v'), td: document.getElementById('fl-td-v'), tf: document.getElementById('fl-tf-v'), s: document.getElementById('fl-s-v')};
+    var KL = {ca: document.getElementById('fl-k-ca'), n: document.getElementById('fl-k-n'), td: document.getElementById('fl-k-td'), tf: document.getElementById('fl-k-tf'), s: document.getElementById('fl-k-s')};
+    var done = store.get('hra-filtr', [false, false, false, false]);
+    var level = 0, times = [], res = [], par = null, playing = false, shownN = 1e9, t = 0, last = now(), sites = null;
+    var bar = levelBar('fl-levels', FLL.length, FLL.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function L(){ return FLL[level]; }
+    function sizeFor(d){
+      var want = d.w < 560 ? 330 : 290;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    sizeFor(dim);
+    function secs(x){ return x < 1 ? Math.round(x * 1000) + NB + 'ms' : num(x, 1).replace(/,0$/, '') + NB + 's'; }
+    function params(){
+      var Lv = L(), f = Lv.fix || {};
+      return {
+        U: flU(+K.ca.value), N: flN(+K.n.value),
+        tD: Lv.knobs.indexOf('td') >= 0 ? flTD(+K.td.value) : f.td,
+        tF: Lv.knobs.indexOf('tf') >= 0 ? flTF(+K.tf.value) : f.tf
+      };
+    }
+    function siteStats(){
+      var n = +K.s.value, p = L().m / n, fail = Math.pow(1 - p, n), rnd = flRand(1000 + n), out = [];
+      for(var i = 0; i < L().trials; i++){ var k = 0; for(var j = 0; j < n; j++) if(rnd() < p) k++; out.push(k); }
+      var ref = flRand(1009), refOut = [];
+      for(var i2 = 0; i2 < L().trials; i2++){ var k2 = 0; for(var j2 = 0; j2 < 9; j2++) if(ref() < 0.1) k2++; refOut.push(k2); }
+      return {n: n, p: p, fail: fail, trials: out, ref: refOut, refFail: Math.pow(0.9, 9)};
+    }
+    function matches(){ var Lv = L(), m = 0; res.forEach(function(r, i){ if((r.v >= 1 - 1e-9) === (Lv.want[i] === 1)) m++; }); return m; }
+    function update(announce){
+      var Lv = L();
+      if(Lv.mode === 'sites'){
+        sites = siteStats();
+        setTxt(KV.s, sites.n + NB + plural(sites.n, 'místo', 'místa', 'míst') + ', p' + NB + '=' + NB + num(sites.p, sites.p < 0.1 ? 3 : 2));
+        setTxt(matchEl, pct(sites.fail));
+        if(announce) setTxt(desc, sites.n + ' ' + plural(sites.n, 'místo', 'místa', 'míst') + ' vylití s pravděpodobností ' + num(sites.p, 2) + '. Synapse by měla selhat asi u ' + pct(sites.fail) + ' vzruchů.');
+        return;
+      }
+      par = params(); res = flRespond(par, times);
+      setTxt(KV.ca, num(+K.ca.value, 2) + NB + 'mM');
+      setTxt(KV.n, grp(par.N));
+      if(Lv.knobs.indexOf('td') >= 0) setTxt(KV.td, secs(par.tD));
+      if(Lv.knobs.indexOf('tf') >= 0) setTxt(KV.tf, secs(par.tF));
+      setTxt(pEl, num(par.U, par.U < 0.1 ? 3 : 2));
+      setTxt(qEl, num(par.N * par.U, par.N * par.U < 10 ? 1 : 0));
+      setTxt(matchEl, matches() + '/' + res.length);
+      if(announce){
+        var passed = res.map(function(r, i){ return r.v >= 1 - 1e-9 ? i + 1 : null; }).filter(function(x){ return x !== null; });
+        setTxt(desc, 'Pravděpodobnost vylití ' + num(par.U, 2) + ', ' + par.N + ' ' + plural(par.N, 'váček', 'váčky', 'váčků') + '. Práh přeskočí ' + (passed.length ? 'vzruchy ' + passed.join(', ') : 'žádný vzruch') + '. Shoda ' + matches() + ' z ' + res.length + '.');
+      }
+    }
+    Object.keys(K).forEach(function(k){
+      K[k].addEventListener('input', function(){ if(!playing){ fb.innerHTML = ''; update(false); } });
+      K[k].addEventListener('change', function(){ if(!playing) update(true); });
+    });
+    function setKnobs(){
+      var Lv = L();
+      Object.keys(K).forEach(function(k){ KL[k].hidden = Lv.knobs.indexOf(k) < 0; if(Lv.start[k] !== undefined) K[k].value = Lv.start[k]; });
+      var isSites = Lv.mode === 'sites';
+      rdP.hidden = isSites; rdQ.hidden = isSites; matchLo.textContent = isSites ? 'selhání' : 'shoda';
+    }
+    function choose(i){
+      level = i; bar.set(i); playing = false; shownN = 1e9;
+      var Lv = L();
+      times = Lv.train ? flTrain(Lv.train) : [];
+      setKnobs(); update(false);
+      goalEl.innerHTML = Lv.goal; fb.className = 'game-feedback'; fb.innerHTML = '';
+      overlay(ov, (i + 1) + '. ' + Lv.name, Lv.intro, [{label: 'Začít', cls: 'go', fn: function(){ overlay(ov, null); }}]);
+    }
+    document.getElementById('fl-reset').addEventListener('click', function(){ if(playing) return; setKnobs(); update(true); fb.innerHTML = ''; });
+    document.getElementById('fl-go').addEventListener('click', function(){
+      if(playing) return;
+      update(false); playing = true; shownN = 0; t = 0;
+      Object.keys(K).forEach(function(k){ K[k].disabled = true; });
+    });
+    function hint(){
+      var Lv = L(), bad = [];
+      res.forEach(function(r, i){ if((r.v >= 1 - 1e-9) !== (Lv.want[i] === 1)) bad.push(i); });
+      var b0 = bad[0], passes = res[b0].v >= 1 - 1e-9;
+      if(level === 0) return b0 === 0 ? 'První vzruch práh nepřeskočí. Přidej vápník nebo váčky.' : 'Zásoba se během série vyčerpá a&nbsp;pozdější odpovědi spadnou pod práh. Ploténka potřebuje větší zásobu váčků.';
+      if(level === 1){
+        var pos = b0 % 5, burst = Math.floor(b0 / 5);
+        if(pos === 0 && burst === 0) return 'První vzruch práh nepřeskočí. Přidej váčky nebo vápník.';
+        if(pos === 0) return 'První vzruch ' + (burst === 1 ? 'druhého' : 'třetího') + ' shluku neprojde: zásoba se během pauzy nestihne doplnit. Zrychli doplňování.';
+        return ['', 'Druhý', 'Třetí', 'Čtvrtý', 'Pátý'][pos] + ' vzruch ve shluku práh pořád přeskočí. Synapse musí zásobu víc vyčerpat: zkus víc vápníku a&nbsp;méně váčků.';
+      }
+      var iso = [0, 1, 2, 9, 10];
+      if(iso.indexOf(b0) >= 0) return 'Osamělý vzruch práh přeskočí, synapse je na začátku moc silná. Uber vápník nebo váčky.';
+      if(passes) return 'Hned první vzruchy shluku práh přeskočí. Synapse musí začínat slabě: uber vápník nebo váčky.';
+      return 'Pozdní vzruchy shluku práh nepřeskočí, facilitace je slabá. Prodluž doznívání vápníku, nebo přidej váčky.';
+    }
+    function finish(){
+      playing = false; shownN = 1e9;
+      Object.keys(K).forEach(function(k){ K[k].disabled = false; });
+      var Lv = L(), ok, txt;
+      if(Lv.mode === 'sites'){
+        ok = sites.fail <= Lv.maxFail + 1e-9;
+        var nf = sites.trials.filter(function(k){ return k === 0; }).length;
+        txt = '<p>Tvoje synapse: ' + sites.n + NB + plural(sites.n, 'místo', 'místa', 'míst') + ', selhat by měla asi u&nbsp;<b>' + pct(sites.fail) + '</b> vzruchů (v&nbsp;ukázce ' + nf + ' ze ' + Lv.trials + '). Vzor s&nbsp;devíti místy: ' + pct(sites.refFail) + '.</p>';
+      } else {
+        var m = matches(); ok = m === res.length;
+        txt = '<p>Shoda: <b>' + m + ' z&nbsp;' + res.length + '</b> vzruchů. Pravděpodobnost vylití ' + num(par.U, 2) + ', ' + grp(par.N) + ' ' + plural(par.N, 'váček', 'váčky', 'váčků') + '.</p>';
+      }
+      if(ok){
+        done[level] = true; store.set('hra-filtr', done); bar.mark(level);
+        var btns = [{label: 'Znovu', fn: function(){ choose(level); }}];
+        if(level + 1 < FLL.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+        overlay(ov, 'Povedlo se', txt + Lv.win, btns);
+      } else {
+        var h = Lv.mode === 'sites' ? 'Selhání je pořád přes 15&nbsp;%. Čím víc míst se o&nbsp;stejný průměr dělí, tím víc se rozdělení blíží Poissonovu a&nbsp;tím častěji se nevylije nic.' : hint();
+        overlay(ov, 'Ještě ne', txt + '<p>' + h + '</p>', [{label: 'Ladit dál', cls: 'go', fn: function(){ overlay(ov, null); }}]);
+      }
+    }
+
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+
+    function columns(x0, x1){
+      var n = times.length, gaps = 0, gapAt = [];
+      for(var i = 1; i < n; i++){ var g = times[i] - times[i - 1] > 0.25; gapAt.push(g); if(g) gaps++; }
+      var unit = (x1 - x0) / (n + 0.9 * gaps), xs = [], x = x0 + unit / 2;
+      for(var j = 0; j < n; j++){ if(j > 0 && gapAt[j - 1]) x += 0.9 * unit; xs.push(x); x += unit; }
+      return {xs: xs, unit: unit, gapAt: gapAt};
+    }
+
+    return {
+      resize: sizeFor,
+      step: function(){
+        var tn = now(), dt = Math.min(0.1, tn - last); last = tn;
+        if(!playing) return;
+        t += dt;
+        var per = REDUCED ? 0.04 : (L().mode === 'sites' ? 0.05 : 0.16);
+        var n = L().mode === 'sites' ? L().trials : res.length;
+        shownN = Math.floor(t / per);
+        if(shownN >= n + 3) finish();
+      },
+      draw: function(ctx, d){
+        var W = d.w, H = d.h, narrow = W < 560, Lv = L();
+        ctx.clearRect(0, 0, W, H);
+        if(Lv.mode === 'sites' && sites){
+          // ---------- level 4: two synapses with the same mean, 40 impulses each ----------
+          var panels = [{title: 'vzor: 9 míst, p = 0,10', tr: sites.ref, fail: sites.refFail}, {title: 'tvoje synapse: ' + sites.n + ' ' + plural(sites.n, 'místo', 'místa', 'míst') + ', p = ' + num(sites.p, sites.p < 0.1 ? 3 : 2), tr: sites.trials, fail: sites.fail}];
+          panels.forEach(function(P, pi){
+            var px0 = narrow ? 14 : (pi === 0 ? 24 : W / 2 + 12), pw = narrow ? W - 28 : W / 2 - 36, py0 = narrow ? 14 + pi * 155 : 22;
+            label(ctx, P.title, px0, py0 + 8, pi ? C.ink : C.muted, 'left', '600 ' + (narrow ? 10.5 : 11.5) + 'px ' + SANS);
+            var cols = 10, rows = 4, cw = Math.min(narrow ? 22 : 26, pw / cols), r0 = Math.min(8, cw * 0.32);
+            for(var i = 0; i < Lv.trials; i++){
+              var cx = px0 + cw * (i % cols) + cw / 2, cy = py0 + 26 + Math.floor(i / cols) * (cw * 0.95);
+              if(playing && i >= shownN){ ring(ctx, cx, cy, r0, 'rgba(154,164,140,.25)', 1); continue; }
+              var k = P.tr[i];
+              if(k > 0){ dot(ctx, cx, cy, r0, C.gold); if(k > 1){ ctx.fillStyle = '#21271D'; ctx.font = '600 8px ' + MONO; ctx.textAlign = 'center'; ctx.fillText(String(k), cx, cy + 3); } }
+              else ring(ctx, cx, cy, r0, C.terraBright, 1.4);
+            }
+            var fy = py0 + 26 + rows * cw * 0.95 + 4;
+            label(ctx, 'selhání: ' + pct(P.fail), px0, fy + 10, P.fail <= Lv.maxFail ? C.sagePale : C.terraBright, 'left', '700 ' + (narrow ? 12 : 13) + 'px ' + SANS);
+          });
+          label(ctx, 'zlatě: vylilo se aspoň jedno kvantum · prázdný kroužek: selhání', W - 14, H - 6, C.muted, 'right', '500 9.5px ' + SANS);
+          return;
+        }
+        // ---------- levels 1–3: responses to a spike train ----------
+        var x0 = narrow ? 48 : 76, x1 = W - 14, colsInfo = columns(x0, x1), xs = colsInfo.xs, cw = colsInfo.unit;
+        var ySp = 16, yT = 34, yb0 = 50, yb1 = H - 64;
+        var F = frame(x0, yb0, x1 - x0, yb1 - yb0, 0, 1, 0, FL_VMAX);
+        // spikes and gaps
+        label(ctx, 'vzruchy', x0 - 6, ySp + 4, C.muted, 'right', '600 ' + (narrow ? 9 : 9.5) + 'px ' + SANS);
+        xs.forEach(function(x, i){
+          var on = !playing || i < shownN;
+          line(ctx, x, ySp - 6, x, ySp + 6, on ? C.ink : 'rgba(154,164,140,.35)', 1.6);
+          if(i > 0 && colsInfo.gapAt[i - 1] && cw * 1.9 > 36){ var gx = x - cw * 0.95; label(ctx, secs(times[i] - times[i - 1]), gx, ySp + 4, C.muted, 'center', '500 8.5px ' + MONO); }
+        });
+        if(playing && shownN < xs.length){ var px = xs[Math.max(0, Math.min(xs.length - 1, shownN))]; dot(ctx, px, ySp, 4, C.gold); }
+        // targets
+        label(ctx, 'cíl', x0 - 6, yT + 4, C.muted, 'right', '600 9.5px ' + SANS);
+        xs.forEach(function(x, i){
+          var want = Lv.want[i] === 1, r = res[i], okk = (r.v >= 1 - 1e-9) === want, col = (playing && i >= shownN) ? C.sage : (okk ? C.sage : C.terraBright);
+          if(want) dot(ctx, x, yT, 4.5, col); else ring(ctx, x, yT, 4, col, 1.6);
+        });
+        // threshold and bars
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, yb1); ctx.lineTo(x1, yb1); ctx.stroke();
+        line(ctx, x0, F.Y(1), x1, F.Y(1), C.terraBright, 1.2, [5, 4]);
+        label(ctx, 'práh', x0 - 6, F.Y(1) + 3, C.terraBright, 'right', '600 9.5px ' + SANS);
+        var bw = Math.max(3, Math.min(22, cw * 0.62));
+        res.forEach(function(r, i){
+          if(playing && i >= shownN) return;
+          var v = Math.min(r.v, FL_VMAX), y = F.Y(v), pass = r.v >= 1 - 1e-9, okk = pass === (Lv.want[i] === 1);
+          ctx.fillStyle = pass ? C.gold : '#6E8455'; rr(ctx, xs[i] - bw / 2, y, bw, yb1 - y, 2); ctx.fill();
+          if(!okk){ ctx.strokeStyle = C.terraBright; ctx.lineWidth = 1.6; rr(ctx, xs[i] - bw / 2 - 1.5, y - 1.5, bw + 3, yb1 - y + 3, 3); ctx.stroke(); }
+          if(r.v > FL_VMAX){ label(ctx, '↑', xs[i], F.Y(FL_VMAX) - 2, C.gold, 'center', '700 10px ' + SANS); }
+        });
+        // pool and release probability before each spike
+        var yR = H - 44, yU = H - 20, hm = 12, uMax = 0.25;
+        res.forEach(function(r){ uMax = Math.max(uMax, r.u * 1.1); });   // scale p so that facilitation of a small p stays visible
+        uMax = Math.min(1, uMax);
+        label(ctx, narrow ? 'zásoba' : 'zásoba váčků', x0 - 6, yR + 1, C.blue, 'right', '600 9px ' + SANS);
+        label(ctx, narrow ? 'p' : 'p vylití', x0 - 6, yU + 1, C.gold, 'right', '600 9px ' + SANS);
+        res.forEach(function(r, i){
+          if(playing && i >= shownN) return;
+          var w2 = Math.max(2, bw * 0.7);
+          ctx.fillStyle = 'rgba(127,160,192,.25)'; ctx.fillRect(xs[i] - w2 / 2, yR - hm, w2, hm);
+          ctx.fillStyle = C.blue; ctx.fillRect(xs[i] - w2 / 2, yR - hm * r.R, w2, hm * r.R);
+          ctx.fillStyle = 'rgba(217,183,90,.22)'; ctx.fillRect(xs[i] - w2 / 2, yU - hm, w2, hm);
+          ctx.fillStyle = C.gold; ctx.fillRect(xs[i] - w2 / 2, yU - hm * r.u / uMax, w2, hm * r.u / uMax);
+        });
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
