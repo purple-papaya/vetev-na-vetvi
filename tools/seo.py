@@ -72,15 +72,15 @@ PAGES = {
     # ---- branches
     'pages/wetware-biochemie.html': dict(
         kind='branch', name='Biochemie', title='Biochemie – Wetware | Větev na větvi',
-        desc='Chemie života: energie, molekuly a reakce. Kapitoly Jsi sloveso o metabolismu a ATP a První rameno '
-             'schodiště o glykolýze, se simulacemi.'),
+        desc='Chemie života: energie, molekuly a reakce. Kapitoly „Jsi sloveso“ o metabolismu a ATP a „První rameno '
+             'schodiště“ o glykolýze se simulacemi.'),
     'pages/wetware-neurobiologie.html': dict(
         kind='branch', name='Neurobiologie', title='Neurobiologie – Wetware | Větev na větvi',
         desc='Nervy, signály a to, jak se z 86 miliard neuronů vynoří já. Kapitoly o akčním potenciálu a o chemické '
              'synapsi, která si pamatuje, co přes ni prošlo.'),
     'pages/wetware-fyziologie.html': dict(
         kind='branch', name='Fyziologie', title='Fyziologie – Wetware | Větev na větvi',
-        desc='Jak spolu orgány a soustavy spolupracují. První kapitola Moře pod kůží: zpětná vazba, spády a pumpy, '
+        desc='Jak orgány a soustavy spolupracují. První kapitola „Moře pod kůží“: zpětná vazba, spády a pumpy, '
              'proudění, povrchy a obnova.'),
     'pages/wetware-farmakologie.html': dict(
         kind='branch', name='Farmakologie', title='Farmakologie – Wetware | Větev na větvi',
@@ -88,7 +88,7 @@ PAGES = {
              'afinitě, účinnosti a toleranci.'),
     'pages/wetware-molekularni-biologie.html': dict(
         kind='branch', name='Molekulární biologie', title='Molekulární biologie – Wetware | Větev na větvi',
-        desc='DNA, RNA a bílkoviny bez zjednodušování. První kapitola Čtení bez čtenáře: opis s korekturou, '
+        desc='DNA, RNA a bílkoviny do hloubky. První kapitola „Čtení bez čtenáře“: opis s korekturou, '
              'genetický kód, mutace a přepínače genů.'),
     'pages/wetware-imunologie.html': dict(
         kind='branch', name='Imunologie', title='Imunologie – Wetware | Větev na větvi',
@@ -100,7 +100,7 @@ PAGES = {
              'segmentační hodiny a řízená buněčná smrt.'),
     'pages/wetware-endokrinologie.html': dict(
         kind='branch', name='Endokrinologie', title='Endokrinologie – Wetware | Větev na větvi',
-        desc='Hormony jako zprávy pro celé tělo. První kapitola Dopis pro všechny: receptory, zpětná vazba štítné '
+        desc='Hormony jako zprávy pro celé tělo. První kapitola „Dopis pro všechny“: receptory, zpětná vazba štítné '
              'žlázy, poločasy a pulzy hormonů.'),
     # ---- chapters
     'pages/wetware-ch1-jsi-sloveso.html': dict(
@@ -187,9 +187,9 @@ PAGES = {
     'pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html': dict(
         kind='chapter', branch='pages/wetware-vyvojova-biologie.html', name='Tělo, které se postavilo samo',
         title='Tělo, které se postavilo samo: vývojová biologie | Větev na větvi',
-        desc='Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, '
+        desc='Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, laterální inhibice Notch–Delta, '
              'segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.',
-        about=['vývojová biologie', 'morfogen', 'boční inhibice', 'Notch–Delta', 'somitogeneze', 'apoptóza'],
+        about=['vývojová biologie', 'morfogen', 'laterální inhibice', 'Notch–Delta', 'somitogeneze', 'apoptóza'],
         en='Introduction to developmental biology: morphogen gradients and thresholds, Delta-Notch lateral '
            'inhibition, the segmentation clock and wavefront, and programmed cell death.'),
     'pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html': dict(
@@ -331,6 +331,7 @@ PAGES = {
            'the heat.'),
     'pages/hra-zdirka.html': dict(
         kind='game', chapter='pages/wetware-farmakologie-ch1-lek-je-vlna.html', name='Zdířka',
+        also=['pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html'],   # agonists, antagonists: chapter 2 too
         title='Zdířka: hra o receptorech, potenci a antagonistech | Větev na větvi',
         desc='Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, '
              'částečným agonistou se stropem a antagonistou, který odezní dřív než lék.',
@@ -950,15 +951,23 @@ def apply_dateline(path, dates):
 
 
 # ------------------------------------------------------------------ games for chapters and branches
-# Each chapter ends with links to its two games and each Wetware branch page lists them too, so
+# Each chapter ends with links to its games and each Wetware branch page lists them too, so
 # readers (and crawlers) get from the text to the games and back. Rewritten on every run.
 HRY_BEGIN, HRY_END = '<!-- hry:begin – generuje tools/seo.py -->', '<!-- hry:end -->'
 
 
 def games_of(chapter):
+    """The chapter's own games, then games of another chapter that fit it too (their `also` field)."""
     order = re.findall(r'data-game="(hra-[a-z0-9-]+)"', (ROOT / 'pages' / 'hry.html').read_text(encoding='utf-8'))
-    games = [p for p, m in PAGES.items() if m['kind'] == 'game' and m['chapter'] == chapter]
-    return sorted(games, key=lambda p: order.index(Path(p).stem) if Path(p).stem in order else len(order))
+    key = lambda p: order.index(Path(p).stem) if Path(p).stem in order else len(order)
+    own = [p for p, m in PAGES.items() if m['kind'] == 'game' and m['chapter'] == chapter]
+    extra = [p for p, m in PAGES.items() if m['kind'] == 'game' and chapter in m.get('also', ())]
+    return sorted(own, key=key) + sorted(extra, key=key)
+
+
+def game_name(game):
+    """Game title for a link, with a non-breaking space after one-letter words (Kostky v mezeře)."""
+    return re.sub(r'(?<!\w)([KkSsVvZzOoUuAaIi]) ', r'\1&nbsp;', html.escape(PAGES[game]['name']))
 
 
 def teaser_of(game):
@@ -974,7 +983,7 @@ def games_block(chapter):
     items = []
     for g in games_of(chapter):
         genre, deck = teaser_of(g)
-        items.append(f'<li><a href="{Path(g).name}">{html.escape(PAGES[g]["name"])}</a> <span class="druh">{genre}</span>'
+        items.append(f'<li><a href="{Path(g).name}">{game_name(g)}</a> <span class="druh">{genre}</span>'
                      f'<span class="co">{deck}</span></li>')
     return (f'{HRY_BEGIN}\n<aside class="hry-blok" aria-labelledby="zahraj-si">\n<h2 id="zahraj-si">Zahraj si</h2>\n'
             '<ul>\n' + '\n'.join(items) + f'\n</ul>\n</aside>\n{HRY_END}\n')
@@ -999,10 +1008,11 @@ def apply_branch_games(path):
     s = f.read_text(encoding='utf-8')
     s = re.sub(r'^[ \t]*' + re.escape(HRY_BEGIN) + r'.*?' + re.escape(HRY_END) + r'\n', '', s, flags=re.S | re.M)
     games = [g for c, m in PAGES.items() if m['kind'] == 'chapter' and m['branch'] == path for g in games_of(c)]
+    games = list(dict.fromkeys(games))   # a game listed under two chapters of the branch appears once
     reads = list(re.finditer(r'^([ \t]*)<a class="read"[^>]*>.*?</a>\n', s, re.S | re.M))
     read = reads[-1] if reads else None   # the games go under the last chapter link of the branch
     if games and read:
-        links = ' <span aria-hidden="true">·</span> '.join(f'<a href="{Path(g).name}">{html.escape(PAGES[g]["name"])}</a>'
+        links = ' <span aria-hidden="true">·</span> '.join(f'<a href="{Path(g).name}">{game_name(g)}</a>'
                                                           for g in games)
         block = f'{read.group(1)}{HRY_BEGIN}<p class="hry-odkazy">Zahraj si: {links}</p>{HRY_END}\n'
         s = s[:read.end()] + block + s[read.end():]
@@ -1137,8 +1147,9 @@ def write_site_files(all_dates):
     lines = [f'# {SITE_NAME}', '', f'> {SITE_DESC}', '', f'English summary: {SITE_DESC_EN}', '',
              'Texty jsou česky a oslovují čtenáře tykáním. Kapitoly stavějí na několika hlavních myšlenkách, přirovnáních ze '
              'života, interaktivních simulacích, odpovědích na časté otázky a zdrojích s odkazy na učebnice a články '
-             '(Alberts, Boron a Boulpaep, Lehninger, Rosenbaum a další). Parametry simulací jsou u každé kapitoly '
-             'popsané jako ilustrační tam, kde nejsou převzaté ze zdrojů.', '',
+             '(Alberts, Boron a Boulpaep, Lehninger, Rosenbaum a další). Simulace jsou zjednodušené modely, které mají '
+             'ukázat princip; novější kapitoly u nich uvádějí, které parametry pocházejí ze zdrojů a které jsou '
+             'ilustrační.', '',
              '## Wetware – kapitoly', '']
     for p in chapters:
         m = PAGES[p]
