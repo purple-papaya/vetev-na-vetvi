@@ -384,9 +384,9 @@ PAGES = {
     'pages/hra-sabotaz.html': dict(
         kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Sabotáž',
         title='Sabotáž: detektivka o jedech glykolýzy | Větev na větvi',
-        desc='Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničné šťávě: jodacetát, fluorid, '
-             'arzeničnan, se kterým dráha běží bez zisku, a falešná glukóza.',
-        about=['glykolýza', 'inhibitory enzymů', 'jodacetát', 'fluorid', 'arzeničnan', '2-deoxyglukóza', 'meziprodukty'],
+        desc='Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničném výtažku: jodacetát, fluorid, '
+             'arseničnan, nebo falešná glukóza.',
+        about=['glykolýza', 'inhibitory enzymů', 'jodacetát', 'fluorid', 'arseničnan', '2-deoxyglukóza', 'meziprodukty'],
         en='Lab detective game based on the classic inhibitor technique: measure which glycolytic intermediates pile '
            'up in a poisoned yeast extract and accuse the blocked enzyme: iodoacetate (glyceraldehyde-3-phosphate '
            'dehydrogenase), fluoride (enolase), arsenate (glycolysis runs without net ATP) and 2-deoxyglucose (stuck '
@@ -394,8 +394,8 @@ PAGES = {
     'pages/hra-pavlovuv-zvonek.html': dict(
         kind='game', chapter='pages/wetware-neurobiologie-ch2-dole-v-mezere.html', name='Pavlovův zvonek',
         title='Pavlovův zvonek: hra o asociativní dlouhodobé potenciaci | Větev na větvi',
-        desc='Nauč jediný neuron vypálit na zvonek tím, že ho spojíš s jídlem. Odnauč světlo pomalým drážděním, zkus '
-             'to bez hořčíku a s blokátorem receptoru NMDA a nech spolupracovat slabé vstupy.',
+        desc='Nauč neuron vypálit na zvonek tím, že ho spojíš s jídlem. Pak odnauč světlo pomalým drážděním a zjisti, '
+             'co se stane bez hořčíku a s blokátorem receptoru NMDA.',
         about=['dlouhodobá potenciace', 'asociativní LTP', 'receptor NMDA', 'dlouhodobý útlum', 'podmíněný reflex',
                'synaptická plasticita'],
         en='Sequencer puzzle on associative LTP: pair a weak input with a strong one until the neuron fires to the '
@@ -405,7 +405,7 @@ PAGES = {
         kind='game', chapter='pages/wetware-neurobiologie-ch2-dole-v-mezere.html', name='Filtr',
         title='Filtr: hlavolam o krátkodobé plasticitě synapsí | Větev na větvi',
         desc='Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, '
-             'nebo jen shluky. A proč jedno spolehlivé místo uvolnění porazí několik nejistých.',
+             'nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.',
         about=['krátkodobá plasticita', 'facilitace', 'synaptická deprese', 'pravděpodobnost uvolnění',
                'kvantové uvolňování', 'binomické rozdělení'],
         en='Tuning puzzle on short-term synaptic plasticity: set calcium (release probability rising with its fourth '
@@ -435,7 +435,7 @@ PAGES = {
         kind='game', chapter='pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html', name='Neznámá látka',
         title='Neznámá látka: detektivka o receptorech a Schildově grafu | Větev na větvi',
         desc='Z křivek účinku na proužku tkáně zjisti, co je v lahvičce: plný, nebo částečný agonista, kompetitivní, '
-             'nebo nevratný antagonista, či inverzní agonista. Se Schildovým grafem a rezervou receptorů.',
+             'nebo nevratný antagonista, či inverzní agonista.',
         about=['farmakodynamika', 'agonista', 'částečný agonista', 'antagonista', 'Schildova analýza',
                'rezervní receptory', 'inverzní agonista'],
         en='Organ-bath detective game: run concentration–response experiments on an isolated tissue to classify '
