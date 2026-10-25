@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T04:41:08+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T15:11:20+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -209,7 +209,7 @@
   <p class="eyebrow"><span>Hry · Molekulární biologie</span><span class="sep"></span><span class="n">Slovní hlavolam</span></p>
   <h1 class="title"><em>Slovo</em> po slovu</h1>
   <p class="deck">Měň gen po jednom písmenu DNA a&nbsp;sleduj, co z&nbsp;něj přečte ribozom. Každá bílkovina cestou musí dávat smysl.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -217,7 +217,7 @@
 <section class="prose">
   <p class="lede">Ribozom čte zprávu po trojicích písmen a&nbsp;každé trojici odpovídá jedna aminokyselina. Aminokyseliny mají jednopísmenné zkratky, a&nbsp;tak se dá bílkovina přečíst jako slovo: L je leucin, E kyselina glutamová, S&nbsp;serin. Gen ATG CTT GAA TCT TAA tedy říká LES.</p>
 
-  <p><b>Jak hrát:</b> klepni na trojici a&nbsp;uvidíš všech devět změn, které jde udělat jedním písmenem, i&nbsp;to, co by z&nbsp;nich bílkovina řekla. Vyber jednu. Startovní ATG (methionin, M) a&nbsp;koncová trojice jsou pevné a&nbsp;slovo se čte až za methioninem. Ve většině úrovní platí pravidlo evoluce: každá bílkovina cestou musí být smysluplné slovo, jinak by buňka s&nbsp;nefunkční bílkovinou neprošla.</p>
+  <p><b>Jak hrát:</b> klepni na trojici a&nbsp;uvidíš všech devět změn, které jde udělat jedním písmenem, i&nbsp;to, co by z&nbsp;nich bílkovina řekla. Vyber jednu. Startovní ATG (methionin, M) a&nbsp;koncová trojice jsou pevné a&nbsp;slovo se čte až za methioninem. Ve většině úrovní platí pravidlo evoluce: každá bílkovina cestou musí být smysluplné slovo, protože nefunkční bílkovinu by přírodní výběr vyřadil.</p>
 </section>
 
 <figure class="sim game">
@@ -455,7 +455,7 @@
       {name: 'Žebřík', start: ['CCT', 'GAA', 'TCT'], mode: 'ladder', target: 'LED', min: 4,
        goal: 'Změň PES na <b>LED</b>. Každé slovo cestou musí dávat smysl.',
        intro: '<p>Tohle už je žebřík na několik kroků. Hledej slova, přes která se dá projít.</p>',
-       win: 'Přesně takovou hru navrhl v roce 1970 John Maynard Smith: evoluce bílkovin postupuje od jedné fungující bílkoviny k&nbsp;další.'},
+       win: 'Přesně takovou hru použil v roce 1970 John Maynard Smith jako obraz evoluce bílkovin: postupuje od jedné fungující bílkoviny k&nbsp;další.'},
       {name: 'Tichý mezikrok', start: ['CCT', 'GAA', 'TCT'], mode: 'ladder', target: 'MED', min: 6,
        goal: 'Změň PES na <b>MED</b>. Bez změny, která na bílkovině není vidět, to nepůjde.',
        intro: '<p>Methionin má jedinou trojici, ATG. Najdi cestu, na které ti pomůže i tichá změna.</p>',
@@ -471,6 +471,11 @@
     function L(){ return KLEVELS[level]; }
     function protein(g){ var s = ''; for(var i = 0; i < g.length; i++){ var a = CODE[g[i]]; if(a === '*') break; s += a; } return s; }
     function functional(w){ return WORDS.indexOf(w) >= 0; }
+    function changedPositions(){                 // letters that now differ from the starting gene
+      var n = 0;
+      for(var i = 0; i < gene.length; i++) for(var p = 0; p < 3; p++) if(gene[i][p] !== orig[i][p]) n++;
+      return n;
+    }
     function mutants(ci){
       var c = gene[ci], out = [];
       for(var p = 0; p < 3; p++){
@@ -490,7 +495,7 @@
         var nt = '';
         for(var p = 0; p < 3; p++) nt += c[p] !== orig[i][p] ? '<b>' + c[p] + '</b>' : c[p];
         var a = CODE[c];
-        html += '<button type="button" class="codon' + (i === sel ? ' sel' : '') + (a === '*' ? ' stop' : '') + '" data-i="' + i + '" aria-label="Trojice ' + (i + 1) + ': ' + c + ', ' + NAMES[a] + '. Změnit."><span class="nt">' + nt + '</span><span class="aa">' + (a === '*' ? '■' : a) + '</span><span class="nm">' + NAMES[a] + '</span></button>';
+        html += '<button type="button" class="codon' + (i === sel ? ' sel' : '') + (a === '*' ? ' stop' : '') + '" data-i="' + i + '" aria-label="Trojice ' + (i + 2) + ': ' + c + ', ' + NAMES[a] + '. Změnit."><span class="nt">' + nt + '</span><span class="aa">' + (a === '*' ? '■' : a) + '</span><span class="nm">' + NAMES[a] + '</span></button>';
       });
       html += '<div class="codon fixed" title="konec"><span class="nt">TAA</span><span class="aa stopmark">■</span><span class="nm">konec</span></div>';
       host.innerHTML = html;
@@ -508,7 +513,7 @@
         var note = m.ok ? '' : (L().mode === 'silent' ? ' (není tichá)' : ' (nefunkční)');
         cols[m.p] += '<button type="button" class="ctrl mut ' + m.kind + '" data-k="' + idx + '"' + (m.ok ? '' : ' disabled') + ' aria-label="' + m.codon + ', ' + NAMES[m.aa] + ', bílkovina ' + (m.word || 'žádná') + note + '"><span class="nt">' + nt + '</span><span class="res">' + (m.aa === '*' ? '■' : m.aa) + ' → ' + res + '</span></button>';
       });
-      picker.innerHTML = '<p class="pick-head">Trojice ' + (sel + 1) + ', <b>' + gene[sel] + '</b> (' + NAMES[CODE[gene[sel]]] + '). Změna jednoho písmene:</p>' +
+      picker.innerHTML = '<p class="pick-head">Trojice ' + (sel + 2) + ', <b>' + gene[sel] + '</b> (' + NAMES[CODE[gene[sel]]] + '). Změna jednoho písmene:</p>' +
         [0, 1, 2].map(function(p){ return '<div class="pcol"><span class="plab">' + (p + 1) + '. písmeno</span>' + cols[p] + '</div>'; }).join('');
       Array.prototype.forEach.call(picker.querySelectorAll('button.mut'), function(b){
         b.addEventListener('click', function(){ apply(ms[+b.getAttribute('data-k')]); });
@@ -527,11 +532,11 @@
       words.forEach(function(x){ if(shown[shown.length - 1] !== x) shown.push(x); });
       trail.innerHTML = '<span class="m">M</span> ' + shown.map(function(x, i){ return '<span class="' + (i === shown.length - 1 ? 'now' : '') + '">' + (x || '–') + '</span>'; }).join(' → ') + (L().target ? ' <span class="tgt">cíl: ' + L().target + '</span>' : '');
       if(!changed || won) return;
-      var Lv = L(), ok = Lv.mode === 'silent' ? moves >= Lv.need : w === Lv.target;
+      var Lv = L(), nd = changedPositions(), ok = Lv.mode === 'silent' ? nd >= Lv.need : w === Lv.target;
       if(ok){
         won = true;
         done[level] = true; store.set('hra-slovo-po-slovu', done); bar.mark(level);
-        var text = '<p>' + (Lv.mode === 'silent' ? '<b>' + moves + '</b> tiché změny, bílkovina pořád říká ' + w + '.' :
+        var text = '<p>' + (Lv.mode === 'silent' ? 'Gen se od původního liší na <b>' + nd + '</b> ' + plural(nd, 'místě', 'místech', 'místech') + ' a bílkovina pořád říká ' + w + '.' :
           'Cesta: ' + shown.join(' → ') + '. Mutací: <b>' + moves + '</b>' + (moves <= Lv.min ? ', nejkratší možná cesta.' : ', šlo by to i na ' + Lv.min + '.')) + '</p><p>' + Lv.win + '</p>';
         var btns = [{label: 'Znovu', fn: function(){ choose(level); overlay(ov, null); }}];
         if(level + 1 < KLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
