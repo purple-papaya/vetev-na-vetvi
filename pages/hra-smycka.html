@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T08:30:27+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T15:11:20+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -214,7 +214,7 @@
   <p class="eyebrow"><span>Hry · Endokrinologie</span><span class="sep"></span><span class="n">Detektivka</span></p>
   <h1 class="title"><em>Smyčka</em></h1>
   <p class="deck">Štítná žláza, hypofýza a&nbsp;zpětná vazba mezi nimi. Z&nbsp;výsledků krve zjisti, co se v&nbsp;těle děje, a&nbsp;pak smyčku sprav.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -260,7 +260,7 @@
 
   <p>Zpětná vazba štítné žlázy je mimořádně citlivá: když volný T4 klesne na polovinu, TSH vyskočí na padesáti- až stonásobek. Proto se jako první obvykle měří právě TSH. Když chybí jód, hormonů se vyrábí málo, TSH stoupne a&nbsp;žlázu pobízí k&nbsp;výkonu i&nbsp;k&nbsp;růstu. Vznikne struma a&nbsp;výsledky krve můžou zůstat skoro v&nbsp;normě. U&nbsp;Gravesovy choroby tělo vyrábí protilátky, které napodobí TSH. Na rozdíl od hypofýzy je nic nebrzdí: žláza roste a&nbsp;vyrábí víc hormonů, zatímco TSH klesne hluboko pod normál.</p>
 
-  <p>Jenže když vázne samotná hypofýza, vyjde TSH nízko nebo nepřiměřeně normálně, i&nbsp;když T4 chybí. Takovou centrální hypotyreózu samotné TSH snadno přehlédne. Při léčbě pak TSH o&nbsp;dávce nic neřekne, a&nbsp;tak se hlídá přímo volný T4, který má být v&nbsp;horní polovině normy.</p>
+  <p>Jenže když vázne samotná hypofýza nebo hypotalamus nad ní, vyjde TSH nízko nebo nepřiměřeně normálně, i&nbsp;když T4 chybí. Kdo měří jen TSH, takovou centrální hypotyreózu snadno přehlédne. Při léčbě pak TSH o&nbsp;dávce nic neřekne, a&nbsp;tak se hlídá přímo volný T4, který má být v&nbsp;horní polovině normy. Když selhává hypofýza, často vázne i&nbsp;výroba ACTH, hormonu, který pobízí nadledviny ke tvorbě kortizolu. Proto se před nasazením tablet vždy nejdřív ověří kortizol, a&nbsp;když je ho málo, nasadí se napřed jeho náhrada. Samotný tyroxin by jinak mohl vyvolat život ohrožující nedostatek kortizolu.</p>
 
   <p>Smyčka se dá i&nbsp;oklamat tabletami: hypofýza nepozná, odkud T4 pochází, a&nbsp;výrobu TSH utlumí stejně. Na tom stojí léčba po odstranění žlázy. Gravesova choroba se obvykle nejdřív léčí tyreostatiky, léky, které brzdí výrobu hormonů. Další možností je radioaktivní jód nebo operace, po kterých tělo většinou potřebuje hormon v&nbsp;tabletách. Víc o&nbsp;hormonech a&nbsp;smyčkách je v&nbsp;kapitole <a href="wetware-endokrinologie-ch1-dopis-pro-vsechny.html">Dopis pro všechny</a>.</p>
 
@@ -476,11 +476,11 @@
        patients: [{c: {iodine: false}}, {c: {graves: true}}, {c: {dose: 1.5}}, {c: {pit: true}}],
        goal: 'Zjisti, co trápí <b>čtyři pacienty</b>. Nastav smyčku tak, aby model dal stejné výsledky jako krev pacienta, a&nbsp;potvrď.',
        intro: '<p>Každý pacient má jednu poruchu: chybí mu jód, má Gravesovu chorobu, selhává mu hypofýza, nebo bere tablety T4, které nepotřebuje.</p><p>Přepínači nastav, co si myslíš, a&nbsp;model hned ukáže, jak by výsledky vypadaly po osmi měsících. Šipky u&nbsp;čísel ukazují, co je mimo normu.</p>',
-       win: 'Dokud smyčka funguje, TSH jde proti T4. Když jsou nízko oba, vázne hypofýza. A&nbsp;velikost žlázy prozradí, jestli ji něco pobízí, nebo odpočívá.'},
+       win: 'Dokud smyčka funguje, TSH jde proti T4. Když jsou nízko oba, porucha je nad štítnou žlázou – v&nbsp;hypofýze nebo v&nbsp;hypotalamu. A&nbsp;velikost žlázy prozradí, jestli ji něco pobízí, nebo odpočívá.'},
       {name: 'Dávka', mode: 'treat', edit: ['dose'],
        patients: [{c: {removed: true, dose: 0.8}, note: 'Štítnou žlázu má odstraněnou a&nbsp;bere 0,8× denní výroby T4 v&nbsp;tabletách.'},
-                  {c: {pit: true}, judge: 'central', note: 'Hypofýza po operaci nádoru nevyrábí dost TSH. Štítná žláza je zdravá, jen ji nikdo nepobízí.'}],
-       goal: 'Nastav dávku tablet tak, aby výsledky byly v&nbsp;<b>normě</b>: volný T4 0,8–1,2× a&nbsp;TSH 0,5–2×.',
+                  {c: {pit: true}, judge: 'central', note: 'Hypofýza po operaci nádoru nevyrábí dost TSH. Štítná žláza je zdravá, jen ji nikdo nepobízí. Kortizol už má ověřený, to se před tabletami T4 dělá vždycky.'}],
+       goal: 'Nastav dávku tablet tak, aby byl pacient v&nbsp;<b>normě</b>. Obvykle to znamená volný T4 0,8–1,2× a&nbsp;TSH 0,5–2×.',
        intro: '<p>Když štítná žláza chybí nebo ji nikdo nepobízí, musí hormon dodat tablety. Dávku nastavíš posuvníkem, v&nbsp;násobcích denní výroby zdravé žlázy.</p><p>Tabulka a&nbsp;graf ukážou, kam se výsledky za osm měsíců posunou.</p>',
        win: 'Hypofýza nepozná, odkud T4 pochází, a&nbsp;tak podle TSH velmi citlivě poznáš, jestli je tablet akorát. Jenže jen tehdy, když hypofýza funguje. Bez ní zbývá hlídat samotný volný T4.'},
       {name: 'Léčba', mode: 'treat', edit: ['removed', 'iodine', 'dose'], size: true,
@@ -554,7 +554,7 @@
         if(sw.slider){
           if(Math.abs(parseFloat(c.inp.value) - hyp.dose) > 1e-6) c.inp.value = String(hyp.dose);
           setTxt(c.out, fDose(hyp.dose));
-          c.inp.setAttribute('aria-valuetext', hyp.dose ? num(hyp.dose, 2) + ' denní výroby' : 'žádné tablety');
+          c.inp.setAttribute('aria-valuetext', hyp.dose ? num(hyp.dose, 2) + '× denní výroby' : 'žádné tablety');
         } else {
           var cur = sw.opts.filter(function(o){ return o[0] === hyp[sw.k]; })[0];
           setTxt(c.btn, cur[1]);
@@ -584,7 +584,7 @@
       if(c.iodine === false) return 'Chybí jód: hormonu se vyrábí málo, TSH žlázu pobízí a&nbsp;ta roste. Výsledky krve zůstanou skoro v&nbsp;normě, ale za cenu strumy.';
       if(c.graves) return 'Gravesova choroba: protilátky pobízejí žlázu místo TSH. Žláza roste, T4 stoupá a&nbsp;hypofýza výrobu TSH skoro zastaví.';
       if(c.pit) return 'Selhává hypofýza: TSH je nízko, a&nbsp;přitom chybí i&nbsp;T4. Když jsou nízko oba, porucha je nad štítnou žlázou.';
-      return 'Tablety navíc: T4 je vysoko, TSH spadne a&nbsp;žláza bez pobízení zmenší.';
+      return 'Tablety navíc: T4 je vysoko, TSH spadne a&nbsp;žláza se bez pobízení zmenší.';
     }
     function judge(p, r, c){
       if(p.judge === 'central'){
