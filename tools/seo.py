@@ -362,6 +362,85 @@ PAGES = {
         about=['štítná žláza', 'TSH', 'tyroxin', 'zpětná vazba', 'struma', 'Gravesova choroba', 'centrální hypotyreóza'],
         en='Thyroid detective game: read free T4, TSH and gland size to tell iodine deficiency, Graves disease, pituitary '
            'failure and excess tablets apart, then titrate levothyroxine and treat.'),
+    'pages/hra-bez-dechu.html': dict(
+        kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Bez dechu',
+        title='Bez dechu: hra o kvašení a NAD⁺ | Větev na větvi',
+        desc='Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: červená krvinka bez mitochondrií, sprint, '
+             'kvasnice a Pasteurův efekt a nádor, který kvasí i s kyslíkem.',
+        about=['glykolýza', 'NAD⁺', 'kvašení', 'laktát', 'Pasteurův efekt', 'Warburgův efekt', 'hexokináza'],
+        en='Real-time control game on why fermentation exists: route pyruvate between oxygen-limited mitochondria and '
+           'lactate or ethanol to keep the small NAD⁺ pool turning over in a red blood cell, a sprinting muscle, yeast '
+           'with intermittent air (Pasteur effect) and a tumour cell that ferments even with oxygen, where a '
+           'hexokinase-inhibitor dose must spare red cells.'),
+    'pages/hra-pritoky.html': dict(
+        kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Přítoky',
+        title='Přítoky: skládačka o cestách cukrů do glykolýzy | Větev na větvi',
+        desc='Přiveď do glykolýzy cukry z mléka, chleba i z glykogenu s co nejlepší bilancí ATP: galaktóza, fruktóza '
+             've svalu a v játrech, fosforolýza a dvě galaktosemie.',
+        about=['glykolýza', 'galaktóza', 'fruktóza', 'glykogen', 'fosforolýza', 'galaktosemie', 'laktóza'],
+        en='Puzzle on the feeder pathways of glycolysis: build enzyme routes for lactose, starch, glycogen and sucrose '
+           'into glycolysis in muscle and liver while keeping the ATP balance (phosphorolysis saves one ATP), and tell '
+           'two galactosemias apart from what accumulates.'),
+    'pages/hra-sabotaz.html': dict(
+        kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Sabotáž',
+        title='Sabotáž: detektivka o jedech glykolýzy | Větev na větvi',
+        desc='Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničné šťávě: jodacetát, fluorid, '
+             'arzeničnan, se kterým dráha běží bez zisku, a falešná glukóza.',
+        about=['glykolýza', 'inhibitory enzymů', 'jodacetát', 'fluorid', 'arzeničnan', '2-deoxyglukóza', 'meziprodukty'],
+        en='Lab detective game based on the classic inhibitor technique: measure which glycolytic intermediates pile '
+           'up in a poisoned yeast extract and accuse the blocked enzyme: iodoacetate (glyceraldehyde-3-phosphate '
+           'dehydrogenase), fluoride (enolase), arsenate (glycolysis runs without net ATP) and 2-deoxyglucose (stuck '
+           'after hexokinase), then an unknown sample on a tight budget.'),
+    'pages/hra-pavlovuv-zvonek.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch2-dole-v-mezere.html', name='Pavlovův zvonek',
+        title='Pavlovův zvonek: hra o asociativní dlouhodobé potenciaci | Větev na větvi',
+        desc='Nauč jediný neuron vypálit na zvonek tím, že ho spojíš s jídlem. Odnauč světlo pomalým drážděním, zkus '
+             'to bez hořčíku a s blokátorem receptoru NMDA a nech spolupracovat slabé vstupy.',
+        about=['dlouhodobá potenciace', 'asociativní LTP', 'receptor NMDA', 'dlouhodobý útlum', 'podmíněný reflex',
+               'synaptická plasticita'],
+        en='Sequencer puzzle on associative LTP: pair a weak input with a strong one until the neuron fires to the '
+           'bell alone, keep an unpaired input weak (input specificity), weaken a learned input with low-frequency '
+           'stimulation (LTD), break the coincidence rule by removing Mg²⁺, and use the cooperativity of weak inputs.'),
+    'pages/hra-filtr.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch2-dole-v-mezere.html', name='Filtr',
+        title='Filtr: hlavolam o krátkodobé plasticitě synapsí | Větev na větvi',
+        desc='Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, '
+             'nebo jen shluky. A proč jedno spolehlivé místo uvolnění porazí několik nejistých.',
+        about=['krátkodobá plasticita', 'facilitace', 'synaptická deprese', 'pravděpodobnost uvolnění',
+               'kvantové uvolňování', 'binomické rozdělení'],
+        en='Tuning puzzle on short-term synaptic plasticity: set calcium (release probability rising with its fourth '
+           'power), ready vesicles, refill time and residual calcium so a synapse passes every spike of a train, only '
+           'burst onsets or only bursts, then pick release sites and probability for reliable transmission at a fixed '
+           'mean quantal content.'),
+    'pages/hra-kostky-v-mezere.html': dict(
+        kind='game', chapter='pages/wetware-neurobiologie-ch2-dole-v-mezere.html', name='Kostky v mezeře',
+        title='Kostky v mezeře: statistická hra o kvantech přenašeče | Větev na větvi',
+        desc='Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné '
+             'odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.',
+        about=['kvantové uvolňování', 'Poissonovo rozdělení', 'binomické rozdělení', 'nervosvalová ploténka',
+               'statistický odhad'],
+        en='Statistics game on quantal analysis: record end-plate potentials against a time budget, estimate the mean '
+           'quantal content from failures and from mean amplitude, see which estimator survives rare failures and '
+           'noise, detect a binomial synapse where Poisson fails, and estimate the number of release sites.'),
+    'pages/hra-kafe.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html', name='Kafe',
+        title='Kafe: hra o kofeinu, adenosinu a toleranci | Větev na větvi',
+        desc='Naplánuj kafe na zkoušku, na odpoledne i na celý týden. Kofein soutěží s adenosinem o receptory, '
+             'tolerance roste a odvykání může bolet hlavu.',
+        about=['kofein', 'adenosin', 'kompetitivní antagonista', 'tolerance', 'abstinenční příznaky', 'poločas', 'spánek'],
+        en='Week-planner game on caffeine as a competitive antagonist of adenosine: place coffees to stay alert for an '
+           'exam, an afternoon workshop and a week of meetings while still falling asleep, watch tolerance build as '
+           'receptor numbers rise, and taper off without withdrawal headaches.'),
+    'pages/hra-neznama-latka.html': dict(
+        kind='game', chapter='pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html', name='Neznámá látka',
+        title='Neznámá látka: detektivka o receptorech a Schildově grafu | Větev na větvi',
+        desc='Z křivek účinku na proužku tkáně zjisti, co je v lahvičce: plný, nebo částečný agonista, kompetitivní, '
+             'nebo nevratný antagonista, či inverzní agonista. Se Schildovým grafem a rezervou receptorů.',
+        about=['farmakodynamika', 'agonista', 'částečný agonista', 'antagonista', 'Schildova analýza',
+               'rezervní receptory', 'inverzní agonista'],
+        en='Organ-bath detective game: run concentration–response experiments on an isolated tissue to classify '
+           'unlabelled drugs as full or partial agonists, competitive or irreversible antagonists, or inverse agonists, '
+           'estimate pA2 from a Schild plot, and use receptor knock-out to reveal receptor reserve.'),
     # ---- the author
     'pages/o-mne.html': dict(
         kind='about', name='O mně', title='O mně – Pája, autorka Větve na větvi',
