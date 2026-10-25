@@ -5,44 +5,305 @@
   <link rel="self" type="application/atom+xml" href="https://vetevnavetvi.cz/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/"/>
   <id>https://vetevnavetvi.cz/</id>
-  <updated>2026-10-25T10:52:39+00:00</updated>
+  <updated>2026-10-25T16:38:51+00:00</updated>
   <author><name>Pája</name><uri>https://vetevnavetvi.cz/pages/o-mne.html</uri></author>
   <icon>https://vetevnavetvi.cz/assets/og/logo.png</icon>
+  <entry>
+    <title>Tělo, které se postavilo samo</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html</id>
+    <published>2026-10-21T11:00:09+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Vývojová biologie"/>
+    <summary>Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, laterální inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Čtení bez čtenáře</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html</id>
+    <published>2026-10-21T11:00:09+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Molekulární biologie"/>
+    <summary>Jak se z DNA stane tělo, když v buňce nikdo nečte: opis s korekturou, mRNA a bílkoviny, genetický kód a mutace, přepínače genů. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Darwin v mízní uzlině</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html</id>
+    <published>2026-10-21T11:00:09+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Imunologie"/>
+    <summary>Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Štětinky</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-stetinky.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-stetinky.html</id>
+    <published>2026-10-22T04:49:31+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.</summary>
+  </entry>
+  <entry>
+    <title>Slovo po slovu</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html</id>
+    <published>2026-10-22T04:41:08+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.</summary>
+  </entry>
+  <entry>
+    <title>Proužek</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-prouzek.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-prouzek.html</id>
+    <published>2026-10-22T03:56:06+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.</summary>
+  </entry>
+  <entry>
+    <title>Pěstírna protilátek</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html</id>
+    <published>2026-10-22T04:46:21+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.</summary>
+  </entry>
+  <entry>
+    <title>Hodiny a vlna</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html</id>
+    <published>2026-10-22T04:29:30+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Tikej segmentačními hodinami ve chvíli, kdy jejich kmit doběhne k přední hranici, a zárodek dostane páry somitů. Od dánia po myš a nakonec bez viditelných hodin.</summary>
+  </entry>
+  <entry>
+    <title>Brzlík</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-brzlik.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-brzlik.html</id>
+    <published>2026-10-22T03:33:13+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Hry"/>
+    <summary>Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.</summary>
+  </entry>
+  <entry>
+    <title>Spád, práh, smyčka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html"/>
+    <id>https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html</id>
+    <published>2026-10-21T11:18:59+00:00</published>
+    <updated>2026-10-25T16:38:51+00:00</updated>
+    <category term="Blog"/>
+    <summary>Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil.</summary>
+  </entry>
   <entry>
     <title>Dole v mezeře</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
+    <updated>2026-10-25T16:38:50+00:00</updated>
     <category term="Neurobiologie"/>
     <summary>Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Jak se sůl naučila říkat já</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Neurobiologie"/>
+    <summary>Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Moře pod kůží</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html</id>
+    <published>2026-10-17T10:58:47+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Fyziologie"/>
+    <summary>Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.</summary>
   </entry>
   <entry>
     <title>Podání ruky zblízka</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
+    <updated>2026-10-25T16:38:50+00:00</updated>
     <category term="Farmakologie"/>
     <summary>Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Lék je vlna</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Farmakologie"/>
+    <summary>Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Dopis pro všechny</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html</id>
+    <published>2026-10-21T11:00:09+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Endokrinologie"/>
+    <summary>Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Jsi sloveso</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html"/>
+    <id>https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html</id>
+    <published>2026-07-06T06:52:38+02:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Biochemie"/>
+    <summary>Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.</summary>
   </entry>
   <entry>
     <title>První rameno schodiště</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html"/>
     <id>https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html</id>
     <published>2026-10-24T15:36:26+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
+    <updated>2026-10-25T16:38:50+00:00</updated>
     <category term="Biochemie"/>
     <summary>Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.</summary>
+  </entry>
+  <entry>
+    <title>Zdířka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-zdirka.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-zdirka.html</id>
+    <published>2026-10-22T08:10:33+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, částečným agonistou se stropem a antagonistou, který odezní dřív než lék.</summary>
+  </entry>
+  <entry>
+    <title>Vana bez zátky</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html</id>
+    <published>2026-10-22T03:43:20+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, slabé ledviny, grapefruit a nasycovací dávka.</summary>
+  </entry>
+  <entry>
+    <title>Spiknutí</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-spiknuti.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-spiknuti.html</id>
+    <published>2026-10-22T03:49:32+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.</summary>
+  </entry>
+  <entry>
+    <title>Smyčka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-smycka.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-smycka.html</id>
+    <published>2026-10-22T08:30:27+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.</summary>
+  </entry>
+  <entry>
+    <title>Schodiště</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-schodiste.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-schodiste.html</id>
+    <published>2026-10-22T04:34:44+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a zjisti, co se stane bez kyslíku.</summary>
   </entry>
   <entry>
     <title>Sabotáž</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-sabotaz.html"/>
     <id>https://vetevnavetvi.cz/pages/hra-sabotaz.html</id>
     <published>2026-10-25T09:11:18+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
+    <updated>2026-10-25T16:38:50+00:00</updated>
     <category term="Hry"/>
     <summary>Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničném výtažku: jodacetát, fluorid, arseničnan, nebo falešná glukóza.</summary>
+  </entry>
+  <entry>
+    <title>Pulzy</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pulzy.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-pulzy.html</id>
+    <published>2026-10-22T03:18:22+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví.</summary>
+  </entry>
+  <entry>
+    <title>Přeskoky</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-preskoky.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-preskoky.html</id>
+    <published>2026-10-22T08:43:11+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.</summary>
+  </entry>
+  <entry>
+    <title>Plný sklad</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-plny-sklad.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-plny-sklad.html</id>
+    <published>2026-10-22T08:57:27+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.</summary>
+  </entry>
+  <entry>
+    <title>Pavlovův zvonek</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Nauč neuron vypálit na zvonek tím, že ho spojíš s jídlem. Pak odnauč světlo pomalým drážděním a zjisti, co se stane bez hořčíku a s blokátorem receptoru NMDA.</summary>
+  </entry>
+  <entry>
+    <title>Kostky v mezeře</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.</summary>
+  </entry>
+  <entry>
+    <title>Kohoutky</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kohoutky.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-kohoutky.html</id>
+    <published>2026-10-22T08:00:40+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých tepen. Ruměnec, běh a běh v horku.</summary>
+  </entry>
+  <entry>
+    <title>Kafe</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kafe.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-kafe.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Naplánuj kafe na zkoušku, na odpoledne i na celý týden. Kofein soutěží s adenosinem o receptory, tolerance roste a odvykání může bolet hlavu.</summary>
+  </entry>
+  <entry>
+    <title>Horečka</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-horecka.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-horecka.html</id>
+    <published>2026-10-22T04:19:03+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.</summary>
+  </entry>
+  <entry>
+    <title>Bez dechu</title>
+    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-bez-dechu.html"/>
+    <id>https://vetevnavetvi.cz/pages/hra-bez-dechu.html</id>
+    <published>2026-10-25T09:11:18+00:00</published>
+    <updated>2026-10-25T16:38:50+00:00</updated>
+    <category term="Hry"/>
+    <summary>Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: v červené krvince bez mitochondrií, při sprintu a v kvasnicích s Pasteurovým efektem. Nakonec dávkuj inhibitor hexokinázy proti nádoru, který kvasí i s kyslíkem.</summary>
   </entry>
   <entry>
     <title>Přítoky</title>
@@ -54,15 +315,6 @@
     <summary>Přiveď do glykolýzy cukry z mléka, chleba i z glykogenu s co nejlepší bilancí ATP: galaktóza, fruktóza ve svalu a v játrech, fosforolýza a dvě galaktosemie.</summary>
   </entry>
   <entry>
-    <title>Pavlovův zvonek</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html</id>
-    <published>2026-10-25T09:11:18+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
-    <category term="Hry"/>
-    <summary>Nauč neuron vypálit na zvonek tím, že ho spojíš s jídlem. Pak odnauč světlo pomalým drážděním a zjisti, co se stane bez hořčíku a s blokátorem receptoru NMDA.</summary>
-  </entry>
-  <entry>
     <title>Neznámá látka</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-neznama-latka.html"/>
     <id>https://vetevnavetvi.cz/pages/hra-neznama-latka.html</id>
@@ -72,24 +324,6 @@
     <summary>Z křivek účinku na proužku tkáně zjisti, co je v lahvičce: plný, nebo částečný agonista, kompetitivní, nebo nevratný antagonista, či inverzní agonista.</summary>
   </entry>
   <entry>
-    <title>Kostky v mezeře</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html</id>
-    <published>2026-10-25T09:11:18+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
-    <category term="Hry"/>
-    <summary>Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.</summary>
-  </entry>
-  <entry>
-    <title>Kafe</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kafe.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-kafe.html</id>
-    <published>2026-10-25T09:11:18+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
-    <category term="Hry"/>
-    <summary>Naplánuj kafe na zkoušku, na odpoledne i na celý týden. Kofein soutěží s adenosinem o receptory, tolerance roste a odvykání může bolet hlavu.</summary>
-  </entry>
-  <entry>
     <title>Filtr</title>
     <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-filtr.html"/>
     <id>https://vetevnavetvi.cz/pages/hra-filtr.html</id>
@@ -97,239 +331,5 @@
     <updated>2026-10-25T10:52:39+00:00</updated>
     <category term="Hry"/>
     <summary>Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.</summary>
-  </entry>
-  <entry>
-    <title>Bez dechu</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-bez-dechu.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-bez-dechu.html</id>
-    <published>2026-10-25T09:11:18+00:00</published>
-    <updated>2026-10-25T10:52:39+00:00</updated>
-    <category term="Hry"/>
-    <summary>Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: červená krvinka bez mitochondrií, sprint, kvasnice a Pasteurův efekt a nádor, který kvasí i s kyslíkem.</summary>
-  </entry>
-  <entry>
-    <title>Jak se sůl naučila říkat já</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-24T15:36:40+00:00</updated>
-    <category term="Neurobiologie"/>
-    <summary>Jak z iontů soli vznikne myšlenka: klidový potenciál a sodno-draselná pumpa, práh a akční potenciál, synapse a 86 miliard neuronů. S pěti simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Lék je vlna</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-farmakologie-ch1-lek-je-vlna.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-24T15:36:26+00:00</updated>
-    <category term="Farmakologie"/>
-    <summary>Proč se lék bere dvakrát denně: koncentrace v čase, poločas a ustálený stav, receptory, potence a účinnost, terapeutické okno. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Jsi sloveso</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-ch1-jsi-sloveso.html</id>
-    <published>2026-07-06T06:52:38+02:00</published>
-    <updated>2026-10-24T15:36:26+00:00</updated>
-    <category term="Biochemie"/>
-    <summary>Proč jsi spíš děj než věc: metabolismus jako pomalý řízený oheň, ATP, energie po schodech a zpětné vazby bez ředitele. Se třemi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Zdířka</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-zdirka.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-zdirka.html</id>
-    <published>2026-10-22T08:10:33+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Léky se přetahují o receptory: drž účinek v pásmu s plným agonistou, stokrát potentnějším lékem, částečným agonistou se stropem a antagonistou, který odezní dřív než lék.</summary>
-  </entry>
-  <entry>
-    <title>Vana bez zátky</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-vana-bez-zatky.html</id>
-    <published>2026-10-22T03:43:20+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a toxickou. Rychlé odbourávání, slabé ledviny, grapefruit a nasycovací dávka.</summary>
-  </entry>
-  <entry>
-    <title>Štětinky</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-stetinky.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-stetinky.html</id>
-    <published>2026-10-22T04:49:31+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Rozmísti budoucí štětinky octomilky na políčko buněk tak, aby mozaika laterální inhibice přes Delta a Notch byla stabilní: co nejhustší, co nejřidší a s dlouhými výběžky.</summary>
-  </entry>
-  <entry>
-    <title>Spiknutí</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-spiknuti.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-spiknuti.html</id>
-    <published>2026-10-22T03:49:32+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Zapoj pár neuronů s excitačními a inhibičními synapsemi a prahy tak, aby spolu rozhodovaly: kterýkoli, oba naráz, většina, buď, anebo.</summary>
-  </entry>
-  <entry>
-    <title>Smyčka</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-smycka.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-smycka.html</id>
-    <published>2026-10-22T08:30:27+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Z výsledků krve zjisti, kde se pokazila smyčka hypofýzy a štítné žlázy: nedostatek jódu, Gravesova choroba, selhávající hypofýza, nebo tablety navíc. Pak dávkuj T4 a léč.</summary>
-  </entry>
-  <entry>
-    <title>Slovo po slovu</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-slovo-po-slovu.html</id>
-    <published>2026-10-22T04:41:08+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Měň gen po jednom písmenu DNA a čti bílkovinu jako slovo: tiché změny, záměny, předčasný konec a slovní žebřík, ve kterém musí každá bílkovina cestou fungovat.</summary>
-  </entry>
-  <entry>
-    <title>Schodiště</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-schodiste.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-schodiste.html</id>
-    <published>2026-10-22T04:34:44+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Glukóza by shořela jedním skokem. Rozděl její pád na schody, ze kterých buňka nabere ATP a NADH, a zjisti, co se stane bez kyslíku.</summary>
-  </entry>
-  <entry>
-    <title>Pulzy</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pulzy.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-pulzy.html</id>
-    <published>2026-10-22T03:18:22+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Jsi hypotalamus a hypofýza tě poslechne, jen když posíláš GnRH v pulzech. Proč nepřetržitý přísun GnRH tvorbu LH naopak zastaví.</summary>
-  </entry>
-  <entry>
-    <title>Proužek</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-prouzek.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-prouzek.html</id>
-    <published>2026-10-22T03:56:06+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Poskládej přepínač genu eve z vazebných míst pro Bicoid, Hunchback, Giant a Krüppel tak, aby se gen zapnul jen v druhém proužku zárodku octomilky. Pak předpovídej pokusy.</summary>
-  </entry>
-  <entry>
-    <title>Přeskoky</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-preskoky.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-preskoky.html</id>
-    <published>2026-10-22T08:43:11+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Rozmísti Ranvierovy zářezy na myelinizovaný axon tak, aby vzruch doskočil na konec a co nejrychleji. Proč nejdelší skoky nejsou nejrychlejší a co s vedením udělá roztroušená skleróza.</summary>
-  </entry>
-  <entry>
-    <title>Plný sklad</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-plny-sklad.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-plny-sklad.html</id>
-    <published>2026-10-22T08:57:27+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Rozhodni, který enzym má plný sklad brzdit: první krok dráhy, větve s vlastními brzdami a dvě silnice, po kterých jezdí rozklad a stavba. Metabolismus, který se řídí sám.</summary>
-  </entry>
-  <entry>
-    <title>Pěstírna protilátek</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-pestirna-protilatek.html</id>
-    <published>2026-10-22T04:46:21+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Vybírej v zárodečném centru, které B-lymfocyty přežijí, a vypěstuj mutacemi a výběrem protilátku, která pasuje. Přísnější výběr, když antigenu ubývá, a paměť proti pozměněnému viru.</summary>
-  </entry>
-  <entry>
-    <title>Kohoutky</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-kohoutky.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-kohoutky.html</id>
-    <published>2026-10-22T08:00:40+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Srdce víc neutáhne: rozveď krev mezi mozek, svaly, trávicí trubici, ledviny a kůži jen šířkou malých tepen. Ruměnec, běh a běh v horku.</summary>
-  </entry>
-  <entry>
-    <title>Horečka</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-horecka.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-horecka.html</id>
-    <published>2026-10-22T04:19:03+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Jsi smyčka, která hlídá tělesnou teplotu: cévy, pot a třes proti mrazu a vedru, zpožděné zprávy, které rozkmitají regulaci, a horečka jako posunutá žádaná hodnota.</summary>
-  </entry>
-  <entry>
-    <title>Hodiny a vlna</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-hodiny-a-vlna.html</id>
-    <published>2026-10-22T04:29:30+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry somitů. Od dánia po myš a nakonec bez viditelných hodin.</summary>
-  </entry>
-  <entry>
-    <title>Brzlík</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/hra-brzlik.html"/>
-    <id>https://vetevnavetvi.cz/pages/hra-brzlik.html</id>
-    <published>2026-10-22T03:33:13+00:00</published>
-    <updated>2026-10-22T08:59:19+00:00</updated>
-    <category term="Hry"/>
-    <summary>Jsi brzlík a rozhoduješ o osudu mladých T-lymfocytů: kdo nepozná vlastní MHC, kdo je nebezpečný a kdo bude regulační. A co se stane, když přestane fungovat AIRE.</summary>
-  </entry>
-  <entry>
-    <title>Spád, práh, smyčka</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html"/>
-    <id>https://vetevnavetvi.cz/pages/blog-spad-prah-smycka.html</id>
-    <published>2026-10-21T11:18:59+00:00</published>
-    <updated>2026-10-21T11:26:18+00:00</updated>
-    <category term="Blog"/>
-    <summary>Co mají společného metabolismus, nervy, léky, geny, imunita, vývoj i hormony: spád, práh a smyčka. A nikde nikdo, kdo by to řídil.</summary>
-  </entry>
-  <entry>
-    <title>Tělo, které se postavilo samo</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html</id>
-    <published>2026-10-21T11:00:09+00:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Vývojová biologie"/>
-    <summary>Jak z jediné buňky vyroste tělo bez plánku: morfogeny a prahy, boční inhibice Notch–Delta, segmentační hodiny a řízená buněčná smrt. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Čtení bez čtenáře</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-molekularni-biologie-ch1-cteni-bez-ctenare.html</id>
-    <published>2026-10-21T11:00:09+00:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Molekulární biologie"/>
-    <summary>Jak se z DNA stane tělo, když v buňce nikdo nečte: opis s korekturou, mRNA a bílkoviny, genetický kód a mutace, přepínače genů. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Darwin v mízní uzlině</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-imunologie-ch1-darwin-v-mizni-uzline.html</id>
-    <published>2026-10-21T11:00:09+00:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Imunologie"/>
-    <summary>Jak tělo pozná vetřelce, kterého nikdy nevidělo: receptory pro vzory, V(D)J rekombinace, výběr v brzlíku, zárodečná centra a paměť. Se čtyřmi simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Moře pod kůží</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-fyziologie-ch1-more-pod-kuzi.html</id>
-    <published>2026-10-17T10:58:47+00:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Fyziologie"/>
-    <summary>Jak tělo drží vnitřní prostředí stálé: negativní zpětná vazba, spády a pumpy, proudění, poskládané povrchy a obnova buněk. S pěti simulacemi.</summary>
-  </entry>
-  <entry>
-    <title>Dopis pro všechny</title>
-    <link rel="alternate" type="text/html" href="https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html"/>
-    <id>https://vetevnavetvi.cz/pages/wetware-endokrinologie-ch1-dopis-pro-vsechny.html</id>
-    <published>2026-10-21T11:00:09+00:00</published>
-    <updated>2026-10-21T11:00:09+00:00</updated>
-    <category term="Endokrinologie"/>
-    <summary>Hormony jako zprávy pro celé tělo: receptory a afinita, zpětná vazba štítné žlázy, poločasy, denní rytmus kortizolu a pulzy GnRH. Se čtyřmi simulacemi.</summary>
   </entry>
 </feed>

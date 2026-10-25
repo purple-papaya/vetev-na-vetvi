@@ -184,3 +184,6 @@ footer.foot a{color:var(--forest);}
 .hry-blok .druh{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7B8C6A;margin-left:.35rem;}
 .hry-blok .co{display:block;margin-top:.2rem;font-size:.93rem;color:#4A4F42;}
 .hero .dateline{margin-top:1.1rem;}
+
+/* Kotvy na části kapitoly: nadpis nesmí zajet pod lepicí horní lištu. */
+h2[id],.sim[id],canvas[id]{scroll-margin-top:4.5rem;}

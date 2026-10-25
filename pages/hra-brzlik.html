@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T03:33:13+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T16:38:51+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -169,7 +169,7 @@
    },
    "citation": [
     "Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 24, s. 1389–1391 a 1401: pozitivní a negativní selekce v brzlíku, regulační T-lymfocyty a AIRE.",
-    "Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů."
+    "Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a výběr není dokonalý. Ve hře se z každé buňky se čtyřmi kontakty stane regulační, ve skutečnosti jen z některých. Ve hře zmizí s AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů."
    ]
   },
   {
@@ -212,7 +212,7 @@
   <p class="eyebrow"><span>Hry · Imunologie</span><span class="sep"></span><span class="n">Třídicí hra</span></p>
   <h1 class="title"><em>Brzlík</em></h1>
   <p class="deck">Jsi brzlík. Z&nbsp;kostní dřeně ti chodí mladé T-lymfocyty a&nbsp;ty rozhoduješ, které pustíš do těla.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -244,11 +244,11 @@
         <button class="ctrl f-delete" type="button" data-fate="delete"><kbd>4</kbd>Vyřadit</button>
       </div>
       <div class="game-feedback" id="b-fb" aria-live="polite"></div>
-      <div class="sim-controls">
-        <button class="ctrl" id="b-calm" type="button" aria-pressed="false">Bez spěchu</button>
-        <button class="ctrl" id="b-restart" type="button">Znovu</button>
-      </div>
       <div class="game-overlay" id="b-ov" hidden></div>
+    </div>
+    <div class="sim-controls">
+      <button class="ctrl" id="b-calm" type="button" aria-pressed="false">Bez spěchu</button>
+      <button class="ctrl" id="b-restart" type="button">Znovu</button>
     </div>
     <div class="levels" id="b-levels"></div>
   </div>
@@ -262,7 +262,7 @@
 
   <p>Mezi tím je pásmo slabých vazeb. Takové buňky přežijí a&nbsp;odcházejí do krve jako pomocné nebo cytotoxické T-lymfocyty. Některé z&nbsp;těch, které se vážou docela silně, ale ne dost na vyřazení, se stanou regulačními T-lymfocyty. Ty pak v&nbsp;těle tlumí jiné lymfocyty namířené proti vlastním tkáním.</p>
 
-  <p>Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí jen β-buňky slinivky, a&nbsp;přesto ho brzlík dospívajícím lymfocytům ukazuje. Stará se o&nbsp;to bílkovina AIRE, která v&nbsp;části buněk dřeně brzlíku spustí slabý přepis 75–90&nbsp;% všech genů. Lidé i&nbsp;myši s&nbsp;nefunkčním AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A&nbsp;když se lymfocyty namířené proti inzulinu nevyřadí, zničí β-buňky a&nbsp;vznikne cukrovka 1. typu.</p>
+  <p>Zbývá háček, kolem kterého se točí třetí úroveň. Inzulin vyrábějí jen β-buňky slinivky, a&nbsp;přesto ho brzlík dospívajícím lymfocytům ukazuje. Epitelové buňky dřeně brzlíku dohromady slabě přepisují 75–90&nbsp;% všech genů, včetně těch, které jinak fungují jen v&nbsp;jediném orgánu, a&nbsp;u&nbsp;tisíců z&nbsp;nich, mezi nimi u&nbsp;inzulinu, to zařizuje bílkovina AIRE. Lidé i&nbsp;myši s&nbsp;nefunkčním AIRE mají těžké autoimunitní onemocnění mnoha orgánů. A&nbsp;když se lymfocyty namířené proti inzulinu nevyřadí, mohou zničit β-buňky a&nbsp;způsobit cukrovku 1.&nbsp;typu.</p>
 
   <p>Víc o&nbsp;generátoru receptorů, škole v&nbsp;brzlíku i&nbsp;o&nbsp;tom, co se děje potom v&nbsp;mízních uzlinách, je v&nbsp;kapitole <a href="wetware-imunologie-ch1-darwin-v-mizni-uzline.html">Darwin v&nbsp;mízní uzlině</a>.</p>
 </section>
@@ -275,7 +275,7 @@
   <h2>Zdroje</h2>
   <ul>
     <li>Alberts B. a&nbsp;kol. <em>Molecular Biology of the Cell</em>, 7.&nbsp;vyd. W.&nbsp;W.&nbsp;Norton, 2022. Kap.&nbsp;24, s.&nbsp;1389–1391 a&nbsp;1401: pozitivní a&nbsp;negativní selekce v&nbsp;brzlíku, regulační T-lymfocyty a&nbsp;AIRE.</li>
-    <li>Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a&nbsp;hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a&nbsp;výběr není dokonalý. Ve hře zmizí s&nbsp;AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.</li>
+    <li>Hra je zjednodušený model. Sílu vazby tu zastupuje počet kontaktů a&nbsp;hranice mezi osudy jsou ostré. Ve skutečnosti je síla vazby plynulá a&nbsp;výběr není dokonalý. Ve hře se z&nbsp;každé buňky se čtyřmi kontakty stane regulační, ve skutečnosti jen z&nbsp;některých. Ve hře zmizí s&nbsp;AIRE jen inzulin, ve skutečnosti chybí bez AIRE brzlíku celá řada bílkovin jednotlivých orgánů.</li>
   </ul>
 </section>
 
@@ -439,7 +439,7 @@
      does its receptor recognise self MHC at all, and how strongly it binds
      self peptides (0–6 contacts, the strongest row counts). The player
      sends it to die by neglect, out to the blood, out as a regulatory
-     T cell, or to deletion. Level 3 loses AIRE halfway through.
+     T cell, or to deletion. Halfway through level 3 the thymus has no AIRE.
      ========================================================= */
   var FATES = ['neglect', 'pass', 'treg', 'delete'];
   var SHOULD = {neglect: 'Tahle buňka měla zahynout.', pass: 'Tahle buňka měla projít.',
@@ -457,7 +457,7 @@
     {name: 'Bez AIRE', time: 6.5, rows: ['aktin', 'histon', 'inzulin'], treg: true, maxBad: 3, aire: true, failAt: 10,
      deck: {neglect: 2, pass: 6, treg: 3, delete: 3, organ: 6},
      goal: 'Nejvýš <b>3 chyby</b> ve 20 buňkách. Třetí řádek je <b>inzulin</b>: brzlík ho ukazuje jen díky bílkovině AIRE.',
-     intro: '<p>Inzulin vyrábějí jen β-buňky slinivky, a přesto ho brzlík dospívajícím lymfocytům ukazuje. Bílkovina AIRE totiž v části buněk dřeně brzlíku spustí slabý přepis 75–90 % všech genů.</p><p>Díky tomu poznáš a vyřadíš i buňky, které by napadly slinivku. Zatím.</p>'}
+     intro: '<p>Inzulin vyrábějí jen β-buňky slinivky, a přesto ho brzlík dospívajícím lymfocytům ukazuje. Zařizuje to bílkovina AIRE: v&nbsp;epitelových buňkách dřeně brzlíku spouští slabý přepis tisíců genů, které jinak fungují jen v&nbsp;jednotlivých orgánech.</p><p>Díky tomu poznáš a vyřadíš i buňky, které by napadly slinivku. Zatím.</p>'}
   ];
   function kontakty(n){ return n + NB + plural(n, 'kontakt', 'kontakty', 'kontaktů'); }
   function ri(a, b){ return a + Math.floor(Math.random() * (b - a + 1)); }
@@ -511,9 +511,13 @@
       var m = strongest(c), k = -1;
       for(var i = 0; i < c.c.length; i++) if(rowShown(i) && c.c[i] === m) k = i;
       var name = L().rows[k];
-      if(m >= 5 && name === 'inzulin') return 'Na inzulin se chytí ' + kontakty(m) + '. V těle by zničila β-buňky slinivky, proto se vyřadí.';
+      var unseen = L().aire && c.kind === 'organ' && !rowShown(c.c.length - 1);   // binds insulin, but nobody showed it insulin
+      if(m >= 5 && name === 'inzulin') return 'Vazba na inzulin má ' + kontakty(m) + '. V těle by buňka mohla zničit β-buňky slinivky, proto se vyřadí.';
       if(m >= 5) return 'Nejsilnější vazba má ' + kontakty(m) + ', to je příliš. V těle by buňka napadla vlastní tkáně, proto se vyřadí.';
-      if(m === 4 && L().treg) return 'Nejsilnější vazba má 4 kontakty: docela silná, ale ne na vyřazení. Z takové buňky se může stát regulační T-lymfocyt.';
+      if(m === 4 && L().treg) return 'Nejsilnější vazba má 4 kontakty: docela silná, ale ne na vyřazení. Z takové buňky se může stát regulační T-lymfocyt.' + (unseen ? ' Na inzulin ji ale nikdo nezkoušel.' : '');
+      if(unseen) return (m ? 'Podle toho, co brzlík vidí, má nejsilnější vazba jen ' + kontakty(m) + ', a tak buňka projde.'
+                           : 'Podle toho, co brzlík vidí, se buňka úlomků vlastních bílkovin nechytá, a tak projde.') + ' Na inzulin ji ale nikdo nezkoušel.';
+      if(!m) return 'Pozná vlastní MHC a úlomků vlastních bílkovin se nechytá vůbec. Buňka je užitečná a projde.';
       return 'Pozná vlastní MHC a nejsilnější vazba má jen ' + kontakty(m) + '. Slabá vazba: buňka je užitečná a projde.';
     }
 
@@ -558,7 +562,7 @@
       if(st.i >= st.deck.length){ finish(); return; }
       if(L().aire && st.i === L().failAt && st.aireOn){
         st.aireOn = false; st.phase = 'event';
-        overlay(ov, 'AIRE přestal fungovat', '<p>Mutace v genu AIRE: buňky dřeně brzlíku přestaly přepisovat geny, které jinak fungují jen v jednotlivých orgánech. Inzulin ze zkoušky zmizel.</p><p>Pokračuj podle toho, co vidíš.</p>',
+        overlay(ov, 'Brzlík bez AIRE', '<p>Teď třídíš v&nbsp;brzlíku člověka, kterému od narození nefunguje gen <i>AIRE</i>. Epitelové buňky dřeně jeho brzlíku nepřepisují geny, které jinak fungují jen v&nbsp;jednotlivých orgánech, a inzulin ze zkoušky zmizel.</p><p>Pokračuj podle toho, co vidíš.</p>',
           [{label: 'Pokračovat', cls: 'go', fn: function(){ overlay(ov, null); enter(); }}]);
         return;
       }
@@ -584,10 +588,10 @@
                                           : '<p>Nebezpečných buněk proklouzlo víc, než kolik je regulačních. Hrozí autoimunita.</p>') : '';
       } else {
         ok = st.bad <= Lv.maxBad;
-        text += hidden ? '<p>Jenže po výpadku AIRE ' + (hidden === 1 ? 'prošla <b>1</b> buňka, která se silně chytá'
+        text += hidden ? '<p>Jenže bez AIRE ' + (hidden === 1 ? 'prošla <b>1</b> buňka, která se silně chytá'
             : hidden < 5 ? 'prošly <b>' + hidden + '</b> buňky, které se silně chytají' : 'prošlo <b>' + hidden + '</b> buněk, které se silně chytají')
-          + ' inzulinu. Brzlík neměl jak to poznat, protože mu inzulin nikdo neukázal. Takové buňky v těle ničí β-buňky slinivky a vzniká cukrovka 1. typu.</p>'
-          : '<p>Žádná buňka namířená proti inzulinu tentokrát neprošla, ale jen náhodou: po výpadku AIRE ji brzlík nemá jak poznat.</p>';
+          + ' inzulinu. Brzlík neměl jak to poznat, protože mu inzulin nikdo neukázal. Takové buňky mohou v&nbsp;těle zničit β-buňky slinivky a způsobit cukrovku 1.&nbsp;typu.</p>'
+          : '<p>Žádná buňka namířená proti inzulinu tentokrát neprošla, ale jen náhodou: bez AIRE ji brzlík nemá jak poznat.</p>';
         title = ok ? 'Konec úrovně' : 'Ještě ne';
       }
       if(ok){ done[level] = true; store.set('hra-brzlik', done); bar.mark(level); }

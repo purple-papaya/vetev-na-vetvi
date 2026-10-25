@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T03:18:22+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T16:38:50+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -208,7 +208,7 @@
   <p class="eyebrow"><span>Hry · Endokrinologie</span><span class="sep"></span><span class="n">Rytmická hra</span></p>
   <h1 class="title"><em>Pulzy</em></h1>
   <p class="deck">Jsi hypotalamus. Hypofýza tě poslechne, jen když mluvíš v&nbsp;rytmu.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -216,7 +216,7 @@
 <section class="prose">
   <p class="lede">Hypotalamus řídí hypofýzu hormonem GnRH a&nbsp;hypofýza podle něj vylučuje LH, jeden z&nbsp;hormonů, které ovládají pohlavní žlázy. Nezáleží přitom jen na tom, kolik GnRH pošleš, ale i&nbsp;jak: v&nbsp;pulzech, nebo nepřetržitě.</p>
 
-  <p><b>Jak hrát:</b> každé klepnutí na tlačítko <b>Pulz</b> (nebo mezerník) vypustí krátkou dávku GnRH. Sleduj, jak hypofýza odpoví vlnou LH a&nbsp;jak jí přitom ubývají receptory, které se mezi pulzy zase vracejí. V&nbsp;první úrovni udrž průměrné LH ve zdravém pásmu, ve druhé ho jako lékař umlč.</p>
+  <p><b>Jak hrát:</b> každé klepnutí na tlačítko <b>Pulz</b> (nebo mezerník) vypustí krátkou dávku GnRH. Sleduj, jak hypofýza odpoví vlnou LH a&nbsp;jak jí přitom ubývají receptory, které se mezi pulzy zase vracejí. V&nbsp;první úrovni udrž průměrné LH ve zdravém pásmu, ve druhé ho léčbou umlč.</p>
 </section>
 
 <figure class="sim game">
@@ -250,9 +250,9 @@
 
   <p>Hormony hypotalamu přicházejí v&nbsp;pulzech a&nbsp;u&nbsp;GnRH na rytmu záleží víc než na množství. Receptor, na kterém GnRH sedí, se postupně stahuje z&nbsp;povrchu buňky. Mezi pulzy má čas se vrátit, a&nbsp;tak každý další pulz najde dost receptorů a&nbsp;vyvolá odpověď. Při nepřetržitém přísunu receptory ubývají, až hypofýza přestane odpovídat a&nbsp;výroba LH i&nbsp;FSH se paradoxně zastaví.</p>
 
-  <p>Medicína toho využívá. U&nbsp;žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit. Přesně to děláš ve druhé úrovni. V&nbsp;modelu této hry dopadnou podobně i&nbsp;pulzy, které jdou příliš rychle po sobě: receptory se mezi nimi nestihnou vrátit.</p>
+  <p>Medicína toho využívá. U&nbsp;žen před menopauzou, které mají nádor prsu citlivý na estrogen, dokáže dlouhodobě působící obdoba GnRH utlumit tvorbu estradiolu ve vaječnících, aniž by se musely odstranit. Přesně to děláš ve druhé úrovni, jen místo infuze se v&nbsp;praxi podává depotní injekce nebo implantát, ze kterého se lék uvolňuje celé týdny. V&nbsp;modelu této hry dopadnou podobně i&nbsp;pulzy, které jdou příliš rychle po sobě: receptory se mezi nimi nestihnou vrátit.</p>
 
-  <p>Víc o&nbsp;hormonech, receptorech a&nbsp;rytmu je v&nbsp;kapitole <a href="wetware-endokrinologie-ch1-dopis-pro-vsechny.html">Dopis pro všechny</a>.</p>
+  <p>Víc o&nbsp;hormonech, receptorech a&nbsp;rytmu je v&nbsp;kapitole <a href="wetware-endokrinologie-ch1-dopis-pro-vsechny.html#cast-5">Dopis pro všechny</a>. Jak se receptory stálému podnětu přizpůsobují, obecně rozebírá kapitola <a href="wetware-farmakologie-ch2-podani-ruky-zblizka.html#cast-6">Podání ruky zblízka</a>.</p>
 </section>
 
 <!-- zpetna-vazba:begin – generuje tools/seo.py -->
@@ -446,11 +446,11 @@
 
   var LEVELS = [
     {name: 'Rytmus', len: 1440, speed: 20, endo: false, infusion: false,
-     goal: 'Udrž <b>průměrné LH ve zdravém pásmu</b> (75–125 %) aspoň 75 % času. První 2 hodiny se nepočítají.',
+     goal: 'Udrž <b>průměrné LH ve zdravém pásmu</b> <span class="nw">(75–125&nbsp;%)</span> aspoň 75&nbsp;% času. První 2&nbsp;hodiny se nepočítají.',
      intro: '<p>Jsi hypotalamus a máš na starost jeden den. Klepnutím na <b>Pulz</b> pošleš hypofýze dávku GnRH.</p><p>Udrž průměrné LH ve zdravém pásmu. Nápověda: hypofýza potřebuje mezi pulzy chvilku klidu.</p>'},
-    {name: 'Lékař', len: 1440, speed: 20, endo: true, infusion: true,
-     goal: 'Hypotalamus pulzuje sám. Dostaň <b>LH pod 15 %</b> a udrž ho tam celých posledních 6 hodin.',
-     intro: '<p>Pacientka před menopauzou má nádor prsu citlivý na estrogen. Aby se vaječníky utlumily, musí hypofýza přestat vylučovat LH.</p><p>Její hypotalamus ale dál pulzuje a ten nezastavíš. Máš k dispozici extra pulzy GnRH a infuzi, která ho podává nepřetržitě. Na posledních 6 hodin dne musí LH klesnout pod 15 %.</p>'}
+    {name: 'Léčba', len: 1440, speed: 20, endo: true, infusion: true,
+     goal: 'Hypotalamus pulzuje sám. Dostaň <b>LH pod 15&nbsp;%</b> a udrž ho tam celých posledních 6&nbsp;hodin.',
+     intro: '<p>Pacientka před menopauzou má nádor prsu citlivý na estrogen. Aby se vaječníky utlumily, musí hypofýza přestat vylučovat LH.</p><p>Její hypotalamus ale dál pulzuje a ten nezastavíš. Máš k dispozici extra pulzy GnRH a infuzi, která ho podává nepřetržitě. Na posledních 6&nbsp;hodin dne musí LH klesnout pod 15&nbsp;%.</p>'}
   ];
 
   makeSim('pgame', function(canvas, dim){
@@ -482,15 +482,15 @@
       if(level === 0){
         var pct = st.evalT ? 100 * st.inBand / st.evalT : 0;
         ok = pct >= 75;
-        text = '<p>LH bylo ve zdravém pásmu <b>' + Math.round(pct) + NB + '%</b> času.</p>' + (ok
+        text = '<p>Průměrné LH bylo ve zdravém pásmu <b>' + Math.round(pct) + NB + '%</b> času.</p>' + (ok
           ? '<p>Hypofýza odpovídala na každý pulz, protože se jí mezi nimi stihly vrátit receptory.</p>'
           : '<p>' + (st.avg > 125 ? 'LH bylo moc vysoko. Zkus pulzy trochu zředit.' : st.avg < 75 && st.R < 0.2 ? 'Pulzy šly moc hustě a receptory se mezi nimi nestihly vrátit. Dej hypofýze víc klidu.' : 'Zkus jiný rytmus: když pulzy chodí moc řídce, LH chybí, a když moc hustě, receptory se nestihnou vrátit.') + '</p>');
       } else {
         var pl = st.lowT ? 100 * st.low / st.lowT : 0;
         ok = pl >= 90;
-        text = '<p>Na posledních 6 hodin bylo LH pod 15 % po <b>' + Math.round(pl) + NB + '%</b> času.</p>' + (ok
-          ? '<p>Paradox funguje: nepřetržitý přísun GnRH vyčerpal receptory, a tak hypofýza přestala slyšet i vlastní pulzy hypotalamu. Na začátku přitom LH krátce vyskočilo.</p>'
-          : '<p>Víc pulzů nestačí. Zkus, co udělá s receptory přísun, který nepřestává.</p>');
+        text = '<p>Na posledních 6&nbsp;hodin bylo LH pod 15&nbsp;% po <b>' + Math.round(pl) + NB + '%</b> času.</p>' + (ok
+          ? '<p>Paradox funguje: GnRH přicházel bez přestávek, receptory se mezi dávkami nestihly vrátit, a tak hypofýza přestala slyšet i vlastní pulzy hypotalamu. Na začátku přitom LH krátce vyskočilo.</p>'
+          : '<p>Takhle to nestačí. Zkus, co udělá s&nbsp;receptory přísun, který nepřestává.</p>');
       }
       if(ok){ done[level] = true; store.set('hra-pulzy', done); bar.mark(level); }
       var btns = [{label: 'Znovu', fn: function(){ choose(level); start(); }}];
@@ -502,7 +502,7 @@
     function update(){
       setTxt(tEl, hhmm(st.t)); setTxt(lhEl, Math.round(ePct()) + NB + '%'); setTxt(rEl, Math.round(100 * st.R) + NB + '%');
       if(level === 0) setTxt(sEl, st.evalT ? Math.round(100 * st.inBand / st.evalT) + NB + '%' : '–');
-      else setTxt(sEl, st.lowT ? Math.round(100 * st.low / st.lowT) + NB + '% pod 15' : '–');
+      else setTxt(sEl, st.lowT ? Math.round(100 * st.low / st.lowT) + NB + '% pod' + NB + '15' : '–');
     }
     function press(){ if(!playing) return; held = true; st.pulseUntil = Math.max(st.pulseUntil, st.t + DUR); }
     function release(){ held = false; }

@@ -279,3 +279,6 @@
 .hry-blok .druh{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7B8C6A;margin-left:.35rem;}
 .hry-blok .co{display:block;margin-top:.2rem;font-size:.93rem;color:#4A4F42;}
 .deck + .dateline{margin:-.9rem 0 1.6rem;}
+
+  /* Kotvy na části kapitoly (odkazy z jiných kapitol). */
+  h2[id],.sim[id],canvas[id]{scroll-margin-top:1.2rem;}

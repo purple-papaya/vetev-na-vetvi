@@ -20,9 +20,9 @@ css/
   farmakologie-ch1.css     styly kapitoly Farmakologie — „Lék je vlna“ (vlastní design)
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
   fyziologie-ch1.css       styly kapitoly Fyziologie — „Moře pod kůží“ (design neurobiologie + posuvníky)
-  wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie
-                            a Endokrinologie (design „Moře pod kůží“ + legendy simulací a ilustrace);
-                            používá je i článek na blogu a hry
+  wetware-kapitola.css     sdílené styly kapitol Molekulární biologie, Imunologie, Vývojové biologie,
+                            Endokrinologie a všech druhých kapitol (design „Moře pod kůží“ + legendy
+                            simulací a ilustrace); používá je i článek na blogu, stránka O mně a hry
   zpetna-vazba.css         formulář zpětné vazby, seznam oprav a poznámka o soukromí
 assets/
   icons.svg                SVG sprite se dvěma značkami (#logo-mark, #logo-mark-sm),
@@ -51,21 +51,26 @@ pages/
   wetware-imunologie-ch1-darwin-v-mizni-uzline.html   Imunologie · Kapitola první — Darwin v mízní uzlině (hotová kapitola)
   wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html   Vývojová biologie · Kapitola první — Tělo, které se postavilo samo (hotová kapitola)
   wetware-endokrinologie-ch1-dopis-pro-vsechny.html   Endokrinologie · Kapitola první — Dopis pro všechny (hotová kapitola)
+  wetware-biochemie-ch2-prvni-rameno-schodiste.html   Biochemie · Kapitola druhá — První rameno schodiště (hotová kapitola)
+  wetware-neurobiologie-ch2-dole-v-mezere.html   Neurobiologie · Kapitola druhá — Dole v mezeře (hotová kapitola)
+  wetware-farmakologie-ch2-podani-ruky-zblizka.html   Farmakologie · Kapitola druhá — Podání ruky zblízka (hotová kapitola)
   blog.html                Blog — rozcestník kratších textů mezi kapitolami
   blog-spad-prah-smycka.html   Blog · Spád, práh, smyčka — co spojuje všech osm prvních kapitol
   o-mne.html               O mně — kdo web píše, jak kapitoly vznikají a úvodní video
   hry.html                 Hry — rozcestník miniher podle větví Wetware
-  hra-*.html               16 miniher, dvě na každou větev (každá na motivy jedné první kapitoly)
+  hra-*.html               24 miniher, na každou větev aspoň dvě (každá na motivy jedné kapitoly)
   zpetna-vazba.html        Zpětná vazba — formulář, seznam oprav a co se se zprávou stane (viz níž)
   pribehy.html             zástupná stránka
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
   wetware-imunologie.html, wetware-vyvojova-biologie.html,
-  wetware-endokrinologie.html               podvětve Wetware — krátký popis a odkaz na první kapitolu
+  wetware-endokrinologie.html               podvětve Wetware — krátký popis, odkazy na kapitoly a jejich hry
 ```
 
 Odkazy jsou relativní vůči každé stránce (`pages/*.html` odkazují zpět přes `../`),
-takže web funguje i v podadresáři `/vetev-na-vetvi/`. `index.html` a `404.html` zůstávají
+takže web funguje i v podadresáři `/vetev-na-vetvi/`. Kapitoly mají kotvy na svých částech
+(`#cast-1`, `#cast-2`… v pořadí částí, `#otazky` u častých otázek, `#zdroje` u zdrojů), takže
+kapitola může odkázat přímo na místo v jiné kapitole. `index.html` a `404.html` zůstávají
 v kořeni repozitáře — GitHub Pages je odsud vyžaduje (rozcestník i vlastní 404 stránka
 fungují jen tehdy, když leží přímo v publikované složce).
 
@@ -87,9 +92,10 @@ python3 tools/seo.py
 - **Autorka a data pod titulkem**: pod titulek každé kapitoly, hry a článku vloží skript řádek
   „Pája · vyšlo … · aktualizováno …“ (mezi `datum:begin` a `datum:end`). Data jsou stejná jako ve
   strukturovaných datech; Google chce viditelné datum, které s nimi souhlasí.
-- **Hry u kapitol**: na konec každé kapitoly vloží skript rámeček „Zahraj si“ s jejími dvěma hrami
+- **Hry u kapitol**: na konec každé kapitoly vloží skript rámeček „Zahraj si“ s jejími hrami
   a na stránky větví Wetware řádek s odkazy na ně (mezi `hry:begin` a `hry:end`). Hra patří ke
-  kapitole podle pole `chapter` v `PAGES`, popisek si skript bere z hlavičky stránky hry.
+  kapitole podle pole `chapter` v `PAGES`; když se hodí i k další kapitole, přidá se do pole `also`.
+  Popisek si skript bere z hlavičky stránky hry.
 - **Zástupná stránka** Příběhy a 404 mají `noindex`. Až Příběhy dostanou obsah, změň v `PAGES`
   jejich `kind` ze `stub` na vhodný typ.
 - **Odkaz na zpětnou vazbu**: pod každou kapitolu, hru a článek vloží skript řádek „Vidíš chybu…
