@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Kafe – Větev na větvi</title>
+<meta name="description" content="Hra o kofeinu a adenosinu: naplánuj kafe na celý týden, včetně tolerance a odvykání.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Farmakologie</span><span class="sep"></span><span class="n">Hra o&nbsp;kofeinu</span></p>
+  <h1 class="title"><em>Kafe</em></h1>
+  <p class="deck">Adenosin tě celý den tlačí do spánku a&nbsp;kofein mu v&nbsp;tom brání. Naplánuj si kafe na zkoušku, na odpolední dílnu i&nbsp;na celý týden. A&nbsp;pak se ho zkus vzdát bez bolesti hlavy.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Kafe ti nepřidá ani kapku energie. Čím déle bdíš, tím víc se v&nbsp;mozku hromadí adenosin a&nbsp;přes své receptory tlumí neurony, které tě drží vzhůru. Kofein na stejné receptory dosedne, nic v&nbsp;nich nespustí a&nbsp;jen je obsadí, takže se k&nbsp;nim adenosin nedostane. Nepřidává plyn, ubírá brzdu. A&nbsp;protože se z&nbsp;těla odbourává pomalu a&nbsp;tělo si na něj zvyká, hodně záleží na tom, kdy a&nbsp;kolik ho piješ.</p>
+
+  <p><b>Jak hrát:</b> klepni na časovou osu a&nbsp;v&nbsp;tu chvíli si dáš kafe. Když prstem nebo myší popojedeš do strany, vybereš přesný čas. Klepnutím na hrnek ho zase odebereš. Přepínačem zvolíš malé, nebo velké kafe. Křivka bdělosti se přepočítává hned a&nbsp;zelené pásy ukazují, kdy potřebuješ být ve formě. V&nbsp;týdenních úrovních přepínáš dny nad grafem. Až bude plán hotový, stiskni <b>Prožít</b>. Na klávesnici: šipky posouvají kurzor po půlhodinách a&nbsp;Enter kafe přidá, nebo odebere.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Kafe</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">bdělost</span> <b id="k-b">–</b></span>
+        <span class="rd"><span class="lo">spánek od</span> <b id="k-s">–</b></span>
+        <span class="rd"><span class="lo">receptory</span> <b id="k-r">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="k-goal">Vyber úroveň a&nbsp;začni.</div>
+      <div class="kf-days" id="k-days" role="group" aria-label="Dny týdne" hidden></div>
+      <canvas id="kgame" class="drag" height="300" tabindex="0" aria-label="Plán kafí na jeden den od sedmi ráno do tří do rána: bílá křivka bdělosti, modrá čárkovaná křivka adenosinu, zlatá plocha kofeinu v krvi, zelené pásy úkolů s požadovanou bdělostí, tmavá plocha spánku a dole řada s hrnky. Šipky posouvají kurzor po půlhodinách, Enter kafe přidá nebo odebere."></canvas>
+      <p class="vh" id="k-desc" aria-live="polite"></p>
+      <div class="game-feedback" id="k-fb" aria-live="polite"></div>
+      <div class="sim-controls">
+        <button class="ctrl is-on" id="k-small" type="button" aria-pressed="true">Malé kafe</button>
+        <button class="ctrl" id="k-big" type="button" aria-pressed="false">Velké kafe</button>
+        <button class="ctrl" id="k-clear" type="button">Vymazat den</button>
+        <button class="ctrl" id="k-copy" type="button" hidden>Zkopírovat na další den</button>
+        <button class="ctrl go" id="k-run" type="button">Prožít</button>
+      </div>
+      <div class="game-overlay" id="k-ov" hidden></div>
+    </div>
+    <div class="levels" id="k-levels"></div>
+  </div>
+  <figcaption><b>Kafe.</b> Bílá křivka je bdělost, modrá čárkovaná adenosin a&nbsp;zlatá plocha kofein v&nbsp;krvi. Zelené pásy jsou chvíle, kdy potřebuješ být ve formě, a&nbsp;čárkovaná čára v&nbsp;nich požadovaná bdělost. Tmavá plocha je spánek: přijde v&nbsp;čase, kdy jdeš spát, nebo až později, pokud adenosin ještě nepřetlačil kofein. Červené vlnky značí bolest hlavy. Velké kafe obsahuje dvakrát víc kofeinu než malé. Velikost dávek, prahy a&nbsp;stupnice bdělosti jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Adenosin se v&nbsp;mozku vyskytuje pořád v&nbsp;nízkých koncentracích a&nbsp;přes receptory A<sub>1</sub> a&nbsp;A<sub>2A</sub> tlumí neurony a&nbsp;uvolňování přenašečů. Během bdění se hromadí a&nbsp;mimo jiné tlumí neurony v&nbsp;tuberomamilárním jádře, a&nbsp;tím přivolává ospalost. Kofein se na tytéž receptory váže jako kompetitivní antagonista, a&nbsp;proto povzbuzuje. Myši, kterým chybí receptor A<sub>2A</sub>, na povzbuzující účinek kofeinu nereagují. Víc o&nbsp;tom, jak léky soupeří o&nbsp;receptory, je v&nbsp;kapitole <a href="wetware-farmakologie-ch2-podani-ruky-zblizka.html">Podání ruky zblízka</a>.</p>
+
+  <p>Kofein se vstřebá rychle a&nbsp;v&nbsp;krvi je ho nejvíc zhruba 30 až 45&nbsp;minut po vypití. Mizí ale pomalu, jeho poločas je typicky 4 až 6&nbsp;hodin. Z&nbsp;kafe vypitého pozdě odpoledne proto v&nbsp;noci ještě zbývá dost kofeinu, aby obsadil část receptorů. Jak rychle ho tělo odbourává, se navíc mezi lidmi hodně liší, mimo jiné kvůli variantám enzymu CYP1A2, který rozkládá 95&nbsp;% kofeinu. Hra počítá jen s&nbsp;adenosinem a&nbsp;kofeinem, a&nbsp;tak ber její čísla jako ilustraci, ne jako předpověď pro vlastní tělo.</p>
+
+  <p>Tolerance je pokles účinku při stejné koncentraci léku, když se lék podává opakovaně. U&nbsp;zvířat dlouhodobý kofein zvyšuje počet receptorů A<sub>1</sub>, u&nbsp;myší v&nbsp;mozkové kůře a&nbsp;ve striatu zhruba o&nbsp;15 až 20&nbsp;%. Ve hře si tělo přidává receptory přesně takhle, ale jak velký podíl má tenhle mechanismus na toleranci u&nbsp;lidí, není jisté. Když kofein náhle chybí, přichází abstinenční příznaky: bolest hlavy, únava, ospalost a&nbsp;horší soustředění. V&nbsp;přehledu pokusů na lidech začínaly obvykle 12 až 24&nbsp;hodin po posledním kafi, nejsilnější byly za 20 až 51&nbsp;hodin a&nbsp;trvaly 2 až 9&nbsp;dní. Bolest hlavy mělo asi 50&nbsp;% lidí a&nbsp;příznaky se objevovaly už po vysazení 100&nbsp;mg kofeinu denně. Přičítají se zvýšené citlivosti na vlastní adenosin, ale zatím jde o&nbsp;hypotézu.</p>
+
+  <p><i>Hra vysvětluje princip a&nbsp;nikomu neradí, kolik kávy pít.</i></p>
+</section>
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Nicholls J.&nbsp;G. a&nbsp;kol. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;14: adenosin v&nbsp;mozku, receptory A<sub>1</sub> a&nbsp;A<sub>2A</sub>, hromadění adenosinu během bdění, ospalost a&nbsp;kofein, myši bez receptoru A<sub>2A</sub> (s.&nbsp;292).</li>
+    <li>Juliano L.&nbsp;M., Griffiths R.&nbsp;R. A&nbsp;critical review of caffeine withdrawal: empirical validation of symptoms and signs, incidence, severity, and associated features. <em>Psychopharmacology</em> 176: 1–29, 2004. Kompetitivní antagonismus na receptorech A<sub>1</sub> a&nbsp;A<sub>2A</sub>, vrchol v&nbsp;krvi za 30–45&nbsp;min, poločas typicky 4–6&nbsp;h, příznaky abstinence, jejich nástup, vrchol a&nbsp;trvání, bolest hlavy u&nbsp;50&nbsp;%, příznaky už po 100&nbsp;mg denně, hypotéza zvýšené citlivosti na adenosin.</li>
+    <li>Nehlig A. Interindividual differences in caffeine metabolism and factors driving caffeine consumption. <em>Pharmacological Reviews</em> 70(2): 384–411, 2018. Velké rozdíly mezi lidmi, varianty enzymu CYP1A2, který rozkládá 95&nbsp;% kofeinu.</li>
+    <li>Daly J.&nbsp;W., Shi D., Nikodijevic O., Jacobson K.&nbsp;A. The role of adenosine receptors in the central action of caffeine. <em>Pharmacopsychoecologia</em> 7(2): 201–213, 1994. Dlouhodobý kofein zvyšuje u&nbsp;zvířat počet receptorů A<sub>1</sub>, u&nbsp;myší v&nbsp;mozkové kůře a&nbsp;ve striatu o&nbsp;15–20&nbsp;%.</li>
+    <li>Rosenbaum S.&nbsp;E. (ed.) <em>Basic Pharmacokinetics and Pharmacodynamics</em>, 2.&nbsp;vyd. Wiley, 2017. Kap.&nbsp;20 (D.&nbsp;Mould, P.&nbsp;Hutson): definice tolerance (s.&nbsp;442), model protiregulace, kterým se popsala i&nbsp;tolerance na kofein (s.&nbsp;444).</li>
+    <li>Hra je zjednodušený model: adenosin během bdění roste a&nbsp;ve spánku klesá, kofein má v&nbsp;krvi vrchol zhruba za 45&nbsp;minut a&nbsp;ubývá s&nbsp;poločasem 5&nbsp;hodin, adenosin a&nbsp;kofein soupeří o&nbsp;receptory podle zákona působení hmoty, ospalost je úměrná počtu receptorů obsazených adenosinem a&nbsp;počet receptorů se k&nbsp;dlouhodobé blokádě přizpůsobuje s&nbsp;poločasem asi jednoho dne. Bolest hlavy hra ukáže, když je receptorů o&nbsp;hodně víc, než kolik odpovídá kofeinu v&nbsp;krvi. Dávky, prahy bdělosti, spánku a&nbsp;bolesti hlavy jsou ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     KAFE — adenosine against caffeine, planned day by day.
+     Adenosine A rises while awake (toward 1, τ 18 h) and falls in sleep
+     (τ 4 h); Nicholls p. 292: its accumulation during wakefulness brings
+     sleepiness and caffeine blocks its receptors. Caffeine (doses in
+     units, a big cup = 2) is absorbed (ka 5/h, plasma peak after ~45 min) and eliminated with a 5 h
+     half-life (typical 4–6 h, Juliano & Griffiths 2004). Both compete for
+     the receptors: θA = a/(1+a+c), θC = c/(1+a+c), a = A/KA, c = C/KC.
+     Sleepiness Z = R·θA, alertness = 100·(1 − Z/0.8). Sleep starts at
+     bedtime once Z ≥ 0.46 (caffeine delays it). The receptor number R
+     drifts toward 1 + g·θC (τ 36 h): tolerance, and after a sudden stop
+     withdrawal, flagged as a headache when (R − 1)/g − θC ≥ 0.3.
+     All thresholds and dose sizes are illustrative.
+     ========================================================= */
+  var KF = {tw: 18, ts: 4, ka: 5, half: 5, KA: 0.5, KC: 0.6, zmax: 0.8, zs: 0.46, g: 1.2, tR: 36, wD: 0.3, dt: 0.1, A0: 0.084, maxCups: 4};
+  var KDAY = ['Po', 'Út', 'St', 'Čt', 'Pá', 'So', 'Ne'];
+  var KDAYV = ['v' + NB + 'pondělí', 'v' + NB + 'úterý', 've středu', 've čtvrtek', 'v' + NB + 'pátek', 'v' + NB + 'sobotu', 'v' + NB + 'neděli'];
+  function kWeek(n, a, b, need, lab){ var t = []; for(var d = 0; d < n; d++) t.push({d: d, a: a, b: b, need: need, lab: lab}); return t; }
+  var KLEVELS = [
+    {name: 'Zkouška', nd: 1, bed: 23, dl: 23.5, tasks: [{d: 0, a: 13, b: 14.5, need: 60, lab: 'zkouška'}],
+     goal: 'Od 13:00 do 14:30 tě čeká zkouška. Buď během ní aspoň na <b>60</b> bdělosti a&nbsp;usni nejpozději ve&nbsp;23:30.',
+     intro: '<p>Čím déle bdíš, tím víc se v&nbsp;mozku hromadí adenosin a&nbsp;tím víc tě tlačí do spánku. Kofein obsadí jeho receptory, a&nbsp;tak tě adenosin tlačí méně.</p><p>Klepni na časovou osu a&nbsp;v&nbsp;tu chvíli si dáš kafe. Bez kafe na zkoušku nestačíš.</p>',
+     win: 'Kofein vytlačil adenosin z&nbsp;receptorů, a&nbsp;tak tě během zkoušky tlačil do spánku méně. Energii nepřidal, jen ubral brzdu. A&nbsp;protože kafe nebylo pozdě odpoledne, do noci se kofein z&nbsp;velké části odboural.'},
+    {name: 'Brzy spát', nd: 1, bed: 22.5, dl: 23, tasks: [{d: 0, a: 16.5, b: 18, need: 55, lab: 'dílna'}],
+     goal: 'Od 16:30 do 18:00 máš dílnu a&nbsp;potřebuješ v&nbsp;ní aspoň <b>55</b>. Zítra brzy letíš, takže ve&nbsp;22:30 jdeš spát a&nbsp;usnout musíš <b>do 23:00</b>.',
+     intro: '<p>Kofein se odbourává pomalu: za zhruba pět hodin zmizí jen polovina. Kofein z&nbsp;kafe ve čtyři odpoledne tak v&nbsp;jedenáct večer ještě pořád obsazuje část receptorů.</p><p>Najdi kafe, které tě podrží v&nbsp;dílně a&nbsp;večer tě nechá usnout.</p>',
+     win: 'Kafe tě v&nbsp;dílně podrželo a&nbsp;do noci z&nbsp;něj zbylo jen málo, takže spánek přišel včas. Větší nebo pozdější kafe by ho oddálilo: kofein má poločas typicky 4 až 6&nbsp;hodin, a&nbsp;tak je z&nbsp;kafe v&nbsp;pět odpoledne v&nbsp;jedenáct večer v&nbsp;krvi ještě třetina až polovina.'},
+    {name: 'Týden', nd: 5, bed: 23, dl: 23.5, tasks: kWeek(5, 9, 10.5, 75, 'porada'),
+     goal: 'Každý všední den máš od 9:00 do 10:30 poradu a&nbsp;potřebuješ na ní aspoň <b>75</b>. Každý večer usni nejpozději ve&nbsp;23:30.',
+     intro: '<p>Teď se plánuje celý týden. Bez kafe na poradu nestačíš. Dny přepínáš nad grafem a&nbsp;tlačítko <b>Zkopírovat na další den</b> zopakuje plán vybraného dne.</p><p>Sleduj, co se během týdne děje s&nbsp;receptory pro adenosin.</p>',
+     win: 'Když jsou receptory den co den blokované, buňky si jich přidají a&nbsp;stejné kafe pak zablokuje menší část z&nbsp;nich. Proto stejná dávka během týdne zabírá méně. Tomu se říká tolerance. U&nbsp;zvířat dlouhodobý kofein počet receptorů A<sub>1</sub> opravdu zvyšuje. Jak velký podíl má tenhle mechanismus na toleranci u&nbsp;lidí, se zatím neví.'},
+    {name: 'Odvykání', nd: 7, bed: 23, dl: 23.5, tasks: kWeek(5, 9, 10.5, 50, 'porada'), R0: 1.6, C0: 0.25, hd: true, lock: [5, 6],
+     start: [[8, 2], [12, 2], [16, 2]],
+     goal: 'Od soboty chceš být bez kofeinu. Celý týden <b>bez bolesti hlavy</b>, na poradě v&nbsp;9:00 aspoň <b>50</b> a&nbsp;každý večer usnout do 23:30. Sobota a&nbsp;neděle už bez kafe.',
+     intro: '<p>Už měsíce piješ tři velká kafe denně, a&nbsp;tak máš receptorů pro adenosin víc, než je obvyklé. Od soboty chceš být bez kofeinu.</p><p>Když kofein chybí najednou, adenosin narazí na všechny ty receptory a&nbsp;přijde únava a&nbsp;bolest hlavy. Plán zatím ukazuje tvůj obvyklý týden. Naplánuj, jak budeš od pondělí do pátku ubírat.</p>',
+     win: 'Když kofeinu ubývá postupně, receptorů ubývá s&nbsp;ním a&nbsp;výpadek nebolí. V&nbsp;přehledu pokusů na lidech začínaly abstinenční příznaky obvykle 12 až 24&nbsp;hodin po posledním kafi a&nbsp;trvaly 2 až 9&nbsp;dní. Že za nimi stojí zvýšená citlivost na adenosin, je zatím hypotéza.'}
+  ];
+
+  function kSim(Lv, plan){
+    var P = KF, dt = P.dt, ke = Math.LN2 / P.half, n = Math.round(24 * Lv.nd / dt);
+    var o = {n: n, B: new Float32Array(n), A: new Float32Array(n), C: new Float32Array(n), R: new Float32Array(n),
+             sl: new Uint8Array(n), hd: new Uint8Array(n), on: []};
+    var A = P.A0, G = 0, Cc = Lv.C0 || 0, R = Lv.R0 || 1, asleep = false, sday = -1, doses = [], di = 0;
+    plan.forEach(function(day, d){ day.forEach(function(c){ doses.push([24 * d + c.t, c.u]); }); });
+    doses.sort(function(a, b){ return a[0] - b[0]; });
+    for(var i = 0; i < n; i++){
+      var t = 7 + i * dt, day = Math.floor(i * dt / 24 + 1e-9), hod = t - 24 * day;
+      while(di < doses.length && doses[di][0] <= t + 1e-6){ G += doses[di][1]; di++; }
+      var a = A / P.KA, c = Cc / P.KC, den = 1 + a + c, thA = a / den, thC = c / den, Z = R * thA;
+      if(asleep && t >= 24 * (sday + 1) + 7 - 1e-6) asleep = false;
+      if(!asleep && o.on[day] === undefined && hod >= Lv.bed - 1e-6 && (Z >= P.zs || hod >= 27 - 1e-6)){ asleep = true; sday = day; o.on[day] = hod; }
+      o.A[i] = A; o.C[i] = Cc; o.R[i] = R; o.sl[i] = asleep ? 1 : 0;
+      o.B[i] = 100 * clamp(1 - Z / P.zmax, 0, 1);
+      o.hd[i] = (!asleep && (R - 1) / P.g - thC >= P.wD) ? 1 : 0;
+      if(asleep) A -= dt * A / P.ts; else A += dt * (1 - A) / P.tw;
+      var ab = P.ka * G * dt; G -= ab; Cc += ab - ke * Cc * dt;
+      R += dt * (1 + P.g * thC - R) / P.tR;
+    }
+    return o;
+  }
+  function kIdx(d, hod){ return Math.round((24 * d + hod - 7) / KF.dt); }
+  function kEval(Lv, s){
+    var days = [], d, i;
+    for(d = 0; d < Lv.nd; d++) days.push({tasks: [], sleep: null, sleepOk: true, hd: 0, hdFrom: null, hdTo: null, ok: true});
+    Lv.tasks.forEach(function(T){
+      var mn = 1e9;
+      for(i = kIdx(T.d, T.a); i <= kIdx(T.d, T.b); i++) mn = Math.min(mn, s.B[i]);
+      var v = Math.round(mn), ok = v >= T.need;
+      days[T.d].tasks.push({T: T, v: v, ok: ok});
+      if(!ok) days[T.d].ok = false;
+    });
+    for(d = 0; d < Lv.nd; d++){
+      var on = s.on[d];
+      days[d].sleep = on === undefined ? null : on;
+      days[d].sleepOk = on !== undefined && on <= Lv.dl + 1e-6;
+      if(!days[d].sleepOk) days[d].ok = false;
+      if(Lv.hd){
+        for(i = kIdx(d, 7); i < kIdx(d, 31) && i < s.n; i++){
+          if(!s.hd[i]) continue;
+          var h = 7 + (i - kIdx(d, 7)) * KF.dt;
+          days[d].hd += KF.dt; if(days[d].hdFrom === null) days[d].hdFrom = h; days[d].hdTo = h;
+        }
+        if(days[d].hd > 0) days[d].ok = false;
+      }
+    }
+    return days;
+  }
+  function kHm(h){ h = ((h % 24) + 24) % 24; var H = Math.floor(h + 1e-6), M = Math.round((h - H) * 60); if(M === 60){ H = (H + 1) % 24; M = 0; } return H + ':' + (M < 10 ? '0' : '') + M; }
+  function kAt(h){ var H = Math.floor(((h % 24) + 24) % 24 + 1e-6); return ([2, 3, 4, 12, 13, 14, 20, 21, 22, 23].indexOf(H) >= 0 ? 've ' : 'v ') + kHm(h); }
+
+  makeSim('kgame', function(canvas, dim){
+    var ov = document.getElementById('k-ov'), goalEl = document.getElementById('k-goal'), desc = document.getElementById('k-desc');
+    var fb = document.getElementById('k-fb'), daysEl = document.getElementById('k-days');
+    var bEl = document.getElementById('k-b'), sEl = document.getElementById('k-s'), rEl = document.getElementById('k-r');
+    var bSmall = document.getElementById('k-small'), bBig = document.getElementById('k-big'), bCopy = document.getElementById('k-copy');
+    var done = store.get('hra-kafe', [false, false, false, false]);
+    var level = 0, plan = [], day = 0, tool = 1, sim = null, res = null, drag = null, hover = null, cursor = 8, kb = false, play = null;
+    var bar = levelBar('k-levels', KLEVELS.length, KLEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function sizeFor(d){                       // the stacked labels need a little more height on phones
+      var want = d.w < 520 ? 330 : 300;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    sizeFor(dim);
+    function L(){ return KLEVELS[level]; }
+    function locked(d){ return (L().lock || []).indexOf(d) >= 0; }
+    function say(s){ setTxt(desc, s); }
+    function cupWord(u){ return u === 2 ? 'Velké kafe' : 'Malé kafe'; }
+
+    function recompute(){
+      sim = kSim(L(), plan); res = kEval(L(), sim);
+      paintDays(); readouts();
+    }
+    function readouts(){
+      var D = res[day], T = D.tasks[0];
+      setTxt(bEl, T ? T.v + '/' + T.T.need : '–');
+      setTxt(sEl, D.sleep === null ? '–' : kHm(D.sleep));
+      setTxt(rEl, Math.round(sim.R[kIdx(day, 9)] * 100) + NB + '%');
+      var parts = [];
+      if(locked(day)) parts.push('bez kafe');
+      D.tasks.forEach(function(t){ parts.push(t.T.lab + ' ' + t.v + '/' + t.T.need + ' ' + (t.ok ? '✓' : '✗')); });
+      parts.push('spánek od ' + (D.sleep === null ? '–' : kHm(D.sleep)) + ' ' + (D.sleepOk ? '✓' : '✗'));
+      if(L().hd) parts.push(D.hd > 0 ? 'bolest hlavy ' + kHm(D.hdFrom) + '–' + kHm(D.hdTo) + ' ✗' : 'bez bolesti hlavy ✓');
+      fb.innerHTML = (L().nd > 1 ? '<b>' + KDAY[day] + ':</b> ' : '') + parts.join(' · ');
+      fb.className = 'game-feedback ' + (D.ok ? 'ok' : 'bad');
+    }
+    function paintDays(){
+      if(L().nd < 2){ daysEl.hidden = true; return; }
+      daysEl.hidden = false;
+      Array.prototype.forEach.call(daysEl.querySelectorAll('button'), function(b, d){
+        var lab = KDAY[d] + ' ' + (res[d].ok ? '✓' : '✗');
+        if(b.textContent !== lab) b.textContent = lab;
+        b.classList.toggle('is-on', d === day); b.setAttribute('aria-pressed', d === day ? 'true' : 'false');
+        b.classList.toggle('bad', !res[d].ok);
+        b.title = 'receptory ráno ' + Math.round(sim.R[kIdx(d, 9)] * 100) + ' %' + (locked(d) ? ', bez kafe' : '');
+      });
+    }
+    function buildDays(){
+      daysEl.innerHTML = '';
+      for(var d = 0; d < L().nd; d++){
+        (function(d){
+          var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl kf-day' + (locked(d) ? ' lock' : '');
+          b.addEventListener('click', function(){ if(play) return; day = d; recompute(); });
+          daysEl.appendChild(b);
+        })(d);
+      }
+    }
+    function choose(i){
+      level = i; bar.set(i); play = null; drag = null; day = 0; cursor = 8;
+      plan = []; for(var d = 0; d < L().nd; d++) plan.push(L().start && !locked(d) && d < 5 ? L().start.map(function(s){ return {t: s[0], u: s[1]}; }) : []);
+      goalEl.innerHTML = L().goal;
+      bCopy.hidden = L().nd < 2;
+      buildDays(); recompute();
+      overlay(ov, (i + 1) + '. ' + L().name, L().intro, [{label: 'Plánovat', cls: 'go', fn: function(){ overlay(ov, null); canvas.focus({preventScroll: true}); }}]);
+    }
+    function setTool(u){ tool = u; toggleBtn(bSmall, u === 1, 'Malé kafe'); toggleBtn(bBig, u === 2, 'Velké kafe'); }
+    function toggleAt(t){
+      if(play) return;
+      var cups = plan[day], j;
+      for(j = 0; j < cups.length; j++) if(Math.abs(cups[j].t - t) < 0.01) break;
+      if(j < cups.length){ cups.splice(j, 1); recompute(); say('Kafe ' + kAt(t) + ' odebráno.'); return; }
+      if(locked(day)){ say(KDAYV[day].charAt(0).toUpperCase() + KDAYV[day].slice(1) + ' už bez kafe.'); fb.innerHTML = '<b>' + KDAY[day] + ':</b> tenhle den už bez kafe.'; return; }
+      if(cups.length >= KF.maxCups){ say('Víc než čtyři kafe za den hra nedovolí.'); fb.innerHTML = 'Víc než čtyři kafe za den hra nedovolí.'; return; }
+      cups.push({t: t, u: tool}); cups.sort(function(a, b){ return a.t - b.t; });
+      recompute();
+      var D = res[day], T = D.tasks[0];
+      say(cupWord(tool) + ' ' + kAt(t) + '. ' + (T ? T.T.lab.charAt(0).toUpperCase() + T.T.lab.slice(1) + ' ' + T.v + ' z ' + T.T.need + ', ' : '') + 'spánek od ' + (D.sleep === null ? '–' : kHm(D.sleep)) + '.');
+    }
+
+    // ---- geometry
+    function G(){
+      var w = dim.w, h = dim.h, narrow = w < 520;
+      var x0 = narrow ? 30 : 40, x1 = w - 12, py0 = 26, py1 = h - (narrow ? 96 : 88), cy = py1 + 28;
+      return {w: w, h: h, narrow: narrow, x0: x0, x1: x1, py0: py0, py1: py1, cy: cy,
+              X: function(t){ return x0 + (t - 7) / 20 * (x1 - x0); },
+              Y: function(b){ return py1 - b / 100 * (py1 - py0); }};
+    }
+    function tAt(e){
+      var r = canvas.getBoundingClientRect(), g = G(), x = e.clientX - r.left;
+      var t = 7 + (x - g.x0) / (g.x1 - g.x0) * 20;
+      return clamp(Math.round(t * 2) / 2, 7, 23.5);
+    }
+    canvas.addEventListener('pointerdown', function(e){
+      if(play || !ov.hidden) return;
+      kb = false; drag = {t: tAt(e), x: e.clientX}; cursor = drag.t;
+      try { canvas.setPointerCapture(e.pointerId); } catch(err){}
+    });
+    canvas.addEventListener('pointermove', function(e){
+      if(drag){ drag.t = tAt(e); cursor = drag.t; } else if(e.pointerType === 'mouse'){ hover = tAt(e); }
+    });
+    canvas.addEventListener('pointerup', function(){ if(drag){ var t = drag.t; drag = null; toggleAt(t); } });
+    canvas.addEventListener('pointercancel', function(){ drag = null; });
+    canvas.addEventListener('pointerleave', function(){ hover = null; });
+    canvas.addEventListener('focus', function(){ kb = true; });
+    canvas.addEventListener('blur', function(){ kb = false; });
+    canvas.addEventListener('keydown', function(e){
+      if(play || !ov.hidden) return;
+      var k = e.key;
+      if(k === 'ArrowLeft' || k === 'ArrowRight'){ cursor = clamp(cursor + (k === 'ArrowLeft' ? -0.5 : 0.5), 7, 23.5); kb = true; say('Kurzor ' + kAt(cursor) + '.'); e.preventDefault(); }
+      else if(k === 'Enter' || k === ' '){ toggleAt(cursor); e.preventDefault(); }
+      else if(k === 'Delete' || k === 'Backspace'){ var cups = plan[day]; for(var j = 0; j < cups.length; j++) if(Math.abs(cups[j].t - cursor) < 0.01){ toggleAt(cursor); break; } e.preventDefault(); }
+    });
+    onClick('k-small', function(){ setTool(1); });
+    onClick('k-big', function(){ setTool(2); });
+    onClick('k-clear', function(){ if(play) return; if(locked(day)) return; plan[day] = []; recompute(); say('Den vymazán.'); });
+    onClick('k-copy', function(){
+      if(play) return;
+      var nx = day + 1;
+      if(nx >= L().nd || locked(nx)){ say('Na další den už kopírovat nejde.'); fb.innerHTML = 'Na další den už kopírovat nejde.'; return; }
+      plan[nx] = plan[day].map(function(c){ return {t: c.t, u: c.u}; }); day = nx; recompute();
+      say('Plán zkopírován na ' + KDAY[nx] + '.');
+    });
+    onClick('k-run', function(){ if(play || !ov.hidden) return; day = 0; recompute(); play = {t0: now()}; say('Prožíváš ' + (L().nd > 1 ? 'týden' : 'den') + '…'); });
+
+    var KWHERE = {'zkouška': 'na zkoušce', 'dílna': 'v' + NB + 'dílně', 'porada': 'na poradě'};
+    function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+    function finish(){
+      play = null;
+      var Lv = L(), ok = res.every(function(D){ return D.ok; }), probs = [];
+      res.forEach(function(D, d){
+        var when = Lv.nd > 1 ? KDAYV[d] + ' ' : '';
+        D.tasks.forEach(function(t){ if(!t.ok) probs.push({k: 'task', d: d, s: cap(when + KWHERE[t.T.lab]) + ' byla bdělost jen ' + t.v + ', potřeba ' + t.T.need + '.'}); });
+        if(!D.sleepOk) probs.push({k: 'sleep', d: d, s: D.sleep >= 27 - 1e-6 ? cap(when) + (when ? 'v' : 'V') + NB + 'noci' + ' se nepodařilo usnout ani do 3:00.'
+                                                    : (when ? cap(when) + 'večer se' : 'Večer se') + ' usnout podařilo až ' + kAt(D.sleep) + '.'});
+        if(Lv.hd && D.hd > 0) probs.push({k: 'hd', d: d, s: cap(when) + 'bolela hlava od ' + kHm(D.hdFrom) + ' do ' + kHm(D.hdTo) + '.'});
+      });
+      var rank = {hd: 0, task: 1, sleep: 2};
+      probs.sort(function(a, b){ return rank[a.k] - rank[b.k] || a.d - b.d; });
+      var text;
+      if(ok){
+        text = '<p>' + Lv.win + '</p>';
+        if(Lv.nd > 1) text += '<p>Receptory: ' + res.map(function(D, d){ return KDAY[d] + NB + Math.round(sim.R[kIdx(d, 9)] * 100) + NB + '%'; }).join(' · ') + '.</p>';
+        done[level] = true; store.set('hra-kafe', done); bar.mark(level);
+      } else {
+        text = '<p>' + probs.slice(0, 3).map(function(p){ return p.s; }).join(' ') + '</p><p>' + hint(probs[0]) + '</p>';
+      }
+      var btns = ok ? [{label: 'Zůstat', fn: function(){ overlay(ov, null); }}] : [{label: 'Upravit plán', cls: 'go', fn: function(){ overlay(ov, null); canvas.focus({preventScroll: true}); }}];
+      if(ok && level + 1 < KLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      overlay(ov, ok ? 'Povedlo se' : 'Ještě ne', text, btns);
+      say(ok ? 'Povedlo se.' : 'Ještě ne.');
+    }
+    function hint(p){
+      if(p.k === 'task'){
+        if(level === 2 && p.d > 0) return 'Stejné kafe, které stačilo v&nbsp;pondělí, během týdne zabírá méně. Sleduj receptory a&nbsp;přidej.';
+        if(level === 3) return 'Den, kdy kofeinu ubude najednou moc, bývá na poradě těžký. Ubírej po menších krocích.';
+        return 'Kofeinu chvíli trvá, než se vstřebá, a&nbsp;pak pomalu ubývá. Dej si kafe zhruba hodinu před úkolem.';
+      }
+      if(p.k === 'sleep') return 'Kofein se odbourává pomalu, a&nbsp;tak z&nbsp;pozdního kafe v&nbsp;noci ještě obsazuje receptory. Dej si kafe dřív, nebo menší.';
+      if(p.d >= 5) return 'Kofein v&nbsp;sobotu chyběl najednou a&nbsp;receptorů bylo pořád moc. Začni ubírat dřív a&nbsp;po menších krocích.';
+      return 'Krok dolů byl moc velký: kofeinu ubylo rychleji, než stihly ubýt receptory. Ubírej postupně, třeba o&nbsp;jedno malé kafe denně.';
+    }
+
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+
+    function cup(ctx, x, y, u, col){
+      var w = u === 2 ? 13 : 10, hh = u === 2 ? 15 : 11;
+      ctx.fillStyle = col; rr(ctx, x - w / 2, y - hh / 2, w, hh, 2.5); ctx.fill();
+      ctx.strokeStyle = col; ctx.lineWidth = 1.8; ctx.beginPath(); ctx.arc(x + w / 2, y - 1, u === 2 ? 4 : 3, -1.3, 1.3); ctx.stroke();
+    }
+    function moon(ctx, x, y, r){
+      ctx.fillStyle = 'rgba(127,160,192,.75)'; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = C.bg; ctx.beginPath(); ctx.arc(x + r * 0.45, y - r * 0.25, r * 0.85, 0, 6.2832); ctx.fill();
+    }
+
+    return {
+      resize: sizeFor,
+      step: function(){
+        if(!play) return;
+        var per = REDUCED ? 0.25 : 1.3, el = Math.max(0, now() - play.t0), tot = per * L().nd;
+        var d = clamp(Math.floor(el / per), 0, L().nd - 1);
+        if(d !== day){ day = d; readouts(); paintDays(); }
+        play.frac = Math.min(1, el / per - d);
+        if(el >= tot){ day = 0; recompute(); finish(); }
+      },
+      draw: function(ctx){
+        var g = G(), Lv = L(), w = g.w, h = g.h;
+        ctx.clearRect(0, 0, w, h);
+        if(!sim) return;
+        var i0 = kIdx(day, 7), i1 = kIdx(day, 27), dt = KF.dt;
+        function tx(i){ return g.X(7 + (i - i0) * dt); }
+        // sleep
+        var D = res[day];
+        if(D.sleep !== null){
+          var xs = g.X(Math.min(D.sleep, 27));
+          ctx.fillStyle = 'rgba(127,160,192,.12)'; ctx.fillRect(xs, g.py0, g.x1 - xs, g.py1 - g.py0);
+          if(g.x1 - xs > 40){ moon(ctx, xs + 12, g.py0 + 14, 6); label(ctx, 'spánek', xs + 22, g.py0 + 18, 'rgba(160,185,210,.9)', 'left', '600 10px ' + SANS); }
+        }
+        // tasks
+        Lv.tasks.forEach(function(T){
+          if(T.d !== day) return;
+          var xa = g.X(T.a), xb = g.X(T.b);
+          ctx.fillStyle = 'rgba(155,176,126,.17)'; ctx.fillRect(xa, g.py0, xb - xa, g.py1 - g.py0);
+          line(ctx, xa, g.Y(T.need), xb, g.Y(T.need), C.sagePale, 1.2, [4, 3]);
+          label(ctx, T.lab, (xa + xb) / 2, g.py0 + 11, C.sagePale, 'center', '600 10px ' + SANS);
+          label(ctx, String(T.need), xb + 3, g.Y(T.need) + 3, C.sagePale, 'left', '500 9px ' + MONO);
+        });
+        // bedtime and the deadline to fall asleep
+        var xb0 = g.X(Lv.bed), xb1 = g.X(Lv.dl);
+        line(ctx, xb0, g.py0, xb0, g.py1, 'rgba(233,231,216,.25)', 1, [2, 3]);
+        line(ctx, xb1, g.py0, xb1, g.py1, 'rgba(227,154,103,.55)', 1, [3, 3]);
+        ctx.strokeStyle = 'rgba(227,154,103,.8)'; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(xb0, g.py0 - 7); ctx.lineTo(xb0, g.py0 - 3); ctx.lineTo(xb1, g.py0 - 3); ctx.lineTo(xb1, g.py0 - 7); ctx.stroke();
+        label(ctx, 'usnout', (xb0 + xb1) / 2, g.py0 - 11, C.terraBright, 'center', '600 9.5px ' + SANS);
+        // caffeine in the blood (area) and adenosine (dashed)
+        ctx.fillStyle = 'rgba(217,183,90,.26)'; ctx.beginPath(); ctx.moveTo(tx(i0), g.py1);
+        for(var i = i0; i <= i1 && i < sim.n; i++) ctx.lineTo(tx(i), g.py1 - Math.min(sim.C[i] / 4, 1) * (g.py1 - g.py0) * 0.6);
+        ctx.lineTo(tx(Math.min(i1, sim.n - 1)), g.py1); ctx.closePath(); ctx.fill();
+        ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]); ctx.beginPath();
+        for(i = i0; i <= i1 && i < sim.n; i++){ var ya = g.py1 - sim.A[i] * (g.py1 - g.py0); if(i === i0) ctx.moveTo(tx(i), ya); else ctx.lineTo(tx(i), ya); }
+        ctx.stroke(); ctx.setLineDash([]);
+        // alertness while awake
+        ctx.strokeStyle = C.ink; ctx.lineWidth = 2.2; ctx.beginPath();
+        var pen = false;
+        for(i = i0; i <= i1 && i < sim.n; i++){
+          if(sim.sl[i]){ pen = false; continue; }
+          var yb = g.Y(sim.B[i]); if(!pen){ ctx.moveTo(tx(i), yb); pen = true; } else ctx.lineTo(tx(i), yb);
+        }
+        ctx.stroke();
+        // where a task fell short
+        D.tasks.forEach(function(t){
+          if(t.ok) return;
+          var best = null;
+          for(var j = kIdx(day, t.T.a); j <= kIdx(day, t.T.b); j++) if(best === null || sim.B[j] < sim.B[best]) best = j;
+          dot(ctx, tx(best), g.Y(sim.B[best]), 4, C.terraBright);
+        });
+        // headaches
+        for(i = i0; i <= i1 && i < sim.n; i += 5){
+          if(!sim.hd[i]) continue;
+          var xh = tx(i), yh = g.py0 + 5;
+          ctx.strokeStyle = '#E0705A'; ctx.lineWidth = 1.6; ctx.beginPath(); ctx.moveTo(xh - 4, yh + 2); ctx.lineTo(xh - 1.5, yh - 2); ctx.lineTo(xh + 1.5, yh + 2); ctx.lineTo(xh + 4, yh - 2); ctx.stroke();
+        }
+        // axes
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(g.x0, g.py0); ctx.lineTo(g.x0, g.py1); ctx.lineTo(g.x1, g.py1); ctx.stroke();
+        ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted; ctx.textAlign = 'right';
+        [0, 50, 100].forEach(function(v){ ctx.fillText(String(v), g.x0 - 5, g.Y(v) + 3); });
+        label(ctx, 'bdělost', g.x0 + 2, g.py0 - 11, C.ink, 'left', '600 10px ' + SANS);
+        label(ctx, 'adenosin', g.x0 + 50, g.py0 - 11, C.blue, 'left', '600 10px ' + SANS);
+        label(ctx, 'kofein', g.x0 + 106, g.py0 - 11, C.gold, 'left', '600 10px ' + SANS);
+        // the cup row
+        var cy = g.cy;
+        ctx.strokeStyle = 'rgba(199,214,172,.25)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(g.X(7), cy + 10); ctx.lineTo(g.X(23.5), cy + 10); ctx.stroke();
+        label(ctx, 'kafe', g.x0 - 5, cy + 4, C.muted, 'right', '600 9.5px ' + SANS);
+        if(locked(day)) label(ctx, 'tenhle den bez kafe', g.X(15), cy + 4, C.muted, 'center', 'italic 500 10px ' + SANS);
+        plan[day].forEach(function(c){ cup(ctx, g.X(c.t), cy, c.u, C.terraBright); });
+        var cur = drag ? drag.t : (hover !== null ? hover : (kb ? cursor : null));
+        if(cur !== null && !play){
+          var xc = g.X(cur);
+          line(ctx, xc, g.py0, xc, cy + 12, 'rgba(217,183,90,.55)', 1, [2, 3]);
+          if(drag || kb) cup(ctx, xc, cy, tool, 'rgba(217,183,90,.6)');
+          label(ctx, kHm(cur), clamp(xc, g.x0 + 16, g.x1 - 16), cy - 12, C.gold, 'center', '600 10px ' + MONO);
+        }
+        // time axis
+        var ticks = g.narrow ? [7, 11, 15, 19, 23, 27] : [7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27];
+        ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+        ticks.forEach(function(t){ ctx.textAlign = t === 7 ? 'left' : t === 27 ? 'right' : 'center'; ctx.fillText(kHm(t), g.X(t), h - 10); });
+        // playback cursor
+        if(play && play.frac !== undefined){
+          var xp = g.X(7 + 20 * play.frac);
+          line(ctx, xp, g.py0, xp, g.py1, C.gold, 1.5);
+        }
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

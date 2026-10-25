@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Kostky v mezeře – Větev na větvi</title>
+<meta name="description" content="Statistická hra: odhadni z nahrávek ploténky průměrný počet kvant a poznej, kdy neplatí Poisson.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Statistická hra</span></p>
+  <h1 class="title"><em>Kostky</em> v&nbsp;mezeře</h1>
+  <p class="deck">Kolik balíčků přenašeče uvolní jeden vzruch? Odhadni to z&nbsp;nahrávek stejně jako del Castillo a&nbsp;Katz a&nbsp;poznej, kdy kostky neházejí podle Poissona.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Nervové zakončení nevylévá přenašeč plynule, ale po balíčcích, kvantech. Kolik jich jeden vzruch uvolní, rozhoduje náhoda, jako by synapse pokaždé hodila hrstí kostek. Na nervosvalové ploténce v&nbsp;roztoku chudém na vápník vyjde někdy jedno kvantum, jindy tři a&nbsp;někdy žádné. José del Castillo a&nbsp;Bernard Katz z&nbsp;takových nahrávek v&nbsp;roce 1954 spočítali, kolik kvant vzruch uvolní v&nbsp;průměru, a&nbsp;to dvěma nezávislými způsoby.</p>
+
+  <p><b>Jak hrát:</b> tlačítky nahráváš odpovědi svalu na vzruchy. Každá nahrávka stojí čas a&nbsp;ten je omezený. Pod grafem vidíš dva odhady průměrného počtu kvant na vzruch, kterému se říká m: jeden z&nbsp;podílu selhání, druhý z&nbsp;průměrné velikosti odpovědi, oba i&nbsp;s&nbsp;chybou odhadu. Posuvníkem zadej svůj odhad a&nbsp;odevzdej ho. Zlatá křivka ukazuje, jak by měl histogram pro tvůj odhad vypadat.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Kostky v&nbsp;mezeře</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">vzruchů</span> <b id="ko-n">–</b></span>
+        <span class="rd"><span class="lo">selhání</span> <b id="ko-f">–</b></span>
+        <span class="rd"><span class="lo">průměr</span> <b id="ko-a">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="ko-goal">Vyber úroveň a&nbsp;začni.</div>
+      <canvas id="kogame" height="300" aria-label="Vlevo nebo nahoře posledních dvanáct odpovědí svalu přes sebe, vpravo nebo dole histogram velikostí všech nahraných odpovědí se zlatou křivkou předpovědi pro zadaný odhad a čárkovaným prahem, pod kterým se odpověď počítá jako selhání."></canvas>
+      <div class="ko-calc" id="ko-calc" aria-live="polite"></div>
+      <p class="vh" id="ko-desc" aria-live="polite"></p>
+      <div class="sim-controls">
+        <button class="ctrl spark" id="ko-rec10" type="button">Nahrát 10 vzruchů</button>
+        <button class="ctrl" id="ko-rec50" type="button">Nahrát 50</button>
+        <span class="ko-budget" id="ko-budget"></span>
+      </div>
+      <div class="sim-controls ko-answer">
+        <label class="ko-est" id="ko-m-wrap"><span class="ko-el">Tvůj odhad <i>m</i></span> <input type="range" id="ko-m" min="0" max="600" value="0" aria-label="Tvůj odhad průměrného počtu kvant na vzruch"> <output id="ko-m-v" for="ko-m">0,00</output></label>
+        <label class="ko-est" id="ko-n-wrap" hidden><span class="ko-el">Připravená kvanta <i>n</i></span> <input type="range" id="ko-nn" min="1" max="8" value="1" aria-label="Kolik kvant je připraveno k uvolnění"> <output id="ko-nn-v" for="ko-nn">1</output></label>
+        <span class="ko-ask" id="ko-ask" hidden><span class="ko-el">Poissonovo rozdělení</span> <button class="ctrl" id="ko-yes" type="button" aria-pressed="false">platí</button> <button class="ctrl" id="ko-no" type="button" aria-pressed="false">neplatí</button></span>
+        <button class="ctrl go" id="ko-submit" type="button" disabled>Odevzdat</button>
+      </div>
+      <div class="game-overlay" id="ko-ov" hidden></div>
+    </div>
+    <div class="levels" id="ko-levels"></div>
+  </div>
+  <figcaption><b>Kostky v&nbsp;mezeře.</b> Nahoře nebo vlevo posledních dvanáct odpovědí přes sebe, nejnovější zlatě. Histogram ukazuje velikosti všech nahraných odpovědí. Zlatá křivka je předpověď pro zadaný odhad: v&nbsp;prvních čtyřech úrovních podle Poissonova rozdělení, v&nbsp;páté podle binomického. Čárkovaná čára je práh: odpověď menší než půl kvanta se počítá jako selhání. Číslo za ± je přibližná směrodatná chyba odhadu. Velikost kvanta, šum, rozsahy m a&nbsp;rozpočet vzruchů jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Paul Fatt a&nbsp;Bernard Katz si na začátku padesátých let všimli, že se na ploténce i&nbsp;bez dráždění nervu objevují drobné depolarizace zhruba stejné velikosti, miniaturní ploténkové potenciály. Když pak snížili vápník a&nbsp;přidali hořčík, odpovědi na vzruch se začaly měnit po skocích: žádná, jedna, dvě, tři nebo čtyři miniaturní velikosti. Del Castillo a&nbsp;Katz přidali statistiku. Když je kvant připravených hodně a&nbsp;každé se uvolní jen s&nbsp;malou pravděpodobností, řídí se jejich počet Poissonovým rozdělením. Podíl selhání je pak e<sup>−m</sup>, takže m&nbsp;=&nbsp;ln(N/n<sub>0</sub>). Druhý odhad dá průměrná odpověď vydělená průměrnou miniaturní. Oba odhady se jim shodly, a&nbsp;to silně podpořilo myšlenku, že odpověď na vzruch skládají stejná kvanta, jaká se uvolňují samovolně. Za běžného vápníku tvoří odpověď žabí ploténky asi dvě stě kvant.</p>
+
+  <p>Ian Boyd a&nbsp;Alan Martin pak stejně měřili na savčím svalu. Ze 198 vzruchů skončilo 18 selháním, jedno kvantum měřilo asi 0,4&nbsp;mV a&nbsp;průměrná odpověď 0,93&nbsp;mV, takže m vyšlo 2,3. Z&nbsp;podílu selhání vychází ln(198/18), zhruba 2,4. Histogram jejich odpovědí měl vrcholy právě u&nbsp;násobků jednoho kvanta.</p>
+
+  <p>V&nbsp;mozku a&nbsp;míše uvolní vzruch mnohem méně kvant, někdy v&nbsp;průměru jen jedno. Neznamená to ale, že by přenos většinou selhával. Na synapsi mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše čeká na vzruch zhruba jediné kvantum, zato se uvolní asi v&nbsp;devíti případech z&nbsp;deseti. Takovou synapsi popisuje binomické rozdělení se dvěma parametry, počtem připravených kvant n a&nbsp;pravděpodobností uvolnění p. Z&nbsp;nich se dá poznat, jestli se při změně síly synapse změnil počet připravených kvant, nebo pravděpodobnost jejich uvolnění. Víc o&nbsp;kvantech je v&nbsp;kapitole <a href="wetware-neurobiologie-ch2-dole-v-mezere.html">Dole v&nbsp;mezeře</a>.</p>
+</section>
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Nicholls J.&nbsp;G., Martin A.&nbsp;R., Fuchs P.&nbsp;A., Brown D.&nbsp;A., Diamond M.&nbsp;E., Weisblat D.&nbsp;A. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;13 (Release of Neurotransmitters): miniaturní ploténkové potenciály (s.&nbsp;251, obr.&nbsp;13.8), odpovědi po skocích v&nbsp;roztoku s&nbsp;nízkým vápníkem a&nbsp;vysokým hořčíkem, kvantová hypotéza a&nbsp;asi 200 kvant za běžných podmínek (s.&nbsp;252, obr.&nbsp;13.9), rámeček 13.1 o&nbsp;binomickém a&nbsp;Poissonově rozdělení (s.&nbsp;253), m&nbsp;=&nbsp;ln(N/n<sub>0</sub>) a&nbsp;shoda obou odhadů (s.&nbsp;254), histogram Boyda a&nbsp;Martina (s.&nbsp;254, obr.&nbsp;13.10), kvanta v&nbsp;centrální nervové soustavě a&nbsp;binomická synapse s&nbsp;p&nbsp;≈&nbsp;0,9 a&nbsp;n&nbsp;≈&nbsp;1 (s.&nbsp;255).</li>
+    <li>Boron W.&nbsp;F., Boulpaep E.&nbsp;L. <em>Medical Physiology</em>, 3.&nbsp;vyd. Elsevier, 2017. Webová poznámka N8-3 ke kap.&nbsp;8 (s.&nbsp;215.e1): 198 vzruchů, 18 selhání, kvantum asi 0,4&nbsp;mV, průměrná odpověď 0,93&nbsp;mV a&nbsp;m&nbsp;=&nbsp;2,3.</li>
+    <li>del Castillo J., Katz B. Quantal components of the end-plate potential. <em>Journal of Physiology</em> 124: 560–573, 1954.</li>
+    <li>Boyd I.&nbsp;A., Martin A.&nbsp;R. The end-plate potential in mammalian muscle. <em>Journal of Physiology</em> 132(1): 74–91, 1956.</li>
+    <li>Hra je zjednodušený model: každý vzruch uvolní náhodný počet kvant podle Poissonova, nebo binomického rozdělení, kvantum měří 0,4&nbsp;mV s&nbsp;rozptylem kolem 15–20&nbsp;%, k&nbsp;odpovědi se přičítá šum nahrávky a&nbsp;velikost kvanta je známá přesně. Rozsahy m, šum a&nbsp;rozpočty vzruchů jsou ilustrační a&nbsp;chyby odhadů jsou přibližné.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     KOSTKY V MEZEŘE — quantal analysis as in Nicholls 5e ch. 13
+     (pp. 251–255), after del Castillo & Katz (1954). Every impulse
+     releases k quanta: Poisson(m), or Binomial(n, p) in levels 4–5.
+     Amplitude = k quanta of q = 0.4 mV with some spread + recording
+     noise. Estimators: m = ln(N/n0) from the failures (a response
+     below q/2 counts as a failure) and m = mean amplitude / q, with
+     standard errors by the delta method. The hidden true values are
+     drawn anew on every try. Ranges, noise and budgets are illustrative.
+     ========================================================= */
+  var KO_Q = 0.4;
+  var KOLEVELS = [
+    {name: 'Selhání', budget: 300, tol: 0.12, m: [1.0, 1.8], noise: 0.03, cv: 0.2, vmax: 2.2, hmax: 2.4,
+     goal: 'Odhadni průměrný počet kvant na vzruch <b>m</b> s&nbsp;chybou nejvýš <b>12&nbsp;%</b>. Čas máš na 300 vzruchů.',
+     intro: '<p>Ploténka leží v&nbsp;roztoku chudém na vápník, a&nbsp;tak vzruch uvolní jen pár kvant, někdy žádné. Kdyby se kvanta uvolňovala nezávisle a&nbsp;každé jen s&nbsp;malou pravděpodobností, podíl selhání by byl e<sup>−m</sup>. Proto m&nbsp;=&nbsp;ln(N/n<sub>0</sub>), kde N je počet vzruchů a&nbsp;n<sub>0</sub> počet selhání.</p><p>Druhá cesta: průměrnou odpověď vyděl velikostí jednoho kvanta, kterou znáš ze samovolných miniaturních potenciálů.</p>',
+     win: 'Oba odhady vyšly podobně, stejně jako del Castillovi a&nbsp;Katzovi. A&nbsp;čím víc vzruchů, tím menší chyba odhadu: čtyřikrát víc nahrávek ji zhruba způlí.'},
+    {name: 'Málo selhání', budget: 150, tol: 0.10, m: [3.5, 4.5], noise: 0.03, cv: 0.2, vmax: 3.4, hmax: 4.4,
+     goal: 'Vápníku je víc a&nbsp;selhání ubylo. Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b>. Čas máš jen na 150 vzruchů.',
+     intro: '<p>Teď vzruch uvolní kvant víc a&nbsp;selhání přijde jen občas. Z&nbsp;pár selhání se m odhaduje nepřesně, a&nbsp;když nepřijde žádné, nejde to vůbec.</p><p>Sleduj, který z&nbsp;obou odhadů má menší chybu.</p>',
+     win: 'Když jsou selhání vzácná, řekne jejich počet o&nbsp;m málo. Průměrná odpověď využije každou nahrávku, a&nbsp;proto dává přesnější odhad.'},
+    {name: 'Šum', budget: 500, tol: 0.10, m: [1.4, 2.2], noise: 0.3, cv: 0.2, vmax: 2.6, hmax: 2.8,
+     goal: 'Nahrávka je zašuměná. Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b>. Čas máš na 500 vzruchů.',
+     intro: '<p>Šum v&nbsp;nahrávce je skoro stejně velký jako jedno kvantum. Jako selhání se počítá každá odpověď menší než půl kvanta, jenže teď mezi selháním a&nbsp;jedním kvantem žádná zřetelná hranice není.</p>',
+     win: 'Šum se v&nbsp;průměru vyruší, a&nbsp;tak odhad z&nbsp;průměrné odpovědi platí dál. Počet selhání ale závisí na tom, kudy vede práh, a&nbsp;šum ho zkreslí.'},
+    {name: 'Kostka, která nehraje Poissona', rec: 'odpovědi motoneuronu', budget: 200, tol: 0.10, bn: [1, 1], bp: [0.85, 0.95], noise: 0.03, cv: 0.15, vmax: 1.2, hmax: 1.6, ask: true,
+     goal: 'Odhadni m s&nbsp;chybou nejvýš <b>10&nbsp;%</b> a&nbsp;rozhodni, jestli se tahle synapse řídí <b>Poissonovým rozdělením</b>.',
+     intro: '<p>Tahle nahrávka není z&nbsp;ploténky. Je ze synapse mezi vláknem ze svalového vřeténka a&nbsp;motoneuronem v&nbsp;míše. Kvant tu vzruch uvolní málo, a&nbsp;přesto skoro nikdy neselže.</p>',
+     win: 'Poissonovo rozdělení platí, když je připravených kvant hodně a&nbsp;každé se uvolní jen s&nbsp;malou pravděpodobností. Tady čeká na vzruch zhruba jediné kvantum, zato se uvolní asi v&nbsp;devíti případech z&nbsp;deseti. Takovou synapsi popisuje binomické rozdělení a&nbsp;vzorec z&nbsp;podílu selhání na ni neplatí. Právě tenhle příklad uvádí Nicholls.'},
+    {name: 'Kolik kvant čeká?', rec: 'odpovědi', budget: 400, bn: [2, 4], bp: [0.7, 0.9], noise: 0.03, cv: 0.15, vmax: 2.2, hmax: 2.4, fitN: true,
+     goal: 'Binomická synapse: zjisti, kolik kvant <b>n</b> je připraveno k&nbsp;uvolnění. Pravděpodobnost uvolnění pak vyjde jako p&nbsp;=&nbsp;m/n.',
+     intro: '<p>Když se kvanta uvolňují s&nbsp;velkou pravděpodobností, řídí se jejich počet binomickým rozdělením se dvěma parametry: připraveno je n kvant a&nbsp;každé se uvolní s&nbsp;pravděpodobností p. Průměr je m&nbsp;=&nbsp;np.</p><p>Posuvníkem zkoušej různá n. Zlatá křivka ukazuje binomickou předpověď a&nbsp;údaj „shoda“ říká, jak dobře sedí na histogram.</p>',
+     win: 'Z&nbsp;n a&nbsp;p se dá poznat, jestli se při změně síly synapse změnil počet připravených kvant, nebo pravděpodobnost jejich uvolnění.'}
+  ];
+
+  makeSim('kogame', function(canvas, dim){
+    var ov = document.getElementById('ko-ov'), goalEl = document.getElementById('ko-goal'), desc = document.getElementById('ko-desc');
+    var nEl = document.getElementById('ko-n'), fEl = document.getElementById('ko-f'), aEl = document.getElementById('ko-a');
+    var calcEl = document.getElementById('ko-calc'), budEl = document.getElementById('ko-budget');
+    var mIn = document.getElementById('ko-m'), mOut = document.getElementById('ko-m-v'), nIn = document.getElementById('ko-nn'), nOut = document.getElementById('ko-nn-v');
+    var mWrap = document.getElementById('ko-m-wrap'), nWrap = document.getElementById('ko-n-wrap'), askEl = document.getElementById('ko-ask');
+    var subBtn = document.getElementById('ko-submit'), r10 = document.getElementById('ko-rec10'), r50 = document.getElementById('ko-rec50');
+    var yesBtn = document.getElementById('ko-yes'), noBtn = document.getElementById('ko-no');
+    var done = store.get('hra-kostky-v-mezere', [false, false, false, false, false]);
+    var level = 0, truth = null, data = [], traces = [], playing = false, ans = null, S = null;
+    var bar = levelBar('ko-levels', KOLEVELS.length, KOLEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    // on phones the two panels stack, so the canvas grows
+    function sizeFor(d){
+      var want = d.w < 600 ? 440 : 300;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    sizeFor(dim);
+
+    function L(){ return KOLEVELS[level]; }
+    function poisson(m){ var Lm = Math.exp(-m), k = 0, p = 1; do { k++; p *= Math.random(); } while(p > Lm); return k - 1; }
+    function bc(n, k){ var r = 1; for(var i = 1; i <= k; i++) r = r * (n - k + i) / i; return r; }
+    function pmf(k){                       // the player's model: Poisson(m̂), or Binomial(n̂, m/n̂) in level 5
+      var Lv = L();
+      if(Lv.fitN){
+        if(!S) return 0;
+        var n = +nIn.value, p = S.amp.m / n;
+        if(p > 1 || p <= 0 || k > n) return 0;
+        return bc(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+      }
+      var m = mEst(), f = 1;
+      for(var i = 2; i <= k; i++) f *= i;
+      return Math.exp(-m) * Math.pow(m, k) / f;
+    }
+    function mEst(){ return +mIn.value / 100; }
+    function trial(){
+      var Lv = L(), k = Lv.bn ? binom(truth.n, truth.p) : poisson(truth.m), a = 0;
+      for(var i = 0; i < k; i++) a += KO_Q * (1 + Lv.cv * gauss());
+      return a + Lv.noise * gauss();
+    }
+    function stats(){
+      var N = data.length;
+      if(!N) return null;
+      var n0 = 0, s = 0, s2 = 0;
+      for(var i = 0; i < N; i++){ var a = data[i]; if(a < KO_Q / 2) n0++; s += a; s2 += a * a; }
+      var mean = s / N, v = N > 1 ? Math.max(0, (s2 - N * mean * mean) / (N - 1)) : 0;
+      return {N: N, n0: n0, mean: mean, sd: Math.sqrt(v),
+              fail: n0 > 0 && n0 < N ? {m: Math.log(N / n0), se: Math.sqrt((N - n0) / (N * n0))} : (n0 === N ? {m: 0, se: 0} : null),
+              amp: {m: mean / KO_Q, se: Math.sqrt(v) / (KO_Q * Math.sqrt(N))}};
+    }
+    function fitScore(n){                  // 1 − total variation distance between observed quantal classes and the binomial
+      if(!S || S.N < 10) return null;
+      var p = S.amp.m / n;
+      if(p > 1 || p <= 0) return {p: p, score: null};
+      var K = 12, obs = [], k;
+      for(k = 0; k <= K; k++) obs.push(0);
+      data.forEach(function(a){ obs[clamp(Math.round(a / KO_Q), 0, K)]++; });
+      var tvd = 0;
+      for(k = 0; k <= K; k++){ var pk = k <= n ? bc(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k) : 0; tvd += Math.abs(obs[k] / S.N - pk); }
+      return {p: p, score: 1 - tvd / 2};
+    }
+    function pm(v, d){ return num(v, d === undefined ? 2 : d); }
+
+    function reset(){
+      data = []; traces = []; ans = null; S = null; playing = false;
+      mIn.value = 0; nIn.value = 1; toggleBtn(yesBtn, false, 'platí'); toggleBtn(noBtn, false, 'neplatí');
+      update();
+    }
+    function draw(){                         // hidden truth for this try
+      var Lv = L();
+      if(Lv.bn){
+        var n = Lv.bn[0] + Math.floor(Math.random() * (Lv.bn[1] - Lv.bn[0] + 1)), p = Lv.bp[0] + Math.random() * (Lv.bp[1] - Lv.bp[0]);
+        truth = {n: n, p: p, m: n * p};
+      } else truth = {m: Lv.m[0] + Math.random() * (Lv.m[1] - Lv.m[0])};
+    }
+    function choose(i){
+      level = i; bar.set(i); reset();
+      var Lv = L();
+      goalEl.innerHTML = Lv.goal;
+      mWrap.hidden = !!Lv.fitN; nWrap.hidden = !Lv.fitN; askEl.hidden = !Lv.ask;
+      overlay(ov, (i + 1) + '. ' + Lv.name, Lv.intro, [{label: 'Začít', cls: 'go', fn: start}]);
+    }
+    function start(){ reset(); draw(); playing = true; overlay(ov, null); update(); setTxt(desc, 'Nový pokus. Nahraj první vzruchy.'); }
+    function rec(n){
+      if(!playing) return;
+      var Lv = L(), k = Math.min(n, Lv.budget - data.length), t0 = now();
+      if(k <= 0) return;
+      for(var i = 0; i < k; i++){
+        var a = trial();
+        data.push(a);
+        if(k - i <= 12){                     // keep the last dozen as traces, with smooth recording noise
+          var nz = [], g = 0;
+          for(var j = 0; j <= 80; j++){ g = 0.6 * g + 0.8 * gauss(); nz.push(g * Lv.noise); }
+          traces.push({a: a, nz: nz, at: REDUCED ? 0 : t0 + (i - (k - Math.min(k, 12))) * 0.045});
+          if(traces.length > 12) traces.shift();
+        }
+      }
+      S = stats();
+      update();
+      setTxt(desc, 'Nahráno ' + k + ', celkem ' + S.N + ' ' + plural(S.N, 'vzruch', 'vzruchy', 'vzruchů') + '. Selhání ' + S.n0 + ', průměrná odpověď ' + pm(S.mean) + NB + 'mV.');
+    }
+    function useEst(m){ mIn.value = clamp(Math.round(m * 100), 0, 600); update(); }
+    function calcHTML(){
+      var Lv = L(), qline = '<p class="ko-qline">Kvantum q&nbsp;=&nbsp;0,40&nbsp;mV, průměr samovolných miniaturních potenciálů.</p>';
+      if(!S || S.N < 10) return '<p class="ko-hint">Odhady se ukážou po prvních deseti vzruších.</p>' + qline;
+      var amp = '<div class="ko-row"><span class="ko-lb">z&nbsp;průměrné odpovědi</span><span class="ko-fx">m&nbsp;=&nbsp;Ā/q&nbsp;=&nbsp;' + pm(S.mean) + '/0,40</span><b class="ko-val" id="ko-ma">' + pm(S.amp.m) + ' ± ' + pm(S.amp.se) + '</b>';
+      if(Lv.fitN){
+        var n = +nIn.value, f = fitScore(n);
+        return amp + '</div><div class="ko-row"><span class="ko-lb">pravděpodobnost uvolnění</span><span class="ko-fx">p&nbsp;=&nbsp;m/n&nbsp;=&nbsp;' + pm(S.amp.m) + '/' + n + '</span><b class="ko-val">' + (f && f.p <= 1 ? pm(f.p) : 'víc než 1, to nejde') + '</b></div>' +
+          '<div class="ko-row"><span class="ko-lb">shoda s&nbsp;binomickou předpovědí</span><span class="ko-fx">pro n&nbsp;=&nbsp;' + n + '</span><b class="ko-val" id="ko-fit">' + (f && f.score !== null ? Math.round(100 * f.score) + NB + '%' : '–') + '</b></div>' + qline;
+      }
+      amp += '<button class="ctrl ko-use" type="button" data-use="a">použít</button></div>';
+      var fl = '<div class="ko-row"><span class="ko-lb">z&nbsp;podílu selhání</span><span class="ko-fx">m&nbsp;=&nbsp;ln(N/n<sub>0</sub>)&nbsp;=&nbsp;ln(' + S.N + '/' + S.n0 + ')</span>';
+      if(S.fail) fl += '<b class="ko-val" id="ko-mf">' + pm(S.fail.m) + ' ± ' + pm(S.fail.se) + '</b><button class="ctrl ko-use" type="button" data-use="f">použít</button></div>';
+      else fl += '<b class="ko-val" id="ko-mf">žádné selhání, nejde spočítat</b></div>';
+      return fl + amp + qline;
+    }
+    function update(){
+      var Lv = L();
+      S = stats();
+      setTxt(nEl, (S ? S.N : 0) + '/' + Lv.budget);
+      setTxt(fEl, S ? String(S.n0) : '–');
+      setTxt(aEl, S ? pm(S.mean) + NB + 'mV' : '–');
+      var left = Lv.budget - (S ? S.N : 0);
+      setTxt(budEl, playing ? 'zbývá ' + left + ' ' + plural(left, 'vzruch', 'vzruchy', 'vzruchů') : '');
+      r10.disabled = r50.disabled = !playing || left <= 0;
+      setTxt(mOut, pm(mEst())); setTxt(nOut, String(+nIn.value));
+      calcEl.innerHTML = calcHTML();
+      Array.prototype.forEach.call(calcEl.querySelectorAll('button.ko-use'), function(b){
+        b.addEventListener('click', function(){ if(!S) return; useEst(b.getAttribute('data-use') === 'f' ? S.fail.m : S.amp.m); setTxt(desc, 'Odhad nastaven na ' + pm(mEst()) + '.'); });
+      });
+      subBtn.disabled = !playing || !S || S.N < 10 || (Lv.ask && !ans);
+    }
+    function submit(){
+      if(subBtn.disabled) return;
+      var Lv = L(), ok, txt, hint = '';
+      playing = false;
+      if(Lv.fitN){
+        var n = +nIn.value, f = fitScore(n);
+        ok = n === truth.n;
+        txt = '<p>Připravená kvanta: <b>' + truth.n + '</b>, pravděpodobnost uvolnění ' + pm(truth.p) + ', takže m&nbsp;=&nbsp;' + pm(truth.m) + '. Tvoje volba: n&nbsp;=&nbsp;' + n + '.</p>';
+        if(!ok) hint = (f && f.score !== null ? 'S&nbsp;n&nbsp;=&nbsp;' + n + ' vycházela shoda ' + Math.round(100 * f.score) + '&nbsp;%. ' : 'S&nbsp;n&nbsp;=&nbsp;' + n + ' by p vyšlo větší než 1. ') + 'Zkus posuvníkem všechna n a&nbsp;hledej to, při kterém křivka nejlíp sedí na histogram.';
+      } else {
+        var est = mEst(), err = Math.abs(est - truth.m) / truth.m;
+        ok = err <= Lv.tol && (!Lv.ask || ans === 'no');
+        txt = '<p>Skutečné m: <b>' + pm(truth.m) + '</b>. Tvůj odhad ' + pm(est) + ', ' + (err < 0.005 ? 'přesně.' : 'o&nbsp;' + Math.round(err * 100) + '&nbsp;% vedle.') + ' Nahráno ' + S.N + ' ' + plural(S.N, 'vzruch', 'vzruchy', 'vzruchů') + '.</p>';
+        if(Lv.ask) txt += '<p>Poissonovo rozdělení tu neplatí.' + (ans === 'yes' ? ' Při m&nbsp;=&nbsp;' + pm(truth.m) + ' by předpovídalo ' + Math.round(100 * Math.exp(-truth.m)) + '&nbsp;% selhání a&nbsp;' + Math.round(100 * Math.exp(-truth.m) * truth.m * truth.m / 2) + '&nbsp;% dvojitých odpovědí. Tady selhalo ' + Math.round(100 * S.n0 / S.N) + '&nbsp;% vzruchů a&nbsp;dvojitá odpověď nepřišla žádná.' : '') + '</p>';
+        if(!ok){
+          var usedFail = S.fail && Math.abs(est - S.fail.m) <= 0.02 && Math.abs(S.fail.m - S.amp.m) > 0.03;
+          if(err > Lv.tol && S.N < 30) hint = 'Z&nbsp;tak málo vzruchů je odhad hodně nejistý. Nahraj jich víc a&nbsp;sleduj, jak se chyba odhadu zmenšuje.';
+          else if(err > Lv.tol && usedFail && level === 1) hint = 'Selhání bylo jen ' + S.n0 + ' a&nbsp;z&nbsp;tak malého počtu se m odhaduje nepřesně. Průměrná odpověď tu nese víc informace.';
+          else if(err > Lv.tol && usedFail && level === 2) hint = 'Šum rozmazal hranici mezi selháním a&nbsp;jedním kvantem, a&nbsp;tak počet selhání závisí na tom, kudy vede práh. Průměr šum nezkreslí, protože se v&nbsp;něm vyruší.';
+          else if(err > Lv.tol && usedFail && level === 3) hint = 'Odhad z&nbsp;podílu selhání stojí na Poissonově rozdělení. Když neplatí, vyjde nesmysl.';
+          else if(Lv.ask && ans === 'yes' && err <= Lv.tol) hint = 'Odhad m byl dobrý, jen Poissonovo rozdělení tu neplatí.';
+          else if(err > Lv.tol) hint = 'Povolená chyba je ' + Math.round(Lv.tol * 100) + '&nbsp;%. Podívej se, který z&nbsp;obou odhadů má menší chybu, a&nbsp;nahraj víc vzruchů, pokud ještě můžeš.';
+        }
+      }
+      if(ok){ done[level] = true; store.set('hra-kostky-v-mezere', done); bar.mark(level); txt += '<p>' + Lv.win + '</p>'; }
+      else txt += '<p>' + hint + '</p>';
+      var btns = [{label: 'Znovu', fn: function(){ choose(level); start(); }}];
+      if(ok && level + 1 < KOLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      update();
+      overlay(ov, ok ? 'Povedlo se' : 'Ještě ne', txt, btns);
+    }
+
+    r10.addEventListener('click', function(){ rec(10); });
+    r50.addEventListener('click', function(){ rec(50); });
+    mIn.addEventListener('input', update);
+    nIn.addEventListener('input', update);
+    yesBtn.addEventListener('click', function(){ ans = 'yes'; toggleBtn(yesBtn, true, 'platí'); toggleBtn(noBtn, false, 'neplatí'); update(); });
+    noBtn.addEventListener('click', function(){ ans = 'no'; toggleBtn(noBtn, true, 'neplatí'); toggleBtn(yesBtn, false, 'platí'); update(); });
+    subBtn.addEventListener('click', submit);
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+
+    // EPP waveform with its peak scaled to 1 (rise 0.5 ms, decay 4 ms, stimulus at 2 ms)
+    var SHAPE = [], peak = 0;
+    for(var j = 0; j <= 80; j++){ var tt = j / 4 - 2, v = tt < 0 ? 0 : (1 - Math.exp(-tt / 0.5)) * Math.exp(-tt / 4); SHAPE.push(v); peak = Math.max(peak, v); }
+    SHAPE = SHAPE.map(function(v){ return v / peak; });
+
+    return {
+      resize: sizeFor,
+      step: function(){},
+      draw: function(ctx, d){
+        var w = d.w, h = d.h, Lv = L(), narrow = w < 600, tnow = now();
+        ctx.clearRect(0, 0, w, h);
+        // ---- recorded responses, superimposed
+        var vlo = Lv.noise > 0.1 ? -0.8 : -0.2;
+        var T = narrow ? frame(44, 16, w - 58, h * 0.34, 0, 20, vlo, Lv.vmax) : frame(48, 18, w * 0.36 - 52, h - 52, 0, 20, vlo, Lv.vmax);
+        axes(ctx, T, {xt: [[0, '0'], [10, '10'], [20, '20 ms']], yt: [[0, '0'], [1, '1 mV']], yl: Lv.rec || 'odpovědi svalu'});
+        var shown = traces.filter(function(tr){ return tr.at <= tnow; });
+        shown.forEach(function(tr, i){
+          var last = i === shown.length - 1;
+          ctx.strokeStyle = last ? C.gold : 'rgba(199,214,172,.42)'; ctx.lineWidth = last ? 2 : 1.1;
+          ctx.beginPath();
+          for(var j = 0; j <= 80; j++){ var x = T.X(j / 4), y = T.Y(clamp(tr.a * SHAPE[j] + tr.nz[j], vlo, Lv.vmax)); if(j === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
+          ctx.stroke();
+        });
+        if(!data.length) label(ctx, playing ? 'nahraj první vzruchy' : '', T.x0 + 10, T.y0 + T.h * 0.45, C.muted);
+        // ---- histogram of all amplitudes with the model's prediction
+        var hy = narrow ? T.y0 + T.h + 56 : 18, hx = narrow ? 44 : w * 0.36 + 40;
+        var lo = Lv.noise > 0.1 ? -0.8 : -0.2, BW = 0.1, NB2 = Math.round((Lv.hmax - lo) / BW), bins = [];
+        for(var b = 0; b < NB2; b++) bins.push(0);
+        data.forEach(function(a){ bins[clamp(Math.floor((a - lo) / BW), 0, NB2 - 1)]++; });
+        var N = data.length, curveMax = 0, k, grid = [];
+        if(N >= 10 && (Lv.fitN ? !!S && S.amp.m / +nIn.value <= 1 : mEst() >= 0.05)){
+          for(var gi = 0; gi <= 240; gi++){
+            var av = lo + gi / 240 * (Lv.hmax - lo), e = 0;
+            for(k = 0; k <= 14; k++){
+              var pk = pmf(k); if(pk < 1e-7) continue;
+              var sd = Math.sqrt(k * Math.pow(KO_Q * Lv.cv, 2) + Lv.noise * Lv.noise);
+              e += pk * Math.exp(-Math.pow(av - k * KO_Q, 2) / (2 * sd * sd)) / (sd * 2.5066);
+            }
+            grid.push([av, N * BW * e]); curveMax = Math.max(curveMax, N * BW * e);
+          }
+        }
+        var ymax = Math.max(4, Math.max.apply(null, bins) * 1.12, Math.min(curveMax, Math.max.apply(null, bins) * 2.2));
+        var H = frame(hx, hy, (narrow ? w - 58 : w * 0.64 - 56), (narrow ? h - hy - 34 : h - 52), lo, Lv.hmax, 0, ymax);
+        var xt = [[0, '0']]; for(k = 1; k * KO_Q <= Lv.hmax - 0.01; k++) if(k * KO_Q <= Lv.hmax) xt.push([k * KO_Q, (k === 1 ? '0,4' : num(k * KO_Q, 1))]);
+        if(narrow && xt.length > 7) xt = xt.filter(function(t, i){ return i % 2 === 0; });
+        xt[xt.length - 1] = [xt[xt.length - 1][0], xt[xt.length - 1][1] + ' mV'];
+        axes(ctx, H, {xt: xt, yt: [[0, '0']]});
+        label(ctx, 'kolikrát která velikost odpovědi', H.x0 + H.w, H.y0 - 4, C.muted, 'right');
+        ctx.fillStyle = 'rgba(155,176,126,.72)';
+        bins.forEach(function(c, i){ if(c){ var x = H.X(lo + i * BW), y = H.Y(c); ctx.fillRect(x + 0.5, y, Math.max(1, H.X(lo + BW) - H.X(lo) - 1), H.y0 + H.h - y); } });
+        // the failure threshold at half a quantum
+        line(ctx, H.X(KO_Q / 2), H.y0 + 6, H.X(KO_Q / 2), H.y0 + H.h, C.terraBright, 1.2, [4, 4]);
+        label(ctx, 'práh selhání', H.X(KO_Q / 2) + 4, H.y0 + 16, C.terraBright, 'left', '600 9.5px ' + SANS);
+        if(grid.length){
+          ctx.strokeStyle = C.gold; ctx.lineWidth = 1.8; ctx.beginPath();
+          grid.forEach(function(g, i){ var x = H.X(g[0]), y = H.Y(Math.min(g[1], ymax)); if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+          ctx.stroke();
+          label(ctx, Lv.fitN ? 'binomická předpověď' : 'Poisson pro tvůj odhad', H.x0 + H.w, H.y0 + 12, C.gold, 'right', '600 9.5px ' + SANS);
+        } else if(Lv.fitN && N >= 10 && S && S.amp.m / +nIn.value > 1){
+          label(ctx, 'p by bylo větší než 1', H.x0 + H.w, H.y0 + 12, C.terraBright, 'right', '600 9.5px ' + SANS);
+        }
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

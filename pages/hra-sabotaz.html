@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Sabotáž – Větev na větvi</title>
+<meta name="description" content="Detektivka v laboratoři: z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Biochemie</span><span class="sep"></span><span class="n">Detektivka v&nbsp;laboratoři</span></p>
+  <h1 class="title"><em>Sabotáž</em></h1>
+  <p class="deck">Někdo otrávil kvasničnou šťávu. Změř, které meziprodukty glykolýzy se hromadí a&nbsp;které ubývají, a&nbsp;najdi krok, na kterém dráha stojí.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Jak zjistit, z&nbsp;jakých kroků se skládá dráha, kterou nikdo nevidí? Prvním badatelům glykolýzy pomohly jedy. Do šťávy z&nbsp;kvasinek, která kvasila glukózu na ethanol, přidávali látky, které kvašení zastavily, a&nbsp;sledovali, co se nahromadí. Každý jed nahromadil jinou látku, a&nbsp;tak se kousek po kousku skládalo pořadí kroků. Voetova učebnice tomu říká obecná technika výzkumu metabolismu, která se používá dodnes.</p>
+
+  <p><b>Jak hrát:</b> klepnutím na látku ji změříš a&nbsp;porovnáš s&nbsp;neotrávenou kontrolou: 1× znamená beze změny. Změřit jde i&nbsp;rychlost kvašení podle oxidu uhličitého a&nbsp;čistá výroba ATP. Měření je omezený počet. Až budeš vědět, kde dráha vázne, vyber enzym a&nbsp;obviň ho.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Sabotáž</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">vzorek</span> <b id="sb-s">–</b></span>
+        <span class="rd"><span class="lo">měření</span> <b id="sb-m">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="sb-goal">Vyber úroveň a&nbsp;začni.</div>
+      <canvas id="sbgame" height="250" aria-label="Graf naměřených meziproduktů glykolýzy v pořadí dráhy od glukózy po ethanol. Sloupce nahoru znamenají, že se látka proti kontrole hromadí, dolů, že ubývá. Čísla mezi látkami jsou kroky dráhy a zvýrazněný krok je ten, který chceš obvinit."></canvas>
+      <div class="sb-panel">
+        <div class="sb-row"><span class="sb-lbl">Změř</span><div class="sb-chips" id="sb-meas" role="group" aria-label="Co změřit"></div></div>
+        <div class="sb-row"><span class="sb-lbl">Obviň</span><div class="sb-chips" id="sb-acc" role="group" aria-label="Který krok obvinit"></div></div>
+        <div class="sb-go">
+          <button class="ctrl go" type="button" id="sb-accuse" disabled>Obvinit</button>
+          <button class="ctrl" type="button" id="sb-restart">Znovu</button>
+        </div>
+      </div>
+      <div class="game-feedback" id="sb-fb" aria-live="polite"></div>
+      <div class="game-overlay" id="sb-ov" hidden></div>
+    </div>
+    <div class="levels" id="sb-levels"></div>
+  </div>
+  <figcaption><b>Sabotáž.</b> Sloupce ukazují, kolikrát víc nebo méně je meziproduktu než v&nbsp;neotrávené kontrole, v&nbsp;logaritmickém měřítku: terakotově se látka hromadí, modře ubývá, zeleně je skoro beze změny. Otazník znamená, že látku ještě nikdo neměřil, a&nbsp;švestkový sloupec cizí cukerný 6-fosfát, který v&nbsp;kontrole není. Čísla 1 až 12 mezi látkami jsou kroky od hexokinázy po alkoholdehydrogenázu. Které látky se hromadí, odpovídá pozorováním z&nbsp;učebnic, přesné hodnoty jsou ilustrační a&nbsp;mají drobný šum jako skutečná měření.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Když se jeden krok dráhy zastaví, látky před ním se hromadí a&nbsp;látky za ním ubývají, jako voda před zavřeným stavidlem. Z&nbsp;toho, kde se hromadění mění v&nbsp;nedostatek, se pozná, který enzym nepracuje. Takhle se kdysi poskládala glykolýza: od roku 1897, kdy Eduard Buchner ukázal, že šťáva z&nbsp;kvasinek zkvasí cukr i&nbsp;bez buněk, do třicátých let, kdy už byla známá celá dráha.</p>
+
+  <p>Jodacetát se naváže na cystein v&nbsp;aktivním místě glyceraldehyd-3-fosfátdehydrogenázy, a&nbsp;proto se před šestým krokem hromadí fruktóza-1,6-bisfosfát. Fluorid spolu s&nbsp;fosfátem pevně obsadí hořčík v&nbsp;aktivním místě enolázy a&nbsp;hromadí se 2- i&nbsp;3-fosfoglycerát. Arzeničnan nic nezablokuje: enzym šestého kroku ho připojí místo fosfátu, vzniklá sloučenina se sama rozpadne a&nbsp;dráha běží dál, jen bez zisku ATP. A&nbsp;2-deoxyglukóze chybí na druhém uhlíku hydroxylová skupina, takže ji hexokináza fosforyluje, ale fosfohexózaizomeráza ji už dál nezpracuje. Na stejném principu stojí vyšetření PET, při kterém se v&nbsp;buňkách zachytí radioaktivní 2-fluor-2-deoxyglukóza.</p>
+
+  <p>Ve hře je vzorkem jen šťáva z&nbsp;kvasinek a&nbsp;čísla ukazují hlavně směr změn. Víc o&nbsp;jednotlivých krocích glykolýzy je v&nbsp;kapitole <a href="wetware-biochemie-ch2-prvni-rameno-schodiste.html">První rameno schodiště</a>.</p>
+</section>
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Voet D., Voet J.&nbsp;G. <em>Biochemistry</em>, 4.&nbsp;vyd. Wiley, 2011. Oddíl 17-1A: Buchnerova šťáva z&nbsp;kvasinek, inhibitory jako obecná technika výzkumu metabolismu, jodacetát hromadí fruktóza-1,6-bisfosfát a&nbsp;fluorid 3- a&nbsp;2-fosfoglycerát (s.&nbsp;593–594); jodacetát a&nbsp;cystein v&nbsp;aktivním místě glyceraldehyd-3-fosfátdehydrogenázy (s.&nbsp;607); fluorid, fosfát a&nbsp;hořčík v&nbsp;enoláze, rovnováha 2- a&nbsp;3-fosfoglycerátu (s.&nbsp;612); úloha 4, arzeničnan (s.&nbsp;636).</li>
+    <li>Nelson D.&nbsp;L., Cox M.&nbsp;M., Hoskins A.&nbsp;A. <em>Lehninger Principles of Biochemistry</em>, 8.&nbsp;vyd. W.&nbsp;H.&nbsp;Freeman, 2021. Kap.&nbsp;14.1: Buchner 1897 a&nbsp;celá dráha ve třicátých letech. Kap.&nbsp;14, úlohy 10 a&nbsp;11 a&nbsp;jejich řešení: arzeničnan místo fosfátu a&nbsp;pokus Hardena a&nbsp;Younga z&nbsp;roku 1906. Rámeček 14-1: 2-deoxyglukóza mezi inhibitory hexokinázy, 2-fluor-2-deoxyglukóza se hromadí jako 6-fosfát, PET. E-kniha nemá tištěná čísla stran, citujeme proto oddíly, úlohy a&nbsp;rámečky.</li>
+    <li>Pająk B. a&nbsp;kol. 2-Deoxy-D-Glucose and Its Analogs: From Diagnostic to Therapeutic Agents. <em>International Journal of Molecular Sciences</em> 21(1): 234, 2020. Hexokináza 2-deoxyglukózu fosforyluje, její 6-fosfát nejde izomerovat na fruktóza-6-fosfát, hromadí se a&nbsp;brzdí hexokinázu i&nbsp;izomerázu.</li>
+    <li>Hra je zjednodušený model: poměry meziproduktů, rychlost kvašení a&nbsp;čistá výroba ATP vůči kontrole jsou ilustrační a&nbsp;ukazují hlavně směr změn, drobný šum napodobuje měření.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     SABOTÁŽ — find the poisoned step of glycolysis in a fermenting yeast
+     extract from which intermediates pile up (Voet 4e §17-1A: iodoacetate →
+     fructose 1,6-bisphosphate, fluoride → 3- and 2-phosphoglycerate; p. 607
+     and 612 for the mechanisms). Arsenate blocks nothing but takes the ATP of
+     step 7 (Lehninger ch. 14 problems 10–11, Harden & Young 1906; Voet
+     problem 4). 2-Deoxyglucose is phosphorylated by hexokinase and its
+     6-phosphate cannot be isomerised (Pająk et al. 2020; Lehninger Box 14-1
+     for FdG). Ratios to the unpoisoned control are illustrative (direction
+     right, size invented) with a little measurement noise.
+     ========================================================= */
+  var SB_MET = [
+    {s: 'glukóza', f: 'glukóza'},
+    {s: 'G6P', f: 'glukóza-6-fosfát'},
+    {s: 'F6P', f: 'fruktóza-6-fosfát'},
+    {s: 'FBP', f: 'fruktóza-1,6-bisfosfát'},
+    {s: 'DHAP', f: 'dihydroxyacetonfosfát'},
+    {s: 'GAP', f: 'glyceraldehyd-3-fosfát'},
+    {s: '1,3-BPG', f: '1,3-bisfosfoglycerát'},
+    {s: '3PG', f: '3-fosfoglycerát'},
+    {s: '2PG', f: '2-fosfoglycerát'},
+    {s: 'PEP', f: 'fosfoenolpyruvát'},
+    {s: 'pyruvát', f: 'pyruvát'},
+    {s: 'acetaldehyd', f: 'acetaldehyd'},
+    {s: 'ethanol', f: 'ethanol'}
+  ];
+  // enzyme k sits between metabolite k-1 and k (aldolase splits into DHAP and GAP, the isomerase joins them)
+  var SB_ENZ = ['hexokináza', 'fosfohexózaizomeráza', 'fosfofruktokináza-1', 'aldoláza', 'triózafosfátizomeráza',
+    'glyceraldehyd-3-fosfátdehydrogenáza', 'fosfoglycerátkináza', 'fosfoglycerátmutáza', 'enoláza', 'pyruvátkináza',
+    'pyruvátdekarboxyláza', 'alkoholdehydrogenáza'];
+  var SB_POISON = {
+    jod: {name: 'jodacetát', step: 6, why: 'Jodacetát vyřadí glyceraldehyd-3-fosfátdehydrogenázu, a&nbsp;proto se před šestým krokem hromadí fruktóza-1,6-bisfosfát a&nbsp;triózafosfáty.', r: [1.3, 1.5, 1.4, 6.5, 4.2, 3.5, 0.06, 0.08, 0.08, 0.07, 0.1, 0.1, 0.06], co2: 0.04, atp: 0},
+    fluor: {name: 'fluorid', step: 9, why: 'Fluorid zablokuje enolázu, a&nbsp;proto se hromadí 2- i&nbsp;3-fosfoglycerát.', r: [1.1, 1.1, 1.05, 1.15, 1.1, 1.1, 1.15, 5.5, 4.5, 0.06, 0.08, 0.1, 0.06], co2: 0.04, atp: 0},
+    arsen: {name: 'arzeničnan', step: 'run', why: 'Arzeničnan nahradí fosfát v&nbsp;šestém kroku a&nbsp;vzniklá sloučenina se sama rozpadne: dráha běží dál, jen ATP ze sedmého kroku nevznikne.', r: [1.0, 0.95, 1.0, 1.05, 0.95, 1.0, 0.25, 1.1, 1.05, 1.0, 1.05, 1.0, 1.0], co2: 1.0, atp: 0},
+    dg: {name: '2-deoxyglukóza', step: 2, why: 'Hexokináza 2-deoxyglukózu fosforyluje, ale fosfohexózaizomeráza její 6-fosfát dál nezpracuje, a&nbsp;tak se hromadí.', r: [1.6, 0.35, 0.2, 0.15, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.15], co2: 0.12, atp: -1, analog: 9}
+  };
+  var SB_GENERIC = 'Zablokovaný krok leží mezi poslední látkou, které přibylo, a&nbsp;první, které ubylo.';
+  var SBLEVELS = [
+    {name: 'Jodacetát', poison: 'jod', budget: 5,
+     goal: 'Do kvasničné šťávy někdo přimíchal <b>jodacetát</b>. Najdi enzym, na kterém se glykolýza zastavila. Máš <b>5 měření</b>.',
+     intro: '<p>Šťáva z&nbsp;rozdrcených kvasinek kvasí glukózu na ethanol a&nbsp;oxid uhličitý i&nbsp;bez buněk. Na tom kdysi začala biochemie.</p><p>Klepnutím na látku ji změříš a&nbsp;porovnáš s&nbsp;neotrávenou kontrolou. Před zablokovaným krokem se látky hromadí, za ním ubývají. Až budeš mít jasno, vyber enzym a&nbsp;obviň ho.</p>',
+     win: 'Jodacetát se naváže na cystein v&nbsp;aktivním místě glyceraldehyd-3-fosfátdehydrogenázy. Před šestým krokem se proto hromadí fruktóza-1,6-bisfosfát a&nbsp;triózafosfáty a&nbsp;za ním chybí všechno. Přesně tohle pozorovali první badatelé glykolýzy a&nbsp;stejně se meziprodukty drah hledají dodnes.'},
+    {name: 'Fluorid', poison: 'fluor', budget: 4,
+     goal: 'Tentokrát <b>fluorid</b>. Najdi zablokovaný krok. Máš <b>4 měření</b>.',
+     intro: '<p>Nový vzorek, jiný jed. Měř chytře: jakmile víš, kde se dráha láme, stačí pár měření kolem.</p>',
+     win: 'Fluorid spolu s&nbsp;fosfátem pevně obsadí hořčík v&nbsp;aktivním místě enolázy. Hromadí se 2-fosfoglycerát a&nbsp;s&nbsp;ním i&nbsp;3-fosfoglycerát, který s&nbsp;ním fosfoglycerátmutáza drží v&nbsp;rovnováze.'},
+    {name: 'Arzeničnan', poison: 'arsen', budget: 5,
+     goal: 'Vzorek s&nbsp;<b>arzeničnanem</b>. Zjisti, co se s&nbsp;glykolýzou stalo. Máš <b>5 měření</b>.',
+     intro: '<p>Arzeničnan se chemicky podobá fosfátu. Tenhle jed je zákeřný.</p><p>Nezapomeň, že kromě látek můžeš změřit i&nbsp;rychlost kvašení podle oxidu uhličitého a&nbsp;čistou výrobu ATP. A&nbsp;mezi obviněními je i&nbsp;možnost, že dráha běží, ale nevydělává.</p>',
+     win: 'Arzeničnan se podobá fosfátu natolik, že ho glyceraldehyd-3-fosfátdehydrogenáza připojí místo něj. Vzniklý acylarseničnan se ale hned sám rozpadne na 3-fosfoglycerát. Glykolýza jede dál a&nbsp;nic se nehromadí, jen ATP ze sedmého kroku nevznikne a&nbsp;čistý zisk klesne na nulu. Arthur Harden a&nbsp;William Young to viděli už v&nbsp;roce 1906: když místo fosfátu přidali arzeničnan, kvašení doběhlo do konce a&nbsp;hexózobisfosfát se nehromadil.'},
+    {name: 'Falešná glukóza', poison: 'dg', budget: 4,
+     goal: 'Do šťávy se dostala <b>2-deoxyglukóza</b>, glukóza, které na druhém uhlíku chybí hydroxylová skupina. Najdi, kde se zasekne. Máš <b>4 měření</b>.',
+     intro: '<p>2-deoxyglukóza vypadá skoro jako glukóza. Chybí jí jen hydroxylová skupina na druhém uhlíku.</p><p>Na kterém enzymu se to prozradí?</p>',
+     win: 'Hexokináza 2-deoxyglukózu ochotně fosforyluje, ale fosfohexózaizomeráza z&nbsp;ní fruktózovou podobu neudělá, protože jí chybí hydroxylová skupina na druhém uhlíku. Její 6-fosfát se hromadí a&nbsp;glykolýzu brzdí. Na stejném triku stojí vyšetření PET: radioaktivní 2-fluor-2-deoxyglukóza se v&nbsp;buňkách zachytí jako 6-fosfát a&nbsp;prozradí místa, kde se spotřebovává nejvíc glukózy, třeba nádory.'},
+    {name: 'Neznámý vzorek', poison: 'random', budget: 3,
+     goal: 'Neoznačený vzorek s&nbsp;jedním ze čtyř jedů. Zjisti, co se stalo, na <b>3 měření</b>.',
+     intro: '<p>Jodacetát, fluorid, arzeničnan, nebo 2-deoxyglukóza? Každý zanechá jinou stopu.</p>',
+     win: 'Na rozlišení stačí pár měření, protože každý jed zanechá jinou stopu: jodacetát hromadí fruktóza-1,6-bisfosfát, fluorid fosfoglyceráty, 2-deoxyglukóza svůj 6-fosfát a&nbsp;arzeničnan jen sebere zisk ATP.'}
+  ];
+
+  (function(){
+    var canvas = document.getElementById('sbgame');
+    if(!canvas) return;
+    var ov = document.getElementById('sb-ov'), goalEl = document.getElementById('sb-goal'), fb = document.getElementById('sb-fb');
+    var measEl = document.getElementById('sb-meas'), accEl = document.getElementById('sb-acc'), accuseBtn = document.getElementById('sb-accuse');
+    var sEl = document.getElementById('sb-s'), mEl = document.getElementById('sb-m');
+    var done = store.get('hra-sabotaz', [false, false, false, false, false]);
+    var level = 0, st = null, sim = null;
+    var bar = levelBar('sb-levels', SBLEVELS.length, SBLEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function L(){ return SBLEVELS[level]; }
+    function P(){ return SB_POISON[st.poison]; }
+    function fmtRatio(v){ return v >= 9.5 ? Math.round(v) + '×' : (v >= 1.95 ? num(v, 1) + '×' : (v >= 0.2 ? num(v, 2) + '×' : num(v, 2) + '×')); }
+    function trend(v){ return v > 1.4 ? 'up' : (v < 0.7 ? 'down' : 'same'); }
+    function noisy(v){ return Math.max(0.01, v * (1 + 0.06 * gauss())); }
+
+    // chips: what to measure (13 metabolites, CO₂, ATP) and whom to accuse (12 enzymes + "it runs but earns nothing")
+    var mChips = [], aChips = [];
+    SB_MET.forEach(function(m, i){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl sb-chip'; b.setAttribute('data-i', i);
+      b.setAttribute('aria-label', 'Změřit ' + m.f); b.title = m.f;
+      b.innerHTML = m.s + '<span class="sb-arrow" aria-hidden="true"></span>';
+      b.addEventListener('click', function(){ measure(i); });
+      measEl.appendChild(b); mChips.push(b);
+    });
+    [['co2', 'kvašení (CO₂)'], ['atp', 'zisk ATP']].forEach(function(e){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl sb-chip sb-extra'; b.setAttribute('data-i', e[0]);
+      b.setAttribute('aria-label', e[0] === 'co2' ? 'Změřit rychlost kvašení podle oxidu uhličitého' : 'Změřit čistou výrobu ATP');
+      b.innerHTML = e[1] + '<span class="sb-arrow" aria-hidden="true"></span>';
+      b.addEventListener('click', function(){ measure(e[0]); });
+      measEl.appendChild(b); mChips.push(b);
+    });
+    SB_ENZ.forEach(function(name, k){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl sb-chip'; b.setAttribute('aria-pressed', 'false');
+      b.innerHTML = '<span class="sb-n">' + (k + 1) + '</span>' + name;
+      b.addEventListener('click', function(){ select(k + 1); });
+      accEl.appendChild(b); aChips.push(b);
+    });
+    (function(){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl sb-chip sb-special'; b.setAttribute('aria-pressed', 'false');
+      b.textContent = 'nic nestojí, ale nevydělává';
+      b.addEventListener('click', function(){ select('run'); });
+      accEl.appendChild(b); aChips.push(b);
+    })();
+
+    function reset(){
+      var Lv = L(), keys = ['jod', 'fluor', 'arsen', 'dg'];
+      st = {poison: Lv.poison === 'random' ? keys[Math.floor(Math.random() * keys.length)] : Lv.poison, used: 0, seen: {}, sel: null, over: false};
+      paintChips(); setFb('');
+    }
+    function paintChips(){
+      mChips.forEach(function(b){
+        var key = b.getAttribute('data-i'), seen = st.seen[key], arrow = b.querySelector('.sb-arrow');
+        b.classList.remove('up', 'down', 'same');
+        if(seen){ b.classList.add(seen.t); arrow.textContent = seen.t === 'up' ? '↑' : (seen.t === 'down' ? '↓' : '='); }
+        else arrow.textContent = '';
+        b.disabled = st.over || (!seen && st.used >= L().budget);
+      });
+      aChips.forEach(function(b, k){
+        var id = k < SB_ENZ.length ? k + 1 : 'run', on = st.sel === id;
+        b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.disabled = st.over;
+      });
+      accuseBtn.disabled = st.over || st.sel === null;
+      setTxt(mEl, st.used + ' z ' + L().budget);
+      setTxt(sEl, L().poison === 'random' ? 'neznámý' : P().name);
+    }
+    function setFb(html, cls){ fb.innerHTML = html; fb.className = 'game-feedback' + (cls ? ' ' + cls : ''); }
+    function choose(i){
+      level = i; bar.set(i); reset();
+      goalEl.innerHTML = L().goal;
+      overlay(ov, (i + 1) + '. ' + L().name, L().intro, [{label: 'Začít', cls: 'go', fn: function(){ overlay(ov, null); setFb('Klepni na látku, kterou chceš změřit.'); }}]);
+      draw();
+    }
+    function measure(key){
+      if(st.over) return;
+      var p = P(), seen = st.seen[key];
+      if(!seen){
+        if(st.used >= L().budget){ setFb('Měření došla. Teď obviň enzym.', 'bad'); return; }
+        st.used++;
+        if(key === 'co2') seen = {v: noisy(p.co2)};
+        else if(key === 'atp') seen = {v: p.atp};
+        else {
+          seen = {v: noisy(p.r[key])};
+          if(p.analog && +key === 1) seen.analog = noisy(p.analog);
+        }
+        seen.t = key === 'atp' ? (p.atp < 0 ? 'down' : (p.atp < 0.5 ? 'down' : 'same')) : trend(seen.v);
+        st.seen[key] = seen;
+      }
+      setFb(describe(key, seen));
+      paintChips(); draw();
+    }
+    function describe(key, s){
+      if(key === 'co2') return '<b>Kvašení (oxid uhličitý):</b> ' + Math.round(100 * s.v) + NB + '% kontroly. ' + (s.v > 0.7 ? 'Šťáva kvasí skoro jako bez jedu.' : 'Kvašení skoro stojí.');
+      if(key === 'atp') return '<b>Čistá výroba ATP:</b> ' + (s.v < 0 ? 'ATP ubývá, šťáva ho víc spotřebuje, než vyrobí.' : Math.round(100 * s.v) + NB + '% kontroly, šťáva žádné ATP navíc nevyrábí.');
+      var m = SB_MET[key], v = s.v, txt = '<b>' + m.f.charAt(0).toUpperCase() + m.f.slice(1) + ':</b> ' + fmtRatio(v) + ' kontroly, ' + (s.t === 'up' ? 'hromadí se.' : (s.t === 'down' ? 'ubývá.' : 'skoro beze změny.'));
+      if(s.analog) txt += ' Vedle ní se ale hromadí jiný cukerný 6-fosfát, ' + fmtRatio(s.analog) + ' proti kontrole, kde žádný není.';
+      return txt;
+    }
+    function select(id){
+      if(st.over) return;
+      st.sel = st.sel === id ? null : id;
+      paintChips(); draw();
+      if(st.sel !== null) setFb(st.sel === 'run' ? 'Vybráno: dráha běží, ale nevydělává ATP. Potvrď tlačítkem Obvinit.' : 'Vybráno: krok ' + st.sel + ', ' + SB_ENZ[st.sel - 1] + '. Potvrď tlačítkem Obvinit.');
+    }
+    function accuse(){
+      if(st.over || st.sel === null) return;
+      st.over = true; paintChips(); draw();
+      var p = P(), Lv = L(), ok = st.sel === p.step, text = '';
+      var reveal = Lv.poison === 'random' ? '<p>Ve vzorku byl <b>' + p.name + '</b>.</p>' : '';
+      if(ok){
+        var verb = st.used >= 2 && st.used <= 4 ? 'Stačila' : 'Stačilo';
+        text = reveal + '<p>' + verb + ' ti <b>' + st.used + '</b> měření z&nbsp;' + Lv.budget + '.</p><p>' + (Lv.poison === 'random' ? p.why + ' ' + Lv.win : Lv.win) + '</p>';
+        done[level] = true; store.set('hra-sabotaz', done); bar.mark(level);
+      } else {
+        text = reveal + '<p>' + wrongText(p) + '</p>';
+      }
+      var btns = [{label: 'Znovu', fn: function(){ choose(level); overlay(ov, null); setFb('Klepni na látku, kterou chceš změřit.'); }}];
+      if(ok && level + 1 < SBLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      overlay(ov, ok ? 'Povedlo se' : 'Ještě ne', text, btns);
+    }
+    function wrongText(p){
+      var s = st.sel;
+      if(p.step === 'run') return s === 6 || s === 7 ? 'Šestý ani sedmý krok nestojí: látek za nimi je dost a&nbsp;kvašení jede skoro jako v&nbsp;kontrole. Něco ale chybí. Změř čistou výrobu ATP.' :
+        'Tenhle krok nestojí: látek za ním je dost a&nbsp;kvašení jede skoro jako v&nbsp;kontrole. Změř čistou výrobu ATP.';
+      if(s === 'run') return 'Tady dráha opravdu stojí: kvašení skoro ustalo a&nbsp;některé látky se hromadí. ' + SB_GENERIC;
+      if(p.step === 2 && s === 1) return 'Hexokináza pracuje: vyrobila 6-fosfát, který se hromadí. Molekula se zasekne až o&nbsp;krok dál.';
+      if(p.step === 9 && s === 8) return 'Fosfoglycerátmutáza pracuje: 3- i&nbsp;2-fosfoglycerátu je stejně moc. Zlom je až za nimi.';
+      return 'To nebyl on. ' + SB_GENERIC;
+    }
+    accuseBtn.addEventListener('click', accuse);
+    onClick('sb-restart', function(){ choose(level); overlay(ov, null); setFb('Klepni na látku, kterou chceš změřit.'); });
+
+    /* ---------- the crossover plot ---------- */
+    sim = makeSim('sbgame', function(cv, dim){
+      function sizeFor(d){                 // on phones the plot turns into rows, which need more height
+        var want = d.w < 600 ? 320 : 250;
+        if((parseInt(cv.dataset.h, 10) || 0) === want) return;
+        cv.dataset.h = String(want);
+        var nd = fit(cv); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+      }
+      sizeFor(dim);
+      return {resize: sizeFor, step: function(){}, draw: function(ctx, d){ paint(ctx, d); }};
+    });
+    function draw(){ /* the render loop repaints every frame; nothing to do here */ }
+    var LO = Math.log(0.04) / Math.LN10, HI = Math.log(10) / Math.LN10;
+    function paint(ctx, d){
+      var w = d.w, h = d.h, narrow = w < 600;
+      ctx.clearRect(0, 0, w, h);
+      if(!st) return;
+      var p = P(), N = SB_MET.length;
+      function lg(v){ return Math.log(clamp(v, 0.04, 10)) / Math.LN10; }
+      var colOf = function(t){ return t === 'up' ? C.terraBright : (t === 'down' ? C.blue : C.sage); };
+      if(!narrow){
+        var x0 = 46, x1 = w - 150, y0 = 24, y1 = h - 54, base = y0 + (y1 - y0) * HI / (HI - LO);
+        var gap = (x1 - x0) / N, bw = Math.min(26, gap * 0.5);
+        function Y(v){ return base - (lg(v) / (HI - LO)) * (y1 - y0); }
+        ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y1); ctx.stroke();
+        [[10, '10×'], [3, '3×'], [1, '1×'], [0.3, '0,3×'], [0.1, '0,1×']].forEach(function(t){
+          var yy = Y(t[0]); ctx.strokeStyle = t[0] === 1 ? 'rgba(233,231,216,.45)' : 'rgba(70,80,60,.6)'; ctx.setLineDash(t[0] === 1 ? [] : [2, 3]);
+          ctx.beginPath(); ctx.moveTo(x0, yy); ctx.lineTo(x1, yy); ctx.stroke(); ctx.setLineDash([]);
+          label(ctx, t[1], x0 - 5, yy + 3, C.muted, 'right', '500 9px ' + MONO);
+        });
+        label(ctx, 'množství proti kontrole', x0 - 40, y0 - 12, C.muted, 'left', '600 9px ' + SANS);
+        for(var i = 0; i < N; i++){
+          var cx = x0 + gap * (i + 0.5), s = st.seen[i];
+          if(s){
+            ctx.fillStyle = colOf(s.t); var yv = Y(s.v);
+            ctx.fillRect(cx - bw / 2, Math.min(yv, base), bw, Math.max(2, Math.abs(yv - base)));
+            label(ctx, fmtRatio(s.v), cx, yv < base ? yv - 4 : yv + 11, C.ink, 'center', '600 9px ' + MONO);
+            if(s.analog){ var ya = Y(s.analog); ctx.fillStyle = C.plum; ctx.fillRect(cx + bw / 2 + 2, ya, 7, base - ya); label(ctx, 'cizí 6-fosfát ' + fmtRatio(s.analog), cx + bw / 2 + 13, ya + 8, C.plum, 'left', '600 8.5px ' + SANS); }
+          } else {
+            ctx.strokeStyle = 'rgba(154,164,140,.35)'; ctx.setLineDash([2, 3]); ctx.strokeRect(cx - bw / 2 + 0.5, base - 14.5, bw - 1, 28); ctx.setLineDash([]);
+            label(ctx, '?', cx, base + 4, 'rgba(154,164,140,.6)', 'center', '600 10px ' + SANS);
+          }
+          label(ctx, SB_MET[i].s, cx, y1 + (gap < 70 && i % 2 ? 28 : 15), C.ink, 'center', '600 ' + (gap < 62 ? 8.5 : 9.5) + 'px ' + SANS);
+          if(i < N - 1){
+            var ex = x0 + gap * (i + 1), sel = st.sel === i + 1;
+            if(sel){ line(ctx, ex, y0, ex, y1, C.gold, 2); }
+            label(ctx, String(i + 1), ex, y1 + 44, sel ? C.gold : C.muted, 'center', (sel ? '700 ' : '500 ') + '9px ' + MONO);
+          }
+        }
+        if(st.sel !== null){
+          var nm = st.sel === 'run' ? 'dráha běží naprázdno' : SB_ENZ[st.sel - 1];
+          label(ctx, 'obviněn: ' + nm, x1, y0 - 6, C.gold, 'right', '700 9.5px ' + SANS);
+        }
+        extras(ctx, x1 + 22, y0 + 8, w - x1 - 34, false);
+      } else {
+        var lx = 76, rx = w - 12, top = 14, rowH = (h - top - 70) / N, mid = lx + (rx - lx) * HI / (HI - LO);
+        function X(v){ return mid + (lg(v) / (HI - LO)) * (rx - lx); }
+        [[10, '10×'], [1, '1×'], [0.1, '0,1×']].forEach(function(t){
+          var xx = X(t[0]); ctx.strokeStyle = t[0] === 1 ? 'rgba(233,231,216,.45)' : 'rgba(70,80,60,.6)'; ctx.setLineDash(t[0] === 1 ? [] : [2, 3]);
+          ctx.beginPath(); ctx.moveTo(xx, top); ctx.lineTo(xx, top + rowH * N); ctx.stroke(); ctx.setLineDash([]);
+          label(ctx, t[1], xx, top + rowH * N + 11, C.muted, 'center', '500 8.5px ' + MONO);
+        });
+        for(var j = 0; j < N; j++){
+          var cy = top + rowH * (j + 0.5), sj = st.seen[j];
+          label(ctx, SB_MET[j].s, lx - 8, cy + 3, C.ink, 'right', '600 9px ' + SANS);
+          if(sj){
+            ctx.fillStyle = colOf(sj.t); var xv = X(sj.v);
+            ctx.fillRect(Math.min(xv, mid), cy - rowH * 0.32, Math.max(2, Math.abs(xv - mid)), rowH * 0.64);
+            label(ctx, fmtRatio(sj.v), xv < mid ? Math.max(lx + 2, xv - 3) : Math.min(rx - 2, xv + 3), cy + 3, C.ink, xv < mid ? 'right' : 'left', '600 8.5px ' + MONO);
+            if(sj.analog){ var xa = X(sj.analog); ctx.fillStyle = C.plum; ctx.fillRect(mid, cy + rowH * 0.36, xa - mid, 4);
+              label(ctx, 'cizí 6-fosfát', xa, cy + rowH * 0.36 - 2, C.plum, 'right', '600 8px ' + SANS); }
+          } else label(ctx, '?', mid + 6, cy + 3, 'rgba(154,164,140,.6)', 'left', '600 9px ' + SANS);
+          if(j < N - 1){
+            var ey = top + rowH * (j + 1), selj = st.sel === j + 1;
+            if(selj) line(ctx, lx - 4, ey, rx, ey, C.gold, 2);
+            label(ctx, String(j + 1), 6, ey + 3, selj ? C.gold : C.muted, 'left', (selj ? '700 ' : '500 ') + '8.5px ' + MONO);
+          }
+        }
+        extras(ctx, 10, top + rowH * N + 24, w - 20, true);
+      }
+    }
+    function extras(ctx, x, y, wd, row){
+      var items = [['co2', 'kvašení (CO₂)'], ['atp', 'čistý zisk ATP']];
+      items.forEach(function(it, k){
+        var s = st.seen[it[0]], xx = row ? x + k * (wd / 2) : x, yy = row ? y : y + k * 52;
+        label(ctx, it[1], xx, yy + 4, C.muted, 'left', '600 9px ' + SANS);
+        var txt = !s ? '?' : (it[0] === 'co2' ? Math.round(100 * s.v) + NB + '%' : (s.v < 0 ? 'ubývá' : Math.round(100 * s.v) + NB + '%'));
+        label(ctx, txt, xx, yy + 22, !s ? 'rgba(154,164,140,.6)' : (s.t === 'same' ? C.sage : (it[0] === 'atp' || s.t === 'down' ? C.blue : C.terraBright)), 'left', '700 ' + (row ? 13 : 15) + 'px ' + MONO);
+        if(s && !row) label(ctx, 'kontroly', xx + 58, yy + 22, C.muted, 'left', '500 9px ' + SANS);
+      });
+    }
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+  })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Bez dechu – Větev na větvi</title>
+<meta name="description" content="Hra o kvašení: rozhoduj, kam poputuje pyruvát, aby buňce nedošlo NAD⁺ ani energie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Biochemie</span><span class="sep"></span><span class="n">Hra o&nbsp;kvašení</span></p>
+  <h1 class="title">Bez <em>dechu</em></h1>
+  <p class="deck">Glykolýza jede, jen dokud má NAD⁺. Rozhoduj, kam poputuje pyruvát, když mitochondrie nestačí: v&nbsp;červené krvince, při sprintu, v&nbsp;kvasnicích i&nbsp;v&nbsp;nádoru.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">Šestý krok glykolýzy potřebuje NAD⁺ a&nbsp;buňka ho má jen hrstku. Každá glukóza z&nbsp;něj udělá dvě molekuly NADH, a&nbsp;dokud se NADH nevrátí zpátky na NAD⁺, glykolýza stojí. S&nbsp;kyslíkem ho vracejí mitochondrie. Bez kyslíku musí buňka elektrony z&nbsp;NADH uložit do pyruvátu: vznikne laktát, u&nbsp;kvasinek ethanol a&nbsp;oxid uhličitý. Tomu se říká kvašení.</p>
+
+  <p><b>Jak hrát:</b> posuvníkem pod obrázkem rozhoduješ, kolik pyruvátu poputuje do mitochondrií a&nbsp;kolik na laktát (u&nbsp;kvasinek na ethanol). Ovládat ho jde i&nbsp;šipkami na klávesnici. Nahoře vidíš kolotoč NAD⁺, jak jsou vytížené mitochondrie a&nbsp;zásobu energie, dole průběh v&nbsp;čase i&nbsp;to, co buňku teprve čeká. Mitochondrie zvládnou jen tolik pyruvátu, kolik jim dovolí kyslík. Kvašení zvládne, kolik chceš, ale dá jen dvě ATP z&nbsp;glukózy.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Bez dechu</div>
+      <div class="readout">
+        <span class="rd"><span class="lo" id="bd-l1">energie</span> <b id="bd-v1">–</b></span>
+        <span class="rd"><span class="lo" id="bd-l2">NAD⁺</span> <b id="bd-v2">–</b></span>
+        <span class="rd"><span class="lo" id="bd-l3">glykogen</span> <b id="bd-v3">–</b></span>
+        <span class="rd"><span class="lo">čas</span> <b id="bd-t">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="bd-goal">Vyber úroveň a&nbsp;začni.</div>
+      <canvas id="bdgame" height="350" aria-label="Schéma buňky: zásoba cukru, glykolýza s kolotočem NAD⁺ a NADH, rozvětvení pyruvátu do mitochondrií nahoře a na laktát nebo ethanol dole, vpravo zásoba energie. Pod schématem průběh energie v čase a poptávka po ATP."></canvas>
+      <p class="vh" id="bd-desc" aria-live="polite"></p>
+      <div class="sim-controls bd-controls">
+        <div class="bd-route">
+          <span class="bd-end l" id="bd-left">do mitochondrií</span>
+          <input type="range" id="bd-x" min="0" max="100" step="1" value="0" aria-label="Kolik pyruvátu poputuje na laktát místo do mitochondrií">
+          <span class="bd-end r" id="bd-right">na laktát</span>
+          <span class="bd-val" id="bd-xv">0&nbsp;%</span>
+        </div>
+        <div class="bd-btns">
+          <button class="ctrl go" type="button" id="bd-give" hidden>Podat lék</button>
+          <button class="ctrl" type="button" id="bd-restart">Znovu</button>
+        </div>
+      </div>
+      <div class="game-overlay" id="bd-ov" hidden></div>
+    </div>
+    <div class="levels" id="bd-levels"></div>
+  </div>
+  <figcaption><b>Bez dechu.</b> Světlé kuličky v&nbsp;kolotoči pod glykolýzou jsou NAD⁺, tmavé NADH. Pyruvát teče do mitochondrií (nahoře), nebo na laktát či ethanol (dole). Pruh pod mitochondriemi ukazuje, jak jsou vytížené vzhledem ke kyslíku, který mají, a&nbsp;terakotové tečky před nimi jsou pyruvát, který čeká i&nbsp;se svým NADH. Sloupec vpravo je zásoba energie (ATP a&nbsp;fosfokreatin), dole její průběh v&nbsp;čase a&nbsp;světle poptávka po ATP. Ve čtvrté úrovni jsou místo schématu tři buňky a&nbsp;šedofialová část pruhu glykolýzy je kapacita, kterou ubral inhibitor. Jedna glukóza dá ve hře 2&nbsp;ATP kvašením a&nbsp;30&nbsp;ATP s&nbsp;mitochondriemi, jako u&nbsp;Lehningera. Ostatní čísla jsou ilustrační.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>NAD⁺ má buňka mnohem méně než glukózy, kterou za pár minut zpracuje, a&nbsp;tak by se glykolýza bez jeho vracení brzy zastavila. S&nbsp;kyslíkem vracejí NAD⁺ mitochondrie: elektrony z&nbsp;NADH projdou dýchacím řetězcem až na kyslík a&nbsp;pyruvát shoří na oxid uhličitý. Bez kyslíku je buňka uloží do pyruvátu. Lehninger tomu říká kvašení: buňka získá ATP, nespotřebuje kyslík a&nbsp;množství NAD⁺ ani NADH se nezmění. Červené krvinky, které mitochondrie nemají, vyrábějí laktát i&nbsp;za dostatku kyslíku. Kvasinky místo laktátu vyrábějí ethanol a&nbsp;oxid uhličitý.</p>
+
+  <p>Kvašení dá z&nbsp;jedné glukózy 2&nbsp;ATP, spálení s&nbsp;mitochondriemi asi 30. Aby buňka bez kyslíku vyrobila stejné množství ATP, musí podle Lehningera zpracovat asi patnáctkrát víc glukózy. Louis Pasteur si toho všiml u&nbsp;kvasinek a&nbsp;dnes se tomu říká Pasteurův efekt. Svaly při sprintu sáhnou do glykogenu a&nbsp;laktát, který přitom vznikne, odnese krev do jater. Tam se z&nbsp;něj v&nbsp;klidu znovu stane glukóza. Tomu koloběhu se říká Coriho cyklus a&nbsp;kyslíku, který tělo po námaze spotřebuje navíc, kyslíkový dluh.</p>
+
+  <p>Nádory podle Lehningera přijímají glukózu a&nbsp;štěpí ji glykolýzou zhruba desetkrát rychleji než zdravé tkáně. Většina nádorových buněk zpočátku roste s&nbsp;nedostatkem kyslíku, protože k&nbsp;nim ještě nevedou cévy, a&nbsp;Otto Warburg si už v&nbsp;roce 1928 všiml, že nádory glykolýzu zrychlují i&nbsp;tam, kde kyslík mají. Na téhle závislosti stojí vyšetření PET: radioaktivně značená 2-fluor-2-deoxyglukóza se v&nbsp;buňkách zachytí jako 6-fosfát a&nbsp;ukáže místa, kde se spotřebovává nejvíc glukózy. A&nbsp;proto se zkoumají i&nbsp;látky, které glykolýzu brzdí.</p>
+
+  <p>Ve hře o&nbsp;osudu pyruvátu rozhoduješ ty. V&nbsp;buňce to žádný ventil nedělá: kolik pyruvátu skončí jako laktát, rozhodují koncentrace látek, kyslík a&nbsp;enzymy samy. Víc je v&nbsp;kapitole <a href="wetware-biochemie-ch2-prvni-rameno-schodiste.html">První rameno schodiště</a>.</p>
+
+  <p><i>Hra vysvětluje princip a&nbsp;nikomu neradí s&nbsp;léčbou.</i></p>
+</section>
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Nelson D.&nbsp;L., Cox M.&nbsp;M., Hoskins A.&nbsp;A. <em>Lehninger Principles of Biochemistry</em>, 8.&nbsp;vyd. W.&nbsp;H.&nbsp;Freeman, 2021. Kap.&nbsp;14.1: šestý krok a&nbsp;NAD⁺, kterého má buňka mnohem méně než glukózy a&nbsp;které se proto musí pořád vracet. Kap.&nbsp;14.3: obr.&nbsp;14-11 (tři osudy pyruvátu a&nbsp;vracení NAD⁺), Pasteurův a&nbsp;Warburgův efekt (asi patnáctkrát víc glukózy bez kyslíku; Warburg 1928), mléčné kvašení, červené krvinky bez mitochondrií a&nbsp;definice kvašení, alkoholové kvašení. Rámeček 14-1: nádory (příjem glukózy a&nbsp;glykolýza asi desetkrát rychleji, nedostatek kyslíku, asi 30&nbsp;ATP na glukózu s&nbsp;kyslíkem, tři inhibitory hexokinázy, 2-fluor-2-deoxyglukóza a&nbsp;PET). Rámeček 14-2: sprint, kyslíkový dluh, Coriho cyklus, sportovec a&nbsp;aligátor. E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a&nbsp;rámečky.</li>
+    <li>Hra je zjednodušený model: o&nbsp;osudu pyruvátu rozhoduje hráč, mitochondrie zvládnou jen tolik, kolik jim dovolí kyslík, a&nbsp;pyruvát, který nestihnou, čeká i&nbsp;se svým NADH. Jedna glukóza dá 2&nbsp;ATP kvašením a&nbsp;30&nbsp;ATP s&nbsp;mitochondriemi. Poptávka po ATP, velikost zásob energie, NAD⁺, glykogenu a&nbsp;cukru, rychlost, s&nbsp;jakou přibývá kyslík, i&nbsp;dávky inhibitoru jsou ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     BEZ DECHU — the NAD⁺ budget of glycolysis (První rameno schodiště, §vi).
+     Glycolysis turns 2 NAD⁺ into 2 NADH per glucose at the glyceraldehyde-
+     3-phosphate dehydrogenase step and the NAD⁺ pool is small (Lehninger
+     14.1). The player splits pyruvate between the mitochondria (limited by
+     oxygen; NAD⁺ comes back via respiration; 30 ATP per glucose in all, as in
+     Box 14-1) and fermentation (lactate, or ethanol + CO₂ in yeast: NAD⁺
+     back at once, 2 ATP per glucose). Pyruvate the mitochondria cannot take
+     waits in front of them with its NADH; the same valve splits that queue.
+     Level 4 swaps the valve for a hexokinase inhibitor acting on three cells.
+     Demands, pool sizes and rates are illustrative.
+     ========================================================= */
+  var BD_MITO = 14;                       // ATP per pyruvate burnt with oxygen (2 × 14 + 2 = 30 per glucose)
+  function bdStep(c, p, x, dt){
+    var a = 2 * (1 - x);                  // pyruvate sent to the mitochondria per glucose
+    var want = p.D + 2 * (1 - c.E);       // cover the demand and refill the energy store
+    var J;
+    if(a <= 1e-9) J = want / 2;
+    else {
+      var J1 = want / (2 + BD_MITO * a);
+      J = (a * J1 <= p.cap) ? J1 : Math.max(p.cap / a, (want - BD_MITO * p.cap) / 2);
+    }
+    var f = c.n / (c.n + 0.12) * 1.12;   // NAD⁺ available for the dehydrogenase step
+    J = Math.max(0, Math.min(J, p.Jmax * f));
+    if(c.G !== null && c.G <= 0) J = 0;
+    var inflow = a * J;
+    var proc = Math.min(p.cap, inflow + c.B / 0.8);
+    var fb = x * c.B / 1.5;
+    c.B = Math.max(0, c.B + (inflow - proc - fb) * dt);
+    c.n = clamp(c.n + (2 * J * x + fb + proc - 2 * J) / p.N0 * dt, 0, 1);
+    var S = 2 * J + BD_MITO * proc;
+    c.E = clamp(c.E + (S - p.D) / p.Ecap * dt, 0, 1);
+    if(c.G !== null) c.G = Math.max(0, c.G - J * dt);
+    c.F = 2 * J * x + fb;                 // pyruvate fermented per second
+    c.L = Math.max(0, c.L + (c.F - (p.clear || 0) * c.L) * dt);
+    c.J = J; c.proc = proc; c.inflow = inflow; c.S = S; c.cap = p.cap;
+    return c;
+  }
+
+  var BD_SPR = {t0: 12, t1: 27, rest: 6, peak: 16};
+  function bdSprintD(t){
+    var s = BD_SPR;
+    if(t < s.t0) return s.rest;
+    if(t < s.t0 + 1) return s.rest + (s.peak - s.rest) * (t - s.t0);
+    if(t < s.t1) return s.peak;
+    if(t < s.t1 + 1.5) return s.peak - (s.peak - s.rest) * (t - s.t1) / 1.5;
+    return s.rest;
+  }
+  var BD_AIR = [[0, 10], [15, 27], [32, 44], [49, 60]];
+  function bdAir(t){ for(var i = 0; i < BD_AIR.length; i++) if(t >= BD_AIR[i][0] && t < BD_AIR[i][1]) return 1; return 0; }
+  function bdNextSwitch(t){
+    var cuts = [];
+    BD_AIR.forEach(function(r){ if(r[0] > 0) cuts.push(r[0]); if(r[1] < 60) cuts.push(r[1]); });
+    cuts.sort(function(a, b){ return a - b; });
+    for(var i = 0; i < cuts.length; i++) if(cuts[i] > t) return cuts[i];
+    return null;
+  }
+  var BD_TRIO = [
+    {key: 't', name: 'nádorová buňka', x: 0.95, cap: 0.3, D: 4, Jmax: 1.5, col: '#E39A67'},
+    {key: 'r', name: 'červená krvinka', x: 1, cap: 0, D: 1, Jmax: 0.8, col: '#E0787A'},
+    {key: 'n', name: 'zdravá buňka', x: 0.03, cap: 1, D: 4, Jmax: 0.6, col: '#9BB07E'}
+  ];
+  var BDLEVELS = [
+    {name: 'Červená krvinka', kind: 'cell', dur: 30, D: function(){ return 1; }, M: 0, Jmax: 1.5, N0: 6, Ecap: 12, E0: 0.9, G0: null,
+     src: 'glukóza z krve', ferm: 'laktát', fermSub: 'mléčné kvašení', third: 'výroba ATP', okLine: 'Krvinka to zvládla.',
+     goal: 'Červená krvinka nemá mitochondrie. Udrž jí <b>energii</b> 30&nbsp;s.',
+     intro: '<p>Krvinka bere glukózu z&nbsp;krve a&nbsp;štěpí ji glykolýzou. V&nbsp;šestém kroku se přitom NAD⁺ mění na NADH a&nbsp;krvinka ho má jen hrstku.</p><p>Posuvníkem pod obrázkem rozhoduješ, kam poputuje pyruvát. Zatím míří do mitochondrií. Sleduj kolotoč NAD⁺.</p>',
+     win: 'Krvinka mitochondrie nemá, a&nbsp;tak pro ni laktát není odpad: je to jediný způsob, jak vrátit NAD⁺ a&nbsp;nechat glykolýzu běžet. Laktát pak krev odnese do jater.',
+     fail: {energy: 'Energie došla. Pyruvát mířil do mitochondrií, které krvinka nemá, a&nbsp;NAD⁺ zůstalo uvězněné jako NADH. Bez NAD⁺ se šestý krok zastaví, i&nbsp;když je glukózy dost. Pošli pyruvát na laktát.'}},
+    {name: 'Sprint', kind: 'cell', dur: 60, D: bdSprintD, M: 1, o2: {max: 0.8, a: 0.25, b: 0.04, up: 6, down: 15}, Jmax: 8, N0: 8, Ecap: 40, E0: 1, G0: 66,
+     src: 'glykogen', ferm: 'laktát', fermSub: 'mléčné kvašení', third: 'glykogen', okLine: 'Sval to zvládl.', band: [BD_SPR.t0, BD_SPR.t1, 'sprint'],
+     goal: 'Stehenní sval: klus, pak 15&nbsp;s <b>sprintu</b> a&nbsp;zase klus. Udrž <b>energii</b> a&nbsp;nevyčerpej <b>glykogen</b>.',
+     intro: '<p>Při sprintu sval potřebuje víc ATP, než stihnou mitochondrie vyrobit s&nbsp;kyslíkem, který jim krev doveze. Přívod kyslíku se navíc rozjíždí pomalu.</p><p>Sleduj, jak se mitochondrie plní pyruvátem. Co nestihnou, čeká před nimi a&nbsp;jeho NADH se nevrací. Kvašení zase dá z&nbsp;glukózy jen 2&nbsp;ATP, takže rychle ujídá glykogen.</p>',
+     win: 'Mitochondrie jely naplno a&nbsp;přebytek pyruvátu převzalo mléčné kvašení. Přesně tak sval sprintuje: kyslík nestačí, a&nbsp;tak sáhne do glykogenu a&nbsp;vzniká laktát. Krev ho pak odnese do jater, kde se z&nbsp;něj znovu stane glukóza, a&nbsp;tomu se říká Coriho cyklus. Vytrénovaný sportovec se ze sprintu na sto metrů vzpamatuje do půl hodiny, aligátor potřebuje mnoho hodin.',
+     fail: {energy: 'Energie došla. Mitochondrie dostávaly víc pyruvátu, než stihly spálit, a&nbsp;NAD⁺ se nevracelo. Co mitochondrie nestíhají, pošli na laktát.',
+            sugar: 'Glykogen došel. Kvašení dá z&nbsp;glukózy 2&nbsp;ATP, kdežto s&nbsp;kyslíkem asi 30. Na laktát posílej jen to, co mitochondrie nestíhají, a&nbsp;po sprintu cestu na laktát zase zavři.'}},
+    {name: 'Kvasnice', kind: 'cell', dur: 60, D: function(){ return 6; }, M: 1.2, air: bdAir, Jmax: 8, N0: 8, Ecap: 14, E0: 1, G0: 70,
+     src: 'cukr', ferm: 'ethanol + CO₂', fermSub: 'alkoholové kvašení', third: 'cukr', okLine: 'Kvasinky to zvládly.',
+     goal: 'Kvasnice v&nbsp;kádi: vzduch chvílemi vypadne. Udrž je 60&nbsp;s při síle a&nbsp;vystač s&nbsp;<b>cukrem</b>.',
+     intro: '<p>Kvasinky umějí obojí. Se vzduchem spálí pyruvát v&nbsp;mitochondriích, bez vzduchu ho mění na ethanol a&nbsp;oxid uhličitý.</p><p>Chvíli předtím, než vzduch vypadne nebo se vrátí, se nahoře rozsvítí upozornění.</p>',
+     win: 'Louis Pasteur si všiml, že kvasinky bez kyslíku spotřebují mnohonásobně víc cukru než s&nbsp;ním. Dnes víme proč: kvašení dá z&nbsp;glukózy 2&nbsp;ATP, spálení s&nbsp;kyslíkem asi 30. Podle Lehningera musí buňka bez kyslíku zpracovat asi patnáctkrát víc glukózy, aby získala stejně ATP. Tomu se říká Pasteurův efekt.',
+     fail: {energy: 'Energie došla, když vypadl vzduch. Bez kyslíku mitochondrie NADH nevrátí, a&nbsp;tak musí pyruvát na ethanol.',
+            sugar: 'Cukr došel. Kvasinky kvasily i&nbsp;ve chvílích, kdy měly vzduch, a&nbsp;kvašení je na cukr asi patnáctkrát dražší. Když vzduch je, posílej pyruvát do mitochondrií.'}},
+    {name: 'Slabé místo nádoru', kind: 'trio', dur: 40,
+     goal: 'Nastav dávku <b>inhibitoru hexokinázy</b> tak, aby nádorové buňce do 40&nbsp;s došla energie a&nbsp;červená krvinka i&nbsp;zdravá buňka si udržely aspoň <b>40&nbsp;%</b>.',
+     intro: '<p>Tři buňky a&nbsp;stejná glukóza. Zdravá buňka pálí pyruvát v&nbsp;mitochondriích. Nádorová buňka je odkázaná hlavně na glykolýzu a&nbsp;pyruvát mění na laktát. Červená krvinka mitochondrie nemá vůbec.</p><p>Inhibitor brzdí hexokinázu, první krok glykolýzy, ve všech třech. Nastav dávku a&nbsp;podej lék.</p>',
+     win: 'Nádorová buňka potřebuje na stejné množství ATP mnohem víc glukózy, a&nbsp;proto ji brzda glykolýzy zasáhne dřív než zdravou buňku. Lehninger uvádí tři inhibitory hexokinázy, které jako protinádorové látky vypadají slibně: 2-deoxyglukózu, lonidamin a&nbsp;3-brompyruvát. Je to ale dvousečná zbraň: stejně zranitelná je každá buňka, která žije z&nbsp;glykolýzy, třeba červená krvinka.',
+     fail: {tumour: 'Nádorová buňka to vydržela. Glykolýzy jí zbylo dost, aby si ATP vyrobila. Zvyš dávku.',
+            r: 'Červená krvinka nevydržela. Nemá mitochondrie, a&nbsp;tak je na glykolýze závislá stejně jako nádor. Sniž dávku.',
+            n: 'Zdravá buňka nevydržela. Takhle silná brzda zastaví glykolýzu skoro všude. Sniž dávku.'}}
+  ];
+
+  makeSim('bdgame', function(canvas, dim){
+    var ov = document.getElementById('bd-ov'), goalEl = document.getElementById('bd-goal'), desc = document.getElementById('bd-desc');
+    var slider = document.getElementById('bd-x'), xv = document.getElementById('bd-xv');
+    var leftEl = document.getElementById('bd-left'), rightEl = document.getElementById('bd-right'), giveBtn = document.getElementById('bd-give');
+    var lab = [document.getElementById('bd-l1'), document.getElementById('bd-l2'), document.getElementById('bd-l3')];
+    var val = [document.getElementById('bd-v1'), document.getElementById('bd-v2'), document.getElementById('bd-v3')], tEl = document.getElementById('bd-t');
+    var done = store.get('hra-bez-dechu', [false, false, false, false]);
+    var level = 0, st = null, last = now(), parts = [], bubbles = [], spawn = {g: 0, m: 0, f: 0}, ringA = 0, warned = -1;
+    var bar = levelBar('bd-levels', BDLEVELS.length, BDLEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function sizeFor(d){                 // the phone layout stacks the panels, so it needs more height
+      var want = d.w < 600 ? 460 : 350;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    sizeFor(dim);
+
+    function L(){ return BDLEVELS[level]; }
+    function xNow(){ return +slider.value / 100; }
+    function newCell(Lv){ return {n: 1, E: Lv.E0 || 1, G: Lv.G0 === undefined ? null : Lv.G0, B: 0, L: 0, J: 0, proc: 0, inflow: 0, F: 0, S: 0, cap: 0}; }
+    function reset(){
+      var Lv = L();
+      st = {t: 0, playing: false, ended: false, hist: [], fail: null, O2: 0, dead: null, minE: {r: 1, n: 1}};
+      if(Lv.kind === 'trio'){
+        st.cs = BD_TRIO.map(function(){ return {n: 1, E: 1, G: null, B: 0, L: 0, J: 0, proc: 0, inflow: 0, F: 0, S: 0, cap: 0}; });
+      } else {
+        st.c = newCell(Lv);
+        if(Lv.o2) st.O2 = Math.min(Lv.o2.max, Lv.o2.a + Lv.o2.b * Lv.D(0));
+      }
+      parts = []; bubbles = []; spawn = {g: 0, m: 0, f: 0}; warned = -1;
+    }
+    function setLabels(){
+      var Lv = L();
+      if(Lv.kind === 'trio'){
+        setTxt(lab[0], 'nádor'); setTxt(lab[1], 'krvinka'); setTxt(lab[2], 'zdravá');
+        setTxt(leftEl, 'slabá dávka'); setTxt(rightEl, 'silná dávka'); slider.parentNode.classList.add('dose');
+        slider.setAttribute('aria-label', 'Dávka inhibitoru hexokinázy');
+      } else {
+        setTxt(lab[0], 'energie'); setTxt(lab[1], 'NAD⁺'); setTxt(lab[2], Lv.third);
+        setTxt(leftEl, 'do mitochondrií'); setTxt(rightEl, Lv.air ? 'na ethanol' : 'na laktát'); slider.parentNode.classList.remove('dose');
+        slider.setAttribute('aria-label', Lv.air ? 'Kolik pyruvátu poputuje na ethanol místo do mitochondrií' : 'Kolik pyruvátu poputuje na laktát místo do mitochondrií');
+      }
+    }
+    function showX(){ setTxt(xv, slider.value + NB + '%'); }
+    function choose(i){
+      level = i; bar.set(i); reset();
+      var Lv = L();
+      goalEl.innerHTML = Lv.goal;
+      setLabels();
+      slider.value = 0; slider.disabled = false; showX();
+      giveBtn.hidden = Lv.kind !== 'trio'; giveBtn.disabled = false;
+      update();
+      overlay(ov, (i + 1) + '. ' + Lv.name, Lv.intro, [{label: 'Začít', cls: 'go', fn: start}]);
+    }
+    function start(){
+      reset(); overlay(ov, null); last = now();
+      if(L().kind === 'trio'){ setTxt(desc, 'Nastav dávku a podej lék.'); return; }
+      st.playing = true;
+    }
+    function give(){
+      if(L().kind !== 'trio' || st.playing) return;
+      reset(); st.playing = true; slider.disabled = true; giveBtn.disabled = true; last = now();
+      setTxt(desc, 'Lék podán, dávka ' + slider.value + ' %.');
+    }
+    function finish(ok, reason){
+      st.playing = false; st.ended = true; slider.disabled = false; giveBtn.disabled = false;
+      var Lv = L(), text = '';
+      if(Lv.kind === 'trio'){
+        text = '<p>Dávka <b>' + slider.value + NB + '%</b>. Nádorová buňka ' + (st.dead !== null ? 'přišla o&nbsp;energii za ' + Math.round(st.dead) + NB + 's' : 'vydržela') +
+          ', červená krvinka měla nejmíň ' + Math.floor(100 * st.minE.r) + NB + '%, zdravá buňka ' + Math.floor(100 * st.minE.n) + NB + '%.</p>';
+      } else {
+        var c = st.c;
+        text = '<p>' + (ok ? Lv.okLine : 'Konec po ' + Math.round(st.t) + NB + 's.') + (c.G !== null && Lv.G0 ? ' Zbylo <b>' + Math.round(100 * c.G / Lv.G0) + NB + '%</b> ' + (Lv.air ? 'cukru' : 'glykogenu') + '.' : '') + '</p>';
+      }
+      text += '<p>' + (ok ? Lv.win : Lv.fail[reason]) + '</p>';
+      if(ok){ done[level] = true; store.set('hra-bez-dechu', done); bar.mark(level); }
+      var btns = [{label: 'Znovu', fn: function(){ choose(level); start(); }}];
+      if(ok && level + 1 < BDLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      overlay(ov, ok ? 'Povedlo se' : 'Ještě ne', text, btns);
+    }
+    function pctTxt(v){ return Math.round(100 * v) + NB + '%'; }
+    function update(){
+      var Lv = L();
+      if(Lv.kind === 'trio'){
+        setTxt(val[0], st.dead !== null ? '0' + NB + '%' : pctTxt(st.cs[0].E));
+        setTxt(val[1], pctTxt(st.cs[1].E)); setTxt(val[2], pctTxt(st.cs[2].E));
+      } else {
+        var c = st.c;
+        setTxt(val[0], pctTxt(c.E)); setTxt(val[1], pctTxt(c.n));
+        setTxt(val[2], c.G === null ? (st.playing || st.ended ? pctTxt(Math.min(1, c.S / Lv.D(st.t))) : '–') : pctTxt(c.G / Lv.G0));
+      }
+      setTxt(tEl, Math.floor(st.t) + NB + 's');
+    }
+
+    slider.addEventListener('input', function(){
+      showX();
+      if(L().kind !== 'trio') setTxt(desc, 'Na ' + (L().air ? 'ethanol' : 'laktát') + ' jde ' + slider.value + ' % pyruvátu.');
+    });
+    giveBtn.addEventListener('click', give);
+    onClick('bd-restart', function(){ choose(level); start(); });
+    document.addEventListener('keydown', function(e){
+      if(!st || e.altKey || e.ctrlKey || e.metaKey) return;
+      if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      if(e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if(!st.playing || slider.disabled) return;
+      e.preventDefault();
+      slider.value = clamp(+slider.value + (e.key === 'ArrowRight' ? 10 : -10), 0, 100);
+      slider.dispatchEvent(new Event('input'));
+    });
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+
+    /* ---------- simulation ---------- */
+    function capNow(Lv, t){
+      if(Lv.air) return Lv.M * Lv.air(t);
+      if(Lv.o2) return Lv.M * st.O2;
+      return Lv.M * 0;
+    }
+    function advance(dt){
+      var Lv = L(), h = 0.02, n = Math.max(1, Math.round(dt / h)), hh = dt / n;
+      for(var k = 0; k < n && st.playing; k++){
+        var t = st.t;
+        if(Lv.kind === 'trio'){
+          var dose = +slider.value / 100;
+          BD_TRIO.forEach(function(p, j){
+            var c = st.cs[j];
+            if(j === 0 && st.dead !== null){ c.E = 0; c.J = 0; c.F = 0; return; }
+            bdStep(c, {D: p.D, cap: p.cap, Jmax: p.Jmax * (1 - dose), N0: 6, Ecap: 12}, p.x, hh);
+          });
+          if(st.dead === null && st.cs[0].E <= 0){ st.dead = t; setTxt(desc, 'Nádorové buňce došla energie.'); }
+          st.minE.r = Math.min(st.minE.r, st.cs[1].E); st.minE.n = Math.min(st.minE.n, st.cs[2].E);
+          st.t += hh;
+          if(st.minE.r < 0.4){ update(); finish(false, 'r'); return; }
+          if(st.minE.n < 0.4){ update(); finish(false, 'n'); return; }
+        } else {
+          var D = Lv.D(t);
+          if(Lv.o2){ var tg = Math.min(Lv.o2.max, Lv.o2.a + Lv.o2.b * D); st.O2 += (tg - st.O2) / (tg > st.O2 ? Lv.o2.up : Lv.o2.down) * hh; }
+          bdStep(st.c, {D: D, cap: capNow(Lv, t), Jmax: Lv.Jmax, N0: Lv.N0, Ecap: Lv.Ecap, clear: 0.03}, xNow(), hh);
+          st.t += hh;
+          if(st.c.E <= 0){ update(); finish(false, 'energy'); return; }
+          if(st.c.G !== null && st.c.G <= 0){ update(); finish(false, 'sugar'); return; }
+        }
+        if(!st.hist.length || st.t - st.hist[st.hist.length - 1][0] >= 0.2){
+          if(Lv.kind === 'trio') st.hist.push([st.t, st.cs[0].E, st.cs[1].E, st.cs[2].E]);
+          else st.hist.push([st.t, st.c.E, st.c.n, Lv.o2 ? st.O2 : (Lv.air ? Lv.air(st.t) : 0)]);
+        }
+        if(st.t >= Lv.dur){
+          update();
+          if(Lv.kind === 'trio') finish(st.dead !== null, st.dead !== null ? null : 'tumour');
+          else finish(true);
+          return;
+        }
+      }
+      if(Lv.air){                       // warn before the air switches
+        var nx = bdNextSwitch(st.t);
+        if(nx !== null && nx - st.t < 1.5 && warned !== nx){ warned = nx; setTxt(desc, bdAir(nx) ? 'Za chvíli se vrátí vzduch.' : 'Za chvíli vypadne vzduch.'); }
+      }
+    }
+
+    /* ---------- drawing ---------- */
+    function geom(w, h){
+      var g = {narrow: w < 600};
+      if(!g.narrow){
+        g.src = {x: 14, y: 40, w: 84, h: 96};
+        g.gly = {x: 120, y: 50, w: Math.min(220, w * 0.24), h: 64};
+        g.ring = {x: g.gly.x + g.gly.w / 2, y: g.gly.y + g.gly.h + 50, rx: g.gly.w * 0.42, ry: 22};
+        g.fork = {x: g.gly.x + g.gly.w + 34, y: g.gly.y + g.gly.h / 2};
+        g.en = {x: w - 46, y: 30, w: 22, h: 168};
+        g.br = {x: g.fork.x + 36, w: Math.max(130, g.en.x - 40 - (g.fork.x + 36))};
+        g.mito = {y: 16, h: 70}; g.ferm = {y: 128, h: 70};
+        g.chart = {x0: 44, x1: w - 16, y0: 230, y1: h - 22};
+      } else {
+        g.src = {x: 10, y: 12, w: 78, h: 62};
+        g.gly = {x: 10, y: 98, w: Math.max(120, w * 0.4), h: 60};
+        g.ring = {x: g.gly.x + g.gly.w / 2, y: g.gly.y + g.gly.h + 46, rx: g.gly.w * 0.42, ry: 20};
+        g.fork = {x: g.gly.x + g.gly.w + 16, y: g.gly.y + g.gly.h / 2};
+        g.en = {x: w - 30, y: 16, w: 18, h: 250};
+        g.br = {x: g.fork.x + 18, w: Math.max(110, g.en.x - 14 - (g.fork.x + 18))};
+        g.mito = {y: 14, h: 76}; g.ferm = {y: 186, h: 70};
+        g.chart = {x0: 34, x1: w - 12, y0: 300, y1: h - 22};
+      }
+      g.inM = {x: g.br.x, y: g.mito.y + g.mito.h / 2};
+      g.inF = {x: g.br.x, y: g.ferm.y + g.ferm.h / 2};
+      return g;
+    }
+    function bez(p0, p1, p2, s){ var u = 1 - s; return {x: u * u * p0.x + 2 * u * s * p1.x + s * s * p2.x, y: u * u * p0.y + 2 * u * s * p1.y + s * s * p2.y}; }
+    function pathPt(g, kind, s){
+      var o = {x: g.gly.x + g.gly.w, y: g.fork.y};
+      if(kind === 'g'){
+        if(g.narrow) return bez({x: g.src.x + g.src.w / 2, y: g.src.y + g.src.h}, {x: g.src.x + g.src.w / 2, y: g.gly.y - 6}, {x: g.gly.x + g.gly.w * 0.3, y: g.gly.y}, s);
+        return bez({x: g.src.x + g.src.w, y: g.src.y + g.src.h / 2}, {x: g.gly.x - 10, y: g.src.y + g.src.h / 2}, {x: g.gly.x, y: g.gly.y + g.gly.h / 2}, s);
+      }
+      if(s < 0.3){ var q = s / 0.3; return {x: o.x + (g.fork.x - o.x) * q, y: o.y}; }
+      var r = (s - 0.3) / 0.7, end = kind === 'm' ? g.inM : g.inF;
+      return bez({x: g.fork.x, y: g.fork.y}, {x: g.fork.x + 10, y: end.y}, end, r);
+    }
+    function drawPath(ctx, g, kind, col){
+      ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath();
+      for(var i = 0; i <= 24; i++){ var p = pathPt(g, kind, i / 24); if(i === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y); }
+      ctx.stroke();
+    }
+    function stepParticles(dt, g){
+      var Lv = L(), c = st.c;
+      if(!c || !st.playing) { parts.forEach(function(p){ p.s += dt * 0.5; }); parts = parts.filter(function(p){ return p.s < 1; }); return; }
+      var k = REDUCED ? 2 : 5;
+      spawn.g += Math.min(9, c.J * k * 1.2) * dt;
+      spawn.m += Math.min(12, c.inflow * k) * dt;
+      spawn.f += Math.min(12, (2 * c.J * xNow()) * k) * dt;
+      while(spawn.g >= 1){ spawn.g -= 1; parts.push({k: 'g', s: 0}); }
+      while(spawn.m >= 1){ spawn.m -= 1; parts.push({k: 'm', s: 0}); }
+      while(spawn.f >= 1){ spawn.f -= 1; parts.push({k: 'f', s: 0}); }
+      parts.forEach(function(p){ p.s += dt * (p.k === 'g' ? 0.9 : 0.75); });
+      parts = parts.filter(function(p){ return p.s < 1; });
+      if(parts.length > 90) parts = parts.slice(parts.length - 90);
+      if(Lv.air && !REDUCED){
+        var rate = Math.min(10, (c.F * 1.5 + c.proc * 2));
+        if(Math.random() < rate * dt) bubbles.push({x: Math.random(), y: 0, v: 0.5 + Math.random() * 0.5});
+        bubbles.forEach(function(b){ b.y += dt * b.v; }); bubbles = bubbles.filter(function(b){ return b.y < 1; });
+      }
+    }
+    function drawCell(ctx, w, h){
+      var Lv = L(), c = st.c, g = geom(w, h), x = xNow(), cap = c.cap || capNow(Lv, st.t);
+      // source
+      ctx.fillStyle = 'rgba(217,183,90,.08)'; rr(ctx, g.src.x, g.src.y, g.src.w, g.src.h, 8); ctx.fill();
+      label(ctx, Lv.src, g.src.x + 6, g.src.y + 14, C.gold, 'left', '600 ' + (g.narrow ? 9.5 : 10.5) + 'px ' + SANS);
+      var frac = c.G === null ? 1 : c.G / Lv.G0, cells = 12, filled = Math.round(cells * frac);
+      for(var i = 0; i < cells; i++){
+        var cx = g.src.x + 12 + (i % 4) * (g.src.w - 22) / 3.4, cy = g.src.y + 26 + Math.floor(i / 4) * (g.narrow ? 11 : 18);
+        ctx.fillStyle = i < filled ? C.gold : 'rgba(217,183,90,.18)';
+        ctx.beginPath(); for(var a = 0; a < 6; a++){ var an = a * Math.PI / 3; ctx.lineTo(cx + 4.5 * Math.cos(an), cy + 4.5 * Math.sin(an)); } ctx.closePath(); ctx.fill();
+      }
+      drawPath(ctx, g, 'g', 'rgba(217,183,90,.35)');
+      // glycolysis box
+      ctx.fillStyle = 'rgba(199,214,172,.10)'; rr(ctx, g.gly.x, g.gly.y, g.gly.w, g.gly.h, 10); ctx.fill();
+      ctx.strokeStyle = 'rgba(199,214,172,.35)'; ctx.lineWidth = 1; rr(ctx, g.gly.x, g.gly.y, g.gly.w, g.gly.h, 10); ctx.stroke();
+      label(ctx, 'glykolýza', g.gly.x + 10, g.gly.y + 18, C.ink, 'left', '700 ' + (g.narrow ? 11 : 12.5) + 'px ' + SANS);
+      label(ctx, '+2 ATP', g.gly.x + g.gly.w - 10, g.gly.y + 18, C.gold, 'right', '600 ' + (g.narrow ? 9 : 10) + 'px ' + MONO);
+      label(ctx, 'glukóza → 2 pyruvát', g.gly.x + 10, g.gly.y + 33, C.muted, 'left', '500 ' + (g.narrow ? 9 : 10) + 'px ' + SANS);
+      var jr = clamp(c.J / Math.max(0.5, Lv.Jmax * 0.5), 0, 1);
+      ctx.fillStyle = 'rgba(155,176,126,.25)'; ctx.fillRect(g.gly.x + 10, g.gly.y + g.gly.h - 16, g.gly.w - 20, 6);
+      ctx.fillStyle = C.sage; ctx.fillRect(g.gly.x + 10, g.gly.y + g.gly.h - 16, (g.gly.w - 20) * jr, 6);
+      label(ctx, 'tempo', g.gly.x + g.gly.w - 10, g.gly.y + g.gly.h - 20, C.muted, 'right', '500 8.5px ' + MONO);
+      // NAD⁺ carousel
+      var NT = 16, light = Math.round(NT * c.n);
+      ctx.strokeStyle = 'rgba(199,214,172,.22)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.ellipse(g.ring.x, g.ring.y, g.ring.rx, g.ring.ry, 0, 0, 2 * Math.PI); ctx.stroke();
+      for(var k2 = 0; k2 < NT; k2++){
+        var an2 = ringA + k2 * 2 * Math.PI / NT, px = g.ring.x + g.ring.rx * Math.cos(an2), py = g.ring.y + g.ring.ry * Math.sin(an2);
+        if(k2 < light){ dot(ctx, px, py, 4.2, '#F1E3B8'); }
+        else { dot(ctx, px, py, 4.2, '#3A4433'); ring(ctx, px, py, 4.2, 'rgba(241,227,184,.55)', 1.1); }
+      }
+      if(g.narrow){
+        label(ctx, 'NAD⁺ světlé, NADH tmavé', g.ring.x, g.ring.y + g.ring.ry + 15, C.muted, 'center', '600 9px ' + SANS);
+      } else {
+        label(ctx, 'NAD⁺', g.ring.x - g.ring.rx - 8, g.ring.y + 4, '#F1E3B8', 'right', '700 10px ' + SANS);
+        label(ctx, 'NADH', g.ring.x + g.ring.rx + 8, g.ring.y + 4, C.muted, 'left', '700 10px ' + SANS);
+      }
+      if(c.n < 0.35 && st.playing && Math.floor(st.t * 3) % 2 === 0) label(ctx, 'NAD⁺ dochází!', g.ring.x, g.ring.y + (g.narrow ? 4 : g.ring.ry + 16), C.terraBright, 'center', '700 10.5px ' + SANS);
+      // branches
+      drawPath(ctx, g, 'm', 'rgba(127,160,192,' + (0.25 + 0.6 * (1 - x)) + ')');
+      drawPath(ctx, g, 'f', 'rgba(227,154,103,' + (0.25 + 0.6 * x) + ')');
+      // mitochondrion
+      var mx = g.br.x, mw = g.br.w, my = g.mito.y, mh = g.mito.h, hasM = Lv.M > 0, airOff = Lv.air && !Lv.air(st.t);
+      ctx.save();
+      ctx.beginPath(); ctx.ellipse(mx + mw / 2, my + mh / 2 - 4, mw / 2, mh / 2 - 6, 0, 0, 2 * Math.PI);
+      if(hasM){
+        ctx.fillStyle = airOff ? 'rgba(127,160,192,.06)' : 'rgba(127,160,192,.16)'; ctx.fill();
+        ctx.strokeStyle = airOff ? 'rgba(127,160,192,.35)' : 'rgba(127,160,192,.75)'; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.clip();
+        ctx.strokeStyle = airOff ? 'rgba(127,160,192,.2)' : 'rgba(127,160,192,.45)'; ctx.lineWidth = 1.2; ctx.beginPath();
+        for(var q = 0; q < 6; q++){ var qx = mx + mw * (0.18 + q * 0.13); ctx.moveTo(qx, my + 8); ctx.quadraticCurveTo(qx + 10, my + mh / 2 - 4, qx, my + mh - 16); }
+        ctx.stroke();
+      } else {
+        ctx.setLineDash([4, 4]); ctx.strokeStyle = 'rgba(154,164,140,.6)'; ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]);
+      }
+      ctx.restore();
+      label(ctx, 'mitochondrie', mx + mw / 2, my + mh / 2 - (hasM ? 6 : 2), hasM && !airOff ? '#C9DBEC' : C.muted, 'center', '700 ' + (g.narrow ? 10.5 : 11.5) + 'px ' + SANS);
+      label(ctx, !hasM ? 'krvinka je nemá' : (airOff ? 'bez vzduchu nepracují' : '+28 ATP z glukózy'), mx + mw / 2, my + mh / 2 + 9, hasM && !airOff ? C.muted : C.terraBright, 'center', '600 ' + (g.narrow ? 9 : 9.5) + 'px ' + SANS);
+      // load gauge: pyruvate offered vs what oxygen allows
+      var gy = my + mh - 6, gw = mw * 0.8, gx = mx + mw * 0.1, load = cap > 0.001 ? c.inflow / cap : (c.inflow > 0.001 ? 2 : 0);
+      if(hasM){
+      ctx.fillStyle = '#3A4433'; ctx.fillRect(gx, gy, gw, 5);
+      ctx.fillStyle = load > 1.03 ? C.terraBright : (load > 0.85 ? C.gold : C.blue); ctx.fillRect(gx, gy, gw * Math.min(1, load / 1.5), 5);
+      line(ctx, gx + gw / 1.5, gy - 3, gx + gw / 1.5, gy + 8, C.ink, 1);
+      label(ctx, load > 1.03 ? 'přetížené' : (load > 0.85 ? 'naplno' : 'vytížení'), gx + gw, gy - 3, load > 1.03 ? C.terraBright : C.muted, 'right', '600 8.5px ' + MONO);
+      }
+      if(Lv.o2 || Lv.air){
+        var o2 = Lv.o2 ? st.O2 / Lv.o2.max : Lv.air(st.t);
+        label(ctx, 'O₂', mx + mw - 4, my + 12, C.blue, 'right', '700 9.5px ' + SANS);
+        ctx.fillStyle = '#3A4433'; ctx.fillRect(mx + mw - 14, my + 16, 8, 26);
+        ctx.fillStyle = C.blue; ctx.fillRect(mx + mw - 14, my + 16 + 26 * (1 - o2), 8, 26 * o2);
+      }
+      // the queue: pyruvate waiting in front of the mitochondria
+      var nq = Math.min(24, Math.round(c.B * 3));
+      for(var qi = 0; qi < nq; qi++) dot(ctx, g.inM.x - 6 - (qi % 4) * 6, g.inM.y - 8 + Math.floor(qi / 4) * 6 - 6, 2.6, C.terraBright);
+      if(nq > 6) label(ctx, 'pyruvát čeká', g.inM.x - 2, g.inM.y + 26, C.terraBright, 'right', '600 9px ' + SANS);
+      // fermentation vessel
+      var fx = g.br.x, fy = g.ferm.y, fw = g.br.w, fh = g.ferm.h, lvl = clamp(Lv.air ? (c.L / 120) : (c.L / 30), 0, 1);
+      ctx.fillStyle = 'rgba(227,154,103,.07)'; rr(ctx, fx, fy, fw, fh, 10); ctx.fill();
+      ctx.save(); rr(ctx, fx, fy, fw, fh, 10); ctx.clip();
+      ctx.fillStyle = 'rgba(227,154,103,.22)'; ctx.fillRect(fx, fy + fh * (1 - 0.15 - 0.6 * lvl), fw, fh);
+      bubbles.forEach(function(b){ ring(ctx, fx + 10 + b.x * (fw - 20), fy + fh - 6 - b.y * (fh - 12), 2.4, 'rgba(241,227,184,.7)', 1); });
+      ctx.restore();
+      ctx.strokeStyle = 'rgba(227,154,103,' + (0.3 + 0.5 * x) + ')'; ctx.lineWidth = 1.5; rr(ctx, fx, fy, fw, fh, 10); ctx.stroke();
+      label(ctx, Lv.ferm, fx + fw / 2, fy + 24, '#F1C8A8', 'center', '700 ' + (g.narrow ? 10.5 : 11.5) + 'px ' + SANS);
+      if(g.narrow){
+        label(ctx, Lv.fermSub, fx + fw / 2, fy + 39, C.muted, 'center', '500 8.5px ' + SANS);
+        label(ctx, 'NAD⁺ hned zpátky', fx + fw / 2, fy + 51, C.muted, 'center', '500 8.5px ' + SANS);
+      } else label(ctx, Lv.fermSub + ', NAD⁺ hned zpátky', fx + fw / 2, fy + 39, C.muted, 'center', '500 9.5px ' + SANS);
+      // particles
+      parts.forEach(function(p){ var pt = pathPt(g, p.k, p.s); dot(ctx, pt.x, pt.y, p.k === 'g' ? 3 : 2.6, p.k === 'g' ? C.gold : (p.k === 'm' ? '#A9C3DD' : C.terraBright)); });
+      // energy gauge
+      drawGauge(ctx, g.en, c.E, 'energie');
+      // air warning banner
+      if(Lv.air && st.playing){
+        var nx = bdNextSwitch(st.t);
+        if(nx !== null && nx - st.t < 1.5){
+          var msg = bdAir(nx) ? 'vzduch se vrací' : 'vzduch vypadne!';
+          ctx.fillStyle = bdAir(nx) ? 'rgba(127,160,192,.9)' : 'rgba(227,154,103,.92)';
+          var bw2 = g.narrow ? 140 : 170; rr(ctx, w / 2 - bw2 / 2, 4, bw2, 22, 11); ctx.fill();
+          label(ctx, msg, w / 2, 19, '#21271D', 'center', '700 11px ' + SANS);
+        }
+      }
+      drawChart(ctx, g, w, h);
+    }
+    function drawGauge(ctx, r, v, name){
+      ctx.fillStyle = '#3A4433'; rr(ctx, r.x, r.y, r.w, r.h, 4); ctx.fill();
+      ctx.fillStyle = 'rgba(208,96,74,.25)'; ctx.fillRect(r.x, r.y + r.h * 0.85, r.w, r.h * 0.15);
+      ctx.fillStyle = v < 0.25 ? C.terraBright : C.gold; rr(ctx, r.x + 2, r.y + 2 + (r.h - 4) * (1 - v), r.w - 4, (r.h - 4) * v, 3); ctx.fill();
+      label(ctx, name, r.x + r.w / 2, r.y - 6, C.muted, 'center', '600 9px ' + SANS);
+      label(ctx, Math.round(100 * v) + NB + '%', r.x + r.w / 2, r.y + r.h + 13, v < 0.25 ? C.terraBright : C.gold, 'center', '600 9.5px ' + MONO);
+    }
+    function drawChart(ctx, g, w, h){
+      var Lv = L(), ch = g.chart, dur = Lv.dur;
+      function X(t){ return ch.x0 + t / dur * (ch.x1 - ch.x0); }
+      function Y(v){ return ch.y1 - clamp(v, 0, 1) * (ch.y1 - ch.y0); }
+      ctx.fillStyle = 'rgba(208,96,74,.12)'; ctx.fillRect(ch.x0, Y(0.15), ch.x1 - ch.x0, Y(0) - Y(0.15));
+      if(Lv.band){
+        ctx.fillStyle = 'rgba(227,154,103,.10)'; ctx.fillRect(X(Lv.band[0]), ch.y0, X(Lv.band[1]) - X(Lv.band[0]), ch.y1 - ch.y0);
+        label(ctx, Lv.band[2], (X(Lv.band[0]) + X(Lv.band[1])) / 2, ch.y0 + 10, C.terraBright, 'center', '600 9px ' + SANS);
+      }
+      if(Lv.air){
+        BD_AIR.forEach(function(r, i){ var e = i + 1 < BD_AIR.length ? BD_AIR[i + 1][0] : null; if(e === null) return;
+          ctx.fillStyle = 'rgba(127,160,192,.07)'; ctx.fillRect(X(r[1]), ch.y0, X(e) - X(r[1]), ch.y1 - ch.y0);
+          ctx.strokeStyle = 'rgba(127,160,192,.35)'; ctx.setLineDash([3, 3]); ctx.strokeRect(X(r[1]) + 0.5, ch.y0 + 0.5, X(e) - X(r[1]) - 1, ch.y1 - ch.y0 - 1); ctx.setLineDash([]);
+          label(ctx, g.narrow ? 'bez O₂' : 'bez vzduchu', (X(r[1]) + X(e)) / 2, ch.y0 + 10, C.blue, 'center', '600 8.5px ' + SANS); });
+      }
+      // demand profile (the whole level, so the player can see what is coming)
+      var Dmax = 0, i, t;
+      for(i = 0; i <= 60; i++){ Dmax = Math.max(Dmax, Lv.D(i / 60 * dur)); }
+      ctx.beginPath(); ctx.moveTo(X(0), ch.y1);
+      for(i = 0; i <= 120; i++){ t = i / 120 * dur; ctx.lineTo(X(t), ch.y1 - 0.45 * (ch.y1 - ch.y0) * Lv.D(t) / Dmax); }
+      ctx.lineTo(X(dur), ch.y1); ctx.closePath(); ctx.fillStyle = 'rgba(199,214,172,.09)'; ctx.fill();
+      label(ctx, 'poptávka po ATP', ch.x0 + 4, ch.y1 - 4, 'rgba(199,214,172,.6)', 'left', '600 8.5px ' + SANS);
+      if(Lv.o2){
+        ctx.strokeStyle = 'rgba(127,160,192,.8)'; ctx.lineWidth = 1.2; ctx.beginPath();
+        st.hist.forEach(function(p, q){ var yy = Y(p[3] / Lv.o2.max * 0.98); if(q === 0) ctx.moveTo(X(p[0]), yy); else ctx.lineTo(X(p[0]), yy); });
+        ctx.stroke();
+      }
+      ctx.strokeStyle = C.gold; ctx.lineWidth = 2; ctx.beginPath();
+      st.hist.forEach(function(p, q){ if(q === 0) ctx.moveTo(X(p[0]), Y(p[1])); else ctx.lineTo(X(p[0]), Y(p[1])); });
+      ctx.stroke();
+      line(ctx, ch.x0, ch.y1, ch.x1, ch.y1, C.line, 1);
+      line(ctx, ch.x0, ch.y0, ch.x0, ch.y1, C.line, 1);
+      if(st.playing) line(ctx, X(st.t), ch.y0, X(st.t), ch.y1, 'rgba(233,231,216,.4)', 1, [2, 3]);
+      ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted;
+      [0, dur / 2, dur].forEach(function(tt){ ctx.textAlign = tt === 0 ? 'left' : tt === dur ? 'right' : 'center'; ctx.fillText(Math.round(tt) + NB + 's', X(tt), h - 7); });
+      ctx.textAlign = 'right'; ctx.fillText('100 %', ch.x0 - 4, ch.y0 + 8); ctx.fillText('0', ch.x0 - 4, ch.y1);
+      label(ctx, 'energie v čase', ch.x0 + 4, ch.y0 - 5, C.gold, 'left', '600 9px ' + SANS);
+      if(Lv.o2) label(ctx, 'kyslík', ch.x0 + (g.narrow ? 78 : 86), ch.y0 - 5, C.blue, 'left', '600 9px ' + SANS);
+    }
+    function drawTrio(ctx, w, h){
+      var narrow = w < 600, dose = +slider.value / 100;
+      var cw = narrow ? w - 24 : (w - 48) / 3, chh = narrow ? 84 : 196;
+      BD_TRIO.forEach(function(p, j){
+        var c = st.cs[j], x0 = narrow ? 12 : 12 + j * (cw + 12), y0 = narrow ? 10 + j * (chh + 8) : 12;
+        var dead = j === 0 && st.dead !== null, low = j > 0 && c.E < 0.4;
+        ctx.fillStyle = 'rgba(255,255,255,.03)'; rr(ctx, x0, y0, cw, chh, 10); ctx.fill();
+        ctx.strokeStyle = dead ? 'rgba(227,154,103,.8)' : 'rgba(199,214,172,.25)'; ctx.lineWidth = 1; rr(ctx, x0, y0, cw, chh, 10); ctx.stroke();
+        label(ctx, p.name, x0 + 10, y0 + 18, p.col, 'left', '700 ' + (narrow ? 11 : 12.5) + 'px ' + SANS);
+        label(ctx, dead ? 'došla energie' : (low ? 'pod 40 %' : (st.playing || st.ended ? 'drží se' : '')), x0 + cw - 10, y0 + 18, dead || low ? C.terraBright : C.muted, 'right', '600 9.5px ' + SANS);
+        var rows = narrow ? [[y0 + 32, 'glykolýza'], [y0 + 50, 'pyruvát'], [y0 + 68, 'energie']] : [[y0 + 48, 'glykolýza'], [y0 + 98, 'pyruvát'], [y0 + 148, 'energie']];
+        var bx = x0 + (narrow ? 78 : 10), bwid = cw - (narrow ? 88 : 20), off = narrow ? 0 : 14;
+        rows.forEach(function(r, ri){ label(ctx, r[1] + (narrow && ri === 2 ? ' ' + Math.round(100 * c.E) + NB + '%' : ''), x0 + 10, narrow ? r[0] + 8 : r[0], ri === 2 && c.E < 0.4 ? C.terraBright : C.muted, 'left', '600 9.5px ' + SANS); });
+        // glycolysis capacity: what is left after the inhibitor, and what is used
+        var capF = 1 - dose, use = (p.Jmax > 0 ? c.J / p.Jmax : 0);
+        var yb = rows[0][0] + off - (narrow ? 0 : 4);
+        ctx.fillStyle = '#3A4433'; ctx.fillRect(bx, yb, bwid, 9);
+        ctx.fillStyle = 'rgba(176,122,154,.35)'; ctx.fillRect(bx + bwid * capF, yb, bwid * (1 - capF), 9);
+        ctx.fillStyle = C.sage; ctx.fillRect(bx, yb, bwid * Math.min(use, capF), 9);
+        // pyruvate split (fixed for each cell)
+        yb = rows[1][0] + off - (narrow ? 0 : 4);
+        ctx.fillStyle = C.blue; ctx.fillRect(bx, yb, bwid * (1 - p.x), 9);
+        ctx.fillStyle = C.terraBright; ctx.fillRect(bx + bwid * (1 - p.x), yb, bwid * p.x, 9);
+        if(!narrow){ label(ctx, 'mitochondrie', bx, yb + 21, C.blue, 'left', '500 8.5px ' + SANS); label(ctx, 'laktát', bx + bwid, yb + 21, C.terraBright, 'right', '500 8.5px ' + SANS); }
+        // energy
+        yb = rows[2][0] + off - (narrow ? 0 : 4);
+        ctx.fillStyle = '#3A4433'; ctx.fillRect(bx, yb, bwid, 9);
+        ctx.fillStyle = 'rgba(208,96,74,.3)'; ctx.fillRect(bx, yb, bwid * 0.4, 9);
+        ctx.fillStyle = c.E < 0.4 ? C.terraBright : C.gold; ctx.fillRect(bx, yb, bwid * c.E, 9);
+        if(!narrow) label(ctx, Math.round(100 * c.E) + NB + '%', bx + bwid, yb - 3, C.ink, 'right', '600 9px ' + MONO);
+      });
+      // chart: energy of the three cells
+      var top = narrow ? 3 * (chh + 8) + 22 : 232, ch = {x0: narrow ? 34 : 44, x1: w - 14, y0: top, y1: h - 22}, dur = 40;
+      function X(t){ return ch.x0 + t / dur * (ch.x1 - ch.x0); }
+      function Y(v){ return ch.y1 - clamp(v, 0, 1) * (ch.y1 - ch.y0); }
+      ctx.fillStyle = 'rgba(208,96,74,.10)'; ctx.fillRect(ch.x0, Y(0.4), ch.x1 - ch.x0, Y(0) - Y(0.4));
+      label(ctx, 'hranice 40 %', ch.x1 - 4, Y(0.4) - 3, 'rgba(227,154,103,.8)', 'right', '600 8.5px ' + SANS);
+      [1, 2, 3].forEach(function(k){
+        ctx.strokeStyle = BD_TRIO[k - 1].col; ctx.lineWidth = 2; ctx.beginPath();
+        st.hist.forEach(function(p, q){ if(q === 0) ctx.moveTo(X(p[0]), Y(p[k])); else ctx.lineTo(X(p[0]), Y(p[k])); });
+        ctx.stroke();
+      });
+      line(ctx, ch.x0, ch.y1, ch.x1, ch.y1, C.line, 1); line(ctx, ch.x0, ch.y0, ch.x0, ch.y1, C.line, 1);
+      if(st.playing) line(ctx, X(st.t), ch.y0, X(st.t), ch.y1, 'rgba(233,231,216,.4)', 1, [2, 3]);
+      ctx.font = '500 9px ' + MONO; ctx.fillStyle = C.muted;
+      [0, 20, 40].forEach(function(tt){ ctx.textAlign = tt === 0 ? 'left' : tt === 40 ? 'right' : 'center'; ctx.fillText(tt + NB + 's', X(tt), h - 7); });
+      ctx.textAlign = 'right'; ctx.fillText('100 %', ch.x0 - 4, ch.y0 + 8); ctx.fillText('0', ch.x0 - 4, ch.y1);
+      label(ctx, 'energie buněk v čase', ch.x0 + 4, ch.y0 - 4, C.muted, 'left', '600 9px ' + SANS);
+      label(ctx, 'dávka inhibitoru ' + slider.value + ' %', ch.x1, ch.y0 - 4, C.plum, 'right', '600 9px ' + SANS);
+    }
+
+    return {
+      resize: sizeFor,
+      step: function(){
+        var t = now(), dt = Math.min(0.1, t - last); last = t;
+        if(!st) return;
+        if(st.playing){
+          advance(dt);
+          if(Math.floor(st.t * 4) !== Math.floor((st.t - dt) * 4)) update();
+        }
+        if(st.c && !REDUCED) ringA += dt * (0.4 + 2.2 * Math.min(1, st.c.J / 2));
+        if(st.c) stepParticles(dt, null);
+      },
+      draw: function(ctx, d){
+        ctx.clearRect(0, 0, d.w, d.h);
+        if(!st) return;
+        if(L().kind === 'trio') drawTrio(ctx, d.w, d.h);
+        else drawCell(ctx, d.w, d.h);
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>

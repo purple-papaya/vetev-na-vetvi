@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<title>Neznámá látka – Větev na větvi</title>
+<meta name="description" content="Detektivka v orgánové lázni: z křivek účinku zjisti, co je v neoznačené lahvičce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/wetware-kapitola.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="topbar" aria-label="Drobečková navigace">
+  <span class="crumb">&#8592; <a href="../index.html">Rozcestník</a> <span class="sep-slash">/</span> <a href="hry.html">Hry</a></span>
+  <span class="right">Větev&nbsp;na&nbsp;větvi <span class="dot">✦</span></span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow"><span>Hry · Farmakologie</span><span class="sep"></span><span class="n">Detektivka v&nbsp;orgánové lázni</span></p>
+  <h1 class="title"><em>Neznámá látka</em></h1>
+  <p class="deck">Proužek tkáně, známý agonista a&nbsp;lahvičky bez nálepky. Z&nbsp;křivek účinku zjisti, co v&nbsp;nich je.</p>
+</header>
+
+<article>
+
+<section class="prose">
+  <p class="lede">V&nbsp;orgánové lázni visí v&nbsp;roztoku proužek tkáně. Když se do lázně přidá látka, tkáň odpoví, třeba se stáhne. Z&nbsp;toho, jak odpověď roste s&nbsp;koncentrací, vzniká křivka účinku. Farmakologie z&nbsp;takových křivek čte, jestli látka receptor zapíná, jak silně, nebo jestli ho jen blokuje. Ty teď dostaneš lahvičky bez nálepky a&nbsp;omezený počet pokusů.</p>
+
+  <p><b>Jak hrát:</b> nahoře vyber lahvičku, pod grafem spusť pokus. Pokusů máš omezený počet a&nbsp;každý se dělá na čerstvém proužku tkáně. Šedá čárkovaná křivka je známý plný agonista bez ničeho dalšího, s&nbsp;ní porovnávej. Výsledky se zapisují do sešitu a&nbsp;čísla v&nbsp;něm odpovídají číslům u&nbsp;křivek. Až budeš mít jasno, vyber, co v&nbsp;lahvičce je. Po špatném verdiktu se úroveň hraje znovu a&nbsp;lahvičky se zamíchají.</p>
+</section>
+
+<figure class="sim game">
+  <div class="sim-panel">
+    <div class="sim-head">
+      <div class="label"><span class="idx">HRA</span> Neznámá látka</div>
+      <div class="readout">
+        <span class="rd"><span class="lo">pokusů zbývá</span> <b id="u-left">–</b></span>
+        <span class="rd"><span class="lo">vyřešeno</span> <b id="u-solved">–</b></span>
+      </div>
+    </div>
+    <div class="game-stage">
+      <div class="game-goal" id="u-goal">Vyber úroveň a&nbsp;začni.</div>
+      <div class="lt-vials" id="u-vials" role="group" aria-label="Lahvičky"></div>
+      <canvas id="ugame" height="300" aria-label="Graf odpovědi tkáně podle logaritmu koncentrace: šedá čárkovaná křivka známého agonisty a barevné křivky pokusů s vybranou lahvičkou, očíslované jako zápisy v sešitu. V úrovni se Schildovou řadou vedle nebo pod ním Schildův graf."></canvas>
+      <p class="vh" id="u-desc" aria-live="polite"></p>
+      <div class="lt-lab">
+        <div class="lt-exps" id="u-exps"></div>
+        <div class="lt-book">
+          <p class="lt-head">Sešit</p>
+          <ol class="lt-notes" id="u-notes"></ol>
+        </div>
+      </div>
+      <div class="lt-verdict" id="u-verdict"></div>
+      <div class="game-overlay" id="u-ov" hidden></div>
+    </div>
+    <div class="levels" id="u-levels"></div>
+  </div>
+  <figcaption><b>Neznámá látka.</b> Na vodorovné ose je v&nbsp;logaritmickém měřítku koncentrace: u&nbsp;pokusů, ve kterých se měří známý agonista (s&nbsp;látkou, po vymytí a&nbsp;ve Schildově řadě), koncentrace agonisty, u&nbsp;ostatních koncentrace neznámé látky. Svislá osa ukazuje odpověď tkáně v&nbsp;procentech jejího maxima. Tečky jsou měření s&nbsp;malým rozptylem, čára je model. Látky jsou smyšlené a&nbsp;jejich afinity i&nbsp;účinnosti ilustrační, model odpovídá kapitole: odpověď = S/(1&nbsp;+&nbsp;S), kde podnět S&nbsp;je účinnost krát podíl obsazených receptorů.</figcaption>
+</figure>
+
+<section class="prose">
+  <h2>Co se tu <em>doopravdy</em> děje</h2>
+
+  <p>Odpověď na lék závisí na vlastnostech léku, na jeho afinitě a&nbsp;vnitřní účinnosti, i&nbsp;na vlastnostech tkáně, na tom, kolik má receptorů a&nbsp;jak signál zesiluje. Plný agonista dotáhne tkáň ke stropu, částečný se zastaví níž, i&nbsp;když obsadí všechny receptory. Strop přitom závisí i&nbsp;na počtu receptorů, a&nbsp;proto se plní a&nbsp;částeční agonisté dají porovnat jen ve stejné tkáni. Rezervní receptory se dají prokázat tak, že se část receptorů zničí. Víc o&nbsp;modelu, ze kterého hra vychází, je v&nbsp;kapitole <a href="wetware-farmakologie-ch2-podani-ruky-zblizka.html">Podání ruky zblízka</a>.</p>
+
+  <p>Kompetitivní antagonista soupeří s&nbsp;agonistou o&nbsp;totéž místo. Křivku agonisty posune rovnoběžně doprava a&nbsp;dávkový poměr splní Schildovu rovnici DR − 1 = [B]/K<sub>B</sub>, takže Schildův graf má sklon 1. Donald Jenkinson ji v&nbsp;roce 1960 ověřil na žabím svalu s&nbsp;tubokurarinem a&nbsp;přímka vydržela přes tisícinásobný rozsah koncentrací. Nevratný antagonista receptory vyřadí natrvalo. Fenoxybenzamin se na receptory α pro noradrenalin váže kovalentně a&nbsp;α-bungarotoxin se nevratně váže na receptory pro acetylcholin, a&nbsp;proto se jím dají spočítat i&nbsp;zviditelnit.</p>
+
+  <p>Mnoho receptorů spřažených s&nbsp;G-bílkovinami je trochu aktivních i&nbsp;bez agonisty. Inverzní agonista tuhle vlastní aktivitu stlumí, neutrální antagonista ji nechá být. Kde vlastní aktivita chybí, chová se inverzní agonista jako obyčejný kompetitivní antagonista. V&nbsp;přehledu 380 látek vedených jako antagonisté na 73 receptorech bylo 322 inverzních agonistů a&nbsp;jen 58 neutrálních antagonistů. Podle přehledu z&nbsp;roku 2002 jsou inverzními agonisty i&nbsp;všechna do té doby zkoumaná antihistaminika H<sub>1</sub>.</p>
+</section>
+
+<section class="sources">
+  <h2>Zdroje</h2>
+  <ul>
+    <li>Rosenbaum S.&nbsp;E. (ed.) <em>Basic Pharmacokinetics and Pharmacodynamics</em>, 2.&nbsp;vyd. Wiley, 2017. Kap.&nbsp;1 (S.&nbsp;E. Rosenbaum): rezervní receptory a&nbsp;jejich prokázání zničením části receptorů (s.&nbsp;7), vlastnosti léku a&nbsp;tkáně (s.&nbsp;8). Kap.&nbsp;19 (D.&nbsp;Mould, P.&nbsp;Hutson): Clark, Ariëns, Stephenson a&nbsp;Furchgott (s.&nbsp;394), model účinnosti (s.&nbsp;397–402), E<sub>max</sub> závisí na počtu receptorů a&nbsp;plné a&nbsp;částečné agonisty odliší jen srovnání ve stejné tkáni (s.&nbsp;403–404).</li>
+    <li>Nicholls J.&nbsp;G. a&nbsp;kol. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. α-bungarotoxin se váže na receptory pro acetylcholin nevratně a&nbsp;slouží k&nbsp;jejich počítání (s.&nbsp;190); rámeček 11.3: Schildova rovnice, Jenkinsonův pokus s&nbsp;tubokurarinem (s.&nbsp;191).</li>
+    <li>Neubig R.&nbsp;R. a&nbsp;kol. International Union of Pharmacology Committee on Receptor Nomenclature and Drug Classification. XXXVIII. Update on terms and symbols in quantitative pharmacology. <em>Pharmacological Reviews</em> 55(4): 597–606, 2003. Předpoklady Schildovy analýzy: přímka se sklonem 1 a&nbsp;pA<sub>2</sub> rovné pK<sub>B</sub>.</li>
+    <li>Fenoxybenzamin: monografie AHFS Drug Information (Phenoxybenzamine Hydrochloride), drugs.com. Kovalentní vazba na receptory α, nekompetitivní blokáda.</li>
+    <li>Kenakin T. Efficacy as a&nbsp;vector: the relative prevalence and paucity of inverse agonism. <em>Molecular Pharmacology</em> 65(1): 2–11, 2004. Leurs R., Church M.&nbsp;K., Taglialatela M. H1-antihistamines: inverse agonism, anti-inflammatory actions and cardiac effects. <em>Clinical and Experimental Allergy</em> 32: 489–498, 2002.</li>
+    <li>Hra je zjednodušený model: látky soutěží o&nbsp;receptory podle zákona působení hmoty, podnět je součet účinností obsazených receptorů (u&nbsp;tkáně s&nbsp;vlastní aktivitou i&nbsp;neobsazených) a&nbsp;odpověď S/(1&nbsp;+&nbsp;S). Nevratný antagonista vyřadí část receptorů podle své koncentrace. Tkáň v&nbsp;úrovni Rezerva má tolik receptorů, že ze stejného podílu obsazených receptorů vzniká třistakrát větší podnět. Afinity, účinnosti, rezerva receptorů, vlastní aktivita tkáně a&nbsp;rozptyl měření jsou ilustrační.</li>
+  </ul>
+</section>
+
+</article>
+
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Czech number helpers ---------- */
+  var NB = '\u00a0';
+  function num(x, d){ return x.toFixed(d).replace('.', ','); }
+  function grp(n){                       // 187432 -> "187 432"
+    var s = String(Math.round(n)), out = '';
+    while(s.length > 3){ out = NB + s.slice(-3) + out; s = s.slice(0, -3); }
+    return s + out;
+  }
+  function big(n){                       // readable large counts
+    if(!isFinite(n)) return '–';
+    if(n >= 1e9) return num(n / 1e9, n >= 1e10 ? 0 : 1) + NB + 'mld.';
+    if(n >= 1e6) return num(n / 1e6, n >= 1e7 ? 0 : 1) + NB + 'mil.';
+    if(n >= 1e4) return grp(Math.round(n / 1000)) + NB + 'tis.';
+    return grp(n);
+  }
+  function plural(n, one, few, many){ if(n === 1) return one; if(n >= 2 && n <= 4) return few; return many; }
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+
+  /* ---------- scroll progress ---------- */
+  var bar = document.getElementById('progress');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    if(bar) bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+
+  /* ---------- shared palette (on dark panels) ---------- */
+  var C = {
+    bg: '#21271D', panel: '#2A3125', line: '#46503C',
+    ink: '#E9E7D8', muted: '#9AA48C',
+    sage: '#9BB07E', sageDeep: '#6E8455', sagePale: '#C7D6AC',
+    terra: '#D08A5E', terraBright: '#E39A67', gold: '#D9B75A',
+    blue: '#7FA0C0', plum: '#B07A9A'
+  };
+  var MONO = "'Source Code Pro', ui-monospace, monospace";
+  var SANS = "'Source Sans 3', system-ui, sans-serif";
+
+  function fit(canvas){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    // canvas.height below overwrites the height attribute, so keep the CSS height aside
+    if(!canvas.dataset.h) canvas.dataset.h = canvas.getAttribute('height') || '300';
+    var h = Math.max(1, parseInt(canvas.dataset.h, 10) || 300);
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {ctx: ctx, w: w, h: h};
+  }
+  function rr(ctx, x, y, w, h, r){
+    r = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function setTxt(el, s){ if(el && el.textContent !== s) el.textContent = s; }
+  function toggleBtn(btn, on, label){
+    if(!btn) return;
+    btn.textContent = label;
+    btn.classList.toggle('is-on', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  function onClick(id, fn){ var el = document.getElementById(id); if(el) el.addEventListener('click', fn); return el; }
+  function onInput(id, fn){ var el = document.getElementById(id); if(el){ el.addEventListener('input', fn); } return el; }
+
+  /* ---------- small helpers for the games ---------- */
+  var store = {                          // per-viewer progress; works without storage too
+    get: function(k, d){ try { var v = window.localStorage.getItem('vnv:' + k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+    set: function(k, v){ try { window.localStorage.setItem('vnv:' + k, JSON.stringify(v)); } catch(e){} }
+  };
+  function overlay(el, title, html, buttons){
+    if(!el) return;
+    if(!title){ el.hidden = true; el.innerHTML = ''; return; }
+    var box = document.createElement('div'); box.className = 'game-msg';
+    var h = document.createElement('h3'); h.textContent = title; box.appendChild(h);
+    if(html){ var p = document.createElement('div'); p.className = 'game-text'; p.innerHTML = html; box.appendChild(p); }
+    var row = document.createElement('div'); row.className = 'game-btns';
+    (buttons || []).forEach(function(b){
+      var x = document.createElement('button'); x.type = 'button'; x.className = 'ctrl ' + (b.cls || ''); x.textContent = b.label;
+      x.addEventListener('click', b.fn); row.appendChild(x);
+    });
+    box.appendChild(row);
+    el.innerHTML = ''; el.appendChild(box); el.hidden = false;
+    var first = row.querySelector('button'); if(first) first.focus({preventScroll: true});
+  }
+  function levelBar(containerId, n, names, done, onPick){
+    var box = document.getElementById(containerId);
+    if(!box) return {mark: function(){}, set: function(){}};
+    var btns = [];
+    for(var i = 0; i < n; i++){
+      (function(i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl';
+        b.textContent = (i + 1) + ' · ' + names[i]; b.setAttribute('aria-pressed', 'false');
+        if(done[i]) b.classList.add('done');
+        b.addEventListener('click', function(){ onPick(i); });
+        box.appendChild(b); btns.push(b);
+      })(i);
+    }
+    return {
+      mark: function(i){ if(btns[i]) btns[i].classList.add('done'); },
+      set: function(i){ btns.forEach(function(b, k){ b.classList.toggle('is-on', k === i); b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); }); }
+    };
+  }
+
+  /* render loop that pauses when the canvas scrolls out of view */
+  function makeSim(id, init){
+    var canvas = document.getElementById(id);
+    if(!canvas) return null;
+    var dim = fit(canvas);
+    var sim = init(canvas, dim);
+    var raf = null;
+    function frame(){
+      sim.step(dim);
+      sim.draw(dim.ctx, dim);
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if(raf === null){ raf = requestAnimationFrame(frame); } }
+    function stop(){ if(raf !== null){ cancelAnimationFrame(raf); raf = null; } }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {rootMargin: '140px'});
+      io.observe(canvas);
+    }
+    var t;
+    window.addEventListener('resize', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        dim = fit(canvas);
+        if(sim.resize) sim.resize(dim);
+        sim.draw(dim.ctx, dim);
+      }, 150);
+    });
+    sim.draw(dim.ctx, dim);
+    start();
+    return sim;
+  }
+
+  /* ---------- helpers shared by the second chapters (plots, buttons, randomness) ---------- */
+  function now(){ return (window.performance && performance.now) ? performance.now() / 1000 : Date.now() / 1000; }
+  function rnd(){ return Math.random(); }
+  function gauss(){ var u = 1 - Math.random(), v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.283185 * v); }
+  function binom(n, p){ var k = 0; for(var i = 0; i < n; i++) if(Math.random() < p) k++; return k; }
+  function sgn(v, d){ return (v > 0 ? '+' : (v < 0 ? '−' : '')) + num(Math.abs(v), d === undefined ? 1 : d); }   // signed, Czech minus
+  function fmt(v, d){ return (v < 0 ? '−' : '') + num(Math.abs(v), d === undefined ? 1 : d); }
+  function pct(f, d){ return num(f * 100, d === undefined ? 0 : d) + NB + '%'; }
+  function sup(n){ var m = {'-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹'};
+    return String(n).split('').map(function(ch){ return m[ch] || ch; }).join(''); }
+
+  /* a plot frame: maps data to pixels; log axes when lx/ly are set */
+  function frame(x0, y0, w, h, xmin, xmax, ymin, ymax, lx, ly){
+    function tx(v){ return lx ? Math.log(v) / Math.LN10 : v; }
+    var a = tx(xmin), b = tx(xmax), c = ly ? Math.log(ymin) / Math.LN10 : ymin, d = ly ? Math.log(ymax) / Math.LN10 : ymax;
+    return {
+      x0: x0, y0: y0, w: w, h: h,
+      X: function(v){ return x0 + (tx(v) - a) / (b - a) * w; },
+      Y: function(v){ var t = ly ? Math.log(Math.max(v, 1e-300)) / Math.LN10 : v; return y0 + h - (t - c) / (d - c) * h; },
+      inX: function(px){ var t = a + (px - x0) / w * (b - a); return lx ? Math.pow(10, t) : t; }
+    };
+  }
+  function axes(ctx, F, opt){
+    opt = opt || {};
+    ctx.strokeStyle = C.line; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(F.x0, F.y0); ctx.lineTo(F.x0, F.y0 + F.h); ctx.lineTo(F.x0 + F.w, F.y0 + F.h); ctx.stroke();
+    ctx.font = '500 9.5px ' + MONO; ctx.fillStyle = C.muted;
+    (opt.xt || []).forEach(function(t){
+      var x = F.X(t[0]); ctx.textAlign = 'center';
+      ctx.beginPath(); ctx.moveTo(x, F.y0 + F.h); ctx.lineTo(x, F.y0 + F.h + 3); ctx.stroke();
+      ctx.fillText(t[1], clamp(x, F.x0 + 12, F.x0 + F.w - 12), F.y0 + F.h + 13);
+    });
+    (opt.yt || []).forEach(function(t){
+      var y = F.Y(t[0]); ctx.textAlign = 'right';
+      ctx.beginPath(); ctx.moveTo(F.x0 - 3, y); ctx.lineTo(F.x0, y); ctx.stroke();
+      ctx.fillText(t[1], F.x0 - 5, y + 3);
+    });
+    ctx.font = '600 10px ' + SANS;
+    if(opt.xl){ ctx.textAlign = 'right'; ctx.fillText(opt.xl, F.x0 + F.w, F.y0 + F.h + 26); }
+    if(opt.yl){ ctx.textAlign = 'left'; ctx.fillText(opt.yl, F.x0 + 4, F.y0 + 10); }
+  }
+  function curve(ctx, F, f, xmin, xmax, n, log){
+    ctx.beginPath();
+    for(var i = 0; i <= n; i++){
+      var t = i / n, v = log ? Math.pow(10, Math.log(xmin) / Math.LN10 + t * (Math.log(xmax) - Math.log(xmin)) / Math.LN10) : xmin + t * (xmax - xmin);
+      var x = F.X(v), y = F.Y(f(v));
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  function label(ctx, s, x, y, col, align, font){
+    ctx.font = font || ('600 10px ' + SANS); ctx.fillStyle = col || C.muted; ctx.textAlign = align || 'left'; ctx.fillText(s, x, y);
+  }
+  function dot(ctx, x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill(); }
+  function ring(ctx, x, y, r, col, lw){ ctx.strokeStyle = col; ctx.lineWidth = lw || 1.5; ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.stroke(); }
+  function line(ctx, x1, y1, x2, y2, col, lw, dash){
+    ctx.strokeStyle = col; ctx.lineWidth = lw || 1; ctx.setLineDash(dash || []);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  function arrow(ctx, x1, y1, x2, y2, col, lw){
+    line(ctx, x1, y1, x2, y2, col, lw);
+    var a = Math.atan2(y2 - y1, x2 - x1), s = 5 + (lw || 1);
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - s * Math.cos(a - 0.45), y2 - s * Math.sin(a - 0.45)); ctx.lineTo(x2 - s * Math.cos(a + 0.45), y2 - s * Math.sin(a + 0.45));
+    ctx.closePath(); ctx.fill();
+  }
+  /* a group of buttons that behave like radio buttons */
+  function choice(ids, labels, start, onPick){
+    var btns = ids.map(function(id){ return document.getElementById(id); }), cur = start;
+    function paint(){ btns.forEach(function(b, i){ if(b){ b.classList.toggle('is-on', i === cur); b.setAttribute('aria-pressed', i === cur ? 'true' : 'false'); } }); }
+    btns.forEach(function(b, i){ if(b) b.addEventListener('click', function(){ cur = i; paint(); onPick(i); }); });
+    paint();
+    return {get: function(){ return cur; }, set: function(i){ cur = i; paint(); }};
+  }
+  /* =========================================================
+     NEZNÁMÁ LÁTKA — classify unlabelled drugs from concentration–response
+     curves on a fresh strip of tissue for every experiment. Efficacy model of
+     the chapter (Rosenbaum Eqs 19.7–19.13): occupancies by mass action,
+     stimulus S = q·(S0·free + Σ e·occupied), response = 100·S/(1 + S).
+     q = fraction of working receptors (an irreversible antagonist removes
+     c/(c + Ki) of them, the knock-out pre-treatment leaves 1 %), times the
+     receptor reserve of the tissue (300× in level 4, else 1). S0 is the
+     constitutive activity of the special tissue (0 in ordinary tissue).
+     A neutral antagonist keeps the free-receptor activity (e = S0), an
+     inverse agonist silences it (e = 0). Schild: DR − 1 = [B]/KB.
+     All affinities and efficacies are illustrative.
+     ========================================================= */
+  var LT = {agK: 3e-6, agE: 30, S0: 0.6, qKO: 0.01, noise: 1.2, Bs: [1e-8, 1e-7, 1e-6], Bwash: 1e-6};
+  var LTYPES = {
+    full: {name: 'plný agonista', K: 1e-6, e: 50},
+    part: {name: 'částečný agonista', K: 2e-7, e: 0.7},
+    comp: {name: 'kompetitivní antagonista', K: 2e-8, e: 0},
+    irr: {name: 'nevratný antagonista', Ki: 3e-8, e: 0},
+    hi: {name: 'plný agonista', K: 1e-5, e: 50},
+    lo: {name: 'částečný agonista', K: 5e-7, e: 2},
+    neu: {name: 'neutrální antagonista', K: 1e-8, e: 0},
+    inv: {name: 'inverzní agonista', K: 1e-8, e: 0}
+  };
+  var LEXP = {
+    alone: {label: 'Samotná látka', col: '#D9B75A'},
+    withAg: {label: 'Se známým agonistou', col: '#E39A67'},
+    wash: {label: 'Vymýt a' + NB + 'znovu', col: '#7FA0C0'},
+    schild: {label: 'Schildova řada', col: '#E39A67'},
+    knock: {label: 'Zničit 99' + NB + '% receptorů', col: '#B07A9A'},
+    active: {label: 'Tkáň s' + NB + 'vlastní aktivitou', col: '#9BB07E'}
+  };
+  var LLEVELS = [
+    {name: 'Tři lahvičky', vials: ['A', 'B', 'C'], types: ['full', 'part', 'comp'], budget: 5, exps: ['alone', 'withAg'],
+     verdicts: ['full', 'part', 'comp'],
+     goal: 'Ve třech lahvičkách je plný agonista, částečný agonista a&nbsp;kompetitivní antagonista. Zjisti, co je v&nbsp;které. Máš <b>5 pokusů</b>.',
+     intro: '<p>Tkáň v&nbsp;lázni odpovídá na známého plného agonistu, jeho křivka je šedá a&nbsp;čárkovaná. Neznámou látku můžeš zkusit samotnou, nebo spolu se známým agonistou.</p><p>Plný agonista dotáhne tkáň ke stropu, částečný ne. Antagonista sám nedělá nic.</p>',
+     win: 'Plný agonista dotáhl tkáň až ke stropu, částečný se zastavil níž, i&nbsp;když obsadil všechny receptory. Antagonista sám nic nespustil, jen posunul křivku agonisty doprava: agonisty je potřeba víc, aby ho z&nbsp;receptorů přetlačil.'},
+    {name: 'Posun, nebo strop?', vials: ['D', 'E'], types: ['comp', 'irr'], budget: 4, exps: ['alone', 'withAg', 'wash'],
+     verdicts: ['comp', 'irr'], compK: true,
+     goal: 'Jedna lahvička je kompetitivní antagonista, druhá nevratný. Rozliš je. Máš <b>4 pokusy</b>.',
+     intro: '<p>Oba antagonisté sami nic nedělají. Liší se tím, co udělají s&nbsp;křivkou agonisty a&nbsp;jestli jdou vymýt.</p><p>Pokus <b>Vymýt a&nbsp;znovu</b> nechá tkáň půl hodiny v&nbsp;roztoku s&nbsp;1&nbsp;µM látky, pak ji opláchne a&nbsp;změří agonistu znovu.</p>',
+     win: 'Kompetitivní antagonista posouvá křivku agonisty rovnoběžně doprava a&nbsp;dost agonisty ho vždycky přetlačí. Po vymytí zmizí. Nevratný antagonista receptory vyřadí natrvalo, jako fenoxybenzamin receptory α: strop klesne a&nbsp;vymytí nepomůže. Při rezervě receptorů se ale křivka nejdřív jen posune doprava, a&nbsp;tak rozhoduje vyšší koncentrace nebo vymytí.'},
+    {name: 'Schildův graf', vials: ['F'], types: ['comp'], budget: 2, exps: ['withAg', 'schild'], schild: true,
+     goal: 'V&nbsp;lahvičce je kompetitivní antagonista. Odhadni jeho pA<sub>2</sub> s&nbsp;přesností <b>±0,3</b>. Máš <b>2 pokusy</b>.',
+     intro: '<p>Kompetitivní antagonista posune křivku agonisty doprava. Kolikrát víc agonisty je s&nbsp;ním potřeba na stejný účinek, říká dávkový poměr DR, a&nbsp;platí Schildova rovnice: DR − 1 = [B]/K<sub>B</sub>.</p><p><b>Schildova řada</b> změří posun při třech koncentracích antagonisty a&nbsp;vynese log (DR − 1) proti log [B]. Kde přímka protne nulu, tam leží log K<sub>B</sub>. Číslo s&nbsp;opačným znaménkem je pA<sub>2</sub>.</p>',
+     win: 'Přímka se sklonem 1 je podpis kompetice: agonista a&nbsp;antagonista se přetahují o&nbsp;totéž místo. Donald Jenkinson tak v&nbsp;roce 1960 ověřil tubokurarin na žabím svalu a&nbsp;přímka vydržela přes tisícinásobný rozsah koncentrací.'},
+    {name: 'Rezerva', vials: ['G', 'H'], types: ['hi', 'lo'], budget: 3, exps: ['alone', 'knock'], verdicts: ['hi', 'lo'], rho: 300, xr: [-12, -5],
+     goal: 'V&nbsp;obou lahvičkách jsou agonisté, kteří v&nbsp;téhle tkáni dosáhnou skoro až ke stropu. Který je plný a&nbsp;který částečný agonista? Máš <b>3 pokusy</b>.',
+     intro: '<p>Tahle tkáň má hodně rezervních receptorů, a&nbsp;tak i&nbsp;lék s&nbsp;malou účinností vypadá skoro jako plný agonista.</p><p>Pokus <b>Zničit 99&nbsp;% receptorů</b> tkáň nejdřív ošetří nevratným antagonistou, opláchne ji a&nbsp;pak změří látku.</p>',
+     win: 'Agonista s&nbsp;velkou účinností dotáhl tkáň skoro ke stropu i&nbsp;s&nbsp;jedním procentem receptorů, druhému strop hned klesl. Jestli se lék chová jako plný, nebo částečný agonista, proto záleží i&nbsp;na tkáni a&nbsp;na tom, kolik má receptorů. A&nbsp;rezervní receptory se dají prokázat právě tak, že se jich část zničí.'},
+    {name: 'Tichý, nebo obrácený?', vials: ['I', 'J'], types: ['neu', 'inv'], budget: 3, exps: ['alone', 'withAg', 'active'], verdicts: ['neu', 'inv'],
+     goal: 'Jedna lahvička je neutrální antagonista, druhá inverzní agonista. Rozliš je. Máš <b>3 pokusy</b>.',
+     intro: '<p>V&nbsp;obyčejné tkáni se oba chovají stejně: samy nic nespustí, jen posunou křivku agonisty.</p><p>Některé receptory jsou ale aktivní i&nbsp;bez agonisty. Pokus <b>Tkáň s&nbsp;vlastní aktivitou</b> změří látku v&nbsp;tkáni, kde receptory pracují samy od sebe.</p>',
+     win: 'Inverzní agonista stlumil i&nbsp;aktivitu, kterou receptory mají samy od sebe, neutrální antagonista ji nechal být. Bez vlastní aktivity receptorů se od sebe rozeznat nedají. A&nbsp;inverzních agonistů je překvapivě hodně: v&nbsp;přehledu 380 látek vedených jako antagonisté jich bylo 322. Inverzními agonisty jsou i&nbsp;všechna antihistaminika H<sub>1</sub>, která se do roku 2002 zkoumala.'}
+  ];
+
+  function ltShuffle(a){ a = a.slice(); for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function ltC(M){                                  // concentration in readable units
+    var u = [[1e-3, 'mM'], [1e-6, 'µM'], [1e-9, 'nM'], [1e-12, 'pM']];
+    for(var i = 0; i < u.length; i++) if(M >= u[i][0] * 0.9999){ var v = M / u[i][0]; return (v >= 100 ? grp(v) : v >= 10 ? num(v, 0) : num(v, 1).replace(',0', '')) + NB + u[i][1]; }
+    return num(M * 1e12, 2) + NB + 'pM';
+  }
+  function ltX(v){ return v < 10 ? num(v, 1).replace(',0', '') : grp(v); }
+  // stimulus from a list of ligands {c, K, e} on receptors that work in fraction q, with constitutive activity S0
+  function ltS(list, q, S0){
+    var sum = 1, S = 0;
+    list.forEach(function(x){ if(x.c > 0) sum += x.c / x.K; });
+    S = S0 / sum;
+    list.forEach(function(x){ if(x.c > 0) S += x.e * (x.c / x.K) / sum; });
+    return q * S;
+  }
+  function ltE(S){ return 100 * S / (1 + S); }
+  function ltEC50(f){                                // f(c) -> response; EC50 by bisection on log c
+    var top = f(1), base = f(0), half = base + (top - base) / 2, a = -14, b = 0;
+    for(var i = 0; i < 60; i++){ var m = (a + b) / 2; if((f(Math.pow(10, m)) - half) * (top - base) > 0) b = m; else a = m; }
+    return {ec: Math.pow(10, (a + b) / 2), top: top, base: base};
+  }
+
+  makeSim('ugame', function(canvas, dim){
+    var ov = document.getElementById('u-ov'), goalEl = document.getElementById('u-goal'), desc = document.getElementById('u-desc');
+    var vialsEl = document.getElementById('u-vials'), expsEl = document.getElementById('u-exps'), notesEl = document.getElementById('u-notes');
+    var verdEl = document.getElementById('u-verdict'), leftEl = document.getElementById('u-left'), solvedEl = document.getElementById('u-solved');
+    var done = store.get('hra-neznama-latka', [false, false, false, false, false]);
+    var level = 0, vials = [], cur = 0, left = 0, conc = 1e-7, n = 0, pA2 = 8, guess = 7, ended = false;
+    var bar = levelBar('u-levels', LLEVELS.length, LLEVELS.map(function(l){ return l.name; }), done, function(i){ choose(i); });
+
+    function L(){ return LLEVELS[level]; }
+    function V(){ return vials[cur]; }
+    function say(s){ setTxt(desc, s); }
+    function sizeFor(d){                       // the Schild plot sits under the curves on phones
+      var want = L().schild && d.w < 600 ? 470 : 300;
+      if((parseInt(canvas.dataset.h, 10) || 0) === want) return;
+      canvas.dataset.h = String(want);
+      var nd = fit(canvas); d.ctx = nd.ctx; d.w = nd.w; d.h = nd.h;
+    }
+    function drug(v){
+      var t = LTYPES[v.type], o = {}; for(var k in t) o[k] = t[k];
+      if(v.K) o.K = v.K; if(v.Ki) o.Ki = v.Ki;
+      if(v.type === 'comp' && L().schild) o.K = Math.pow(10, -pA2);
+      return o;
+    }
+    // affinities drawn anew for every attempt, so that potency alone never tells which vial is which
+    function logU(a, b){ return Math.pow(10, a + Math.random() * (b - a)); }
+    function affinities(v){
+      if(v.type === 'comp' && L().compK) v.K = logU(-8.3, -7.7);       // 5–20 nM
+      if(v.type === 'irr') v.Ki = logU(-8, -7.3);                       // 10–50 nM
+      if(v.type === 'hi' || v.type === 'lo') v.K = logU(-9.3, -8.7) * (1 + R() * LTYPES[v.type].e);   // EC50 0,5–2 nM for both
+    }
+    // efficacy of the unknown in a tissue with (S0 > 0) or without constitutive activity
+    function effIn(v, S0){ var d = drug(v); if(v.type === 'neu' || v.type === 'comp') return S0; if(v.type === 'inv' || v.type === 'irr') return 0; return d.e; }
+    function agonist(c){ return {c: c, K: LT.agK, e: LT.agE}; }
+    function noisy(E){ return clamp(E + gauss() * LT.noise, 0, 100); }
+    function XR(){ return L().xr || [-10, -3]; }            // log10 of the concentration window (the sensitive tissue of level 4 sits lower)
+    function curvePts(f){ var pts = [], r = XR(); for(var lg = r[0]; lg <= r[1] + 1e-9; lg += 0.5) pts.push([Math.pow(10, lg), noisy(f(Math.pow(10, lg)))]); return pts; }
+    var DEC = {'-12': '1 pM', '-11': '10 pM', '-10': '0,1 nM', '-9': '1 nM', '-8': '10 nM', '-7': '100 nM', '-6': '1 µM', '-5': '10 µM', '-4': '100 µM', '-3': '1 mM'};
+    function ticks(sparse){ var r = XR(), t = []; for(var lg = r[1]; lg >= r[0]; lg -= sparse ? 3 : 1) t.unshift([Math.pow(10, lg), DEC[String(lg)]]); return t; }
+    function plateau(pts){ return (pts[pts.length - 1][1] + pts[pts.length - 2][1]) / 2; }
+
+    function R(){ return L().rho || 1; }                 // receptor reserve of the tissue in this level
+    function control(c){ return ltE(ltS([agonist(c)], R(), 0)); }
+    var CTRL = ltEC50(control);
+
+    // ---- the experiments: each returns {curves: [{f, pts}], text, ...}
+    function run(kind){
+      var v = V(), d = drug(v), out = {kind: kind, curves: []};
+      if(kind === 'alone' || kind === 'knock' || kind === 'active'){
+        var q = (kind === 'knock' ? LT.qKO : 1) * R(), S0 = kind === 'active' ? LT.S0 : 0;
+        var K = d.K || d.Ki, e = effIn(v, S0);
+        var f = function(c){ return ltE(ltS([{c: c, K: K, e: e}], q, S0)); };
+        var P1 = curvePts(f); out.curves.push({f: f, pts: P1});
+        var top = plateau(P1), base = f(0), r = ltEC50(f);
+        if(kind === 'active'){
+          out.base = base;
+          out.text = 'V&nbsp;tkáni s&nbsp;vlastní aktivitou: výchozí aktivita ' + Math.round(base) + NB + '%, ' +
+            (Math.abs(top - base) < 4 ? 'látka ji nezměnila.' : top < base ? 'látka ji stlumila na ' + Math.round(top) + NB + '%.' : 'látka ji zvedla na ' + Math.round(top) + NB + '%.');
+        } else {
+          var pre = kind === 'knock' ? 'Po zničení 99&nbsp;% receptorů: ' : 'Samotná látka: ';
+          out.text = pre + (top < 4 ? 'žádná odpověď.' : 'odpověď až ' + Math.round(top) + NB + '% maxima tkáně, polovina při ' + ltC(r.ec * Math.pow(10, gauss() * 0.02)) + '.');
+        }
+        return out;
+      }
+      if(kind === 'withAg' || kind === 'wash'){
+        var B = kind === 'wash' ? LT.Bwash : conc, qq = R(), list = [];
+        if(v.type === 'irr') qq *= 1 - B / (B + d.Ki);
+        else if(kind === 'withAg') list.push({c: B, K: d.K, e: d.e});
+        var g = function(c){ return ltE(ltS([agonist(c)].concat(list), qq, 0)); };
+        var P2 = curvePts(g); out.curves.push({f: g, pts: P2});
+        var r2 = ltEC50(g), shift = r2.ec / CTRL.ec * Math.pow(10, gauss() * 0.02), b0 = g(0);
+        var head = kind === 'wash' ? 'Půl hodiny v&nbsp;1&nbsp;µM látky, pak vymytí: ' : 'Se známým agonistem (' + ltC(B) + ' látky): ';
+        var bits = [];
+        if(b0 >= 2) bits.push('už bez agonisty ' + Math.round(b0) + NB + '%');
+        if(shift > 1.25) bits.push('křivka agonisty posunutá doprava ' + ltX(shift) + '×');
+        else if(shift < 0.8) bits.push('křivka posunutá doleva');
+        else bits.push('křivka agonisty na místě');
+        bits.push('strop ' + Math.round(plateau(P2)) + NB + '%');
+        out.text = head + bits.join(', ') + '.';
+        return out;
+      }
+      if(kind === 'schild'){
+        var xs = [], ys = [], parts = [];
+        LT.Bs.forEach(function(Bc, i){
+          var h = function(c){ return ltE(ltS([agonist(c), {c: Bc, K: d.K, e: d.e}], R(), 0)); };
+          out.curves.push({f: h, pts: curvePts(h), shade: i});
+          var DR = ltEC50(h).ec / CTRL.ec * Math.pow(10, gauss() * 0.02);
+          xs.push(Math.log(Bc) / Math.LN10); ys.push(Math.log(Math.max(DR - 1, 1e-3)) / Math.LN10); parts.push(DR < 2 ? num(DR, 2) : ltX(DR));             // two decimals near 1, where log (DR − 1) is sensitive
+        });
+        var mx = (xs[0] + xs[1] + xs[2]) / 3, my = (ys[0] + ys[1] + ys[2]) / 3, sxy = 0, sxx = 0;
+        for(var i = 0; i < 3; i++){ sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) * (xs[i] - mx); }
+        var slope = sxy / sxx, icpt = my - slope * mx;
+        out.schild = {xs: xs, ys: ys, slope: slope, icpt: icpt};
+        out.text = 'Schildova řada (10&nbsp;nM, 100&nbsp;nM a&nbsp;1&nbsp;µM látky): dávkové poměry ' + parts.join(' · ') + ', sklon Schildova grafu ' + num(slope, 2) + '.';
+        return out;
+      }
+    }
+
+    // ---- UI
+    function choose(i){
+      level = i; bar.set(i); ended = false; cur = 0; conc = 1e-7; n = 0; guess = 7; CTRL = ltEC50(control);
+      sizeFor(dim);
+      pA2 = [7.4, 7.7, 8.0, 8.3, 8.6][Math.floor(Math.random() * 5)];
+      var types = ltShuffle(L().types);
+      vials = L().vials.map(function(nm, j){ var v = {name: nm, type: types[j], notes: [], solved: false}; affinities(v); return v; });
+      left = L().budget;
+      goalEl.innerHTML = L().goal;
+      buildVials(); buildExps(); buildVerdict(); refresh();
+      overlay(ov, (i + 1) + '. ' + L().name, L().intro, [{label: 'Do laboratoře', cls: 'go', fn: function(){ overlay(ov, null); }}]);
+    }
+    function buildVials(){
+      vialsEl.innerHTML = '';
+      vials.forEach(function(v, j){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl lt-vial';
+        b.addEventListener('click', function(){ cur = j; refresh(); say('Lahvička ' + v.name + '.'); });
+        vialsEl.appendChild(b);
+      });
+      vialsEl.hidden = vials.length < 2;
+    }
+    function buildExps(){
+      expsEl.innerHTML = '';
+      L().exps.forEach(function(k){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl lt-exp'; b.textContent = LEXP[k].label;
+        b.style.setProperty('--ec', LEXP[k].col); b.setAttribute('data-exp', k);
+        b.addEventListener('click', function(){ experiment(k); });
+        expsEl.appendChild(b);
+        if(k === 'withAg'){
+          var row = document.createElement('div'); row.className = 'lt-conc'; row.setAttribute('role', 'group'); row.setAttribute('aria-label', 'Koncentrace látky k agonistovi');
+          [1e-8, 1e-7, 1e-6].forEach(function(c){
+            var cb = document.createElement('button'); cb.type = 'button'; cb.className = 'ctrl lt-c'; cb.textContent = ltC(c);
+            cb.addEventListener('click', function(){ conc = c; paintConc(); say('Látka k agonistovi: ' + ltC(c) + '.'); });
+            cb.setAttribute('data-c', String(c)); row.appendChild(cb);
+          });
+          expsEl.appendChild(row);
+        }
+      });
+      paintConc();
+    }
+    function paintConc(){ Array.prototype.forEach.call(expsEl.querySelectorAll('.lt-c'), function(b){ var on = +b.getAttribute('data-c') === conc; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); }); }
+    function buildVerdict(){
+      verdEl.innerHTML = '';
+      if(L().schild){
+        var w = document.createElement('div'); w.className = 'lt-guess';
+        w.innerHTML = '<label for="u-pa2">Tvůj odhad pA<sub>2</sub></label><input type="range" id="u-pa2" min="6" max="10" step="0.1" value="7"><output id="u-pa2-v">7,0</output>' +
+                      '<button class="ctrl go" type="button" id="u-send">Odevzdat odhad</button>';
+        verdEl.appendChild(w);
+        var inp = w.querySelector('#u-pa2'), out = w.querySelector('#u-pa2-v');
+        inp.addEventListener('input', function(){ guess = +inp.value; out.textContent = num(guess, 1); });
+        w.querySelector('#u-send').addEventListener('click', sendGuess);
+        return;
+      }
+      var lab = document.createElement('p'); lab.className = 'lt-vlab'; lab.id = 'u-vlab'; verdEl.appendChild(lab);
+      var row = document.createElement('div'); row.className = 'lt-vbtns';
+      L().verdicts.forEach(function(t){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'ctrl lt-v'; b.textContent = LTYPES[t].name; b.setAttribute('data-t', t);
+        b.addEventListener('click', function(){ verdict(t); });
+        row.appendChild(b);
+      });
+      verdEl.appendChild(row);
+    }
+    function refresh(){
+      setTxt(leftEl, left + '/' + L().budget);
+      setTxt(solvedEl, vials.filter(function(v){ return v.solved; }).length + '/' + vials.length);
+      Array.prototype.forEach.call(vialsEl.querySelectorAll('button'), function(b, j){
+        var v = vials[j], lab = 'Lahvička ' + v.name + (v.solved ? ' ✓' : '');
+        if(b.textContent !== lab) b.textContent = lab;
+        b.classList.toggle('is-on', j === cur); b.setAttribute('aria-pressed', j === cur ? 'true' : 'false');
+        b.classList.toggle('solved', v.solved);
+      });
+      Array.prototype.forEach.call(expsEl.querySelectorAll('.lt-exp, .lt-c'), function(b){ b.disabled = ended || left <= 0 || V().solved; });
+      var vlab = document.getElementById('u-vlab');
+      if(vlab) vlab.innerHTML = V().solved ? 'Lahvička ' + V().name + ': <b>' + LTYPES[V().type].name + '</b> ✓' : 'Co je v&nbsp;lahvičce <b>' + V().name + '</b>?';
+      Array.prototype.forEach.call(verdEl.querySelectorAll('.lt-v'), function(b){ b.disabled = ended || V().solved; });
+      notesEl.innerHTML = V().notes.length ? V().notes.map(function(o){ return '<li value="' + o.n + '"><i style="--ec:' + o.col + '"></i>' + o.text + '</li>'; }).join('') : '<li class="empty">Zatím žádný pokus.</li>';
+    }
+    function experiment(k){
+      if(ended || left <= 0 || V().solved) return;
+      var o = run(k);
+      n++; o.n = n; o.col = LEXP[k].col;
+      V().notes.push(o); left--;
+      refresh();
+      say(o.n + '. ' + o.text.replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, ''));
+    }
+    function explain(v){
+      var t = v.type;
+      if(t === 'full') return 'Lahvička ' + v.name + ' byla plný agonista: sama dotáhla tkáň skoro až ke stropu.';
+      if(t === 'part') return 'Lahvička ' + v.name + ' byla částečný agonista: sama se zastavila zhruba na 40&nbsp;%, i&nbsp;když obsadila všechny receptory.';
+      if(t === 'comp') return 'Lahvička ' + v.name + ' byla kompetitivní antagonista: sama nic nespustila, křivku agonisty posunula rovnoběžně doprava a&nbsp;vymytím zmizela.';
+      if(t === 'irr') return 'Lahvička ' + v.name + ' byla nevratný antagonista: srazila strop agonisty a&nbsp;po vymytí zůstala.';
+      if(t === 'hi') return 'Lahvička ' + v.name + ' byla plný agonista s&nbsp;velkou účinností: i&nbsp;po zničení 99&nbsp;% receptorů dotáhla tkáň skoro ke stropu.';
+      if(t === 'lo') return 'Lahvička ' + v.name + ' byla agonista s&nbsp;malou účinností: po zničení receptorů jí strop hned klesl, je to částečný agonista.';
+      if(t === 'neu') return 'Lahvička ' + v.name + ' byla neutrální antagonista: v&nbsp;tkáni s&nbsp;vlastní aktivitou nechala výchozí aktivitu být.';
+      return 'Lahvička ' + v.name + ' byla inverzní agonista: v&nbsp;tkáni s&nbsp;vlastní aktivitou stlumila výchozí aktivitu.';
+    }
+    function verdict(t){
+      if(ended || V().solved) return;
+      var v = V();
+      if(t !== v.type){
+        ended = true; refresh();
+        overlay(ov, 'Ještě ne', '<p>' + explain(v) + '</p><p>Zkus to znovu, lahvičky se zamíchají.</p>', [{label: 'Znovu', cls: 'go', fn: function(){ choose(level); overlay(ov, null); }}]);
+        say('Špatně. ' + LTYPES[v.type].name + '.');
+        return;
+      }
+      v.solved = true;
+      var rest = vials.filter(function(x){ return !x.solved; });
+      if(rest.length){ cur = vials.indexOf(rest[0]); refresh(); say('Správně, ' + LTYPES[t].name + '. Další lahvička ' + vials[cur].name + '.'); return; }
+      win('<p>' + L().win + '</p>');
+    }
+    function sendGuess(){
+      if(ended) return;
+      var ok = Math.abs(guess - pA2) <= 0.3 + 1e-9;
+      if(ok){ vials[0].solved = true; win('<p>Skutečné pA<sub>2</sub> bylo ' + num(pA2, 1) + ', tvůj odhad ' + num(guess, 1) + '.</p><p>' + L().win + '</p>'); return; }
+      ended = true; refresh();
+      overlay(ov, 'Ještě ne', '<p>Skutečné pA<sub>2</sub> bylo ' + num(pA2, 1) + ', tvůj odhad ' + num(guess, 1) + '.</p><p>Najdi místo, kde přímka ve Schildově grafu protne vodorovnou nulu. Tam leží log K<sub>B</sub> a&nbsp;pA<sub>2</sub> je stejné číslo bez minusu. Bez Schildovy řady se pA<sub>2</sub> odhaduje těžko.</p>',
+              [{label: 'Znovu', cls: 'go', fn: function(){ choose(level); overlay(ov, null); }}]);
+    }
+    function win(html){
+      ended = true; refresh();
+      done[level] = true; store.set('hra-neznama-latka', done); bar.mark(level);
+      var btns = [{label: 'Zůstat', fn: function(){ overlay(ov, null); }}];
+      if(level + 1 < LLEVELS.length) btns.unshift({label: 'Další úroveň', cls: 'go', fn: function(){ choose(level + 1); }});
+      overlay(ov, 'Povedlo se', html, btns);
+      say('Povedlo se.');
+    }
+
+    choose(done.indexOf(false) > 0 ? done.indexOf(false) : 0);
+
+    return {
+      resize: sizeFor,
+      step: function(){},
+      draw: function(ctx){
+        var w = dim.w, h = dim.h, narrow = w < 600, Lv = L();
+        ctx.clearRect(0, 0, w, h);
+        var hasSch = Lv.schild, mw = hasSch && !narrow ? w * 0.6 : w;
+        var mh = hasSch && narrow ? 280 : h;
+        var x0 = Math.pow(10, XR()[0]), x1 = Math.pow(10, XR()[1]);
+        var F = frame(narrow ? 44 : 52, 20, mw - (narrow ? 58 : 70), mh - 62, x0, x1, 0, 100, true);
+        var xt = ticks(narrow || hasSch);
+        axes(ctx, F, {xt: xt, yt: [[0, '0'], [50, '50 %'], [100, '100 %']], xl: 'koncentrace', yl: 'odpověď tkáně'});
+        // the known agonist on its own
+        ctx.strokeStyle = 'rgba(233,231,216,.45)'; ctx.lineWidth = 1.5; ctx.setLineDash([5, 4]);
+        curve(ctx, F, control, x0, x1, 140, true); ctx.setLineDash([]);
+        var cx = F.X(CTRL.ec * 3), cy = F.Y(control(CTRL.ec * 3));
+        if(!V().notes.length) label(ctx, 'známý agonista', cx + 6, cy + 14, 'rgba(233,231,216,.6)', 'left', '600 10px ' + SANS);
+        // experiments with the selected vial
+        V().notes.forEach(function(o){
+          o.curves.forEach(function(cv, k){
+            var col = o.kind === 'schild' ? ['#D9B75A', '#E39A67', '#C96B4F'][k] : o.col;
+            ctx.strokeStyle = col; ctx.lineWidth = 2; curve(ctx, F, cv.f, x0, x1, 140, true);
+            cv.pts.forEach(function(p){ dot(ctx, F.X(p[0]), F.Y(p[1]), 2.2, col); });
+          });
+          if(o.kind === 'active') line(ctx, F.x0, F.Y(o.base), F.x0 + F.w, F.Y(o.base), 'rgba(155,176,126,.55)', 1, [2, 3]);
+          // the number of the note at the right end of its (last) curve
+          var lc = o.curves[o.curves.length - 1], yy = F.Y(lc.f(x1));
+          ring(ctx, F.x0 + F.w + 9, yy, 7, o.col, 1.5);
+          label(ctx, String(o.n), F.x0 + F.w + 9, yy + 3.5, o.col, 'center', '700 9.5px ' + MONO);
+        });
+        // the Schild plot
+        if(hasSch){
+          var sx0 = narrow ? 44 : w * 0.6 + 34, sy0 = narrow ? 320 : 20, sw = narrow ? w - 58 : w * 0.4 - 48, sh = narrow ? h - sy0 - 44 : h - 62;
+          var S = frame(sx0, sy0, sw, sh, -9, -5, -1, 3);
+          axes(ctx, S, {xt: [[-9, '−9'], [-8, '−8'], [-7, '−7'], [-6, '−6'], [-5, '−5']], yt: [[-1, '−1'], [0, '0'], [1, '1'], [2, '2'], [3, '3']], xl: 'log [látka]', yl: 'log (DR − 1)'});
+          for(var gx = -8.5; gx <= -5.5; gx += 0.5) line(ctx, S.X(gx), S.y0, S.X(gx), S.y0 + S.h, 'rgba(70,80,60,.45)', 1, [1, 3]);
+          line(ctx, S.x0, S.Y(0), S.x0 + S.w, S.Y(0), 'rgba(233,231,216,.5)', 1);
+          var sch = null; V().notes.forEach(function(o){ if(o.schild) sch = o.schild; });
+          if(sch){
+            ctx.save(); ctx.beginPath(); ctx.rect(S.x0, S.y0, S.w, S.h); ctx.clip();
+            ctx.strokeStyle = C.ink; ctx.lineWidth = 1.6; ctx.beginPath();
+            ctx.moveTo(S.X(-9), S.Y(sch.slope * -9 + sch.icpt)); ctx.lineTo(S.X(-5), S.Y(sch.slope * -5 + sch.icpt)); ctx.stroke();
+            ctx.restore();
+            sch.xs.forEach(function(x, k){ dot(ctx, S.X(x), S.Y(sch.ys[k]), 4, ['#D9B75A', '#E39A67', '#C96B4F'][k]); });
+            label(ctx, 'sklon ' + num(sch.slope, 2), S.x0 + S.w, S.y0 + 12, C.muted, 'right', '600 10px ' + SANS);
+          } else label(ctx, 'Schildův graf: spusť Schildovu řadu', S.x0 + 6, S.y0 + S.h / 2, C.muted, 'left', '600 10px ' + SANS);
+        }
+      }
+    };
+  });
+})();
+</script>
+</body>
+</html>
