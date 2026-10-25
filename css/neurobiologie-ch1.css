@@ -276,3 +276,16 @@
 
   /* Kotvy na části kapitoly (odkazy z jiných kapitol). */
   h2[id],.sim[id],canvas[id]{scroll-margin-top:1.2rem;}
+
+  /* ---- odkaz na další kapitolu pod kódou ---- */
+  .nextup{display:block;box-sizing:border-box;max-width:calc(var(--measure) - 3rem);
+    margin:0 max(1.5rem,calc((100% - var(--measure)) / 2 + 1.5rem)) 2.2rem;padding:1.05rem 1.25rem;
+    background:var(--paper-warm);border:1px solid var(--line);border-left:3px solid var(--sage);border-radius:0 10px 10px 0;
+    color:var(--ink);text-decoration:none;transition:border-color .15s ease;}
+  .nextup:hover,.nextup:focus-visible{border-left-color:var(--terra);color:var(--ink);}
+  .nextup:focus-visible{outline:2px solid var(--sage);outline-offset:3px;}
+  .nextup .k{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    font-weight:700;color:var(--sage-deep);margin-bottom:.3rem;}
+  .nextup .t{display:block;font-family:var(--serif);font-weight:700;font-size:1.22rem;line-height:1.35;color:var(--ink);}
+  .nextup .t em{color:var(--terra-deep);}
+  .nextup .d{display:block;font-family:var(--sans);font-size:.95rem;line-height:1.55;color:var(--ink-2);margin-top:.35rem;}

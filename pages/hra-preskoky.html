@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T08:43:11+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T15:11:20+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -210,7 +210,7 @@
   <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Hlavolam</span></p>
   <h1 class="title"><em>Přeskoky</em></h1>
   <p class="deck">Po myelinizovaném axonu vzruch skáče ze zářezu do zářezu. Rozmísti zářezy tak, aby doskočil až na konec, a&nbsp;co nejrychleji.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -244,7 +244,7 @@
     </div>
     <div class="levels" id="p-levels"></div>
   </div>
-  <figcaption><b>Přeskoky.</b> Dole axon: světlé úseky jsou myelin, mezery mezi nimi zářezy a&nbsp;čísla pod úseky ukazují, kolik mikrosekund trval každý skok. Nahoře napětí podél axonu s&nbsp;prahem, který musí dosáhnout každý zářez. Délková konstanta je pod zdravým myelinem 1,5&nbsp;mm a&nbsp;pod poškozeným 0,5&nbsp;mm, ostatní čísla jsou ilustrační.</figcaption>
+  <figcaption><b>Přeskoky.</b> Dole axon: světlé úseky jsou myelin, mezery mezi nimi zářezy a&nbsp;čísla pod úseky ukazují, kolik mikrosekund trval každý skok. Nahoře napětí podél axonu, měřené od klidového napětí, s&nbsp;prahem, kterého musí napětí v&nbsp;každém zářezu dosáhnout. Délková konstanta (ve hře 1,5&nbsp;mm pod zdravým a&nbsp;0,5&nbsp;mm pod poškozeným myelinem) i&nbsp;ostatní čísla jsou ilustrační.</figcaption>
 </figure>
 
 <section class="prose">
@@ -498,7 +498,8 @@
       ctx.strokeStyle = C.line; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.moveTo(x0, YV(0) + 0.5); ctx.lineTo(x1, YV(0) + 0.5); ctx.stroke();
       ctx.font = '500 9px ' + MONO; ctx.textAlign = 'right'; ctx.fillStyle = C.muted;
-      ctx.fillText('100', x0 - 6, YV(VS) + 3); ctx.fillText('0', x0 - 6, YV(0) + 3); ctx.fillText('mV', x0 - 6, YV(VS) + 14);
+      ctx.fillText('100', x0 - 6, YV(VS) + 3); ctx.fillText('0', x0 - 6, YV(0) + 3);
+      ctx.fillText('mV nad klidovým napětím', x1, YV(VS) - 7);   // the axis is measured from rest (−70 mV), threshold 15 mV above it
       ctx.setLineDash([5, 4]); ctx.strokeStyle = 'rgba(227,154,103,.85)';
       ctx.beginPath(); ctx.moveTo(x0, YV(VTH)); ctx.lineTo(x1, YV(VTH)); ctx.stroke(); ctx.setLineDash([]);
       ctx.textAlign = 'left'; ctx.fillStyle = C.terraBright; ctx.fillText('práh', x0 + 4, YV(VTH) - 4);

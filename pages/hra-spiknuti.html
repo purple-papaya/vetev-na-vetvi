@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T03:49:32+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T15:19:24+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -170,6 +170,7 @@
    "citation": [
     "Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 1: excitační a inhibiční vstupy, práh a asi 10 000 vstupů na jeden motorický neuron.",
     "McCulloch W. S., Pitts W. A logical calculus of the ideas immanent in nervous activity. Bulletin of Mathematical Biophysics 5, 115–133 (1943).",
+    "Rosenblatt F. The perceptron: a probabilistic model for information storage and organization in the brain. Psychological Review 65, 386–408 (1958).",
     "Obvody ve hře jsou hračky. Skutečné reflexy a rozhodování mozku zapojují mnohem víc neuronů a jejich vstupy se sčítají v čase i prostoru."
    ]
   },
@@ -213,7 +214,7 @@
   <p class="eyebrow"><span>Hry · Neurobiologie</span><span class="sep"></span><span class="n">Logický hlavolam</span></p>
   <h1 class="title"><em>Spiknutí</em></h1>
   <p class="deck">Neuron umí jen sečíst hlasy a&nbsp;buď vystřelit, nebo mlčet. Zapoj jich pár tak, aby spolu rozhodovaly.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -221,7 +222,7 @@
 <section class="prose">
   <p class="lede">Každý neuron sčítá, co mu přichází po synapsích. Excitační synapse přidá malé „ano“, inhibiční malé „ne“. Když součet dosáhne prahu, neuron vystřelí, jinak mlčí. Z&nbsp;takhle hloupých součástek se dají poskládat překvapivě chytré obvody.</p>
 
-  <p><b>Jak hrát:</b> klepnutím na synapsi měníš její sílu: +1, +2, −1, −2 a&nbsp;zase nic. Klepnutím na štítek <b>práh</b> nastavíš, kolik hlasů neuron potřebuje k&nbsp;výstřelu. Tabulka vpravo ukazuje všechny možné kombinace vstupů, co má výstup udělat a&nbsp;co opravdu dělá. Klepnutím na řádek tabulky ho přehraješ v&nbsp;obvodu. Úroveň je hotová, když sedí všechny řádky.</p>
+  <p><b>Jak hrát:</b> klepnutím na synapsi měníš její sílu: +1, +2, −1, −2 a&nbsp;zase nic. Klepnutím na štítek <b>práh</b> nastavíš, kolik hlasů neuron potřebuje k&nbsp;výstřelu. Tabulka vpravo (na telefonu pod obvodem) ukazuje všechny možné kombinace vstupů, co má výstup udělat a&nbsp;co opravdu dělá. Klepnutím na řádek tabulky ho přehraješ v&nbsp;obvodu. Úroveň je hotová, když sedí všechny řádky.</p>
 </section>
 
 <figure class="sim game">
@@ -254,11 +255,11 @@
 <section class="prose">
   <h2>Co se tu <em>doopravdy</em> děje</h2>
 
-  <p>Takhle zjednodušený neuron navrhli v&nbsp;roce 1943 Warren McCulloch a&nbsp;Walter Pitts: sečte vážené vstupy a&nbsp;vystřelí, když součet dosáhne prahu. Ukázali, že ze sítí takových jednotek se dá poskládat jakákoli logická funkce. Na tom nápadu později vyrostly umělé neuronové sítě.</p>
+  <p>Podobně zjednodušený neuron navrhli v&nbsp;roce 1943 Warren McCulloch a&nbsp;Walter Pitts. Jejich neuron vystřelí, když je aktivních aspoň tolik excitačních vstupů, kolik žádá práh, a&nbsp;jediný aktivní inhibiční vstup mu výstřel zakáže. Ukázali, že ze sítí takových jednotek se dá poskládat jakákoli logická funkce. Váhy, které se sčítají a&nbsp;dají se přehlasovat jako tady, přinesly až pozdější modely, například perceptron Franka Rosenblatta z&nbsp;roku 1958. Na nich vyrostly umělé neuronové sítě.</p>
 
-  <p>Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“ jediný neuron s&nbsp;jedním prahem nezvládne, ať nastavíš synapse jakkoli. Nejde to rozdělit jednou přímkou: dvě kombinace, které mají pálit, leží v&nbsp;tabulce úhlopříčně proti sobě. Pomůže až další neuron uprostřed, který pozná, že pálí oba vstupy, a&nbsp;výstup utiší.</p>
+  <p>Poslední úroveň skrývá slavný háček. „Buď A, nebo B, ale ne obojí“ jediný neuron s&nbsp;jedním prahem nezvládne, ať nastavíš synapse jakkoli. Nejde to rozdělit jednou přímkou: když si všechny čtyři kombinace vstupů nakreslíš do čtverce, leží ty dvě, které mají pálit, v&nbsp;protějších rozích. Pomůže až další neuron uprostřed. Ten výstupu dodá informaci, kterou výstup sám z&nbsp;A&nbsp;a&nbsp;B nevyčte, třeba že pálí oba vstupy naráz. Řešení je víc a&nbsp;každé takového pomocníka potřebuje.</p>
 
-  <p>Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v&nbsp;čase, synapse se učením zesilují a&nbsp;zeslabují a&nbsp;na jeden motorický neuron v&nbsp;míše se sbíhá asi deset tisíc vstupů. Princip sčítání a&nbsp;prahu ale platí a&nbsp;z&nbsp;něj se skládá spiknutí 86&nbsp;miliard buněk. Víc je v&nbsp;kapitole <a href="wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html">Jak se sůl naučila říkat já</a>.</p>
+  <p>Skutečný neuron je ovšem mnohem bohatší než logické hradlo. Hlasy na něm vyprchávají v&nbsp;čase, synapse se učením zesilují a&nbsp;zeslabují a&nbsp;na jeden motorický neuron v&nbsp;míše se sbíhá asi deset tisíc vstupů. Princip sčítání a&nbsp;prahu ale platí a&nbsp;z&nbsp;něj se skládá spiknutí 86&nbsp;miliard buněk. Víc je v&nbsp;kapitole <a href="wetware-neurobiologie-ch1-jak-se-sul-naucila-rikat-ja.html">Jak se sůl naučila říkat já</a>. Proč je jedna synapse „ano“ a&nbsp;jiná „ne“, ukazuje kapitola <a href="wetware-neurobiologie-ch2-dole-v-mezere.html#cast-2">Dole v&nbsp;mezeře</a>.</p>
 </section>
 
 <!-- zpetna-vazba:begin – generuje tools/seo.py -->
@@ -270,6 +271,7 @@
   <ul>
     <li>Nicholls J.&nbsp;G. a&nbsp;kol. <em>From Neuron to Brain</em>, 5.&nbsp;vyd. Sinauer, 2012. Kap.&nbsp;1: excitační a&nbsp;inhibiční vstupy, práh a&nbsp;asi 10&nbsp;000 vstupů na jeden motorický neuron.</li>
     <li>McCulloch W.&nbsp;S., Pitts W. A&nbsp;logical calculus of the ideas immanent in nervous activity. <em>Bulletin of Mathematical Biophysics</em> 5, 115–133 (1943).</li>
+    <li>Rosenblatt F. The perceptron: a&nbsp;probabilistic model for information storage and organization in the brain. <em>Psychological Review</em> 65, 386–408 (1958).</li>
     <li>Obvody ve hře jsou hračky. Skutečné reflexy a&nbsp;rozhodování mozku zapojují mnohem víc neuronů a&nbsp;jejich vstupy se sčítají v&nbsp;čase i&nbsp;prostoru.</li>
   </ul>
 </section>
@@ -452,7 +454,7 @@
        want: function(v){ return v.A && v.B; },
        goal: 'Detektor souběhu se má ozvat, jen když <b>oba vstupy pálí naráz</b>.',
        intro: '<p>Tenhle neuron hlídá, jestli dva signály přišly současně. Jedno „ano“ nesmí stačit.</p>',
-       win: 'Dvě slabá „ano“ a práh 2: výstřel přijde, jen když se hlasy sejdou.'},
+       win: 'Každý hlas sám zůstane pod prahem, teprve oba spolu ho dosáhnou: výstřel přijde, jen když se sejdou.'},
       {name: 'Ano, ale', inputs: ['A', 'B'], pos: {A: [62, 70], B: [62, 230], O: [340, 150]},
        edges: [['A', 'O'], ['B', 'O']], labels: {A: 'jídlo', B: 'plný žaludek', O: 'jíst'},
        want: function(v){ return v.A && !v.B; },
@@ -470,14 +472,14 @@
        want: function(v){ return v.A + v.B + v.C >= 2; },
        goal: 'Parlament šepotů: výstup se ozve, když pálí <b>aspoň dva ze tří</b> vstupů.',
        intro: '<p>Tři vstupy hlasují. Výstup se má ozvat, když jsou pro aspoň dva z nich, a mlčet, když je pro jen jeden.</p>',
-       win: 'Tři slabá „ano“ a práh 2: rozhodne většina a žádný hlas sám nestačí.'},
+       win: 'Každý hlas sám zůstane pod prahem, kterékoli dva spolu ho dosáhnou: rozhodne většina.'},
       {name: 'Buď, anebo', inputs: ['A', 'B'], pos: {A: [62, 42], B: [62, 258], H: [205, 150], O: [350, 150]},
        ts: {'A>H': 0.6, 'B>H': 0.6, 'A>O': 0.75, 'B>O': 0.75, 'H>O': 0.36},
        edges: [['A', 'H'], ['B', 'H'], ['A', 'O'], ['B', 'O'], ['H', 'O']], labels: {A: 'vstup A', B: 'vstup B', H: 'pomocník', O: 'výstup'},
        want: function(v){ return v.A !== v.B; },
        goal: 'Výstup se má ozvat, když pálí <b>jen jeden</b> ze vstupů, ne oba.',
        intro: '<p>Tohle jediný neuron s prahem nezvládne, ať zkusíš cokoli. Uprostřed proto máš pomocníka, který může mluvit do výstupu.</p><p>Nápověda: co kdyby pomocník poznal, že pálí oba?</p>',
-       win: 'Pomocník pozná, že pálí oba vstupy, a výstup utiší. Jediný neuron tohle nedokáže: potřebuje spiklence.'}
+       win: 'Pomocník dodal výstupu informaci, kterou výstup sám z A a B nevyčte. Jediný neuron tohle nedokáže: potřebuje spiklence.'}
     ];
 
     var ov = document.getElementById('s-ov'), goalEl = document.getElementById('s-goal'), table = document.getElementById('s-table');
@@ -571,13 +573,13 @@
       if(!ov.hidden) return;
       W[key] = CYCLE[(CYCLE.indexOf(W[key] || 0) + 1) % CYCLE.length];
       var e = parts.syn[key].e;
-      setTxt(desc, 'Synapse z ' + name(e[0]) + ' do ' + name(e[1]) + ': ' + (W[key] ? (W[key] > 0 ? 'excitační ' : 'inhibiční ') + sgn(W[key]) : 'žádná') + '.');
+      setTxt(desc, 'Synapse „' + name(e[0]) + '“ → „' + name(e[1]) + '“: ' + (W[key] ? (W[key] > 0 ? 'excitační ' : 'inhibiční ') + sgn(W[key]) : 'žádná') + '.');
       update(true);
     }
     function cycleTh(k){
       if(!ov.hidden) return;
       TH[k] = TH[k] % 3 + 1;
-      setTxt(desc, 'Práh neuronu ' + name(k) + ': ' + TH[k] + '.');
+      setTxt(desc, 'Práh neuronu „' + name(k) + '“: ' + TH[k] + '.');
       update(true);
     }
     function update(changed){
@@ -601,7 +603,7 @@
         sp.c.setAttribute('r', Math.abs(w) === 2 ? 16 : 14);
         sp.t.textContent = sgn(w);
         sp.t.setAttribute('fill', live ? '#21271D' : (w ? '#E9E7D8' : C.muted));
-        sp.g.setAttribute('aria-label', 'Synapse z ' + name(sp.e[0]) + ' do ' + name(sp.e[1]) + ': ' + (w ? sgn(w) : 'žádná') + '. Změnit.');
+        sp.g.setAttribute('aria-label', 'Synapse „' + name(sp.e[0]) + '“ → „' + name(sp.e[1]) + '“: ' + (w ? sgn(w) : 'žádná') + '. Změnit.');
         var ln = parts.edges[key];
         ln.setAttribute('stroke', live ? (w > 0 ? C.sage : C.terra) : (w ? 'rgba(155,176,126,.35)' : 'rgba(70,80,60,.9)'));
         ln.setAttribute('stroke-dasharray', w ? '' : '4 5');
@@ -615,7 +617,7 @@
       });
       Object.keys(parts.th).forEach(function(k){
         parts.th[k].t.textContent = 'práh ' + TH[k];
-        parts.th[k].g.setAttribute('aria-label', 'Práh neuronu ' + name(k) + ': ' + TH[k] + '. Změnit.');
+        parts.th[k].g.setAttribute('aria-label', 'Práh neuronu „' + name(k) + '“: ' + TH[k] + '. Změnit.');
       });
       var nsyn = Object.keys(W).filter(function(k){ return W[k]; }).length;
       setTxt(rowsEl, okRows + '/' + pats.length); setTxt(synEl, String(nsyn));
