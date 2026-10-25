@@ -118,7 +118,7 @@
     "height": 630
    },
    "datePublished": "2026-10-22T03:43:20+00:00",
-   "dateModified": "2026-10-22T08:59:19+00:00",
+   "dateModified": "2026-10-25T15:11:20+00:00",
    "author": {
     "@id": "https://vetevnavetvi.cz/pages/o-mne.html#person"
    },
@@ -168,7 +168,7 @@
     "@id": "https://vetevnavetvi.cz/pages/hry.html#webpage"
    },
    "citation": [
-    "Rosenbaum S. E. Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Terapeutické rozmezí (kap. 1), vylučování (kap. 5), křivka po spolknutí (kap. 9), ustálený stav, opakované dávkování a nasycovací dávka (kap. 11, 12 a 14).",
+    "Rosenbaum S. E. (ed.) Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Terapeutické rozmezí (kap. 1), vylučování (kap. 5), křivka po spolknutí (kap. 9, S. C. Sutton), ustálený stav, opakované dávkování a nasycovací dávka (kap. 11, 12 a 14).",
     "U.S. Food and Drug Administration. Grapefruit Juice and Some Drugs Don't Mix.",
     "Hra je zjednodušený jednokompartmentový model. Poločasy pacientů, šířka pásem i to, že grapefruit ve hře zdvojnásobí množství léku, které se dostane do krve, jsou zvolené pro názornost."
    ]
@@ -213,7 +213,7 @@
   <p class="eyebrow"><span>Hry · Farmakologie</span><span class="sep"></span><span class="n">Hra na dávkování</span></p>
   <h1 class="title"><em>Vana</em> bez zátky</h1>
   <p class="deck">Naplánuj tablety na tři dny tak, aby hladina léku zůstala mezi účinnou a&nbsp;toxickou. Každý pacient ale vypouští vanu jinak rychle.</p>
-  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
+  <!-- datum:begin – generuje tools/seo.py --><p class="dateline"><a href="o-mne.html" rel="author">Pája</a> <span aria-hidden="true">·</span> <span class="dl">vyšlo <time datetime="2026-10-22">22.&nbsp;10.&nbsp;2026</time></span> <span aria-hidden="true">·</span> <span class="dl">aktualizováno <time datetime="2026-10-25">25.&nbsp;10.&nbsp;2026</time></span></p><!-- datum:end -->
 </header>
 
 <article>
@@ -270,7 +270,7 @@
 <section class="sources">
   <h2>Zdroje</h2>
   <ul>
-    <li>Rosenbaum S.&nbsp;E. <em>Basic Pharmacokinetics and Pharmacodynamics</em>, 2.&nbsp;vyd. Wiley, 2017. Terapeutické rozmezí (kap.&nbsp;1), vylučování (kap.&nbsp;5), křivka po spolknutí (kap.&nbsp;9), ustálený stav, opakované dávkování a&nbsp;nasycovací dávka (kap.&nbsp;11, 12 a&nbsp;14).</li>
+    <li>Rosenbaum S.&nbsp;E. (ed.) <em>Basic Pharmacokinetics and Pharmacodynamics</em>, 2.&nbsp;vyd. Wiley, 2017. Terapeutické rozmezí (kap.&nbsp;1), vylučování (kap.&nbsp;5), křivka po spolknutí (kap.&nbsp;9, S.&nbsp;C. Sutton), ustálený stav, opakované dávkování a&nbsp;nasycovací dávka (kap.&nbsp;11, 12 a&nbsp;14).</li>
     <li>U.S. Food and Drug Administration. <em>Grapefruit Juice and Some Drugs Don't Mix.</em></li>
     <li>Hra je zjednodušený jednokompartmentový model. Poločasy pacientů, šířka pásem i&nbsp;to, že grapefruit ve hře zdvojnásobí množství léku, které se dostane do krve, jsou zvolené pro názornost.</li>
   </ul>
@@ -435,7 +435,9 @@
      VANA BEZ ZÁTKY — plan three days of tablets so that the drug level
      stays between MEC and MTC. One-compartment model with first-order
      absorption; each patient has a different half-life, the grapefruit
-     patient absorbs twice as much from tablets taken on day two.
+     patient absorbs twice as much from tablets taken on day two and has a
+     narrower band, so a plan that ignores the grapefruit cannot win (best
+     unchanged regimen about 65 % in band, halving on day two 100 %).
      ========================================================= */
   var KA = 1.2, HOURS = 72, DT = 0.25, YMAX = 2.2;
   var LEVELS = [
@@ -445,15 +447,15 @@
      win: 'Hladina se po pár dávkách usadila v pásmu: každá tableta už jen nahradí, co mezitím odteklo. To je ustálený stav.'},
     {name: 'Rychlé odbourávání', th: 3, band: [0.6, 1.6], T0: 8, need: 85, max: 20,
      goal: 'Poločas 3&nbsp;h. Od 8. hodiny aspoň 85&nbsp;% času v&nbsp;účinném pásmu, bez toxické hladiny. Nejvýš 20 tablet.',
-     intro: '<p>Tenhle pacient lék odbourává dvakrát rychleji než průměr: poločas jsou jen 3 hodiny. Vana se mu vypouští rychle.</p><p>Zkus nejdřív rozvrh, který fungoval u prvního pacienta.</p>',
+     intro: '<p>Tenhle pacient lék odbourává dvakrát rychleji než průměr: poločas je jen 3 hodiny. Vana se mu vypouští rychle.</p><p>Zkus nejdřív rozvrh, který fungoval u prvního pacienta.</p>',
      win: 'Kdo lék odbourává rychle, potřebuje dávky častěji, jinak mu vana mezi nimi vyteče. Stejná tableta, jiné tělo.'},
     {name: 'Slabé ledviny', th: 24, band: [0.6, 1.6], T0: 12, need: 85, max: 12,
      goal: 'Poločas 24&nbsp;h. Od 12. hodiny aspoň 85&nbsp;% času v&nbsp;účinném pásmu, bez toxické hladiny. Nejvýš 12 tablet.',
      intro: '<p>Ledviny tohohle pacienta vylučují lék pomalu, a tak se poločas protáhl na 24 hodin. Odtok z vany je skoro ucpaný.</p><p>Co udělá rozvrh prvního pacienta tady?</p>',
      win: 'Při pomalém vylučování se lék hromadí. Rozvrh prvního pacienta by tenhle dostal do toxického pásma, stačí mu tablet mnohem méně.'},
-    {name: 'Grapefruit', th: 6, band: [0.6, 1.6], T0: 12, need: 85, max: 12, gf: [24, 48],
-     goal: 'Poločas 6&nbsp;h, ve 24. hodině grapefruit. Od 12. hodiny aspoň 85&nbsp;% času v&nbsp;účinném pásmu, bez toxické hladiny. Tablety můžeš půlit.',
-     intro: '<p>Ve 24. hodině si pacient k snídani dá sklenici grapefruitové šťávy. Látky z grapefruitu nevratně vyřadí enzym CYP3A4 ve stěně střeva, a tak se do krve dostane víc léku. Než střevo vyrobí nový enzym, může uplynout den i víc.</p><p>Ve hře se během druhého dne dostane do krve dvakrát víc z každé tablety.</p>',
+    {name: 'Grapefruit', th: 6, band: [0.7, 1.4], T0: 12, need: 85, max: 12, gf: [24, 48],
+     goal: 'Poločas 6&nbsp;h, užší pásmo, ve 24. hodině grapefruit. Od 12. hodiny aspoň 85&nbsp;% času v&nbsp;účinném pásmu, bez toxické hladiny. Tablety můžeš půlit.',
+     intro: '<p>Tenhle lék má užší účinné pásmo než ten první. Ve 24. hodině si pacient ke snídani dá sklenici grapefruitové šťávy. Látky z grapefruitu nevratně vyřadí enzym CYP3A4 ve stěně střeva, a tak se do krve dostane víc léku. Než střevo vyrobí nový enzym, může uplynout den i víc.</p><p>Ve hře se během druhého dne dostane do krve dvakrát víc z každé tablety.</p>',
      win: 'Během grapefruitového dne stačila menší dávka, protože se do krve dostalo víc z každé tablety. Proto příbalové letáky některých léků před grapefruitem varují.'},
     {name: 'Úzké okno', th: 12, band: [1.0, 1.5], T0: 2, need: 85, max: 12,
      goal: 'Poločas 12&nbsp;h a <b>úzké pásmo</b>. Pacient potřebuje účinek hned: od 2. hodiny aspoň 85&nbsp;% času v&nbsp;pásmu, bez toxické hladiny.',
@@ -588,7 +590,7 @@
       text = '<p>V pásmu <b>' + Math.round(res.pct) + NB + '%</b> času, nad toxickou hranicí <b>' + num(res.tox, res.tox % 1 ? 1 : 0) + NB + 'h</b>, ' + tabs(nt) + NB + (nt % 1 ? 'tablety' : plural(nt, 'tableta', 'tablety', 'tablet')) + '.</p>';
       if(ok) text += '<p>' + Lv.win + '</p>';
       else if(res.tox > 0) text += '<p>Hladina vystoupala nad toxickou hranici. Dávky jsou moc velké, nebo jdou moc blízko po sobě.</p>';
-      else text += '<p>' + (res.low > (100 - res.pct) / 2 ? 'Hladina byla často pod účinným pásmem. Dávky chodí moc řídce, nebo jsou moc malé.' : 'Hladina vyskakuje z pásma. Zkus menší dávky, které jdou častěji.') + '</p>';
+      else text += '<p>Hladina byla často pod účinným pásmem. Dávky chodí moc řídce, nebo jsou moc malé.</p>';   // without toxic time, every miss is below the band
       if(ok){ done[level] = true; store.set('hra-vana-bez-zatky', done); bar.mark(level); }
       var btns = [{label: 'Upravit plán', fn: function(){ overlay(ov, null); }}];
       if(ok && level + 1 < LEVELS.length) btns.unshift({label: 'Další pacient', cls: 'go', fn: function(){ choose(level + 1); }});
