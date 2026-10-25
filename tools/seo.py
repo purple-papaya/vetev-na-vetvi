@@ -277,7 +277,7 @@ PAGES = {
     'pages/hra-hodiny-a-vlna.html': dict(
         kind='game', chapter='pages/wetware-vyvojova-biologie-ch1-telo-ktere-se-postavilo-samo.html',
         name='Hodiny a vlna', title='Hodiny a vlna: rytmická hra o somitech | Větev na větvi',
-        desc='Tikej segmentačními hodinami ve chvíli, kdy vlna doběhne k přední hranici, a zárodek dostane páry '
+        desc='Tikej segmentačními hodinami ve chvíli, kdy jejich kmit doběhne k přední hranici, a zárodek dostane páry '
              'somitů. Od dánia po myš a nakonec bez viditelných hodin.',
         about=['somitogeneze', 'segmentační hodiny', 'model hodin a vlny', 'somity', 'obratle'],
         en='Rhythm game on the clock-and-wavefront model: tap the segmentation clock as each wave reaches the '
@@ -366,13 +366,14 @@ PAGES = {
     'pages/hra-bez-dechu.html': dict(
         kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Bez dechu',
         title='Bez dechu: hra o kvašení a NAD⁺ | Větev na větvi',
-        desc='Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: červená krvinka bez mitochondrií, sprint, '
-             'kvasnice a Pasteurův efekt a nádor, který kvasí i s kyslíkem.',
+        desc='Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: v červené krvince bez mitochondrií, při '
+             'sprintu a v kvasnicích s Pasteurovým efektem. Nakonec dávkuj inhibitor hexokinázy proti nádoru, který '
+             'kvasí i s kyslíkem.',
         about=['glykolýza', 'NAD⁺', 'kvašení', 'laktát', 'Pasteurův efekt', 'Warburgův efekt', 'hexokináza'],
         en='Real-time control game on why fermentation exists: route pyruvate between oxygen-limited mitochondria and '
-           'lactate or ethanol to keep the small NAD⁺ pool turning over in a red blood cell, a sprinting muscle, yeast '
-           'with intermittent air (Pasteur effect) and a tumour cell that ferments even with oxygen, where a '
-           'hexokinase-inhibitor dose must spare red cells.'),
+           'lactate or ethanol to keep the small NAD⁺ pool turning over in a red blood cell, a sprinting muscle and '
+           'yeast with intermittent air (Pasteur effect); then dose a hexokinase inhibitor against a tumour that '
+           'ferments even with oxygen without harming red cells.'),
     'pages/hra-pritoky.html': dict(
         kind='game', chapter='pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html', name='Přítoky',
         title='Přítoky: skládačka o cestách cukrů do glykolýzy | Větev na větvi',
@@ -516,10 +517,13 @@ def sources_of(page_html):
     """Visible source list items of a chapter (the section headed 'Zdroje')."""
     m = re.search(r'<(section|div)[^>]*class="[^"]*sources[^"]*"[^>]*>(.*?)</\1>', page_html, re.S)
     if not m:
-        i = page_html.find('Zdroje')
+        body = page_html[page_html.find('<body'):]   # not the head, and not the generated game list
+        for begin, end in ((FB_BEGIN, FB_END), (DL_BEGIN, DL_END), (HRY_BEGIN, HRY_END)):
+            body = re.sub(re.escape(begin) + r'.*?' + re.escape(end), ' ', body, flags=re.S)
+        i = body.find('Zdroje')
         if i < 0:
             return []
-        m_ul = re.search(r'<ul[^>]*>(.*?)</ul>', page_html[i:], re.S)
+        m_ul = re.search(r'<ul[^>]*>(.*?)</ul>', body[i:], re.S)
         items = re.findall(r'<li[^>]*>(.*?)</li>', m_ul.group(1), re.S) if m_ul else []
     else:
         inner = re.sub(r'<h\d[^>]*>.*?</h\d>', '', m.group(2), flags=re.S)

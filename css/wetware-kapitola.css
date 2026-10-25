@@ -282,6 +282,9 @@
 .hry-blok .co{display:block;margin-top:.2rem;font-size:.93rem;color:#4A4F42;}
 .deck + .dateline{margin:-.9rem 0 1.6rem;}
 
+  /* Kotvy na části kapitoly (odkazy z jiných kapitol). */
+  h2[id],.sim[id],canvas[id]{scroll-margin-top:1.2rem;}
+
   /* ---- prvky simulací nových kapitol ---- */
   .sim-head .readout .rd{white-space:nowrap;}
   .sim-controls .lbl{font-family:var(--sans);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
