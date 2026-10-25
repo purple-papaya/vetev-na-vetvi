@@ -197,7 +197,7 @@ Nejsi oheň, který hoří. Jsi to hoření.
 
 URL: https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html  
 Větev: Biochemie  
-Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-25  
 Shrnutí: Glykolýza krok za krokem podle Lehningera: vklad dvou ATP a výplata čtyř, kolotoč NAD⁺ a kvašení, přítoky z jiných cukrů a tři ventily řízení. Se čtyřmi simulacemi.  
 English: Glycolysis step by step, following Lehninger: the two-ATP investment and four-ATP payoff, phosphoryl transfer potential, free energy in red blood cells, feeder pathways, fermentation and NAD+ recycling, and regulation of hexokinase, PFK-1 and pyruvate kinase.
 
@@ -355,7 +355,7 @@ Tohle je první rameno schodiště v kostce. Dvě fáze, vklad a výplata. Dva f
 
 ## Zdroje a další čtení
 
-- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kostra kapitoly. Úvod kap. 14: úplné spálení glukózy −2840 kJ/mol. Kap. 14.1 (Glycolysis): první rozluštěná dráha, Buchner 1897, jediný zdroj energie červených krvinek, zachovaná chemie, dvě fáze (obr. 14-2), tři druhy dějů, −146 a −85 kJ/mol, energie zbylá v pyruvátu, tři úlohy fosfátů, pokus Hardena a Younga, kroky 1–10 s jejich ΔG′° (hexokináza a 8 Å, aldoláza, triózafosfátizomeráza a obr. 14-6, NAD⁺ a GAPDH, spřažení kroků 6 a 7, fosforylace na úrovni substrátu, 2-fosfoglycerát a PEP, pyruvátkináza), účetní bilance. Kap. 14.2 (Feeder Pathways): fosforolýza glykogenu a řešená úloha 14-1, trávení škrobu, laktózová intolerance, galaktóza a galaktosemie (obr. 14-10), fruktóza a manóza (obr. 14-9). Kap. 14.3 (Fates of Pyruvate): obr. 14-11, Pasteurův a Warburgův efekt, rámeček 14-1 (nádory a PET), mléčné kvašení a definice kvašení, rámeček 14-2 (sprint, kyslíkový dluh, Coriho cyklus, aligátoři), alkoholové kvašení a thiaminpyrofosfát, kvašené potraviny. Kap. 14.4: tři nevratné kroky a tab. 14-2 (ΔG v erytrocytech). Kap. 14.5: izoenzymy hexokinázy, regulace PFK-1 (obr. 14-22, 14-23), fruktóza-2,6-bisfosfát (obr. 14-24), regulace pyruvátkinázy. Kap. 14, úlohy 10 a 11 a jejich řešení (arzeničnan). Dále kap. 13.3 (tab. 13-6, obr. 13-11, „vysokoenergetická vazba“, fosfokreatin), kap. 13.5 (tab. 13-10 a 13-11, AMPK), tab. 6-5 (zrychlení reakce triózafosfátizomerázou) a kap. 19.2–19.3 (P/O 2,5 a 1,5; 30 nebo 32 ATP na glukózu). E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a tabulky.
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kostra kapitoly. Úvod kap. 14: úplné spálení glukózy −2840 kJ/mol. Kap. 14.1 (Glycolysis): první rozluštěná dráha, Buchner 1897, jediný zdroj energie červených krvinek, zachovaná chemie, dvě fáze (obr. 14-2), tři druhy dějů, −146 a −85 kJ/mol, energie zbylá v pyruvátu, tři úlohy fosfátů, pokus Hardena a Younga, kroky 1–10 s jejich ΔG′° (hexokináza a 8 Å, aldoláza, triózafosfátizomeráza a obr. 14-6, NAD⁺ a GAPDH, spřažení kroků 6 a 7, fosforylace na úrovni substrátu, 2-fosfoglycerát a PEP, pyruvátkináza), účetní bilance. Kap. 14.2 (Feeder Pathways): fosforolýza glykogenu a řešená úloha 14-1, trávení škrobu, laktózová intolerance, galaktóza a galaktosemie (obr. 14-10), fruktóza a manóza (obr. 14-9). Kap. 14.3 (Fates of Pyruvate): obr. 14-11, Pasteurův a Warburgův efekt, rámeček 14-1 (nádory a PET), mléčné kvašení a definice kvašení, rámeček 14-2 (sprint, kyslíkový dluh, Coriho cyklus, aligátoři), alkoholové kvašení a thiaminpyrofosfát, kvašené potraviny. Kap. 14.4: tři nevratné kroky a tab. 14-2 (ΔG v erytrocytech). Kap. 14.5: izoenzymy hexokinázy, regulace PFK-1 (obr. 14-22, 14-23), fruktóza-2,6-bisfosfát (obr. 14-24), regulace pyruvátkinázy. Kap. 14, úlohy 10 a 11 a jejich řešení (arseničnan). Dále kap. 13.3 (tab. 13-6, obr. 13-11, „vysokoenergetická vazba“, fosfokreatin), kap. 13.5 (tab. 13-10 a 13-11, AMPK), tab. 6-5 (zrychlení reakce triózafosfátizomerázou) a kap. 19.2–19.3 (P/O 2,5 a 1,5; 30 nebo 32 ATP na glukózu). E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a tabulky.
 - Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Dráha Embdenova–Meyerhofova–Parnasova (s. 595); důvod izomerace ve druhém kroku (s. 600); triózafosfátizomeráza jako „dokonalý enzym“ (s. 606); kyselost, ne laktát, při únavě a pálení svalu (s. 615); ATP se mezi klidem a námahou mění o méně než 10 % a fosfofruktokináza zrychlí asi desetkrát (s. 627–628); glukóza-1-fosfát v tab. 16-3 (s. 579); 38 proti 32 ATP na glukózu (s. 832–833).
 - Sender R., Fuchs S., Milo R. Revised estimates for the number of human and bacteria cells in the body. PLoS Biology 14(8): e1002533, 2016. Asi 3×10^13 lidských buněk, z toho 2,5×10^13 červených krvinek.
 - Sonkodi B. Should we void lactate in the pathophysiology of delayed onset muscle soreness? Not so fast! Let’s see a neurocentric view! Metabolites 12(9): 857, 2022. Laktát se vrátí na klidovou hladinu do hodiny, excentrická zátěž, přehled vysvětlení a nervová hypotéza.
@@ -539,7 +539,7 @@ Tady je celá logika na jeden nádech: nabitá membrána, hlasování, vlna, mez
 
 URL: https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html  
 Větev: Neurobiologie  
-Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-25  
 Shrnutí: Chemická synapse podle Nichollse: kanál rozhoduje o vzruchu, vápník spouští uvolnění, přenašeč chodí po kvantech a synapse si pamatuje, co přes ni prošlo. Se čtyřmi simulacemi.  
 English: The chemical synapse, following From Neuron to Brain: the end plate, reversal potential and excitation versus inhibition, calcium-triggered release, quantal release and Poisson statistics, SNARE proteins, short-term plasticity, and LTP and LTD with the NMDA receptor as a coincidence detector.
 
@@ -670,7 +670,7 @@ Tohle je synapse v kostce. Chemie místo drátu, protože chemie se dá zesílit
 ## Zdroje a další čtení
 
 - Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kostra kapitoly. Kap. 11 (Mechanisms of Direct Synaptic Transmission): rámeček 11.1 o sporu elektřiny a chemie, Loewiho sen, Dale 1936 a Eccles (s. 187–188), štěrbina asi 30 nm a ploténkový potenciál vyšší, než je potřeba (s. 188–189), kurare (s. 189), brzdy acetylcholinesterázy (rámeček 11.2, s. 190), hustota receptorů (s. 195), obratové napětí kolem nuly a vážený průměr (s. 196–198), dvě molekuly acetylcholinu (s. 197), 20 000 kationtů do buňky za milisekundu a hořčík v receptoru NMDA (s. 199), jeden EPSP nestačí (s. 200), vzruch a útlum podle obratového napětí (s. 201), chloridové kanály (s. 202), elektrické synapse (s. 207–209). Kap. 12: muskarinový receptor, G-bílkovina a draselné kanály v srdci (s. 217–221), klidový vápník kolem 100 nM (s. 235), rychlost receptorů spřažených s G-bílkovinou (s. 239). Kap. 13 (Release of Neurotransmitters): zpoždění 0,5 ms a 7 ms při 2,5 °C, vápník nutný a hořčík brzdou (s. 245–246), 100–200 µM u kanálů a čidlo do 100 nm (s. 247–248), uvolněný vápník stačí (s. 249), 7000 molekul v kvantu (s. 250), miniaturní potenciály asi 1 mV a tisíc receptorů (s. 251), stupňovité odpovědi Fatta a Katze, selhání a 200 kvant (s. 252, obr. 13.9), Poissonův test del Castilla a Katze (s. 252–254, obr. 13.10), kvanta v mozku a míše (s. 255), myastenie (s. 257), zmrazení na 4 K a počet otevřených váčků (s. 260–261), SNARE, synaptotagmin a komplexin (s. 264), recyklace váčků a doplnění zásob za minutu a za čtvrt hodiny (s. 266–270). Kap. 14: GABA a glycin, NMDA jako detektor shody (s. 279), SSRI (s. 289). Kap. 15: acetylcholinesteráza (s. 313–314). Kap. 16 (Synaptic Plasticity): facilitace, deprese, jejich mechanismy a posttetanická potenciace (s. 318–322), třetí až čtvrtá mocnina přítoku vápníku (s. 320), Bliss a Lømo (s. 323–325), blokátory NMDA (s. 326), němé synapse a trny (s. 326–328), CaMKII (s. 328), dlouhodobý útlum a množství vápníku (s. 330–331), Hebbovo pravidlo (s. 332), opatrnost ohledně paměti (s. 333). Kap. 25: prořezávání spojení (s. 560–561).
-- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 8: Vagusstoff a Nobelova cena 1936 (s. 205), miniaturní potenciály asi 0,4 mV (s. 214–215), průměrně 2,3 kvanta u Boyda a Martina (s. 215.e1), vápník, hořčík a měření Dodge a Rahamimoffa (obr. 8-11, s. 216), Nobelova cena 2013 (s. 221), myastenie (rámeček 8-1, s. 223), botulotoxin a tetanotoxin (rámeček 8-2 a tab. 8-2, s. 224–225), botox (s. 225). Kap. 13: trny u víc než 90 % vzrušujících synapsí (s. 310), elektrické synapse nezesilují (s. 314), velikost EPSP v mozku (s. 319), hořčík začne vypadávat nad −60 mV (s. 324), 10 až 100 synapsí k výstřelu (s. 327), synapse jako místo paměti (s. 328), LTP, LTD a dráždění 1 Hz (s. 329–331).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 8: Vagusstoff a Nobelova cena 1936 (s. 205), miniaturní potenciály asi 0,4 mV (s. 214–215), průměrně 2,3 kvanta u Boyda a Martina (s. 215.e1), vápník, hořčík a měření Dodge a Rahamimoffa (obr. 8-11, s. 216), Nobelova cena 2013 (s. 221), myastenie (rámeček 8-1, s. 223), botulotoxin a tetanotoxin (rámeček 8-2 a tab. 8-2, s. 224–225), botox (s. 225). Kap. 13: trny u víc než 90 % vzrušujících synapsí (s. 310), elektrické synapse nezesilují (s. 314), velikost EPSP v mozku (s. 319), hořčík začne vypadávat nad −60 mV (s. 324), na mnoha synapsích v mozku často jediné kvantum na vzruch a 10 až 100 synapsí k výstřelu (s. 327), synapse jako místo paměti (s. 328), LTP, LTD a dráždění 1 Hz (s. 329–331).
 - Alberts B. a kol. Molecular Biology of the Cell, 7. vyd. W. W. Norton, 2022. Kap. 11: chloridové kanály tlumí depolarizaci (s. 670), mírný vápník zapíná fosfatázy a dlouhodobý útlum (s. 678). Kap. 13: komplexin jako brzda, kterou uvolní synaptotagmin (s. 783).
 - Dodge F. A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. Journal of Physiology 193(2): 419–432, 1967. Strmost uvolňování podle vápníku.
 - Markram H., Gerstner W., Sjöström P. J. A history of spike-timing-dependent plasticity. Frontiers in Synaptic Neuroscience 3: 4, 2011. Doslovné znění Hebbova pravidla z roku 1949.
@@ -1094,7 +1094,7 @@ Příště se přestaneme dívat na celou cestu z dálky a zaměříme se na sam
 
 URL: https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html  
 Větev: Farmakologie  
-Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-24  
+Autorka: Pája, vyšlo 2026-10-24, aktualizováno 2026-10-25  
 Shrnutí: Receptory podle Rosenbauma: vazba molekulu po molekule, afinita a účinnost, rezervní receptory, křivka účinku, soupeři na receptoru a tolerance. Se čtyřmi simulacemi.  
 English: Drug receptors, following Rosenbaum: mass-action binding and residence time, affinity and efficacy, partial agonists and spare receptors, the Emax model and why effects outlast drugs, competitive and noncompetitive antagonism, and tolerance, desensitization and rebound.
 
@@ -2313,3 +2313,263 @@ Hra vysvětluje princip zpětné vazby a nikomu nestanovuje diagnózu ani léčb
 - Persani L. a kol. 2018 European Thyroid Association (ETA) Guidelines on the Diagnosis and Management of Central Hypothyroidism. European Thyroid Journal 7, 225–237 (2018).
 - Kahaly G. J. a kol. 2018 European Thyroid Association Guideline for the Management of Graves’ Hyperthyroidism. European Thyroid Journal 7, 167–186 (2018).
 - Hra je zjednodušený model: hodnoty jsou násobky normálu, selhání hypofýzy je zjednodušené na strop výroby TSH a růst žlázy i dávky tablet jsou ilustrační.
+
+---
+
+# Bez dechu
+
+URL: https://vetevnavetvi.cz/pages/hra-bez-dechu.html  
+Větev: Hry (na motivy kapitoly První rameno schodiště)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Rozhoduj, kam poputuje pyruvát, aby glykolýze nedošlo NAD⁺: červená krvinka bez mitochondrií, sprint, kvasnice a Pasteurův efekt a nádor, který kvasí i s kyslíkem.  
+English: Real-time control game on why fermentation exists: route pyruvate between oxygen-limited mitochondria and lactate or ethanol to keep the small NAD⁺ pool turning over in a red blood cell, a sprinting muscle, yeast with intermittent air (Pasteur effect) and a tumour cell that ferments even with oxygen, where a hexokinase-inhibitor dose must spare red cells.
+
+Šestý krok glykolýzy potřebuje NAD⁺ a buňka ho má jen hrstku. Každá glukóza z něj udělá dvě molekuly NADH, a kdyby se NADH pořád neměnilo zpátky na NAD⁺, glykolýza by se brzy zastavila. S kyslíkem ho vracejí mitochondrie. Bez kyslíku musí buňka elektrony z NADH uložit do pyruvátu, takže vznikne laktát. Kvasinky z pyruvátu nejdřív odštěpí oxid uhličitý a elektrony uloží do vzniklého acetaldehydu, takže vznikne ethanol. Obojímu se říká kvašení.
+
+Jak hrát: posuvníkem pod obrázkem rozhoduješ, kolik pyruvátu poputuje do mitochondrií a kolik na laktát (u kvasinek na ethanol). Ovládat ho můžeš i šipkami na klávesnici. Nahoře vidíš kolotoč NAD⁺, vytížení mitochondrií a zásobu energie, dole průběh v čase i to, co buňku teprve čeká. Mitochondrie zvládnou jen tolik pyruvátu, kolik jim dovolí kyslík. Co nestihnou, čeká před nimi i se svým NADH, a když toho čeká moc, NAD⁺ dojde a glykolýza zabrzdí. Kvašení zvládne, kolik chceš, ale z jedné glukózy dá jen 2 ATP, z glukózy z glykogenu 3.
+
+Hra: Bez dechu. Světlé kuličky v kolotoči pod glykolýzou jsou NAD⁺, tmavé NADH. Pyruvát teče do mitochondrií (nahoře), nebo na laktát či ethanol (dole). Pruh pod mitochondriemi ukazuje, jak jsou vytížené vzhledem ke kyslíku, který mají, a terakotové tečky před nimi jsou pyruvát, který čeká i se svým NADH. Sloupec vpravo je zásoba energie (ATP, ve svalu i fosfokreatin), dole její průběh v čase a světlou plochou poptávka po ATP. Ve čtvrté úrovni jsou místo schématu tři buňky, šedofialová část pruhu glykolýzy je kapacita, kterou ubral inhibitor, a svislá čárka v pruhu energie hranice 40 %. Kvašením dá ve hře jedna glukóza 2 ATP (glukóza z glykogenu 3) a mitochondrie k tomu přidají 28, celkem tedy 30 ATP. To je nižší z Lehningerových odhadů 30 a 32; simulace v kapitole počítá s 32. Pivovarským kvasinkám přidají mitochondrie jen 16 ATP, celkem asi 18. Ostatní čísla jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+NAD⁺ má buňka mnohem méně než glukózy, kterou za pár minut zpracuje, a tak by se glykolýza bez jeho vracení brzy zastavila. S kyslíkem vracejí NAD⁺ mitochondrie: elektrony z NADH projdou dýchacím řetězcem až na kyslík a pyruvát shoří na oxid uhličitý. Bez kyslíku je buňka uloží do pyruvátu. Lehninger tomu říká kvašení: buňka získá ATP, nespotřebuje kyslík a množství NAD⁺ ani NADH se nezmění. Červené krvinky, které mitochondrie nemají, vyrábějí laktát i za dostatku kyslíku. Kvasinky místo laktátu vyrábějí ethanol a oxid uhličitý.
+
+Kvašení dá z jedné glukózy 2 ATP, spálení s mitochondriemi asi 30. Aby buňka bez kyslíku vyrobila stejné množství ATP, musí podle Lehningera zpracovat asi patnáctkrát víc glukózy. Louis Pasteur si u kvasinek všiml, že bez kyslíku spotřebují cukru mnohonásobně víc, a dnes se tomu říká Pasteurův efekt. Svaly při sprintu sáhnou do glykogenu. Glukóza z něj dá kvašením 3 ATP, protože ji sval nemusí fosforylovat pomocí ATP jako glukózu z krve. Laktát, který přitom vznikne, odnese krev do jater a tam se z něj v klidu znovu stane glukóza. Tomu koloběhu se říká Coriho cyklus. Kyslík, který tělo po námaze spotřebuje navíc, slouží ke splácení kyslíkového dluhu.
+
+V mnoha nádorech podle Lehningera běží příjem glukózy a glykolýza zhruba desetkrát rychleji než ve zdravých tkáních. Většina nádorových buněk zpočátku roste s nedostatkem kyslíku, protože k nim ještě nevedou cévy, a Otto Warburg si ve dvacátých letech všiml, že nádory glykolýzu zrychlují i tam, kde kyslík mají. Na téhle závislosti stojí vyšetření PET: radioaktivně značená fluorodeoxyglukóza se v buňkách zachytí jako 6-fosfát a ukáže místa, kde se spotřebovává nejvíc glukózy. A proto se zkoumají i látky, které glykolýzu brzdí.
+
+Ve hře o osudu pyruvátu rozhoduješ ty. V buňce to žádný posuvník nedělá: kolik pyruvátu skončí jako laktát, rozhodují koncentrace látek, kyslík a enzymy samy. Víc je v kapitole [První rameno schodiště](https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html).
+
+Hra vysvětluje princip a nikomu neradí s léčbou.
+
+## Zdroje
+
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kap. 14.1: šestý krok a NAD⁺, kterého má buňka mnohem méně než glukózy a které se proto musí pořád vracet. Kap. 14.3: obr. 14-11 (tři osudy pyruvátu a vracení NAD⁺), Pasteurův a Warburgův efekt (30 nebo 32 ATP na glukózu s kyslíkem, asi patnáctkrát víc glukózy bez kyslíku), mléčné kvašení, červené krvinky bez mitochondrií a definice kvašení, alkoholové kvašení. Rámeček 14-1: nádory (v mnoha nádorech příjem glukózy a glykolýza asi desetkrát rychleji, nedostatek kyslíku, asi 30 ATP na glukózu s kyslíkem, tři inhibitory hexokinázy, fluorodeoxyglukóza a PET). Rámeček 14-2: sprint, splácení kyslíkového dluhu, Coriho cyklus, sportovec a aligátor. Kap. 23.2: glukóza z glykogenu dá svalu kvašením 3 ATP. E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a rámečky.
+- Pfeiffer T., Morley A. An evolutionary perspective on the Crabtree effect. Frontiers in Molecular Biosciences 1: 17, 2014. Pivovarské kvasinky (Saccharomyces cerevisiae) získají dýcháním asi 18 ATP z glukózy, kvašením 2; při vysoké koncentraci glukózy kvasí i se vzduchem (Crabtreeův efekt).
+- Hra je zjednodušený model: o osudu pyruvátu rozhoduje hráč, mitochondrie zvládnou jen tolik, kolik jim dovolí kyslík, a pyruvát, který nestihnou, čeká i se svým NADH, takže NAD⁺ ubývá a glykolýza brzdí. Jedna glukóza dá kvašením 2 ATP (z glykogenu 3) a s mitochondriemi 30 ATP jako v rámečku 14-1, u kvasinek 18; simulace v kapitole počítá s horní Lehningerovou hodnotou 32. Poptávka po ATP, velikost zásob energie, NAD⁺, glykogenu a cukru, rychlost, s jakou přibývá kyslík, i dávky inhibitoru jsou ilustrační.
+
+---
+
+# Přítoky
+
+URL: https://vetevnavetvi.cz/pages/hra-pritoky.html  
+Větev: Hry (na motivy kapitoly První rameno schodiště)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Přiveď do glykolýzy cukry z mléka, chleba i z glykogenu s co nejlepší bilancí ATP: galaktóza, fruktóza ve svalu a v játrech, fosforolýza a dvě galaktosemie.  
+English: Puzzle on the feeder pathways of glycolysis: build enzyme routes for lactose, starch, glycogen and sucrose into glycolysis in muscle and liver while keeping the ATP balance (phosphorolysis saves one ATP), and tell two galactosemias apart from what accumulates.
+
+Glykolýza začíná glukózou, jenže v jídle jsou i jiné cukry. Mléko přináší galaktózu, řepný cukr a ovoce fruktózu. A svaly i játra mají zásobu v glykogenu. Každý z těch cukrů musí buňka nejdřív přestavět na glukózu nebo na některý z meziproduktů glykolýzy. Podle toho, jakou cestou a kde do ní vstoupí, se buňce vyplatí víc, nebo míň.
+
+Jak hrát: nahoře máš cukry, se kterými pracuješ, pod nimi karty enzymů. Klepni na cukr a pak na enzym, který ho umí přestavět. Karta ukazuje, co z čeho udělá a jestli to stojí ATP. Jakmile z cukru uděláš glukózu nebo meziprodukt glykolýzy, pusť ho do ní tlačítkem Do glykolýzy. Nahoře v panelu se počítá, kolik ATP buňka vložila, kolik dostala zpátky a jaký je zisk.
+
+Hra: Přítoky. Vpravo (na telefonu pod kartami) je glykolýza shora dolů. Kroky, které stojí ATP, jsou označené −1, výplata dá 2 ATP na každou triózu. Ventil u fosfofruktokinázy-1 je hlavní místo, kde buňka glykolýzu řídí. Karty ukazují skutečné reakce z učebnice. Trávicí enzymy fungují v každé úrovni, i když doopravdy pracují ve střevě, a do bilance se počítá jen ATP z glykolýzy, ne z dýchání.
+
+## Co se tu doopravdy děje
+
+Ze střeva se do krve vstřebají jen jednotlivé cukry. Škrob proto nejdřív rozštěpí amyláza ze slin a ze slinivky a dvojcukry pak enzymy na povrchu střevní sliznice: maltózu, sacharózu i laktózu. Všechno to jsou hydrolýzy, štěpení vodou. Glykogen v buňkách ale štěpí glykogenfosforyláza fosfátem a glukóza z něj odchází rovnou jako glukóza-1-fosfát. Fosfoglukomutáza ho pak přestaví na glukóza-6-fosfát. Hexokináza tak nemusí utratit ATP a glukóza z glykogenu vynese 3 ATP místo 2.
+
+Galaktózu přestavují játra oklikou přes cukry navázané na nukleotid UDP. Uridylyltransferáza vymění galaktóza-1-fosfát za glukóza-1-fosfát z UDP-glukózy a epimeráza pak z UDP-galaktózy udělá zpátky UDP-glukózu. Cyklus se točí dokola a UDP-glukóza se v něm nespotřebuje. Když galaktokináza chybí, hromadí se v krvi galaktóza a v oční čočce z ní vzniká galaktitol, který už u kojenců způsobí šedý zákal. Přísné omezení galaktózy v jídle příznaky hodně zmírní. Nedostatek uridylyltransferázy je vážnější. Hromadí se galaktóza-1-fosfát a nemoc brzdí růst i vývoj řeči a rozumu a poškozuje játra, někdy smrtelně, a to i když se galaktóza z jídla vyřadí.
+
+Fruktózu ve svalech a ledvinách fosforyluje hexokináza na šestém uhlíku. V játrech ji fruktokináza fosforyluje na prvním, fruktóza-1-fosfát se rozštěpí na dvě triózy a obě skončí jako glyceraldehyd-3-fosfát. Do glykolýzy tak vstoupí až za fosfofruktokinázou-1. A glukóza-6-fosfatáza, která z glukóza-6-fosfátu dělá volnou glukózu, je jen v játrech, ledvinách a buňkách střevní sliznice. Díky ní můžou játra posílat glukózu do krve. Kdyby ji měly i ostatní tkáně, rozkládala by jim glukóza-6-fosfát, který potřebují pro glykolýzu. Víc je v kapitole [První rameno schodiště](https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html).
+
+## Zdroje
+
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kap. 14.2 (Feeder Pathways for Glycolysis): fosforolýza glykogenu a řešená úloha 14-1 (3 ATP místo 2), trávení škrobu a dvojcukrů hydrolýzou, vstřebávání jen jednoduchých cukrů, laktáza, přestavba galaktózy přes UDP-galaktózu a UDP-glukózu a galaktosemie (obr. 14-10), fruktóza ve svalech a v játrech (obr. 14-9). Kap. 14.4: glukóza-6-fosfatáza jen v játrech, ledvinách a buňkách střevní sliznice. Kap. 14, úloha 14 a její řešení: co se hromadí při nedostatku galaktokinázy a uridylyltransferázy. E-kniha nemá tištěná čísla stran, citujeme proto oddíly, obrázky a úlohy.
+- Hra je zjednodušený model. Každý cukr ve hře je jedna molekula, jen škrob z krajíce a zásoba glykogenu zastupují po dvou glukózách. Enzymy uvnitř buněk hra dovolí jen v tkáních, kde je uvádí učebnice. Trávicí enzymy ale fungují v každé úrovni, i když doopravdy pracují ve střevě, ještě než cukry doputují krví do jater nebo do svalu. Bilance počítá jen ATP vložené a vyrobené v glykolýze, bez NADH a dýchání.
+
+---
+
+# Sabotáž
+
+URL: https://vetevnavetvi.cz/pages/hra-sabotaz.html  
+Větev: Hry (na motivy kapitoly První rameno schodiště)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Z hromadících se meziproduktů zjisti, kde jed zastavil glykolýzu v kvasničném výtažku: jodacetát, fluorid, arseničnan, nebo falešná glukóza.  
+English: Lab detective game based on the classic inhibitor technique: measure which glycolytic intermediates pile up in a poisoned yeast extract and accuse the blocked enzyme: iodoacetate (glyceraldehyde-3-phosphate dehydrogenase), fluoride (enolase), arsenate (glycolysis runs without net ATP) and 2-deoxyglucose (stuck after hexokinase), then an unknown sample on a tight budget.
+
+Jak zjistit, z jakých kroků se skládá dráha, kterou nikdo nevidí? Prvním badatelům glykolýzy pomohly jedy. Do výtažku z kvasinek, který kvasil glukózu na ethanol, přidávali látky, které kvašení zastavily, a sledovali, co se nahromadí. Po každém jedu se nahromadila jiná látka, a tak se kousek po kousku skládalo pořadí kroků. Voetova učebnice tomu říká obecná technika výzkumu metabolismu, která se používá dodnes.
+
+Jak hrát: klepnutím na látku ji změříš a porovnáš s neotrávenou kontrolou: 1× znamená beze změny. Změřit jde i rychlost kvašení podle oxidu uhličitého a čistý zisk ATP. Měření je omezený počet. Až budeš vědět, kde dráha vázne, vyber enzym a obviň ho.
+
+Hra: Sabotáž. Sloupce ukazují, kolikrát víc nebo méně je meziproduktu než v neotrávené kontrole, v logaritmickém měřítku. Terakotový sloupec znamená, že se látka hromadí, modrý, že ubývá, a zelený, že je jí skoro stejně. Na telefonu leží sloupce vodorovně: od čáry 1× doleva látka ubývá, doprava se hromadí. Otazník znamená, že látku ještě nikdo neměřil. Švestkový sloupec patří cizímu cukernému 6-fosfátu, který v kontrole vůbec není. Ukazuje, kolikrát víc ho je, než bývá v kontrole glukóza-6-fosfátu. Čísla 1 až 12 mezi látkami jsou kroky od hexokinázy po alkoholdehydrogenázu. Že se po jodacetátu hromadí fruktóza-1,6-bisfosfát a po fluoridu 3- a 2-fosfoglycerát, pozorovali už první badatelé glykolýzy. Ostatní obrazce, třeba triózafosfáty po jodacetátu nebo stopy arseničnanu a 2-deoxyglukózy, jsou odvozené z toho, jak jedy působí. Přesné hodnoty jsou ilustrační a mají drobný šum jako skutečná měření.
+
+## Co se tu doopravdy děje
+
+Když se jeden krok dráhy zastaví, látky před ním se hromadí a látky za ním ubývají, jako voda před zavřeným stavidlem. Z toho, kde se hromadění mění v nedostatek, se pozná, který enzym nepracuje. Takhle se kdysi poskládala glykolýza: od roku 1897, kdy Eduard Buchner ukázal, že výtažek z kvasinek zkvasí cukr i bez buněk, do třicátých let, kdy už byla známá celá dráha.
+
+Jodacetát se naváže na cystein v aktivním místě glyceraldehyd-3-fosfátdehydrogenázy, a proto se před šestým krokem hromadí fruktóza-1,6-bisfosfát. Fluorid a fosfát vytvoří s hořčíkem v aktivním místě enolázy pevný komplex, který nepustí substrát dovnitř, a hromadí se 2- i 3-fosfoglycerát. Arseničnan nic nezablokuje: enzym šestého kroku ho připojí místo fosfátu, vzniklý acylarseničnan se sám rozpadne a dráha běží dál, jen bez zisku ATP. A 2-deoxyglukóze chybí na druhém uhlíku hydroxylová skupina. Hexokináza ji přesto fosforyluje, ale její 6-fosfát už fosfohexózaizomeráza nepřestaví. Ten se hromadí a zpětně brzdí hexokinázu. Na stejném principu stojí vyšetření PET, při kterém se v buňkách zachytí radioaktivní fluorodeoxyglukóza.
+
+Ve hře je vzorkem jen výtažek z kvasinek a čísla ukazují hlavně směr změn. Víc o jednotlivých krocích glykolýzy je v kapitole [První rameno schodiště](https://vetevnavetvi.cz/pages/wetware-biochemie-ch2-prvni-rameno-schodiste.html).
+
+## Zdroje
+
+- Voet D., Voet J. G. Biochemistry, 4. vyd. Wiley, 2011. Oddíl 17-1A: Buchnerův výtažek z kvasinek, inhibitory jako obecná technika výzkumu metabolismu, po jodacetátu se hromadí fruktóza-1,6-bisfosfát a po fluoridu 3- a 2-fosfoglycerát (s. 593–594); jodacetát a cystein v aktivním místě glyceraldehyd-3-fosfátdehydrogenázy (s. 607); fluorid a fosfát tvoří s hořčíkem v aktivním místě enolázy komplex, který brání vazbě substrátu, rovnováha 2- a 3-fosfoglycerátu (s. 612); úloha 4, arseničnan (s. 636).
+- Nelson D. L., Cox M. M., Hoskins A. A. Lehninger Principles of Biochemistry, 8. vyd. W. H. Freeman, 2021. Kap. 6.1: počátky biochemie lze vystopovat k Buchnerovu pokusu z roku 1897. Kap. 14.1: Buchner 1897 a celá dráha ve třicátých letech. Kap. 14, úlohy 10 a 11 a jejich řešení: arseničnan místo fosfátu, acylarseničnan se sám rozpadne, a pokusy Hardena a Younga (úloha je řadí do roku 1906, práce o arseničnanu ale vyšla až v roce 1911). Rámeček 14-1: 2-deoxyglukóza mezi inhibitory hexokinázy, fluorodeoxyglukóza se hromadí jako 6-fosfát, PET. E-kniha nemá tištěná čísla stran, citujeme proto oddíly, úlohy a rámečky.
+- Harden A., Young W. J. The alcoholic ferment of yeast-juice. Part VI. The influence of arsenates and arsenites on the fermentation of the sugars by yeast-juice. Proceedings of the Royal Society B, 1911. Posudek H. T. Browna z 24. ledna 1911 je v archivu Royal Society (RR/18/141).
+- Pająk B. a kol. 2-Deoxy-D-Glucose and Its Analogs: From Diagnostic to Therapeutic Agents. International Journal of Molecular Sciences 21(1): 234, 2020. Oddíl 4.1: hexokináza 2-deoxyglukózu fosforyluje, fosfohexózaizomeráza její 6-fosfát dál nezpracuje, ten se hromadí a brzdí hexokinázu.
+- Hra je zjednodušený model: poměry meziproduktů, rychlost kvašení a čistý zisk ATP vůči kontrole jsou ilustrační a ukazují hlavně směr změn, drobný šum napodobuje měření.
+
+---
+
+# Pavlovův zvonek
+
+URL: https://vetevnavetvi.cz/pages/hra-pavlovuv-zvonek.html  
+Větev: Hry (na motivy kapitoly Dole v mezeře)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Nauč neuron vypálit na zvonek tím, že ho spojíš s jídlem. Pak odnauč světlo pomalým drážděním a zjisti, co se stane bez hořčíku a s blokátorem receptoru NMDA.  
+English: Sequencer puzzle on associative LTP: pair a weak input with a strong one until the neuron fires to the bell alone, keep an unpaired input weak (input specificity), weaken a learned input with low-frequency stimulation (LTD), break the coincidence rule by removing Mg²⁺, and use the cooperativity of weak inputs.
+
+Když psovi před každým krmením zazvoní zvonek, začne po čase slintat už na samotný zvonek. Učebnice neurobiologie nabízejí pro takový podmíněný reflex možný mechanismus, který se odehraje v jediné buňce. Slabá synapse drážděná sama se natrvalo nezmění, ale když se ozve zároveň se silnou, která buňku přivede k výstřelu, zesílí a zůstane silnější ještě dlouho potom. Říká se tomu asociativní dlouhodobá potenciace.
+
+Jak hrát: na neuron vedou tři vstupy. Jídlo je silné a buňku přivede k výstřelu samo, zvonek a světlo jsou slabé. V mřížce naplánuj osm kol: v každém sloupci klepni na vstupy, které se mají v tom kole ozvat spolu. Pak celý plán pusť. O deset minut později přijde zkouška: každý slabý vstup dostane jeden podnět sám a uvidíš, jestli na něj neuron vypálí.
+
+Hra: Pavlovův zvonek. Barvy vstupů odpovídají mřížce pod obrázkem, jídlo je zlaté. Velikost trnu a čísla v mřížce ukazují, jak velký vzrušující potenciál synapse vyvolá, jako podíl napětí potřebného k výstřelu. Zlaté tečky ve štěrbině jsou glutamát, tečky v trnu vápník, který proteče receptory NMDA: oranžové, když ho vteče hodně, modré, když jen trochu. V rychlém tempu je jedno kolo jednosekundová dávka sto podnětů za sekundu, v pomalém dvě minuty slabých podnětů, jeden za sekundu. Síly synapsí, prahy a velikost změn jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Dlouhodobou potenciaci popsali Timothy Bliss a Terje Lømo v roce 1973: po krátké sérii rychlých podnětů odpovídaly synapse v hipokampu silněji ještě hodiny, někdy i dny. O deset let později ukázal tým Thomase Browna na řezech hipokampu se dvěma drážděnými vstupy to, co hra napodobuje. Silný vstup vyvolal velkou odpověď, slabý malou. Rychlé dráždění samotného slabého vstupu ho posílilo jen na pár minut, ale když se dráždily oba vstupy naráz, odpověď slabého se zdvojnásobila a zesílení vydrželo desítky minut. Nicholls v tom vidí možný mechanismus podmíněného reflexu, jehož klasickým příkladem je pes, který slintá na zvonek.
+
+Klíčem je receptor NMDA. Jeho pór v klidu ucpává hořčík z okolního roztoku, a receptor proto pustí vápník, až když je membrána dost depolarizovaná. Receptor tak hlídá shodu dvou věcí: přenašeče od buňky, která posílá, a depolarizace buňky, která přijímá. Zesílí jen synapse, které byly při tom aktivní. Několik slabých vstupů ale dokáže buňku přivést k výstřelu, když se ozvou spolu, a pak zesílí všechny. Boron a Boulpaep uvádějí příklad s kočkou: pohled na ni a její zvuk přicházejí spolu, a tak se spojí, kdežto pohled na kočku a zvonění budíku se sejdou jen zřídka, a tak se nespojí. Látky, které receptor NMDA blokují, vzniku potenciace zabrání, už vzniklou ale nezruší.
+
+O směru změny nejspíš rozhoduje, kolik vápníku do trnu vteče. Několik set podnětů padesátkrát za sekundu synapsi zesílí, stejný počet desetkrát za sekundu skoro nic neudělá a jednou za sekundu ji zeslabí. Ve hře je všechno zjednodušené: skutečná potenciace s časem slábne a synapse se nemění po pevných krocích. Se závěry o paměti je ale potřeba zacházet opatrně. Přibývá dokladů, že potenciace v amygdale by mohla stát za podmiňováním strachu, ale jednoznačný vztah mezi těmito změnami a vznikem vzpomínek podle Nichollse prokázaný není. Víc je v kapitole [Dole v mezeře](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html).
+
+## Zdroje
+
+- Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 16 (Synaptic Plasticity): Bliss a Lømo (s. 323), asociativní potenciace a podmíněný reflex (s. 323–325, obr. 16.6), skutečná potenciace s časem slábne (s. 325–326, obr. 16.7), hořčík v receptoru NMDA a blokátory, které zabrání vzniku, ne trvání (s. 326), dlouhodobý útlum po pomalém dráždění (s. 330), potenciace a podmiňování strachu (s. 332), vztah k paměti neprokázaný (s. 333).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 13: specifičnost, shoda, spolupráce slabých vstupů a příklad s kočkou a budíkem (s. 330–331), frekvence dráždění a množství vápníku rozhodují mezi potenciací a útlumem (s. 331).
+- Bliss T. V. P., Lømo T. Long-lasting potentiation of synaptic transmission in the dentate area of the anaesthetized rabbit following stimulation of the perforant path. Journal of Physiology 232: 331–356, 1973.
+- Barrionuevo G., Brown T. H. Associative long-term potentiation in hippocampal slices. PNAS 80: 7347–7351, 1983.
+- Hra je zjednodušený model: síla synapse je velikost jejího vzrušujícího potenciálu jako podíl prahu, neuron vypálí, když součet dosáhne prahu. Při rychlých dávkách zesílí každá aktivní synapse o čtvrtinu, pokud buňka vypálí (slabé synapse nejvýš na dvaapůlnásobek výchozí síly). Při pomalém dráždění jsou podněty slabé, buňka nevypálí a každá drážděná synapse zeslábne o 15 % za kolo. Bez hořčíku zesílí každá drážděná synapse, s blokátorem NMDA žádná. Velikosti změn i sil jsou ilustrační a potenciace ve hře neslábne.
+
+---
+
+# Filtr
+
+URL: https://vetevnavetvi.cz/pages/hra-filtr.html  
+Větev: Hry (na motivy kapitoly Dole v mezeře)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Nastav synapsi vápník, zásobu váčků a doplňování tak, aby propustila každý vzruch, jen začátek série, nebo jen shluky. A proč je jeden jistý váček lepší než devět nejistých.  
+English: Tuning puzzle on short-term synaptic plasticity: set calcium (release probability rising with its fourth power), ready vesicles, refill time and residual calcium so a synapse passes every spike of a train, only burst onsets or only bursts, then pick release sites and probability for reliable transmission at a fixed mean quantal content.
+
+Vzruchy do synapse nechodí po jednom, ale v sériích, a odpovědi druhé buňky se během série mění. Synapse, která při každém vzruchu vylije velký díl připravených váčků, si zásobu rychle vyčerpá a slábne. Synapse s malou pravděpodobností vylití se během rychlé série naopak rozjíždí, protože se v zakončení hromadí vápník. Kolik přenašeče vzruch uvolní, záleží na velikosti zásoby připravených váčků a na pravděpodobnosti, že se každý z nich vylije. Ta roste se třetí až čtvrtou mocninou přítoku vápníku.
+
+Jak hrát: nahoře přichází série vzruchů. Sloupce ukazují, jak velkou odpověď vyvolá každý z nich v další buňce, a přerušovaná čára je práh, nad kterým buňka vypálí. Kroužek nad sloupcem říká, co je cílem: plný znamená, že tenhle vzruch má práh přeskočit, prázdný, že nemá. Oranžový kroužek a obrys sloupce znamenají, že vzruch zatím nedělá, co má. Posuvníky nastav synapsi, sloupce se mění hned. Až všechno sedí, pusť vzruchy.
+
+Hra: Filtr. Zlaté sloupce přeskočí práh, šedozelené ne. Pod nimi je zásoba připravených váčků (modře) a pravděpodobnost vylití (zlatě) těsně před každým vzruchem. Měřítko pravděpodobnosti se samo přizpůsobí, aby byl vidět i nárůst malé pravděpodobnosti. Jde o zjednodušený model krátkodobé paměti synapse podle Tsodykse a Markrama, stejný jako v kapitole: vzruch vylije podíl připravených váčků daný pravděpodobností vylití, zásoba se mezi vzruchy doplňuje a zbytkový vápník pravděpodobnost na chvíli zvýší. Pravděpodobnost roste se čtvrtou mocninou koncentrace vápníku v roztoku. Velikosti, prahy a časy jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Na ploténce se oba jevy dají změřit přímo. Když je v roztoku málo vápníku a vzruch uvolní méně než deset kvant, odpovědi během krátké série rostou a zvětšená je ještě odpověď, která přijde skoro čtvrt sekundy po konci série. Když vzruch uvolní kvant hodně, odpovědi slábnou, po dlouhé sérii i pod pětinu původní odpovědi, a synapse se zotavuje několik sekund. Facilitace vyprchá hlavně během desítek milisekund (časová konstanta asi 50 ms), menší část pomaleji (asi 250 ms). Podle Nichollse se při tom mění počet uvolněných kvant, ne velikost jednoho kvanta ani citlivost druhé strany.
+
+Synapse tak nepřenáší jen to, že přišel vzruch, ale i rytmus. Markram, Wang a Tsodyks ukázali, že tentýž axon pyramidové buňky v mozkové kůře tvoří na jiné pyramidové buňce synapsi, která během rychlé série slábne, a na interneuronu synapsi, která sílí. Zjednodušeně řečeno: jednomu sousedovi buňka hlásí hlavně začátek série, druhému hlavně to, že série trvá.
+
+Ploténka je opačný extrém: vzruch na ní uvolní kolem dvou set kvant a ploténkový potenciál je normálně mnohem vyšší, než je potřeba k výstřelu svalového vlákna. Na synapsích v mozku a míše se často uvolní v průměru jen jedno kvantum. Na synapsi mezi vláknem ze svalového vřeténka a motoneuronem přesto přenos selže jen asi u jednoho vzruchu z deseti, protože tam čeká zhruba jediné kvantum, které se vylije s pravděpodobností kolem 0,9. Víc je v kapitole [Dole v mezeře](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html).
+
+## Zdroje
+
+- Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 11: ploténkový potenciál mnohem vyšší, než je potřeba (s. 188). Kap. 13: asi 200 kvant na ploténce (s. 252), kvantový obsah na synapsích nervových buněk a binomické uvolňování s pravděpodobností kolem 0,9 (s. 255). Kap. 16: facilitace a deprese na ploténce, test po 230 ms, deprese pod 20 % (s. 318), časový průběh facilitace a zotavení (s. 319–320), mění se počet kvant, ne jejich velikost ani citlivost druhé strany (s. 320), zásoba připravených váčků, pravděpodobnost vylití a třetí až čtvrtá mocnina přítoku vápníku (s. 320).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Kap. 13: většina synapsí v mozku a míše uvolní na vzruch málo přenašeče, často jen jedno kvantum (s. 327).
+- Tsodyks M. V., Markram H. The neural code between neocortical pyramidal neurons depends on neurotransmitter release probability. PNAS 94(2): 719–723, 1997.
+- Markram H., Wang Y., Tsodyks M. Differential signaling via the same axon of neocortical pyramidal neurons. PNAS 95(9): 5323–5328, 1998.
+- Dodge F. A., Rahamimoff R. Co-operative action of calcium ions in transmitter release at the neuromuscular junction. Journal of Physiology 193(2): 419–432, 1967.
+- Hra je zjednodušený model: odpověď je počet připravených váčků × pravděpodobnost vylití × podíl zásoby, který zbývá, a jedno kvantum je 2,5 % prahu. Pravděpodobnost vylití je 0,5 × (vápník / 2 mM)^4, nejvýš 0,95. V první úrovni se zásoba doplňuje s časovou konstantou 1 s, ve třetí 0,8 s. V prvních dvou úrovních zbytkový vápník doznívá s časovou konstantou 10 ms, takže facilitace skoro nehraje roli. Ve čtvrté úrovni je průměrný počet kvant pevně 0,9 a mění se jen počet míst, mezi která se dělí. Skutečné synapse mají víc mechanismů, například změny vápníkových kanálů.
+
+---
+
+# Kostky v mezeře
+
+URL: https://vetevnavetvi.cz/pages/hra-kostky-v-mezere.html  
+Větev: Hry (na motivy kapitoly Dole v mezeře)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Odhadni z nahrávek ploténky průměrný počet kvant jako del Castillo a Katz: ze selhání i z průměrné odpovědi, v šumu i u synapse, kde Poissonovo rozdělení neplatí.  
+English: Statistics game on quantal analysis: record end-plate potentials against a time budget, estimate the mean quantal content from failures and from mean amplitude, see which estimator survives rare failures and noise, detect a binomial synapse where Poisson fails, and estimate the number of release sites.
+
+Nervové zakončení nevylévá přenašeč plynule, ale po balíčcích, kvantech. Kolik jich jeden vzruch uvolní, rozhoduje náhoda, jako by synapse pokaždé hodila hrstí kostek. Na nervosvalové ploténce v roztoku chudém na vápník vyjde někdy jedno kvantum, jindy tři a někdy žádné. José del Castillo a Bernard Katz z takových nahrávek v roce 1954 spočítali, kolik kvant vzruch uvolní v průměru, a to dvěma nezávislými způsoby.
+
+Jak hrát: tlačítky nahráváš odpovědi svalu na vzruchy. Každá nahrávka stojí čas a ten je omezený. Pod grafem vidíš dva odhady průměrného počtu kvant na vzruch, kterému se říká m: jeden z podílu selhání, druhý z průměrné velikosti odpovědi, oba i s chybou odhadu. Posuvníkem zadej svůj odhad a odevzdej ho. Zlatá křivka ukazuje, jak by měl histogram pro tvůj odhad vypadat.
+
+Hra: Kostky v mezeře. Vlevo (na telefonu nahoře) posledních dvanáct odpovědí přes sebe, nejnovější zlatě. Histogram ukazuje velikosti všech nahraných odpovědí. Zlatá křivka je předpověď pro zadaný odhad: v prvních čtyřech úrovních podle Poissonova rozdělení, v páté podle binomického. Přerušovaná čára je práh: odpověď menší než půl kvanta se počítá jako selhání. Číslo za ± je přibližná směrodatná chyba odhadu. Velikost kvanta, šum, rozsahy m a rozpočet vzruchů jsou ilustrační.
+
+## Co se tu doopravdy děje
+
+Paul Fatt a Bernard Katz si na začátku padesátých let všimli, že se na ploténce i bez dráždění nervu objevují drobné depolarizace zhruba stejné velikosti, miniaturní ploténkové potenciály. Když pak snížili vápník a přidali hořčík, odpovědi na vzruch se začaly měnit po skocích: byly velké jako jeden, dva, tři nebo čtyři miniaturní potenciály, nebo žádné. Del Castillo a Katz přidali statistiku. Když je připravených kvant hodně a každé se uvolní jen s malou pravděpodobností, řídí se počet uvolněných kvant Poissonovým rozdělením. Podíl selhání je pak e^−m, takže m = ln(N/n_0), kde N je počet vzruchů a n_0 počet selhání. Druhý odhad dá průměrná odpověď vydělená průměrnou velikostí miniaturního potenciálu. Oba odhady se jim shodly, a to silně podpořilo myšlenku, že se odpověď na vzruch skládá ze stejných kvant, jaká se uvolňují samovolně. Za běžného vápníku tvoří odpověď žabí ploténky asi dvě stě kvant.
+
+Ian Boyd a Robert Martin pak totéž změřili na savčím svalu. Ze 198 vzruchů skončilo 18 selháním. Jedno kvantum mělo asi 0,4 mV a průměrná odpověď měla 0,93 mV, takže m vyšlo 2,3. Z podílu selhání vychází ln(198/18), zhruba 2,4. Histogram jejich odpovědí měl vrcholy právě u násobků jednoho kvanta.
+
+V mozku a míše uvolní vzruch mnohem méně kvant, někdy v průměru jen jedno. Neznamená to ale, že by přenos většinou selhával. Na synapsi mezi vláknem ze svalového vřeténka a motoneuronem v míše čeká na vzruch zhruba jediné kvantum, zato se uvolní asi v devíti případech z deseti. Takovou synapsi popisuje binomické rozdělení se dvěma parametry, počtem připravených kvant n a pravděpodobností uvolnění p. Z nich se dá poznat, jestli se při změně síly synapse změnil počet připravených kvant, nebo pravděpodobnost jejich uvolnění. Víc o kvantech je v kapitole [Dole v mezeře](https://vetevnavetvi.cz/pages/wetware-neurobiologie-ch2-dole-v-mezere.html).
+
+## Zdroje
+
+- Nicholls J. G., Martin A. R., Fuchs P. A., Brown D. A., Diamond M. E., Weisblat D. A. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 13 (Release of Neurotransmitters): miniaturní ploténkové potenciály (s. 251, obr. 13.8), odpovědi po skocích v roztoku s nízkým vápníkem a vysokým hořčíkem, kvantová hypotéza a asi 200 kvant za běžných podmínek (s. 252, obr. 13.9), rámeček 13.1 o binomickém a Poissonově rozdělení (s. 253), m = ln(N/n_0) a shoda obou odhadů (s. 254), histogram Boyda a Martina (s. 254, obr. 13.10), kvanta v centrální nervové soustavě a binomická synapse s p ≈ 0,9 a n ≈ 1 (s. 255).
+- Boron W. F., Boulpaep E. L. Medical Physiology, 3. vyd. Elsevier, 2017. Webová poznámka N8-5 ke kap. 8 (s. 215.e1): 198 vzruchů, 18 selhání, kvantum asi 0,4 mV, průměrná odpověď 0,93 mV a m = 2,3.
+- del Castillo J., Katz B. Quantal components of the end-plate potential. Journal of Physiology 124: 560–573, 1954.
+- Boyd I. A., Martin A. R. The end-plate potential in mammalian muscle. Journal of Physiology 132(1): 74–91, 1956.
+- Hra je zjednodušený model: každý vzruch uvolní náhodný počet kvant podle Poissonova, nebo binomického rozdělení, jedno kvantum má 0,4 mV se směrodatnou odchylkou kolem 15–20 % své velikosti, k odpovědi se přičítá šum nahrávky a velikost kvanta je známá přesně. Rozsahy m, šum a rozpočty vzruchů jsou ilustrační a chyby odhadů jsou přibližné.
+
+---
+
+# Kafe
+
+URL: https://vetevnavetvi.cz/pages/hra-kafe.html  
+Větev: Hry (na motivy kapitoly Podání ruky zblízka)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Naplánuj kafe na zkoušku, na odpoledne i na celý týden. Kofein soutěží s adenosinem o receptory, tolerance roste a odvykání může bolet hlavu.  
+English: Week-planner game on caffeine as a competitive antagonist of adenosine: place coffees to stay alert for an exam, an afternoon workshop and a week of meetings while still falling asleep, watch tolerance build as receptor numbers rise, and taper off without withdrawal headaches.
+
+Kafe ti nepřidá ani kapku energie. Čím déle bdíš, tím víc se v mozku hromadí adenosin a přes své receptory tlumí neurony, které tě drží vzhůru. Kofein na stejné receptory dosedne, nic v nich nespustí a jen je obsadí, takže se k nim adenosin nedostane. Nepřidává plyn, ubírá brzdu. A protože se kofein z těla odbourává pomalu a tělo si na něj zvyká, hodně záleží na tom, kdy a kolik kafe piješ.
+
+Jak hrát: klepnutím na časovou osu si na ten čas naplánuješ kafe. Když prstem nebo myší popojedeš do strany, vybereš přesný čas. Klepnutím na hrnek ho zase odebereš. Přepínačem zvolíš malé, nebo velké kafe. Křivka bdělosti se přepočítává hned a zelené pásy ukazují, kdy potřebuješ být ve formě. V týdenních úrovních přepínáš dny nad grafem. Až bude plán hotový, stiskni Prožít. Na klávesnici: šipky posouvají kurzor po půlhodinách a Enter kafe přidá, nebo odebere.
+
+Hra: Kafe. Bílá křivka je bdělost, modrá čárkovaná adenosin a zlatá plocha kofein v krvi. Zelené pásy jsou chvíle, kdy potřebuješ být ve formě, a čárkovaná čára v nich požadovaná bdělost. Modrošedá plocha je spánek: přijde v čase, kdy jdeš spát, nebo až později, pokud adenosin ještě nepřetlačil kofein. Oranžová závorka „usnout“ ukazuje, kdy musíš usnout. Červené vlnky značí bolest hlavy. Údaj „receptory“ říká, kolik receptorů máš ráno oproti stavu bez kofeinu. Velké kafe obsahuje dvakrát víc kofeinu než malé. Velikost dávek, prahy a stupnice bdělosti jsou ilustrační. Receptorů ve hře přibývá mnohem víc, než se našlo u myší, a abstinenční potíže trvají kratší dobu než u lidí.
+
+## Co se tu doopravdy děje
+
+Adenosin se v mozku vyskytuje pořád v nízkých koncentracích a přes receptory A_1 a A_2A tlumí neurony a uvolňování přenašečů. Během bdění se hromadí a mimo jiné tlumí neurony v tuberomamilárním jádře, a tím přivolává ospalost. Kofein se na tytéž receptory váže jako kompetitivní antagonista, a proto povzbuzuje. Myši, kterým chybí receptor A_2A, na povzbuzující účinek kofeinu nereagují. Víc o tom, jak léky soupeří o receptory, je v kapitole [Podání ruky zblízka](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html).
+
+Kofein se vstřebá rychle a v krvi je ho nejvíc zhruba 30 až 45 minut po vypití. Ubývá ale mnohem pomaleji, než přibyl: poločas je typicky 4 až 6 hodin. Z kafe vypitého pozdě odpoledne proto v noci ještě zbývá dost kofeinu, aby obsadil část receptorů. Rychlost, s jakou tělo kofein odbourává, se navíc mezi lidmi hodně liší, mimo jiné kvůli variantám enzymu CYP1A2, který rozkládá 95 % kofeinu. Hra počítá jen s adenosinem a kofeinem, a tak ber její čísla jako ilustraci, ne jako předpověď pro vlastní tělo.
+
+Tolerance je pokles účinku při stejné koncentraci léku, když se lék podává opakovaně. U zvířat zvyšuje dlouhodobé podávání kofeinu počet receptorů A_1, u myší v mozkové kůře a ve striatu zhruba o 10 až 20 %. Receptory A_2A, přes které kofein povzbuzuje, ale v téže práci nepřibyly a myši téhož kmene si na povzbuzující účinek nezvykly. Jestli přibývání receptorů toleranci vysvětluje, proto není jasné ani u zvířat. Ve hře receptorů přibývá mnohem víc, aby byl efekt vidět. Když kofein náhle chybí, přicházejí abstinenční příznaky: bolest hlavy, únava, ospalost a horší soustředění. V přehledu pokusů na lidech začínaly obvykle 12 až 24 hodin po posledním kafi, nejsilnější byly za 20 až 51 hodin a trvaly 2 až 9 dní. Bolest hlavy mělo v experimentálních studiích asi 50 % lidí a příznaky se objevovaly už po vysazení 100 mg kofeinu denně. Přičítají se zvýšené citlivosti na vlastní adenosin, ale zatím jde o hypotézu. Ve hře trvají potíže kratší dobu.
+
+Hra vysvětluje princip a nikomu neradí, kolik kávy pít ani jak ji vysazovat.
+
+## Zdroje
+
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. Kap. 14: adenosin v mozku, receptory A_1 a A_2A, hromadění adenosinu během bdění, ospalost a kofein, myši bez receptoru A_2A (s. 292).
+- Juliano L. M., Griffiths R. R. A critical review of caffeine withdrawal: empirical validation of symptoms and signs, incidence, severity, and associated features. Psychopharmacology 176(1): 1–29, 2004. Kompetitivní antagonismus na receptorech A_1 a A_2A, vrchol v krvi za 30–45 min, poločas typicky 4–6 h, příznaky abstinence, jejich nástup, vrchol a trvání, bolest hlavy u 50 % v experimentálních studiích, příznaky už po 100 mg denně, hypotéza zvýšené citlivosti na adenosin.
+- Nehlig A. Interindividual differences in caffeine metabolism and factors driving caffeine consumption. Pharmacological Reviews 70(2): 384–411, 2018. Velké rozdíly mezi lidmi, varianty enzymu CYP1A2, který rozkládá 95 % kofeinu.
+- Daly J. W., Shi D., Nikodijevic O., Jacobson K. A. The role of adenosine receptors in the central action of caffeine. Pharmacopsychoecologia 7(2): 201–213, 1994. Dlouhodobé podávání kofeinu zvyšuje u myší počet receptorů A_1 v mozkové kůře a ve striatu o 10–20 %, receptorů A_2A nepřibylo, myši tohoto kmene si na povzbuzující účinek kofeinu nezvykly a souvislost přírůstku receptorů A_1 s tolerancí zůstává nevysvětlená.
+- Rosenbaum S. E. (ed.) Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Kap. 20 (D. Mould, P. Hutson): definice tolerance (s. 442), model protiregulace (s. 444), kterým se popsala i tolerance k účinku kofeinu na krevní tlak (Shi J., Benowitz N. L., Denaro C. P., Sheiner L. B. Clinical Pharmacology & Therapeutics 53: 6–14, 1993).
+- Hra je zjednodušený model: adenosin během bdění roste a ve spánku klesá, kofein má v krvi vrchol zhruba za 45 minut a ubývá s poločasem 5 hodin, adenosin a kofein soupeří o receptory podle zákona působení hmoty, ospalost je úměrná počtu receptorů obsazených adenosinem a počet receptorů se dlouhodobé blokádě přizpůsobuje s poločasem asi jednoho dne. Bolest hlavy hra ukáže, když je receptorů o hodně víc, než kolik odpovídá kofeinu v krvi. Dávky, prahy bdělosti, spánku a bolesti hlavy jsou ilustrační, přírůstek receptorů je proti pokusům na myších mnohonásobně zvětšený a abstinenční potíže trvají kratší dobu než u lidí.
+
+---
+
+# Neznámá látka
+
+URL: https://vetevnavetvi.cz/pages/hra-neznama-latka.html  
+Větev: Hry (na motivy kapitoly Podání ruky zblízka)  
+Autorka: Pája, vyšlo 2026-10-25, aktualizováno 2026-10-25  
+Shrnutí: Z křivek účinku na proužku tkáně zjisti, co je v lahvičce: plný, nebo částečný agonista, kompetitivní, nebo nevratný antagonista, či inverzní agonista.  
+English: Organ-bath detective game: run concentration–response experiments on an isolated tissue to classify unlabelled drugs as full or partial agonists, competitive or irreversible antagonists, or inverse agonists, estimate pA2 from a Schild plot, and use receptor knock-out to reveal receptor reserve.
+
+V orgánové lázni visí v roztoku proužek tkáně. Když se do lázně přidá látka, tkáň odpoví, třeba se stáhne. Z toho, jak odpověď roste s koncentrací, vzniká křivka účinku. Farmakologie z takových křivek čte, jestli látka receptor zapíná, jak silně, nebo jestli ho jen blokuje. Ty teď dostaneš lahvičky bez nálepky a omezený počet pokusů.
+
+Jak hrát: nahoře vyber lahvičku, pod grafem spusť pokus. Pokusů máš omezený počet a každý se dělá na čerstvém proužku tkáně. Šedá čárkovaná křivka patří samotnému známému plnému agonistovi, s ní porovnávej. Výsledky se zapisují do sešitu a čísla v něm odpovídají číslům u křivek. Až budeš mít jasno, vyber, co v lahvičce je. Po špatném verdiktu se úroveň hraje znovu a lahvičky se zamíchají.
+
+Hra: Neznámá látka. Na vodorovné ose je v logaritmickém měřítku koncentrace: u pokusů, ve kterých se měří známý agonista (s látkou, po vymytí a ve Schildově řadě), koncentrace agonisty, u ostatních koncentrace neznámé látky. Svislá osa ukazuje odpověď tkáně v procentech jejího maxima. Tečky jsou měření s malým rozptylem, čára je model. Čárkovaně je vždy známý agonista: šedě v neošetřené tkáni, barevně po zničení receptorů. Látky jsou smyšlené a jejich afinity i účinnosti ilustrační, model odpovídá kapitole: odpověď = S/(1 + S), kde podnět S je účinnost krát podíl obsazených receptorů.
+
+## Co se tu doopravdy děje
+
+Odpověď na lék závisí na vlastnostech léku, na jeho afinitě a vnitřní účinnosti, i na vlastnostech tkáně, na tom, kolik má receptorů a jak signál zesiluje. Plný agonista dotáhne tkáň ke stropu, částečný se zastaví níž, i když obsadí všechny receptory. Strop přitom závisí i na počtu receptorů, a proto se plní a částeční agonisté dají porovnat jen ve stejné tkáni. Rezervní receptory se dají prokázat tak, že se část receptorů zničí. Víc o modelu, ze kterého hra vychází, je v kapitole [Podání ruky zblízka](https://vetevnavetvi.cz/pages/wetware-farmakologie-ch2-podani-ruky-zblizka.html).
+
+Kompetitivní antagonista soupeří s agonistou o totéž místo. Křivku agonisty posune rovnoběžně doprava a dávkový poměr splní Schildovu rovnici DR − 1 = [B]/K_B, takže Schildův graf má sklon 1. Donald Jenkinson ji v roce 1960 ověřil na žabím svalu s tubokurarinem a přímka vydržela přes tisícinásobný rozsah koncentrací. Nevratný antagonista receptory vyřadí natrvalo. Fenoxybenzamin se na receptory α pro noradrenalin váže kovalentně a α-bungarotoxin se nevratně váže na receptory pro acetylcholin, a proto se jím dají spočítat i zviditelnit.
+
+Mnoho receptorů spřažených s G-bílkovinami je trochu aktivních i bez agonisty. Inverzní agonista tuhle samovolnou aktivitu stlumí, neutrální antagonista ji nechá být. Kde samovolná aktivita chybí, chová se inverzní agonista jako obyčejný kompetitivní antagonista. V přehledu 380 látek vedených jako antagonisté u 73 receptorů bylo 322 inverzních agonistů a jen 58 neutrálních antagonistů. Podle přehledu z roku 2002 jsou inverzními agonisty i všechna do té doby zkoumaná antihistaminika H_1.
+
+## Zdroje
+
+- Rosenbaum S. E. (ed.) Basic Pharmacokinetics and Pharmacodynamics, 2. vyd. Wiley, 2017. Kap. 1 (S. E. Rosenbaum): rezervní receptory a jejich prokázání zničením části receptorů (s. 7), vlastnosti léku a tkáně (s. 8). Kap. 19 (D. Mould, P. Hutson): Clark, Ariëns, Stephenson a Furchgott (s. 394), model účinnosti (s. 397–402), E_max závisí na počtu receptorů a plné a částečné agonisty odliší jen srovnání ve stejné tkáni (s. 403–404).
+- Nicholls J. G. a kol. From Neuron to Brain, 5. vyd. Sinauer, 2012. α-bungarotoxin se váže na receptory pro acetylcholin nevratně a slouží k jejich počítání (s. 190); rámeček 11.3: Schildova rovnice, Jenkinsonův pokus s tubokurarinem (s. 191).
+- Neubig R. R. a kol. International Union of Pharmacology Committee on Receptor Nomenclature and Drug Classification. XXXVIII. Update on terms and symbols in quantitative pharmacology. Pharmacological Reviews 55(4): 597–606, 2003. Předpoklady Schildovy analýzy: přímka se sklonem 1 a pA_2 rovné pK_B.
+- Fenoxybenzamin: monografie AHFS Drug Information (Phenoxybenzamine Hydrochloride), drugs.com. Kovalentní vazba na receptory α, nekompetitivní blokáda.
+- Kenakin T. Efficacy as a vector: the relative prevalence and paucity of inverse agonism. Molecular Pharmacology 65(1): 2–11, 2004. Leurs R., Church M. K., Taglialatela M. H_1-antihistamines: inverse agonism, anti-inflammatory actions and cardiac effects. Clinical and Experimental Allergy 32(4): 489–498, 2002.
+- Hra je zjednodušený model: látky soupeří o receptory podle zákona působení hmoty, podnět je součet účinností obsazených receptorů (u tkáně se samovolnou aktivitou i neobsazených) a odpověď S/(1 + S). Nevratný antagonista vyřadí část receptorů podle své koncentrace. Tkáň v úrovni Rezerva má tolik receptorů, že ze stejného podílu obsazených receptorů vzniká stokrát větší podnět. Afinity, účinnosti, rezerva receptorů, samovolná aktivita tkáně a rozptyl měření jsou ilustrační.
