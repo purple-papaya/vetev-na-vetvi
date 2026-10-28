@@ -454,9 +454,6 @@ PAGES = {
                    width=1920, height=1080,
                    desc='Úvodní video bez zvuku: terénní zápisník o tom, jak živé věci fungují, osm větví Wetware '
                         'a tři hry v akci – Přeskoky, Plný sklad a Vana bez zátky.')),
-    # ---- placeholders, not worth indexing yet
-    'pages/pribehy.html': dict(kind='stub', name='Příběhy', title='Příběhy | Větev na větvi',
-                               desc='Beletrie, eseje a terénní poznámky. Stránka se připravuje.'),
     'pages/zpetna-vazba.html': dict(kind='contact', name='Zpětná vazba', title='Zpětná vazba | Větev na větvi',
                                     desc='Napiš, co ti sedlo, co skřípalo nebo kde je v textu chyba. Formulář pro opravy, '
                                          'nápady i pochvalu a seznam oprav, které se na webu udělaly.'),

@@ -15,7 +15,7 @@ css/
   base.css               sdílené proměnné (barvy, typo) + reset — používá každá stránka
   home.css                grove/větvová navigace + chrome — sdílí index.html a Wetware hub
   wetware.css             doplňky pro Wetware hub (rozvrh kapitol, stavové štítky)
-  stub.css                layout zástupných stránek (pages/*.html stub + 404.html)
+  stub.css                layout stránek větví Wetware a stránky 404
   chapter.css              styly kapitoly Biochemie (pages/wetware-ch1-jsi-sloveso.html)
   farmakologie-ch1.css     styly kapitoly Farmakologie — „Lék je vlna“ (vlastní design)
   neurobiologie-ch1.css    styly kapitoly Neurobiologie — „Jak se sůl naučila říkat já“ (vlastní design)
@@ -60,7 +60,6 @@ pages/
   hry.html                 Hry — rozcestník miniher podle větví Wetware
   hra-*.html               24 miniher, na každou větev aspoň dvě (každá na motivy jedné kapitoly)
   zpetna-vazba.html        Zpětná vazba — formulář, seznam oprav a co se se zprávou stane (viz níž)
-  pribehy.html             zástupná stránka
   wetware-biochemie.html, wetware-neurobiologie.html, wetware-fyziologie.html,
   wetware-molekularni-biologie.html, wetware-farmakologie.html,
   wetware-imunologie.html, wetware-vyvojova-biologie.html,
@@ -96,8 +95,7 @@ python3 tools/seo.py
   a na stránky větví Wetware řádek s odkazy na ně (mezi `hry:begin` a `hry:end`). Hra patří ke
   kapitole podle pole `chapter` v `PAGES`; když se hodí i k další kapitole, přidá se do pole `also`.
   Popisek si skript bere z hlavičky stránky hry.
-- **Zástupná stránka** Příběhy a 404 mají `noindex`. Až Příběhy dostanou obsah, změň v `PAGES`
-  jejich `kind` ze `stub` na vhodný typ.
+- **Stránka 404** má `noindex`, takže ji vyhledávače neukazují.
 - **Odkaz na zpětnou vazbu**: pod každou kapitolu, hru a článek vloží skript řádek „Vidíš chybu…
   Napiš mi →“ (mezi komentáři `zpetna-vazba:begin` a `zpetna-vazba:end`) a do formuláře na
   `zpetna-vazba.html` doplní seznam stránek (mezi `stranky:begin` a `stranky:end`). Obojí se při
@@ -147,10 +145,6 @@ git push -u origin main
 
 Repozitář `vetev-na-vetvi` je potřeba na GitHubu nejdřív založit (prázdný, bez README),
 pak spustit `git push`. GitHub Pages se zapíná v **Settings → Pages** (viz výše).
-
-## Až budeš chtít pokračovat
-
-Zástupné stránky stačí přepsat obsahem — názvy souborů i odkazy už sedí.
 
 ## Zpětná vazba
 
